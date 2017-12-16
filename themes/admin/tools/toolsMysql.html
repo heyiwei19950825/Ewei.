@@ -1,0 +1,94 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">数据库操作</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form action="" method="get" class="ajax-form">
+                    <button type="button" class="layui-btn layui-btn-small action-ajax" data-action="/admin/tools/barkMysql.html">数据备份</button>
+                    <button type="button" class="layui-btn layui-btn-warm layui-btn-small action-ajax" data-action="/admin/article/toggle/type/audit.html">数据优化</button>
+                    <h5>(共{$tableNum}张记录，共计{$total})</h5>
+                    <table class="layui-table">
+                        <thead>
+                        <tr>
+                            <th style="width: 15px;"><input type="checkbox" class="check-all"></th>
+                            <th>数据库表</th>
+                            <th>记录条数</th>
+                            <th>占用空间</th>
+                            <th>编码</th>
+                            <th>创建时间</th>
+                            <th>说明</th>
+                            <th>备份状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {foreach name="list" item="vo"}
+                                <tr>
+                                <td><input type="checkbox" name="names[]" value="{$vo.Name}"></td>
+                                <td>{$vo.Name}</td>
+                                <td>{$vo.Rows}</td>
+                                <td>{$vo.Data_length}</td>
+                                <td>{$vo.Collation}</td>
+                                <td>{$vo.Create_time}</td>
+                                <td>{$vo.Comment}</td>
+                                <td>未备份</td>
+                                <td>
+                                <a href="{:url('admin/link/edit')}" class="layui-btn layui-btn-normal layui-btn-mini">优化</a>
+                                <a href="{:url('admin/link/delete')}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">备份</a>
+                                </td>
+                                </tr>
+                            {/foreach}
+                        </tbody>
+                    </table>
+                </form>    
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.action-ajax').on('click', function () {
+    if($('.ajax-form').serialize() == ''){
+        layer.msg('请勾选备份表名称！');return;
+    }
+
+    var _action = $(this).data('action');
+    layer.open({
+        shade: false,
+        content: '确定执行此操作？',
+        btn: ['确定', '取消'],
+        yes: function (index) {
+            //备份初始化
+            $.ajax({
+                url: _action,
+                type: 'GET',
+                data: $('.ajax-form').serialize(),
+                success: function (info) {
+                    if (info.code === 1) {
+                        //备份数据库表数据
+                        $.ajax({
+                            url: _action,
+                            type: 'POST',
+                            data: $('.ajax-form').serialize(),
+                            success: function (info) {
+                                layer.msg(info.msg);
+                            }
+                        })
+                    }
+                    layer.msg(info.msg);
+                }
+            });
+            layer.close(index);
+        }
+    });
+
+    return false;
+});
+</script>
+
+{/block}
+

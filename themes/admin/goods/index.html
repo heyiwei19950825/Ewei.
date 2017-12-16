@@ -1,0 +1,136 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">商品管理</li>
+            <li class=""><a href="{:url('admin/goods/add')}">添加商品</a></li>
+        </ul>
+        <div class="layui-tab-content">
+
+            <form class="layui-form layui-form-pane" action="{:url('admin/goods/index')}" method="get">
+                <div class="layui-inline">
+                    <label class="layui-form-label">分类</label>
+                    <div class="layui-input-inline">
+                        <select name="cid">
+                            <option value="0">全部</option>
+                            {foreach name="category_level_list" item="vo"}
+                            <option value="{$vo.id}" {if condition="$cid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">关键词</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="keyword" value="{$keyword}" placeholder="请输入关键词" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn">搜索</button>
+                </div>
+            </form>
+            <hr>
+
+            <form action="" method="post" class="ajax-form">
+                <button type="button" class="layui-btn layui-btn-small ajax-action" data-action="{:url('admin/goods/toggle',['type'=>'audit'])}">审核</button>
+                <button type="button" class="layui-btn layui-btn-warm layui-btn-small ajax-action" data-action="{:url('admin/goods/toggle',['type'=>'cancel_audit'])}">取消审核</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/goods/delete')}">删除</button>
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                        <tr>
+                            <th style="width: 15px;"><input type="checkbox" class="check-all"></th>
+                            <th style="width: 30px;">ID</th>
+                            <th style="width: 30px;">排序</th>
+                            <th>商品名称</th>
+                            <th>分类</th>
+                            <th>推荐</th>
+                            <th>置顶</th>
+                            <th>热卖</th>
+                            <th>状态</th>
+                            <th>售价</th>
+                            <th>库存</th>
+                            <th>销售数量</th>
+                            <th>发布时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach name="goods_list" item="vo"}
+                        <tr>
+                            <td><input type="checkbox" name="ids[]" value="{$vo.id}"></td>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.sort}</td>
+                            <td><img src="{$vo.thumb}" alt="" style="height:35px;"> {$vo.name}</td>
+                            <td>{$category_list[$vo.cid]}</td>
+                            <td>{$vo.is_recommend}</td>
+                            <td>{$vo.is_top}</td>
+                            <td>{$vo.is_hot}</td>
+                            <td>{php}echo $vo['status']==1 ? '已审核' : '未审核';{/php}</td>
+                            <td>{$vo.sp_price}</td>
+                            <td>{$vo.sp_inventory}</td>
+                            <td>{$vo.sp_market}</td>
+                            <td>{$vo.publish_time}</td>
+                            <td>
+                                <a href="{:url('admin/goods/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                <a  data-method="offset" href='javascript:' class="layui-btn layui-btn-warm layui-btn-mini goods-show">预览</a>
+                                <a href="{:url('admin/goods/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                            </td>
+                        </tr>
+                        {/foreach}
+                        </tbody>
+                    </table>
+                    <!--分页-->
+                    {$goods_list->render()}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{/block}
+{block name="js"}
+<script type="text/javascript">
+layui.use('layer', function(){ //独立版的layer无需执行这一句
+      var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+      
+      //触发事件
+      var active = {
+        offset: function(othis){
+          var type = othis.data('type')
+          ,text = othis.text();
+          
+          layer.open({
+          type: 2,
+          title: false,
+          closeBtn: 0, //不显示关闭按钮
+          shade: [0],
+          area: ['340px', '215px'],
+          offset: 'rb', //右下角弹出
+          time: 2000, //2秒后自动关闭
+          anim: 2,
+          content: ['//fly.layui.com/', 'no'], //iframe的url，no代表不显示滚动条
+          end: function(){ //此处用于演示
+            layer.open({
+              type: 2,
+              title: '很多时候，我们想最大化看，比如像这个页面。',
+              shadeClose: true,
+              shade: false,
+              maxmin: true, //开启最大化最小化按钮
+              area: ['1000px', '900px'],
+              content: '//fly.layui.com/'
+            });
+          }
+        });
+        }
+      };
+      $('.goods-show').on('click', function(){
+        var othis = $(this), method = othis.data('method');
+        active[method] ? active[method].call(this, othis) : '';
+      });
+      
+    });
+</script>
+{/block}
