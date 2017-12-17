@@ -59,13 +59,13 @@ class Login extends Controller
         }
     }
 
-    // /**
-    //  * 退出登录
-    //  */
-    // public function logout()
-    // {
-    //     Session::delete('admin_id');
-    //     Session::delete('admin_name');
-    //     $this->success('退出成功', 'admin/login/index');
-    // }
+    /**
+     * 退出登录
+     */
+    public function logout()
+    {
+        Session::delete('admin_id');
+        Session::delete('admin_name');
+        $this->success('退出成功', 'admin/login/index');
+    }
 }
