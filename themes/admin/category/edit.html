@@ -28,32 +28,36 @@
                             <input type="text" name="name" value="{$category.name}" required  lay-verify="required" placeholder="请输入栏目名称" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
+                  <!--   <div class="layui-form-item">
                         <label class="layui-form-label">别名</label>
                         <div class="layui-input-block">
                             <input type="text" name="alias" value="{$category.alias}" placeholder="（选填）请输入栏目别名" class="layui-input">
                         </div>
-                    </div>
-                    <div class="layui-form-item">
+                    </div> -->
+             <!--        <div class="layui-form-item">
                         <label class="layui-form-label">图标</label>
                         <div class="layui-input-block">
                             <input type="text" name="icon" value="{$category.icon}" placeholder="（选填）如：fa fa-home" class="layui-input">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="layui-form-item">
                         <label class="layui-form-label">缩略图</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="thumb" value="{$category.thumb}" class="layui-input layui-input-inline" id="thumb">
-                            <input type="file" name="file" class="layui-upload-file">
+                        <div class="layui-upload">
+                        <input type="hidden" name="thumb" value="{$category.thumb}" class="layui-input layui-input-inline" id="thumb">
+                        <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                        <div class="layui-input-block" style='margin-top:10px;'>
+                            <img class="layui-upload-img" id="demo1" src='{$category.thumb}'>
+                            <p id="demoText"></p>
                         </div>
+                        </div>  
                     </div>
-                    <div class="layui-form-item">
+                 <!--    <div class="layui-form-item">
                         <label class="layui-form-label">内容</label>
                         <div class="layui-input-block">
                             <textarea name="content" class="layui-textarea" id="content">{$category.content}</textarea>
                         </div>
-                    </div>
-                    <div class="layui-form-item">
+                    </div> -->
+             <!--        <div class="layui-form-item">
                         <label class="layui-form-label">类型</label>
                         <div class="layui-input-block">
                             <select name="type" lay-verify="required">
@@ -61,14 +65,14 @@
                                 <option value="2" {if condition="$category.type==2"} selected="selected"{/if}>单页</option>
                             </select>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="layui-form-item">
                         <label class="layui-form-label">排序</label>
                         <div class="layui-input-block">
                             <input type="text" name="sort" value="{$category.sort}" required  lay-verify="required" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
+                    <!-- <div class="layui-form-item">
                         <label class="layui-form-label">列表模板</label>
                         <div class="layui-input-block">
                             <input type="text" name="list_template" value="{$category.list_template}" placeholder="（选填）请输入模板文件名" class="layui-input">
@@ -79,7 +83,7 @@
                         <div class="layui-input-block">
                             <input type="text" name="detail_template" value="{$category.detail_template}" placeholder="（选填）请输入模板文件名" class="layui-input">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <input type="hidden" name="id" value="{$category.id}">

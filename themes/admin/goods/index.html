@@ -66,8 +66,8 @@
                             <td><img src="{$vo.thumb}" alt="" style="height:35px;"> {$vo.name}</td>
                             <td>{$category_list[$vo.cid]}</td>
                             <td>{$vo.is_recommend}</td>
-                            <td>{$vo.is_top}</td>
-                            <td>{$vo.is_hot}</td>
+                            <td>{php}echo $vo['is_top']==1 ? '已置顶' : '未置顶';{/php}</td>
+                            <td>{php}echo $vo['is_hot']==1 ? '热门' : '非热门';{/php}</td>
                             <td>{php}echo $vo['status']==1 ? '已审核' : '未审核';{/php}</td>
                             <td>{$vo.sp_price}</td>
                             <td>{$vo.sp_inventory}</td>

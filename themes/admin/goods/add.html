@@ -85,13 +85,12 @@
                             <div class="layui-input-inline">
                                 <input type="text" name="btime" class="layui-input datetime">
                             </div>
-                        </div> ——
-                        <div class="layui-inline">
-                          <label class="layui-form-label">结束时间:</label>
-                          <div class="layui-input-inline">
+                            <label class="layui-form-label">结束时间:</label>
+                            <div class="layui-input-inline">
                                 <input type="text" name="etime" class="layui-input datetime">
-                          </div>
+                            </div>
                         </div>
+
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">状态</label>
@@ -147,12 +146,32 @@
                             </div> 
                         </div>
                     </fieldset>
-                    <div class="layui-form-item">
+                   <!--  <div class="layui-form-item">
                         <label class="layui-form-label">缩略图</label>
                         <div class="layui-input-block">
                             <input type="text" name="thumb" value="" class="layui-input layui-input-inline" id="thumb">
                             <input type="file" name="file" class="layui-upload-file">
                         </div>
+                    </div> -->
+     <!--                  <div class="layui-form-item">
+                        <label class="layui-form-label">自定义验证</label>
+                        <div class="layui-input-inline">
+                          <input type="password" name="password" lay-verify="pass" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
+                      </div> -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">缩略图</label>
+                        <div class="layui-input-inline layui-upload">
+                            <input type="hidden" name="thumb" value="" class="layui-input layui-input-inline" id="thumb">
+                            <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <img class="layui-upload-img" id="demo1">
+                                <p id="demoText"></p>
+                            </div>
+                        </div> 
+                        <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
+
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">图集</label>
@@ -205,7 +224,7 @@
             uploadEditor.hide();
             uploadEditor.addListener('beforeInsertImage', function (t, arg) {
                 $.each(arg, function (index, item) {
-                    photoListItem = '<div class="photo-lis layui-col-md4"><input type="text" name="photo[]" value="' + item.src + '" class="layui-input layui-input-inline">';
+                    photoListItem = '<div class="photo-lis layui-col-md4"><input type="hidden" name="photo[]" value="' + item.src + '" class="layui-input layui-input-inline"><img width="300px;" src="' + item.src + '">';
                     photoListItem += '<button type="button" class="layui-btn layui-btn-danger remove-photo-btn">移除</button></div>';
 
                     $('#photo-container').append(photoListItem).on('click', '.remove-photo-btn', function () {

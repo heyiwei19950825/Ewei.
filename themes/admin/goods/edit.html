@@ -61,12 +61,12 @@
                                 <input type="number" name="sp_vip_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_vip_price}">
                               </div>
                             </div> 
-                            <div class="layui-inline">
+                            <!-- <div class="layui-inline">
                               <label class="layui-form-label">成本价:</label>
                               <div class="layui-input-inline">
                                 <input type="number" name="sp_cost_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_cost_price}">
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                     </div>
                     <div class="layui-form-item">
@@ -163,7 +163,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">缩略图</label>
                         <div class="layui-input-block">
-                            <input type="text" name="thumb" value="{$goods.thumb}" class="layui-input layui-input-inline" id="thumb">
+                            <input type="hidden" name="thumb" value="{$goods.thumb}" class="layui-input layui-input-inline" id="thumb">
                             <img src="{$goods.thumb}" style='height:80px;' alt="">
                             <input type="file" name="file" class="layui-upload-file">
                         </div>
@@ -178,7 +178,7 @@
                                 {foreach name="$goods['photo']" item="vo"}
                                 <div class="photo-list">
                                     <img src="{$vo}" alt="" style='height:80px;'>
-                                        <input type="text" name="photo[]" value="{$vo}" class="layui-input layui-input-inline">
+                                        <input type="hidden" name="photo[]" value="{$vo}" class="layui-input layui-input-inline">
                                         <button type="button" class="layui-btn layui-btn-danger remove-photo-btn">移除</button>
                                 </div>
                                 {/foreach}
