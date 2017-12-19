@@ -8,7 +8,7 @@
  */
 namespace app\common\controller;
 
-use org\Auth;
+use Org\Auth;
 use think\Loader;
 use think\Cache;
 use think\Controller;

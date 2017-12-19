@@ -2,7 +2,7 @@
 namespace app\api\controller\v1;
 
 use think\Controller;
-use org\UeditorUpload;
+use Org\UeditorUpload;
 use think\Session;
 
 /**

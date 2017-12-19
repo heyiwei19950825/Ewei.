@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: Byron Sampson <xiaobo.sun@gzzstudio.net>
 // +----------------------------------------------------------------------
-namespace org;
+namespace Org;
 
 use think\Db;
 use think\Config;

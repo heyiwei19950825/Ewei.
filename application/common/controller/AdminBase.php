@@ -1,7 +1,7 @@
 <?php
 namespace app\common\controller;
 
-use org\Auth;
+use Org\Auth;
 use think\Loader;
 use think\Cache;
 use think\Controller;
@@ -63,13 +63,25 @@ class AdminBase extends Controller
         $auth     = new Auth();
 
         $auth_rule_list = Db::name('auth_rule')->where('status', 1)->order(['sort' => 'DESC', 'id' => 'ASC'])->select();
-
         foreach ($auth_rule_list as $value) {
             if ($auth->check($value['name'], $admin_id) || $admin_id == 1) {
                 $menu[] = $value;
             }
         }
         $menu = !empty($menu) ? array2tree($menu) : [];
+        
+        //冒泡排序
+        $len = count($menu);
+        for ($i=1; $i < $len; $i++) { 
+            for ($j=$len-1;$j>=$i;$j--) { 
+               if($menu[$j]['sort']>$menu[$j-1]['sort'])
+                {//如果是从大到小的话，只要在这里的判断改成if($b[$j]>$b[$j-1])就可以了
+                 $x=$menu[$j];
+                 $menu[$j]=$menu[$j-1];
+                 $menu[$j-1]=$x;
+                }
+            }
+        }
 
         $this->assign('menu', $menu);
     }
