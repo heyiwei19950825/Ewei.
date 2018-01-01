@@ -1,0 +1,148 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class=""><a href="{:url('admin/collective/index')}">规则管理</a></li>
+            <li class="layui-this">编辑规则</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('admin/collective/update')}" method="post">
+                  <!--   <div class="layui-form-item">
+                        <label class="layui-form-label">关联活动</label>
+                        <div data-method="setTop" class="layui-btn">选择</div>
+                        <input type="hidden" name="goods_id" value=''>
+                    </div> -->
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">商品：</label>
+                        <div class="layui-input-inline">
+                           <input type="text" autocomplete="off" class="layui-input" value='{$collective_info.name}' disabled="">
+                           <input type="hidden" name="goods_id" value="{$collective_info.goods_id}">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"></div>
+                    </div>
+                     <div class="layui-form-item">
+                     <label class="layui-form-label"></label>
+                        <div class="layui-input-inline">
+                           <img src="{$collective_info.thumb}">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"></div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开团人数</label>
+                        <div class="layui-input-inline">
+                           <input type="number" name="user_number" lay-verify="number" autocomplete="off" class="layui-input" value='{$collective_info.user_number}'>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">/人</div>
+
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">开团售价</label>
+                        <div class="layui-input-inline">
+                           <input type="number" name="goods_price" lay-verify="number" autocomplete="off" class="layui-input" value='{$collective_info.goods_price}'>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">/元</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开团时限</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="time" lay-verify="number" placeholder="单位为秒" class="layui-input" value='{$collective_info.time}'>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">/秒</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开始时间</label>
+                        <div class="layui-input-inline">
+                            <input type="text" placeholder="规则开始时间" name="start_time" class="layui-input datetime" value='{$collective_info.start_time}'>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">结束时间</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="end_time" placeholder="规则结束时间" class="layui-input datetime" value='{$collective_info.end_time}'>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="" {if condition="$collective_info.c_state == 1"} checked{/if} lay-skin="switch" lay-filter="stateSwitchTest" lay-text="开启|关闭">
+                            <input type="hidden" name="state" value="{$collective_info.c_state}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="js"}
+<script type="text/javascript">
+// layui.use('layer', function(){ //独立版的layer无需执行这一句
+// 	 var active = {
+// 	 	setTop: function(){
+// 	      var that = this; 
+// 	      //多窗口模式，层叠置顶
+// 	      layer.open({
+// 	        type: 2 //此处以iframe举例
+// 	        ,title: '选择商品'
+// 	        ,area: ['1500px', '800px']
+// 	        ,shade: 0
+// 	        ,maxmin: true
+// 	        ,anim :1
+// 	        ,id:'collective-select'
+// 	        // ,offset: [ //为了演示，随机坐标
+// 	        //   ($(window).height()+300)
+// 	        //   ,($(window).width()+390)
+// 	        // ] 
+// 	        ,shade :[0.8]
+// 	        ,content: 'http://admin.ewei.com/admin/goods/goodslist.html'
+// 	        ,btn: ['确定', '关闭'] //只是为了演示
+// 	        ,yes: function(index,layero){
+// 	        	var btns = layer.getChildFrame('.btn-click', index);
+// 	        	btns.each(function(i,v){
+// 	        		if($(v).attr('data-true') == 'true'){
+// 	        			alert($(v).attr('data-id'));
+// 	        			$('input[name=goods_id]').val($(v).attr('data-id'));
+// 	        		}
+// 	        		// console.log($(v).attr('data-id'));
+// 	        	})
+// 	        	layer.closeAll();
+// 	          // $(that).click(); 
+// 	        }
+// 	        ,btn2: function(){
+// 	          layer.close();
+// 	        }
+	        
+// 	        ,zIndex: layer.zIndex //重点1
+// 	        ,success: function(layero){
+// 	          layer.setTop(layero); //重点2
+// 	        }
+// 	      });
+//     	}
+//     }
+
+//     $('.layui-btn').on('click', function(){
+//     var othis = $(this), method = othis.data('method');
+//     active[method] ? active[method].call(this, othis) : '';
+//   });
+
+// });
+// 
+ form.on('switch(stateSwitchTest)', function(data){
+    if(this.checked == true){
+        $('input[name=state]').val(1);
+    }else{
+        $('input[name=state]').val(0);
+    }
+  });
+</script>
+{/block}

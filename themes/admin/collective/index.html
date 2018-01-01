@@ -5,11 +5,10 @@
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">
             <li class="layui-this">规则管理</li>
-            <li class=""><a href="{:url('admin/goods/add')}">规则添加</a></li>
         </ul>
         <div class="layui-tab-content">
 
-            <form class="layui-form layui-form-pane" action="{:url('admin/goods/index')}" method="get">
+            <form class="layui-form layui-form-pane" action="{:url('admin/collective/index')}" method="get">
              
                 <div class="layui-inline">
                     <label class="layui-form-label">关键词</label>
@@ -24,9 +23,9 @@
             <hr>
 
             <form action="" method="post" class="ajax-form">
-                <button type="button" class="layui-btn layui-btn-small ajax-action" data-action="{:url('admin/goods/toggle',['type'=>'audit'])}">审核</button>
-                <button type="button" class="layui-btn layui-btn-warm layui-btn-small ajax-action" data-action="{:url('admin/goods/toggle',['type'=>'cancel_audit'])}">取消审核</button>
-                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/goods/delete')}">删除</button>
+                <button type="button" class="layui-btn layui-btn-small ajax-action" data-action="{:url('admin/collective/updateState',['state'=>1])}">开启</button>
+                <button type="button" class="layui-btn layui-btn-warm layui-btn-small ajax-action" data-action="{:url('admin/collective/updateState',['state'=>0])}">关闭</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/collective/delete')}">删除</button>
                 <div class="layui-tab-item layui-show">
                     <table class="layui-table">
                         <thead>
@@ -35,7 +34,9 @@
                             <th style="width: 30px;">ID</th>
                             <th>商品名称</th>
                             <th>商品售价</th>
+                            <th>开团价格</th>
                             <th>开团人数</th>
+                            <th>开团时限</th>
                             <th>开始时间</th>
                             <th>结束时间</th>
                             <th>状态</th>
@@ -49,14 +50,16 @@
                             <td>{$vo.id}</td>
                             <td>{$vo.name}</td>
                             <td>{$vo.sp_price}</td>
+                            <td>{$vo.goods_price}</td>
                             <td>{$vo.user_number}</td>
+                            <td>{$vo.time}</td>
                             <td>{$vo.start_time}</td>
                             <td>{$vo.end_time}</td>
                             <td>{php}echo $vo['c_state']==1 ? '已开启' : '未开启';{/php}</td>
                             <td>
-                                <a href="{:url('admin/goods/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
-                                <a  data-method="offset" href='javascript:' class="layui-btn layui-btn-warm layui-btn-mini collective-show">详情</a>
-                                <a href="{:url('admin/goods/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                                <a href="{:url('admin/collective/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                <!-- <a  data-method="offset" href='javascript:' class="layui-btn layui-btn-warm layui-btn-mini collective-show">详情</a> -->
+                                <a href="{:url('admin/collective/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
                             </td>
                         </tr>
                         {/foreach}

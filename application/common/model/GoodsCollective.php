@@ -8,7 +8,7 @@
 namespace app\common\model;
 
 use think\Model;
-class Collective extends Model {
+class GoodsCollective extends Model {
     
    protected $insert = ['create_time'];
 

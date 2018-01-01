@@ -90,7 +90,49 @@
                                 <input type="text" name="etime" class="layui-input datetime">
                             </div>
                         </div>
-
+                    </div>
+                                        <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <label class="layui-form-label">团购：</label>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="" lay-skin="switch" lay-filter="stateSwitchTest" lay-text="开启|关闭">
+                                    <input type="hidden" name="collective_state" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class='collective-value' style='display: none'>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">开团人数：</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" name="collective_number" placeholder="几人开团" lay-verify="number" value="" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">开团价格：</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" name="collective_price" lay-verify="number" placeholder="满足开团人数后价格" value="" class="layui-input ">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">等待时间：</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" name="collective_time" value="" placeholder="单位秒" lay-verify="number" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">开始时间：</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" name="collective_start_time" value="" placeholder="单位秒" lay-verify="datetime" class="layui-input datetime">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">结束时间：</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" name="collective_end_time" value="" placeholder="单位秒" lay-verify="datetime" class="layui-input datetime">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">状态</label>
@@ -181,12 +223,12 @@
                         </div>
                     </div>
 
-                    <div class="layui-form-item">
+                   <!--  <div class="layui-form-item">
                         <label class="layui-form-label">简介</label>
                         <div class="layui-input-block">
                             <textarea name="introduction" placeholder="（选填）请输入简介" class="layui-textarea"></textarea>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="layui-form-item">
                         <label class="layui-form-label">内容</label>
                         <div class="layui-input-block">
@@ -257,6 +299,19 @@
         $('.remove-property-btn').on('click',function(){
             $(this).parents('.property-info').remove();
         })
+
+
+        //监听指定开关
+        form.on('switch(stateSwitchTest)', function(data){
+            if(this.checked == true){
+                $('.collective-value').css('display','block');
+                $('input[name=collective_state]').val(1);
+            }else{
+                $('.collective-value').css('display','none');
+                $('input[name=collective_state]').val(0);
+
+            }
+        });
 
     });
 </script>

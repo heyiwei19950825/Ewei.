@@ -1,0 +1,230 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class=""><a href="{:url('admin/article/index')}">文章管理</a></li>
+            <li class="layui-this">添加文章</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('admin/article/save')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">所属栏目</label>
+                        <div class="layui-input-block">
+                            <select name="cid" lay-verify="required">
+                                {foreach name="category_level_list" item="vo"}
+                                <option value="{$vo.id}">{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">标题</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" value="" required  lay-verify="required" placeholder="请输入标题" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">作者</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="author" value="" placeholder="（选填）请输入作者" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">简介</label>
+                        <div class="layui-input-block">
+                            <textarea name="introduction" placeholder="（选填）请输入简介" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">内容</label>
+                        <div class="layui-input-block">
+                            <textarea name="content" placeholder="" class="layui-textarea" id="content"></textarea>
+                        </div>
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">缩略图</label>
+                        <div class="layui-input-inline layui-upload">
+                            <input type="hidden" name="thumb" value="" class="layui-input layui-input-inline" id="thumb">
+                            <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <img class="layui-upload-img" id="demo1">
+                                <p id="demoText"></p>
+                            </div>
+                        </div> 
+                        <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
+
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">图集</label>
+                        <div class="layui-input-block">
+                            <button type="button" id="upload-photo-btn" class="layui-btn">上传图集</button>
+                            <div id="photo-container"></div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关联商品</label>
+                        <div data-method="setTop" class="layui-btn">选择</div>
+                        <input type="hidden" name="goods_ids" value=''>
+                    </div>
+                    <div class="layui-form-item">
+                    <label class="layui-form-label"></label>
+                        <ul class="fly-case-list goods-list">
+                           
+                        </ul>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="status" value="1" title="已审核" checked="checked">
+                            <input type="radio" name="status" value="0" title="未审核">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">置顶</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_top" value="1" title="置顶">
+                            <input type="radio" name="is_top" value="0" title="未置顶" checked="checked">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">推荐</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_recommend" value="1" title="推荐">
+                            <input type="radio" name="is_recommend" value="0" title="未推荐" checked="checked">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">发布时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="publish_time" value="{:date('Y-m-d H:i:s')}" class="layui-input datetime">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="sort" value="0" required  lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="js"}
+<script src="__JS__/ueditor/ueditor.config.js"></script>
+<script src="__JS__/ueditor/ueditor.all.min.js"></script>
+{/block}
+{block name="script"}
+<script>
+    $(function() {
+        var ue = UE.getEditor('content'),
+            uploadEditor = UE.getEditor('upload-photo-btn'),
+            photoListItem,
+            uploadImage;
+
+        uploadEditor.ready(function () {
+            uploadEditor.setDisabled();
+            uploadEditor.hide();
+            uploadEditor.addListener('beforeInsertImage', function (t, arg) {
+                $.each(arg, function (index, item) {
+                    photoListItem = '<div class="photo-lis layui-col-md4"><input type="hidden" name="photo[]" value="' + item.src + '" class="layui-input layui-input-inline"><img width="300px;" src="' + item.src + '">';
+                    photoListItem += '<button type="button" class="layui-btn layui-btn-danger remove-photo-btn">移除</button></div>';
+
+                    $('#photo-container').append(photoListItem).on('click', '.remove-photo-btn', function () {
+                        $(this).parent('.photo-list').remove();
+                    });
+                });
+            });
+        });
+
+        $('#upload-photo-btn').on('click', function () {
+            uploadImage = uploadEditor.getDialog("insertimage");
+            uploadImage.open();
+        });
+
+        //删除图集中的图片
+        $('.remove-photo-btn').on('click',function(){
+            $(this).parent('.photo-list').remove();
+        })
+
+        //关联商品
+        layui.use('layer', function(){ //独立版的layer无需执行这一句
+          var active = {
+             setTop: function(){
+               var that = this; 
+               //多窗口模式，层叠置顶
+               layer.open({
+                 type: 2 //此处以iframe举例
+                 ,title: '选择商品'
+                 ,area: ['1500px', '800px']
+                 ,shade: 0
+                 ,maxmin: true
+                 ,anim :1
+                 ,id:'collective-select'
+                 ,shade :[0.8]
+                 ,content: '/admin/goods/goodslist.html'
+                 ,btn: ['确定', '关闭'] //只是为了演示
+                 ,yes: function(index,layero){
+                    var btns = layer.getChildFrame('.btn-click', index);
+                    var ids = '';
+                    var lis = '';
+                     btns.each(function(i,v){
+                         if($(v).attr('data-true') == 'true'){
+                             ids += $(v).attr('data-id')+',';
+                             $('input[name=goods_ids]').val(ids);
+                         }
+                    })
+                    //查询对应的商品数据
+                    $.post('/admin/goods/getGoodsListByIds',{ids,ids},function(res){
+                        $(res.data).each(function(index, item){
+                             lis += ' <li data-id="123"><a class="" href="javascript:" target="_blank" ><img src="'+item.thumb+'" alt="'+item.name+'"><p class="">'+item.name+'</p><p style="padding-lfet:50px;">———</p><p style="color: #666;">'+item.prefix_title+'</p><div class="fly-case-info"><a href="javascript:" class="fly-case-user" target="_blank"><img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"></a><p class="layui-elip" style="font-size: 12px;"> ￥'+item.sp_price+'<span style="color: #666;"><s>'+item.sp_o_price+'</s></span></p> &nbsp;<p>'+item.status+'</p><div class="layui-btn  btn-click  layui-btn-primary goods-delete" data-id= "'+item.id+'"data-type="praise">删除</div></li>';
+                        })
+                        $('.goods-list').html(lis);
+
+                        //点击删除关联商品
+                        $('.goods-delete').on('click',function(){
+                            //删除元素
+                            $(this).parents('li').remove();
+
+                            //删除表单中的相关数据
+                            var ids = $('input[name=goods_id]').val();
+                            var id = $(this).attr('data-id');
+                            ids = ids.replace(id+',','');
+                            $('input[name=goods_id]').val(ids);
+                        })
+
+                    })
+                    layer.closeAll();
+                 }
+                 ,btn2: function(){
+                   layer.close();
+                 }
+                    
+                 ,zIndex: layer.zIndex //重点1
+                 ,success: function(layero){
+                   layer.setTop(layero); //重点2
+                 }
+               });
+             }
+            }
+        
+
+            $('.layui-btn').on('click', function(){
+                var othis = $(this), method = othis.data('method');
+                active[method] ? active[method].call(this, othis) : '';
+            });
+        });
+    });
+</script>
+{/block}

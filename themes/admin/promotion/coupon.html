@@ -1,0 +1,68 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">优惠券管理</li>
+            <li class=""><a href="{:url('admin/Promotion/addCoupon')}">添加优惠券</a></li>
+        </ul>
+        <div class="layui-tab-content">
+
+            <form class="layui-form layui-form-pane" action="{:url('admin/Promotion/coupon')}" method="get">
+                <div class="layui-inline">
+                    <label class="layui-form-label">关键词</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="keyword" value="{$keyword}" placeholder="请输入关键词" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn">搜索</button>
+                </div>
+            </form>
+            <hr>
+
+            <form action="" method="post" class="ajax-form">
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/Promotion/delcoupon')}">删除</button>
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                        <tr>
+                            <th style="width: 15px;"><input type="checkbox" class="check-all"></th>
+                            <th style="width: 30px;">ID</th>
+                            <th>类型名称</th>
+                            <th>面额</th>
+                            <th>发放数量</th>
+                            <th>有效期开始时间</th>
+                            <th>有效期结束时间</th>
+                            <th>显示状态</th>
+                            <th style="width: 150px;">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach name="coupon_list" item="vo"}
+                        <tr>
+                            <td><input type="checkbox" name="ids[]" value="{$vo.coupon_type_id}"></td>
+                            <td>{$vo.coupon_type_id}</td>
+                            <td>{$vo.coupon_name}</td>
+                            <td>{$vo.money}</td>
+                            <td>{$vo.count}</td>
+                            <td>{$vo.start_time)|date("Y-m-d H:m:s",}</td>
+                            <td>{$vo.end_time)|date("Y-m-d H:m:s",}</td>
+                            <td>{php}echo $vo['is_show']==1 ? '显示' : '不显示';{/php}</td>
+                            <td>
+                                <a href="{:url('admin/Promotion/updateCoupon',['id'=>$vo['coupon_type_id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                <a href="{:url('admin/Promotion/delcoupon',['id'=>$vo['coupon_type_id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                            </td>
+                        </tr>
+                        {/foreach}
+                        </tbody>
+                    </table>
+                    <!--分页-->
+                    {$coupon_list->render()}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{/block}

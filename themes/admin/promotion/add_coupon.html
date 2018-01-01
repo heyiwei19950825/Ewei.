@@ -1,0 +1,185 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class=""><a href="{:url('admin/Promotion/coupon')}">优惠券管理</a></li>
+            <li class="layui-this">添加优惠券</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('admin/Promotion/addCoupon')}" method="post">
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">名称:</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="coupon_name" value="" required  lay-verify="required number" placeholder="请输入标题" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">面额:</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="money" value="" placeholder="（选填）请输入作者" class="layui-input">
+                        </div>
+                    </div> 
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">使用等级:</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="need_user_level" value="" placeholder="（选填）请输入作者" class="layui-input">
+                        </div>
+                    </div>
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">数量:</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="count" value="" placeholder="生成数量" class="layui-input">
+                        </div>
+                    </div>
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">每人最大领取数:</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="max_fetch" value="" placeholder="0为不限制" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">满多少元:</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="at_least" value="" placeholder="" class="layui-input">
+                        </div>
+                    </div>   
+                     <div class="layui-form-item">
+                         <div class="layui-inline">
+                            <label class="layui-form-label">开始时间:</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="start_time" class="layui-input datetime">
+                            </div>
+                            <label class="layui-form-label">结束时间:</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="end_time" class="layui-input datetime">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否允许首页显示</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_show" value="1" title="显示" checked="checked">
+                            <input type="radio" name="is_show" value="0" title="不显示">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">缩略图</label>
+                        <div class="layui-input-inline layui-upload">
+                            <input type="hidden" name="thumb" value="" class="layui-input layui-input-inline" id="thumb">
+                            <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <img class="layui-upload-img" id="demo1">
+                                <p id="demoText"></p>
+                            </div>
+                        </div> 
+                        <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
+
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关联商品</label>
+                        <div class="layui-input-inline">
+                            <div data-method="setTop" class="layui-btn">选择</div>
+                            <input type="hidden" name="goods_ids" value=''>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">如果不选择默认为全商品</div>
+                    </div>
+
+                    <div class="layui-form-item">
+                    <label class="layui-form-label"></label>
+                        <ul class="fly-case-list goods-list">
+                           
+                        </ul>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="js"}
+<script src="__JS__/ueditor/ueditor.config.js"></script>
+<script src="__JS__/ueditor/ueditor.all.min.js"></script>
+{/block}
+{block name="script"}
+<script>
+    $(function() {
+        //关联商品
+        layui.use('layer', function(){ //独立版的layer无需执行这一句
+          var active = {
+             setTop: function(){
+               var that = this; 
+               //多窗口模式，层叠置顶
+               layer.open({
+                 type: 2 //此处以iframe举例
+                 ,title: '选择商品'
+                 ,area: ['1500px', '800px']
+                 ,shade: 0
+                 ,maxmin: true
+                 ,anim :1
+                 ,id:'collective-select'
+                 ,shade :[0.8]
+                 ,content: '/admin/goods/goodslist.html'
+                 ,btn: ['确定', '关闭'] //只是为了演示
+                 ,yes: function(index,layero){
+                    var btns = layer.getChildFrame('.btn-click', index);
+                    var ids = '';
+                    var lis = '';
+                     btns.each(function(i,v){
+                         if($(v).attr('data-true') == 'true'){
+                             ids += $(v).attr('data-id')+',';
+                             $('input[name=goods_ids]').val(ids);
+                         }
+                    })
+                    //查询对应的商品数据
+                    $.post('/admin/goods/getGoodsListByIds',{ids,ids},function(res){
+                        $(res.data).each(function(index, item){
+                             lis += ' <li data-id="123"><a class="fly-case-img" href="javascript:" target="_blank" ><img src="'+item.thumb+'" alt="'+item.name+'"><p class="">'+item.name+'</p><p style="padding-lfet:50px;">———</p><p style="color: #666;">'+item.prefix_title+'</p><div class="fly-case-info"><a href="javascript:" class="fly-case-user" target="_blank"><img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"></a><p class="layui-elip" style="font-size: 12px;"> ￥'+item.sp_price+'<span style="color: #666;"><s>'+item.sp_o_price+'</s></span></p> &nbsp;<p>'+item.status+'</p><div class="layui-btn  btn-click  layui-btn-primary goods-delete" data-id= "'+item.id+'"data-type="praise">删除</div></li>';
+                        })
+                        $('.goods-list').html(lis);
+
+                        //点击删除关联商品
+                        $('.goods-delete').on('click',function(){
+                            //删除元素
+                            $(this).parents('li').remove();
+
+                            //删除表单中的相关数据
+                            var ids = $('input[name=goods_id]').val();
+                            var id = $(this).attr('data-id');
+                            ids = ids.replace(id+',','');
+                            $('input[name=goods_id]').val(ids);
+                        })
+
+                    })
+                    layer.closeAll();
+                 }
+                 ,btn2: function(){
+                   layer.close();
+                 }
+                    
+                 ,zIndex: layer.zIndex //重点1
+                 ,success: function(layero){
+                   layer.setTop(layero); //重点2
+                 }
+               });
+             }
+            }
+        
+
+            $('.layui-btn').on('click', function(){
+                var othis = $(this), method = othis.data('method');
+                active[method] ? active[method].call(this, othis) : '';
+            });
+        });
+    });
+</script>
+{/block}
