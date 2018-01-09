@@ -43,11 +43,10 @@ class Login extends Controller
                     } else {
                         Session::set('admin_id', $admin_user['id']);
                         Session::set('admin_name', $admin_user['username']);
-                        Db::name('admin_user')->update(
+                        Db::name('admin_user')->where(['id'=>$admin_user['id']])->update(
                             [
                                 'last_login_time' => date('Y-m-d H:i:s', time()),
-                                'last_login_ip'   => $this->request->ip(),
-                                'id'              => $admin_user['id']
+                                'last_login_ip'   => $this->request->ip()
                             ]
                         );
                         $this->success('登录成功', 'admin/index/index');

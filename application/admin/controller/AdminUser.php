@@ -81,7 +81,7 @@ class AdminUser extends AdminBase
      */
     public function edit($id)
     {
-        $admin_user             = $this->admin_user_model->find($id);
+        $admin_user             = $this->admin_user_model->where('id', $id)->find();
         $auth_group_list        = $this->auth_group_model->select();
         $auth_group_access      = $this->auth_group_access_model->where('uid', $id)->find();
         $admin_user['group_id'] = $auth_group_access['group_id'];
@@ -98,12 +98,13 @@ class AdminUser extends AdminBase
     {
         if ($this->request->isPost()) {
             $data            = $this->request->param();
-            $validate_result = $this->validate($data, 'AdminUser');
+            $validate_result = true;
+            // $validate_result = $this->validate($data, 'AdminUser');
 
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
-                $admin_user = $this->admin_user_model->find($id);
+                $admin_user = $this->admin_user_model->where('id', $id)->find();
 
                 $admin_user->id       = $id;
                 $admin_user->username = $data['username'];

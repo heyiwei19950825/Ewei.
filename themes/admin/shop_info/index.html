@@ -1,0 +1,182 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">商城配置</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('admin/shopInfo/index')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">店铺名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="shop_name" value="{$info.shop_name}" required lay-verify="required" placeholder="输入店铺名称" class="layui-input">
+                        </div>
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">联系电话</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="shop_phone" value="{$info.shop_phone}" required lay-verify="required" placeholder="输入联系电话" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">店铺分类</label>
+                        <div class="layui-input-block">
+                            <select name="shop_group_id" lay-verify="required">
+                                {foreach name="shop_group_list" item="vo"}
+                                <option value="{$vo.id}">{$vo.group_name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Logo</label>
+                        <div class="layui-input-inline layui-upload">
+                            <input type="hidden" name="shop_logo" value="{$info.shop_logo}" class="layui-input layui-input-inline" id="thumb">
+                            <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <img class="layui-upload-img" id="demo1" src='{$info.shop_logo}'>
+                                <p id="demoText"></p>
+                            </div>
+                        </div> 
+                        <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Banner</label>
+                        <div class="layui-input-inline layui-upload">
+                            <input type="hidden" name="shop_banner" value="{$info.shop_banner}" class="layui-input layui-input-inline" id="banner">
+                            <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <img class="layui-upload-img" id="demo1" src='{$info.shop_banner}'>
+                                <p id="demoText"></p>
+                            </div>
+                        </div> 
+                        <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">店铺分类</label>
+                        <div class="layui-input-block">
+                            <select name="shop_group_id" lay-verify="required">
+                                {foreach name="shop_group_list" item="vo"}
+                                <option value="{$vo.id}">{$vo.group_name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+					    <label class="layui-form-label">地区设置</label>
+					    <div class="layui-input-inline">
+					      <select name="province_id" id='province' lay-search>
+                            {foreach name ='provinceList' item="vo"}
+                                <option value="{$vo.id}">{$vo.province_name}</option>
+                            {/foreach}
+					      </select>
+					    </div>
+					    <div class="layui-input-inline">
+					      <select name="city_id"  id='city' lay-search>
+					        <option value="">请选择市</option>
+                             {foreach name ='cityList' item="vo"}
+                                <option value="{$vo.id}"  data-id='{$vo.province_id}'>{$vo.city_name}</option>
+                            {/foreach}
+					      </select>
+					    </div>
+					    <div class="layui-input-inline">
+					      <select name="district_id" id='district' lay-search>
+					        <option value="">请选择县/区</option>
+                             {foreach name ='districtList' item="vo"}
+                                <option value="{$vo.id}" data-id='{$vo.city_id}'>{$vo.district_name}</option>
+                            {/foreach}
+					      </select>
+					    </div>
+					    <div class="layui-form-mid layui-word-aux">此处只是演示联动排版，并未做联动交互</div>
+					</div>
+					 <div class="layui-form-item">
+                        <label class="layui-form-label">详细地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="shop_address" value="{$info.shop_address}" required lay-verify="required" placeholder="输入店铺名称" class="layui-input">
+                        </div>
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">邮编</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="shop_zip" value="{$info.shop_zip}" required lay-verify="required" placeholder="输入店铺名称" class="layui-input">
+                        </div>
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">坐标地址</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="latitude_longitude" value="{$info.latitude_longitude}" required lay-verify="required" placeholder="" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <div data-method="setTop"  class="layui-btn coordinate-btn" >坐标地址</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="shop_state" value="1" title="启用">
+                            <input type="radio" name="shop_state" value="0" title="禁用"  checked="checked">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name='js'}
+<script>
+    layui.use('layer', function(){ //独立版的layer无需执行这一句
+      var active = {
+         setTop: function(){
+           var that = this; 
+           //多窗口模式，层叠置顶
+           layer.open({
+             type: 2 //此处以iframe举例
+             ,title: '坐标地址'
+             ,area: ['1500px', '800px']
+             ,shade: 0
+             ,maxmin: true
+             ,anim :1
+             ,id:'collective-select'
+             // ,offset: [ //为了演示，随机坐标
+             //   ($(window).height()+300)
+             //   ,($(window).width()+390)
+             // ] 
+             ,shade :[0.8]
+             ,content: "{:url('admin/map/index')}"
+             ,btn: ['确定', '关闭'] //只是为了演示
+             ,yes: function(index,layero){
+                var coordinate = layer.getChildFrame('#pointInput', index).val();
+                $('input[name=coordinate]').val( coordinate );
+                layer.closeAll();
+             }
+             ,btn2: function(){
+               layer.close();
+             }
+             ,zIndex: layer.zIndex //重点1
+             ,success: function(layero){
+               layer.setTop(layero); //重点2
+             }
+           });
+         }
+        }
+        $('.coordinate-btn').on('click', function(){
+            var othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
+    });
+
+   
+</script>
+{/block}

@@ -42,15 +42,14 @@ class AdminBase extends Controller
         $action     = $this->request->action();
 
         // 排除权限
-        $not_check = ['admin/Index/index', 'admin/AuthGroup/getjson', 'admin/System/clear'];
-
-        if (!in_array($module . '/' . $controller . '/' . $action, $not_check)) {
-            $auth     = new Auth();
-            $admin_id = Session::get('admin_id');
-            if (!$auth->check($module . '/' . $controller . '/' . $action, $admin_id) && $admin_id != 1) {
-                $this->error('没有权限');
-            }
-        }
+        $not_check = ['admin/Index/index', 'admin/AuthGroup/getjson', 'admin/System/clear','admin/Address/getCitry','admin/Address/getDistrict','admin/Address/getProvince'];
+        // if (!in_array($module . '/' . $controller . '/' . $action, $not_check)) {
+        //     $auth     = new Auth();
+        //     $admin_id = Session::get('admin_id');
+        //     if (!$auth->check($module . '/' . $controller . '/' . $action, $admin_id) && $admin_id != 1) {
+        //         $this->error('没有权限');
+        //     }
+        // }
     }
 
     /**

@@ -845,7 +845,6 @@ class Validate
         } else {
             $map[$key] = $data[$field];
         }
-
         $pk = strval(isset($rule[3]) ? $rule[3] : $db->getPk());
         if (isset($rule[2])) {
             $map[$pk] = ['neq', $rule[2]];

@@ -1,0 +1,72 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">店铺管理</li>
+            <li class=""><a href="{:url('admin/shop/add')}">添加店铺</a></li>
+        </ul>
+        <div class="layui-tab-content">
+         <form class="layui-form layui-form-pane" action="{:url('admin/shop/index')}" method="get">
+                <div class="layui-inline">
+                    <label class="layui-form-label">分类</label>
+                    <div class="layui-input-inline">
+                      
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">关键词</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="keyword" value="{$keyword}" placeholder="请输入关键词" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn">搜索</button>
+                </div>
+                <hr>
+            </form>
+            <div class="layui-tab-item layui-show">
+                <button type="button" class="layui-btn layui-btn-small ajax-action" data-action="{:url('admin/shop/toggle',['type'=>'audit'])}">开启</button>
+                <button type="button" class="layui-btn layui-btn-warm layui-btn-small ajax-action" data-action="{:url('admin/shop/toggle',['type'=>'cancel_audit'])}">关闭</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/shop/delete')}">删除</button>
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th style="width: 15px;"><input type="checkbox" class="check-all"></th>
+                        <th style="width: 30px;">ID</th>
+                        <th>店铺名称</th>
+                        <th>账户名</th>
+                        <th>Logo</th>
+                        <th>是否推荐</th>
+                        <th>排序</th>
+                        <!-- <th>平台抽取比率</th> -->
+                        <th>状态</th>
+                        <th style="width: 300px;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                     {foreach name="list" item="vo"}
+                         <tr>
+                            <td><input type="checkbox" name="ids[]" value="{$vo.id}"></td>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.shop_name}</td>
+                            <td>{$vo.uid}</td>
+                            <td><img src="{$vo.shop_logo}" alt="" widht='50px' height='50px'></td>
+                            <td>{if condition='$vo.shop_recommend==1'}是{else}否{/if}</td>
+                            <td>{$vo.shop_sort}</td>
+                            <!-- <td>{$vo.shop_platform_commission_rate}</td> -->
+                            <td>{if condition='$vo.shop_state==1'}已开启{else}已关闭{/if}</td>
+                            <td >
+                                <a href="{:url('admin/shop/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                            </td>
+                        </tr>
+
+                        {/foreach}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}

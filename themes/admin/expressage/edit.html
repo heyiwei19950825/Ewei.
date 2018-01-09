@@ -1,0 +1,101 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class=""><a href="{:url('admin/Expressage/index')}">物流管理</a></li>
+            <li class="layui-this">编辑物流</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('admin/Expressage/edit')}" method="post">
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">名称:</label>
+                        <div class="layui-input-inline">
+                           <input type="text" autocomplete="off" class="layui-input" value='{$info.company_name}' required lay-verify="required" name='company_name'>
+                        </div>
+                         <input type="hidden"  value='{$info.id}'  name='id'>
+                        <div class="layui-form-mid layui-word-aux"></div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">编号: </label>
+                        <div class="layui-input-inline">
+                           <input type="number" name="express_no" lay-verify="required" required autocomplete="off" class="layui-input" value='{$info.express_no}'>
+                        </div>
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">编号: </label>
+                        <div class="layui-input-inline">
+                           <input type="number" name="cost" lay-verify="required" required autocomplete="off" class="layui-input" value='{$info.cost}'>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">联系电话: </label>
+                        <div class="layui-input-inline">
+                           <input type="number" name="phone" lay-verify="number required" required autocomplete="off" class="layui-input" value='{$info.phone}'>
+                        </div>
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">缩略图</label>
+                        <div class="layui-input-inline layui-upload">
+                            <input type="hidden" name="express_logo" value="{$info.express_logo}" class="layui-input layui-input-inline" id="express_logo">
+                            <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <img class="layui-upload-img" id="demo1" src="{$info.express_logo}">
+                                <p id="demoText"></p>
+                            </div>
+                        </div> 
+                        <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序: </label>
+                        <div class="layui-input-inline">
+                           <input type="number" name="orders" lay-verify="number" autocomplete="off" class="layui-input" value='{$info.orders}'>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用物流:</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="is_enabled" lay-skin="switch" lay-filter="stateSwitchEnabled" lay-text="开启|关闭" {if condition="$info.is_enabled == 1"}checked{else}{/if}>
+                            <input type="hidden" name="is_enabled" value="{$info.is_enabled}">
+                        </div>
+                    </div>
+                      <div class="layui-form-item">
+                        <label class="layui-form-label">是否设置为默认:</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="is_default"  lay-skin="switch" lay-filter="stateSwitchDefault" lay-text="开启|关闭" {if condition="$info.is_default == 1"}checked{else}{/if}>
+                            <input type="hidden" name="is_default" value="{$info.is_default}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="js"}
+<script type="text/javascript">
+ form.on('switch(stateSwitchEnabled)', function(data){
+    if(this.checked == true){
+        $('input[name=is_enabled]').val(1);
+    }else{
+        $('input[name=is_enabled]').val(0);
+    }
+  });
+  form.on('switch(stateSwitchDefault)', function(data){
+    if(this.checked == true){
+        $('input[name=is_default]').val(1);
+    }else{
+        $('input[name=is_default]').val(0);
+    }
+  });
+</script>
+{/block}
