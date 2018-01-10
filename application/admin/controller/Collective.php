@@ -20,6 +20,7 @@ class Collective extends AdminBase {
     protected $goods_model;
     protected $cateage_model;
     protected $helper_class;
+     protected $where = [];
 
     function _initialize(){
         parent::_initialize();
@@ -35,6 +36,10 @@ class Collective extends AdminBase {
      */
     public function index($keyword = '', $page = 1){
         $map   = [];
+        if($this->shop['id']!= 1){
+            $map['c.sid'] = $this->shop['id'];
+        }
+        
     	$field = 'c.id,c.goods_id,c.time,c.start_time,c.end_time,c.goods_price,g.name,g.sp_price,c.state as c_state,c.user_number';
 
 

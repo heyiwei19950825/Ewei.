@@ -16,17 +16,23 @@ use app\common\lib\Helper as HelperClass;
 
 class Expressage extends AdminBase {
     protected $expressa_model;
+    protected $where;
 
     protected function _initialize()
     {
         parent::_initialize();
+        $shop_id = $this->shop['id'];
+        if( $shop_id != 1 ){
+            $this->where = ['shop_id'=>$shop_id];
+        }
+
         $this->expressa_model = new ExpressaModel();
+
     }
   
 	public function index( $page = 1){
 		$list = [];
-
-		$list  = $this->expressa_model->field('*')->order(['orders' => 'DESC'])->paginate(15, false, ['page' => $page]);
+		$list  = $this->expressa_model->field('*')->where($this->where)->order(['orders' => 'DESC'])->paginate(15, false, ['page' => $page]);
 
 	return $this->fetch('index',['list'=>$list]);
 	}
@@ -37,6 +43,7 @@ class Expressage extends AdminBase {
 	public function add(){
 		if( $this->request->isPost()){
 			$data = $this->request->param();
+            $data['shop_id'] = $this->shop['id'];
 			$validate_result = $this->validate($data, 'ExpressageCompanys');
 
 			if( $validate_result !== true){
@@ -62,7 +69,8 @@ class Expressage extends AdminBase {
     {
         $id = $ids ? $ids : $id;
         if ($id) {
-            if ($this->expressa_model->destroy($id)) {
+            $this->where = ['id'=>$id];
+            if ($this->expressa_model->where($this->where)->delete()) {
                 $this->success('删除成功');
             } else {
                 $this->error('删除失败');
@@ -80,23 +88,28 @@ class Expressage extends AdminBase {
     public function edit( $id = 0 )
     {
     	if( $this->request->isPost()){
+
     		if ($this->request->isPost()) {
             	$data            = $this->request->param();
             	$validate_result = $this->validate($data, 'ExpressageCompanys');
 
-            if ($validate_result !== true) {
-                $this->error($validate_result);
-            } else {
-                if ($this->expressa_model->allowField(true)->save($data, $data['id']) !== false) {
-                    $this->success('更新成功');
+                $this->where['id']      = $data['id'];
+                if($this->expressa_model->where($this->where)->find() == false){
+                    $this->error('没有权限访问');
+                }
+                if ($validate_result !== true) {
+                    $this->error($validate_result);
                 } else {
-                    $this->error('更新失败');
+                    if ($this->expressa_model->allowField(true)->save($data) !== false) {
+                        $this->success('更新成功');
+                    } else {
+                        $this->error('更新失败');
+                    }
                 }
             }
-        }
 
     	}else{
-    		$info = $this->expressa_model->find($id);
+    		$info = $this->expressa_model->where($this->where)->find($id);
 
         	return $this->fetch('edit', ['info' => $info]);
     	}

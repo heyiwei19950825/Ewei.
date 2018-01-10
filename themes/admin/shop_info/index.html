@@ -18,7 +18,7 @@
                      <div class="layui-form-item">
                         <label class="layui-form-label">联系电话</label>
                         <div class="layui-input-block">
-                            <input type="number" name="shop_phone" value="{$info.shop_phone}" required lay-verify="required" placeholder="输入联系电话" class="layui-input">
+                            <input type="number" name="shop_phone" value="{$info.shop_phone}" required lay-verify="phone" placeholder="输入联系电话" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -35,58 +35,49 @@
                         <label class="layui-form-label">Logo</label>
                         <div class="layui-input-inline layui-upload">
                             <input type="hidden" name="shop_logo" value="{$info.shop_logo}" class="layui-input layui-input-inline" id="thumb">
-                            <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                            <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150' data-path='uploads/common/'>上传图片</button>
                             <div class="layui-input-block" style='margin-top:10px;'>
-                                <img class="layui-upload-img" id="demo1" src='{$info.shop_logo}'>
+                                <img class="layui-upload-img" style='width:150px;' id="demo1" src='{$info.shop_logo}'>
                                 <p id="demoText"></p>
                             </div>
                         </div> 
-                        <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
+                        <div class="layui-form-mid layui-word-aux">推荐图片大小为150*150</div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">Banner</label>
                         <div class="layui-input-inline layui-upload">
-                            <input type="hidden" name="shop_banner" value="{$info.shop_banner}" class="layui-input layui-input-inline" id="banner">
-                            <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                            <input type="hidden" name="shop_banner" value="{$info.shop_banner}" class="layui-input layui-input-inline" id="banner-thumb">
+                            <button type="button" class="layui-btn" id="banner-upload" data-width='150' data-height='150' data-path='uploads/common/'>上传图片</button>
                             <div class="layui-input-block" style='margin-top:10px;'>
-                                <img class="layui-upload-img" id="demo1" src='{$info.shop_banner}'>
-                                <p id="demoText"></p>
+                                <img class="layui-upload-img" style='width:150px;' id="demo2" src='{$info.shop_banner}'>
+                                <p id="demoText1"></p>
                             </div>
                         </div> 
                         <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">店铺分类</label>
-                        <div class="layui-input-block">
-                            <select name="shop_group_id" lay-verify="required">
-                                {foreach name="shop_group_list" item="vo"}
-                                <option value="{$vo.id}">{$vo.group_name}</option>
-                                {/foreach}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
 					    <label class="layui-form-label">地区设置</label>
 					    <div class="layui-input-inline">
-					      <select name="province_id" id='province' lay-search>
+					      <select name="province_id" id='province' lay-search lay-filter="province">
+                            <option value="">请选择省</option>
                             {foreach name ='provinceList' item="vo"}
-                                <option value="{$vo.id}">{$vo.province_name}</option>
+                                <option value="{$vo.province_id}" {if condition="$info.province_id==$vo.province_id"} selected="selected"{/if}>{$vo.province_name}</option>
                             {/foreach}
 					      </select>
 					    </div>
 					    <div class="layui-input-inline">
-					      <select name="city_id"  id='city' lay-search>
+					      <select name="city_id"  id='city' lay-search lay-filter="city">
 					        <option value="">请选择市</option>
                              {foreach name ='cityList' item="vo"}
-                                <option value="{$vo.id}"  data-id='{$vo.province_id}'>{$vo.city_name}</option>
+                                <option value="{$vo.city_id}" {if condition="$info.city_id==$vo.city_id"} selected="selected"{/if}  >{$vo.city_name}</option>
                             {/foreach}
 					      </select>
 					    </div>
 					    <div class="layui-input-inline">
-					      <select name="district_id" id='district' lay-search>
+					      <select name="district_id" id='district' lay-search lay-filter="district">
 					        <option value="">请选择县/区</option>
                              {foreach name ='districtList' item="vo"}
-                                <option value="{$vo.id}" data-id='{$vo.city_id}'>{$vo.district_name}</option>
+                                <option value="{$vo.district_id}" data-id='{$vo.district_id}' {if condition="$info.district_id==$vo.district_id"} selected="selected"{/if}>{$vo.district_name}</option>
                             {/foreach}
 					      </select>
 					    </div>
@@ -101,7 +92,7 @@
                      <div class="layui-form-item">
                         <label class="layui-form-label">邮编</label>
                         <div class="layui-input-block">
-                            <input type="number" name="shop_zip" value="{$info.shop_zip}" required lay-verify="required" placeholder="输入店铺名称" class="layui-input">
+                            <input type="number" name="shop_zip" value="{$info.shop_zip}" required lay-verify="" placeholder="输入店铺名称" class="layui-input">
                         </div>
                     </div>
                      <div class="layui-form-item">
@@ -136,47 +127,107 @@
 
 {block name='js'}
 <script>
-    layui.use('layer', function(){ //独立版的layer无需执行这一句
-      var active = {
-         setTop: function(){
-           var that = this; 
-           //多窗口模式，层叠置顶
-           layer.open({
-             type: 2 //此处以iframe举例
-             ,title: '坐标地址'
-             ,area: ['1500px', '800px']
-             ,shade: 0
-             ,maxmin: true
-             ,anim :1
-             ,id:'collective-select'
-             // ,offset: [ //为了演示，随机坐标
-             //   ($(window).height()+300)
-             //   ,($(window).width()+390)
-             // ] 
-             ,shade :[0.8]
-             ,content: "{:url('admin/map/index')}"
-             ,btn: ['确定', '关闭'] //只是为了演示
-             ,yes: function(index,layero){
-                var coordinate = layer.getChildFrame('#pointInput', index).val();
-                $('input[name=coordinate]').val( coordinate );
-                layer.closeAll();
-             }
-             ,btn2: function(){
-               layer.close();
-             }
-             ,zIndex: layer.zIndex //重点1
-             ,success: function(layero){
-               layer.setTop(layero); //重点2
-             }
-           });
+$(function(){
+layui.use('layer', function(){ //独立版的layer无需执行这一句
+    var active = {
+     setTop: function(){
+       var that = this; 
+       //多窗口模式，层叠置顶
+       layer.open({
+         type: 2 //此处以iframe举例
+         ,title: '坐标地址'
+         ,area: ['1500px', '800px']
+         ,shade: 0
+         ,maxmin: true
+         ,anim :1
+         ,id:'collective-select'
+         // ,offset: [ //为了演示，随机坐标
+         //   ($(window).height()+300)
+         //   ,($(window).width()+390)
+         // ] 
+         ,shade :[0.8]
+         ,content: "{:url('admin/map/index')}"
+         ,btn: ['确定', '关闭'] //只是为了演示
+         ,yes: function(index,layero){
+            var coordinate = layer.getChildFrame('#pointInput', index).val();
+            $('input[name=latitude_longitude]').val( coordinate );
+            layer.closeAll();
          }
-        }
-        $('.coordinate-btn').on('click', function(){
-            var othis = $(this), method = othis.data('method');
-            active[method] ? active[method].call(this, othis) : '';
-        });
+         ,btn2: function(){
+           layer.close();
+         }
+         ,zIndex: layer.zIndex //重点1
+         ,success: function(layero){
+           layer.setTop(layero); //重点2
+         }
+       });
+     }
+    }
+    $('.coordinate-btn').on('click', function(){
+        var othis = $(this), method = othis.data('method');
+        active[method] ? active[method].call(this, othis) : '';
     });
+});
 
+var uploadInst = upload.render({
+    elem: '#banner-upload', //绑定元素
+    url: "/index.php/api/v1/upload/upload",
+    type: 'image',
+    ext: 'jpg|png|gif|bmp',
+    data:{
+        width:$('#banner-upload').attr('data-width'),
+        height:$('#banner-upload').attr('data-height'),
+        file_path:$('#banner-upload').attr('data-path')
+    },
+
+    before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#demo2').attr('src', result); //图片链接（base64）
+      });
+    }
+    ,done: function(res){
+      //如果上传失败
+      if (res.code === 1) {
+            var demoText = $('#demoText1');
+            demoText.html('');
+            console.log(res);
+            document.getElementById('banner-thumb').value = res.data;
+        } else {
+            layer.msg(res.message);
+        }
+
+    }
+  
+    ,error: function(){
+      //演示失败状态，并实现重传
+      var demoText = $('#demoText1');
+      demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+      demoText.find('.demo-reload').on('click', function(){
+        uploadInst.upload();
+      });
+    }
+});
+
+
+
+// //城市联动   选择省获取相应的城市列表信息
+// form.on('select(province)', function(data){
+//   var id = data.value;
+//   var citry_html = '';
+//   $.post("{:url('/admin/Address/getCitry')}",{id:id},function(e){
+//     $(e.data).each(function(i,v){
+//         citry_html += '<option value="'+v.id+'">'+v.city_name+'</option>';
+//     })
+
+//     $('#city').html(citry_html);
+//     form.render('select', 'city'); //更新 lay-filter="test2" 所在容器内的全部 select 状态
+//   })
+
+// });
+    
+
+});
    
 </script>
 {/block}

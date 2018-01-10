@@ -247,3 +247,41 @@ function check_mobile_number($mobile)
 
     return preg_match($reg, $mobile) ? true : false;
 }
+
+function __URL($url, $param = '')
+{
+    $url = \str_replace('SHOP_MAIN', 'admin', $url);
+    if (empty($url)) {
+        return __URL__;
+    } else {
+        $str = substr($url, 0, 1);
+        if ($str === '/' || $str === "\\") {
+            $url = substr($url, 1, strlen($url));
+        }
+        if (REWRITE_MODEL) {
+            
+            $url = urlRouteConfig($url, $param);
+            return $url;
+        }
+        $action_array = explode('?', $url);
+        // 检测是否是pathinfo模式
+        $url_model = url_model();
+        if ($url_model) {
+            $base_url = __URL__ . '/' . $action_array[0];
+            $tag = '?';
+        } else {
+            $base_url = __URL__ . '?s=/' . $action_array[0];
+            $tag = '&';
+        }
+        if (! empty($action_array[1])) {
+            // 有参数
+            return $base_url . $tag . $action_array[1];
+        } else {
+            if (! empty($param)) {
+                return $base_url . $tag . $param;
+            } else {
+                return $base_url;
+            }
+        }
+    }
+}

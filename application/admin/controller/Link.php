@@ -69,7 +69,6 @@ class Link extends AdminBase
     public function edit($id)
     {
         $link = $this->link_model->find($id);
-
         return $this->fetch('edit', ['link' => $link]);
     }
 

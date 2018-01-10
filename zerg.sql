@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-01-09 08:37:25
+Date: 2018-01-11 01:29:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -55,15 +55,66 @@ CREATE TABLE `ewei_admin_user` (
   `create_time` int(11) NOT NULL COMMENT '创建时间',
   `last_login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
   `last_login_ip` varchar(20) DEFAULT NULL COMMENT '最后登录IP',
-  PRIMARY KEY (`id`,`create_time`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='管理员表';
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COMMENT='管理员表';
 
 -- ----------------------------
 -- Records of ewei_admin_user
 -- ----------------------------
 INSERT INTO `ewei_admin_user` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', null, null, '1', '0', '2018-01-09 07:03:39', '127.0.0.1');
-INSERT INTO `ewei_admin_user` VALUES ('23', 'uyiku', '4297f44b13955235245b2497399d7a93', null, null, '1', '2018', '2018-01-09 07:51:16', '127.0.0.1');
+INSERT INTO `ewei_admin_user` VALUES ('23', 'uyiku', '4297f44b13955235245b2497399d7a93', null, null, '1', '0', '2018-01-10 20:01:13', '127.0.0.1');
+
+-- ----------------------------
+-- Table structure for ewei_album_picture
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_album_picture`;
+CREATE TABLE `ewei_album_picture` (
+  `pic_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '相册图片表id',
+  `shop_id` int(10) unsigned DEFAULT '1' COMMENT '所属实例id',
+  `album_id` int(10) unsigned NOT NULL COMMENT '相册id',
+  `is_wide` int(11) NOT NULL DEFAULT '0' COMMENT '是否宽屏',
+  `pic_name` varchar(100) NOT NULL COMMENT '图片名称',
+  `pic_tag` varchar(255) NOT NULL DEFAULT '' COMMENT '图片标签',
+  `pic_cover` varchar(255) NOT NULL COMMENT '原图图片路径',
+  `pic_size` varchar(255) NOT NULL COMMENT '原图大小',
+  `pic_spec` varchar(100) NOT NULL COMMENT '原图规格',
+  `pic_cover_big` varchar(255) NOT NULL DEFAULT '' COMMENT '大图路径',
+  `pic_size_big` varchar(255) NOT NULL DEFAULT '0' COMMENT '大图大小',
+  `pic_spec_big` varchar(100) NOT NULL DEFAULT '' COMMENT '大图规格',
+  `pic_cover_mid` varchar(255) NOT NULL DEFAULT '' COMMENT '中图路径',
+  `pic_size_mid` varchar(255) NOT NULL DEFAULT '0' COMMENT '中图大小',
+  `pic_spec_mid` varchar(100) NOT NULL DEFAULT '' COMMENT '中图规格',
+  `pic_cover_small` varchar(255) NOT NULL DEFAULT '' COMMENT '小图路径',
+  `pic_size_small` varchar(255) NOT NULL DEFAULT '0' COMMENT '小图大小',
+  `pic_spec_small` varchar(255) NOT NULL DEFAULT '' COMMENT '小图规格',
+  `pic_cover_micro` varchar(255) NOT NULL DEFAULT '' COMMENT '微图路径',
+  `pic_size_micro` varchar(255) NOT NULL DEFAULT '0' COMMENT '微图大小',
+  `pic_spec_micro` varchar(255) NOT NULL DEFAULT '' COMMENT '微图规格',
+  `upload_time` int(11) DEFAULT '0' COMMENT '图片上传时间',
+  `upload_type` int(11) DEFAULT '1' COMMENT '图片外链',
+  `domain` varchar(255) DEFAULT '' COMMENT '图片外链',
+  `bucket` varchar(255) DEFAULT '' COMMENT '存储空间名称',
+  PRIMARY KEY (`pic_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=204 COMMENT='相册图片表';
+
+-- ----------------------------
+-- Records of ewei_album_picture
+-- ----------------------------
+INSERT INTO `ewei_album_picture` VALUES ('1', '0', '30', '0', '11499330924', '1', '/uploads/goods_brand/1515575596.jpg', '350,350', '350,350', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods_brand/1515575596.jpg', '60,60', '60,60', '1499330924', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('2', '0', '30', '0', '21499330928', '2', '/uploads/goods_brand/1515578042.jpg', '350,350', '350,350', '/uploads/goods_brand/1515578042.jpg', '700,700', '700,700', '/uploads/goods_brand/1515578042.jpg', '360,360', '360,360', '/uploads/goods_brand/1515578042.jpg', '240,240', '240,240', '/uploads/goods_brand/1515578042.jpg', '60,60', '60,60', '1499330929', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('3', '0', '30', '0', '31499330933', '3', '/uploads/goods_brand/1515576059.jpg', '350,350', '350,350', '/uploads/goods_brand/1515576059.jpg', '700,700', '700,700', '/uploads/goods_brand/1515576059.jpg', '360,360', '360,360', '/uploads/goods_brand/1515576059.jpg', '240,240', '240,240', '/uploads/goods_brand/1515576059.jpg', '60,60', '60,60', '1499330933', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('4', '0', '30', '0', '21499330996', '2', '/uploads/goods_brand/1515581629.jpg', '350,350', '350,350', '/uploads/goods_brand/1515581629.jpg', '700,700', '700,700', '/uploads/goods_brand/1515581629.jpg', '360,360', '360,360', '/uploads/goods_brand/1515581629.jpg', '240,240', '240,240', '/uploads/goods_brand/1515581629.jpg', '60,60', '60,60', '1499330996', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('5', '0', '30', '0', '41499331769', '4', '/uploads/goods/1515581639469046.jpg', '350,350', '350,350', '/uploads/goods/1515581639469046.jpg', '700,700', '700,700', '/uploads/goods/1515581639469046.jpg', '360,360', '360,360', '/goods/1515581639469046.jpg', '240,240', '240,240', '/uploads/goods/1515581639469046.jpg', '60,60', '60,60', '1499331769', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('6', '0', '30', '0', '61499331772', '6', '/uploads/goods_brand/1515575596.jpg', '350,350', '350,350', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods/1515578038187059.jpg', '60,60', '60,60', '1499331772', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('7', '0', '30', '0', '51499331775', '5', '/uploads/goods_brand/1515575596.jpg', '350,350', '350,350', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods_brand/1515575596.jpg', '60,60', '60,60', '1499331775', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('8', '0', '30', '0', '11499333687', '1', '/uploads/goods_brand/1515575596.jpg', '800,800', '800,800', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods_brand/1515575596.jpg', '60,60', '60,60', '1499333688', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('9', '0', '30', '0', '21499333690', '2', '/uploads/goods_brand/1515575596.jpg', '800,800', '800,800', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods_brand/1515575596.jpg', '60,60', '60,60', '1499333691', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('10', '0', '30', '0', '31499333693', '3', '/uploads/goods_brand/1515575596.jpg', '800,1200', '800,1200', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods_brand/1515575596.jpg', '60,60', '60,60', '1499333694', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('11', '0', '30', '0', '41499333696', '4', '/uploads/goods_brand/1515575596.jpg', '800,800', '800,800', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods_brand/1515575596.jpg', '60,60', '60,60', '1499333697', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('12', '0', '30', '0', '51499333698', '5', '/uploads/goods_brand/1515575596.jpg', '800,800', '800,800', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods_brand/1515575596.jpg', '60,60', '60,60', '1499333699', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('13', '0', '30', '0', '61499333939', '6', '/uploads/goods_brand/1515575596.jpg', '1061,1061', '1061,1061', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods_brand/1515575596.jpg', '60,60', '60,60', '1499333940', '1', '', '');
+INSERT INTO `ewei_album_picture` VALUES ('14', '0', '30', '0', '71499333942', '7', '/uploads/goods_brand/1515575596.jpg', '1061,1061', '1061,1061', '/uploads/goods_brand/1515575596.jpg', '700,700', '700,700', '/uploads/goods_brand/1515575596.jpg', '360,360', '360,360', '/uploads/goods_brand/1515575596.jpg', '240,240', '240,240', '/uploads/goods_brand/1515575596.jpg', '60,60', '60,60', '1499333943', '1', '', '');
 
 -- ----------------------------
 -- Table structure for ewei_article
@@ -87,18 +138,14 @@ CREATE TABLE `ewei_article` (
   `publish_time` datetime NOT NULL COMMENT '发布时间',
   `goods_ids` varchar(100) NOT NULL COMMENT '关联商品ID',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='文章表';
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='文章表';
 
 -- ----------------------------
 -- Records of ewei_article
 -- ----------------------------
-INSERT INTO `ewei_article` VALUES ('2', '7', '测试文章1', 'Ewei PHPer BigNiu', '<p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p><img src=\"/public/uploads/images/20171230/1514641087757187.png\" title=\"1514641087757187.png\" alt=\"j12.png\"/></p>', '测试员Ewei', '1', '0', '', null, '0', '0', '0', '2017-12-30 21:38:13', '2017-12-30 21:37:33', '');
-INSERT INTO `ewei_article` VALUES ('3', '7', '123123', '1231231', '<p>123123123</p>', '123123', '1', '0', '', null, '0', '0', '0', '2017-12-30 23:08:03', '2017-12-30 23:07:49', '');
-INSERT INTO `ewei_article` VALUES ('4', '7', '123123', '123123', '<p>12312312</p>', '123123', '1', '0', '', null, '0', '0', '0', '2017-12-30 23:09:42', '2017-12-30 23:08:04', '');
-INSERT INTO `ewei_article` VALUES ('5', '7', 'asdasd', 'asdasd', '<p>asdasd</p>', 'asdasd', '1', '0', '', null, '0', '0', '0', '2017-12-30 23:10:41', '2017-12-30 23:10:05', '');
-INSERT INTO `ewei_article` VALUES ('6', '7', '123123123', '123123', '<p>123123123</p>', '123123', '1', '0', '', null, '0', '0', '0', '2017-12-30 23:12:30', '2017-12-30 23:12:18', '30,31,');
-INSERT INTO `ewei_article` VALUES ('7', '7', 'asdasd', 'dasd', '<p>asdasd</p>', 'asdas', '1', '0', '', null, '0', '0', '0', '2017-12-30 23:13:11', '2017-12-30 23:12:31', '');
-INSERT INTO `ewei_article` VALUES ('8', '7', 'asd', '按时', '<p>asdasd啊<br/></p>', 'asdasd', '1', '0', '/uploads/thumb/20171231/6822e6d2d7af2fb574ae07efb73b111a.png', 'a:4:{i:0;s:52:\"/public/uploads/images/20171231/1514651526103224.png\";i:1;s:52:\"/public/uploads/images/20171231/1514651527236072.png\";i:2;s:52:\"/public/uploads/images/20171231/1514651527768504.png\";i:3;s:52:\"/public/uploads/images/20171231/1514651527420721.png\";}', '0', '0', '0', '2017-12-31 00:32:19', '2017-12-31 00:31:53', '');
+INSERT INTO `ewei_article` VALUES ('2', '7', '测试文章1', 'Ewei PHPer BigNiu', '<p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p><img src=\"/public/uploads/images/20171230/1514641087757187.png\" title=\"1514641087757187.png\" alt=\"j12.png\"/></p>', '测试员Ewei', '0', '0', '', null, '0', '0', '0', '2017-12-30 21:38:13', '2017-12-30 21:37:33', '');
+INSERT INTO `ewei_article` VALUES ('15', '7', '啦啦啦啦啦', '啦啦啦啦啦', '<p>啦啦啦啦啦</p>', '啦啦啦啦啦', '0', '0', '/uploads/common/1515600714.jpg', null, '1', '1', '0', '2018-01-11 00:12:01', '2018-01-11 00:11:39', '33,37,36,');
+INSERT INTO `ewei_article` VALUES ('9', '7', '优衣库', 'asdasdasdasd撒的', '<p>阿斯达四大asdasd按时</p>', '优衣库精选', '0', '0', '/uploads/common/1515599217.jpg', null, '1', '1', '0', '2018-01-10 23:47:20', '2018-01-31 23:46:52', '33,37,36,');
 
 -- ----------------------------
 -- Table structure for ewei_article_category
@@ -131,6 +178,30 @@ CREATE TABLE `ewei_article_category` (
 INSERT INTO `ewei_article_category` VALUES ('7', '测试专题1', null, null, '/uploads/thumb/20171230/de4dbbb7bcffdecfab545ff9a62971d9.png', null, null, null, '1', '1', '0', '0,', '2017-12-30 21:37:21', null, null, null, null);
 
 -- ----------------------------
+-- Table structure for ewei_article_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_article_goods`;
+CREATE TABLE `ewei_article_goods` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `article_id` int(11) NOT NULL COMMENT '优惠券类型id',
+  `goods_id` int(11) NOT NULL COMMENT '商品id',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='优惠券使用商品表';
+
+-- ----------------------------
+-- Records of ewei_article_goods
+-- ----------------------------
+INSERT INTO `ewei_article_goods` VALUES ('19', '10', '33');
+INSERT INTO `ewei_article_goods` VALUES ('20', '10', '37');
+INSERT INTO `ewei_article_goods` VALUES ('21', '10', '36');
+INSERT INTO `ewei_article_goods` VALUES ('22', '14', '33');
+INSERT INTO `ewei_article_goods` VALUES ('23', '14', '37');
+INSERT INTO `ewei_article_goods` VALUES ('24', '14', '36');
+INSERT INTO `ewei_article_goods` VALUES ('25', '15', '33');
+INSERT INTO `ewei_article_goods` VALUES ('26', '15', '37');
+INSERT INTO `ewei_article_goods` VALUES ('27', '15', '36');
+
+-- ----------------------------
 -- Table structure for ewei_auth_group
 -- ----------------------------
 DROP TABLE IF EXISTS `ewei_auth_group`;
@@ -147,7 +218,7 @@ CREATE TABLE `ewei_auth_group` (
 -- ----------------------------
 INSERT INTO `ewei_auth_group` VALUES ('1', '超级管理组', '1', '1,2,3,73,74,5,6,7,8,9,10,11,12,39,40,41,42,43,14,13,20,21,22,23,24,15,25,26,27,28,29,30,83,16,17,44,45,46,47,48,18,49,50,51,52,53,19,31,32,33,34,35,36,37,54,55,58,59,60,61,62,56,63,64,65,66,67,57,68,69,70,71,72,81,84,80,85,86,87,88,89,90,91,92,97,98');
 INSERT INTO `ewei_auth_group` VALUES ('2', '编辑', '1', '14,13,20,21,22,23,24,15,25,26,27,28,29,30');
-INSERT INTO `ewei_auth_group` VALUES ('4', '商家', '1', '14,15,25,26,27,28,29,30,83,16,17,44,45,46,47,48,81,84,80,85,86,88,89,90,91,92,103');
+INSERT INTO `ewei_auth_group` VALUES ('4', '商家', '1', '14,15,25,26,27,28,29,30,83,81,84,85,86,88,89,90,91,92,103');
 INSERT INTO `ewei_auth_group` VALUES ('5', '推广员', '1', '');
 
 -- ----------------------------
@@ -290,11 +361,12 @@ CREATE TABLE `ewei_banner` (
   `delete_time` int(11) DEFAULT NULL,
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='banner管理表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='banner管理表';
 
 -- ----------------------------
 -- Records of ewei_banner
 -- ----------------------------
+INSERT INTO `ewei_banner` VALUES ('1', 'top 首页轮播图', null, null, null);
 
 -- ----------------------------
 -- Table structure for ewei_banner_item
@@ -315,11 +387,12 @@ CREATE TABLE `ewei_banner_item` (
   `update_time` int(11) NOT NULL,
   `image` varchar(255) NOT NULL COMMENT '图片地址',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='banner子项表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='banner子项表';
 
 -- ----------------------------
 -- Records of ewei_banner_item
 -- ----------------------------
+INSERT INTO `ewei_banner_item` VALUES ('1', '1', 'uyiku', '优衣库广告', 'http://www.uniqlo.cn/', '_self', '', '1', '0', '1', null, '0', '/uploads/common/1515597691.jpg');
 
 -- ----------------------------
 -- Table structure for ewei_category
@@ -344,24 +417,25 @@ CREATE TABLE `ewei_category` (
   `description` varchar(100) DEFAULT NULL COMMENT '描述',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='商品类目';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COMMENT='商品类目';
 
 -- ----------------------------
 -- Records of ewei_category
 -- ----------------------------
-INSERT INTO `ewei_category` VALUES ('5', '啦啦啦', null, null, '/uploads/thumb/20171217/6ae39dbe752394fcb70384be0a49b781.jpg', null, null, null, '1', '0', '0', '0,', '2017-12-17 20:50:34', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('5', '情趣内衣', null, null, '/uploads/thumb/20171217/6ae39dbe752394fcb70384be0a49b781.jpg', null, null, null, '1', '0', '0', '0,', '2017-12-17 20:50:34', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('6', '服装', null, null, '/uploads/common/1515601024.jpg', null, null, null, '1', '0', '0', '0,', '2018-01-11 00:17:10', null, null, null, null);
 
 -- ----------------------------
 -- Table structure for ewei_city
 -- ----------------------------
 DROP TABLE IF EXISTS `ewei_city`;
 CREATE TABLE `ewei_city` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `city_id` int(11) NOT NULL AUTO_INCREMENT,
   `province_id` int(11) NOT NULL DEFAULT '0',
   `city_name` varchar(255) NOT NULL DEFAULT '',
   `zipcode` varchar(6) NOT NULL DEFAULT '',
   `sort` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`city_id`),
   KEY `IDX_g_city_CityName` (`city_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=346 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=135 COMMENT='城市表';
 
@@ -730,23 +804,24 @@ CREATE TABLE `ewei_coupon` (
   `get_type` int(11) NOT NULL DEFAULT '0' COMMENT '获取方式1订单2.首页领取',
   `fetch_time` int(11) DEFAULT '0' COMMENT '领取时间',
   `use_time` int(11) DEFAULT '0' COMMENT '使用时间',
-  `start_time` int(11) DEFAULT '0' COMMENT '有效期开始时间',
-  `end_time` int(11) DEFAULT '0' COMMENT '有效期结束时间',
+  `start_time` datetime DEFAULT '0000-00-00 00:00:00' COMMENT '有效期开始时间',
+  `end_time` datetime DEFAULT '0000-00-00 00:00:00' COMMENT '有效期结束时间',
   PRIMARY KEY (`coupon_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=148 COMMENT='优惠券表';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=148 COMMENT='优惠券表';
 
 -- ----------------------------
 -- Records of ewei_coupon
 -- ----------------------------
-INSERT INTO `ewei_coupon` VALUES ('1', '1', '1514816761230', '0', '0', '0', '123.00', '0', '0', '0', '0', '1514814795', '1517328000');
-INSERT INTO `ewei_coupon` VALUES ('2', '1', '1514817928998', '0', '0', '0', '123.00', '0', '0', '0', '0', '1514736000', '1516204800');
-INSERT INTO `ewei_coupon` VALUES ('3', '1', '1514819198296', '0', '0', '0', '123.00', '0', '0', '0', '0', '1514800601', '1517047003');
-INSERT INTO `ewei_coupon` VALUES ('4', '1', '1514819240624', '0', '0', '0', '123.00', '0', '0', '0', '0', '1514800601', '1517047003');
-INSERT INTO `ewei_coupon` VALUES ('5', '1', '1514826595837', '0', '0', '0', '123.00', '0', '0', '0', '0', '1514822400', '1516896000');
-INSERT INTO `ewei_coupon` VALUES ('12', '1', '1514826820159', '0', '0', '0', '123.00', '0', '0', '0', '0', '1514822400', '1515600000');
-INSERT INTO `ewei_coupon` VALUES ('16', '1', '1514826907172', '0', '0', '0', '123.00', '0', '0', '0', '0', '1514822400', '1517500800');
-INSERT INTO `ewei_coupon` VALUES ('17', '1', '1514827104578', '0', '0', '0', '1.00', '0', '0', '0', '0', '1514822400', '1516204800');
-INSERT INTO `ewei_coupon` VALUES ('19', '42', '1514827674638', '0', '0', '0', '2.00', '0', '0', '0', '0', '1514822400', '1516723200');
+INSERT INTO `ewei_coupon` VALUES ('1', '1', '1514816761230', '0', '0', '0', '123.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `ewei_coupon` VALUES ('2', '1', '1514817928998', '0', '0', '0', '123.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `ewei_coupon` VALUES ('3', '1', '1514819198296', '0', '0', '0', '123.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `ewei_coupon` VALUES ('4', '1', '1514819240624', '0', '0', '0', '123.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `ewei_coupon` VALUES ('5', '1', '1514826595837', '0', '0', '0', '123.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `ewei_coupon` VALUES ('12', '1', '1514826820159', '0', '0', '0', '123.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `ewei_coupon` VALUES ('16', '1', '1514826907172', '0', '0', '0', '123.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `ewei_coupon` VALUES ('17', '1', '1514827104578', '0', '0', '0', '1.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `ewei_coupon` VALUES ('19', '42', '1514827674638', '0', '0', '0', '2.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `ewei_coupon` VALUES ('20', '2', '1515598535115', '0', '0', '0', '50.00', '0', '0', '0', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for ewei_coupon_goods
@@ -757,7 +832,7 @@ CREATE TABLE `ewei_coupon_goods` (
   `coupon_type_id` int(11) NOT NULL COMMENT '优惠券类型id',
   `goods_id` int(11) NOT NULL COMMENT '商品id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='优惠券使用商品表';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='优惠券使用商品表';
 
 -- ----------------------------
 -- Records of ewei_coupon_goods
@@ -765,6 +840,28 @@ CREATE TABLE `ewei_coupon_goods` (
 INSERT INTO `ewei_coupon_goods` VALUES ('11', '20', '32');
 INSERT INTO `ewei_coupon_goods` VALUES ('13', '42', '32');
 INSERT INTO `ewei_coupon_goods` VALUES ('16', '1', '32');
+INSERT INTO `ewei_coupon_goods` VALUES ('17', '2', '33');
+INSERT INTO `ewei_coupon_goods` VALUES ('18', '2', '37');
+
+-- ----------------------------
+-- Table structure for ewei_coupon_goods_copy
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_coupon_goods_copy`;
+CREATE TABLE `ewei_coupon_goods_copy` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `coupon_type_id` int(11) NOT NULL COMMENT '优惠券类型id',
+  `goods_id` int(11) NOT NULL COMMENT '商品id',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='优惠券使用商品表';
+
+-- ----------------------------
+-- Records of ewei_coupon_goods_copy
+-- ----------------------------
+INSERT INTO `ewei_coupon_goods_copy` VALUES ('11', '20', '32');
+INSERT INTO `ewei_coupon_goods_copy` VALUES ('13', '42', '32');
+INSERT INTO `ewei_coupon_goods_copy` VALUES ('16', '1', '32');
+INSERT INTO `ewei_coupon_goods_copy` VALUES ('17', '2', '33');
+INSERT INTO `ewei_coupon_goods_copy` VALUES ('18', '2', '37');
 
 -- ----------------------------
 -- Table structure for ewei_coupon_type
@@ -786,23 +883,24 @@ CREATE TABLE `ewei_coupon_type` (
   `update_time` int(11) DEFAULT '0' COMMENT '修改时间',
   `thumb` varchar(255) DEFAULT NULL COMMENT '缩略图',
   PRIMARY KEY (`coupon_type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1365 COMMENT='优惠券类型表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1365 COMMENT='优惠券类型表';
 
 -- ----------------------------
 -- Records of ewei_coupon_type
 -- ----------------------------
 INSERT INTO `ewei_coupon_type` VALUES ('1', '测试优惠券', '10.00', '100', '31', '10.00', '0', '0', '1', '1514800601', '1517047003', '0', '0', '/uploads/thumb/20180102/dc761670dc98d2579e6e4571abc1422b.jpg');
+INSERT INTO `ewei_coupon_type` VALUES ('2', '满99减50', '50.00', '100', '12', '99.00', '3', '0', '1', '1515598829', '1516981232', '0', '0', '/uploads/common/1515598745.jpg');
 
 -- ----------------------------
 -- Table structure for ewei_district
 -- ----------------------------
 DROP TABLE IF EXISTS `ewei_district`;
 CREATE TABLE `ewei_district` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `district_id` int(11) NOT NULL AUTO_INCREMENT,
   `city_id` int(11) DEFAULT '0',
   `district_name` varchar(255) NOT NULL DEFAULT '',
   `sort` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`district_id`),
   KEY `IDX_g_district_DistrictName` (`district_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2870 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=50 COMMENT='地址 区';
 
@@ -3691,12 +3789,17 @@ CREATE TABLE `ewei_express_company` (
   `is_default` int(11) NOT NULL DEFAULT '0' COMMENT '是否设置为默认 0未设置 1 默认',
   `cost` decimal(7,2) NOT NULL DEFAULT '0.00' COMMENT '费用',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=420 COMMENT='物流公司';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=420 COMMENT='物流公司';
 
 -- ----------------------------
 -- Records of ewei_express_company
 -- ----------------------------
-INSERT INTO `ewei_express_company` VALUES ('4', '0', '顺丰快递', '3213', '1', '', '13867271823', '0', '/uploads/thumb/20180107/00650058f8dfac7cad51be2f21bf96fb.png', '1', '12.00');
+INSERT INTO `ewei_express_company` VALUES ('0', '1', '免运费', '000000', '1', '', '139281238129', '0', '/uploads/express/1515584613.jpg', '1', '0.00');
+INSERT INTO `ewei_express_company` VALUES ('4', '4', '顺丰快递', '3213', '1', '', '13867271823', '0', '/uploads/express/1515584600.png', '1', '12.00');
+INSERT INTO `ewei_express_company` VALUES ('8', '1', '韵达', '123123', '1', '', '123123124124', '0', '/uploads/express/1515585569.png', '0', '12.00');
+INSERT INTO `ewei_express_company` VALUES ('9', '4', '邮政', '123123', '1', '', '124215125124', '0', '/uploads/express/1515585694.jpg', '0', '12.00');
+INSERT INTO `ewei_express_company` VALUES ('10', '4', '免运费', '123123', '1', '', '124214124', '0', '/uploads/express/1515585883.png', '0', '99999.99');
+INSERT INTO `ewei_express_company` VALUES ('11', '0', '免运费', '000000', '1', '', '139281238129', '0', '/uploads/express/1515584613.jpg', '1', '0.00');
 
 -- ----------------------------
 -- Table structure for ewei_express_shipping_items
@@ -3767,6 +3870,7 @@ CREATE TABLE `ewei_goods` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '商品ID',
   `cid` smallint(5) unsigned NOT NULL COMMENT '分类ID',
   `sid` smallint(5) NOT NULL DEFAULT '0' COMMENT '商家ID',
+  `eid` smallint(5) NOT NULL COMMENT '运费模板ID',
   `name` varchar(255) NOT NULL DEFAULT '' COMMENT '标题',
   `prefix_title` varchar(255) NOT NULL COMMENT '前缀名称',
   `introduction` varchar(255) DEFAULT '' COMMENT '简介',
@@ -3779,6 +3883,7 @@ CREATE TABLE `ewei_goods` (
   `is_top` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否置顶  0 不置顶  1 置顶',
   `is_recommend` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否推荐  0 不推荐  1 推荐',
   `is_hot` tinyint(1) NOT NULL DEFAULT '0' COMMENT '热卖商品  0 否 1 是',
+  `is_collective` tinyint(1) NOT NULL,
   `sort` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `publish_time` datetime NOT NULL COMMENT '发布时间',
@@ -3788,18 +3893,23 @@ CREATE TABLE `ewei_goods` (
   `sp_price` decimal(7,2) unsigned NOT NULL COMMENT '商品售价',
   `sp_inventory` smallint(5) unsigned NOT NULL DEFAULT '999' COMMENT '商品库存',
   `sp_integral` smallint(5) unsigned NOT NULL COMMENT '商品积分赠送',
+  `give_integral` smallint(5) NOT NULL COMMENT '购买赠送积分',
+  `is_integral` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否允许积分购买',
   `sp_market` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '销售数量',
   `btime` datetime NOT NULL COMMENT '开始时间',
   `etime` datetime NOT NULL COMMENT '结束时间',
   `delete_time` datetime DEFAULT NULL COMMENT '删除时间',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COMMENT='商品表';
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COMMENT='商品表';
 
 -- ----------------------------
 -- Records of ewei_goods
 -- ----------------------------
-INSERT INTO `ewei_goods` VALUES ('32', '5', '0', '测试商品', '测试标题', '', '<p>奥术大师大所asdasd爱上了雕刻按时大厦开始打扫卡萨丁康佳的阿斯利康达到爱思帝卡死asdasd</p>', '', '1', '0', '/uploads/thumb/20180106/1accfe6fb2f64abdd2c6c53209a4b7d4.jpg', 'a:3:{i:0;s:52:\"/public/uploads/images/20180106/1515253865137219.jpg\";i:1;s:52:\"/public/uploads/images/20180106/1515253865909347.jpg\";i:2;s:52:\"/public/uploads/images/20180106/1515253865970581.png\";}', '1', '1', '0', '2', '2018-01-01 22:51:23', '2018-01-01 00:00:00', '300.00', '19.23', '0.00', '200.00', '65535', '0', '300', '2018-01-01 00:00:00', '2018-01-19 00:00:00', null, null);
+INSERT INTO `ewei_goods` VALUES ('33', '5', '1', '0', '无肩带隐形文胸薄款胸贴婚纱聚拢防滑漏背性感胸罩', '内衣乳贴上托', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2vch8axb9F1JjSZFqXXbotVXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2M54aa4z_F1JjSZFIXXcxHVXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2WpOJuhxmpuFjSZFNXXXrRXXa_!!169468122.jpg\"/> <img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2JTBsX8H8F1Jjy0FnXXb5AXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\" class=\"\"/> <img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2EMuAarH9F1JjSZFAXXba3VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2NqJuXYD8F1Jjy0FpXXcduVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2CstrX3L8F1JjSsphXXXknVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB26CFZX5GfF1Jjy0FjXXXZdVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2zk4sXYH8F1Jjy1zbXXaVNVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2HFl0X0WgF1Jjy0FhXXbeEFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2cxpZX.ifF1JjSspdXXclLpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2G8B_axf9F1JjSZFyXXXnOFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2ipmAphtmpuFjSZFqXXbHFpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2JmlZX5GfF1Jjy0FjXXXZdVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2S6RsX9f8F1Jjy0FeXXallpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2JLzDmHFlpuFjy0FgXXbRBVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB20qrlpctnpuFjSZFvXXbcTpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2t_zwpbxmpuFjSZJiXXXauVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2FkT_mH8kpuFjy0FcXXaUhpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2lDLypbBmpuFjSZFuXXaG_XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2eoJsX3L8F1JjSspjXXbZgpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2jkX1X0qgF1JjSsppXXaBNXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB214l8arL9F1JjSZFwXXcSuVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2SGp1X5afF1Jjy1zcXXcu5XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2BXR9ap6.F1JjSZFpXXcZjXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2JM8tX8P8F1JjSspaXXb4ypXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515575596.jpg', 'a:4:{i:0;s:35:\"/uploads/goods/1515575620134754.jpg\";i:1;s:35:\"/uploads/goods/1515575620230865.jpg\";i:2;s:35:\"/uploads/goods/1515575620534669.jpg\";i:3;s:35:\"/uploads/goods/1515575620101494.jpg\";}', '1', '1', '0', '0', '0', '2018-01-10 17:14:12', '2018-01-10 00:00:00', '32.00', '0.00', '0.00', '123.00', '32', '123', '0', '1', '32', '2018-01-10 00:00:00', '2018-01-26 00:00:00', null, null);
+INSERT INTO `ewei_goods` VALUES ('37', '5', '1', '0', '宫廷马甲吊袜带套装性感束身衣小胸女情趣内衣裤透视紧身制服激情', '服激情', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB23PzzXyrEK1JjSZFHXXcveXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB29X6CXw2DK1JjSZFOXXabwFXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2kJBpX.6EK1JjSZFDXXcIqFXa_!!169468122.jpg\"/> <img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2sEQUXnzGK1JjSsplXXbdspXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB279mnuM0kpuFjSspdXXX4YXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2RWrxXwYDK1JjSZFCXXX.vXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2inDzXxDBK1JjSZFhXXXFFFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2HJfuXpHFK1JjSZFzXXb23XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB22ZLwXxvEK1JjSZFPXXbWYpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2EbDuXwYDK1JjSZPfXXcY.pXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2M__JuYJmpuFjSZFwXXaE4VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2AWGCXl1tLeJjSszgXXcOHpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2co_xXu2CK1JjSZFjXXXk_VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2mrcRXgvGK1Jjy0FcXXXXmVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2p4YuXqTEK1JjSZFFXXb6xXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2UEM2lmJjpuFjy0FdXXXmoFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2NPtbuylnpuFjSZFgXXbi7FXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB20jUeq3JlpuFjSspjXXcT.pXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515578042.jpg', 'a:5:{i:0;s:35:\"/uploads/goods/1515578038343049.jpg\";i:1;s:35:\"/uploads/goods/1515578038186800.jpg\";i:2;s:35:\"/uploads/goods/1515578038187059.jpg\";i:3;s:35:\"/uploads/goods/1515578038126040.jpg\";i:4;s:35:\"/uploads/goods/1515578038120054.jpg\";}', '1', '1', '1', '0', '2', '2018-01-10 17:57:44', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '123', '0', '1', '123', '2018-01-12 00:00:00', '2018-02-01 00:00:00', null, null);
+INSERT INTO `ewei_goods` VALUES ('36', '5', '4', '9', '性感兔女郎紧身连体衣制服夜火情趣内衣成人', '小胸透视激情套装夜店', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2nCE.X0qgF1Jjy1zdXXc8dFXa_!!169468122.jpg\"/><br/> <img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2VwNaadmgF1Jjy1XaXXcSEFXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB28tD.aS69F1JjSZPiXXXfCXXa_!!169468122.jpg\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515576059.jpg', 'a:5:{i:0;s:35:\"/uploads/goods/1515576053116598.jpg\";i:1;s:35:\"/uploads/goods/1515576053110118.jpg\";i:2;s:35:\"/uploads/goods/1515576053123475.jpg\";i:3;s:35:\"/uploads/goods/1515576053202593.jpg\";i:4;s:35:\"/uploads/goods/1515576053831890.jpg\";}', '1', '1', '0', '0', '1', '2018-01-10 17:35:22', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '123', '0', '1', '123', '2018-01-09 00:00:00', '2018-01-27 00:00:00', null, null);
+INSERT INTO `ewei_goods` VALUES ('38', '5', '1', '9', '性感露胸包臀短裙空姐情趣内衣制服紧身激情套装透视女秘书OL夜店', '测试', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2NBngXbL9F1JjSZFlXXa2sVXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2uRSMXgMEF1JjSZFxXXbcVpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB279mnuM0kpuFjSspdXXX4YXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB23x6fXX_.F1JjSZFjXXahnXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB26ZO3XdmgF1Jjy0FaXXX5jpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB280vfXkz_F1JjSZFkXXcCaXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB25Vu4XcSfF1JjSspbXXcSkVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2XY1IXgIEF1JjSZFHXXbRVXXa_!!169468122.jpg\" class=\"\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2F.53XjmfF1JjSspcXXXZMXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2ydi3XoifF1JjSspdXXclLpXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '', '1', '0', '/uploads/goods_brand/1515581629.jpg', 'a:3:{i:0;s:35:\"/uploads/goods/1515581639839679.jpg\";i:1;s:35:\"/uploads/goods/1515581639469046.jpg\";i:2;s:35:\"/uploads/goods/1515581639395160.jpg\";}', '1', '1', '1', '0', '3', '2018-01-10 18:54:30', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '1232', '32', '1', '123', '2018-01-19 00:00:00', '2018-01-30 00:00:00', null, null);
 
 -- ----------------------------
 -- Table structure for ewei_goods_browse_record
@@ -3831,13 +3941,46 @@ CREATE TABLE `ewei_goods_collective` (
   `end_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '结束时间',
   `state` enum('1','0') NOT NULL DEFAULT '0' COMMENT '0未开启   1开启',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COMMENT='开团规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COMMENT='开团规则表';
 
 -- ----------------------------
 -- Records of ewei_goods_collective
 -- ----------------------------
 INSERT INTO `ewei_goods_collective` VALUES ('11', '30', '12312', '123.00', '123', '2021-12-30 20:20:11', '2017-08-30 20:20:13', '1');
-INSERT INTO `ewei_goods_collective` VALUES ('13', '32', '2', '3.00', '3600', '2018-01-01 22:51:37', '2018-01-01 22:51:37', '1');
+INSERT INTO `ewei_goods_collective` VALUES ('18', '32', '2', '3.00', '3600', '2018-01-01 22:51:37', '2018-01-01 22:51:37', '1');
+INSERT INTO `ewei_goods_collective` VALUES ('29', '36', '123', '123.00', '123', '2018-01-10 00:00:00', '2018-01-18 00:00:00', '1');
+INSERT INTO `ewei_goods_collective` VALUES ('20', '37', '123', '123.00', '123', '2018-01-10 00:00:00', '2018-01-26 00:00:00', '1');
+INSERT INTO `ewei_goods_collective` VALUES ('27', '38', '2', '123.00', '213', '2018-01-10 00:00:00', '2018-01-26 00:00:00', '1');
+
+-- ----------------------------
+-- Table structure for ewei_goods_sku
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_goods_sku`;
+CREATE TABLE `ewei_goods_sku` (
+  `sku_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '表序号',
+  `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品编号',
+  `sku_name` varchar(500) NOT NULL DEFAULT '' COMMENT 'SKU名称',
+  `attr_value_items` varchar(255) NOT NULL DEFAULT '' COMMENT '属性和属性值 id串 attribute + attribute value 表ID分号分隔',
+  `attr_value_items_format` varchar(500) NOT NULL DEFAULT '' COMMENT '属性和属性值id串组合json格式',
+  `market_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '市场价',
+  `price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '价格',
+  `promote_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '促销价格',
+  `cost_price` decimal(19,2) NOT NULL DEFAULT '0.00' COMMENT '成本价',
+  `stock` int(11) NOT NULL DEFAULT '0' COMMENT '库存',
+  `picture` int(11) NOT NULL DEFAULT '0' COMMENT '如果是第一个sku编码, 可以加图片',
+  `code` varchar(255) NOT NULL DEFAULT '' COMMENT '商家编码',
+  `QRcode` varchar(255) NOT NULL DEFAULT '' COMMENT '商品二维码',
+  `create_date` int(11) DEFAULT '0' COMMENT '创建时间',
+  `update_date` int(11) DEFAULT '0' COMMENT '修改时间',
+  PRIMARY KEY (`sku_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=481 COMMENT='商品skui规格价格库存信息表';
+
+-- ----------------------------
+-- Records of ewei_goods_sku
+-- ----------------------------
+INSERT INTO `ewei_goods_sku` VALUES ('108', '38', '颜色', '白+红', '', '0.00', '123.00', '0.00', '123.00', '999999', '0', '', '', '0', '0');
+INSERT INTO `ewei_goods_sku` VALUES ('109', '38', '颜色', '红', '', '0.00', '123.00', '0.00', '123.00', '99999', '0', '', '', '0', '0');
+INSERT INTO `ewei_goods_sku` VALUES ('110', '38', '颜色', '白', '', '0.00', '123.00', '0.00', '123.00', '99999', '0', '', '', '0', '0');
 
 -- ----------------------------
 -- Table structure for ewei_link
@@ -3851,17 +3994,116 @@ CREATE TABLE `ewei_link` (
   `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '状态 1 显示  2 隐藏',
   `sort` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='友情链接表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='友情链接表';
 
 -- ----------------------------
 -- Records of ewei_link
 -- ----------------------------
+INSERT INTO `ewei_link` VALUES ('2', '优衣库特约赞助', 'http://www.taobao.com', '/uploads/common/1515598303.jpg', '1', '0');
 
 -- ----------------------------
 -- Table structure for ewei_order
 -- ----------------------------
 DROP TABLE IF EXISTS `ewei_order`;
 CREATE TABLE `ewei_order` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单id',
+  `order_no` varchar(255) DEFAULT '' COMMENT '订单编号',
+  `out_trade_no` varchar(100) NOT NULL DEFAULT '0' COMMENT '外部交易号',
+  `order_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '订单类型',
+  `payment_type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '支付类型。取值范围：\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEIXIN (微信自有支付)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWEIXIN_DAIXIAO (微信代销支付)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nALIPAY (支付宝支付)',
+  `shipping_type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '订单配送方式',
+  `order_from` varchar(255) NOT NULL DEFAULT '' COMMENT '订单来源',
+  `buyer_id` int(11) NOT NULL COMMENT '买家id',
+  `user_name` varchar(50) NOT NULL DEFAULT '' COMMENT '买家会员名称',
+  `buyer_ip` varchar(20) NOT NULL DEFAULT '' COMMENT '买家ip',
+  `buyer_message` varchar(255) NOT NULL DEFAULT '' COMMENT '买家附言',
+  `buyer_invoice` varchar(255) NOT NULL DEFAULT '' COMMENT '买家发票信息',
+  `receiver_mobile` varchar(11) NOT NULL DEFAULT '' COMMENT '收货人的手机号码',
+  `receiver_province` int(11) NOT NULL COMMENT '收货人所在省',
+  `receiver_city` int(11) NOT NULL COMMENT '收货人所在城市',
+  `receiver_district` int(11) NOT NULL COMMENT '收货人所在街道',
+  `receiver_address` varchar(255) NOT NULL DEFAULT '' COMMENT '收货人详细地址',
+  `receiver_zip` varchar(6) NOT NULL DEFAULT '' COMMENT '收货人邮编',
+  `receiver_name` varchar(50) NOT NULL DEFAULT '' COMMENT '收货人姓名',
+  `shop_id` int(11) NOT NULL COMMENT '卖家店铺id',
+  `shop_name` varchar(100) NOT NULL DEFAULT '' COMMENT '卖家店铺名称',
+  `seller_star` tinyint(4) NOT NULL DEFAULT '0' COMMENT '卖家对订单的标注星标',
+  `seller_memo` varchar(255) NOT NULL DEFAULT '' COMMENT '卖家对订单的备注',
+  `consign_time_adjust` int(11) NOT NULL DEFAULT '0' COMMENT '卖家延迟发货时间',
+  `goods_money` decimal(19,2) NOT NULL COMMENT '商品总价',
+  `order_money` decimal(10,2) NOT NULL COMMENT '订单总价',
+  `point` int(11) NOT NULL COMMENT '订单消耗积分',
+  `point_money` decimal(10,2) NOT NULL COMMENT '订单消耗积分抵多少钱',
+  `coupon_money` decimal(10,2) NOT NULL COMMENT '订单代金券支付金额',
+  `coupon_id` int(11) NOT NULL COMMENT '订单代金券id',
+  `user_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '订单余额支付金额',
+  `user_platform_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '用户平台余额支付',
+  `promotion_money` decimal(10,2) NOT NULL COMMENT '订单优惠活动金额',
+  `shipping_money` decimal(10,2) NOT NULL COMMENT '订单运费',
+  `pay_money` decimal(10,2) NOT NULL COMMENT '订单实付金额',
+  `refund_money` decimal(10,2) NOT NULL COMMENT '订单退款金额',
+  `coin_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '购物币金额',
+  `give_point` int(11) NOT NULL COMMENT '订单赠送积分',
+  `give_coin` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '订单成功之后返购物币',
+  `order_status` tinyint(4) NOT NULL COMMENT '订单状态',
+  `pay_status` tinyint(4) NOT NULL COMMENT '订单付款状态',
+  `shipping_status` tinyint(4) NOT NULL COMMENT '订单配送状态',
+  `review_status` tinyint(4) NOT NULL COMMENT '订单评价状态',
+  `feedback_status` tinyint(4) NOT NULL COMMENT '订单维权状态',
+  `is_evaluate` smallint(6) NOT NULL DEFAULT '0' COMMENT '是否评价 0为未评价 1为已评价 2为已追评',
+  `tax_money` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `shipping_company_id` int(11) NOT NULL DEFAULT '0' COMMENT '配送物流公司ID',
+  `give_point_type` int(11) NOT NULL DEFAULT '1' COMMENT '积分返还类型 1 订单完成  2 订单收货 3  支付订单',
+  `pay_time` int(11) DEFAULT '0' COMMENT '订单付款时间',
+  `shipping_time` int(11) DEFAULT '0' COMMENT '买家要求配送时间',
+  `sign_time` int(11) DEFAULT '0' COMMENT '买家签收时间',
+  `consign_time` int(11) DEFAULT '0' COMMENT '卖家发货时间',
+  `create_time` int(11) DEFAULT '0' COMMENT '订单创建时间',
+  `finish_time` int(11) DEFAULT '0' COMMENT '订单完成时间',
+  `is_deleted` int(1) NOT NULL DEFAULT '0' COMMENT '订单是否已删除',
+  `operator_type` int(1) NOT NULL DEFAULT '0' COMMENT '操作人类型  1店铺  2用户',
+  `operator_id` int(11) NOT NULL DEFAULT '0' COMMENT '操作人id',
+  `refund_balance_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '订单退款余额',
+  `fixed_telephone` varchar(50) NOT NULL DEFAULT '' COMMENT '固定电话',
+  PRIMARY KEY (`id`),
+  KEY `UK_ns_order_buyer_id` (`buyer_id`),
+  KEY `UK_ns_order_order_no` (`order_no`),
+  KEY `UK_ns_order_pay_status` (`pay_status`),
+  KEY `UK_ns_order_status` (`order_status`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=440 COMMENT='订单表';
+
+-- ----------------------------
+-- Records of ewei_order
+-- ----------------------------
+INSERT INTO `ewei_order` VALUES ('1', '2018010715250001', '151531065872271000', '1', '1', '1', '3', '3', 'admin', '1', '', '', '13932812923', '34', '345', '2869', '123123', '', '123', '1', 'Niushop开源商城', '0', '', '0', '2600.00', '2600.00', '0', '0.00', '0.00', '0', '0.00', '0.00', '0.00', '0.00', '2600.00', '0.00', '0.00', '0', '0.00', '3', '2', '2', '0', '0', '0', '0.00', '1', '3', '1515310659', '0', '1515310728', '1515310707', '1515310645', '0', '0', '0', '0', '0.00', '123');
+INSERT INTO `ewei_order` VALUES ('2', '2018010923320001', '151551195115351000', '1', '1', '1', '3', '3', 'admin', '1', '', '', '13932812923', '34', '345', '2869', '123123', '', '123', '1', 'Niushop开源商城', '0', '', '0', '2600.00', '2606.00', '0', '0.00', '0.00', '0', '0.00', '0.00', '0.00', '6.00', '2606.00', '0.00', '0.00', '0', '0.00', '5', '0', '0', '0', '0', '0', '0.00', '1', '3', '0', '0', '0', '0', '1515511952', '0', '0', '0', '0', '0.00', '123');
+INSERT INTO `ewei_order` VALUES ('3', '2018010923300001', '151551201065481000', '1', '1', '1', '3', '3', 'admin', '1', '', '', '13932812923', '34', '345', '2869', '123123', '', '123', '1', 'Niushop开源商城', '0', '', '0', '12692.00', '12698.00', '0', '0.00', '0.00', '0', '0.00', '0.00', '0.00', '6.00', '12698.00', '0.00', '0.00', '0', '0.00', '5', '0', '0', '0', '0', '0', '0.00', '1', '3', '0', '0', '0', '0', '1515512010', '0', '0', '0', '0', '0.00', '123');
+
+-- ----------------------------
+-- Table structure for ewei_order_action
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_order_action`;
+CREATE TABLE `ewei_order_action` (
+  `action_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '动作id',
+  `order_id` int(11) NOT NULL COMMENT '订单id',
+  `action` varchar(255) NOT NULL DEFAULT '' COMMENT '动作内容',
+  `uid` int(11) NOT NULL DEFAULT '0' COMMENT '操作人id',
+  `user_name` varchar(50) NOT NULL DEFAULT '' COMMENT '操作人',
+  `order_status` int(11) NOT NULL COMMENT '订单大状态',
+  `order_status_text` varchar(255) NOT NULL DEFAULT '' COMMENT '订单状态名称',
+  `action_time` int(11) DEFAULT '0' COMMENT '操作时间',
+  PRIMARY KEY (`action_id`)
+) ENGINE=MEMORY DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1706 COMMENT='订单操作表';
+
+-- ----------------------------
+-- Records of ewei_order_action
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ewei_order_block
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_order_block`;
+CREATE TABLE `ewei_order_block` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_no` varchar(20) NOT NULL COMMENT '订单号',
   `user_id` int(11) NOT NULL COMMENT '外键，用户id，注意并不是openid',
@@ -3882,7 +4124,7 @@ CREATE TABLE `ewei_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单表';
 
 -- ----------------------------
--- Records of ewei_order
+-- Records of ewei_order_block
 -- ----------------------------
 
 -- ----------------------------
@@ -3890,6 +4132,65 @@ CREATE TABLE `ewei_order` (
 -- ----------------------------
 DROP TABLE IF EXISTS `ewei_order_goods`;
 CREATE TABLE `ewei_order_goods` (
+  `order_goods_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '订单项ID',
+  `order_id` int(11) NOT NULL COMMENT '订单ID',
+  `goods_id` int(11) NOT NULL COMMENT '商品ID',
+  `goods_name` varchar(50) NOT NULL COMMENT '商品名称',
+  `sku_id` int(11) NOT NULL COMMENT 'skuID',
+  `sku_name` varchar(50) NOT NULL COMMENT 'sku名称',
+  `price` decimal(19,2) NOT NULL DEFAULT '0.00' COMMENT '商品价格',
+  `cost_price` decimal(19,2) NOT NULL DEFAULT '0.00' COMMENT '商品成本价',
+  `num` varchar(255) NOT NULL DEFAULT '0' COMMENT '购买数量',
+  `adjust_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '调整金额',
+  `goods_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '商品总价',
+  `goods_picture` int(11) NOT NULL DEFAULT '0' COMMENT '商品图片',
+  `shop_id` int(11) NOT NULL DEFAULT '1' COMMENT '店铺ID',
+  `buyer_id` int(11) NOT NULL DEFAULT '0' COMMENT '购买人ID',
+  `point_exchange_type` int(11) NOT NULL DEFAULT '0' COMMENT '积分兑换类型0.非积分兑换1.积分兑换',
+  `goods_type` varchar(255) NOT NULL DEFAULT '1' COMMENT '商品类型',
+  `promotion_id` int(11) NOT NULL DEFAULT '0' COMMENT '促销ID',
+  `promotion_type_id` int(11) NOT NULL DEFAULT '0' COMMENT '促销类型',
+  `order_type` int(11) NOT NULL DEFAULT '1' COMMENT '订单类型',
+  `order_status` int(11) NOT NULL DEFAULT '0' COMMENT '订单状态',
+  `give_point` int(11) NOT NULL DEFAULT '0' COMMENT '积分数量',
+  `shipping_status` int(11) NOT NULL DEFAULT '0' COMMENT '物流状态',
+  `refund_type` int(11) NOT NULL DEFAULT '1' COMMENT '退款方式',
+  `refund_require_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '退款金额',
+  `refund_reason` varchar(255) NOT NULL DEFAULT '' COMMENT '退款原因',
+  `refund_shipping_code` varchar(255) NOT NULL DEFAULT '' COMMENT '退款物流单号',
+  `refund_shipping_company` varchar(255) NOT NULL DEFAULT '0' COMMENT '退款物流公司名称',
+  `refund_real_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '实际退款金额',
+  `refund_status` int(1) NOT NULL DEFAULT '0' COMMENT '退款状态',
+  `memo` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
+  `is_evaluate` smallint(6) NOT NULL DEFAULT '0' COMMENT '是否评价 0为未评价 1为已评价 2为已追评',
+  `refund_time` int(11) DEFAULT '0' COMMENT '退款时间',
+  `refund_balance_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '订单退款余额',
+  `tmp_express_company` varchar(255) NOT NULL DEFAULT '' COMMENT '批量打印时添加的临时物流公司',
+  `tmp_express_company_id` int(11) NOT NULL DEFAULT '0' COMMENT '批量打印时添加的临时物流公司id',
+  `tmp_express_no` varchar(50) NOT NULL DEFAULT '' COMMENT '批量打印时添加的临时订单编号',
+  PRIMARY KEY (`order_goods_id`),
+  KEY `UK_ns_order_goods_buyer_id` (`buyer_id`),
+  KEY `UK_ns_order_goods_goods_id` (`goods_id`),
+  KEY `UK_ns_order_goods_order_id` (`order_id`),
+  KEY `UK_ns_order_goods_promotion_id` (`promotion_id`),
+  KEY `UK_ns_order_goods_sku_id` (`sku_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=289 COMMENT='订单商品表';
+
+-- ----------------------------
+-- Records of ewei_order_goods
+-- ----------------------------
+INSERT INTO `ewei_order_goods` VALUES ('1', '1', '11', 'Skyworth/创维 55V9E 55吋4K超高清智能网络平板LED液晶电视机 60', '38', '', '2600.00', '0.00', '1', '0.00', '2600.00', '1', '0', '3', '0', '1', '0', '0', '1', '0', '0', '1', '1', '0.00', '', '', '0', '0.00', '0', '', '0', '0', '0.00', '', '0', '');
+INSERT INTO `ewei_order_goods` VALUES ('2', '2', '11', 'Skyworth/创维 55V9E 55吋4K超高清智能网络平板LED液晶电视机 60', '38', '', '2600.00', '0.00', '1', '0.00', '2600.00', '2', '0', '3', '0', '1', '0', '0', '1', '0', '0', '0', '1', '0.00', '', '', '0', '0.00', '0', '', '0', '0', '0.00', '', '0', '');
+INSERT INTO `ewei_order_goods` VALUES ('3', '3', '11', 'Skyworth/创维 55V9E 55吋4K超高清智能网络平板LED液晶电视机 60', '38', '', '2600.00', '0.00', '1', '0.00', '2600.00', '3', '0', '3', '0', '1', '0', '0', '1', '0', '0', '0', '1', '0.00', '', '', '0', '0.00', '0', '', '0', '0', '0.00', '', '0', '');
+INSERT INTO `ewei_order_goods` VALUES ('4', '3', '11', '新品TCL 49A660U 49英寸4K金属纤薄高清智能LED液晶网络平板电视', '37', '', '3496.00', '0.00', '1', '0.00', '3496.00', '4', '0', '3', '0', '1', '0', '0', '1', '0', '0', '0', '1', '0.00', '', '', '0', '0.00', '0', '', '0', '0', '0.00', '', '0', '');
+INSERT INTO `ewei_order_goods` VALUES ('5', '3', '11', 'Xiaomi/小米 小米电视3s 55英寸 4k壁挂智能液晶平板电视机50 60', '36', '', '2396.00', '0.00', '1', '0.00', '2396.00', '5', '0', '3', '0', '1', '0', '0', '1', '0', '0', '0', '1', '0.00', '', '', '0', '0.00', '0', '', '0', '0', '0.00', '', '0', '');
+INSERT INTO `ewei_order_goods` VALUES ('6', '3', '11', 'Sharp/夏普 LCD-70SU665A 70英寸高清4K网络智能液晶平板电视机65', '35', '', '4200.00', '0.00', '1', '0.00', '4200.00', '6', '0', '3', '0', '1', '0', '0', '1', '0', '0', '0', '1', '0.00', '', '', '0', '0.00', '0', '', '0', '0', '0.00', '', '0', '');
+
+-- ----------------------------
+-- Table structure for ewei_order_goods_block
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_order_goods_block`;
+CREATE TABLE `ewei_order_goods_block` (
   `order_id` int(11) NOT NULL COMMENT '联合主键，订单id',
   `product_id` int(11) NOT NULL COMMENT '联合主键，商品id',
   `count` int(11) NOT NULL COMMENT '商品数量',
@@ -3899,7 +4200,7 @@ CREATE TABLE `ewei_order_goods` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单关联商品表';
 
 -- ----------------------------
--- Records of ewei_order_goods
+-- Records of ewei_order_goods_block
 -- ----------------------------
 
 -- ----------------------------
@@ -3923,17 +4224,75 @@ CREATE TABLE `ewei_order_goods_express` (
   KEY `UK_ns_order_goods_express_order_goods_id_array` (`order_goods_id_array`),
   KEY `UK_ns_order_goods_express_order_id` (`order_id`),
   KEY `UK_ns_order_goods_express_uid` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='商品订单物流信息表（多次发货）';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='商品订单物流信息表（多次发货）';
 
 -- ----------------------------
 -- Records of ewei_order_goods_express
 -- ----------------------------
+INSERT INTO `ewei_order_goods_express` VALUES ('1', '1', '1', 'sdfsdf', '1', '1', 'sdfsdf', '123123123', '3', 'admin', '', '1515310707');
 
 -- ----------------------------
--- Table structure for ewei_product_property
+-- Table structure for ewei_order_goods_express_block
 -- ----------------------------
-DROP TABLE IF EXISTS `ewei_product_property`;
-CREATE TABLE `ewei_product_property` (
+DROP TABLE IF EXISTS `ewei_order_goods_express_block`;
+CREATE TABLE `ewei_order_goods_express_block` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL COMMENT '订单id',
+  `order_goods_id_array` varchar(255) NOT NULL COMMENT '订单项商品组合列表',
+  `express_name` varchar(50) NOT NULL DEFAULT '' COMMENT '包裹名称  （包裹- 1 包裹 - 2）',
+  `shipping_type` tinyint(4) NOT NULL COMMENT '发货方式1 需要物流 0无需物流',
+  `express_company_id` int(11) NOT NULL COMMENT '快递公司id',
+  `express_company` varchar(255) NOT NULL DEFAULT '' COMMENT '物流公司名称',
+  `express_no` varchar(50) NOT NULL COMMENT '运单编号',
+  `uid` int(11) NOT NULL COMMENT '用户id',
+  `user_name` varchar(50) NOT NULL COMMENT '用户名',
+  `memo` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
+  `shipping_time` int(11) DEFAULT '0' COMMENT '发货时间',
+  PRIMARY KEY (`id`),
+  KEY `UK_ns_order_goods_express_order_goods_id_array` (`order_goods_id_array`),
+  KEY `UK_ns_order_goods_express_order_id` (`order_id`),
+  KEY `UK_ns_order_goods_express_uid` (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='商品订单物流信息表（多次发货）';
+
+-- ----------------------------
+-- Records of ewei_order_goods_express_block
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ewei_order_payment
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_order_payment`;
+CREATE TABLE `ewei_order_payment` (
+  `out_trade_no` varchar(30) NOT NULL COMMENT '支付单编号',
+  `shop_id` int(11) NOT NULL DEFAULT '0' COMMENT '执行支付的相关店铺ID（0平台）',
+  `type` int(11) NOT NULL DEFAULT '1' COMMENT '订单类型1.商城订单2.交易商支付',
+  `type_alis_id` int(11) NOT NULL DEFAULT '0' COMMENT '订单类型关联ID',
+  `pay_body` varchar(255) NOT NULL DEFAULT '' COMMENT '订单支付简介',
+  `pay_detail` varchar(1000) NOT NULL DEFAULT '' COMMENT '订单支付详情',
+  `pay_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '支付金额',
+  `pay_status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '支付状态',
+  `pay_type` int(11) NOT NULL DEFAULT '1' COMMENT '支付方式',
+  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
+  `pay_time` int(11) DEFAULT '0' COMMENT '支付时间',
+  `trade_no` varchar(30) NOT NULL DEFAULT '' COMMENT '交易号，支付宝退款用，微信传入空',
+  KEY `IDX_ns_order_payment_out_trade_no` (`out_trade_no`),
+  KEY `IDX_ns_order_payment_pay_status` (`pay_status`),
+  KEY `IDX_ns_order_payment_pay_type` (`pay_type`),
+  KEY `IDX_ns_order_payment_shop_id` (`shop_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=963 COMMENT='订单支付表';
+
+-- ----------------------------
+-- Records of ewei_order_payment
+-- ----------------------------
+INSERT INTO `ewei_order_payment` VALUES ('151531065872271000', '0', '1', '1', 'Niushop开源商城订单', 'Niushop开源商城订单', '2600.00', '1', '10', '1515310645', '1515310659', '');
+INSERT INTO `ewei_order_payment` VALUES ('151551195115351000', '0', '1', '2', 'Niushop开源商城订单', 'Niushop开源商城订单', '2606.00', '0', '1', '1515511952', '0', '');
+INSERT INTO `ewei_order_payment` VALUES ('151551201065481000', '0', '1', '3', 'Niushop开源商城订单', 'Niushop开源商城订单', '12698.00', '0', '1', '1515512010', '0', '');
+
+-- ----------------------------
+-- Table structure for ewei_product_property_block
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_product_property_block`;
+CREATE TABLE `ewei_product_property_block` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT '' COMMENT '详情属性名称',
   `detail` varchar(255) NOT NULL COMMENT '详情属性',
@@ -3944,7 +4303,7 @@ CREATE TABLE `ewei_product_property` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品规格';
 
 -- ----------------------------
--- Records of ewei_product_property
+-- Records of ewei_product_property_block
 -- ----------------------------
 
 -- ----------------------------
@@ -3952,11 +4311,11 @@ CREATE TABLE `ewei_product_property` (
 -- ----------------------------
 DROP TABLE IF EXISTS `ewei_province`;
 CREATE TABLE `ewei_province` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `province_id` int(11) NOT NULL AUTO_INCREMENT,
   `area_id` tinyint(4) NOT NULL DEFAULT '0',
   `province_name` varchar(255) NOT NULL DEFAULT '',
   `sort` int(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`province_id`),
   KEY `IDX_g_province_ProvinceName` (`province_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=481 COMMENT='省份表';
 
@@ -4031,13 +4390,13 @@ CREATE TABLE `ewei_shop` (
   `shop_platform_commission_rate` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '平台抽取佣金比率',
   `latitude_longitude` varchar(255) NOT NULL DEFAULT '' COMMENT '线下店铺地图经纬度',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='店铺数据表';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='店铺数据表';
 
 -- ----------------------------
 -- Records of ewei_shop
 -- ----------------------------
-INSERT INTO `ewei_shop` VALUES ('1', '官方旗舰店', '1', '0', '1', '', '0', '0', '0', '', '', '1', '', '0', '/uploads/thumb/20180107/35851c4f1e9abf9a37b2dafae98d5b2c.jpg', '', '', '', '0', '1', '0.00', '0.00', '0.00', '', '', '5.00', '111.491085,40.138736');
-INSERT INTO `ewei_shop` VALUES ('4', '官方旗舰店', '0', '23', '1', '', '0', '0', '0', '123', '123', '0', '', '0', '/uploads/thumb/20180107/35851c4f1e9abf9a37b2dafae98d5b2c.jpg', '', '', '123', '0', '0', '0.00', '0.00', '0.00', '', '', '0.00', '111.491085,40.138736');
+INSERT INTO `ewei_shop` VALUES ('1', '官方旗舰店', '0', '1', '1', '', '1', '1', '2', '国家大剧院', '01000', '0', '', '0', '/uploads/common/1515604929.jpg', '/uploads/common/1515605239.jpg', '', '12354525458', '0', '0', '0.00', '0.00', '0.00', '', '', '0.00', '113.031239,23.052597');
+INSERT INTO `ewei_shop` VALUES ('4', '优衣库', '0', '23', '1', '', '6', '2', '5', 'naiasdasdkalsjdj', '000302', '0', '', '0', '/uploads/common/1515597431.jpg', '/uploads/common/1515597471.jpg', '', '12938129239', '0', '0', '0.00', '0.00', '0.00', '', '', '0.00', '111.491085,40.138736');
 
 -- ----------------------------
 -- Table structure for ewei_shop_group
@@ -4093,11 +4452,13 @@ CREATE TABLE `ewei_theme` (
   `sort` tinyint(1) NOT NULL DEFAULT '0' COMMENT '排序',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态  0 隐藏  1 显示',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='主题信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='主题信息表';
 
 -- ----------------------------
 -- Records of ewei_theme
 -- ----------------------------
+INSERT INTO `ewei_theme` VALUES ('1', '0', '积分商城', '', 'http://admin.ewei.com', '/uploads/common/1515602736.png', '_self', '积分商城', '0', null, '0', null, '0', '1');
+INSERT INTO `ewei_theme` VALUES ('2', '0', '附近店铺', '', 'http://admin.ewei.com', '/uploads/common/1515602830.png', '_self', '附近店铺', '0', null, '0', null, '0', '1');
 
 -- ----------------------------
 -- Table structure for ewei_theme_product
@@ -4199,6 +4560,161 @@ CREATE TABLE `ewei_user_rank` (
 -- ----------------------------
 -- Records of ewei_user_rank
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for ns_order_goods_promotion_details
+-- ----------------------------
+DROP TABLE IF EXISTS `ns_order_goods_promotion_details`;
+CREATE TABLE `ns_order_goods_promotion_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL COMMENT '订单ID',
+  `sku_id` int(11) NOT NULL COMMENT '商品skuid',
+  `promotion_type` varbinary(255) NOT NULL COMMENT '优惠类型规则ID（满减对应规则）',
+  `promotion_id` int(11) NOT NULL COMMENT '优惠ID',
+  `discount_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '优惠的金额，单位：元，精确到小数点后两位',
+  `used_time` int(11) DEFAULT '0' COMMENT '使用时间',
+  PRIMARY KEY (`id`),
+  KEY `IDX_ns_order_goods_promotion_d_order_id` (`order_id`),
+  KEY `IDX_ns_order_goods_promotion_d_promotion_id` (`promotion_id`),
+  KEY `IDX_ns_order_goods_promotion_d_promotion_type` (`promotion_type`),
+  KEY `IDX_ns_order_goods_promotion_d_sku_id` (`sku_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=8192 COMMENT='订单商品优惠详情';
+
+-- ----------------------------
+-- Records of ns_order_goods_promotion_details
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ns_order_pickup
+-- ----------------------------
+DROP TABLE IF EXISTS `ns_order_pickup`;
+CREATE TABLE `ns_order_pickup` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int(10) NOT NULL DEFAULT '0' COMMENT '订单ID',
+  `name` varchar(255) NOT NULL COMMENT '自提点名称',
+  `address` varchar(255) NOT NULL DEFAULT '' COMMENT '自提点地址',
+  `contact` varchar(255) NOT NULL DEFAULT '' COMMENT '联系人',
+  `phone` varchar(255) NOT NULL DEFAULT '' COMMENT '联系电话',
+  `city_id` int(11) NOT NULL COMMENT '市ID',
+  `province_id` int(11) NOT NULL COMMENT '省ID',
+  `district_id` int(11) NOT NULL COMMENT '区县ID',
+  `supplier_id` int(11) NOT NULL DEFAULT '0' COMMENT '供应门店ID',
+  `longitude` varchar(255) NOT NULL DEFAULT '' COMMENT '经度',
+  `latitude` varchar(255) NOT NULL DEFAULT '' COMMENT '维度',
+  `buyer_name` varchar(50) NOT NULL DEFAULT '' COMMENT '提货人姓名',
+  `buyer_mobile` varchar(255) NOT NULL DEFAULT '' COMMENT '提货人电话',
+  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '提货备注信息',
+  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='订单自提点管理';
+
+-- ----------------------------
+-- Records of ns_order_pickup
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ns_order_promotion_details
+-- ----------------------------
+DROP TABLE IF EXISTS `ns_order_promotion_details`;
+CREATE TABLE `ns_order_promotion_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL COMMENT '订单ID',
+  `promotion_type_id` int(11) NOT NULL COMMENT '优惠类型规则ID（满减对应规则）',
+  `promotion_id` int(11) NOT NULL COMMENT '优惠ID',
+  `promotion_type` varchar(255) NOT NULL COMMENT '优惠类型',
+  `promotion_name` varchar(50) NOT NULL COMMENT '该优惠活动的名称',
+  `promotion_condition` varchar(255) NOT NULL DEFAULT '' COMMENT '优惠使用条件说明',
+  `discount_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '优惠的金额，单位：元，精确到小数点后两位',
+  `used_time` int(11) DEFAULT '0' COMMENT '使用时间',
+  PRIMARY KEY (`id`),
+  KEY `UK_ns_order_promotion_details_order_id` (`order_id`),
+  KEY `UK_ns_order_promotion_details_promotion_id` (`promotion_id`),
+  KEY `UK_ns_order_promotion_details_promotion_type` (`promotion_type`),
+  KEY `UK_ns_order_promotion_details_promotion_type_id` (`promotion_type_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=364 COMMENT='订单优惠详情';
+
+-- ----------------------------
+-- Records of ns_order_promotion_details
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ns_order_refund
+-- ----------------------------
+DROP TABLE IF EXISTS `ns_order_refund`;
+CREATE TABLE `ns_order_refund` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `order_goods_id` int(11) NOT NULL COMMENT '订单商品表id',
+  `refund_status` varchar(255) NOT NULL COMMENT '操作状态\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n流程状态(refund_status)	状态名称(refund_status_name)	操作时间\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1	买家申请	发起了退款申请,等待卖家处理\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2	等待买家退货	卖家已同意退款申请,等待买家退货\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3	等待卖家确认收货	买家已退货,等待卖家确认收货\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4	等待卖家确认退款	卖家同意退款\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0	退款已成功	卖家退款给买家，本次维权结束\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-1	退款已拒绝	卖家拒绝本次退款，本次维权结束\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-2	退款已关闭	主动撤销退款，退款关闭\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-3	退款申请不通过	拒绝了本次退款申请,等待买家修改\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n',
+  `action` varchar(255) NOT NULL COMMENT '退款操作内容描述',
+  `action_way` tinyint(4) NOT NULL DEFAULT '0' COMMENT '操作方 1 买家 2 卖家',
+  `action_userid` varchar(255) NOT NULL DEFAULT '0' COMMENT '操作人id',
+  `action_username` varchar(255) NOT NULL DEFAULT '' COMMENT '操作人姓名',
+  `action_time` int(11) DEFAULT '0' COMMENT '操作时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=108 COMMENT='订单商品退货退款操作表';
+
+-- ----------------------------
+-- Records of ns_order_refund
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ns_order_refund_account_records
+-- ----------------------------
+DROP TABLE IF EXISTS `ns_order_refund_account_records`;
+CREATE TABLE `ns_order_refund_account_records` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `order_goods_id` int(11) NOT NULL COMMENT '订单项id',
+  `refund_trade_no` varchar(55) NOT NULL COMMENT '退款交易号',
+  `refund_money` decimal(10,2) NOT NULL COMMENT '退款金额',
+  `refund_way` int(11) NOT NULL COMMENT '退款方式（1：微信，2：支付宝，10：线下）',
+  `buyer_id` int(11) NOT NULL COMMENT '买家id',
+  `refund_time` int(11) NOT NULL COMMENT '退款时间',
+  `remark` varchar(255) DEFAULT '' COMMENT '备注',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单退款账户记录';
+
+-- ----------------------------
+-- Records of ns_order_refund_account_records
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ns_order_shipping_fee
+-- ----------------------------
+DROP TABLE IF EXISTS `ns_order_shipping_fee`;
+CREATE TABLE `ns_order_shipping_fee` (
+  `shipping_fee_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '运费模板ID',
+  `shipping_fee_name` varchar(30) NOT NULL DEFAULT '' COMMENT '运费模板名称',
+  `is_default` int(11) NOT NULL DEFAULT '0' COMMENT '是否是默认模板',
+  `co_id` int(11) NOT NULL DEFAULT '0' COMMENT '物流公司ID',
+  `shop_id` int(11) NOT NULL COMMENT '店铺ID',
+  `province_id_array` text NOT NULL COMMENT '省ID组',
+  `city_id_array` text NOT NULL COMMENT '市ID组',
+  `weight_is_use` int(11) NOT NULL DEFAULT '1' COMMENT '是否启用重量运费',
+  `weight_snum` decimal(8,2) NOT NULL DEFAULT '1.00' COMMENT '首重',
+  `weight_sprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '首重运费',
+  `weight_xnum` decimal(8,2) NOT NULL DEFAULT '1.00' COMMENT '续重',
+  `weight_xprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '续重运费',
+  `volume_is_use` int(11) NOT NULL DEFAULT '1' COMMENT '是否启用体积计算运费',
+  `volume_snum` decimal(8,2) NOT NULL DEFAULT '1.00' COMMENT '首体积量',
+  `volume_sprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '首体积运费',
+  `volume_xnum` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '续体积量',
+  `volume_xprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '续体积运费',
+  `bynum_is_use` int(11) NOT NULL DEFAULT '1' COMMENT '是否启用计件方式运费',
+  `bynum_snum` int(11) NOT NULL DEFAULT '0' COMMENT '首件',
+  `bynum_sprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '首件运费',
+  `bynum_xnum` int(11) NOT NULL DEFAULT '1' COMMENT '续件',
+  `bynum_xprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '续件运费',
+  `create_time` int(11) DEFAULT '0' COMMENT '创建日期',
+  `update_time` int(11) DEFAULT '0' COMMENT '最后更新时间',
+  `district_id_array` text COMMENT '区县ID组',
+  PRIMARY KEY (`shipping_fee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='运费模板';
+
+-- ----------------------------
+-- Records of ns_order_shipping_fee
+-- ----------------------------
+INSERT INTO `ns_order_shipping_fee` VALUES ('1', '默认', '0', '1', '0', '9,10,11,12,14,2,3,4,5,15,1,19,20,21,13,18,17,16,6,7,8,27,28,29,30,31', '73,74,75,76,77,78,79,80,81,82,84,85,86,83,94,95,96,97,93,92,87,88,89,90,91,98,99,100,101,102,114,113,112,111,110,103,104,105,106,107,108,109,133,134,132,131,124,125,126,127,128,129,130,2,12,13,11,10,3,4,5,6,7,8,9,14,15,16,17,18,19,20,21,22,23,24,32,33,34,35,36,31,30,25,26,27,28,29,135,136,137,138,139,140,141,142,151,143,144,145,146,147,148,149,150,1,215,216,217,214,213,204,205,206,207,208,210,211,212,203,202,197,198,199,200,201,209,218,219,220,221,222,223,224,225,226,227,228,229,230,231,233,232,123,122,121,120,119,118,117,116,115,183,194,195,196,193,192,184,185,186,187,188,189,190,191,174,175,176,177,178,179,180,181,173,172,169,170,171,182,164,165,166,167,168,163,162,161,153,154,155,156,157,158,159,160,152,50,42,43,44,45,46,47,48,49,41,40,37,38,39,52,53,54,55,56,57,58,59,51,61,60,62,72,71,63,64,65,66,67,68,69,70,296,297,295,294,288,289,290,291,292,293,298,299,300,301,302,303,304,305,306,307,308,309,310,311,316,317,318,319,315,314,312,313,324,320,321,322,323,325,337,338,339,340,341,342,336,335,334,326,327,328,329,330,331,332,333', '1', '0.00', '0.00', '0.00', '0.00', '1', '0.00', '0.00', '0.00', '0.00', '1', '1', '12.00', '2', '3.00', '1515310046', '0', '719,736,735,734,733,732,731,730,729,728,727,726,725,724,723,722,721,720,737,738,749,748,747,746,745,744,743,742,741,740,739,750,751,752,753,754,755,756,757,758,759,768,767,766,765,764,763,762,761,760,769,770,771,772,773,774,775,776,777,786,785,784,783,782,781,780,779,778,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,827,828,829,830,831,832,833,834,835,836,837,838,839,840,841,842,843,820,821,822,823,824,825,826,906,907,908,909,910,911,912,913,914,915,916,917,918,919,920,921,922,923,924,925,926,927,928,929,930,931,932,933,897,898,899,900,901,902,903,904,905,891,892,893,894,895,896,844,855,854,853,852,851,850,849,848,847,846,845,856,857,866,865,864,863,862,861,860,859,858,867,868,877,876,875,874,873,872,871,870,869,878,879,880,881,882,883,884,885,886,887,888,889,890,934,935,936,937,938,939,940,941,942,943,944,945,946,947,948,949,950,951,952,953,954,955,956,957,958,959,960,961,962,963,964,1032,1033,1034,1035,1036,1037,1038,1028,1029,1030,1031,1024,1025,1026,1027,1017,1018,1019,1020,1021,1022,1023,1012,1013,1014,1015,1016,965,966,967,968,969,970,971,972,973,982,981,980,979,978,977,976,975,974,983,984,985,986,987,988,989,990,991,992,993,994,995,996,997,998,999,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1200,1209,1208,1207,1206,1205,1204,1203,1202,1201,1210,1211,1221,1220,1219,1218,1217,1216,1215,1214,1213,1212,1222,1190,1198,1197,1196,1195,1194,1193,1192,1191,1199,1177,1188,1187,1186,1185,1184,1183,1182,1181,1180,1179,1178,1189,1124,1125,1126,1127,1128,1129,1130,1131,1132,1133,1134,1135,1136,1137,1138,1139,1140,1141,1142,1152,1151,1150,1149,1148,1147,1146,1145,1144,1143,1153,1154,1155,1156,1157,1158,1159,1175,1174,1173,1172,1171,1170,1169,1168,1167,1166,1165,1164,1163,1162,1161,1160,1176,19,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,36,188,196,195,194,193,192,191,190,189,197,198,207,206,205,204,203,202,201,200,199,208,172,186,185,184,183,182,181,180,179,178,177,176,175,174,173,187,161,170,169,168,167,166,165,164,163,162,171,37,50,51,52,53,54,55,56,57,58,49,48,47,38,39,40,41,42,43,44,45,46,59,60,72,71,70,69,68,67,66,65,64,63,62,61,73,74,75,76,77,78,79,80,81,98,97,96,95,94,93,92,91,90,89,88,87,86,85,84,83,82,99,100,117,116,115,114,113,112,111,110,109,108,107,106,105,104,103,102,101,118,119,133,134,135,136,137,138,139,140,141,142,132,131,130,120,121,122,123,124,125,126,127,128,129,143,144,159,158,157,156,155,154,153,152,151,150,149,148,147,146,145,160,209,217,216,215,214,213,212,211,210,218,219,228,227,226,225,224,223,222,221,220,229,230,231,232,233,234,235,246,245,244,243,242,241,240,239,238,237,236,247,248,249,250,251,252,253,254,255,256,257,258,259,260,269,268,267,266,265,264,263,262,261,270,271,282,281,280,279,278,277,276,275,274,273,272,283,284,296,295,294,293,292,291,290,289,288,287,286,285,297,298,313,312,311,310,309,308,307,306,305,304,303,302,301,300,299,314,315,326,325,324,323,322,321,320,319,318,317,316,327,390,391,392,393,394,395,396,397,406,405,404,403,402,401,400,399,398,407,408,409,410,411,412,413,414,424,423,422,421,420,419,418,417,416,415,425,426,427,428,377,388,387,386,385,384,383,382,381,380,379,378,389,369,370,371,372,373,374,375,376,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,359,358,357,356,355,354,353,352,351,350,360,361,362,363,364,365,366,367,368,1223,1231,1230,1229,1228,1227,1226,1225,1224,1232,1233,1243,1242,1241,1240,1239,1238,1237,1236,1235,1234,1244,1245,1246,1247,1248,1249,1250,1251,1252,1253,1254,1255,1256,1257,1258,1259,1260,1261,1262,1263,1264,1274,1273,1272,1271,1270,1269,1268,1267,1266,1265,1275,1276,1286,1285,1284,1283,1282,1281,1280,1279,1278,1277,1287,1288,1298,1297,1296,1295,1294,1293,1292,1291,1290,1289,1299,1354,1355,1356,1357,1358,1359,1360,1361,1362,1300,1301,1302,1303,1304,1305,1306,1307,1308,1309,1310,1311,1312,1313,1314,1315,1316,1326,1325,1324,1323,1322,1321,1320,1319,1318,1317,1327,1328,1337,1336,1335,1334,1333,1332,1331,1330,1329,1338,1339,1340,1341,1342,1343,1344,1345,1346,1347,1348,1349,1350,1351,1352,1353,1,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,18,1855,1856,1857,1858,1859,1860,1861,1862,1863,1864,1865,1866,1867,1797,1798,1799,1800,1801,1802,1803,1804,1805,1806,1807,1808,1809,1810,1811,1812,1813,1814,1815,1816,1817,1818,1819,1820,1821,1822,1823,1824,1825,1826,1827,1828,1829,1830,1831,1832,1837,1838,1839,1840,1841,1842,1843,1844,1845,1846,1847,1848,1849,1850,1851,1852,1853,1854,1790,1791,1792,1793,1794,1795,1796,1785,1786,1787,1788,1789,1747,1756,1755,1754,1753,1752,1751,1750,1749,1748,1757,1759,1767,1766,1765,1764,1763,1762,1761,1760,1768,1769,1770,1771,1772,1773,1774,1775,1776,1777,1778,1779,1780,1781,1782,1783,1784,1833,1834,1835,1836,1868,1878,1877,1876,1875,1874,1873,1872,1871,1870,1869,1879,1880,1888,1887,1886,1885,1884,1883,1882,1881,1889,1890,1905,1904,1903,1902,1901,1900,1899,1898,1897,1896,1895,1894,1893,1892,1891,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1947,1946,1945,1944,1943,1942,1941,1940,1939,1938,1948,1949,1950,1951,1952,1953,1962,1961,1960,1959,1958,1957,1956,1955,1954,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1981,1998,1997,1996,1995,1994,1993,1992,1991,1990,1989,1988,1987,1986,1985,1984,1983,1982,1999,1977,1978,1979,1980,1115,1116,1117,1118,1119,1120,1121,1122,1123,1108,1109,1110,1111,1112,1113,1114,1098,1106,1105,1104,1103,1102,1101,1100,1099,1107,1087,1096,1095,1094,1093,1092,1091,1090,1089,1088,1097,1075,1085,1084,1083,1082,1081,1080,1079,1078,1077,1076,1086,1063,1073,1072,1071,1070,1069,1068,1067,1066,1065,1064,1074,1058,1059,1060,1061,1062,1052,1053,1054,1055,1056,1057,1039,1050,1049,1048,1047,1046,1045,1044,1043,1042,1041,1040,1051,1625,1626,1627,1628,1629,1630,1631,1632,1633,1722,1732,1731,1730,1729,1728,1727,1726,1725,1724,1723,1733,1734,1735,1736,1737,1738,1739,1740,1741,1742,1743,1744,1745,1746,1711,1720,1719,1718,1717,1716,1715,1714,1713,1712,1721,1700,1709,1708,1707,1706,1705,1704,1703,1702,1701,1710,1634,1635,1636,1637,1638,1639,1640,1641,1642,1643,1644,1645,1646,1647,1648,1658,1657,1656,1655,1654,1653,1652,1651,1650,1649,1659,1660,1670,1669,1668,1667,1666,1665,1664,1663,1662,1661,1671,1672,1673,1674,1675,1676,1677,1678,1679,1680,1681,1682,1683,1684,1685,1686,1687,1688,1689,1690,1691,1692,1693,1694,1695,1696,1697,1698,1699,1572,1573,1574,1575,1576,1577,1578,1579,1580,1581,1582,1583,1584,1585,1586,1587,1588,1589,1590,1591,1592,1593,1594,1595,1603,1602,1601,1600,1599,1598,1597,1596,1604,1605,1606,1607,1608,1609,1610,1611,1612,1613,1614,1615,1616,1617,1618,1619,1620,1563,1564,1565,1566,1567,1568,1569,1570,1571,1550,1561,1560,1559,1558,1557,1556,1555,1554,1553,1552,1551,1562,1523,1534,1533,1532,1531,1530,1529,1528,1527,1526,1525,1524,1535,1536,1537,1538,1539,1540,1541,1542,1543,1544,1545,1546,1547,1548,1549,1621,1622,1623,1624,1471,1482,1481,1480,1479,1478,1477,1476,1475,1474,1473,1472,1483,1484,1485,1486,1487,1488,1489,1490,1491,1492,1493,1501,1500,1499,1498,1497,1496,1495,1494,1502,1503,1511,1510,1509,1508,1507,1506,1505,1504,1512,1513,1521,1520,1519,1518,1517,1516,1515,1514,1522,1464,1465,1466,1467,1468,1469,1470,1459,1460,1461,1462,1463,1453,1454,1455,1456,1457,1458,1375,1383,1382,1381,1380,1379,1378,1377,1376,1384,1385,1398,1397,1396,1395,1394,1393,1392,1391,1390,1389,1388,1387,1386,1399,1400,1408,1407,1406,1405,1404,1403,1402,1401,1409,1410,1411,1412,1413,1414,1415,1416,1417,1418,1419,1420,1421,1422,1423,1424,1434,1433,1432,1431,1430,1429,1428,1427,1426,1425,1435,1436,1445,1444,1443,1442,1441,1440,1439,1438,1437,1446,1447,1448,1449,1450,1451,1452,1363,1373,1372,1371,1370,1369,1368,1367,1366,1365,1364,1374,523,524,525,526,527,528,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,466,467,468,469,470,471,459,460,461,462,463,464,465,429,440,439,438,437,436,435,434,433,432,431,430,441,442,450,449,448,447,446,445,444,443,451,452,453,454,455,456,457,458,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563,564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,529,537,536,535,534,533,532,531,530,538,608,622,621,620,619,618,617,616,615,614,613,612,611,610,609,623,589,606,605,604,603,602,601,600,599,598,597,596,595,594,593,592,591,590,607,624,625,626,627,628,629,630,631,632,716,717,718,706,714,713,712,711,710,709,708,707,715,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,673,672,671,670,669,668,667,666,665,664,663,662,661,660,659,674,675,684,683,682,681,680,679,678,677,676,685,686,687,688,689,690,698,697,696,695,694,693,692,691,699,700,701,702,703,704,705,2601,2609,2608,2607,2606,2605,2604,2603,2602,2610,2611,2612,2613,2614,2615,2616,2617,2589,2599,2598,2597,2596,2595,2594,2593,2592,2591,2590,2600,2578,2587,2586,2585,2584,2583,2582,2581,2580,2579,2588,2511,2522,2521,2520,2519,2518,2517,2516,2515,2514,2513,2512,2523,2524,2525,2526,2527,2528,2538,2537,2536,2535,2534,2533,2532,2531,2530,2529,2539,2540,2552,2551,2550,2549,2548,2547,2546,2545,2544,2543,2542,2541,2553,2554,2563,2562,2561,2560,2559,2558,2557,2556,2555,2564,2565,2576,2575,2574,2573,2572,2571,2570,2569,2568,2567,2566,2577,2618,2619,2620,2621,2622,2623,2624,2625,2626,2627,2628,2629,2630,2631,2632,2633,2634,2635,2636,2637,2638,2639,2640,2641,2642,2643,2644,2645,2646,2647,2648,2649,2650,2651,2652,2653,2654,2655,2656,2657,2658,2659,2660,2661,2662,2663,2664,2665,2666,2667,2668,2669,2670,2671,2672,2673,2674,2675,2676,2677,2678,2679,2680,2681,2682,2683,2684,2685,2686,2687,2688,2689,2690,2691,2692,2693,2694,2695,2696,2697,2698,2699,2700,2701,2702,2703,2725,2726,2727,2728,2729,2730,2731,2732,2733,2734,2735,2736,2737,2738,2739,2740,2741,2742,2743,2744,2745,2746,2721,2722,2723,2724,2717,2718,2719,2720,2704,2705,2706,2707,2708,2709,2710,2711,2712,2713,2714,2715,2716,2765,2766,2767,2747,2748,2749,2750,2751,2752,2753,2754,2755,2756,2757,2758,2759,2760,2761,2762,2763,2764,2768,2769,2770,2771,2772,2773,2774,2775,2849,2850,2851,2852,2853,2854,2855,2856,2857,2858,2859,2860,2861,2862,2839,2847,2846,2845,2844,2843,2842,2841,2840,2848,2831,2832,2833,2834,2835,2836,2837,2838,2819,2829,2828,2827,2826,2825,2824,2823,2822,2821,2820,2830,2776,2777,2778,2779,2780,2781,2782,2783,2784,2785,2786,2787,2788,2789,2790,2791,2792,2793,2794,2795,2796,2797,2798,2799,2800,2801,2802,2803,2804,2805,2806,2807,2808,2809,2810,2811,2812,2813,2814,2815,2816,2817,2818');
+INSERT INTO `ns_order_shipping_fee` VALUES ('2', '测试', '1', '1', '0', '', '', '1', '1.00', '2.00', '3.00', '4.00', '1', '1.00', '2.00', '3.00', '4.00', '1', '1', '2.00', '3', '4.00', '1515310086', '0', '');
 
 -- ----------------------------
 -- Table structure for ns_order_shop_return
@@ -4684,3 +5200,24 @@ CREATE TABLE `ns_shop_withdraw` (
 -- ----------------------------
 -- Records of ns_shop_withdraw
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for sys_album_class
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_album_class`;
+CREATE TABLE `sys_album_class` (
+  `album_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '相册id',
+  `shop_id` int(10) NOT NULL DEFAULT '1' COMMENT '店铺id',
+  `pid` int(11) NOT NULL DEFAULT '0' COMMENT '上级相册ID',
+  `album_name` varchar(100) NOT NULL COMMENT '相册名称',
+  `album_cover` varchar(255) NOT NULL DEFAULT '' COMMENT '相册封面',
+  `is_default` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否为默认相册,1代表默认',
+  `sort` int(11) DEFAULT NULL,
+  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
+  PRIMARY KEY (`album_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='相册表';
+
+-- ----------------------------
+-- Records of sys_album_class
+-- ----------------------------
+INSERT INTO `sys_album_class` VALUES ('30', '0', '0', '默认相册', '122', '1', '1', '1497064831');

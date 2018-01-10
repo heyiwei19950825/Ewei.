@@ -3,7 +3,9 @@ namespace app\admin\controller;
 
 use app\common\model\Article as ArticleModel;
 use app\common\model\ArticleCategory as ArticleCategoryModel;
+use app\common\server\Goods as GoodsServer;
 use app\common\controller\AdminBase;
+use think\Db;
 
 /**
  * 文章管理
@@ -14,12 +16,13 @@ class Article extends AdminBase
 {
     protected $article_model;
     protected $category_model;
-
+    protected $goods_server;
     protected function _initialize()
     {
         parent::_initialize();
         $this->article_model  = new ArticleModel();
         $this->category_model = new ArticleCategoryModel();
+        $this->goods_server   = new GoodsServer;
 
         $category_level_list = $this->category_model->getLevelList();
         $this->assign('category_level_list', $category_level_list);
@@ -68,13 +71,29 @@ class Article extends AdminBase
     public function save()
     {
         if ($this->request->isPost()) {
+            $req             = [];
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Article');
+
+            if( $data['goods_ids'] != ''){//关联商品
+                $ids = explode(',',trim($data['goods_ids'],',') );
+                $data['range_type'] = 0;
+            }else{
+                $data['range_type'] = 1;
+            }
 
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
                 if ($this->article_model->allowField(true)->save($data)) {
+                    foreach ($ids as $key => $value) {//关联商品
+                        $req[$key] = array(
+                            'article_id' => $this->article_model->id,
+                            'goods_id' => $value
+                        ); 
+                    }
+
+                    Db::name('article_goods')->insertAll($req);
                     $this->success('保存成功');
                 } else {
                     $this->error('保存失败');
@@ -92,7 +111,19 @@ class Article extends AdminBase
     {
         $article = $this->article_model->find($id);
 
-        return $this->fetch('edit', ['article' => $article]);
+        $ids = Db::name('article_goods')->where(['article_id'=>$id])->select()->toArray();
+        $idsStr = '';
+        foreach ($ids as $key => &$value) {
+           $idsStr .= $value['goods_id'].',';
+        }
+
+        $list = $this->goods_server->getGoodsListByIds($idsStr);
+        $goods_ids = '';
+        foreach ($list as $key => $value) {
+            $goods_ids .= $value['id'].',';
+        }
+
+        return $this->fetch('edit', ['article' => $article,'goods_list'=>$list]);
     }
 
     /**
@@ -102,6 +133,7 @@ class Article extends AdminBase
     public function update($id)
     {
         if ($this->request->isPost()) {
+            $req             = [];
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Article');
 
@@ -109,6 +141,22 @@ class Article extends AdminBase
                 $this->error($validate_result);
             } else {
                 if ($this->article_model->allowField(true)->save($data, $id) !== false) {
+                    if( $data['goods_ids'] != ''){//关联商品
+                        $ids = explode(',',trim($data['goods_ids'],',') );
+                        $data['range_type'] = 0;
+                    }else{
+                        $data['range_type'] = 1;
+                    }
+
+                    foreach ($ids as $key => $value) {//关联商品
+                        $req[$key] = array(
+                            'article_id' => $id,
+                            'goods_id' => $value
+                        ); 
+                    }
+                    
+                    Db::name('article_goods')->where(['article_id'=>$id])->delete();
+                    Db::name('article_goods')->insertAll($req);
                     $this->success('更新成功');
                 } else {
                     $this->error('更新失败');

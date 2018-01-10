@@ -68,11 +68,11 @@ class Shop extends AdminBase
             if( $this->admin_user_model->where(['username'=>$data['username']])->find()){
                 $this->error('用户名已存在');
             }
-
             //创建平台用户
             if( $this->admin_user_model->allowField(true)->save($userData) ){
+                $userInfo = $this->admin_user_model->field('id')->where(['username'=>$data['username']])->find();
                 //添加商家权限
-                $auth_group_access['uid']      = $this->admin_user_model->id;
+                $auth_group_access['uid']      = $userInfo['id'];
                 $auth_group_access['group_id'] = 4;
                 $this->auth_group_access_model->save($auth_group_access);
                 
@@ -116,7 +116,7 @@ class Shop extends AdminBase
                 $this->error('删除失败');
             }
         } else {
-            $this->error('请选择需要删除的文章');
+            $this->error('请选择需要删除的商家');
         }
     }
 

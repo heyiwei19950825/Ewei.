@@ -15,13 +15,17 @@ use think\Session;
  */
 class AdminBase extends Controller
 {
+    protected $instance_id;
+    protected $shop = [];//商家ID
+
     protected function _initialize()
     {
         parent::_initialize();
-
         $this->checkAuth();
         $this->getMenu();
-
+        $this->instance_id = Session::get('admin_id');
+        $uid = $this->instance_id;
+        $this->shop     = Db::name('shop')->where(['uid'=>$uid])->find();
         // 输出当前请求控制器（配合后台侧边菜单选中状态）
         $this->assign('controller', Loader::parseName($this->request->controller()));
     }
@@ -43,13 +47,13 @@ class AdminBase extends Controller
 
         // 排除权限
         $not_check = ['admin/Index/index', 'admin/AuthGroup/getjson', 'admin/System/clear','admin/Address/getCitry','admin/Address/getDistrict','admin/Address/getProvince'];
-        // if (!in_array($module . '/' . $controller . '/' . $action, $not_check)) {
-        //     $auth     = new Auth();
-        //     $admin_id = Session::get('admin_id');
-        //     if (!$auth->check($module . '/' . $controller . '/' . $action, $admin_id) && $admin_id != 1) {
-        //         $this->error('没有权限');
-        //     }
-        // }
+        if (!in_array($module . '/' . $controller . '/' . $action, $not_check)) {
+            $auth     = new Auth();
+            $admin_id = Session::get('admin_id');
+            if (!$auth->check($module . '/' . $controller . '/' . $action, $admin_id) && $admin_id != 1) {
+                $this->error('没有权限');
+            }
+        }
     }
 
     /**
@@ -58,8 +62,8 @@ class AdminBase extends Controller
     protected function getMenu()
     {
         $menu     = [];
-        $admin_id = Session::get('admin_id');
         $auth     = new Auth();
+        $admin_id = Session::get('admin_id');
 
         $auth_rule_list = Db::name('auth_rule')->where('status', 1)->order(['sort' => 'DESC', 'id' => 'ASC'])->select();
         foreach ($auth_rule_list as $value) {

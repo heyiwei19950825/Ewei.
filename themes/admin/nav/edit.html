@@ -12,17 +12,6 @@
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" action="{:url('admin/nav/update')}" method="post">
                     <div class="layui-form-item">
-                        <label class="layui-form-label">上级导航</label>
-                        <div class="layui-input-block">
-                            <select name="pid" required lay-verify="required">
-                                <option value="0">一级导航</option>
-                                {foreach name="nav_level_list" item="vo"}
-                                <option value="{$vo.id}" {if condition="$nav.id==$vo.id"} disabled="disabled"{/if} {if condition="$nav.pid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
-                                {/foreach}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
                         <label class="layui-form-label">导航名称</label>
                         <div class="layui-input-block">
                             <input type="text" name="name" value="{$nav.name}" required  lay-verify="required" placeholder="请输入导航名称" class="layui-input">
@@ -40,11 +29,23 @@
                             <input type="text" name="link" value="{$nav.link}" placeholder="（选填）请输入导航链接" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
+ <!--                    <div class="layui-form-item">
                         <label class="layui-form-label">图标</label>
                         <div class="layui-input-block">
                             <input type="text" name="icon" value="{$nav.icon}" placeholder="（选填）如：fa fa-home" class="layui-input">
                         </div>
+                    </div> -->
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">图标</label>
+                        <div class="layui-input-inline layui-upload">
+                            <input type="hidden" name="icon" value="{$nav.icon}" class="layui-input layui-input-inline" id="thumb">
+                            <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150' data-path='uploads/common/'>上传图片</button>
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <img class="layui-upload-img" style='width:30px;' id="demo1" src="{$nav.icon}">
+                                <p id="demoText"></p>
+                            </div>
+                        </div>
+                    <div class="layui-form-mid layui-word-aux">推荐图片大小为50*50</div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">描述</label>

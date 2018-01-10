@@ -31,8 +31,8 @@ class Address extends AdminBase{
     /**
     * 获取城市地址
     */
-    public function getCitry(){
-    	$cityList = $this->city_model->where()->select();
+    public function getCitry($id){
+    	$cityList = $this->city_model->where(['province_id'=>$id])->select();
     	return json(['data'=>$cityList,'code'=>1,'message'=>'操作完成']);
     }
     /**

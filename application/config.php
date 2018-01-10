@@ -242,4 +242,5 @@ return [
 
     //开启自动写入时间
     'auto_timestamp' => true,
+    'auto_timestamp' => 'datetime',
 ];

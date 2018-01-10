@@ -27,11 +27,11 @@ class ShopInfo extends AdminBase
     protected function _initialize()
     {
         parent::_initialize();
-        $this->shop_model              = new ShopModel();
-        $this->shop_group_model        = new ShopGroupModel();
-         $this->city_model = new CityModel();
-        $this->district_model = new DistrictModel();
-        $this->province_model = new ProvinceModel();
+        $this->shop_model               = new ShopModel();
+        $this->shop_group_model         = new ShopGroupModel();
+        $this->city_model               = new CityModel();
+        $this->district_model           = new DistrictModel();
+        $this->province_model           = new ProvinceModel();
     }
 
     /**
@@ -42,8 +42,7 @@ class ShopInfo extends AdminBase
             if ($this->request->isPost()) {
                 $data            = $this->request->param();
                 $validate_result = $this->validate($data, 'Shop');
-                $userId = Session::get('admin_id');
-                $userId = 23;
+                $userId = $this->instance_id;
                 $shopInfo = $this->shop_model->field('id')->where(['uid'=>$userId])->find();
                 $where['id'] =$shopInfo->id;
 
@@ -59,13 +58,13 @@ class ShopInfo extends AdminBase
             }
         }else{
             $id = Session::get('admin_id');
-            $id = 23;
+            $userId = $this->instance_id;
             $cityList = $this->city_model->select();
             $districtList = $this->district_model->select();
             $provinceList = $this->province_model->select();
             $info = $this->shop_model->where(['uid'=>$id])->find();
             $shop_group_list = $this->shop_group_model->field('id,group_name')->select();
-
+            
             return $this->fetch('index', ['info' => $info,'shop_group_list'=>$shop_group_list,'cityList'=>$cityList,'districtList'=>$districtList,'provinceList'=>$provinceList]);
 
         }

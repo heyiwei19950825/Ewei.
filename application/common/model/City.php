@@ -7,10 +7,9 @@
  */
 namespace app\common\model;
 
-use think\Db;
-use think\Model;
+use app\common\model\BaseModel;
 
 
-class City extends Model {
+class City extends BaseModel {
 
 }

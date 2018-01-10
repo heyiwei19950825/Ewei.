@@ -21,7 +21,7 @@
                 <form class="layui-form form-container" style="max-width:80%" action="{:url('admin/goods/update')}" method="post">
                     <div class="layui-form-item">
                         <label class="layui-form-label">所属分类</label>
-                        <div class="layui-input-inline">
+                        <div class="layui-input-block">
                             <select name="cid" lay-verify="required">
                                 {foreach name="category_level_list" item="vo"}
                                 <option value="{$vo.id}" {if condition="$goods.cid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
@@ -30,180 +30,251 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <div class="layui-inline">
+                        <div class="layui-block">
                             <label class="layui-form-label">商品名称：</label>
-                            <div class="layui-input-inline">
+                            <div class="layui-input-block">
                                 <input type="text" name="name" value="{$goods.name}" required  lay-verify="required" placeholder="请输入名称" class="layui-input">
                             </div>
                         </div>
-                        <div class="layui-inline">
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-block">
                             <label class="layui-form-label">小标题名称</label>
-                            <div class="layui-input-inline">
+                            <div class="layui-input-block">
                                 <input type="text" name="prefix_title" value="{$goods.prefix_title}" required  lay-verify="required" placeholder="请输入名称" class="layui-input">
                             </div>
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                       <div class="layui-form-item">
-                            <div class="layui-inline">
-                                <label class="layui-form-label">原价：</label>
-                                <div class="layui-input-inline">
-                                    <input type="number" name="sp_o_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_o_price}">
+                    <fieldset class="layui-elem-field" >
+                          <legend><b>积分购买设置</b></legend>
+                            <div class="layui-field-box">
+                                <div class="layui-inline ">
+                                    <div class="layui-input-inline">
+                                        <label class="layui-form-label">积分购买：</label>
+                                        <div class="layui-input-block">
+                                            <input type="checkbox" name="" {if condition="$goods.is_integral == 1"} checked{/if} lay-skin="switch" lay-filter="integralSwitch" lay-text="开启|关闭">
+                                            <input type="hidden" name="is_integral" value="{$goods.is_integral}">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>  
-                            <div class="layui-inline">
-                                <label class="layui-form-label">销售价：</label>
-                                <div class="layui-input-inline">
-                                    <input type="number" name="sp_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_price}">
+                            <div class="layui-form-item">
+                              <div class="layui-inline">
+                                  <label class="layui-form-label">购买赠送:</label>
+                                  <div class="layui-input-inline">
+                                    <input type="number" name="give_integral" placeholder="" autocomplete="off" class="layui-input" value="{$goods.give_integral}">
+                                  </div>
                                 </div>
-                            </div>  
-                           <!--  <div class="layui-inline">
-                              <label class="layui-form-label">会员价:</label>
-                              <div class="layui-input-inline">
-                                <input type="number" name="sp_vip_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_vip_price}">
-                              </div>
-                            </div>  -->
-                            <!-- <div class="layui-inline">
-                              <label class="layui-form-label">成本价:</label>
-                              <div class="layui-input-inline">
-                                <input type="number" name="sp_cost_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_cost_price}">
-                              </div>
-                            </div> -->
-                          </div>
-                    </div>
-                    <div class="layui-form-item">
-                         <div class="layui-inline">
-                            <label class="layui-form-label">销售数量：</label>
-                            <div class="layui-input-inline">
-                            <input type="number" name="sp_market" lay-verify="number" class="layui-input" value="{$goods.sp_market}">
+                                <div class="layui-inline sp_integral" style="display: {if condition='$goods.is_integral == 1'} block{else}none{/if}">
+                                    <label class="layui-form-label">积分价格:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="number" name="sp_integral" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_integral}">
+                                    </div>
+                                </div>
+                             </div>
                             </div>
-                        </div>
-                        <div class="layui-inline">
-                          <label class="layui-form-label">库存数量：</label>
-                          <div class="layui-input-inline">
-                            <input type="number" name="sp_inventory" lay-verify="number" class="layui-input" value="{$goods.sp_inventory}">
-                          </div>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">发布时间：</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="publish_time" value="{$goods.publish_time}" class="layui-input datetime">
-                        </div>
-                    </div>
-                     <div class="layui-form-item">
-                         <div class="layui-inline">
-                            <label class="layui-form-label">开始时间：</label>
-                            <div class="layui-input-inline">
-                                <input type="text" name="btime" value="{$goods.btime}" class="layui-input datetime">
+                        </fieldset>
+                    <fieldset class="layui-elem-field" >
+                        <legend><b>销售设置</b></legend>
+                        <div class="layui-field-box">
+                            <div class="layui-form-item">
+                               <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">原价：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="number" name="sp_o_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_o_price}">
+                                        </div>
+                                    </div>  
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">销售价：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="number" name="sp_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_price}">
+                                        </div>
+                                    </div>  
+                                   <!--  <div class="layui-inline">
+                                      <label class="layui-form-label">会员价:</label>
+                                      <div class="layui-input-inline">
+                                        <input type="number" name="sp_vip_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_vip_price}">
+                                      </div>
+                                    </div>  -->
+                                    <!-- <div class="layui-inline">
+                                      <label class="layui-form-label">成本价:</label>
+                                      <div class="layui-input-inline">
+                                        <input type="number" name="sp_cost_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_cost_price}">
+                                      </div>
+                                    </div> -->
+                                  </div>
                             </div>
-                        </div> ——
-                        <div class="layui-inline">
-                          <label class="layui-form-label">结束时间：</label>
-                          <div class="layui-input-inline">
-                                <input type="text" name="etime" value="{$goods.etime}" class="layui-input" >
-                          </div>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <div class="layui-inline">
-                            <div class="layui-input-inline">
-                                <label class="layui-form-label">团购：</label>
+                            <div class="layui-form-item">
+                                 <div class="layui-inline">
+                                    <label class="layui-form-label">销售数量：</label>
+                                    <div class="layui-input-inline">
+                                    <input type="number" name="sp_market" lay-verify="number" class="layui-input" value="{$goods.sp_market}">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                  <label class="layui-form-label">库存数量：</label>
+                                  <div class="layui-input-inline">
+                                    <input type="number" name="sp_inventory" lay-verify="number" class="layui-input" value="{$goods.sp_inventory}">
+                                  </div>
+                                </div>
+                            </div>
+                           
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">发布时间：</label>
                                 <div class="layui-input-block">
-                                    <input type="checkbox" name="" {if condition="$collective.state == 1"} checked{/if} lay-skin="switch" lay-filter="stateSwitchTest" lay-text="开启|关闭">
-                                    <input type="hidden" name="collective_state" value="{$collective.state}">
+                                    <input type="text" name="publish_time" value="{$goods.publish_time}" class="layui-input datetime">
+                                </div>
+                            </div>
+                             <div class="layui-form-item">
+                                 <div class="layui-inline">
+                                    <label class="layui-form-label">开始时间：</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="btime" value="{$goods.btime}" class="layui-input datetime">
+                                    </div>
+                                </div> ——
+                                <div class="layui-inline">
+                                  <label class="layui-form-label">结束时间：</label>
+                                  <div class="layui-input-inline">
+                                        <input type="text" name="etime" value="{$goods.etime}" class="layui-input" >
+                                  </div>
                                 </div>
                             </div>
                         </div>
-                        <div class='collective-value'  {if condition="$collective.state == 0"} style='display: none'{/if}>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">开团人数：</label>
+                    </fieldset>
+                    <fieldset class="layui-elem-field" >
+                        <legend><b>团购设置</b></legend>
+                        <div class="layui-field-box">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <div class="layui-input-inline">
+                                        <label class="layui-form-label">团购：</label>
+                                        <div class="layui-input-block">
+                                            <input type="checkbox" name="" {if condition="$collective.state == 1"} checked{/if} lay-skin="switch" lay-filter="stateSwitchTest" lay-text="开启|关闭">
+                                            <input type="hidden" name="collective_state" value="{$collective.state}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='collective-value'  {if condition="$collective.state == 0"} style='display: none'{/if}>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">开团人数：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="number" name="collective_number" placeholder="几人开团" lay-verify="number" value="{$collective.user_number}" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">开团价格：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="number" name="collective_price" lay-verify="number" placeholder="满足开团人数后价格" value="{$collective.goods_price}" class="layui-input ">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">等待时间：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="number" name="collective_time" value="{$collective.time}" placeholder="单位秒" lay-verify="number" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">开始时间：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="collective_start_time" value="{$collective.start_time}"  class="layui-input datetime">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">结束时间：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="collective_end_time" value="{$collective.end_time}"   class="layui-input datetime">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>  
+                    <fieldset class="layui-elem-field" >
+                        <legend><b>状态设置</b></legend>
+                        <div class="layui-field-box">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">状态</label>
                                 <div class="layui-input-inline">
-                                    <input type="number" name="collective_number" placeholder="几人开团" lay-verify="number" value="{$collective.user_number}" class="layui-input">
+                                    <input type="radio" name="status" value="1" title="已审核" {if condition="$goods.status==1"} checked="checked"{/if}>
+                                    <input type="radio" name="status" value="0" title="未审核" {if condition="$goods.status==0"} checked="checked"{/if}>
                                 </div>
                             </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">开团价格：</label>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">置顶</label>
                                 <div class="layui-input-inline">
-                                    <input type="number" name="collective_price" lay-verify="number" placeholder="满足开团人数后价格" value="{$collective.goods_price}" class="layui-input ">
+                                    <input type="radio" name="is_top" value="1" title="置顶" {if condition="$goods.is_top==1"} checked="checked"{/if}>
+                                    <input type="radio" name="is_top" value="0" title="未置顶" {if condition="$goods.is_top==0"} checked="checked"{/if}>
                                 </div>
                             </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">等待时间：</label>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">推荐</label>
                                 <div class="layui-input-inline">
-                                    <input type="number" name="collective_time" value="{$collective.time}" placeholder="单位秒" lay-verify="number" class="layui-input">
+                                    <input type="radio" name="is_recommend" value="1" title="推荐" {if condition="$goods.is_recommend==1"} checked="checked"{/if}>
+                                    <input type="radio" name="is_recommend" value="0" title="未推荐" {if condition="$goods.is_recommend==0"} checked="checked"{/if}>
                                 </div>
                             </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">开始时间：</label>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">热门</label>
                                 <div class="layui-input-inline">
-                                    <input type="text" name="collective_start_time" value="{$collective.start_time}"  class="layui-input datetime">
+                                    <input type="radio" name="is_hot" value="1" title="热门" {if condition="$goods.is_hot==1"} checked="checked"{/if}>
+                                    <input type="radio" name="is_hot" value="0" title="非热门" {if condition="$goods.is_hot==0"} checked="checked"{/if}>
                                 </div>
                             </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">结束时间：</label>
+                              <div class="layui-form-item">
+                                <label class="layui-form-label">排序</label>
                                 <div class="layui-input-inline">
-                                    <input type="text" name="collective_end_time" value="{$collective.end_time}"   class="layui-input datetime">
+                                    <input type="number" name="sort" value="{$goods.sort}" required  lay-verify="required" class="layui-input">
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">状态</label>
-                        <div class="layui-input-inline">
-                            <input type="radio" name="status" value="1" title="已审核" {if condition="$goods.status==1"} checked="checked"{/if}>
-                            <input type="radio" name="status" value="0" title="未审核" {if condition="$goods.status==0"} checked="checked"{/if}>
+                    </fieldset>
+                     <fieldset class="layui-elem-field" >
+                        <legend><b>商品物流信息</b></legend>
+                        <div class="layui-field-box">
+                            <div class="layui-inline">
+                              <label class="layui-form-label">物流选择</label>
+                              <div class="layui-input-inline">
+                                <select name="eid" lay-verify="required" lay-search="">
+                                  <option value="">直接选择或搜索选择</option>
+                                    {foreach name="express" item="e_vo"}
+                                        <option value="{$e_vo.id}" {if condition="$goods.eid==$e_vo.id"} selected="selected"{/if}>{$e_vo.company_name} 费用：{$e_vo.cost}元</option>
+                                    {/foreach}
+                                </select>
+                              </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">置顶</label>
-                        <div class="layui-input-inline">
-                            <input type="radio" name="is_top" value="1" title="置顶" {if condition="$goods.is_top==1"} checked="checked"{/if}>
-                            <input type="radio" name="is_top" value="0" title="未置顶" {if condition="$goods.is_top==0"} checked="checked"{/if}>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">推荐</label>
-                        <div class="layui-input-inline">
-                            <input type="radio" name="is_recommend" value="1" title="推荐" {if condition="$goods.is_recommend==1"} checked="checked"{/if}>
-                            <input type="radio" name="is_recommend" value="0" title="未推荐" {if condition="$goods.is_recommend==0"} checked="checked"{/if}>
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">热门</label>
-                        <div class="layui-input-inline">
-                            <input type="radio" name="is_hot" value="1" title="热门" {if condition="$goods.is_hot==1"} checked="checked"{/if}>
-                            <input type="radio" name="is_hot" value="0" title="非热门" {if condition="$goods.is_hot==0"} checked="checked"{/if}>
-                        </div>
-                    </div>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">排序</label>
-                        <div class="layui-input-inline">
-                            <input type="number" name="sort" value="{$goods.sort}" required  lay-verify="required" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">产品规格</label>
-                        <div class="layui-input-inline">
-                            <a class="layui-btn layui-btn-small add-property"><i class="layui-icon"></i></a>
-
-                        </div>
-                    </div>
-                    <fieldset class="layui-elem-field" style="width:70%;">
+                    </fieldset>
+                    <fieldset class="layui-elem-field">
                       <legend><b>产品规格(选填)</b></legend>
                       <div class="layui-field-box">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">产品规格</label>
+                                <div class="layui-input-inline">
+                                    <a class="layui-btn layui-btn-small add-property"><i class="layui-icon"></i></a>
+
+                                </div>
+                            </div>
                             <div class="layui-form-item property-list">
-                                {foreach name="$property" item="p_vo"}
+                                {foreach name="$property" item="p_vo" key="i"}
                                     <div class="layui-form-item property-info">
                                         <div class="layui-inline">
                                             <label class="layui-form-label">
                                             </label>
                                             <div class="layui-input-inline">
-                                                <input type="text" name="property_key[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input" value="{$p_vo.name}">
+                                                <input type="text" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input" value="{$p_vo.sku_name}" lay-verify="required">
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value="{$p_vo.attr_value_items}" lay-verify="required">
                                             </div>
                                              <div class="layui-input-inline">
-                                                <input type="text" name="property_val[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value="{$p_vo.detail}">
+                                                <input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value="{$p_vo.cost_price}" lay-verify='number'>
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value="{$p_vo.price}" lay-verify='number'>
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value="{$p_vo.stock}" lay-verify='number'>
                                             </div>
                                             <a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a>
                                         </div>
@@ -212,49 +283,58 @@
                             </div> 
                         </div>
                     </fieldset>
-                      <div class="layui-form-item">
-                        <label class="layui-form-label">缩略图</label>
-                        <div class="layui-input-inline layui-upload">
-                            <input type="hidden" name="thumb" value="{$goods.thumb}" class="layui-input layui-input-inline" id="thumb" >
-                            <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150'>上传图片</button>
-                            <div class="layui-input-block" style='margin-top:10px;'>
-                                <img class="layui-upload-img" id="demo1" src="{$goods.thumb}" style='width:150px;'>
-                                <p id="demoText"></p>
+                    <fieldset class="layui-elem-field">
+                        <legend><b>显示图设置</b></legend>
+                        <div class="layui-field-box">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">缩略图</label>
+                                <div class="layui-input-inline layui-upload">
+                                    <input type="hidden" name="thumb" value="{$goods.thumb}" class="layui-input layui-input-inline" id="thumb" >
+                                    <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150' data-path='uploads/goods_brand/'>上传图片</button>
+                                    <div class="layui-input-inline" style='margin-top:10px;'>
+                                        <img class="layui-upload-img" id="demo1" src="{$goods.thumb}" style='width:150px;'>
+                                        <p id="demoText"></p>
+                                    </div>
+                                </div> 
+                                <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
                             </div>
-                        </div> 
-                        <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
-
-                    </div>
-
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">图集</label>
-                        <div class="layui-input-block">
-                            <button type="button" id="upload-photo-btn" class="layui-btn">上传图集</button>
-                            <div id="photo-container">
-                                {if condition="!empty($goods['photo'])"}
-                                {foreach name="$goods['photo']" item="vo"}
-                                <div class="photo-list layui-inline">
-                                    <img src="{$vo}" alt="" style='width:150px;'>
-                                    <input type="hidden" name="photo[]" value="{$vo}" class="layui-input layui-input-inline">
-                                    <button type="button" class="layui-btn layui-btn-danger remove-photo-btn">移除</button>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">图集</label>
+                                <div class="layui-input-block">
+                                    <button type="button" id="upload-photo-btn" class="layui-btn">上传图集</button>
+                                    <div id="photo-container">
+                                        {if condition="!empty($goods['photo'])"}
+                                        {foreach name="$goods['photo']" item="vo"}
+                                        <div class="photo-list layui-inline">
+                                            <img src="{$vo}" alt="" style='width:150px;'>
+                                            <input type="hidden" name="photo[]" value="{$vo}" class="layui-input layui-input-inline">
+                                            <button type="button" class="layui-btn layui-btn-danger remove-photo-btn">移除</button>
+                                        </div>
+                                        {/foreach}
+                                        {/if}
+                                    </div>
                                 </div>
-                                {/foreach}
-                                {/if}
                             </div>
                         </div>
-                    </div>
+                    </fieldset>
+
                    <!--  <div class="layui-form-item">
                         <label class="layui-form-label">简介</label>
                         <div class="layui-input-block">
                             <textarea name="introduction" placeholder="（选填）请输入简介" class="layui-textarea">{$goods.introduction}</textarea>
                         </div>
                     </div> -->
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">内容</label>
-                        <div class="layui-input-block">
-                            <textarea name="content" lay-verify="content" placeholder="" class="layui-textarea" id="content">{$goods.content}</textarea>
+                     <fieldset class="layui-elem-field">
+                        <legend><b>内容设置</b></legend>
+                        <div class="layui-field-box">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">内容</label>
+                                <div class="layui-input-block">
+                                    <textarea name="content" lay-verify="content" placeholder="" class="layui-textarea" id="content">{$goods.content}</textarea>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </fieldset>
                     
                     <div class="layui-form-item">
                         <div class="layui-input-block">
@@ -291,6 +371,7 @@
         var ue = UE.getEditor('content'),
             uploadEditor = UE.getEditor('upload-photo-btn'),
             photoListItem,
+
             uploadImage;
 
         uploadEditor.ready(function () {
@@ -298,7 +379,7 @@
             uploadEditor.hide();
             uploadEditor.addListener('beforeInsertImage', function (t, arg) {
                 $.each(arg, function (index, item) {
-                    photoListItem = '<div class="photo-list layui-inline"><img src="' + item.src + '" alt="" style="height:150px;"><input type="hidden" name="photo[]" value="' + item.src + '" class="layui-input layui-input-inline">';
+                    photoListItem = '<div class="photo-list layui-inline"><img src="' + item.src + '" alt="" style="width:150px;"><input type="hidden" name="photo[]" value="' + item.src + '" class="layui-input layui-input-inline">';
                     photoListItem += '<button type="button" class="layui-btn layui-btn-danger remove-photo-btn">移除</button></div>';
                    $('#photo-container').append(photoListItem).on('click', '.remove-photo-btn', function () {
                         $(this).parent('.photo-list').remove();
@@ -326,8 +407,8 @@
 
         //添加产品属性输入框
         $('.add-property').click(function(){
-            var html = ' <div class="layui-form-item property-info"><div class="layui-inline"><label class="layui-form-label"></label><div class="layui-input-inline"><input type="text" name="property_key[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="property_val[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value=""></div><a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a></div></div>';
-             $('.property-list').append(html).on('click','.remove-property-btn',function(){
+            var html = ' <div class="layui-form-item property-info"><div class="layui-inline"><label class="layui-form-label"></label><div class="layui-input-inline"><input type="text" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value=""></div><a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a></div></div>';
+             $('.property-list').prepend(html).on('click','.remove-property-btn',function(){
                 $(this).parents('.property-info').remove();
             });
         })
@@ -350,8 +431,8 @@
         //     }
         // });
 
-         //监听指定开关
-          form.on('switch(stateSwitchTest)', function(data){
+         //团购开关
+        form.on('switch(stateSwitchTest)', function(data){
             if(this.checked == true){
                 $('.collective-value').css('display','block');
                 $('input[name=collective_state]').val(1);
@@ -360,7 +441,19 @@
                 $('input[name=collective_state]').val(0);
 
             }
-          });
+        });
+
+        //积分购买开关
+        form.on('switch(integralSwitch)', function(data){
+            if(this.checked == true){
+                $('.sp_integral').css('display','block');
+                $('input[name=is_integral]').val(1);
+            }else{
+                $('.sp_integral').css('display','none');
+                $('input[name=is_integral]').val(0);
+
+            }
+        });
     });
 </script>
 {/block}

@@ -111,4 +111,17 @@ class Nav extends AdminBase
             $this->error('删除失败');
         }
     }
+
+
+    // <div class="layui-form-item">
+    //                     <label class="layui-form-label">上级导航</label>
+    //                     <div class="layui-input-block">
+    //                         <select name="pid" required lay-verify="required">
+    //                             <option value="0">一级导航</option>
+    //                             {foreach name="nav_level_list" item="vo"}
+    //                             <option value="{$vo.id}" {if condition="$pid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+    //                             {/foreach}
+    //                         </select>
+    //                     </div>
+    //                 </div>
 }

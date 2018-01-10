@@ -68,7 +68,7 @@ $(function(){
 				  $.get('/admin/goods/getGoodsList.html?page='+page+keyword, function(res){
 				    //假设你的列表返回在data集合中
 				    layui.each(res.data.list, function(index, item){
-				      lis.push(' <li data-id="123"><a class="fly-case-img" href="javascript:" target="_blank" ><img src="'+item.thumb+'" alt="'+item.name+'"><p class="">'+item.name+'</p><p style="padding-lfet:50px;">———</p><p style="color: #666;">'+item.prefix_title+'</p><div class="fly-case-info"><a href="javascript:" class="fly-case-user" target="_blank"><img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"></a><p class="layui-elip" style="font-size: 12px;"> ￥'+item.sp_price+'<span style="color: #666;"><s>'+item.sp_o_price+'</s></span></p> &nbsp;<p>'+item.status+'</p><button class="layui-btn  btn-click  layui-btn-primary" data-true="false" data-id= "'+item.id+'"data-type="praise">选择</button></li>');
+				      lis.push(' <li data-id="123"><a class="fly-case-img" href="javascript:" target="_blank" ><img src="'+item.thumb+'" alt="'+item.name+'"><p class="">'+item.name+'</p><p style="padding-lfet:50px;">———</p><p style="color: #666;">'+item.prefix_title+'</p><div class="fly-case-info"><a href="javascript:" class="fly-case-user" target="_blank"><img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"></a><p class="layui-elip" style="font-size: 12px;"> ￥'+item.sp_price+' <span style="color: #666;"> <s>'+item.sp_o_price+'</s></span></p> &nbsp;<p>'+item.status+'</p><button class="layui-btn  btn-click  layui-btn-primary" data-true="false" data-id= "'+item.id+'"data-type="praise">选择</button></li>');
 				    }); 
 				    
 				    //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
