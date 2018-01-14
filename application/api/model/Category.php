@@ -31,4 +31,18 @@ class Category extends BaseModel
             ->find($id);
         return $category;
     }
+
+    /**
+     * 获取顶级分类
+     * @param srting  $field
+     * @return object $row
+     */
+    public static function filterCategory( $field='' ){
+        $filterCategory = self::where(['pid'=>0])
+            ->field($field)
+            ->order('sort asc')
+            ->select();
+
+        return $filterCategory;
+    }
 }

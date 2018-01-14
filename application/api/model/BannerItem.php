@@ -6,10 +6,19 @@ use think\Model;
 
 class BannerItem extends BaseModel
 {
-    protected $hidden = ['id', 'img_id', 'banner_id', 'delete_time'];
 
-    public function img()
-    {
-        return $this->belongsTo('Image', 'img_id', 'id');
+    /**
+     * 更具父类bannerID获取banner列表
+     * @param $id
+     * @return Row
+     */
+    public static function getBannerList( $id, $filed, $limit){
+        $row = self::where( ['cid'=>$id,'status'=>1])
+            ->field($filed)
+            ->order('sort asc')
+            ->limit($limit)
+            ->select();
+
+        return $row;
     }
 }

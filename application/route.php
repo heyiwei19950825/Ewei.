@@ -9,6 +9,8 @@
 
 // 写完代码后对着路由表看，能否不看注释就知道这个接口的意义
 use think\Route;
+//index
+Route::get('api/:version/Index/index', 'api/:version.Index/index');
 
 //Sample
 Route::get('api/:version/sample/:key', 'api/:version.Sample/getSample');
@@ -47,6 +49,7 @@ Route::get('api/:version/Goods/by_category/paginate', 'api/:version.Goods/getByC
 Route::get('api/:version/Goods/by_category', 'api/:version.Goods/getAllInCategory');
 Route::get('api/:version/Goods/:id', 'api/:version.Goods/getOne',[],['id'=>'\d+']);
 Route::get('api/:version/Goods/recent', 'api/:version.Goods/getRecent');
+Route::get('api/:version/Goods/category', 'api/:version.Goods/getCategoryByGoodsId');
 
 //Category
 Route::get('api/:version/category', 'api/:version.Category/getCategories'); 

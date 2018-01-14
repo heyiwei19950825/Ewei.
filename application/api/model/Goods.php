@@ -2,7 +2,7 @@
 
 namespace app\api\model;
 
-use think\Model;
+use think\Db;
 
 class Goods extends BaseModel
 {
@@ -32,17 +32,29 @@ class Goods extends BaseModel
 
     /**
      * 获取某分类下商品
-     * @param $categoryID
+     * @param $categoryId       分类ID
+     * @param bool $paginate    是否是简洁模式
+     * @param string $field     筛选字段
+     * @param string $keyword   关键字
+     * @param string $sort      排序字段
+     * @param string $order     排序方式
      * @param int $page
      * @param int $size
-     * @param bool $paginate
      * @return \think\Paginator
      */
     public static function getProductsByCategoryID(
-        $categoryID, $paginate = true, $page = 1, $size = 30)
+        $categoryId, $paginate = true, $field='', $keyword='', $sort='is_recommend', $order='asc', $page = 1, $size = 30)
     {
         $query = self::
-        where('cid', '=', $categoryID);
+        where(
+            'cid', '=', $categoryId,
+            'keyword','like','%'.$keyword.'%',
+            'status','=',1
+        )
+            ->field($field)
+            ->order(
+                $sort.' '.$order
+            );
         if (!$paginate)
         {
             return $query->select();
@@ -51,7 +63,7 @@ class Goods extends BaseModel
         {
             // paginate 第二参数true表示采用简洁模式，简洁模式不需要查询记录总数
             return $query->paginate(
-                $size, true, [
+                $size, false, [
                 'page' => $page
             ]);
         }
@@ -84,4 +96,48 @@ class Goods extends BaseModel
         return $products;
     }
 
-}
+    /**
+     * @param $id
+     * @param $field
+     * @return null | Product
+     */
+    public static function getCategoryByGoodsId( $id ,$field ){
+        $product = self::alias('g')
+            ->join('category c','g.cid = c.id','LEFT')
+            ->field( $field )
+            ->where( ['g.id'=>$id,'g.status'=>1] )
+            ->find();
+
+        return $product;
+    }
+
+    /**
+     * 获取热门商品信息
+     * @return string
+     */
+    public static function hotGoods()
+    {
+        $product = self::where(['is_hot'=>1,'status'=> 1])
+            ->field('id,name,thumb,sp_price,prefix_title')
+            ->order('sort asc')
+            ->limit(4)
+            ->select( );
+        return $product;
+    }
+
+    /**
+     * 获取最新商品信息
+     * @return string
+     */
+    public static function recommendGoods()
+    {
+        $product = self::where(['is_recommend'=>1,'status'=> 1])
+            ->field('id,name,thumb,sp_price,prefix_title')
+            ->order('sort asc')
+            ->limit(4)
+            ->select( );
+        return $product;
+    }
+
+
+    }

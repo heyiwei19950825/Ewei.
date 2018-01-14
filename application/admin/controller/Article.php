@@ -147,16 +147,19 @@ class Article extends AdminBase
                     }else{
                         $data['range_type'] = 1;
                     }
-
-                    foreach ($ids as $key => $value) {//关联商品
-                        $req[$key] = array(
-                            'article_id' => $id,
-                            'goods_id' => $value
-                        ); 
+                    //关联商品
+                    if( !empty($data['goods_ids'])){
+                        $data['goods_ids'] = explode(',',$data['goods_ids']);
+                        foreach ($data['goods_ids'] as $key => $value) {//关联商品
+                            $req[$key] = array(
+                                'article_id' => $id,
+                                'goods_id' => $value
+                            );
+                        }
+                        Db::name('article_goods')->where(['article_id'=>$id])->delete();
+                        Db::name('article_goods')->insertAll($req);
                     }
-                    
-                    Db::name('article_goods')->where(['article_id'=>$id])->delete();
-                    Db::name('article_goods')->insertAll($req);
+
                     $this->success('更新成功');
                 } else {
                     $this->error('更新失败');
