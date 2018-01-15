@@ -24,21 +24,34 @@ class Category extends BaseModel
         return $categories;
     }
     
-    public static function getCategory($id)
+    public static function getCategory($id,$field)
     {
-        $category = self::with('products')
-            ->with('products.img')
+        $category = self::field($field)
             ->find($id);
         return $category;
     }
 
     /**
      * 获取顶级分类
-     * @param srting  $field
-     * @return object $row
+     * @param $field string
+     * @return object FilterCategory
      */
     public static function filterCategory( $field='' ){
         $filterCategory = self::where(['pid'=>0])
+            ->field($field)
+            ->order('sort asc')
+            ->select();
+
+        return $filterCategory;
+    }
+
+    /**
+     * @param $id
+     * @param string $field
+     * @return false|\PDOStatement|string|\think\Collection
+     */
+    public static function childCategory( $id,$field='' ){
+        $filterCategory = self::where(['pid'=>$id])
             ->field($field)
             ->order('sort asc')
             ->select();

@@ -8,7 +8,7 @@ class Goods extends BaseModel
 {
     protected $autoWriteTimestamp = 'datetime';
     protected $hidden = [
-        'delete_time', 'main_img_id', 'pivot', 'from', 'cid',
+        'delete_time', 'main_img_id', 'pivot', 'from',
         'create_time', 'update_time'];
 
     /**
@@ -45,11 +45,18 @@ class Goods extends BaseModel
     public static function getProductsByCategoryID(
         $categoryId, $paginate = true, $field='', $keyword='', $sort='is_recommend', $order='asc', $page = 1, $size = 30)
     {
+        $now = date('Y-m-d H:i:s',time());
+        $map['cid']     = ['=',$categoryId];
+        $map['btime']   = ['<=',$now];
+        $map['etime']   = ['>=',$now];
+        $map['status']  = ['=',1];
+
+        if( !empty($keyword) ){
+            $map['name']    = ['like','%'.$keyword.'%'];
+        }
         $query = self::
         where(
-            'cid', '=', $categoryId,
-            'keyword','like','%'.$keyword.'%',
-            'status','=',1
+           $map
         )
             ->field($field)
             ->order(
@@ -76,15 +83,7 @@ class Goods extends BaseModel
      */
     public static function getProductDetail($id)
     {
-        $product = self::with(
-            [
-                'imgs' => function ($query)
-                {
-                    $query->with(['imgUrl'])
-                        ->order('order', 'asc');
-                }])
-            ->with('properties')
-            ->find($id);
+        $product = self::find($id);
         return $product;
     }
 
@@ -107,7 +106,6 @@ class Goods extends BaseModel
             ->field( $field )
             ->where( ['g.id'=>$id,'g.status'=>1] )
             ->find();
-
         return $product;
     }
 
@@ -117,7 +115,12 @@ class Goods extends BaseModel
      */
     public static function hotGoods()
     {
-        $product = self::where(['is_hot'=>1,'status'=> 1])
+        $now = date('Y-m-d H:i:s',time());
+        $map['is_hot']     = ['=',1];
+        $map['btime']   = ['<=',$now];
+        $map['etime']   = ['>=',$now];
+        $map['status']  = ['=',1];
+        $product = self::where($map)
             ->field('id,name,thumb,sp_price,prefix_title')
             ->order('sort asc')
             ->limit(4)
@@ -131,7 +134,13 @@ class Goods extends BaseModel
      */
     public static function recommendGoods()
     {
-        $product = self::where(['is_recommend'=>1,'status'=> 1])
+        $now = date('Y-m-d H:i:s',time());
+        $map['btime']   = ['<=',$now];
+        $map['etime']   = ['>=',$now];
+        $map['status']  = ['=',1];
+        $map['is_recommend']     = ['=',1];
+
+        $product = self::where($map)
             ->field('id,name,thumb,sp_price,prefix_title')
             ->order('sort asc')
             ->limit(4)

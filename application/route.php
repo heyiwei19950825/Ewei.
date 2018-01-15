@@ -47,16 +47,17 @@ Route::post('api/:version/Goods', 'api/:version.Goods/createOne');
 Route::delete('api/:version/Goods/:id', 'api/:version.Goods/deleteOne');
 Route::get('api/:version/Goods/by_category/paginate', 'api/:version.Goods/getByCategory');
 Route::get('api/:version/Goods/by_category', 'api/:version.Goods/getAllInCategory');
-Route::get('api/:version/Goods/:id', 'api/:version.Goods/getOne',[],['id'=>'\d+']);
+Route::get('api/:version/Goods/detail', 'api/:version.Goods/getOne');
 Route::get('api/:version/Goods/recent', 'api/:version.Goods/getRecent');
-Route::get('api/:version/Goods/category', 'api/:version.Goods/getCategoryByGoodsId');
 
 //Category
-Route::get('api/:version/category', 'api/:version.Category/getCategories'); 
+//Route::get('api/:version/category', 'api/:version.Category/getCategories');
 // 正则匹配区别id和all，注意d后面的+号，没有+号将只能匹配个位数
 //Route::get('api/:version/category/:id', 'api/:version.Category/getCategory',[], ['id'=>'\d+']);
 //Route::get('api/:version/category/:id/Goodss', 'api/:version.Category/getCategory',[], ['id'=>'\d+']);
-Route::get('api/:version/category/all', 'api/:version.Category/getAllCategories');
+//Route::get('api/:version/category/all', 'api/:version.Category/getAllCategories');
+Route::get('api/:version/Category/list', 'api/:version.Category/getCategoryByCId');
+
 
 //Token
 Route::post('api/:version/token/user', 'api/:version.Token/getToken');

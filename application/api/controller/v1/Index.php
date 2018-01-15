@@ -9,7 +9,6 @@
 namespace app\api\controller\v1;
 
 use app\api\controller\BaseController;
-use think\Controller;
 use think\Config;
 
 use app\api\model\Category;

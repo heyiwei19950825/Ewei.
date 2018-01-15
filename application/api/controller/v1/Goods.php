@@ -11,12 +11,13 @@ use app\lib\exception\ParameterException;
 use app\lib\exception\ProductException;
 use app\lib\exception\ThemeException;
 use app\lib\exception\CategoryException;
-use think\Controller;
+use app\api\controller\BaseController;
 use app\api\model\Category as CategoryModel;
+use app\api\model\GoodsSku;
 use think\Exception;
 use think\Config;
 
-class Goods extends Controller
+class Goods extends BaseController
 {
     protected $beforeActionList = [
         'checkSuperScope' => ['only' => 'createOne,deleteOne']
@@ -36,27 +37,39 @@ class Goods extends Controller
         (new IDMustBePositiveInt())->goCheck();
         (new PagingParameter())->goCheck();
 
-        $field = 'name,thumb,sp_price';
+        $field = 'name,thumb,sp_price,id';
         $pagingProducts = GoodsModel::getProductsByCategoryID(
             $id, true,$field,$keyword,$sort,$order,$page,$size);
+
+        //顶级分类列表
+        $filterCategory = CategoryModel::filterCategory( 'id,name' )->toArray();
+
         if ($pagingProducts->isEmpty())
         {
             // 对于分页最好不要抛出MissException，客户端并不好处理
-            return [
-                'current_page' => $pagingProducts->currentPage(),
-                'data' => []
+            $data = ['count' => 0,//总数
+                'last_page' => 1,//下一页页码
+                'currentPage' => 1,//当前页码
+                'goodsList'=>[],//商品列表
+                'pagesize'  => $size,//每页长度
+                'totalPages' => 1, //总页数
+                'filterCategory' => $filterCategory,
             ];
+            $row = [
+                'errno' => 0,
+                'errmsg' => '',
+                'data' => $data
+            ];
+            return  $row;
         }
 
         $data = $pagingProducts
 //            ->hidden(['summary'])
             ->toArray();
-        //顶级分类列表
-        $filterCategory = CategoryModel::filterCategory( 'id,name' )->toArray();
+
         //图片设置域名
-        foreach ($data['data'] as &$item) {
-            $item['thumb'] =  Config::get('cookie.domain').$item['thumb'];
-        }
+        $data['data'] = self::prefixDomainToArray('thumb',$data['data']);
+
         //配置参数
         $data = [
             'count' => $data['total'],//总数
@@ -103,63 +116,6 @@ class Goods extends Controller
     }
 
     /**
-     * 获取指定数量的最近商品
-     * @url /product/recent?count=:count
-     * @param int $count
-     * @return mixed
-     * @throws ParameterException
-     */
-    public function getRecent($count = 15)
-    {
-        (new Count())->goCheck();
-        $products = GoodsModel::getMostRecent($count);
-        if ($products->isEmpty())
-        {
-
-        }
-        $products = $products->hidden(
-            [
-                'summary'
-            ])
-            ->toArray();
-        return $products;
-    }
-
-    /**
-     * 获取商品详情
-     * 如果商品详情信息很多，需要考虑分多个接口分布加载
-     * @url /product/:id
-     * @param int $id 商品id号
-     * @return Product
-     * @throws ProductException
-     */
-    public function getOne($id)
-    {
-        (new IDMustBePositiveInt())->goCheck();
-        $product = GoodsModel::getProductDetail($id);
-        if (!$product)
-        {
-            throw new ProductException();
-        }
-        return $product;
-    }
-
-    public function createOne()
-    {
-        $product = new GoodsModel();
-        $product->save(
-            [
-                'id' => 1
-            ]);
-    }
-
-    public function deleteOne($id)
-    {
-        GoodsModel::destroy($id);
-        //        GoodsModel::destroy(1,true);
-    }
-
-    /**
      * 通过商品ID获取当前分类
      * @url /category/:id
      * @param int $id 商品ID
@@ -196,5 +152,87 @@ class Goods extends Controller
 
         return $row;
     }
+        /**
+     * 获取商品详情
+     * 如果商品详情信息很多，需要考虑分多个接口分布加载
+     * @url /product/:id
+     * @param int $id 商品id号
+     * @return Product
+     * @throws ProductException
+     */
+    public function getOne($id)
+    {
+        (new IDMustBePositiveInt())->goCheck();
+        $product = GoodsModel::getProductDetail($id);
+
+        if (!$product )
+        {
+            throw new ProductException();
+        }
+        $product = $product->toArray();
+        $product['thumb'] = self::prefixDomain($product['thumb']);
+        //处理轮播图片信息
+        preg_match_all ('/\"\/uploads(.*?)\"/', $product['photo'], $m);
+        foreach ( $m[1] as $k=>$v){
+            $product['gallery'][] = self::prefixDomain('/uploads'.$v);
+        }
+        //商品规格
+        $sku = GoodsSku::getSkuByGId($id);
+
+        $product = [
+            'info' => $product,
+            'specificationList' => $sku->toArray(),
+        ];
+
+        $data = [
+            'errno'=>0,
+            'errmsg'=>'',
+            'data' => $product
+        ];
+        return $data;
+    }
+
+    public function createOne()
+    {
+        $product = new GoodsModel();
+        $product->save(
+            [
+                'id' => 1
+            ]);
+    }
+
+
+    /**
+    //     * 获取指定数量的最近商品
+    //     * @url /product/recent?count=:count
+    //     * @param int $count
+    //     * @return mixed
+    //     * @throws ParameterException
+    //     */
+//    public function getRecent($count = 15)
+//    {
+//        (new Count())->goCheck();
+//        $products = GoodsModel::getMostRecent($count);
+//        if ($products->isEmpty())
+//        {
+//
+//        }
+//        $products = $products->hidden(
+//            [
+//                'summary'
+//            ])
+//            ->toArray();
+//        return $products;
+//    }
+//
+
+//
+//    public function deleteOne($id)
+//    {
+//        GoodsModel::destroy($id);
+//        //        GoodsModel::destroy(1,true);
+//    }
+
+
 
 }

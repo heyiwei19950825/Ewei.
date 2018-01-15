@@ -15,7 +15,7 @@ use app\api\controller\BaseController;
 use app\api\model\Category as CategoryModel;
 use app\api\validate\IDMustBePositiveInt;
 use app\lib\exception\MissException;
-use think\Controller;
+use app\lib\exception\CategoryException;
 
 class Category extends BaseController
 {
@@ -64,4 +64,55 @@ class Category extends BaseController
         }
         return $category;
     }
+
+    /**
+     * 通过商品分类ID获取
+     * @url /category/:id
+     * @param int $id 商品ID
+     * @return Row
+     * @throws CategoryException
+     */
+    public function getCategoryByCId( $id = -1 ){
+        (new IDMustBePositiveInt())->goCheck();
+        $field = 'id,name,alias,pid';
+        //查询当前分类
+        $categoryInfo = CategoryModel::getCategory( $id, $field );
+        if( !$categoryInfo ){
+            throw new CategoryException();
+        }
+        $categoryInfo = $categoryInfo->toArray();
+
+        //查询当前分类下的所有子分类
+        $brotherCategory = CategoryModel::childCategory($categoryInfo['pid'],$field);
+
+        $data = [
+            'brotherCategory' => $brotherCategory,
+            'currentCategory' => $categoryInfo, //当前分类信息
+        ];
+        $row = [
+            'errno' => 0,
+            'errmsg' => '',
+            'data' => $data
+        ];
+
+        return $row;
+    }
+
+    /**
+     * 通过ID获取当前级别分类
+     * @param int $id
+     * @return array
+     */
+    public function getCategoryByPId( $id = -1 ){
+
+        $data = CategoryModel::getCategoryByPId( $id );
+        $row = [
+            'errno' => 0,
+            'errmsg' => '',
+            'data' => $data
+        ];
+
+        return $row;
+    }
+
 }
