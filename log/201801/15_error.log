@@ -1,0 +1,6 @@
+---------------------------------------------------------------
+[2018-01-15T11:38:18+08:00] 10.139.166.66 220.182.60.42 GET /api/v1/goods/category?id=5
+[ error ] [404][/www/wwwroot/ewei_admin/application/api/controller/v1/Goods.php:176]
+---------------------------------------------------------------
+[2018-01-15T11:38:38+08:00] 10.139.166.66 220.182.60.42 GET /api/v1/address/list
+[ error ] [401][/www/wwwroot/ewei_admin/application/api/service/Token.php:90]

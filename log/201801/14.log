@@ -1,0 +1,982 @@
+---------------------------------------------------------------
+[2018-01-14T22:23:42+08:00] 10.139.166.66 117.100.99.153 GET /
+[ info ] www.jianlionline.com/ [运行时间：0.022959s][吞吐率：43.56req/s] [内存消耗：1,775.51kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000273s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.jianlionline.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4399.400 QQBrowser/9.7.12828.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://svip.phper.wang:9169/site',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=cf7c9gebjl45ocpat32vcqu377',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:23:42+08:00] 10.139.166.66 117.100.99.153 GET /
+[ info ] www.jianlionline.com/ [运行时间：0.020405s][吞吐率：49.01req/s] [内存消耗：1,775.60kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000253s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '404',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.jianlionline.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4399.400 QQBrowser/9.7.12828.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://svip.phper.wang:9169/site',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=cf7c9gebjl45ocpat32vcqu377',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:23:49+08:00] 10.139.166.66 117.100.99.153 GET /
+[ info ] www.jianlionline.com/ [运行时间：0.023384s][吞吐率：42.76req/s] [内存消耗：1,775.38kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000283s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.jianlionline.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4399.400 QQBrowser/9.7.12828.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=cf7c9gebjl45ocpat32vcqu377',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:23:49+08:00] 10.139.166.66 117.100.99.153 GET /
+[ info ] www.jianlionline.com/ [运行时间：0.020590s][吞吐率：48.57req/s] [内存消耗：1,775.36kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000311s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '404',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.jianlionline.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4399.400 QQBrowser/9.7.12828.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=cf7c9gebjl45ocpat32vcqu377',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:24:42+08:00] 10.139.166.66 61.151.178.169 GET /
+[ info ] www.jianlionline.com/ [运行时间：0.023368s][吞吐率：42.79req/s] [内存消耗：1,774.69kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000274s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko',
+  'accept' => '*/*',
+  'referer' => 'blank',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'www.jianlionline.com',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:24:42+08:00] 10.139.166.66 61.151.178.169 GET /
+[ info ] www.jianlionline.com/ [运行时间：0.020775s][吞吐率：48.14req/s] [内存消耗：1,774.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000279s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '404',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko',
+  'accept' => '*/*',
+  'referer' => 'blank',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'www.jianlionline.com',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:31:26+08:00] 10.139.166.66 117.100.99.153 GET /api/v1/indx/index
+[ info ] small.redkylin.com/api/v1/indx/index [运行时间：0.057335s][吞吐率：17.44req/s] [内存消耗：1,805.06kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000281s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'indx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4399.400 QQBrowser/9.7.12828.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'pgv_pvi=2087371776',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:32:26+08:00] 10.139.166.66 101.226.33.221 GET /api/v1/indx/index
+[ info ] small.redkylin.com/api/v1/indx/index [运行时间：0.024605s][吞吐率：40.64req/s] [内存消耗：1,803.90kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000286s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'indx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) 			Chrome/55.0.2883.95 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'blank',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'small.redkylin.com',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:35:06+08:00] 10.139.166.66 101.226.65.107 GET /api/v1/indx/index
+[ info ] small.redkylin.com/api/v1/indx/index [运行时间：0.025720s][吞吐率：38.88req/s] [内存消耗：1,804.52kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000273s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'indx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) 			Chrome/55.0.2883.95 Safari/537.36',
+  'accept' => '*/*',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'referer' => 'blank',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'small.redkylin.com',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:39:33+08:00] 10.139.166.66 117.100.99.153 GET /api/index/index
+[ info ] small.redkylin.com/api/index/index [运行时间：0.032623s][吞吐率：30.65req/s] [内存消耗：1,805.57kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000326s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:39:45+08:00] 10.139.166.66 117.100.99.153 GET /api/topic/list?page=1&size=10
+[ info ] small.redkylin.com/api/topic/list?page=1&size=10 [运行时间：0.023143s][吞吐率：43.21req/s] [内存消耗：1,806.37kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000321s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'topic',
+    2 => 'list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'size' => '10',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:39:47+08:00] 10.139.166.66 117.100.99.153 GET /api/catalog/index
+[ info ] small.redkylin.com/api/catalog/index [运行时间：0.028273s][吞吐率：35.37req/s] [内存消耗：1,805.65kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000390s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'catalog',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:39:47+08:00] 10.139.166.66 117.100.99.153 GET /api/goods/count
+[ info ] small.redkylin.com/api/goods/count [运行时间：0.024640s][吞吐率：40.58req/s] [内存消耗：1,805.57kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000300s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'count',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:39:48+08:00] 10.139.166.66 117.100.99.153 GET /api/cart/index
+[ info ] small.redkylin.com/api/cart/index [运行时间：0.029963s][吞吐率：33.37req/s] [内存消耗：1,805.71kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000340s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'cart',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:40:01+08:00] 10.139.166.66 117.100.99.153 GET /api/v1/topic/list?page=1&size=10
+[ info ] small.redkylin.com/api/v1/topic/list?page=1&size=10 [运行时间：0.023815s][吞吐率：41.99req/s] [内存消耗：1,806.29kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000323s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'topic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6Im5Pd2NJL3dyTkwrNTRQWERxb2RTWlE9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE1OTAzNDE4fQ.cjGlj8-1-dDzLQ0yRRPFBSx4RivScfs3qKiRqSCZCfQ',
+  'user-agent' => 'wechatdevtools appservice port/9974',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'size' => '10',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:40:03+08:00] 10.139.166.66 117.100.99.153 GET /api/v1/catalog/index
+[ info ] small.redkylin.com/api/v1/catalog/index [运行时间：0.031045s][吞吐率：32.21req/s] [内存消耗：1,805.46kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000280s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'catalog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6Im5Pd2NJL3dyTkwrNTRQWERxb2RTWlE9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE1OTAzNDE4fQ.cjGlj8-1-dDzLQ0yRRPFBSx4RivScfs3qKiRqSCZCfQ',
+  'user-agent' => 'wechatdevtools appservice port/9974',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:40:03+08:00] 10.139.166.66 117.100.99.153 GET /api/v1/goods/count
+[ info ] small.redkylin.com/api/v1/goods/count [运行时间：0.032754s][吞吐率：30.53req/s] [内存消耗：1,805.54kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000511s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6Im5Pd2NJL3dyTkwrNTRQWERxb2RTWlE9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE1OTAzNDE4fQ.cjGlj8-1-dDzLQ0yRRPFBSx4RivScfs3qKiRqSCZCfQ',
+  'user-agent' => 'wechatdevtools appservice port/9974',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-01-14T22:43:31+08:00 ] 10.139.166.66 117.100.99.153 POST /index.php/api/v1/upload/upload
+[ info ] small.redkylin.com/index.php/api/v1/upload/upload [运行时间：0.165054s][吞吐率：6.06req/s] [内存消耗：2,292.72kb] [文件加载：47]
+[ error ] [2]move_uploaded_file(uploads/goods_group/1515941011.png): failed to open stream: Permission denied[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+[ error ] [2]move_uploaded_file(): Unable to move '/tmp/phpV87Xzs' to 'uploads/goods_group/1515941011.png'[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+---------------------------------------------------------------
+[ 2018-01-14T22:43:37+08:00 ] 10.139.166.66 117.100.99.153 POST /index.php/api/v1/upload/upload
+[ info ] small.redkylin.com/index.php/api/v1/upload/upload [运行时间：0.030692s][吞吐率：32.58req/s] [内存消耗：2,292.72kb] [文件加载：47]
+[ error ] [2]move_uploaded_file(uploads/goods_group/1515941017.png): failed to open stream: Permission denied[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+[ error ] [2]move_uploaded_file(): Unable to move '/tmp/phpVbbkMI' to 'uploads/goods_group/1515941017.png'[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+---------------------------------------------------------------
+[ 2018-01-14T22:44:02+08:00 ] 10.139.166.66 117.100.99.153 POST /index.php/api/v1/upload/upload
+[ info ] small.redkylin.com/index.php/api/v1/upload/upload [运行时间：0.029661s][吞吐率：33.71req/s] [内存消耗：2,292.72kb] [文件加载：47]
+[ error ] [2]move_uploaded_file(uploads/goods_group/1515941042.png): failed to open stream: Permission denied[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+[ error ] [2]move_uploaded_file(): Unable to move '/tmp/phpHFOvVJ' to 'uploads/goods_group/1515941042.png'[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+---------------------------------------------------------------
+[ 2018-01-14T22:45:30+08:00 ] 10.139.166.66 117.100.99.153 POST /index.php/api/v1/upload/upload
+[ info ] small.redkylin.com/index.php/api/v1/upload/upload [运行时间：0.033325s][吞吐率：30.01req/s] [内存消耗：2,292.72kb] [文件加载：47]
+[ error ] [2]move_uploaded_file(uploads/goods_group/1515941130.png): failed to open stream: Permission denied[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+[ error ] [2]move_uploaded_file(): Unable to move '/tmp/php09uTBs' to 'uploads/goods_group/1515941130.png'[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+---------------------------------------------------------------
+[ 2018-01-14T22:45:58+08:00 ] 10.139.166.66 117.100.99.153 POST /index.php/api/v1/upload/upload
+[ info ] small.redkylin.com/index.php/api/v1/upload/upload [运行时间：0.037935s][吞吐率：26.36req/s] [内存消耗：2,292.72kb] [文件加载：47]
+[ error ] [2]move_uploaded_file(uploads/goods_group/1515941158.png): failed to open stream: Permission denied[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+[ error ] [2]move_uploaded_file(): Unable to move '/tmp/phpOoRVUE' to 'uploads/goods_group/1515941158.png'[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:509]
+---------------------------------------------------------------
+[ 2018-01-14T22:47:39+08:00 ] 10.139.166.66 117.100.99.153 POST /index.php/api/v1/upload/upload
+[ info ] small.redkylin.com/index.php/api/v1/upload/upload [运行时间：0.053486s][吞吐率：18.70req/s] [内存消耗：2,291.70kb] [文件加载：47]
+[ error ] [2]unlink() expects parameter 1 to be a valid path, array given[/www/wwwroot/ewei_admin/application/api/controller/v1/Upload.php:237]
+---------------------------------------------------------------
+[2018-01-14T22:52:12+08:00] 10.139.166.66 220.182.60.42 GET /api/v1/topic/list?page=1&size=10
+[ info ] small.redkylin.com/api/v1/topic/list?page=1&size=10 [运行时间：0.030440s][吞吐率：32.85req/s] [内存消耗：1,805.67kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000444s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'topic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C153 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'size' => '10',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:52:16+08:00] 10.139.166.66 220.182.60.42 GET /api/v1/catalog/index
+[ info ] small.redkylin.com/api/v1/catalog/index [运行时间：0.022944s][吞吐率：43.58req/s] [内存消耗：1,805.11kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000252s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'catalog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C153 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:52:17+08:00] 10.139.166.66 220.182.60.42 GET /api/v1/goods/count
+[ info ] small.redkylin.com/api/v1/goods/count [运行时间：0.025602s][吞吐率：39.06req/s] [内存消耗：1,805.07kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000276s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C153 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:52:56+08:00] 10.139.166.66 220.182.60.42 GET /api/v1/cart/index
+[ info ] small.redkylin.com/api/v1/cart/index [运行时间：0.029436s][吞吐率：33.97req/s] [内存消耗：1,805.03kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000338s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'cart',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C153 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:53:05+08:00] 10.139.166.66 220.182.60.42 POST /api/v1/auth/loginByWeixin
+[ info ] small.redkylin.com/api/v1/auth/loginByWeixin [运行时间：0.023474s][吞吐率：42.60req/s] [内存消耗：1,814.38kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000306s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'auth',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'accept-encoding' => 'br, gzip, deflate',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C153 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'content-length' => '1187',
+  'accept-language' => 'zh-cn',
+)
+[ info ] [ PARAM ] array (
+  'code' => '021Uqd170CeNYG1pBd070at6170Uqd17',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"poisonous","gender":1,"language":"zh_CN","city":"","province":"Gifu","country":"Japan","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJCzE75Xtdm58cpkBVIOIFib1oq0TlMzf8bR346s93e43EEnspkVQGK7zpDXHO4bXMMdgUeAVib5nfQ/0"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'poisonous',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Gifu',
+      'country' => 'Japan',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJCzE75Xtdm58cpkBVIOIFib1oq0TlMzf8bR346s93e43EEnspkVQGK7zpDXHO4bXMMdgUeAVib5nfQ/0',
+    ),
+    'signature' => '8de6172541a2bbb1e3642e52de866d87a90de690',
+    'encryptedData' => '1rXZE3HWQd/mvUqVpwqUMWaqvF2MsoHqveZhxoDV1ILs2ZL+OD1uIdR++QfltPldIVG4OHXhbTbW8e20uNVu5j1xltYz58wfyEHkn+6sh1Y1Nm+cUHPPh3rewqkgHbW1X7/gSAwFH6bzbw6d9K25KW7Xftmj62HgYBIRQDCI4LpRPv/j2vtKsVo2Tdk1biGuLnStIbSt/2ArePeoiWZNGlPyKENPnS/T72qQ8/wzuMceVideFTG2GKcWdqx49PJqRlM+CeRp05765U6xv/gt8c1RTE71ayHrAO1Nu551ZQ1+AGv1xeX0XUsBepyJhaAV6mfNlfVPQrRtg87jI6fxHDb1W14jyD1ZiUl/LX4AKKE/n1e4liudrHSCACuDKDRSjRCqJ8xcoeZt6mcZI2hSwcyv+y78/cSkB8icUpqRaE/BJntxJWZ357eCRNxYpWLws0S5q5tpydR9Pg8x3oOvcQ==',
+    'iv' => 'gLDx8ZuU+BMzjACpLzSeMQ==',
+  ),
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:56:58+08:00] 10.139.166.66 43.246.231.107 GET /api/v1/cart/index
+[ info ] small.redkylin.com/api/v1/cart/index [运行时间：0.024628s][吞吐率：40.60req/s] [内存消耗：1,805.05kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000307s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'cart',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_2 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:56:59+08:00] 10.139.166.66 43.246.231.107 GET /api/v1/catalog/index
+[ info ] small.redkylin.com/api/v1/catalog/index [运行时间：0.027530s][吞吐率：36.32req/s] [内存消耗：1,805.11kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000347s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'catalog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_2 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:56:59+08:00] 10.139.166.66 43.246.231.107 GET /api/v1/goods/count
+[ info ] small.redkylin.com/api/v1/goods/count [运行时间：0.029229s][吞吐率：34.21req/s] [内存消耗：1,805.07kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000314s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_2 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:57:34+08:00] 10.139.166.66 43.246.231.107 GET /api/v1/catalog/index
+[ info ] small.redkylin.com/api/v1/catalog/index [运行时间：0.023000s][吞吐率：43.48req/s] [内存消耗：1,805.11kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000253s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'catalog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_2 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:57:34+08:00] 10.139.166.66 43.246.231.107 GET /api/v1/goods/count
+[ info ] small.redkylin.com/api/v1/goods/count [运行时间：0.023698s][吞吐率：42.20req/s] [内存消耗：1,805.07kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000251s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => '',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_2 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:58:54+08:00] 10.139.166.66 117.100.99.153 GET /api/v1/topic/list?page=1&size=10
+[ info ] small.redkylin.com/api/v1/topic/list?page=1&size=10 [运行时间：0.025933s][吞吐率：38.56req/s] [内存消耗：1,806.27kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000393s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'topic',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'size' => '10',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:58:58+08:00] 10.139.166.66 117.100.99.153 GET /api/v1/catalog/index
+[ info ] small.redkylin.com/api/v1/catalog/index [运行时间：0.031850s][吞吐率：31.40req/s] [内存消耗：1,805.55kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000406s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'catalog',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:58:59+08:00] 10.139.166.66 117.100.99.153 GET /api/v1/goods/count
+[ info ] small.redkylin.com/api/v1/goods/count [运行时间：0.025017s][吞吐率：39.97req/s] [内存消耗：1,805.60kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000293s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'goods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:59:00+08:00] 10.139.166.66 117.100.99.153 GET /api/v1/cart/index
+[ info ] small.redkylin.com/api/v1/cart/index [运行时间：0.030365s][吞吐率：32.93req/s] [内存消耗：1,805.61kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000372s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'cart',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-01-14T22:59:09+08:00] 10.139.166.66 117.100.99.153 GET /api/v1/cart/index
+[ info ] small.redkylin.com/api/v1/cart/index [运行时间：0.026650s][吞吐率：37.52req/s] [内存消耗：1,834.23kb] [文件加载：39]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000323s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'cart',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'small.redkylin.com',
+  'content-type' => 'application/json',
+  'connection' => 'keep-alive',
+  'x-nideshop-token' => 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uX2tleSI6ImlSNEZtR1lqM2hoczJLOVRVQ1RDZHc9PSIsIm9wZW5pZCI6Im9jNl80MEd0T0VXS0Y3Xzg5RzZLdmY3QTl2YVEiLCJ1c2VyX2lkIjoxMywiaWF0IjoxNTE0OTE0Mzg0fQ.O3UNteAreSqJYFWS0WKISV5BrMmzxtVFTDRIzLdNUNY',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202 MicroMessenger/6.6.1 NetType/WIFI Language/zh_CN',
+  'referer' => 'https://servicewechat.com/wxcd9d03f0549d46cd/0/page-frame.html',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
