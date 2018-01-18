@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-01-14 22:33:48
+Date: 2018-01-18 22:19:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -62,7 +62,7 @@ CREATE TABLE `ewei_admin_user` (
 -- ----------------------------
 -- Records of ewei_admin_user
 -- ----------------------------
-INSERT INTO `ewei_admin_user` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', null, null, '1', '0', '2018-01-14 18:08:20', '127.0.0.1');
+INSERT INTO `ewei_admin_user` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', null, null, '1', '0', '2018-01-15 23:40:42', '127.0.0.1');
 INSERT INTO `ewei_admin_user` VALUES ('23', 'uyiku', '4297f44b13955235245b2497399d7a93', null, null, '1', '0', '2018-01-10 20:01:13', '127.0.0.1');
 
 -- ----------------------------
@@ -186,7 +186,7 @@ CREATE TABLE `ewei_article_goods` (
   `article_id` int(11) NOT NULL COMMENT '优惠券类型id',
   `goods_id` int(11) NOT NULL COMMENT '商品id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='优惠券使用商品表';
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='优惠券使用商品表';
 
 -- ----------------------------
 -- Records of ewei_article_goods
@@ -422,16 +422,18 @@ CREATE TABLE `ewei_category` (
   `description` varchar(100) DEFAULT NULL COMMENT '描述',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COMMENT='商品类目';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COMMENT='商品类目';
 
 -- ----------------------------
 -- Records of ewei_category
 -- ----------------------------
-INSERT INTO `ewei_category` VALUES ('5', '热菜食材', null, null, '/uploads/goods_group/1515935716.png', null, null, null, '1', '0', '0', '0,', '2017', null, null, null, null);
-INSERT INTO `ewei_category` VALUES ('6', '凉菜食材', null, null, '/uploads/goods_group/1515935735.png', null, null, null, '1', '1', '0', '0,', '2018', null, null, null, null);
-INSERT INTO `ewei_category` VALUES ('9', '鲜活食材', null, null, '/uploads/goods_group/1515936008.png', null, null, null, '1', '5', '0', '0,', '2018', null, null, null, null);
-INSERT INTO `ewei_category` VALUES ('10', '大通产品', null, null, '/uploads/goods_group/1515936073.png', null, null, null, '1', '6', '0', '0,', '2018', null, null, null, null);
-INSERT INTO `ewei_category` VALUES ('13', '酒水饮料', null, null, '/uploads/goods_group/1515938728.png', null, null, null, '1', '2', '0', '0,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('5', '热菜食材', '好吃的热菜食材', null, '/uploads/goods_group/1515935716.png', null, null, null, '1', '0', '0', '0,', null, null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('6', '凉菜食材', null, null, '/uploads/goods_group/1515935735.png', null, null, null, '1', '1', '0', '0,', null, null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('9', '鲜活食材', null, null, '/uploads/goods_group/1515936008.png', null, null, null, '1', '5', '0', '0,', null, null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('10', '大通产品', null, null, '/uploads/goods_group/1515936073.png', null, null, null, '1', '6', '0', '0,', null, null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('13', '酒水饮料', null, null, '/uploads/goods_group/1515938728.png', null, null, null, '1', '2', '0', '0,', null, null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('14', '熟食', '全食熟食店', null, '/uploads/goods_group/1516030872.jpg', null, null, null, '1', '0', '5', '0,5,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('15', '香肠', '哈尔滨红肠', null, '/uploads/goods_group/1516030887.jpg', null, null, null, '1', '1', '5', '0,5,', '2018', null, null, null, null);
 
 -- ----------------------------
 -- Table structure for ewei_city
@@ -3909,7 +3911,7 @@ CREATE TABLE `ewei_goods` (
   `delete_time` datetime DEFAULT NULL COMMENT '删除时间',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COMMENT='商品表';
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='商品表';
 
 -- ----------------------------
 -- Records of ewei_goods
@@ -3917,7 +3919,7 @@ CREATE TABLE `ewei_goods` (
 INSERT INTO `ewei_goods` VALUES ('33', '5', '1', '0', '无肩带隐形文胸薄款胸贴婚纱聚拢防滑漏背性感胸罩', '内衣乳贴上托', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2vch8axb9F1JjSZFqXXbotVXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2M54aa4z_F1JjSZFIXXcxHVXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2WpOJuhxmpuFjSZFNXXXrRXXa_!!169468122.jpg\"/> <img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2JTBsX8H8F1Jjy0FnXXb5AXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\" class=\"\"/> <img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2EMuAarH9F1JjSZFAXXba3VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2NqJuXYD8F1Jjy0FpXXcduVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2CstrX3L8F1JjSsphXXXknVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB26CFZX5GfF1Jjy0FjXXXZdVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2zk4sXYH8F1Jjy1zbXXaVNVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2HFl0X0WgF1Jjy0FhXXbeEFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2cxpZX.ifF1JjSspdXXclLpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2G8B_axf9F1JjSZFyXXXnOFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2ipmAphtmpuFjSZFqXXbHFpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2JmlZX5GfF1Jjy0FjXXXZdVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2S6RsX9f8F1Jjy0FeXXallpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2JLzDmHFlpuFjy0FgXXbRBVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB20qrlpctnpuFjSZFvXXbcTpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2t_zwpbxmpuFjSZJiXXXauVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2FkT_mH8kpuFjy0FcXXaUhpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2lDLypbBmpuFjSZFuXXaG_XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2eoJsX3L8F1JjSspjXXbZgpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2jkX1X0qgF1JjSsppXXaBNXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB214l8arL9F1JjSZFwXXcSuVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2SGp1X5afF1Jjy1zcXXcu5XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2BXR9ap6.F1JjSZFpXXcZjXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2JM8tX8P8F1JjSspaXXb4ypXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515575596.jpg', 'a:4:{i:0;s:35:\"/uploads/goods/1515575620134754.jpg\";i:1;s:35:\"/uploads/goods/1515575620230865.jpg\";i:2;s:35:\"/uploads/goods/1515575620534669.jpg\";i:3;s:35:\"/uploads/goods/1515575620101494.jpg\";}', '1', '1', '0', '0', '0', '2018-01-10 17:14:12', '2018-01-10 00:00:00', '32.00', '0.00', '0.00', '123.00', '32', '123', '0', '1', '32', '2018-01-10 00:00:00', '2018-01-26 00:00:00', null, null);
 INSERT INTO `ewei_goods` VALUES ('37', '5', '1', '0', '宫廷马甲吊袜带套装性感束身衣小胸女情趣内衣裤透视紧身制服激情', '服激情', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB23PzzXyrEK1JjSZFHXXcveXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB29X6CXw2DK1JjSZFOXXabwFXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2kJBpX.6EK1JjSZFDXXcIqFXa_!!169468122.jpg\"/> <img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2sEQUXnzGK1JjSsplXXbdspXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB279mnuM0kpuFjSspdXXX4YXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2RWrxXwYDK1JjSZFCXXX.vXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2inDzXxDBK1JjSZFhXXXFFFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2HJfuXpHFK1JjSZFzXXb23XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB22ZLwXxvEK1JjSZFPXXbWYpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2EbDuXwYDK1JjSZPfXXcY.pXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2M__JuYJmpuFjSZFwXXaE4VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2AWGCXl1tLeJjSszgXXcOHpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2co_xXu2CK1JjSZFjXXXk_VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2mrcRXgvGK1Jjy0FcXXXXmVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2p4YuXqTEK1JjSZFFXXb6xXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2UEM2lmJjpuFjy0FdXXXmoFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2NPtbuylnpuFjSZFgXXbi7FXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB20jUeq3JlpuFjSspjXXcT.pXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515578042.jpg', 'a:5:{i:0;s:35:\"/uploads/goods/1515578038343049.jpg\";i:1;s:35:\"/uploads/goods/1515578038186800.jpg\";i:2;s:35:\"/uploads/goods/1515578038187059.jpg\";i:3;s:35:\"/uploads/goods/1515578038126040.jpg\";i:4;s:35:\"/uploads/goods/1515578038120054.jpg\";}', '1', '1', '1', '0', '2', '2018-01-10 17:57:44', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '123', '0', '1', '123', '2018-01-12 00:00:00', '2018-02-01 00:00:00', null, null);
 INSERT INTO `ewei_goods` VALUES ('36', '5', '4', '9', '性感兔女郎紧身连体衣制服夜火情趣内衣成人', '小胸透视激情套装夜店', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2nCE.X0qgF1Jjy1zdXXc8dFXa_!!169468122.jpg\"/><br/> <img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2VwNaadmgF1Jjy1XaXXcSEFXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB28tD.aS69F1JjSZPiXXXfCXXa_!!169468122.jpg\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515576059.jpg', 'a:5:{i:0;s:35:\"/uploads/goods/1515576053116598.jpg\";i:1;s:35:\"/uploads/goods/1515576053110118.jpg\";i:2;s:35:\"/uploads/goods/1515576053123475.jpg\";i:3;s:35:\"/uploads/goods/1515576053202593.jpg\";i:4;s:35:\"/uploads/goods/1515576053831890.jpg\";}', '1', '1', '0', '0', '1', '2018-01-10 17:35:22', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '123', '0', '1', '123', '2018-01-09 00:00:00', '2018-01-27 00:00:00', null, null);
-INSERT INTO `ewei_goods` VALUES ('38', '5', '1', '8', '性感露胸包臀短裙空姐情趣内衣制服紧身激情套装透视女秘书OL夜店', '测试', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2NBngXbL9F1JjSZFlXXa2sVXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2uRSMXgMEF1JjSZFxXXbcVpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB279mnuM0kpuFjSspdXXX4YXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB23x6fXX_.F1JjSZFjXXahnXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB26ZO3XdmgF1Jjy0FaXXX5jpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB280vfXkz_F1JjSZFkXXcCaXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB25Vu4XcSfF1JjSspbXXcSkVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2XY1IXgIEF1JjSZFHXXbRVXXa_!!169468122.jpg\" class=\"\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2F.53XjmfF1JjSspcXXXZMXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2ydi3XoifF1JjSspdXXclLpXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '', '1', '0', '/uploads/goods_brand/1515581629.jpg', 'a:3:{i:0;s:35:\"/uploads/goods/1515581639839679.jpg\";i:1;s:35:\"/uploads/goods/1515581639469046.jpg\";i:2;s:35:\"/uploads/goods/1515581639395160.jpg\";}', '1', '1', '1', '0', '3', '2018-01-10 18:54:30', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '1232', '32', '1', '123', '2018-01-19 00:00:00', '2018-01-30 00:00:00', null, null);
+INSERT INTO `ewei_goods` VALUES ('38', '5', '1', '8', '性感露胸包臀短裙空姐情趣内衣制服紧身激情套装透视女秘书OL夜店', '测试', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2NBngXbL9F1JjSZFlXXa2sVXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2uRSMXgMEF1JjSZFxXXbcVpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB279mnuM0kpuFjSspdXXX4YXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB23x6fXX_.F1JjSZFjXXahnXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB26ZO3XdmgF1Jjy0FaXXX5jpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB280vfXkz_F1JjSZFkXXcCaXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB25Vu4XcSfF1JjSspbXXcSkVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2XY1IXgIEF1JjSZFHXXbRVXXa_!!169468122.jpg\" class=\"\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2F.53XjmfF1JjSspcXXXZMXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2ydi3XoifF1JjSspdXXclLpXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '', '1', '0', '/uploads/goods_brand/1515581629.jpg', 'a:3:{i:0;s:35:\"/uploads/goods/1515581639839679.jpg\";i:1;s:35:\"/uploads/goods/1515581639469046.jpg\";i:2;s:35:\"/uploads/goods/1515581639395160.jpg\";}', '1', '1', '1', '0', '3', '2018-01-10 18:54:30', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '1232', '32', '1', '123', '2018-01-10 00:00:00', '2018-01-30 00:00:00', null, null);
 
 -- ----------------------------
 -- Table structure for ewei_goods_browse_record
@@ -3950,7 +3952,7 @@ CREATE TABLE `ewei_goods_collective` (
   `end_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '结束时间',
   `state` enum('1','0') NOT NULL DEFAULT '0' COMMENT '0未开启   1开启',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COMMENT='开团规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COMMENT='开团规则表';
 
 -- ----------------------------
 -- Records of ewei_goods_collective
@@ -3959,7 +3961,8 @@ INSERT INTO `ewei_goods_collective` VALUES ('11', '30', '0', '12312', '123.00', 
 INSERT INTO `ewei_goods_collective` VALUES ('18', '32', '0', '2', '3.00', '3600', '2018-01-01 22:51:37', '2018-01-01 22:51:37', '1');
 INSERT INTO `ewei_goods_collective` VALUES ('29', '36', '0', '123', '123.00', '123', '2018-01-10 00:00:00', '2018-01-18 00:00:00', '1');
 INSERT INTO `ewei_goods_collective` VALUES ('20', '37', '0', '123', '123.00', '123', '2018-01-10 00:00:00', '2018-01-26 00:00:00', '1');
-INSERT INTO `ewei_goods_collective` VALUES ('30', '38', '1', '2', '123.00', '213', '2018-01-10 00:00:00', '2018-01-26 00:00:00', '1');
+INSERT INTO `ewei_goods_collective` VALUES ('33', '38', '1', '2', '123.00', '213', '2018-01-10 00:00:00', '2018-01-26 00:00:00', '1');
+INSERT INTO `ewei_goods_collective` VALUES ('42', '33', '1', '0', '0.00', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '');
 
 -- ----------------------------
 -- Table structure for ewei_goods_sku
@@ -3979,17 +3982,20 @@ CREATE TABLE `ewei_goods_sku` (
   `picture` int(11) NOT NULL DEFAULT '0' COMMENT '如果是第一个sku编码, 可以加图片',
   `code` varchar(255) NOT NULL DEFAULT '' COMMENT '商家编码',
   `QRcode` varchar(255) NOT NULL DEFAULT '' COMMENT '商品二维码',
+  `group_id` int(11) DEFAULT '0' COMMENT '分组ID',
   `create_date` int(11) DEFAULT '0' COMMENT '创建时间',
   `update_date` int(11) DEFAULT '0' COMMENT '修改时间',
   PRIMARY KEY (`sku_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=481 COMMENT='商品skui规格价格库存信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=169 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=481 COMMENT='商品skui规格价格库存信息表';
 
 -- ----------------------------
 -- Records of ewei_goods_sku
 -- ----------------------------
-INSERT INTO `ewei_goods_sku` VALUES ('111', '38', '颜色', '白+红', '', '0.00', '123.00', '0.00', '123.00', '999999', '0', '', '', '0', '0');
-INSERT INTO `ewei_goods_sku` VALUES ('112', '38', '颜色', '红', '', '0.00', '123.00', '0.00', '123.00', '99999', '0', '', '', '0', '0');
-INSERT INTO `ewei_goods_sku` VALUES ('113', '38', '颜色', '白', '', '0.00', '123.00', '0.00', '123.00', '99999', '0', '', '', '0', '0');
+INSERT INTO `ewei_goods_sku` VALUES ('162', '33', '尺码', 's', '', '0.00', '123.00', '0.00', '123.00', '123', '0', '', '', '1', '0', '0');
+INSERT INTO `ewei_goods_sku` VALUES ('163', '33', '尺码', 'm', '', '0.00', '123.00', '0.00', '123.00', '123', '0', '', '', '1', '0', '0');
+INSERT INTO `ewei_goods_sku` VALUES ('164', '33', '尺码', 'l', '', '0.00', '123.00', '0.00', '123.00', '123', '0', '', '', '1', '0', '0');
+INSERT INTO `ewei_goods_sku` VALUES ('165', '33', '颜色', '红色', '', '0.00', '123.00', '0.00', '123.00', '123', '0', '', '', '4', '0', '0');
+INSERT INTO `ewei_goods_sku` VALUES ('166', '33', '颜色', '白色', '', '0.00', '123.00', '0.00', '123.00', '123', '0', '', '', '4', '0', '0');
 
 -- ----------------------------
 -- Table structure for ewei_link
@@ -4552,6 +4558,31 @@ CREATE TABLE `ewei_user_address` (
 
 -- ----------------------------
 -- Records of ewei_user_address
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for ewei_user_cart
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_user_cart`;
+CREATE TABLE `ewei_user_cart` (
+  `cart_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '购物车id',
+  `buyer_id` int(11) NOT NULL DEFAULT '0' COMMENT '买家id',
+  `shop_id` int(11) NOT NULL DEFAULT '0' COMMENT '店铺id',
+  `shop_name` varchar(100) NOT NULL DEFAULT '' COMMENT '店铺名称',
+  `goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品id',
+  `goods_name` varchar(200) NOT NULL COMMENT '商品名称',
+  `sku_id` int(11) NOT NULL DEFAULT '0' COMMENT '商品的skuid',
+  `sku_name` varchar(200) NOT NULL DEFAULT '' COMMENT '商品的sku名称',
+  `price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '商品价格',
+  `num` smallint(5) NOT NULL DEFAULT '1' COMMENT '购买商品数量',
+  `goods_picture` int(11) NOT NULL DEFAULT '0' COMMENT '商品图片',
+  `bl_id` mediumint(8) NOT NULL DEFAULT '0' COMMENT '组合套装ID',
+  PRIMARY KEY (`cart_id`),
+  KEY `member_id` (`buyer_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1170 COMMENT='购物车表';
+
+-- ----------------------------
+-- Records of ewei_user_cart
 -- ----------------------------
 
 -- ----------------------------
