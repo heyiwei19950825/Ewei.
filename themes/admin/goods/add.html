@@ -106,7 +106,7 @@
                                 <div class="layui-inline">
                                   <label class="layui-form-label">库存数量:</label>
                                   <div class="layui-input-inline">
-                                    <input type="number" name="sp_inventory" lay-verify="required" class="layui-input">
+                                    <input type="number" name="sp_inventory" lay-verify="number" class="layui-input">
                                   </div>
                                 </div>
                             </div>
@@ -146,25 +146,25 @@
                                     <div class="layui-inline">
                                         <label class="layui-form-label">开团人数：</label>
                                         <div class="layui-input-inline">
-                                            <input type="number" name="collective_number" placeholder="几人开团" lay-verify="number" value="" class="layui-input">
+                                            <input type="number" name="collective_number" placeholder="几人开团" value="" class="layui-input">
                                         </div>
                                     </div>
                                     <div class="layui-inline">
                                         <label class="layui-form-label">开团价格：</label>
                                         <div class="layui-input-inline">
-                                            <input type="number" name="collective_price" lay-verify="number" placeholder="满足开团人数后价格" value="" class="layui-input ">
+                                            <input type="number" name="collective_price"  placeholder="满足开团人数后价格" value="" class="layui-input ">
                                         </div>
                                     </div>
                                     <div class="layui-inline">
                                         <label class="layui-form-label">等待时间：</label>
                                         <div class="layui-input-inline">
-                                            <input type="number" name="collective_time" value="" placeholder="单位秒" lay-verify="number" class="layui-input">
+                                            <input type="number" name="collective_time" value="" placeholder="单位秒" class="layui-input">
                                         </div>
                                     </div>
                                     <div class="layui-inline">
                                         <label class="layui-form-label">开始时间：</label>
                                         <div class="layui-input-inline">
-                                            <input type="text" name="collective_start_time" value="" placeholder="" lay-verify="datetime" class="layui-input datetime">
+                                            <input type="text" name="collective_start_time" value="" placeholder="" class="layui-input datetime">
                                         </div>
                                     </div>
                                     <div class="layui-inline">
@@ -242,29 +242,32 @@
                             </div>
 
                             <div class="layui-form-item property-list">
-                                <div class="layui-form-item property-info">
-                                    <div class="layui-inline">
-                                        <label class="layui-form-label">
-                                        </label>
-                                        <div class="layui-input-inline">
-                                            <input type="text" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input" value="" lay-verify="required">
+                                <div class="suk_object">
+                                    <div class="layui-form-item property-info">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">
+                                            </label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input sku_name" value="" lay-verify="required">
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value="" lay-verify="required">
+                                            </div>
+                                             <div class="layui-input-inline">
+                                                <input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value="" lay-verify='number'>
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value="" lay-verify='number'>
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value="" lay-verify='number'>
+                                            </div>
+                                            <a class="layui-btn layui-btn-small add-sku-value">添加属性值</a>
+                                            <a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a>
                                         </div>
-                                        <div class="layui-input-inline">
-                                            <input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value="" lay-verify="required">
-                                        </div>
-                                         <div class="layui-input-inline">
-                                            <input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value="" lay-verify='number'>
-                                        </div>
-                                        <div class="layui-input-inline">
-                                            <input type="number" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value="" lay-verify='number'>
-                                        </div>
-                                        <div class="layui-input-inline">
-                                            <input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value="" lay-verify='number'>
-                                        </div>
-                                        <a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </fieldset>
                  <!--    <div class="layui-form-item">
@@ -362,15 +365,50 @@
 
         //添加产品属性输入框
         $('.add-property').click(function(){
-            var html = ' <div class="layui-form-item property-info"><div class="layui-inline"><label class="layui-form-label"></label><div class="layui-input-inline"><input type="text" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value=""></div><a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a></div></div>';
-             $('.property-list').prepend(html).on('click','.remove-property-btn',function(){
+            var html = '<div class="suk_object"><div class="layui-form-item property-info"><div class="layui-inline"><label class="layui-form-label"></label><div class="layui-input-inline"><input type="text" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input sku_name" value=""></div><div class="layui-input-inline"><input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value=""></div><a class="layui-btn layui-btn-small add-sku-value">添加属性值</a><a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a></div></div></div>';
+            //删除元素
+            $('.property-list').prepend(html).on('click','.remove-property-btn',function(){
                 $(this).parents('.property-info').remove();
+            });
+            //添加属性值
+            $('.add-sku-value').on('click','',function(){
+                //获取父类属性sku_num值
+                var sku_value = $(this).parents('.property-info').find('.sku_name').val();
+                if(  sku_value == undefined || sku_value == '' ){
+                    alert('请先填写属性名称');return false;
+                }
+                var html2 =  ' <div class="layui-form-item property-info"><div class="layui-inline"><label class="layui-form-label"></label><div class="layui-input-inline">|___<input type="hidden" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input sku_names" value="'+sku_value+'"></div><div class="layui-input-inline"><input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value=""></div><a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a></div></div>';
+                $(this).parents('.suk_object').append(html2);
+
+            })
+
+            //双向绑定
+            $('.sku_name').on("change", function () {
+                var sku_num_value = $('.sku_name').val();
+                $(this).parents('.suk_object').find('.sku_names').val(sku_num_value);
             });
         })
 
         //删除产品属性输入框
         $('.remove-property-btn').on('click',function(){
             $(this).parents('.property-info').remove();
+        });
+        //双向绑定
+        $('.sku_name').on("change", function () {
+            var sku_num_value = $('.sku_name').val();
+            console.log(sku_num_value);
+            console.log($(this).parents('.suk_object').find('.sku_names'));
+            $(this).parents('.suk_object').find('.sku_names').val(sku_num_value);
+        });
+        //添加属性值
+        $('.add-sku-value').on('click','',function(){
+            //获取父类属性sku_num值
+            var sku_value = $(this).parents('.property-info').find('.sku_name').val();
+            if(  sku_value == undefined || sku_value == '' ){
+                alert('请先填写属性名称');return false;
+            }
+            var html2 =  ' <div class="layui-form-item property-info"><div class="layui-inline"><label class="layui-form-label"></label><div class="layui-input-inline">|___<input type="hidden" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input sku_names" value="'+sku_value+'"></div><div class="layui-input-inline"><input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value=""></div><div class="layui-input-inline"><input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value=""></div><a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a></div></div>';
+            $(this).parents('.suk_object').append(html2);
         })
 
 

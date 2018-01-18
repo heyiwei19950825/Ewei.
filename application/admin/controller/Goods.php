@@ -101,13 +101,33 @@ class Goods extends AdminBase
         if ($this->request->isPost()) {
             $data            = $this->request->param();
             $data['sid']     = $this->shop['id'];
-
+            $property       = [];
             $validate_result = $this->validate($data, 'Goods');
 
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
                 if ($this->goods_model->allowField(true)->save($data)) {
+                    $id = $this->goods_model->id;
+
+                    if( !empty($data['sku_name']) ) {
+                        $i = 1;
+                        foreach ($data['sku_name'] as $key => $value) {
+                            foreach ($property as $k => $v) {
+                                if ($v['sku_name'] == $value) {
+                                    $i = $v['group_id'];
+                                } else {
+                                    $i++;
+                                }
+                            }
+                            $property[$key] = ['sku_name' => $value, 'attr_value_items' => $data['attr_value_items'][$key], 'goods_id' => $id, 'cost_price' => $data['cost_price'][$key], 'price' => $data['price'][$key], 'stock' => $data['stock'][$key], 'group_id' => $i];
+                        }
+
+                        //删除原有产品属性
+                        Db::name('goods_sku')->where(['goods_id' => $id])->delete();
+                        //保存提交的属性
+                        Db::name('goods_sku')->insertAll($property);
+                    }
                     if( $data['collective_state'] == '1' ){
                     //开团信息保存
                     $collective = array(
@@ -146,24 +166,38 @@ class Goods extends AdminBase
     public function edit($id)
     {
         $this->where = ['id'=>$id];
-        $field = 's.sku_name,s.attr_value_items,s.cost_price,s.price,s.stock,p.pic_cover,p.pic_id';
+        $field = 's.sku_name,s.attr_value_items,s.cost_price,s.price,s.stock,p.pic_cover,p.pic_id,group_id';
         $goods = $this->goods_model->where($this->where)->find();
 
         //没有查询到商品信息
         if( empty($goods) ){
             $this->error('没有找到对应的商品信息~');
         }
+        $sku = [];
+        $i = 0;
         //查询规格
         $property = Db::table('ewei_goods_sku')->alias('s')->join('album_picture p','s.picture = p.pic_id','LEFT')->field($field)->where(['goods_id'=>$id])->group('s.sku_id')->select();
-        // var_dump( Db::table('ewei_goods_sku')->getLastSql());die;
-//         echo '<pre>';
-// print_r($property->toArray());
-// echo '<pre>';die;
+        if( !empty($property) ){
+            $property = $property->toArray();
+            foreach ($property as $item) {
+                    foreach ( $sku as $k=>$v) {
+                        if( $item['group_id'] == $k ){
+                            $sku[$item['group_id']][] = $item;
+                            $i = 1;
+                        }
+                    }
+
+                    if( $i != 1 ){
+                        $sku[$item['group_id']][] = $item;
+                    }
+                $i = 0;
+            }
+        }
 
         //查询是否选择开团
         $collective = Db::name('goods_collective')->where(['goods_id'=>$id])->find();
 
-        return $this->fetch('edit', ['goods' => $goods,'property'=>$property, 'collective'=>$collective]);
+        return $this->fetch('edit', ['goods' => $goods,'sku'=>$sku, 'collective'=>$collective]);
     }
 
     /**
@@ -175,7 +209,7 @@ class Goods extends AdminBase
         if ($this->request->isPost()) {
             $data            = $this->request->param();
             $property = array();
-            //检查是否有存在并权限修改 
+            //检查是否有存在并权限修改
             $this->where = array_merge($this->where,['id'=>$id]);
             $checkIssue = $this->goods_model->field('name')->where( $this->where )->find();
             if( $checkIssue == false ){
@@ -187,14 +221,24 @@ class Goods extends AdminBase
             } else {
                 if ($this->goods_model->allowField(true)->save($data, $id) !== false) {
                     if( !empty($data['sku_name']) ){
+                        $i = 1;
                         foreach ($data['sku_name'] as $key => $value) {
-                           $property[$key] = ['sku_name'=>$value,'attr_value_items'=>$data['attr_value_items'][$key],'goods_id'=>$id,'cost_price'=>$data['cost_price'][$key],'price'=>$data['price'][$key],'stock'=>$data['stock'][$key]];
+                            foreach ($property as $k =>$v) {
+                                if( $v['sku_name'] == $value){
+                                    $i = $v['group_id'];
+                                }else{
+                                    $i++;
+                                }
+                            }
+                           $property[$key] = ['sku_name'=>$value,'attr_value_items'=>$data['attr_value_items'][$key],'goods_id'=>$id,'cost_price'=>$data['cost_price'][$key],'price'=>$data['price'][$key],'stock'=>$data['stock'][$key],'group_id'=>$i];
                         }
-
                         //删除原有产品属性
                         Db::name('goods_sku')->where(['goods_id'=>$id])->delete();
                         //保存提交的属性
                         Db::name('goods_sku')->insertAll($property);
+                    }else{
+                        //删除原有产品属性
+                        Db::name('goods_sku')->where(['goods_id'=>$id])->delete();
                     }
                    
 

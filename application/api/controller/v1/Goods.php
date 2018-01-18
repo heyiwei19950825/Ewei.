@@ -177,11 +177,42 @@ class Goods extends BaseController
             $product['gallery'][] = self::prefixDomain('/uploads'.$v);
         }
         //商品规格
-        $sku = GoodsSku::getSkuByGId($id);
+        $property = GoodsSku::getSkuByGId($id);
+        $sku = [];
+        $i = 0;
+        if( !empty($property) ) {
+            $property = $property->toArray();
+            foreach ($property as $item) {
+                $item['id'] = $item['sku_id'];
+                $item['specification_id'] = $item['group_id'];
+                foreach ($sku as $k => $v) {
+                    if ($item['group_id'] == $k) {
+                        $sku[$item['group_id']]['name']  = $item['sku_name'];
+                        $sku[$item['group_id']]['specification_id']  = $item['specification_id'];
+                        $sku[$item['group_id']]['valueList'][] = $item;
+                        $i = 1;
+                    }
+                }
+                if ($i != 1) {
+                    $sku[$item['group_id']]['name']  = $item['sku_name'];
+                    $sku[$item['group_id']]['specification_id']  = $item['specification_id'];
+                    $sku[$item['group_id']]['valueList'][] = $item;
+                }
+                $i = 0;
+            }
 
+            $ii = 0;
+            foreach ($sku as $k=>$v){
+                unset($sku[$k]);
+                $sku[$ii] = $v;
+                $ii++;
+            }
+
+
+        }
         $product = [
             'info' => $product,
-            'specificationList' => $sku->toArray(),
+            'specificationList' => $sku,
         ];
 
         $data = [

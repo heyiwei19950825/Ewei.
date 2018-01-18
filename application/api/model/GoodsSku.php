@@ -17,7 +17,7 @@ class GoodsSku extends BaseModel
      * @return string
      */
     public static function getSkuByGId( $id ){
-        $data = self::where('goods_id','=',$id)->field('sku_id,sku_name,attr_value_items,price,stock')->order('sku_id asc')->select();
+        $data = self::where('goods_id','=',$id)->field('sku_id,sku_name,attr_value_items,price,stock,group_id')->order('sku_id asc')->select();
 
         return $data;
     }
