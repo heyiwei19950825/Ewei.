@@ -35,4 +35,5 @@ class Index extends AdminBase
         ];
         return $this->fetch('index', ['config' => $config]);
     }
+
 }

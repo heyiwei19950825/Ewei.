@@ -1,5 +1,8 @@
 {extend name="base" /}
 {block name="body"}
+<link rel="stylesheet" type="text/css" href="__CSS__/page/index.css">
+<script src="__JS__/echarts.js"></script>
+
 <div class="layui-body">
     <!--tab标签-->
     <div class="layui-tab layui-tab-brief">
@@ -8,20 +11,75 @@
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
+                 <div class="layui-row top">
+                    <div class="layui-col-xs2 top-count">
+                      <div class="grid-demo grid-demo-bg1">
+                         <div class="left">
+                            <img src="/static/images/icon/order_amount.png">
+                        </div>
+                        <div class="right">
+                            <strong class="">2</strong>
+                            <p>今日订单总金额(个)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-xs2 top-count">
+                      <div class="grid-demo">
+                           <div class="left">
+                            <img src="/static/images/icon/goods_release.png">
+                        </div>
+                        <div class="right">
+                            <strong class="">2</strong>
+                            <p>商品发布(个)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-xs2 top-count">
+                      <div class="grid-demo grid-demo-bg1">
+                           <div class="left">
+                            <img src="/static/images/icon/order_total.png">
+                        </div>
+                        <div class="right">
+                            <strong class="">2</strong>
+                            <p>订单总数(笔)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-xs2 top-count">
+                      <div class="grid-demo">
+                           <div class="left">
+                            <img src="/static/images/icon/month_sales.png">
+                        </div>
+                        <div class="right">
+                            <strong class="">2</strong>
+                            <p>本月销售量(笔)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layui-col-xs2 top-count">
+                      <div class="grid-demo">
+                           <div class="left">
+                            <img src="/static/images/icon/finish_count.png">
+                        </div>
+                        <div class="right">
+                            <strong class="">2</strong>
+                            <p>已完成交易(笔)</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
                 <table class="layui-table">
-                   <!--  <tr>
-                        <td style="width: 400px;">网站域名</td>
-                        <td>{$config.url}</td>
+                    <tr>
+                        <td colspan="2"><div id="order_count" style="width: 1000px;height:400px;"></div></td>
+                        <!-- <td><div id="user_add" style="width: 500px;height:400px;"></div></td> -->
+                        <!-- <td>网站目录</td>
+                        <td>{$config.document_root}</td> -->
                     </tr>
                     <tr>
-                        <td>网站目录</td>
-                        <td>{$config.document_root}</td>
-                    </tr> -->
-                    <tr>
-                        <td>服务器操作系统</td>
-                        <td>{$config.server_os}</td>
+                        <td colspan="2"><div id="user_add" style="width: 1000px;height:400px;"></div></td>
                     </tr>
-                    <tr>
+              <!--       <tr>
                         <td>服务器端口</td>
                         <td>{$config.server_port}</td>
                     </tr>
@@ -40,10 +98,11 @@
                     <tr>
                         <td>最大上传限制</td>
                         <td>{$config.max_upload_size}</td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
         </div>
     </div>
 </div>
+<script src="__JS__/page/index.js"></script>
 {/block}
