@@ -18,7 +18,7 @@
                             <option>暂无分类请先创建</option>
                             {else}
                                {foreach name="category_level_list" item="vo"}
-                                    <option value="{$vo.id}">{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+                                    <option value="{$vo.id}" {eq name="vo.level" value="1"}disabled=""{/eq}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
                                 {/foreach}
                             {/if}
                               

@@ -250,7 +250,7 @@ return [
 
     //设置
     'setting'       =>[
-       // 'domain' => 'http://admin.ewei.com'
-       'domain' => 'https://small.redkylin.com'
+        'domain' => 'http://admin.ewei.com'
+//       'domain' => 'https://small.redkylin.com'
     ]
 ];

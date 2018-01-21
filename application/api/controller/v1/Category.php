@@ -26,17 +26,37 @@ class Category extends BaseController
      * @return array of Categories
      * @throws MissException
      */
-    public function getAllCategories()
+    public function getAllCategories( $id = -1 )
     {
-        $categories = CategoryModel::all([], 'img');
-        if(empty($categories)){
-           throw new MissException([
-               'msg' => '还没有任何类目',
-               'errorCode' => 50000
-           ]);
+
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+
+        $cateNavList = CategoryModel::all(function($query){
+            $query->where(['pid'=>0])->field('id,name')->order('sort', 'asc');
+        });
+        if(empty($cateNavList)){
+           return $row;
         }
-        return $categories;
+
+        $id = $id == -1 ?$cateNavList[0]['id']:$id;
+
+        $field = 'id,name,thumb,alias';
+        //查询当前分类的详情数据
+        $categoryInfo = CategoryModel::getCategory($id,$field)->toArray();
+        $categoryInfo['thumb'] = self::prefixDomain($categoryInfo['thumb']);
+
+        //查询当前分类下的所有子分类
+        $brotherCategory['subCategoryList'] = CategoryModel::childCategory($id,$field)->toArray();
+        $brotherCategory['subCategoryList'] = self::prefixDomainToArray('thumb',$brotherCategory['subCategoryList']);
+
+        $brotherCategory = array_merge($categoryInfo,$brotherCategory);
+        $row['data'] = [
+            'categoryList' => $cateNavList,
+            'currentCategory' => $brotherCategory
+        ];
+        return $row;
     }
+
 
 
     /**

@@ -1,0 +1,71 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class=""><a href="{:url('admin/keyword/index')}">轮播分类</a></li>
+            <li class=""><a href="{:url('admin/keyword/add')}">添加分类</a></li>
+            <li class="layui-this">编辑分类</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('admin/keyword/update')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分类名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="keyword" value="{$keyword.keyword}" required  lay-verify="required" placeholder="请输入分类名称" class="layui-input">
+                        </div>
+                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">跳转地址</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input type="text" name="name" value="{$keyword.scheme_url}" required  lay-verify="required" placeholder="请输入分类名称" class="layui-input">-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <fieldset class="layui-elem-field" >
+                        <legend><b>状态设置</b></legend>
+                        <div class="layui-field-box">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">是否显示</label>
+                                <div class="layui-input-inline">
+                                    <input type="radio" name="is_show" value="1" title="显示" {if condition="$keyword.is_show==1"} checked="checked"{/if}>
+                                    <input type="radio" name="is_show" value="0" title="不显示" {if condition="$keyword.is_show==0"} checked="checked"{/if}>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">是否默认</label>
+                                <div class="layui-input-inline">
+                                    <input type="radio" name="is_default" value="1" title="默认" {if condition="$keyword.is_default==1"} checked="checked"{/if}>
+                                    <input type="radio" name="is_default" value="0" title="不默认" {if condition="$keyword.is_default==0"} checked="checked"{/if}>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">是否热门</label>
+                                <div class="layui-input-inline">
+                                    <input type="radio" name="is_hot" value="1" title="热门" {if condition="$keyword.is_hot==1"} checked="checked"{/if}>
+                                    <input type="radio" name="is_hot" value="0" title="非热门" {if condition="$keyword.is_hot==0"} checked="checked"{/if}>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">排序</label>
+                                <div class="layui-input-inline">
+                                    <input type="number" name="sort_order" value="{$keyword.sort_order}" required  lay-verify="required" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="id" value="{$keyword.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}

@@ -1,0 +1,47 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">轮播分类</li>
+            <li class=""><a href="{:url('admin/keyword/add')}">添加分类</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <!--<th style="width: 30px;">ID</th>-->
+                        <th>关键字</th>
+                        <th>热门</th>
+                        <th>默认</th>
+                        <th>显示</th>
+                        <!--<th>跳转地址</th>-->
+                        <th>排序</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {foreach name="$keyword_list" item="vo"}
+                    <tr>
+                        <!--<td>{$vo.id}</td>-->
+                        <td>{$vo.keyword}</td>
+                        <td>{if condition="$vo.is_hot==1"}热门{else}非热门{/if}</td>
+                        <td>{if condition="$vo.is_default==1"}默认{else}非默认{/if}</td>
+                        <td>{if condition="$vo.is_show==1"}显示{else}不显示{/if}</td>
+                        <!--<td>{$vo.scheme_url}</td>-->
+                        <td>{$vo.sort_order}</td>
+                        <td>
+                            <a href="{:url('admin/keyword/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                            <a href="{:url('admin/keyword/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                        </td>
+                    </tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}

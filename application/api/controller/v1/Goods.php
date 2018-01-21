@@ -23,6 +23,11 @@ class Goods extends BaseController
         'checkSuperScope' => ['only' => 'createOne,deleteOne']
     ];
 
+    public function goodsSearch($keyword){
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+
+        return  $row;
+    }
     /**
      * 根据类目ID获取该类目下所有商品(分页）
      * @url /product?id=:category_id&page=:page&size=:page_size
@@ -34,7 +39,9 @@ class Goods extends BaseController
      */
     public function getByCategory($id = -1,$keyword='', $sort='id', $order='asc',$page=1,$size=30)
     {
-        (new IDMustBePositiveInt())->goCheck();
+        if( $id != 0 ){
+            (new IDMustBePositiveInt())->goCheck();
+        }
         (new PagingParameter())->goCheck();
 
         $field = 'name,thumb,sp_price,id';

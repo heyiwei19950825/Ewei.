@@ -45,8 +45,26 @@ class Goods extends BaseModel
     public static function getProductsByCategoryID(
         $categoryId, $paginate = true, $field='', $keyword='', $sort='is_recommend', $order='asc', $page = 1, $size = 30)
     {
+        $ids = '';
+        if( $categoryId !=0 ){
+            //查询判断手否是父级分类
+            $categoryIds = Db::name('category')->where(['pid'=>$categoryId])->field('id')->select()->toArray();
+            if( !empty($categoryIds) ){
+                foreach ($categoryIds as $v) {
+                    $ids .= $v['id'].',';
+                }
+                $ids .= $categoryId;
+            }else{
+                $ids = $categoryId;
+            }
+        }
+
+
         $now = date('Y-m-d H:i:s',time());
-        $map['cid']     = ['=',$categoryId];
+        if($categoryId != 0 ){
+            $map['cid']     = ['in',$ids];
+        }
+
         $map['btime']   = ['<=',$now];
         $map['etime']   = ['>=',$now];
         $map['status']  = ['=',1];
@@ -64,11 +82,13 @@ class Goods extends BaseModel
             );
         if (!$paginate)
         {
+            $query->select();
             return $query->select();
         }
         else
         {
             // paginate 第二参数true表示采用简洁模式，简洁模式不需要查询记录总数
+
             return $query->paginate(
                 $size, false, [
                 'page' => $page

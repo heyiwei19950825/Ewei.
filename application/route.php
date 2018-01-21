@@ -55,7 +55,7 @@ Route::get('api/:version/Goods/recent', 'api/:version.Goods/getRecent');
 // 正则匹配区别id和all，注意d后面的+号，没有+号将只能匹配个位数
 //Route::get('api/:version/category/:id', 'api/:version.Category/getCategory',[], ['id'=>'\d+']);
 //Route::get('api/:version/category/:id/Goodss', 'api/:version.Category/getCategory',[], ['id'=>'\d+']);
-//Route::get('api/:version/category/all', 'api/:version.Category/getAllCategories');
+Route::get('api/:version/Category/all', 'api/:version.Category/getAllCategories');
 Route::get('api/:version/Category/list', 'api/:version.Category/getCategoryByCId');
 
 
@@ -92,6 +92,24 @@ Route::post('api/:version/message/delivery', 'api/:version.Message/sendDeliveryM
 Route::get('api/:version/ueditor/index', 'api/:version.Ueditor/index');
 Route::post('api/:version/ueditor/index', 'api/:version.Ueditor/index');
 Route::post('api/:version/upload/upload', 'api/:version.Upload/upload');
+
+
+//article
+Route::get('api/:version/Article/list', 'api/:version.Article/articleList');
+Route::get('api/:version/Article/detail', 'api/:version.Article/articleOne');
+Route::get('api/:version/Article/related', 'api/:version.Article/relatedByCid');
+
+
+//keyword
+
+Route::get('api/:version/search/index', 'api/:version.Search/getAll');
+
+
+
+
+
+
+
 
 //return [
 //        ':version/banner/[:location]' => 'api/:version.Banner/getBanner'
