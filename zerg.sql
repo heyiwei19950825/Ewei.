@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-01-18 22:19:28
+Date: 2018-01-21 21:40:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -62,7 +62,7 @@ CREATE TABLE `ewei_admin_user` (
 -- ----------------------------
 -- Records of ewei_admin_user
 -- ----------------------------
-INSERT INTO `ewei_admin_user` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', null, null, '1', '0', '2018-01-15 23:40:42', '127.0.0.1');
+INSERT INTO `ewei_admin_user` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', null, null, '1', '0', '2018-01-21 14:25:55', '127.0.0.1');
 INSERT INTO `ewei_admin_user` VALUES ('23', 'uyiku', '4297f44b13955235245b2497399d7a93', null, null, '1', '0', '2018-01-10 20:01:13', '127.0.0.1');
 
 -- ----------------------------
@@ -138,14 +138,13 @@ CREATE TABLE `ewei_article` (
   `publish_time` datetime NOT NULL COMMENT '发布时间',
   `goods_ids` varchar(100) NOT NULL COMMENT '关联商品ID',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='文章表';
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='文章表';
 
 -- ----------------------------
 -- Records of ewei_article
 -- ----------------------------
-INSERT INTO `ewei_article` VALUES ('2', '7', '测试文章1', 'Ewei PHPer BigNiu', '<p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p>Ewei PHPer BigNiu</p><p><img src=\"/public/uploads/images/20171230/1514641087757187.png\" title=\"1514641087757187.png\" alt=\"j12.png\"/></p>', '测试员Ewei', '1', '0', '', null, '0', '0', '0', '2017-12-30 21:38:13', '2017-12-30 21:37:33', '');
-INSERT INTO `ewei_article` VALUES ('15', '7', '12月16日 子！瞻！庭！引爆眉山餐饮……', '2017-12-14 九宴美食', '<p>啦啦啦啦啦</p>', '九宴美食', '1', '0', '/uploads/common/1515938333.jpg', null, '1', '1', '0', '2018-01-11 00:12:01', '2018-01-11 00:11:39', '');
-INSERT INTO `ewei_article` VALUES ('9', '7', '揭露眉山市2018四名评选大赛内幕…', '眉山餐饮e+', '<div class=\"rich_media_inner\"><div class=\"rich_media_area_primary\"><div><div class=\"rich_media_content \"><p><span style=\"font-size: 18px;\"><span style=\"color: rgb(255, 41, 65);\"><strong>★</strong></span><span style=\"color: rgb(2, 30, 170);\"><strong>谁能抵挡美食诱惑？</strong></span></span></p><p><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 20px;\">★</span></strong></span><span style=\"color: rgb(2, 30, 170);\"><strong><span style=\"color: rgb(2, 30, 170);font-size: 20px;\">谁是眉山厨</span></strong><strong><span style=\"color: rgb(2, 30, 170);font-size: 20px;\">坛翘楚？？</span></strong><br/></span></p><p><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 24px;\">★</span></strong></span><span style=\"color: rgb(2, 30, 170);\"><strong><span style=\"color: rgb(2, 30, 170);font-size: 24px;\">谁在拨弄眉山餐饮风云？？？</span></strong></span></p><p><img class=\"\" src=\"https://mmbiz.qpic.cn/mmbiz_png/OvHMwiaeQFxdV9tcUEpxmQHyic9QCoAK4WDibVC1J4bAgqqr5b7AZ4GvlVXthNrGianfeV5gN52ffVYU4OYssddCeg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1\"/></p><p style=\"text-align: justify;\"><span style=\"color: rgb(2, 30, 170);font-size: 20px;\"><span style=\"color: rgb(2, 30, 170);\">☞☞&nbsp;亲密舌尖上的美味，展示东坡美食的魅力……</span></span><span style=\"color: rgb(2, 30, 170);font-size: 20px;\">2017年12月由眉山市人民政府第三产业办公室、眉山市商务局、眉山市文化广电新闻出版局、眉山市旅游局指导，眉山电视台和眉山市餐饮行业协会主办的“川厨之乡，美丽眉山——眉山市“名菜、名店、名师、名小吃”评选大赛为您而来……</span></p><p style=\"text-align: justify;\"><span style=\"color: rgb(2, 30, 170);font-size: 24px;\"><strong><span style=\"color: rgb(2, 30, 170);font-family: 宋体;\">时间:2018年1月18日～20日</span></strong></span></p><p style=\"text-align: justify;\"><span style=\"color: rgb(2, 30, 170);font-size: 24px;\"><strong><span style=\"color: rgb(2, 30, 170);font-family: 宋体;\">地点:圣丰国际农商中心外广场</span></strong></span></p><p><img class=\"\" src=\"https://mmbiz.qpic.cn/mmbiz_jpg/OvHMwiaeQFxfviaFqWlxibQHchkBOJWZFCaybqu2l8s1BOY96VPYmRDl8vTbpbyfMENuoliaoIejbz0nibdW14Md5KA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1\"/></p><p style=\"text-align: justify;\"><span style=\"color: rgb(2, 30, 170);font-family: 宋体;font-size: 20px;\">☞☞千载诗书城，万重东坡味……2018.1.18眉山市餐饮行业近10年来最高大上的餐饮赛事在眉山圣丰国际农商中心外广场引爆……</span></p><p><span style=\"color: rgb(2, 30, 170);font-family: 宋体;font-size: 21px;\"><iframe frameborder=\"0\" width=\"670\" height=\"376.875\" src=\"https://v.qq.com/iframe/player.html?vid=k1331rp7uli&width=670&height=376.875&auto=0\"></iframe><br/></span><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 18px;\">★</span></strong></span><strong><span style=\"font-size: 18px;color: rgb(2, 30, 170);\">50多家名流餐饮……</span></strong></p><p><span style=\"font-size: 20px;color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 20px;\">★</span></strong></span><span style=\"font-size: 20px;\"><strong><span style=\"color: rgb(2, 30, 170);\">100多位顶尖大厨……</span></strong></span></p><p><span style=\"font-size: 24px;color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 24px;\">★</span></strong></span><span style=\"font-size: 24px;\"><strong><span style=\"color: rgb(2, 30, 170);\">300多道特色美食……</span></strong></span></p><p style=\"text-align: justify;\"><span style=\"color: rgb(255, 251, 0);background-color: rgb(255, 41, 65);\"><strong><span style=\"color: rgb(255, 251, 0);background-color: rgb(255, 41, 65);font-family: 宋体;font-size: 20px;\">特别提示：</span></strong></span><span style=\"font-family: 宋体;color: rgb(2, 30, 170);font-size: 20px;\">分享此链接到朋友圈，您就有机会成为本次烹饪美食大赛的大众评委……和眉山市餐饮大咖一起做在评委席上，品尝、点评参赛大厨们做的人间美味啦！</span></p><p><br/></p><p style=\"white-space: normal;\"><strong><span style=\"color: rgb(2, 30, 170);font-family: 宋体;font-size: 18px;\"></span></strong></p><p><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 18px;\">★</span></strong></span><strong><span style=\"color: rgb(2, 30, 170);font-size: 18px;\">除了高大上的餐饮赛事……</span></strong></p><p><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 20px;\">★</span></strong></span><strong><span style=\"color: rgb(2, 30, 170);font-size: 20px;\">还有农特产品+名车展示展销……</span></strong><span style=\"color: rgb(2, 30, 170);\"><br/></span></p><p><span style=\"font-size: 24px;color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 24px;\">★</span></strong></span><span style=\"font-size: 24px;\"><strong><span style=\"color: rgb(2, 30, 170);\">团圆饭、团年宴现场预定……</span></strong></span><br/></p><p><img class=\"\" src=\"https://mmbiz.qpic.cn/mmbiz_jpg/OvHMwiaeQFxfviaFqWlxibQHchkBOJWZFCa1mLOzxgAFMRg1uzAvZJdguYJMeOQTEOjDfsuL1fXOkoMPcBfE7EnUA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1\"/></p><p><br/></p><p style=\"white-space: normal;text-align: justify;\"><span style=\"font-size: 18px;\"><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-family: 宋体;\">★</span></strong></span><span style=\"color: rgb(2, 30, 170);\"><strong><span style=\"color: rgb(2, 30, 170);font-family: 宋体;\">2018年1月18日～20日（三天）</span></strong></span></span></p><p style=\"white-space: normal;text-align: justify;\"><span style=\"font-size: 20px;\"><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-family: 宋体;\">★</span></strong></span><span style=\"color: rgb(2, 30, 170);\"><strong><span style=\"font-family: 宋体;\">眉山圣丰国际农商中心外广场</span></strong></span></span></p><p><span style=\"font-size: 24px;color: rgb(255, 41, 65);\">★</span><span style=\"font-size: 24px;color: rgb(2, 30, 170);\">到时候，我们再边吃边聊……</span></p></div><div></div><div class=\"ct_mpda_wrp\" style=\"display:none;\"></div><div class=\"reward_area tc\" style=\"display:none;\"><p class=\"tips_global reward_tips\" style=\"display:none;\"><br/></p><p><a class=\"reward_access\" href=\"##\"><span class=\"icon-reward\"></span>赞赏</a></p></div><div class=\"reward_qrcode_area reward_area tc\" style=\"display:none;\"><p class=\"tips_global\">长按二维码向我转账</p><p class=\"reward_tips\" style=\"display:none;\"><br/></p><span class=\"reward_qrcode_img_wrp\"><img class=\"reward_qrcode_img\" src=\"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/pic/appmsg/pic_reward_qrcode.2x3534dd.png\"/></span><p class=\"tips_global\">受苹果公司新规定影响，微信 iOS 版的赞赏功能被关闭，可通过二维码转账支持公众号。</p></div></div><div class=\"rich_media_tool\"><div class=\"media_tool_meta tips_global meta_primary\" style=\"display:none;\">阅读</div><span style=\"display:none;\" class=\"media_tool_meta meta_primary tips_global meta_praise\"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em class=\"icon_praise_gray\"></em><span class=\"praise_num\"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>&nbsp;&nbsp;</div></div></div>', '眉山餐饮e+', '1', '0', '/uploads/common/1515938072.jpg', null, '1', '1', '0', '2018-01-10 23:47:20', '2018-01-31 23:46:52', '');
+INSERT INTO `ewei_article` VALUES ('15', '7', '12月16日 子！瞻！庭！引爆眉山餐饮……', '2017-12-14 九宴美食', '<p>啦啦啦啦啦</p>', '九宴美食', '1', '0', '/uploads/common/1515938333.jpg', null, '1', '1', '1', '2018-01-11 00:12:01', '2018-01-11 00:11:39', '');
+INSERT INTO `ewei_article` VALUES ('9', '7', '揭露眉山市2018四名评选大赛内幕…', '眉山餐饮e+', '<div class=\"rich_media_inner\"><div class=\"rich_media_area_primary\"><div><div class=\"rich_media_content \"><p style=\"text-align: center;\"><span style=\"font-size: 18px;\"><span style=\"color: rgb(255, 41, 65);\"><strong>★</strong></span><span style=\"color: rgb(2, 30, 170);\"><strong>谁能抵挡美食诱惑？</strong></span></span></p><p style=\"text-align: center;\"><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 20px;\">★</span></strong></span><span style=\"color: rgb(2, 30, 170);\"><strong><span style=\"color: rgb(2, 30, 170);font-size: 20px;\">谁是眉山厨</span></strong><strong><span style=\"color: rgb(2, 30, 170);font-size: 20px;\">坛翘楚？？</span></strong><br/></span></p><p style=\"text-align: center;\"><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 24px;\">★</span></strong></span><span style=\"color: rgb(2, 30, 170);\"><strong><span style=\"color: rgb(2, 30, 170);font-size: 24px;\">谁在拨弄眉山餐饮风云？？？</span></strong></span></p><p style=\"text-align: center;\"><img class=\"\" src=\"https://mmbiz.qpic.cn/mmbiz_png/OvHMwiaeQFxdV9tcUEpxmQHyic9QCoAK4WDibVC1J4bAgqqr5b7AZ4GvlVXthNrGianfeV5gN52ffVYU4OYssddCeg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1\"/></p><p style=\"text-align: center;\"><span style=\"color: rgb(2, 30, 170);font-size: 20px;\"><span style=\"color: rgb(2, 30, 170);\">☞☞&nbsp;亲密舌尖上的美味，展示东坡美食的魅力……</span></span><span style=\"color: rgb(2, 30, 170);font-size: 20px;\">2017年12月由眉山市人民政府第三产业办公室、眉山市商务局、眉山市文化广电新闻出版局、眉山市旅游局指导，眉山电视台和眉山市餐饮行业协会主办的“川厨之乡，美丽眉山——眉山市“名菜、名店、名师、名小吃”评选大赛为您而来……</span></p><p style=\"text-align: center;\"><span style=\"color: rgb(2, 30, 170);font-size: 24px;\"><strong><span style=\"color: rgb(2, 30, 170);font-family: 宋体;\">时间:2018年1月18日～20日</span></strong></span></p><p style=\"text-align: center;\"><span style=\"color: rgb(2, 30, 170);font-size: 24px;\"><strong><span style=\"color: rgb(2, 30, 170);font-family: 宋体;\">地点:圣丰国际农商中心外广场</span></strong></span></p><p style=\"text-align: center;\"><img class=\"\" src=\"https://mmbiz.qpic.cn/mmbiz_jpg/OvHMwiaeQFxfviaFqWlxibQHchkBOJWZFCaybqu2l8s1BOY96VPYmRDl8vTbpbyfMENuoliaoIejbz0nibdW14Md5KA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1\"/></p><p style=\"text-align: center;\"><span style=\"color: rgb(2, 30, 170);font-family: 宋体;font-size: 20px;\">☞☞千载诗书城，万重东坡味……2018.1.18眉山市餐饮行业近10年来最高大上的餐饮赛事在眉山圣丰国际农商中心外广场引爆……</span></p><p style=\"text-align: center;\"><span style=\"color: rgb(2, 30, 170);font-family: 宋体;font-size: 21px;\"><iframe frameborder=\"0\" width=\"670\" height=\"376.875\" src=\"https://v.qq.com/iframe/player.html?vid=k1331rp7uli&width=670&height=376.875&auto=0\"></iframe><br/></span><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 18px;\">★</span></strong></span><strong><span style=\"font-size: 18px;color: rgb(2, 30, 170);\">50多家名流餐饮……</span></strong></p><p style=\"text-align: center;\"><span style=\"font-size: 20px;color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 20px;\">★</span></strong></span><span style=\"font-size: 20px;\"><strong><span style=\"color: rgb(2, 30, 170);\">100多位顶尖大厨……</span></strong></span></p><p style=\"text-align: center;\"><span style=\"font-size: 24px;color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 24px;\">★</span></strong></span><span style=\"font-size: 24px;\"><strong><span style=\"color: rgb(2, 30, 170);\">300多道特色美食……</span></strong></span></p><p style=\"text-align: center;\"><span style=\"color: rgb(255, 251, 0);background-color: rgb(255, 41, 65);\"><strong><span style=\"color: rgb(255, 251, 0);background-color: rgb(255, 41, 65);font-family: 宋体;font-size: 20px;\">特别提示：</span></strong></span><span style=\"font-family: 宋体;color: rgb(2, 30, 170);font-size: 20px;\">分享此链接到朋友圈，您就有机会成为本次烹饪美食大赛的大众评委……和眉山市餐饮大咖一起做在评委席上，品尝、点评参赛大厨们做的人间美味啦！</span></p><p><br/></p><p style=\"white-space: normal; text-align: center;\"><strong><span style=\"color: rgb(2, 30, 170);font-family: 宋体;font-size: 18px;\"></span></strong></p><p style=\"text-align: center;\"><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 18px;\">★</span></strong></span><strong><span style=\"color: rgb(2, 30, 170);font-size: 18px;\">除了高大上的餐饮赛事……</span></strong></p><p style=\"text-align: center;\"><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 20px;\">★</span></strong></span><strong><span style=\"color: rgb(2, 30, 170);font-size: 20px;\">还有农特产品+名车展示展销……</span></strong><span style=\"color: rgb(2, 30, 170);\"><br/></span></p><p style=\"text-align: center;\"><span style=\"font-size: 24px;color: rgb(255, 41, 65);\"><strong><span style=\"font-size: 24px;\">★</span></strong></span><span style=\"font-size: 24px;\"><strong><span style=\"color: rgb(2, 30, 170);\">团圆饭、团年宴现场预定……</span></strong></span><br/></p><p style=\"text-align: center;\"><img class=\"\" src=\"https://mmbiz.qpic.cn/mmbiz_jpg/OvHMwiaeQFxfviaFqWlxibQHchkBOJWZFCa1mLOzxgAFMRg1uzAvZJdguYJMeOQTEOjDfsuL1fXOkoMPcBfE7EnUA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1\"/></p><p><br/></p><p style=\"white-space: normal; text-align: center;\"><span style=\"font-size: 18px;\"><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-family: 宋体;\">★</span></strong></span><span style=\"color: rgb(2, 30, 170);\"><strong><span style=\"color: rgb(2, 30, 170);font-family: 宋体;\">2018年1月18日～20日（三天）</span></strong></span></span></p><p style=\"white-space: normal; text-align: center;\"><span style=\"font-size: 20px;\"><span style=\"color: rgb(255, 41, 65);\"><strong><span style=\"font-family: 宋体;\">★</span></strong></span><span style=\"color: rgb(2, 30, 170);\"><strong><span style=\"font-family: 宋体;\">眉山圣丰国际农商中心外广场</span></strong></span></span></p><p style=\"text-align: center;\"><span style=\"font-size: 24px;color: rgb(255, 41, 65);\">★</span><span style=\"font-size: 24px;color: rgb(2, 30, 170);\">到时候，我们再边吃边聊……</span></p></div><div></div><div class=\"ct_mpda_wrp\" style=\"display:none;\"></div><div class=\"reward_area tc\" style=\"display:none;\"><p class=\"tips_global reward_tips\" style=\"display:none;\"><br/></p><p style=\"text-align: center;\"><a class=\"reward_access\" href=\"##\"><span class=\"icon-reward\"></span>赞赏</a></p></div><div class=\"reward_qrcode_area reward_area tc\" style=\"display: none; text-align: center;\"><p class=\"tips_global\" style=\"text-align: center;\">长按二维码向我转账</p><p class=\"reward_tips\" style=\"display:none;\"><br/></p><span class=\"reward_qrcode_img_wrp\"><img class=\"reward_qrcode_img\" src=\"//res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/pic/appmsg/pic_reward_qrcode.2x3534dd.png\"/></span><p class=\"tips_global\">受苹果公司新规定影响，微信 iOS 版的赞赏功能被关闭，可通过二维码转账支持公众号。</p></div></div><div class=\"rich_media_tool\" style=\"text-align: center;\"><div class=\"media_tool_meta tips_global meta_primary\" style=\"display: none; text-align: center;\">阅读</div><span style=\"display:none;\" class=\"media_tool_meta meta_primary tips_global meta_praise\"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em class=\"icon_praise_gray\"></em><span class=\"praise_num\"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>&nbsp;&nbsp;</div></div></div>', '眉山餐饮e+', '1', '0', '/uploads/common/1515938072.jpg', null, '1', '1', '2', '2018-01-10 23:47:20', '2018-01-31 23:46:52', '');
 
 -- ----------------------------
 -- Table structure for ewei_article_category
@@ -186,7 +185,7 @@ CREATE TABLE `ewei_article_goods` (
   `article_id` int(11) NOT NULL COMMENT '优惠券类型id',
   `goods_id` int(11) NOT NULL COMMENT '商品id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='优惠券使用商品表';
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=606 COMMENT='优惠券使用商品表';
 
 -- ----------------------------
 -- Records of ewei_article_goods
@@ -204,6 +203,8 @@ INSERT INTO `ewei_article_goods` VALUES ('28', '9', '33');
 INSERT INTO `ewei_article_goods` VALUES ('29', '9', '37');
 INSERT INTO `ewei_article_goods` VALUES ('30', '9', '36');
 INSERT INTO `ewei_article_goods` VALUES ('31', '9', '0');
+INSERT INTO `ewei_article_goods` VALUES ('32', '16', '33');
+INSERT INTO `ewei_article_goods` VALUES ('33', '16', '37');
 
 -- ----------------------------
 -- Table structure for ewei_auth_group
@@ -259,7 +260,7 @@ CREATE TABLE `ewei_auth_rule` (
   `condition` char(100) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=104 DEFAULT CHARSET=utf8 COMMENT='规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=107 DEFAULT CHARSET=utf8 COMMENT='规则表';
 
 -- ----------------------------
 -- Records of ewei_auth_rule
@@ -353,6 +354,9 @@ INSERT INTO `ewei_auth_rule` VALUES ('92', 'admin/Expressage/del', '运输删除
 INSERT INTO `ewei_auth_rule` VALUES ('97', 'admin/shop/default', '商家管理', '1', '1', '0', 'fa fa-male', '94', '');
 INSERT INTO `ewei_auth_rule` VALUES ('98', 'admin/shop/index', '商家列表', '1', '1', '97', '', '0', '');
 INSERT INTO `ewei_auth_rule` VALUES ('103', 'admin/shopInfo/index', '商铺配置', '1', '1', '0', 'fa fa-gears', '0', '');
+INSERT INTO `ewei_auth_rule` VALUES ('104', 'admin/Keyword/index', '关键词管理', '1', '1', '84', '', '0', '');
+INSERT INTO `ewei_auth_rule` VALUES ('105', 'admin/Keyword/add', '关键词编辑', '1', '0', '84', '', '0', '');
+INSERT INTO `ewei_auth_rule` VALUES ('106', 'admin/Keyword/edit', '关键词编辑', '1', '0', '84', '', '0', '');
 
 -- ----------------------------
 -- Table structure for ewei_banner
@@ -422,7 +426,7 @@ CREATE TABLE `ewei_category` (
   `description` varchar(100) DEFAULT NULL COMMENT '描述',
   `update_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COMMENT='商品类目';
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COMMENT='商品类目';
 
 -- ----------------------------
 -- Records of ewei_category
@@ -434,6 +438,14 @@ INSERT INTO `ewei_category` VALUES ('10', '大通产品', null, null, '/uploads/
 INSERT INTO `ewei_category` VALUES ('13', '酒水饮料', null, null, '/uploads/goods_group/1515938728.png', null, null, null, '1', '2', '0', '0,', null, null, null, null, null);
 INSERT INTO `ewei_category` VALUES ('14', '熟食', '全食熟食店', null, '/uploads/goods_group/1516030872.jpg', null, null, null, '1', '0', '5', '0,5,', '2018', null, null, null, null);
 INSERT INTO `ewei_category` VALUES ('15', '香肠', '哈尔滨红肠', null, '/uploads/goods_group/1516030887.jpg', null, null, null, '1', '1', '5', '0,5,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('16', '熟食', '全食熟食店', null, '/uploads/goods_group/1516030872.jpg', null, null, null, '1', '0', '6', '0,6,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('17', '香肠', '哈尔滨红肠', null, '/uploads/goods_group/1516030887.jpg', null, null, null, '1', '1', '6', '0,6,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('18', '熟食', '全食熟食店', null, '/uploads/goods_group/1516030872.jpg', null, null, null, '1', '0', '6', '0,6,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('19', '香肠', '哈尔滨红肠', null, '/uploads/goods_group/1516030887.jpg', null, null, null, '1', '1', '6', '0,6,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('20', '熟食', '全食熟食店', null, '/uploads/goods_group/1516030872.jpg', null, null, null, '1', '0', '6', '0,6,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('21', '香肠', '哈尔滨红肠', null, '/uploads/goods_group/1516030887.jpg', null, null, null, '1', '1', '6', '0,6,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('22', '熟食', '全食熟食店', null, '/uploads/goods_group/1516030872.jpg', null, null, null, '1', '0', '6', '0,6,', '2018', null, null, null, null);
+INSERT INTO `ewei_category` VALUES ('23', '香肠', '哈尔滨红肠', null, '/uploads/goods_group/1516030887.jpg', null, null, null, '1', '1', '6', '0,6,', '2018', null, null, null, null);
 
 -- ----------------------------
 -- Table structure for ewei_city
@@ -3916,10 +3928,10 @@ CREATE TABLE `ewei_goods` (
 -- ----------------------------
 -- Records of ewei_goods
 -- ----------------------------
-INSERT INTO `ewei_goods` VALUES ('33', '5', '1', '0', '无肩带隐形文胸薄款胸贴婚纱聚拢防滑漏背性感胸罩', '内衣乳贴上托', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2vch8axb9F1JjSZFqXXbotVXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2M54aa4z_F1JjSZFIXXcxHVXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2WpOJuhxmpuFjSZFNXXXrRXXa_!!169468122.jpg\"/> <img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2JTBsX8H8F1Jjy0FnXXb5AXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\" class=\"\"/> <img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2EMuAarH9F1JjSZFAXXba3VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2NqJuXYD8F1Jjy0FpXXcduVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2CstrX3L8F1JjSsphXXXknVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB26CFZX5GfF1Jjy0FjXXXZdVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2zk4sXYH8F1Jjy1zbXXaVNVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2HFl0X0WgF1Jjy0FhXXbeEFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2cxpZX.ifF1JjSspdXXclLpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2G8B_axf9F1JjSZFyXXXnOFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2ipmAphtmpuFjSZFqXXbHFpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2JmlZX5GfF1Jjy0FjXXXZdVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2S6RsX9f8F1Jjy0FeXXallpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2JLzDmHFlpuFjy0FgXXbRBVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB20qrlpctnpuFjSZFvXXbcTpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2t_zwpbxmpuFjSZJiXXXauVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2FkT_mH8kpuFjy0FcXXaUhpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2lDLypbBmpuFjSZFuXXaG_XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2eoJsX3L8F1JjSspjXXbZgpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2jkX1X0qgF1JjSsppXXaBNXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB214l8arL9F1JjSZFwXXcSuVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2SGp1X5afF1Jjy1zcXXcu5XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2BXR9ap6.F1JjSZFpXXcZjXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2JM8tX8P8F1JjSspaXXb4ypXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515575596.jpg', 'a:4:{i:0;s:35:\"/uploads/goods/1515575620134754.jpg\";i:1;s:35:\"/uploads/goods/1515575620230865.jpg\";i:2;s:35:\"/uploads/goods/1515575620534669.jpg\";i:3;s:35:\"/uploads/goods/1515575620101494.jpg\";}', '1', '1', '0', '0', '0', '2018-01-10 17:14:12', '2018-01-10 00:00:00', '32.00', '0.00', '0.00', '123.00', '32', '123', '0', '1', '32', '2018-01-10 00:00:00', '2018-01-26 00:00:00', null, null);
-INSERT INTO `ewei_goods` VALUES ('37', '5', '1', '0', '宫廷马甲吊袜带套装性感束身衣小胸女情趣内衣裤透视紧身制服激情', '服激情', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB23PzzXyrEK1JjSZFHXXcveXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB29X6CXw2DK1JjSZFOXXabwFXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2kJBpX.6EK1JjSZFDXXcIqFXa_!!169468122.jpg\"/> <img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2sEQUXnzGK1JjSsplXXbdspXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB279mnuM0kpuFjSspdXXX4YXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2RWrxXwYDK1JjSZFCXXX.vXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2inDzXxDBK1JjSZFhXXXFFFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2HJfuXpHFK1JjSZFzXXb23XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB22ZLwXxvEK1JjSZFPXXbWYpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2EbDuXwYDK1JjSZPfXXcY.pXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2M__JuYJmpuFjSZFwXXaE4VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2AWGCXl1tLeJjSszgXXcOHpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2co_xXu2CK1JjSZFjXXXk_VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2mrcRXgvGK1Jjy0FcXXXXmVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2p4YuXqTEK1JjSZFFXXb6xXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2UEM2lmJjpuFjy0FdXXXmoFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2NPtbuylnpuFjSZFgXXbi7FXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB20jUeq3JlpuFjSspjXXcT.pXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515578042.jpg', 'a:5:{i:0;s:35:\"/uploads/goods/1515578038343049.jpg\";i:1;s:35:\"/uploads/goods/1515578038186800.jpg\";i:2;s:35:\"/uploads/goods/1515578038187059.jpg\";i:3;s:35:\"/uploads/goods/1515578038126040.jpg\";i:4;s:35:\"/uploads/goods/1515578038120054.jpg\";}', '1', '1', '1', '0', '2', '2018-01-10 17:57:44', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '123', '0', '1', '123', '2018-01-12 00:00:00', '2018-02-01 00:00:00', null, null);
-INSERT INTO `ewei_goods` VALUES ('36', '5', '4', '9', '性感兔女郎紧身连体衣制服夜火情趣内衣成人', '小胸透视激情套装夜店', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2nCE.X0qgF1Jjy1zdXXc8dFXa_!!169468122.jpg\"/><br/> <img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2VwNaadmgF1Jjy1XaXXcSEFXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB28tD.aS69F1JjSZPiXXXfCXXa_!!169468122.jpg\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515576059.jpg', 'a:5:{i:0;s:35:\"/uploads/goods/1515576053116598.jpg\";i:1;s:35:\"/uploads/goods/1515576053110118.jpg\";i:2;s:35:\"/uploads/goods/1515576053123475.jpg\";i:3;s:35:\"/uploads/goods/1515576053202593.jpg\";i:4;s:35:\"/uploads/goods/1515576053831890.jpg\";}', '1', '1', '0', '0', '1', '2018-01-10 17:35:22', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '123', '0', '1', '123', '2018-01-09 00:00:00', '2018-01-27 00:00:00', null, null);
-INSERT INTO `ewei_goods` VALUES ('38', '5', '1', '8', '性感露胸包臀短裙空姐情趣内衣制服紧身激情套装透视女秘书OL夜店', '测试', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2NBngXbL9F1JjSZFlXXa2sVXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2uRSMXgMEF1JjSZFxXXbcVpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB279mnuM0kpuFjSspdXXX4YXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB23x6fXX_.F1JjSZFjXXahnXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB26ZO3XdmgF1Jjy0FaXXX5jpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB280vfXkz_F1JjSZFkXXcCaXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB25Vu4XcSfF1JjSspbXXcSkVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2XY1IXgIEF1JjSZFHXXbRVXXa_!!169468122.jpg\" class=\"\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2F.53XjmfF1JjSspcXXXZMXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2ydi3XoifF1JjSspdXXclLpXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '', '1', '0', '/uploads/goods_brand/1515581629.jpg', 'a:3:{i:0;s:35:\"/uploads/goods/1515581639839679.jpg\";i:1;s:35:\"/uploads/goods/1515581639469046.jpg\";i:2;s:35:\"/uploads/goods/1515581639395160.jpg\";}', '1', '1', '1', '0', '3', '2018-01-10 18:54:30', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '1232', '32', '1', '123', '2018-01-10 00:00:00', '2018-01-30 00:00:00', null, null);
+INSERT INTO `ewei_goods` VALUES ('33', '14', '1', '0', '无肩带隐形文胸薄款胸贴婚纱聚拢防滑漏背性感胸罩', '内衣乳贴上托', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2vch8axb9F1JjSZFqXXbotVXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2M54aa4z_F1JjSZFIXXcxHVXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2WpOJuhxmpuFjSZFNXXXrRXXa_!!169468122.jpg\"/> <img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2JTBsX8H8F1Jjy0FnXXb5AXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\" class=\"\"/> <img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2EMuAarH9F1JjSZFAXXba3VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2NqJuXYD8F1Jjy0FpXXcduVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2CstrX3L8F1JjSsphXXXknVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB26CFZX5GfF1Jjy0FjXXXZdVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2zk4sXYH8F1Jjy1zbXXaVNVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2HFl0X0WgF1Jjy0FhXXbeEFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2cxpZX.ifF1JjSspdXXclLpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2G8B_axf9F1JjSZFyXXXnOFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2ipmAphtmpuFjSZFqXXbHFpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2JmlZX5GfF1Jjy0FjXXXZdVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2S6RsX9f8F1Jjy0FeXXallpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2JLzDmHFlpuFjy0FgXXbRBVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB20qrlpctnpuFjSZFvXXbcTpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2t_zwpbxmpuFjSZJiXXXauVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2FkT_mH8kpuFjy0FcXXaUhpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2lDLypbBmpuFjSZFuXXaG_XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2eoJsX3L8F1JjSspjXXbZgpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2jkX1X0qgF1JjSsppXXaBNXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB214l8arL9F1JjSZFwXXcSuVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2SGp1X5afF1Jjy1zcXXcu5XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2BXR9ap6.F1JjSZFpXXcZjXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2JM8tX8P8F1JjSspaXXb4ypXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515575596.jpg', 'a:4:{i:0;s:35:\"/uploads/goods/1515575620134754.jpg\";i:1;s:35:\"/uploads/goods/1515575620230865.jpg\";i:2;s:35:\"/uploads/goods/1515575620534669.jpg\";i:3;s:35:\"/uploads/goods/1515575620101494.jpg\";}', '1', '1', '0', '0', '0', '2018-01-10 17:14:12', '2018-01-10 00:00:00', '32.00', '0.00', '0.00', '123.00', '32', '123', '0', '1', '32', '2018-01-10 00:00:00', '2018-01-26 00:00:00', null, null);
+INSERT INTO `ewei_goods` VALUES ('37', '14', '1', '0', '宫廷马甲吊袜带套装性感束身衣小胸女情趣内衣裤透视紧身制服激情', '服激情', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB23PzzXyrEK1JjSZFHXXcveXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB29X6CXw2DK1JjSZFOXXabwFXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2kJBpX.6EK1JjSZFDXXcIqFXa_!!169468122.jpg\"/> <img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2sEQUXnzGK1JjSsplXXbdspXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB279mnuM0kpuFjSspdXXX4YXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2RWrxXwYDK1JjSZFCXXX.vXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2inDzXxDBK1JjSZFhXXXFFFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2HJfuXpHFK1JjSZFzXXb23XXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB22ZLwXxvEK1JjSZFPXXbWYpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2EbDuXwYDK1JjSZPfXXcY.pXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2M__JuYJmpuFjSZFwXXaE4VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2AWGCXl1tLeJjSszgXXcOHpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2co_xXu2CK1JjSZFjXXXk_VXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2mrcRXgvGK1Jjy0FcXXXXmVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2p4YuXqTEK1JjSZFFXXb6xXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2UEM2lmJjpuFjy0FdXXXmoFXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2NPtbuylnpuFjSZFgXXbi7FXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB20jUeq3JlpuFjSspjXXcT.pXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515578042.jpg', 'a:5:{i:0;s:35:\"/uploads/goods/1515578038343049.jpg\";i:1;s:35:\"/uploads/goods/1515578038186800.jpg\";i:2;s:35:\"/uploads/goods/1515578038187059.jpg\";i:3;s:35:\"/uploads/goods/1515578038126040.jpg\";i:4;s:35:\"/uploads/goods/1515578038120054.jpg\";}', '1', '1', '1', '0', '2', '2018-01-10 17:57:44', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '123', '0', '1', '123', '2018-01-12 00:00:00', '2018-02-01 00:00:00', null, null);
+INSERT INTO `ewei_goods` VALUES ('36', '14', '4', '9', '性感兔女郎紧身连体衣制服夜火情趣内衣成人', '小胸透视激情套装夜店', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2nCE.X0qgF1Jjy1zdXXc8dFXa_!!169468122.jpg\"/><br/> <img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB2VwNaadmgF1Jjy1XaXXcSEFXa_!!169468122.jpg\"/><br/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB24VF7bXgkyKJjSspiXXcwBpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i1/169468122/TB28tD.aS69F1JjSZPiXXXfCXXa_!!169468122.jpg\"/></p></div></div>', '1', '1', '0', '/uploads/goods_brand/1515576059.jpg', 'a:5:{i:0;s:35:\"/uploads/goods/1515576053116598.jpg\";i:1;s:35:\"/uploads/goods/1515576053110118.jpg\";i:2;s:35:\"/uploads/goods/1515576053123475.jpg\";i:3;s:35:\"/uploads/goods/1515576053202593.jpg\";i:4;s:35:\"/uploads/goods/1515576053831890.jpg\";}', '1', '1', '0', '0', '1', '2018-01-10 17:35:22', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '123.00', '123', '123', '0', '1', '123', '2018-01-09 00:00:00', '2018-01-27 00:00:00', null, null);
+INSERT INTO `ewei_goods` VALUES ('38', '14', '1', '8', '性感露胸包臀短裙空姐情趣内衣制服紧身激情套装透视女秘书OL夜店', '测试', '', '<div class=\"J_DetailSection tshop-psm ke-post\"><div class=\"content\"><p><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2NBngXbL9F1JjSZFlXXa2sVXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2uRSMXgMEF1JjSZFxXXbcVpXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB279mnuM0kpuFjSspdXXX4YXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB23x6fXX_.F1JjSZFjXXahnXXa_!!169468122.jpg\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB26ZO3XdmgF1Jjy0FaXXX5jpXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB280vfXkz_F1JjSZFkXXcCaXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB25Vu4XcSfF1JjSspbXXcSkVXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i4/169468122/TB2XY1IXgIEF1JjSZFHXXbRVXXa_!!169468122.jpg\" class=\"\"/><br/><img src=\"https://img.alicdn.com/imgextra/i3/169468122/TB2F.53XjmfF1JjSspcXXXZMXXa_!!169468122.jpg\" class=\"\"/><img src=\"https://img.alicdn.com/imgextra/i2/169468122/TB2ydi3XoifF1JjSspdXXclLpXa_!!169468122.jpg\" class=\"\"/></p></div></div>', '', '1', '0', '/uploads/goods_brand/1515581629.jpg', 'a:3:{i:0;s:35:\"/uploads/goods/1515581639839679.jpg\";i:1;s:35:\"/uploads/goods/1515581639469046.jpg\";i:2;s:35:\"/uploads/goods/1515581639395160.jpg\";}', '1', '1', '1', '0', '3', '2018-01-10 18:54:30', '2018-01-10 00:00:00', '123.00', '0.00', '0.00', '133.00', '123', '1232', '32', '1', '123', '2018-01-10 00:00:00', '2018-01-30 00:00:00', null, null);
 
 -- ----------------------------
 -- Table structure for ewei_goods_browse_record
@@ -3952,7 +3964,7 @@ CREATE TABLE `ewei_goods_collective` (
   `end_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '结束时间',
   `state` enum('1','0') NOT NULL DEFAULT '0' COMMENT '0未开启   1开启',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COMMENT='开团规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COMMENT='开团规则表';
 
 -- ----------------------------
 -- Records of ewei_goods_collective
@@ -3961,7 +3973,7 @@ INSERT INTO `ewei_goods_collective` VALUES ('11', '30', '0', '12312', '123.00', 
 INSERT INTO `ewei_goods_collective` VALUES ('18', '32', '0', '2', '3.00', '3600', '2018-01-01 22:51:37', '2018-01-01 22:51:37', '1');
 INSERT INTO `ewei_goods_collective` VALUES ('29', '36', '0', '123', '123.00', '123', '2018-01-10 00:00:00', '2018-01-18 00:00:00', '1');
 INSERT INTO `ewei_goods_collective` VALUES ('20', '37', '0', '123', '123.00', '123', '2018-01-10 00:00:00', '2018-01-26 00:00:00', '1');
-INSERT INTO `ewei_goods_collective` VALUES ('33', '38', '1', '2', '123.00', '213', '2018-01-10 00:00:00', '2018-01-26 00:00:00', '1');
+INSERT INTO `ewei_goods_collective` VALUES ('43', '38', '1', '2', '123.00', '213', '2018-01-10 00:00:00', '2018-01-26 00:00:00', '1');
 INSERT INTO `ewei_goods_collective` VALUES ('42', '33', '1', '0', '0.00', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '');
 
 -- ----------------------------
@@ -3986,7 +3998,7 @@ CREATE TABLE `ewei_goods_sku` (
   `create_date` int(11) DEFAULT '0' COMMENT '创建时间',
   `update_date` int(11) DEFAULT '0' COMMENT '修改时间',
   PRIMARY KEY (`sku_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=169 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=481 COMMENT='商品skui规格价格库存信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=167 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=481 COMMENT='商品skui规格价格库存信息表';
 
 -- ----------------------------
 -- Records of ewei_goods_sku
@@ -3996,6 +4008,33 @@ INSERT INTO `ewei_goods_sku` VALUES ('163', '33', '尺码', 'm', '', '0.00', '12
 INSERT INTO `ewei_goods_sku` VALUES ('164', '33', '尺码', 'l', '', '0.00', '123.00', '0.00', '123.00', '123', '0', '', '', '1', '0', '0');
 INSERT INTO `ewei_goods_sku` VALUES ('165', '33', '颜色', '红色', '', '0.00', '123.00', '0.00', '123.00', '123', '0', '', '', '4', '0', '0');
 INSERT INTO `ewei_goods_sku` VALUES ('166', '33', '颜色', '白色', '', '0.00', '123.00', '0.00', '123.00', '123', '0', '', '', '4', '0', '0');
+
+-- ----------------------------
+-- Table structure for ewei_keywords
+-- ----------------------------
+DROP TABLE IF EXISTS `ewei_keywords`;
+CREATE TABLE `ewei_keywords` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `keyword` varchar(90) NOT NULL DEFAULT '',
+  `is_hot` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `is_default` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `is_show` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `sort_order` int(11) unsigned NOT NULL DEFAULT '100',
+  `scheme_url` varchar(255) NOT NULL DEFAULT '' COMMENT '关键词的跳转链接',
+  `type` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COMMENT='热闹关键词表';
+
+-- ----------------------------
+-- Records of ewei_keywords
+-- ----------------------------
+INSERT INTO `ewei_keywords` VALUES ('1', '520元礼包抢先领', '1', '1', '1', '1', '', '0');
+INSERT INTO `ewei_keywords` VALUES ('2', '单鞋', '0', '0', '1', '8', '', '0');
+INSERT INTO `ewei_keywords` VALUES ('3', '墨镜', '0', '0', '1', '5', '', '0');
+INSERT INTO `ewei_keywords` VALUES ('4', '夏凉被', '0', '0', '1', '100', '', '0');
+INSERT INTO `ewei_keywords` VALUES ('5', '新品上市', '0', '0', '1', '100', '', '0');
+INSERT INTO `ewei_keywords` VALUES ('6', '日式', '0', '0', '1', '100', '', '0');
+INSERT INTO `ewei_keywords` VALUES ('7', '母亲节', '0', '0', '1', '100', '', '0');
 
 -- ----------------------------
 -- Table structure for ewei_link
@@ -4600,664 +4639,3 @@ CREATE TABLE `ewei_user_rank` (
 -- ----------------------------
 -- Records of ewei_user_rank
 -- ----------------------------
-
--- ----------------------------
--- Table structure for ns_order_goods_promotion_details
--- ----------------------------
-DROP TABLE IF EXISTS `ns_order_goods_promotion_details`;
-CREATE TABLE `ns_order_goods_promotion_details` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL COMMENT '订单ID',
-  `sku_id` int(11) NOT NULL COMMENT '商品skuid',
-  `promotion_type` varbinary(255) NOT NULL COMMENT '优惠类型规则ID（满减对应规则）',
-  `promotion_id` int(11) NOT NULL COMMENT '优惠ID',
-  `discount_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '优惠的金额，单位：元，精确到小数点后两位',
-  `used_time` int(11) DEFAULT '0' COMMENT '使用时间',
-  PRIMARY KEY (`id`),
-  KEY `IDX_ns_order_goods_promotion_d_order_id` (`order_id`),
-  KEY `IDX_ns_order_goods_promotion_d_promotion_id` (`promotion_id`),
-  KEY `IDX_ns_order_goods_promotion_d_promotion_type` (`promotion_type`),
-  KEY `IDX_ns_order_goods_promotion_d_sku_id` (`sku_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=8192 COMMENT='订单商品优惠详情';
-
--- ----------------------------
--- Records of ns_order_goods_promotion_details
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_order_pickup
--- ----------------------------
-DROP TABLE IF EXISTS `ns_order_pickup`;
-CREATE TABLE `ns_order_pickup` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `order_id` int(10) NOT NULL DEFAULT '0' COMMENT '订单ID',
-  `name` varchar(255) NOT NULL COMMENT '自提点名称',
-  `address` varchar(255) NOT NULL DEFAULT '' COMMENT '自提点地址',
-  `contact` varchar(255) NOT NULL DEFAULT '' COMMENT '联系人',
-  `phone` varchar(255) NOT NULL DEFAULT '' COMMENT '联系电话',
-  `city_id` int(11) NOT NULL COMMENT '市ID',
-  `province_id` int(11) NOT NULL COMMENT '省ID',
-  `district_id` int(11) NOT NULL COMMENT '区县ID',
-  `supplier_id` int(11) NOT NULL DEFAULT '0' COMMENT '供应门店ID',
-  `longitude` varchar(255) NOT NULL DEFAULT '' COMMENT '经度',
-  `latitude` varchar(255) NOT NULL DEFAULT '' COMMENT '维度',
-  `buyer_name` varchar(50) NOT NULL DEFAULT '' COMMENT '提货人姓名',
-  `buyer_mobile` varchar(255) NOT NULL DEFAULT '' COMMENT '提货人电话',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '提货备注信息',
-  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='订单自提点管理';
-
--- ----------------------------
--- Records of ns_order_pickup
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_order_promotion_details
--- ----------------------------
-DROP TABLE IF EXISTS `ns_order_promotion_details`;
-CREATE TABLE `ns_order_promotion_details` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL COMMENT '订单ID',
-  `promotion_type_id` int(11) NOT NULL COMMENT '优惠类型规则ID（满减对应规则）',
-  `promotion_id` int(11) NOT NULL COMMENT '优惠ID',
-  `promotion_type` varchar(255) NOT NULL COMMENT '优惠类型',
-  `promotion_name` varchar(50) NOT NULL COMMENT '该优惠活动的名称',
-  `promotion_condition` varchar(255) NOT NULL DEFAULT '' COMMENT '优惠使用条件说明',
-  `discount_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '优惠的金额，单位：元，精确到小数点后两位',
-  `used_time` int(11) DEFAULT '0' COMMENT '使用时间',
-  PRIMARY KEY (`id`),
-  KEY `UK_ns_order_promotion_details_order_id` (`order_id`),
-  KEY `UK_ns_order_promotion_details_promotion_id` (`promotion_id`),
-  KEY `UK_ns_order_promotion_details_promotion_type` (`promotion_type`),
-  KEY `UK_ns_order_promotion_details_promotion_type_id` (`promotion_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=364 COMMENT='订单优惠详情';
-
--- ----------------------------
--- Records of ns_order_promotion_details
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_order_refund
--- ----------------------------
-DROP TABLE IF EXISTS `ns_order_refund`;
-CREATE TABLE `ns_order_refund` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `order_goods_id` int(11) NOT NULL COMMENT '订单商品表id',
-  `refund_status` varchar(255) NOT NULL COMMENT '操作状态\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n流程状态(refund_status)	状态名称(refund_status_name)	操作时间\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1	买家申请	发起了退款申请,等待卖家处理\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2	等待买家退货	卖家已同意退款申请,等待买家退货\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3	等待卖家确认收货	买家已退货,等待卖家确认收货\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4	等待卖家确认退款	卖家同意退款\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0	退款已成功	卖家退款给买家，本次维权结束\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-1	退款已拒绝	卖家拒绝本次退款，本次维权结束\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-2	退款已关闭	主动撤销退款，退款关闭\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n-3	退款申请不通过	拒绝了本次退款申请,等待买家修改\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n',
-  `action` varchar(255) NOT NULL COMMENT '退款操作内容描述',
-  `action_way` tinyint(4) NOT NULL DEFAULT '0' COMMENT '操作方 1 买家 2 卖家',
-  `action_userid` varchar(255) NOT NULL DEFAULT '0' COMMENT '操作人id',
-  `action_username` varchar(255) NOT NULL DEFAULT '' COMMENT '操作人姓名',
-  `action_time` int(11) DEFAULT '0' COMMENT '操作时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=108 COMMENT='订单商品退货退款操作表';
-
--- ----------------------------
--- Records of ns_order_refund
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_order_refund_account_records
--- ----------------------------
-DROP TABLE IF EXISTS `ns_order_refund_account_records`;
-CREATE TABLE `ns_order_refund_account_records` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
-  `order_goods_id` int(11) NOT NULL COMMENT '订单项id',
-  `refund_trade_no` varchar(55) NOT NULL COMMENT '退款交易号',
-  `refund_money` decimal(10,2) NOT NULL COMMENT '退款金额',
-  `refund_way` int(11) NOT NULL COMMENT '退款方式（1：微信，2：支付宝，10：线下）',
-  `buyer_id` int(11) NOT NULL COMMENT '买家id',
-  `refund_time` int(11) NOT NULL COMMENT '退款时间',
-  `remark` varchar(255) DEFAULT '' COMMENT '备注',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单退款账户记录';
-
--- ----------------------------
--- Records of ns_order_refund_account_records
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_order_shipping_fee
--- ----------------------------
-DROP TABLE IF EXISTS `ns_order_shipping_fee`;
-CREATE TABLE `ns_order_shipping_fee` (
-  `shipping_fee_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '运费模板ID',
-  `shipping_fee_name` varchar(30) NOT NULL DEFAULT '' COMMENT '运费模板名称',
-  `is_default` int(11) NOT NULL DEFAULT '0' COMMENT '是否是默认模板',
-  `co_id` int(11) NOT NULL DEFAULT '0' COMMENT '物流公司ID',
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID',
-  `province_id_array` text NOT NULL COMMENT '省ID组',
-  `city_id_array` text NOT NULL COMMENT '市ID组',
-  `weight_is_use` int(11) NOT NULL DEFAULT '1' COMMENT '是否启用重量运费',
-  `weight_snum` decimal(8,2) NOT NULL DEFAULT '1.00' COMMENT '首重',
-  `weight_sprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '首重运费',
-  `weight_xnum` decimal(8,2) NOT NULL DEFAULT '1.00' COMMENT '续重',
-  `weight_xprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '续重运费',
-  `volume_is_use` int(11) NOT NULL DEFAULT '1' COMMENT '是否启用体积计算运费',
-  `volume_snum` decimal(8,2) NOT NULL DEFAULT '1.00' COMMENT '首体积量',
-  `volume_sprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '首体积运费',
-  `volume_xnum` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '续体积量',
-  `volume_xprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '续体积运费',
-  `bynum_is_use` int(11) NOT NULL DEFAULT '1' COMMENT '是否启用计件方式运费',
-  `bynum_snum` int(11) NOT NULL DEFAULT '0' COMMENT '首件',
-  `bynum_sprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '首件运费',
-  `bynum_xnum` int(11) NOT NULL DEFAULT '1' COMMENT '续件',
-  `bynum_xprice` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '续件运费',
-  `create_time` int(11) DEFAULT '0' COMMENT '创建日期',
-  `update_time` int(11) DEFAULT '0' COMMENT '最后更新时间',
-  `district_id_array` text COMMENT '区县ID组',
-  PRIMARY KEY (`shipping_fee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='运费模板';
-
--- ----------------------------
--- Records of ns_order_shipping_fee
--- ----------------------------
-INSERT INTO `ns_order_shipping_fee` VALUES ('1', '默认', '0', '1', '0', '9,10,11,12,14,2,3,4,5,15,1,19,20,21,13,18,17,16,6,7,8,27,28,29,30,31', '73,74,75,76,77,78,79,80,81,82,84,85,86,83,94,95,96,97,93,92,87,88,89,90,91,98,99,100,101,102,114,113,112,111,110,103,104,105,106,107,108,109,133,134,132,131,124,125,126,127,128,129,130,2,12,13,11,10,3,4,5,6,7,8,9,14,15,16,17,18,19,20,21,22,23,24,32,33,34,35,36,31,30,25,26,27,28,29,135,136,137,138,139,140,141,142,151,143,144,145,146,147,148,149,150,1,215,216,217,214,213,204,205,206,207,208,210,211,212,203,202,197,198,199,200,201,209,218,219,220,221,222,223,224,225,226,227,228,229,230,231,233,232,123,122,121,120,119,118,117,116,115,183,194,195,196,193,192,184,185,186,187,188,189,190,191,174,175,176,177,178,179,180,181,173,172,169,170,171,182,164,165,166,167,168,163,162,161,153,154,155,156,157,158,159,160,152,50,42,43,44,45,46,47,48,49,41,40,37,38,39,52,53,54,55,56,57,58,59,51,61,60,62,72,71,63,64,65,66,67,68,69,70,296,297,295,294,288,289,290,291,292,293,298,299,300,301,302,303,304,305,306,307,308,309,310,311,316,317,318,319,315,314,312,313,324,320,321,322,323,325,337,338,339,340,341,342,336,335,334,326,327,328,329,330,331,332,333', '1', '0.00', '0.00', '0.00', '0.00', '1', '0.00', '0.00', '0.00', '0.00', '1', '1', '12.00', '2', '3.00', '1515310046', '0', '719,736,735,734,733,732,731,730,729,728,727,726,725,724,723,722,721,720,737,738,749,748,747,746,745,744,743,742,741,740,739,750,751,752,753,754,755,756,757,758,759,768,767,766,765,764,763,762,761,760,769,770,771,772,773,774,775,776,777,786,785,784,783,782,781,780,779,778,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,827,828,829,830,831,832,833,834,835,836,837,838,839,840,841,842,843,820,821,822,823,824,825,826,906,907,908,909,910,911,912,913,914,915,916,917,918,919,920,921,922,923,924,925,926,927,928,929,930,931,932,933,897,898,899,900,901,902,903,904,905,891,892,893,894,895,896,844,855,854,853,852,851,850,849,848,847,846,845,856,857,866,865,864,863,862,861,860,859,858,867,868,877,876,875,874,873,872,871,870,869,878,879,880,881,882,883,884,885,886,887,888,889,890,934,935,936,937,938,939,940,941,942,943,944,945,946,947,948,949,950,951,952,953,954,955,956,957,958,959,960,961,962,963,964,1032,1033,1034,1035,1036,1037,1038,1028,1029,1030,1031,1024,1025,1026,1027,1017,1018,1019,1020,1021,1022,1023,1012,1013,1014,1015,1016,965,966,967,968,969,970,971,972,973,982,981,980,979,978,977,976,975,974,983,984,985,986,987,988,989,990,991,992,993,994,995,996,997,998,999,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1200,1209,1208,1207,1206,1205,1204,1203,1202,1201,1210,1211,1221,1220,1219,1218,1217,1216,1215,1214,1213,1212,1222,1190,1198,1197,1196,1195,1194,1193,1192,1191,1199,1177,1188,1187,1186,1185,1184,1183,1182,1181,1180,1179,1178,1189,1124,1125,1126,1127,1128,1129,1130,1131,1132,1133,1134,1135,1136,1137,1138,1139,1140,1141,1142,1152,1151,1150,1149,1148,1147,1146,1145,1144,1143,1153,1154,1155,1156,1157,1158,1159,1175,1174,1173,1172,1171,1170,1169,1168,1167,1166,1165,1164,1163,1162,1161,1160,1176,19,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,36,188,196,195,194,193,192,191,190,189,197,198,207,206,205,204,203,202,201,200,199,208,172,186,185,184,183,182,181,180,179,178,177,176,175,174,173,187,161,170,169,168,167,166,165,164,163,162,171,37,50,51,52,53,54,55,56,57,58,49,48,47,38,39,40,41,42,43,44,45,46,59,60,72,71,70,69,68,67,66,65,64,63,62,61,73,74,75,76,77,78,79,80,81,98,97,96,95,94,93,92,91,90,89,88,87,86,85,84,83,82,99,100,117,116,115,114,113,112,111,110,109,108,107,106,105,104,103,102,101,118,119,133,134,135,136,137,138,139,140,141,142,132,131,130,120,121,122,123,124,125,126,127,128,129,143,144,159,158,157,156,155,154,153,152,151,150,149,148,147,146,145,160,209,217,216,215,214,213,212,211,210,218,219,228,227,226,225,224,223,222,221,220,229,230,231,232,233,234,235,246,245,244,243,242,241,240,239,238,237,236,247,248,249,250,251,252,253,254,255,256,257,258,259,260,269,268,267,266,265,264,263,262,261,270,271,282,281,280,279,278,277,276,275,274,273,272,283,284,296,295,294,293,292,291,290,289,288,287,286,285,297,298,313,312,311,310,309,308,307,306,305,304,303,302,301,300,299,314,315,326,325,324,323,322,321,320,319,318,317,316,327,390,391,392,393,394,395,396,397,406,405,404,403,402,401,400,399,398,407,408,409,410,411,412,413,414,424,423,422,421,420,419,418,417,416,415,425,426,427,428,377,388,387,386,385,384,383,382,381,380,379,378,389,369,370,371,372,373,374,375,376,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,359,358,357,356,355,354,353,352,351,350,360,361,362,363,364,365,366,367,368,1223,1231,1230,1229,1228,1227,1226,1225,1224,1232,1233,1243,1242,1241,1240,1239,1238,1237,1236,1235,1234,1244,1245,1246,1247,1248,1249,1250,1251,1252,1253,1254,1255,1256,1257,1258,1259,1260,1261,1262,1263,1264,1274,1273,1272,1271,1270,1269,1268,1267,1266,1265,1275,1276,1286,1285,1284,1283,1282,1281,1280,1279,1278,1277,1287,1288,1298,1297,1296,1295,1294,1293,1292,1291,1290,1289,1299,1354,1355,1356,1357,1358,1359,1360,1361,1362,1300,1301,1302,1303,1304,1305,1306,1307,1308,1309,1310,1311,1312,1313,1314,1315,1316,1326,1325,1324,1323,1322,1321,1320,1319,1318,1317,1327,1328,1337,1336,1335,1334,1333,1332,1331,1330,1329,1338,1339,1340,1341,1342,1343,1344,1345,1346,1347,1348,1349,1350,1351,1352,1353,1,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,18,1855,1856,1857,1858,1859,1860,1861,1862,1863,1864,1865,1866,1867,1797,1798,1799,1800,1801,1802,1803,1804,1805,1806,1807,1808,1809,1810,1811,1812,1813,1814,1815,1816,1817,1818,1819,1820,1821,1822,1823,1824,1825,1826,1827,1828,1829,1830,1831,1832,1837,1838,1839,1840,1841,1842,1843,1844,1845,1846,1847,1848,1849,1850,1851,1852,1853,1854,1790,1791,1792,1793,1794,1795,1796,1785,1786,1787,1788,1789,1747,1756,1755,1754,1753,1752,1751,1750,1749,1748,1757,1759,1767,1766,1765,1764,1763,1762,1761,1760,1768,1769,1770,1771,1772,1773,1774,1775,1776,1777,1778,1779,1780,1781,1782,1783,1784,1833,1834,1835,1836,1868,1878,1877,1876,1875,1874,1873,1872,1871,1870,1869,1879,1880,1888,1887,1886,1885,1884,1883,1882,1881,1889,1890,1905,1904,1903,1902,1901,1900,1899,1898,1897,1896,1895,1894,1893,1892,1891,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1947,1946,1945,1944,1943,1942,1941,1940,1939,1938,1948,1949,1950,1951,1952,1953,1962,1961,1960,1959,1958,1957,1956,1955,1954,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1981,1998,1997,1996,1995,1994,1993,1992,1991,1990,1989,1988,1987,1986,1985,1984,1983,1982,1999,1977,1978,1979,1980,1115,1116,1117,1118,1119,1120,1121,1122,1123,1108,1109,1110,1111,1112,1113,1114,1098,1106,1105,1104,1103,1102,1101,1100,1099,1107,1087,1096,1095,1094,1093,1092,1091,1090,1089,1088,1097,1075,1085,1084,1083,1082,1081,1080,1079,1078,1077,1076,1086,1063,1073,1072,1071,1070,1069,1068,1067,1066,1065,1064,1074,1058,1059,1060,1061,1062,1052,1053,1054,1055,1056,1057,1039,1050,1049,1048,1047,1046,1045,1044,1043,1042,1041,1040,1051,1625,1626,1627,1628,1629,1630,1631,1632,1633,1722,1732,1731,1730,1729,1728,1727,1726,1725,1724,1723,1733,1734,1735,1736,1737,1738,1739,1740,1741,1742,1743,1744,1745,1746,1711,1720,1719,1718,1717,1716,1715,1714,1713,1712,1721,1700,1709,1708,1707,1706,1705,1704,1703,1702,1701,1710,1634,1635,1636,1637,1638,1639,1640,1641,1642,1643,1644,1645,1646,1647,1648,1658,1657,1656,1655,1654,1653,1652,1651,1650,1649,1659,1660,1670,1669,1668,1667,1666,1665,1664,1663,1662,1661,1671,1672,1673,1674,1675,1676,1677,1678,1679,1680,1681,1682,1683,1684,1685,1686,1687,1688,1689,1690,1691,1692,1693,1694,1695,1696,1697,1698,1699,1572,1573,1574,1575,1576,1577,1578,1579,1580,1581,1582,1583,1584,1585,1586,1587,1588,1589,1590,1591,1592,1593,1594,1595,1603,1602,1601,1600,1599,1598,1597,1596,1604,1605,1606,1607,1608,1609,1610,1611,1612,1613,1614,1615,1616,1617,1618,1619,1620,1563,1564,1565,1566,1567,1568,1569,1570,1571,1550,1561,1560,1559,1558,1557,1556,1555,1554,1553,1552,1551,1562,1523,1534,1533,1532,1531,1530,1529,1528,1527,1526,1525,1524,1535,1536,1537,1538,1539,1540,1541,1542,1543,1544,1545,1546,1547,1548,1549,1621,1622,1623,1624,1471,1482,1481,1480,1479,1478,1477,1476,1475,1474,1473,1472,1483,1484,1485,1486,1487,1488,1489,1490,1491,1492,1493,1501,1500,1499,1498,1497,1496,1495,1494,1502,1503,1511,1510,1509,1508,1507,1506,1505,1504,1512,1513,1521,1520,1519,1518,1517,1516,1515,1514,1522,1464,1465,1466,1467,1468,1469,1470,1459,1460,1461,1462,1463,1453,1454,1455,1456,1457,1458,1375,1383,1382,1381,1380,1379,1378,1377,1376,1384,1385,1398,1397,1396,1395,1394,1393,1392,1391,1390,1389,1388,1387,1386,1399,1400,1408,1407,1406,1405,1404,1403,1402,1401,1409,1410,1411,1412,1413,1414,1415,1416,1417,1418,1419,1420,1421,1422,1423,1424,1434,1433,1432,1431,1430,1429,1428,1427,1426,1425,1435,1436,1445,1444,1443,1442,1441,1440,1439,1438,1437,1446,1447,1448,1449,1450,1451,1452,1363,1373,1372,1371,1370,1369,1368,1367,1366,1365,1364,1374,523,524,525,526,527,528,472,473,474,475,476,477,478,479,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,466,467,468,469,470,471,459,460,461,462,463,464,465,429,440,439,438,437,436,435,434,433,432,431,430,441,442,450,449,448,447,446,445,444,443,451,452,453,454,455,456,457,458,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,563,564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,585,586,587,588,529,537,536,535,534,533,532,531,530,538,608,622,621,620,619,618,617,616,615,614,613,612,611,610,609,623,589,606,605,604,603,602,601,600,599,598,597,596,595,594,593,592,591,590,607,624,625,626,627,628,629,630,631,632,716,717,718,706,714,713,712,711,710,709,708,707,715,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,658,673,672,671,670,669,668,667,666,665,664,663,662,661,660,659,674,675,684,683,682,681,680,679,678,677,676,685,686,687,688,689,690,698,697,696,695,694,693,692,691,699,700,701,702,703,704,705,2601,2609,2608,2607,2606,2605,2604,2603,2602,2610,2611,2612,2613,2614,2615,2616,2617,2589,2599,2598,2597,2596,2595,2594,2593,2592,2591,2590,2600,2578,2587,2586,2585,2584,2583,2582,2581,2580,2579,2588,2511,2522,2521,2520,2519,2518,2517,2516,2515,2514,2513,2512,2523,2524,2525,2526,2527,2528,2538,2537,2536,2535,2534,2533,2532,2531,2530,2529,2539,2540,2552,2551,2550,2549,2548,2547,2546,2545,2544,2543,2542,2541,2553,2554,2563,2562,2561,2560,2559,2558,2557,2556,2555,2564,2565,2576,2575,2574,2573,2572,2571,2570,2569,2568,2567,2566,2577,2618,2619,2620,2621,2622,2623,2624,2625,2626,2627,2628,2629,2630,2631,2632,2633,2634,2635,2636,2637,2638,2639,2640,2641,2642,2643,2644,2645,2646,2647,2648,2649,2650,2651,2652,2653,2654,2655,2656,2657,2658,2659,2660,2661,2662,2663,2664,2665,2666,2667,2668,2669,2670,2671,2672,2673,2674,2675,2676,2677,2678,2679,2680,2681,2682,2683,2684,2685,2686,2687,2688,2689,2690,2691,2692,2693,2694,2695,2696,2697,2698,2699,2700,2701,2702,2703,2725,2726,2727,2728,2729,2730,2731,2732,2733,2734,2735,2736,2737,2738,2739,2740,2741,2742,2743,2744,2745,2746,2721,2722,2723,2724,2717,2718,2719,2720,2704,2705,2706,2707,2708,2709,2710,2711,2712,2713,2714,2715,2716,2765,2766,2767,2747,2748,2749,2750,2751,2752,2753,2754,2755,2756,2757,2758,2759,2760,2761,2762,2763,2764,2768,2769,2770,2771,2772,2773,2774,2775,2849,2850,2851,2852,2853,2854,2855,2856,2857,2858,2859,2860,2861,2862,2839,2847,2846,2845,2844,2843,2842,2841,2840,2848,2831,2832,2833,2834,2835,2836,2837,2838,2819,2829,2828,2827,2826,2825,2824,2823,2822,2821,2820,2830,2776,2777,2778,2779,2780,2781,2782,2783,2784,2785,2786,2787,2788,2789,2790,2791,2792,2793,2794,2795,2796,2797,2798,2799,2800,2801,2802,2803,2804,2805,2806,2807,2808,2809,2810,2811,2812,2813,2814,2815,2816,2817,2818');
-INSERT INTO `ns_order_shipping_fee` VALUES ('2', '测试', '1', '1', '0', '', '', '1', '1.00', '2.00', '3.00', '4.00', '1', '1.00', '2.00', '3.00', '4.00', '1', '1', '2.00', '3', '4.00', '1515310086', '0', '');
-
--- ----------------------------
--- Table structure for ns_order_shop_return
--- ----------------------------
-DROP TABLE IF EXISTS `ns_order_shop_return`;
-CREATE TABLE `ns_order_shop_return` (
-  `shop_id` int(11) NOT NULL,
-  `shop_address` varchar(255) NOT NULL DEFAULT '' COMMENT '商家地址',
-  `seller_name` varchar(50) NOT NULL DEFAULT '' COMMENT '收件人',
-  `seller_mobile` varchar(11) NOT NULL DEFAULT '' COMMENT '收件人手机号',
-  `seller_zipcode` varchar(20) NOT NULL DEFAULT '' COMMENT '邮编',
-  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
-  `modify_time` int(11) DEFAULT '0' COMMENT '修改时间',
-  PRIMARY KEY (`shop_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='店铺退货设置';
-
--- ----------------------------
--- Records of ns_order_shop_return
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_account
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_account`;
-CREATE TABLE `ns_shop_account` (
-  `shop_id` int(11) NOT NULL,
-  `shop_profit` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '店铺总营业额',
-  `shop_total_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '店铺入账总额',
-  `shop_proceeds` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '店铺收益总额',
-  `shop_platform_commission` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '平台抽取店铺利润总额',
-  `shop_withdraw` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '店铺提现总额',
-  `shop_point` int(11) NOT NULL DEFAULT '0' COMMENT '店铺发放的积分总额',
-  `shop_point_use` int(11) NOT NULL DEFAULT '0' COMMENT '会员已使用多少积分',
-  PRIMARY KEY (`shop_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=2340 COMMENT='店铺账户表';
-
--- ----------------------------
--- Records of ns_shop_account
--- ----------------------------
-INSERT INTO `ns_shop_account` VALUES ('0', '0.00', '0.00', '0.00', '0.00', '0.00', '0', '0');
-
--- ----------------------------
--- Table structure for ns_shop_account_money_records
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_account_money_records`;
-CREATE TABLE `ns_shop_account_money_records` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `serial_no` varchar(50) NOT NULL COMMENT '流水号',
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID  0标识平台',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '相关金额',
-  `account_type` int(11) NOT NULL DEFAULT '1' COMMENT '记录类型',
-  `type_alis_id` int(11) NOT NULL COMMENT '相关ID号',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '简单描述',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=8192 COMMENT='店铺入账总额的记录表';
-
--- ----------------------------
--- Records of ns_shop_account_money_records
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_account_proceeds_records
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_account_proceeds_records`;
-CREATE TABLE `ns_shop_account_proceeds_records` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `serial_no` varchar(50) NOT NULL COMMENT '流水号',
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID  0标识平台',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '相关金额',
-  `account_type` int(11) NOT NULL DEFAULT '1' COMMENT '记录类型',
-  `type_alis_id` int(11) NOT NULL COMMENT '相关ID号',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '简单描述',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='店铺收益总额的记录表';
-
--- ----------------------------
--- Records of ns_shop_account_proceeds_records
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_account_profit_records
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_account_profit_records`;
-CREATE TABLE `ns_shop_account_profit_records` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `serial_no` varchar(50) NOT NULL COMMENT '流水号',
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID  0标识平台',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '相关金额',
-  `account_type` int(11) NOT NULL DEFAULT '1' COMMENT '记录类型',
-  `type_alis_id` int(11) NOT NULL COMMENT '相关ID号',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '简单描述',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=8192 COMMENT='店铺营业额的记录表';
-
--- ----------------------------
--- Records of ns_shop_account_profit_records
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_account_records
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_account_records`;
-CREATE TABLE `ns_shop_account_records` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `serial_no` varchar(50) NOT NULL DEFAULT '' COMMENT '流水号',
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID  0标识平台',
-  `title` varchar(255) NOT NULL DEFAULT '' COMMENT '标题',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '相关金额',
-  `account_type` int(11) NOT NULL DEFAULT '1' COMMENT '发生方式',
-  `type_alis_id` int(11) NOT NULL COMMENT '相关ID号',
-  `balance` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '店铺的可用余额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '简单描述',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=5461 COMMENT='店铺账户记录管理';
-
--- ----------------------------
--- Records of ns_shop_account_records
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_account_return_records
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_account_return_records`;
-CREATE TABLE `ns_shop_account_return_records` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `serial_no` varchar(50) NOT NULL COMMENT '流水号',
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID  0标识平台',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '相关金额',
-  `account_type` int(11) NOT NULL DEFAULT '1' COMMENT '记录类型',
-  `type_alis_id` int(11) NOT NULL COMMENT '相关ID号',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '简单描述',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='平台抽取利润的记录表';
-
--- ----------------------------
--- Records of ns_shop_account_return_records
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_account_withdraw_records
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_account_withdraw_records`;
-CREATE TABLE `ns_shop_account_withdraw_records` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `serial_no` varchar(50) NOT NULL COMMENT '流水号',
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID  0标识平台',
-  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '相关金额',
-  `account_type` int(11) NOT NULL DEFAULT '1' COMMENT '记录类型',
-  `type_alis_id` int(11) NOT NULL COMMENT '相关ID号',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '简单描述',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=8192 COMMENT='店铺提现的记录表';
-
--- ----------------------------
--- Records of ns_shop_account_withdraw_records
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_ad
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_ad`;
-CREATE TABLE `ns_shop_ad` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `shop_id` int(11) NOT NULL,
-  `ad_image` varchar(255) NOT NULL DEFAULT '' COMMENT '广告图片',
-  `link_url` varchar(255) NOT NULL DEFAULT '' COMMENT '链接地址',
-  `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
-  `type` int(1) NOT NULL DEFAULT '0' COMMENT '类型 0 -- pc端  1-- 手机端 ',
-  `background` varchar(255) NOT NULL DEFAULT '#FFFFFF' COMMENT '背景色',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=5461 COMMENT='店铺广告设置';
-
--- ----------------------------
--- Records of ns_shop_ad
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_apply
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_apply`;
-CREATE TABLE `ns_shop_apply` (
-  `apply_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '申请ID',
-  `shop_id` int(11) NOT NULL DEFAULT '0' COMMENT '店铺ID申请成功之前为0',
-  `apply_type` int(11) NOT NULL DEFAULT '2' COMMENT '申请类型1.个人2.公司',
-  `uid` int(10) unsigned NOT NULL COMMENT '用户编号',
-  `company_name` varchar(50) NOT NULL DEFAULT '' COMMENT '公司名称',
-  `user_name` varchar(50) NOT NULL DEFAULT '' COMMENT '店主用户名',
-  `company_province_id` mediumint(8) NOT NULL DEFAULT '0' COMMENT '所在地省ID',
-  `company_city_id` mediumint(8) NOT NULL DEFAULT '0' COMMENT '所在地市ID',
-  `company_district_id` mediumint(8) NOT NULL DEFAULT '0' COMMENT '所在地区ID',
-  `company_address_detail` varchar(50) NOT NULL DEFAULT '' COMMENT '公司详细地址',
-  `company_phone` varchar(20) NOT NULL DEFAULT '' COMMENT '公司电话',
-  `company_type` varchar(255) NOT NULL DEFAULT '私企' COMMENT '私企.个体.外企.中外合资',
-  `company_employee_count` int(10) unsigned NOT NULL DEFAULT '1' COMMENT '员工总数',
-  `company_registered_capital` int(10) NOT NULL DEFAULT '0' COMMENT '注册资金',
-  `contacts_name` varchar(50) NOT NULL DEFAULT '' COMMENT '联系人姓名',
-  `contacts_phone` varchar(20) NOT NULL DEFAULT '' COMMENT '联系人电话',
-  `contacts_email` varchar(50) NOT NULL DEFAULT '' COMMENT '联系人邮箱',
-  `contacts_card_no` varchar(255) NOT NULL DEFAULT '' COMMENT '申请人身份证号',
-  `contacts_card_electronic_1` varchar(255) NOT NULL DEFAULT '' COMMENT '申请人手持身份证电子版',
-  `contacts_card_electronic_2` varchar(255) NOT NULL DEFAULT '' COMMENT '申请人身份证正面',
-  `contacts_card_electronic_3` varchar(255) NOT NULL DEFAULT '' COMMENT '申请人身份证反面',
-  `business_licence_number` varchar(50) NOT NULL DEFAULT '' COMMENT '营业执照号',
-  `business_sphere` varchar(1000) NOT NULL DEFAULT '' COMMENT '法定经营范围',
-  `business_licence_number_electronic` varchar(50) NOT NULL DEFAULT '' COMMENT '营业执照电子版',
-  `organization_code` varchar(50) NOT NULL DEFAULT '' COMMENT '组织机构代码',
-  `organization_code_electronic` varchar(50) NOT NULL DEFAULT '' COMMENT '组织机构代码电子版',
-  `general_taxpayer` varchar(255) NOT NULL DEFAULT '' COMMENT '一般纳税人证明',
-  `bank_account_name` varchar(50) NOT NULL DEFAULT '' COMMENT '银行开户名',
-  `bank_account_number` varchar(50) NOT NULL DEFAULT '' COMMENT '公司银行账号',
-  `bank_name` varchar(50) NOT NULL DEFAULT '' COMMENT '开户银行支行名称',
-  `bank_code` varchar(50) NOT NULL DEFAULT '' COMMENT '支行联行号',
-  `bank_address` varchar(50) NOT NULL DEFAULT '' COMMENT '开户银行所在地',
-  `bank_licence_electronic` varchar(50) NOT NULL DEFAULT '' COMMENT '开户银行许可证电子版',
-  `is_settlement_account` tinyint(1) NOT NULL DEFAULT '1' COMMENT '开户行账号是否为结算账号 1-开户行就是结算账号 2-独立的计算账号',
-  `settlement_bank_account_name` varchar(50) NOT NULL DEFAULT '' COMMENT '结算银行开户名',
-  `settlement_bank_account_number` varchar(50) NOT NULL DEFAULT '' COMMENT '结算公司银行账号',
-  `settlement_bank_name` varchar(50) NOT NULL DEFAULT '' COMMENT '结算开户银行支行名称',
-  `settlement_bank_code` varchar(50) NOT NULL DEFAULT '' COMMENT '结算支行联行号',
-  `settlement_bank_address` varchar(50) NOT NULL DEFAULT '' COMMENT '结算开户银行所在地',
-  `tax_registration_certificate` varchar(50) NOT NULL DEFAULT '' COMMENT '税务登记证号',
-  `tax_registration_certificate_electronic` varchar(50) NOT NULL DEFAULT '' COMMENT '税务登记证号电子版',
-  `taxpayer_id` varchar(50) NOT NULL DEFAULT '' COMMENT '纳税人识别号',
-  `shop_name` varchar(50) NOT NULL DEFAULT '' COMMENT '店铺名称',
-  `apply_state` varchar(50) NOT NULL DEFAULT '1' COMMENT '申请状态 1-已提交申请 -1-审核失败 2-审核通过开店',
-  `apply_message` varchar(200) NOT NULL DEFAULT '' COMMENT '管理员审核信息',
-  `apply_year` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT '开店时长(年)',
-  `shop_type_name` varchar(50) NOT NULL DEFAULT '' COMMENT '店铺等级名称',
-  `shop_type_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '店铺等级id',
-  `shop_group_name` varchar(50) NOT NULL DEFAULT '' COMMENT '店铺类型名称',
-  `shop_group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '店铺类型ID',
-  `paying_money_certificate` varchar(50) NOT NULL DEFAULT '' COMMENT '付款凭证',
-  `paying_money_certificate_explain` varchar(200) NOT NULL DEFAULT '' COMMENT '付款凭证说明',
-  `paying_amount` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '付款金额',
-  `recommend_uid` int(11) NOT NULL DEFAULT '0' COMMENT '推荐招商员用户id',
-  PRIMARY KEY (`apply_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1365 COMMENT='店铺申请表';
-
--- ----------------------------
--- Records of ns_shop_apply
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_bank_account
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_bank_account`;
-CREATE TABLE `ns_shop_bank_account` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `shop_id` int(11) NOT NULL COMMENT '店铺id',
-  `bank_type` varchar(50) NOT NULL DEFAULT '1' COMMENT '账号类型 1银行卡2支付宝',
-  `branch_bank_name` varchar(50) DEFAULT NULL COMMENT '支行信息',
-  `realname` varchar(50) NOT NULL DEFAULT '' COMMENT '真实姓名',
-  `account_number` varchar(50) NOT NULL DEFAULT '' COMMENT '银行账号',
-  `mobile` varchar(20) NOT NULL DEFAULT '' COMMENT '手机号',
-  `is_default` int(11) NOT NULL DEFAULT '0' COMMENT '是否默认账号',
-  `create_date` int(11) NOT NULL DEFAULT '0' COMMENT '创建日期',
-  `modify_date` int(11) NOT NULL DEFAULT '0' COMMENT '修改日期',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='店铺提现账号';
-
--- ----------------------------
--- Records of ns_shop_bank_account
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_coin_records
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_coin_records`;
-CREATE TABLE `ns_shop_coin_records` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID',
-  `num` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '购物币数量',
-  `account_type` int(11) NOT NULL DEFAULT '1' COMMENT '增加或减少类型',
-  `type_alis_id` int(11) NOT NULL DEFAULT '0' COMMENT '关联ID',
-  `is_display` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示',
-  `text` varchar(255) NOT NULL DEFAULT '' COMMENT '简介',
-  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='店铺购物币记录';
-
--- ----------------------------
--- Records of ns_shop_coin_records
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_express_address
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_express_address`;
-CREATE TABLE `ns_shop_express_address` (
-  `express_address_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '物流地址id',
-  `shop_id` int(11) NOT NULL COMMENT '商铺id',
-  `contact` varchar(100) NOT NULL DEFAULT '' COMMENT '联系人',
-  `mobile` varchar(50) NOT NULL DEFAULT '' COMMENT '手机',
-  `phone` varchar(50) NOT NULL DEFAULT '' COMMENT '电话',
-  `company_name` varchar(100) NOT NULL DEFAULT '' COMMENT '公司名称',
-  `province` smallint(6) NOT NULL DEFAULT '0' COMMENT '所在地省',
-  `city` smallint(6) NOT NULL DEFAULT '0' COMMENT '所在地市',
-  `district` smallint(6) NOT NULL DEFAULT '0' COMMENT '所在地区县',
-  `zipcode` varchar(6) NOT NULL DEFAULT '' COMMENT '邮编',
-  `address` varchar(100) NOT NULL DEFAULT '' COMMENT '详细地址',
-  `is_consigner` tinyint(2) NOT NULL DEFAULT '0' COMMENT '发货地址标记',
-  `is_receiver` tinyint(2) NOT NULL DEFAULT '0' COMMENT '收货地址标记',
-  `create_date` int(11) DEFAULT '0' COMMENT '创建日期',
-  `modify_date` int(11) DEFAULT '0' COMMENT '修改日期',
-  PRIMARY KEY (`express_address_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1092 COMMENT='物流地址';
-
--- ----------------------------
--- Records of ns_shop_express_address
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_navigation
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_navigation`;
-CREATE TABLE `ns_shop_navigation` (
-  `nav_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID',
-  `nav_title` varchar(255) NOT NULL DEFAULT '' COMMENT '导航名称',
-  `nav_url` varchar(255) NOT NULL DEFAULT '' COMMENT '链接地址',
-  `type` int(11) NOT NULL DEFAULT '3' COMMENT '纵向所在位置1.头部2.中部3底部',
-  `sort` int(11) NOT NULL COMMENT '排序号',
-  `align` int(11) NOT NULL DEFAULT '1' COMMENT '横向所在位置1 左  2  右',
-  `nav_type` int(11) DEFAULT '1',
-  `is_blank` int(11) DEFAULT '0',
-  `template_name` varchar(255) DEFAULT '',
-  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
-  `modify_time` int(11) DEFAULT '0' COMMENT '修改时间',
-  PRIMARY KEY (`nav_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=1489 COMMENT='店铺导航管理';
-
--- ----------------------------
--- Records of ns_shop_navigation
--- ----------------------------
-INSERT INTO `ns_shop_navigation` VALUES ('1', '0', '首页', '/index', '1', '1', '0', '0', '0', '首页', '1510132528', '1510903912');
-INSERT INTO `ns_shop_navigation` VALUES ('2', '0', '店铺街', '/shop/shopstreet', '1', '2', '0', '0', '0', '店铺街', '1510394265', '1510394265');
-
--- ----------------------------
--- Table structure for ns_shop_navigation_template
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_navigation_template`;
-CREATE TABLE `ns_shop_navigation_template` (
-  `template_id` int(11) NOT NULL AUTO_INCREMENT,
-  `template_name` varchar(50) NOT NULL DEFAULT '' COMMENT '模板名称',
-  `template_url` varchar(255) NOT NULL DEFAULT '' COMMENT '访问路径',
-  `is_use` int(11) NOT NULL DEFAULT '1' COMMENT '是否有效',
-  `use_type` int(11) NOT NULL COMMENT '1 shop端 0wap端',
-  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
-  PRIMARY KEY (`template_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=5461 COMMENT='导航 的 系统默认模板';
-
--- ----------------------------
--- Records of ns_shop_navigation_template
--- ----------------------------
-INSERT INTO `ns_shop_navigation_template` VALUES ('1', '首页', '/index', '1', '1', '1497706628');
-INSERT INTO `ns_shop_navigation_template` VALUES ('2', '限时折扣', '/index/discount', '1', '1', '1497706628');
-INSERT INTO `ns_shop_navigation_template` VALUES ('3', '品牌列表', '/goods/brandlist', '1', '1', '1497706628');
-INSERT INTO `ns_shop_navigation_template` VALUES ('4', '积分中心', '/goods/integralcenter', '1', '1', '1500717235');
-INSERT INTO `ns_shop_navigation_template` VALUES ('5', '店铺街', '/shop/shopstreet', '1', '1', '0');
-
--- ----------------------------
--- Table structure for ns_shop_order_account_records
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_order_account_records`;
-CREATE TABLE `ns_shop_order_account_records` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID',
-  `order_id` int(11) NOT NULL COMMENT '订单ID',
-  `order_no` varchar(255) NOT NULL DEFAULT '' COMMENT '订单编号',
-  `order_goods_id` int(11) NOT NULL COMMENT '订单项ID',
-  `goods_pay_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '订单项实际支付金额',
-  `rate` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '商品平台佣金比率',
-  `shop_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '店铺获取金额',
-  `platform_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '平台获取金额',
-  `is_refund` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否产生退款',
-  `refund_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '实际退款金额',
-  `shop_refund_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '店铺扣减余额',
-  `platform_refund_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '平台扣减余额',
-  `is_issue` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否已经结算',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=655 COMMENT='店铺针对订单的金额分配';
-
--- ----------------------------
--- Records of ns_shop_order_account_records
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_order_goods_return
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_order_goods_return`;
-CREATE TABLE `ns_shop_order_goods_return` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `shop_id` int(11) NOT NULL DEFAULT '0' COMMENT '店铺id',
-  `order_id` int(11) NOT NULL DEFAULT '0' COMMENT '订单id',
-  `order_goods_id` int(11) NOT NULL DEFAULT '0' COMMENT '订单项id',
-  `goods_pay_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '订单项实付金额',
-  `rate` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '平台抽成比率',
-  `return_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '平台抽成金额',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '抽成时间',
-  `remake` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=8192 COMMENT='订单项的利润抽成记录';
-
--- ----------------------------
--- Records of ns_shop_order_goods_return
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_order_return
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_order_return`;
-CREATE TABLE `ns_shop_order_return` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `shop_id` int(11) NOT NULL COMMENT '店铺ID',
-  `order_id` int(11) NOT NULL COMMENT '订单ID',
-  `order_no` varchar(255) NOT NULL DEFAULT '' COMMENT '订单编号',
-  `order_pay_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '订单实际付款金额',
-  `platform_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '平台获取金额',
-  `is_issue` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否发放  0未发放  1 已发放',
-  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
-  `modify_time` int(11) NOT NULL DEFAULT '0' COMMENT '更新时间',
-  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=655 COMMENT='店铺针对订单的金额分配';
-
--- ----------------------------
--- Records of ns_shop_order_return
--- ----------------------------
-
--- ----------------------------
--- Table structure for ns_shop_weixin_share
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_weixin_share`;
-CREATE TABLE `ns_shop_weixin_share` (
-  `shop_id` int(11) NOT NULL,
-  `goods_param_1` varchar(255) NOT NULL DEFAULT '' COMMENT '商品分享价格标示',
-  `goods_param_2` varchar(255) NOT NULL DEFAULT '' COMMENT '商品分享内容',
-  `shop_param_1` varchar(255) NOT NULL DEFAULT '' COMMENT '店铺分享标题',
-  `shop_param_2` varchar(255) NOT NULL DEFAULT '' COMMENT '店铺分享主题',
-  `shop_param_3` varchar(255) NOT NULL DEFAULT '' COMMENT '店铺分享内容',
-  `qrcode_param_1` varchar(255) NOT NULL DEFAULT '' COMMENT '二维码分享主题',
-  `qrcode_param_2` varchar(255) NOT NULL DEFAULT '' COMMENT '二维码分享内容',
-  `platform_param_1` varchar(255) NOT NULL DEFAULT '' COMMENT '平台分享标题',
-  `platform_param_2` varchar(255) NOT NULL DEFAULT '' COMMENT '平台分享主题',
-  `platform_param_3` varchar(255) NOT NULL DEFAULT '' COMMENT '平台分享内容',
-  PRIMARY KEY (`shop_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='店铺分享内容设置';
-
--- ----------------------------
--- Records of ns_shop_weixin_share
--- ----------------------------
-INSERT INTO `ns_shop_weixin_share` VALUES ('0', '', '', '', '', '', '', '', '', '', '');
-
--- ----------------------------
--- Table structure for ns_shop_withdraw
--- ----------------------------
-DROP TABLE IF EXISTS `ns_shop_withdraw`;
-CREATE TABLE `ns_shop_withdraw` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `shop_id` int(11) NOT NULL COMMENT '店铺编号',
-  `withdraw_no` varchar(255) NOT NULL DEFAULT '' COMMENT '提现流水号',
-  `bank_name` varchar(50) NOT NULL COMMENT '提现银行名称',
-  `account_number` varchar(50) NOT NULL COMMENT '提现银行账号',
-  `realname` varchar(10) NOT NULL COMMENT '提现账户姓名',
-  `mobile` varchar(20) NOT NULL COMMENT '手机',
-  `cash` decimal(10,2) NOT NULL COMMENT '提现金额',
-  `ask_for_date` int(11) NOT NULL DEFAULT '0' COMMENT '提现日期',
-  `payment_date` int(11) NOT NULL DEFAULT '0' COMMENT '到账日期',
-  `status` smallint(6) NOT NULL DEFAULT '0' COMMENT '当前状态 0已申请(等待处理) 1已同意 -1 已拒绝',
-  `memo` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
-  `modify_date` datetime DEFAULT NULL COMMENT '修改日期',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=8192 COMMENT='店铺提现记录表';
-
--- ----------------------------
--- Records of ns_shop_withdraw
--- ----------------------------
-
--- ----------------------------
--- Table structure for sys_album_class
--- ----------------------------
-DROP TABLE IF EXISTS `sys_album_class`;
-CREATE TABLE `sys_album_class` (
-  `album_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '相册id',
-  `shop_id` int(10) NOT NULL DEFAULT '1' COMMENT '店铺id',
-  `pid` int(11) NOT NULL DEFAULT '0' COMMENT '上级相册ID',
-  `album_name` varchar(100) NOT NULL COMMENT '相册名称',
-  `album_cover` varchar(255) NOT NULL DEFAULT '' COMMENT '相册封面',
-  `is_default` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否为默认相册,1代表默认',
-  `sort` int(11) DEFAULT NULL,
-  `create_time` int(11) DEFAULT '0' COMMENT '创建时间',
-  PRIMARY KEY (`album_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 AVG_ROW_LENGTH=16384 COMMENT='相册表';
-
--- ----------------------------
--- Records of sys_album_class
--- ----------------------------
-INSERT INTO `sys_album_class` VALUES ('30', '0', '0', '默认相册', '122', '1', '1', '1497064831');
