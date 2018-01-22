@@ -83,7 +83,7 @@ class Token
     public static function getCurrentTokenVar($key)
     {
         $token = Request::instance()
-            ->header('token');
+            ->header('Ewei-Token');
         $vars = Cache::get($token);
         if (!$vars)
         {
@@ -112,7 +112,7 @@ class Token
     public static function getCurrentIdentity($keys)
     {
         $token = Request::instance()
-            ->header('token');
+            ->header('Ewei-Token');
         $identities = Cache::get($token);
         //cache 助手函数有bug
 //        $identities = cache($token);

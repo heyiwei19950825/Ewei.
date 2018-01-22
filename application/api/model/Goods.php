@@ -12,25 +12,6 @@ class Goods extends BaseModel
         'create_time', 'update_time'];
 
     /**
-     * 图片属性
-     */
-    public function imgs()
-    {
-        return $this->hasMany('ProductImage', 'product_id', 'id');
-    }
-
-    public function getMainImgUrlAttr($value, $data)
-    {
-        return $this->prefixImgUrl($value, $data);
-    }
-
-
-    public function properties()
-    {
-        return $this->hasMany('ProductProperty', 'product_id', 'id');
-    }
-
-    /**
      * 获取某分类下商品
      * @param $categoryId       分类ID
      * @param bool $paginate    是否是简洁模式
@@ -42,8 +23,7 @@ class Goods extends BaseModel
      * @param int $size
      * @return \think\Paginator
      */
-    public static function getProductsByCategoryID(
-        $categoryId, $paginate = true, $field='', $keyword='', $sort='is_recommend', $order='asc', $page = 1, $size = 30)
+    public static function getProductsByCategoryID($categoryId, $paginate = true, $field='', $keyword='', $sort='is_recommend', $order='asc', $page = 1, $size = 30)
     {
         $ids = '';
         if( $categoryId !=0 ){
@@ -58,7 +38,6 @@ class Goods extends BaseModel
                 $ids = $categoryId;
             }
         }
-
 
         $now = date('Y-m-d H:i:s',time());
         if($categoryId != 0 ){
@@ -82,7 +61,6 @@ class Goods extends BaseModel
             );
         if (!$paginate)
         {
-            $query->select();
             return $query->select();
         }
         else
@@ -99,11 +77,12 @@ class Goods extends BaseModel
     /**
      * 获取商品详情
      * @param $id
+     * @param $field
      * @return null | Product
      */
-    public static function getProductDetail($id)
+    public static function getProductDetail($id,$field)
     {
-        $product = self::find($id);
+        $product = self::field($field)->find($id)->toArray();
         return $product;
     }
 

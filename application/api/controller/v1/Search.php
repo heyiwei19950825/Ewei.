@@ -38,7 +38,11 @@ class Search extends BaseController
         return $row;
     }
 
-    public function helper(){
-
+    public function helper( $keyword ){
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+        $map = [];
+        $map['name']    = ['like','%'.$keyword.'%'];
+        $row['data'] = Db::name('goods')->field('name')->where($map)->select()->toArray();
+        return  $row;
     }
 }

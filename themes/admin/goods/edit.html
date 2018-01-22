@@ -245,53 +245,53 @@
                             </div>
                         </div>
                     </fieldset>
-                    <fieldset class="layui-elem-field">
-                      <legend><b>产品规格(选填)</b></legend>
-                      <div class="layui-field-box">
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">产品规格</label>
-                                <div class="layui-input-inline">
-                                    <a class="layui-btn layui-btn-small add-property"><i class="layui-icon"></i></a>
+                    <!--<fieldset class="layui-elem-field">-->
+                      <!--<legend><b>产品规格(选填)</b></legend>-->
+                      <!--<div class="layui-field-box">-->
+                            <!--<div class="layui-form-item">-->
+                                <!--<label class="layui-form-label">产品规格</label>-->
+                                <!--<div class="layui-input-inline">-->
+                                    <!--<a class="layui-btn layui-btn-small add-property"><i class="layui-icon"></i></a>-->
 
-                                </div>
-                            </div>
-                            <div class="layui-form-item property-list">
-                                {foreach name="sku" item="p_vo" key="i"}
-                                <div class="suk_object">
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="layui-form-item property-list">-->
+                                <!--{foreach name="sku" item="p_vo" key="i"}-->
+                                <!--<div class="suk_object">-->
 
-                                {foreach name ='p_vo' item ='s_vo' key = 'k'}
+                                <!--{foreach name ='p_vo' item ='s_vo' key = 'k'}-->
 
-                                    <div class="layui-form-item property-info">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">
-                                            </label>
-                                            <div class="layui-input-inline">
-                                                {if condition='$k != 0' }|___{/if}
-                                                <input type="{if condition='$k == 0' }text{else}hidden{/if}" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input {if condition='$k != 0' }sku_names{else}sku_name{/if}" value="{$s_vo.sku_name}" lay-verify="required">
-                                            </div>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value="{$s_vo.attr_value_items}" lay-verify="required">
-                                            </div>
-                                             <div class="layui-input-inline">
-                                                <input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value="{$s_vo.cost_price}" lay-verify='number'>
-                                            </div>
-                                            <div class="layui-input-inline">
-                                                <input type="number" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value="{$s_vo.price}" lay-verify='number'>
-                                            </div>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value="{$s_vo.stock}" lay-verify='number'>
-                                            </div>
-                                            {if condition='$k == 0' }<a class="layui-btn layui-btn-small add-sku-value">添加属性值</a>{/if}
-                                            <a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a>
+                                    <!--<div class="layui-form-item property-info">-->
+                                        <!--<div class="layui-inline">-->
+                                            <!--<label class="layui-form-label">-->
+                                            <!--</label>-->
+                                            <!--<div class="layui-input-inline">-->
+                                                <!--{if condition='$k != 0' }|___{/if}-->
+                                                <!--<input type="{if condition='$k == 0' }text{else}hidden{/if}" name="sku_name[]" autocomplete="off" placeholder="（选填）输入属性名称" class="layui-input {if condition='$k != 0' }sku_names{else}sku_name{/if}" value="{$s_vo.sku_name}" lay-verify="required">-->
+                                            <!--</div>-->
+                                            <!--<div class="layui-input-inline">-->
+                                                <!--<input type="text" name="attr_value_items[]" autocomplete="off" placeholder="（选填）请输入属性值" class="layui-input" value="{$s_vo.attr_value_items}" lay-verify="required">-->
+                                            <!--</div>-->
+                                             <!--<div class="layui-input-inline">-->
+                                                <!--<input type="text" name="cost_price[]" autocomplete="off" placeholder="（选填）原价" class="layui-input" value="{$s_vo.cost_price}" lay-verify='number'>-->
+                                            <!--</div>-->
+                                            <!--<div class="layui-input-inline">-->
+                                                <!--<input type="number" name="price[]" autocomplete="off" placeholder="（选填）销售价格" class="layui-input" value="{$s_vo.price}" lay-verify='number'>-->
+                                            <!--</div>-->
+                                            <!--<div class="layui-input-inline">-->
+                                                <!--<input type="text" name="stock[]" autocomplete="off" placeholder="（选填）库存" class="layui-input" value="{$s_vo.stock}" lay-verify='number'>-->
+                                            <!--</div>-->
+                                            <!--{if condition='$k == 0' }<a class="layui-btn layui-btn-small add-sku-value">添加属性值</a>{/if}-->
+                                            <!--<a class="layui-btn layui-btn-small layui-btn-danger remove-property-btn"><i class="layui-icon"></i></a>-->
 
-                                        </div>
-                                    </div>
-                                    {/foreach}
-                                </div>
-                                {/foreach}
-                            </div>
-                        </div>
-                    </fieldset>
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--{/foreach}-->
+                                <!--</div>-->
+                                <!--{/foreach}-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</fieldset>-->
                     <fieldset class="layui-elem-field">
                         <legend><b>显示图设置</b></legend>
                         <div class="layui-field-box">

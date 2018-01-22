@@ -34,14 +34,15 @@ class Index extends BaseController
         //分类及其分类下的商品信息
         foreach ( $channel as $key=>$item) {
             $categoryList[$key] = $item;
+
             $categoryList[$key]['goodsList'] = Goods::getProductsByCategoryID($item['id'],false,'id,name,thumb,sp_price,prefix_title','','sort','asc',1,7);
+
             $categoryList[$key]['goodsList'] = $categoryList[$key]['goodsList']->toArray();
             //添加图片域名
             foreach (  $categoryList[$key]['goodsList'] as $k=> &$v){
                 $v['thumb'] = self::prefixDomain($v['thumb']);
             }
         }
-
         //轮播图
         $banner = BannerItem::getBannerList(1,'id,name,description,link,image',5)->toArray();
         //处理Url和图片地址

@@ -7,6 +7,7 @@ use app\lib\enum\ScopeEnum;
 use app\lib\exception\TokenException;
 use app\lib\exception\WeChatException;
 use think\Exception;
+use think\Request;
 use think\Model;
 
 /**
@@ -20,14 +21,16 @@ class UserToken extends Token
     protected $wxLoginUrl;
     protected $wxAppID;
     protected $wxAppSecret;
+    protected $userInfo;
 
-    function __construct($code)
+    function __construct($code,$userInfo)
     {
         $this->code = $code;
         $this->wxAppID = config('wx.app_id');
         $this->wxAppSecret = config('wx.app_secret');
         $this->wxLoginUrl = sprintf(
             config('wx.login_url'), $this->wxAppID, $this->wxAppSecret, $this->code);
+        $this->userInfo = $userInfo;
     }
 
     
@@ -52,6 +55,10 @@ class UserToken extends Token
             throw new Exception('获取session_key及openID时异常，微信内部错误');
         }
         else {
+            //检测是否有用户数据
+            if( $this->userInfo['errMsg'] != 'getUserInfo:ok' ){
+                throw new Exception('未获取到用户数据，微信内部错误');
+            }
             // 建议用明确的变量来表示是否成功
             // 微信服务器并不会将错误标记为400，无论成功还是失败都标记成200
             // 这样非常不好判断，只能使用errcode是否存在来判断
@@ -60,7 +67,8 @@ class UserToken extends Token
                 $this->processLoginError($wxResult);
             }
             else {
-                return $this->grantToken($wxResult);
+                $row = $this->grantToken($wxResult);
+                return $row;
             }
         }
     }
@@ -116,19 +124,26 @@ class UserToken extends Token
         // 比如使用JWT并加入盐，如果不加入盐有一定的几率伪造令牌
         //        $token = Request::instance()->token('token', 'md5');
         $openid = $wxResult['openid'];
+
         $user = User::getByOpenID($openid);
         if (!$user)
             // 借助微信的openid作为用户标识
             // 但在系统中的相关查询还是使用自己的uid
         {
-            $uid = $this->newUser($openid);
+
+            $user = $this->newUser($openid);
+            $uid = $user->id;
         }
         else {
+
             $uid = $user->id;
         }
         $cachedValue = $this->prepareCachedValue($wxResult, $uid);
         $token = $this->saveToCache($cachedValue);
-        return $token;
+        return [
+            'token'=>$token,
+            'userInfo'=>$user
+        ];
     }
 
 
@@ -148,10 +163,18 @@ class UserToken extends Token
         // 全局异常处理会记录日志
         // 并且这样的异常属于服务器异常
         // 也不应该定义BaseException返回到客户端
+        $user = $this->userInfo['userInfo'];
         $user = User::create(
             [
-                'openid' => $openid
+                'uni_id'=>uniqid(),
+                'nickname'=>$user['nickName'],
+                'portrait'=>$user['avatarUrl'],
+                'create_time'=>time(),
+                'update_time'=>time(),
+                'openid' => $openid,
+                'last_login_time' => time(),
+                'last_login_ip' =>Request::ip(0,true)
             ]);
-        return $user->id;
+        return $user;
     }
 }

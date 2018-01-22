@@ -23,11 +23,6 @@ class Goods extends BaseController
         'checkSuperScope' => ['only' => 'createOne,deleteOne']
     ];
 
-    public function goodsSearch($keyword){
-        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
-
-        return  $row;
-    }
     /**
      * 根据类目ID获取该类目下所有商品(分页）
      * @url /product?id=:category_id&page=:page&size=:page_size
@@ -170,13 +165,13 @@ class Goods extends BaseController
     public function getOne($id)
     {
         (new IDMustBePositiveInt())->goCheck();
-        $product = GoodsModel::getProductDetail($id);
+        $field = '';
+        $product = GoodsModel::getProductDetail($id,$field);
 
         if (!$product )
         {
             throw new ProductException();
         }
-        $product = $product->toArray();
         $product['thumb'] = self::prefixDomain($product['thumb']);
         //处理轮播图片信息
         preg_match_all ('/\"\/uploads(.*?)\"/', $product['photo'], $m);

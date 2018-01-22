@@ -50,6 +50,7 @@ Route::get('api/:version/Goods/by_category', 'api/:version.Goods/getAllInCategor
 Route::get('api/:version/Goods/detail', 'api/:version.Goods/getOne');
 Route::get('api/:version/Goods/recent', 'api/:version.Goods/getRecent');
 
+
 //Category
 //Route::get('api/:version/category', 'api/:version.Category/getCategories');
 // 正则匹配区别id和all，注意d后面的+号，没有+号将只能匹配个位数
@@ -100,9 +101,16 @@ Route::get('api/:version/Article/detail', 'api/:version.Article/articleOne');
 Route::get('api/:version/Article/related', 'api/:version.Article/relatedByCid');
 
 
-//keyword
-
+//搜索
 Route::get('api/:version/search/index', 'api/:version.Search/getAll');
+Route::get('api/:version/search/helper', 'api/:version.Search/helper');
+
+
+
+//购物车
+Route::post('api/:version/cart/add', 'api/:version.Cart/add');
+Route::get('api/:version/cart/goodscount', 'api/:version.Cart/goodsCount');
+Route::get('api/:version/cart/index', 'api/:version.Cart/index');
 
 
 

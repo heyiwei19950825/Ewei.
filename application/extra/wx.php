@@ -12,9 +12,9 @@ return [
     //  +---------------------------------
 
     // 小程序app_id
-    'app_id' => 'wx7766126fba22a12d',
+    'app_id' => 'wxcd9d03f0549d46cd',
     // 小程序app_secret
-    'app_secret' => '6e4ff879d0a40fa40578acb768bbf39d',
+    'app_secret' => 'b4bd1f833051f66cad29a3ed4fc1644c',
 
     // 微信使用code换取用户openid及session_key的url地址
     'login_url' => "https://api.weixin.qq.com/sns/jscode2session?" .

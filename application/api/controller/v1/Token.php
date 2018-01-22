@@ -29,14 +29,20 @@ class Token
      * @POST code
      * @note 虽然查询应该使用get，但为了稍微增强安全性，所以使用POST
      */
-    public function getToken($code='')
+    public function getToken($code='',$userInfo = '')
     {
 
         (new TokenGet())->goCheck();
-        $wx = new UserToken($code);
-        $token = $wx->get();
+        $wx = new UserToken($code,$userInfo);
+        $row = $wx->get();
+
         return [
-            'token' => $token
+            'errno' => 0,
+            'data' => [
+                'userInfo'=>$row['userInfo'],
+                'token' => $row['token']
+            ],
+            'errmsg' => ''
         ];
     }
 
