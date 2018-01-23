@@ -3,6 +3,7 @@ namespace app\common\model;
 
 use think\Model;
 use think\Session;
+use think\Db;
 
 class Goods extends Model
 {
@@ -84,5 +85,23 @@ class Goods extends Model
         $article_info  = $this->field($field)->where(array('id'=>$id))->find();
 
         return $article_info;
+    }
+
+    /**
+     * 获取指定时间段的商品发布数量
+     * @param  [type] $time [description]
+     * @return [type]       [description]
+     */
+    public static function getCount($time = 'all'){
+        $where = ' status=1 ';
+
+        if( $time != 'all' ){
+            $where .=  ' AND DATE_SUB(CURDATE(), INTERVAL'.$time.') <= DATE(create_time)';
+        }
+
+        $sql =  'SELECT COUNT(id) as number FROM ewei_goods WHERE '.$where;
+
+        $row = Db::query($sql);
+        return $row[0]['number'];
     }
 }

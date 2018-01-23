@@ -114,7 +114,8 @@ Route::get('api/:version/cart/index', 'api/:version.Cart/index');
 
 
 
-
+Route::get('api/:version/getApi', 'api/:version.QueryLists/index');
+Route::post('api/:version/tengxunyun', 'api/:version.TengxunyunTest/index');
 
 
 

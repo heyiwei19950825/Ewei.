@@ -132,4 +132,50 @@ class Order extends BaseModel
         }
         return $order_list;
     }
+
+    /**
+     * 今日订单数据金额统计
+     * @return [type] [description]
+     */
+    public static function accountCount($time = '1 DAY'){
+        $amountSql =  'SELECT COUNT(goods_money) as money FROM ewei_order WHERE DATE_SUB(CURDATE(), INTERVAL '.$time.') <= DATE(create_time)';
+
+        $todayAmount = Db::query($amountSql);
+
+        return $todayAmount[0]['money'];
+    }
+
+    /**
+     * 统计有效订单总数
+     * @return [type] [description]
+     */
+    public static function getCount( $state = 0,$type= 'id'){
+        $where = '';
+        if($state != 0){
+            $where = 'WHERE order_status = '.$state;
+        }
+        $sql = ' SELECT COUNT('.$type.') as number FROM ewei_order '.$where;
+
+        $row = Db::query($sql);
+
+        return $row[0]['number'];
+    }
+
+
+
+    /**
+     * 统计有效订单总数
+     * @return [type] [description]
+     */
+    public static function getGoodsCount( $state = 0,$type= 'id'){
+        $where = '';
+        if($state != 0){
+            $where = 'WHERE order_status = '.$state;
+        }
+        $sql = ' SELECT COUNT('.$type.') as number FROM ewei_order_goods '.$where;
+        
+        $row = Db::query($sql);
+
+        return $row[0]['number'];
+    }
 }

@@ -30,7 +30,6 @@ class Index extends BaseController
         $channel = Category::filterCategory('id,thumb,name,sort')->toArray();
         $channel = self::prefixDomainToArray('thumb',$channel);
 
-
         //分类及其分类下的商品信息
         foreach ( $channel as $key=>$item) {
             $categoryList[$key] = $item;
@@ -45,6 +44,7 @@ class Index extends BaseController
         }
         //轮播图
         $banner = BannerItem::getBannerList(1,'id,name,description,link,image',5)->toArray();
+
         //处理Url和图片地址
         $banner = self::prefixDomainToArray('image',$banner);
         $banner = self::prefixDomainToArray('link',$banner);
