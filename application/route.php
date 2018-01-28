@@ -67,8 +67,9 @@ Route::post('api/:version/token/app', 'api/:version.Token/getAppToken');
 Route::post('api/:version/token/verify', 'api/:version.Token/verifyToken');
 
 //Address
-Route::post('api/:version/address', 'api/:version.Address/createOrUpdateAddress');
+Route::post('api/:version/address/save', 'api/:version.Address/createOrUpdateAddress');
 Route::get('api/:version/address', 'api/:version.Address/getUserAddress');
+Route::post('api/:version/address/delete', 'api/:version.Address/deleteAddress');
 
 //Order
 Route::post('api/:version/order', 'api/:version.Order/placeOrder');
@@ -111,8 +112,25 @@ Route::get('api/:version/search/helper', 'api/:version.Search/helper');
 Route::post('api/:version/cart/add', 'api/:version.Cart/add');
 Route::get('api/:version/cart/goodscount', 'api/:version.Cart/goodsCount');
 Route::get('api/:version/cart/index', 'api/:version.Cart/index');
+Route::post('api/:version/cart/update', 'api/:version.Cart/updateCarts');
+Route::post('api/:version/cart/checked', 'api/:version.Cart/checked');
+Route::post('api/:version/cart/delete', 'api/:version.Cart/deleteCarts');
+Route::get('api/:version/cart/checkout', 'api/:version.Cart/checkoutCarts');
 
 
+//城市地址列表
+Route::get('api/:version/region/list', 'api/:version.Region/regionList');
+
+
+//足迹
+Route::get('api/:version/footprint/list', 'api/:version.Footprint/getList');
+
+//收藏
+Route::get('api/:version/collect/list', 'api/:version.Collect/getList');
+Route::post('api/:version/collect/addordelete', 'api/:version.Collect/addOrDelete');
+
+//优惠券
+Route::get('api/:version/coupon/userList', 'api/:version.Coupon/getUserList');
 
 Route::get('api/:version/getApi', 'api/:version.QueryLists/index');
 Route::post('api/:version/tengxunyun', 'api/:version.TengxunyunTest/index');

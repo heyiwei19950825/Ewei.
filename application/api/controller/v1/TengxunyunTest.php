@@ -20,9 +20,10 @@ class TengxunyunTest extends BaseController{
     }
 
     public function index(){
+
     	$img = Request::instance()->param('img');
 		// $str = file_get_contents($img);
-		$str = file_get_contents('http://www.ewei.com/'.$img);
+		$str = file_get_contents('http://admin.ewei.com/'.$img);
 		// $str = file_get_contents(__ROOT__.'/public/static/images/test.jpg');
 		$img_base64=base64_encode($str);
     	$uploadRet = Youtu::facefuse($img_base64,'cf_yuren_jirou');

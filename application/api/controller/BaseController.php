@@ -16,6 +16,9 @@ use think\Controller;
 
 class BaseController extends Controller
 {
+    public function _initialize(){
+        parent::_initialize();
+    }
     protected function checkExclusiveScope()
     {
         Token::needExclusiveScope();

@@ -12,6 +12,7 @@ namespace app\api\controller\v1;
 
 
 use app\api\controller\BaseController;
+use app\api\model\Region;
 use app\api\model\User;
 use app\api\model\UserAddress;
 use app\api\service\Token;
@@ -21,29 +22,50 @@ use app\lib\exception\SuccessMessage;
 use app\lib\exception\UserException;
 use think\Controller;
 use think\Exception;
+use think\Db;
 
 class Address extends BaseController
 {
-    protected $beforeActionList = [
-        'checkPrimaryScope' => ['only' => 'createOrUpdateAddress,getUserAddress']
-    ];
-    
     /**
      * 获取用户地址信息
-     * @return UserAddress
+     * @return array
      * @throws UserException
      */
     public function getUserAddress(){
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
         $uid = Token::getCurrentUid();
-        $userAddress = UserAddress::where('user_id', $uid)
-            ->find();
+        $id = $this->request->param('id');
+
+
+        if( !empty($id) ){//单个详情查询
+            $userAddress = UserAddress::where([ 'id'=>$id] )->find()->toArray();
+        }else{//列表查询
+            $userAddress = UserAddress::where('user_id', $uid)->select();
+        }
+
         if(!$userAddress){
             throw new UserException([
                'msg' => '用户地址不存在',
                 'errorCode' => 60001
             ]);
         }
-        return $userAddress;
+        if( !empty($id) ) {
+            $userAddress['province_name'] = Region::getRegionName($userAddress['province_id']);
+            $userAddress['city_name'] = Region::getRegionName($userAddress['city_id']);
+            $userAddress['district_name'] = Region::getRegionName($userAddress['district_id']);
+            $userAddress['full_region'] = $userAddress['province_name'] . $userAddress['city_name'] . $userAddress['district_name'];
+        }else{
+            foreach ($userAddress as $key => &$item) {
+                $item['province_name'] = Region::getRegionName($item['province_id']);
+                $item['city_name'] = Region::getRegionName($item['city_id']);
+                $item['district_name'] = Region::getRegionName($item['district_id']);
+                $item['full_region'] = $item['province_name'] . $item['city_name'] . $item['district_name'];
+            }
+        }
+
+        $row['data'] = $userAddress;
+
+        return $row;
     }
 
     /**
@@ -51,11 +73,14 @@ class Address extends BaseController
      */
     public function createOrUpdateAddress()
     {
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+
         $validate = new AddressNew();
         $validate->goCheck();
-
         $uid = TokenService::getCurrentUid();
         $user = User::get($uid);
+        $id = $this->request->param('id');//收货地址ID
+
         if(!$user){
             throw new UserException([
                 'code' => 404,
@@ -63,14 +88,13 @@ class Address extends BaseController
                 'errorCode' => 60001
             ]);
         }
-        $userAddress = $user->address;
         // 根据规则取字段是很有必要的，防止恶意更新非客户端字段
         $data = $validate->getDataByRule(input('post.'));
-        if (!$userAddress )
+        $data['is_default'] =  $data['is_default'] + 0;
+        if ( $id == 0  )
         {
             // 关联属性不存在，则新建
-            $user->address()
-                ->save($data);
+            userAddress::create($data);
         }
         else
         {
@@ -79,8 +103,34 @@ class Address extends BaseController
             // 新增的save方法和更新的save方法并不一样
             // 新增的save来自于关联关系
             // 更新的save来自于模型
-            $user->address->save($data);
+            userAddress::update($data,['id'=>$id]);
         }
-        return new SuccessMessage();
+        //        return new SuccessMessage();
+        $row['data'] = [];
+
+        return $row;
+    }
+
+    /**
+     * 删除收货地址
+     * @param $id
+     * @return array
+     */
+    public function deleteAddress($id){
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+        $uid = Token::getCurrentUid();
+
+        try{
+            Db::name('user_address')->where(
+                [
+                    'id'=> $id,
+                    'user_id'=> $uid
+                ]
+            )->delete();
+        }catch ( Exception $e ){
+            return $e->getMessage();
+        }
+
+        return $row;
     }
 }

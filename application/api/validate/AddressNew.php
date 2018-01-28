@@ -20,9 +20,10 @@ class AddressNew extends BaseValidate
     protected $rule = [
         'name' => 'require|isNotEmpty',
         'mobile' => 'require|isMobile',
-        'province' => 'require|isNotEmpty',
-        'city' => 'require|isNotEmpty',
-        'country' => 'require|isNotEmpty',
-        'detail' => 'require|isNotEmpty',
+        'province_id' => 'require|isNotEmpty',
+        'city_id' => 'require|isNotEmpty',
+        'district_id' => 'require|isNotEmpty',
+        'address' => 'require|isNotEmpty',
+        'is_default'=>'require'
     ];
 }

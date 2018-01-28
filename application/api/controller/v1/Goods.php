@@ -14,6 +14,8 @@ use app\lib\exception\CategoryException;
 use app\api\controller\BaseController;
 use app\api\model\Category as CategoryModel;
 use app\api\model\GoodsSku;
+use app\api\model\Footprint;
+use app\api\model\Collect;
 use think\Exception;
 use think\Config;
 
@@ -172,6 +174,9 @@ class Goods extends BaseController
         {
             throw new ProductException();
         }
+        //添加浏览记录
+        Footprint::addFootprint($product);
+
         $product['thumb'] = self::prefixDomain($product['thumb']);
         //处理轮播图片信息
         preg_match_all ('/\"\/uploads(.*?)\"/', $product['photo'], $m);
@@ -212,9 +217,12 @@ class Goods extends BaseController
 
 
         }
+
+
         $product = [
             'info' => $product,
             'specificationList' => $sku,
+            'userHasCollect' =>Collect::checkCollectUse( $product['id']) //是否收藏
         ];
 
         $data = [

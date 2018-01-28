@@ -2,8 +2,7 @@
 
 namespace app\api\model;
 
-use phpDocumentor\Reflection\Types\Array_;
-use think\Model;
+use think\Db;
 
 class Cart extends BaseModel
 {
@@ -29,7 +28,7 @@ class Cart extends BaseModel
                    'shop_name'          =>'自选平台',
                    'goods_id'           =>$params['goodsId'],
                    'goods_name'         =>$params['goods_name'],
-                   'price'              => (($params['price'] *100) * $params['number'])/100 ,
+                   'price'              =>$params['price'] ,
                    'num'                =>$params['number'],
                    'goods_picture'      =>$params['goods_picture'],
                ]
@@ -37,7 +36,6 @@ class Cart extends BaseModel
            $state = $createRow->id;
        }else{
            $row->num = $row->num +$params['number'];
-           $row->price = (($params['price'] * 100) * $row->num)/100;
            $state = $row->save();
        }
        if( empty( $state) ){
@@ -58,8 +56,10 @@ class Cart extends BaseModel
      * @return array
      */
     public static function cartCount( $uid=-1 ){
-        $sql = "SELECT sum(num)  AS goodsCount, sum(price) AS goodsAmount FROM ewei_cart WHERE  uid = {$uid}";
+        $sql = "SELECT count(id)  AS goodsCount, sum(price * num) AS goodsAmount FROM ewei_cart WHERE  uid = {$uid}";
+        $checkSql = "SELECT count(id)  AS goodsCount, sum(price * num) AS goodsAmount FROM ewei_cart WHERE  uid = {$uid} AND checked = 1";
         $row = self::query( $sql );
+        $checkRow = self::query( $checkSql );
         $data = [];
         if( empty($row[0]['goodsCount']) ||  empty($row[0]['goodsAmount'])  ){
             $data['goodsCount']         = 0;
@@ -70,8 +70,8 @@ class Cart extends BaseModel
             $count = $row[0];
             $data['goodsCount']         = $count['goodsCount'];
             $data['goodsAmount']        = $count['goodsAmount'];
-            $data['checkedGoodsAmount'] = $count['goodsAmount'];
-            $data['checkedGoodsCount']  = $count['goodsCount'];
+            $data['checkedGoodsAmount'] = !empty($checkRow[0]['goodsAmount'])?$checkRow[0]['goodsAmount']:0;
+            $data['checkedGoodsCount']  = !empty($checkRow[0]['goodsCount'])?$checkRow[0]['goodsCount']:0;
         }
 
         return $data;
@@ -80,16 +80,80 @@ class Cart extends BaseModel
     /**
      * 获取购物车列表商品
      * @param int $uid
-     * @return array
+     * @param bool $ckeched
+     * @return $this|array
      */
-    public static function getCartAll( $uid = -1 ){
+    public static function getCartAll( $uid = -1,$ckeched=false ){
         $row = self::where([
-            'uid' => $uid
-        ])->order('id desc')->select()->toArray();
-        if( empty($row) ){
+            'uid' => $uid,
+        ]);
+        if( $ckeched ){
+            $row->where([
+                'checked'=> 1
+            ]);
+        }
+
+        $data = $row->order('id desc')->select()->toArray();
+
+        if( empty($data) ){
             return [];
         }
+
+        return $data;
+    }
+
+    /**
+     * 修改购物车商品数量
+     * @param $req
+     * @return $this
+     */
+    public  static function updateNumber( $req ){
+        //修改购物车商品价格和数量
+        $row = self::where([
+            'goods_id' => $req['goodsId'],
+            'id'=>$req['id'],
+            'uid'=> $req['uid']
+        ])->update([
+            'num'  => $req['number'],
+        ]);
+
         return $row;
+    }
+
+    /**
+     * 修改购物车选中状态
+     * @param $req
+     * @return bool
+     */
+    public static function updateChecked($req){
+        $productIds = explode(',',$req['productIds']);
+        foreach ($productIds as $id ){
+            self::where([
+                'id' => $id,
+                'uid'=> $req['uid']
+            ])->update([
+                'checked'  => $req['isChecked'],
+            ]);
+        }
+
+        return true;
+    }
+
+    /**
+     * 删除购物车
+     * @param $req
+     * @return bool
+     */
+    public static function deleteCart($req){
+        $productIds = explode(',',$req['productIds']);
+        foreach ($productIds as $id ){
+            self::where([
+                'id' => $id,
+                'uid'=> $req['uid']
+            ])->delete();
+        }
+
+        return true;
     }
 
 
