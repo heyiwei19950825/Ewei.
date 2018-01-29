@@ -7,7 +7,7 @@
  */
 
 namespace app\api\model;
-
+use app\api\model\User;
 use think\Db;
 
 class Coupon extends BaseModel
@@ -31,7 +31,7 @@ class Coupon extends BaseModel
      * @param $uid
      * @return array
      */
-    public static function userCoupon( $uid ){
+    public static function userCoupon( $uid=-1,$type=0 ){
         $now =date('Y-m-d H:i:s',time());
         $names =  '';
         $datas =[];
@@ -39,7 +39,8 @@ class Coupon extends BaseModel
         $data = Db::name('coupon')->alias('c')
             ->join('coupon_type t','t.coupon_type_id = c.coupon_type_id','LEFT')
             ->where([
-                'uid'=>$uid
+                'uid'=>$uid,
+                'state' => $type
             ])->field(
                 'c.start_time,c.end_time,coupon_name,c.coupon_id,t.coupon_type_id'
             )->select()->toArray();
@@ -76,12 +77,114 @@ class Coupon extends BaseModel
     }
 
     /**
+     * 获取用户对应商品可使用的优惠券
+     * @param int $uid
+     * @param array $cartInfo
+     * @return array
+     */
+    public static function useCoupon( $uid = -1 ,$cartListId = [],$totalPrice = 0){
+        $user = User::getInfoById( $uid);
+
+        $names =  '';
+        $datas =[];
+        $now =date('Y-m-d H:i:s',time());
+
+        //获取优惠券列表
+        $data = Db::name('coupon')->alias('c')
+            ->join('coupon_type t','t.coupon_type_id = c.coupon_type_id','LEFT')
+            ->where([
+                'uid'=>$uid,
+                'state' => 0
+            ])->field(
+                'c.start_time,c.end_time,coupon_name,c.coupon_id,t.coupon_type_id,c.money,t.need_user_level'
+            )->select()->toArray();
+
+        //获取优惠券对应的商品
+        foreach ( $data as &$item) {
+            $goodsRow = Db::name('coupon_goods')
+                ->where([
+                    'coupon_type_id' => $item['coupon_type_id']
+                ])
+                ->field('goods_id')
+                ->select()->toArray();
+            //检测变量
+            $isOk = false;
+
+            if($item['need_user_level']<= $user['rank_id']){
+                //优惠券是否在购物车商品列表中
+                foreach ($goodsRow as $gItem) {
+                    if( in_array($gItem['goods_id'],$cartListId) && $item['money'] >= $totalPrice && $item['money'] ){
+                        $isOk = true;
+                    }
+                };
+            }
+
+
+            $item['is_ok'] = $isOk;
+        }
+
+        //获取优惠券对应的商品
+        foreach ( $data as $item) {
+            $goodsRow = Db::name('coupon_goods')->alias('c')
+                ->join('goods g','c.goods_id = g.id','LEFT')
+                ->where([
+                    'coupon_type_id' => $item['coupon_type_id']
+                ])
+                ->field('g.name,g.btime,g.etime,g.status')
+                ->select()->toArray();
+
+            $map['g.btime']   = ['<=',$now];
+            $map['g.etime']   = ['>=',$now];
+            $map['g.status']  = ['=',1];
+
+
+            if( empty($goodsRow) ){
+                $item['goods_list'] = 'all';
+            }else{
+                foreach ($goodsRow as $items){
+                    if( $items['btime'] > $now || $items['etime'] < $now || $items['status'] == 0 ){
+                        unset($items);
+                    }else{
+                        $names .= $items['name'].';';
+                    }
+                }
+            }
+
+            $item['goods_name'] = trim($names,';');
+            if( $names != '' ){
+                $datas[] = $item;
+            }
+        }
+
+        return $data;
+    }
+    /**
      * 获取在线优惠券列表
      * @return array
      */
     public static function getCouponList(){
         $row = [];
         return $row;
+    }
+
+    /**
+     * 获取优惠券信息
+     * @param int $id
+     * @return array
+     */
+    public static function getInfoById( $id = -1 ){
+        $now =date('Y-m-d H:i:s',time());
+
+        $map['start_time']      = ['<=',$now];
+        $map['end_time']        = ['>=',$now];
+        $map['state']           = ['=',0];
+        $map['coupon_id']       = ['=',$id];
+        $row = Db::name('coupon')->field('coupon_id,coupon_type_id')->where($map)->find();
+
+        $data = Db::name('coupon_type')->field('coupon_name,money')->where(['coupon_type_id'=>$row['coupon_type_id']] )->find();
+        $data['id'] = $row['coupon_id'];
+
+        return $data;
     }
 
 }

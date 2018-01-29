@@ -3,6 +3,7 @@
 namespace app\api\model;
 
 use think\Model;
+use think\Db;
 
 class User extends BaseModel
 {
@@ -27,6 +28,19 @@ class User extends BaseModel
     {
         $user = User::where('openid', '=', $openid)
             ->find();
+        return $user;
+    }
+
+    /**
+     * 通过ID获取用户信息
+     * @param $uid
+     * @return array|false|mixed|\PDOStatement|string|Model
+     */
+    public static function getInfoById( $uid ){
+        $user = Db::name('user')->where(['id'=>$uid])->find();
+        if( empty( $user) ){
+            return [];
+        }
         return $user;
     }
 

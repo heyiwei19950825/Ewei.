@@ -34,16 +34,17 @@ class Goods extends BaseController
      * @return array of Product
      * @throws ParameterException
      */
-    public function getByCategory($id = -1,$keyword='', $sort='id', $order='asc',$page=1,$size=30)
+    public function getByCategory($id = -1,$keyword='', $sort='id', $order='asc',$page=1,$size=30,$types = 'default')
     {
         if( $id != 0 ){
             (new IDMustBePositiveInt())->goCheck();
         }
         (new PagingParameter())->goCheck();
+        $field = 'name,thumb,sp_price,id,sp_integral';
+        $sort = $sort=='category'?'btime':$sort;
 
-        $field = 'name,thumb,sp_price,id';
         $pagingProducts = GoodsModel::getProductsByCategoryID(
-            $id, true,$field,$keyword,$sort,$order,$page,$size);
+            $id, true,$field,$keyword,$sort,$order,$page,$size,$types);
 
         //顶级分类列表
         $filterCategory = CategoryModel::filterCategory( 'id,name' )->toArray();
@@ -242,6 +243,18 @@ class Goods extends BaseController
             ]);
     }
 
+    /**
+     * 积分兑换商品列表
+     */
+    public function getIsIntegralGoods(){
+        $row = ['errno' => 0,'errmsg' => '', 'data' => []];
+        $data['goodsList'] = GoodsModel::getIsIntegralGoods();
+        $data['bannerInfo'] = '';
+        //顶级分类列表
+        $data['filterCategory'] = CategoryModel::filterCategory( 'id,name' )->toArray();
+        $row['data'] = $data;
+        return $row;
+    }
 
     /**
     //     * 获取指定数量的最近商品

@@ -63,7 +63,7 @@ class Index extends BaseController
 
         //获取所有的导航列表信息
         $navList = Theme::getAllThemeList('id,name,alias,link,icon',4);
-        $navList = self::prefixDomainToArray('link',$navList);
+//        $navList = self::prefixDomainToArray('link',$navList);
         $navList = self::prefixDomainToArray('icon',$navList);
 
         $data = [

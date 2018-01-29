@@ -19,12 +19,14 @@ class Goods extends BaseModel
      * @param string $keyword   关键字
      * @param string $sort      排序字段
      * @param string $order     排序方式
+     * @param string $type      查询类型    积分
      * @param int $page
      * @param int $size
      * @return \think\Paginator
      */
-    public static function getProductsByCategoryID($categoryId, $paginate = true, $field='', $keyword='', $sort='is_recommend', $order='asc', $page = 1, $size = 30)
+    public static function getProductsByCategoryID($categoryId, $paginate = true, $field='', $keyword='', $sort='is_recommend', $order='asc', $page = 1, $size = 30,$types = 'defalut')
     {
+
         $ids = '';
         if( $categoryId !=0 ){
             //查询判断手否是父级分类
@@ -42,6 +44,9 @@ class Goods extends BaseModel
         $now = date('Y-m-d H:i:s',time());
         if($categoryId != 0 ){
             $map['cid']     = ['in',$ids];
+        }
+        if( $types == 'integral' ){
+            $map['is_integral'] = ['=',1];
         }
 
         $map['btime']   = ['<=',$now];
@@ -144,6 +149,25 @@ class Goods extends BaseModel
             ->order('sort asc')
             ->limit(4)
             ->select( );
+        return $product;
+    }
+
+    /**
+     * 可使用积分兑换的商品
+     * @return false|\PDOStatement|string|\think\Collection
+     */
+    public static function getIsIntegralGoods(){
+        $now = date('Y-m-d H:i:s',time());
+        $map['btime']           = ['<=',$now];
+        $map['etime']           = ['>=',$now];
+        $map['status']          = ['=',1];
+        $map['is_integral']     = ['=',1];
+
+        $product = self::where($map)
+            ->field('id,name,thumb,sp_price,prefix_title,sp_integral')
+            ->order('sort asc')
+            ->select( );
+
         return $product;
     }
 

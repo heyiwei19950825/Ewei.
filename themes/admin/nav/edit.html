@@ -14,7 +14,11 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">导航名称</label>
                         <div class="layui-input-block">
-                            <input type="text" name="name" value="{$nav.name}" required  lay-verify="required" placeholder="请输入导航名称" class="layui-input">
+                            {if condition="$nav.id != 1 && $nav.id != 2"}
+                                <input type="text" name="name" value="{$nav.name}"  lay-verify="required" placeholder="请输入导航名称" class="layui-input" >
+                            {else}
+                                <input type="text" name="name" value="{$nav.name}"  lay-verify="required" placeholder="请输入导航名称" class="layui-input" disabled >
+                            {/if}
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -23,12 +27,18 @@
                             <input type="text" name="alias" value="{$nav.alias}" placeholder="（选填）请输入导航别名" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">链接</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="link" value="{$nav.link}" placeholder="（选填）请输入导航链接" class="layui-input">
+                    {if condition="$nav.id != 1 && $nav.id != 2"}
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">链接</label>
+                            <div class="layui-input-block">
+                                {if condition="$nav.id != 1 && $nav.id != 2"}
+                                    <input type="text" name="link" value="{$nav.link}" placeholder="（选填）请输入导航链接" class="layui-input">
+                                {else}
+                                    <input type="text" name="link" value="{$nav.link}" placeholder="（选填）请输入导航链接" class="layui-input" disabled >
+                                {/if}
+                            </div>
                         </div>
-                    </div>
+                    {/if}
  <!--                    <div class="layui-form-item">
                         <label class="layui-form-label">图标</label>
                         <div class="layui-input-block">

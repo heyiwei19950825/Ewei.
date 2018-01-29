@@ -49,6 +49,7 @@ Route::get('api/:version/Goods/by_category/paginate', 'api/:version.Goods/getByC
 Route::get('api/:version/Goods/by_category', 'api/:version.Goods/getAllInCategory');
 Route::get('api/:version/Goods/detail', 'api/:version.Goods/getOne');
 Route::get('api/:version/Goods/recent', 'api/:version.Goods/getRecent');
+Route::get('api/:version/Goods/integral', 'api/:version.Goods/getIsIntegralGoods');//积分兑换商品
 
 
 //Category
@@ -130,7 +131,8 @@ Route::get('api/:version/collect/list', 'api/:version.Collect/getList');
 Route::post('api/:version/collect/addordelete', 'api/:version.Collect/addOrDelete');
 
 //优惠券
-Route::get('api/:version/coupon/userList', 'api/:version.Coupon/getUserList');
+Route::get('api/:version/coupon/userCouponList', 'api/:version.Coupon/getUserCouponList');
+Route::get('api/:version/coupon/useCouponList', 'api/:version.Coupon/getUseCouponList');
 
 Route::get('api/:version/getApi', 'api/:version.QueryLists/index');
 Route::post('api/:version/tengxunyun', 'api/:version.TengxunyunTest/index');

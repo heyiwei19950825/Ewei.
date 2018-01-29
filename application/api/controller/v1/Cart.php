@@ -183,8 +183,9 @@ class Cart extends BaseController
     public function checkoutCarts(){
         //初始化数据
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
-        $goodsTotalPrice = $orderTotalPrice = $actualPrice= $freightPrice = $couponPrice = $couponId = $rankDiscount = $userCouponList = 0;
-        $freight = $goodsInfo = [];
+        $goodsTotalPrice = $orderTotalPrice = $actualPrice= $freightPrice = $couponPrice = $couponId = $rankDiscount = $userCouponList = $couponPrice = 0;
+        ;
+        $freight = $goodsInfo = $checkedCoupon = [];
         $nowTime = date('Y-m-d',time());
         $couponId = $this->request->param('couponId');//使用的优惠券ID
         $userInfo = Db::name('user')->alias('u')->join('user_rank r','u.rank_id = r.rank_id','LEFT')->where(['u.id'=>$this->uid])->find();//用户信息
@@ -215,6 +216,11 @@ class Cart extends BaseController
 
         //优惠券 总数
         $couponNumber = Coupon::countCoupon( $this->uid);
+        if( $couponId != 0 ){
+            //选中的优惠券信息
+            $checkedCoupon = Coupon::getInfoById($couponId);
+            $couponPrice = $checkedCoupon['money']*100;
+        }
 
 
         //计算价格
@@ -240,13 +246,14 @@ class Cart extends BaseController
         if( $userInfo['rank_id'] != 0){
             $rankDiscount = $goodsTotalPrice*100 - ($goodsTotalPrice* ($userInfo['rank_discount'])*10);
         }
+
         //最后商品订单价格   商品总价格 + 运费 - 会员折扣
-        $actualPrice = $goodsTotalPrice - ($rankDiscount/100) + $freightPrice;
+        $actualPrice = $goodsTotalPrice - ($rankDiscount/100) + $freightPrice - $couponPrice;
 
         $row['data'] = [
             'checkedAddress'=>$address,//收货地址
             'checkedGoodsList'=> $cartList,//购物车列表
-            'checkedCoupon'=>[],//选中的优惠券ID
+            'checkedCoupon'=>$checkedCoupon,//选中的优惠券ID
             'couponNumber'=>$couponNumber,//优惠券数量
             'rankDiscount' => round($rankDiscount/10000,2),//会员折扣
             'goodsTotalPrice'=>$goodsTotalPrice/100,//商品总价
