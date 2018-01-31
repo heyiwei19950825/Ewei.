@@ -133,9 +133,18 @@ Route::post('api/:version/collect/addordelete', 'api/:version.Collect/addOrDelet
 //优惠券
 Route::get('api/:version/coupon/userCouponList', 'api/:version.Coupon/getUserCouponList');
 Route::get('api/:version/coupon/useCouponList', 'api/:version.Coupon/getUseCouponList');
+Route::post('api/:version/coupon/userGetCoupon', 'api/:version.Coupon/userGetCoupon');
+
+
+//积分购买
+Route::post('api/:version/integral/integralCart', 'api/:version.Integral/integralCart');
+
+//开团
+Route::get('api/:version/collective/getList', 'api/:version.Collective/getList');
 
 Route::get('api/:version/getApi', 'api/:version.QueryLists/index');
 Route::post('api/:version/tengxunyun', 'api/:version.TengxunyunTest/index');
+
 
 
 

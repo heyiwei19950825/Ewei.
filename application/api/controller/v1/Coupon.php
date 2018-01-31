@@ -25,6 +25,19 @@ class Coupon extends  BaseController
         parent::_initialize();
         $this->uid = Token::getCurrentUid();
     }
+    public function userGetCoupon(){
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+        $cid = $this->request->param('cid',0);
+        $uid = Token::getCurrentUid();
+        $data = CouponModel::addUserCoupon( $uid,$cid);
+        if( $data ){
+            $row['errmsg'] = '领取成功';
+        }else{
+            $row['errno'] = 1;
+            $row['errmsg'] = '领取条件不满足';
+        }
+        return $row;
+    }
 
     /**
      * 获取用户优惠券列表

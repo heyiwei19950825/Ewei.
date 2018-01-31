@@ -9,13 +9,14 @@
 namespace app\api\controller\v1;
 
 use app\api\controller\BaseController;
-use think\Config;
 
 use app\api\model\Category;
 use app\api\model\Goods;
 use app\api\model\BannerItem;
 use app\api\model\Theme;
 use app\api\model\Article;
+use app\api\model\Coupon;
+use app\api\model\GoodsCollective;
 
 
 class Index extends BaseController
@@ -65,6 +66,11 @@ class Index extends BaseController
         $navList = Theme::getAllThemeList('id,name,alias,link,icon',4);
 //        $navList = self::prefixDomainToArray('link',$navList);
         $navList = self::prefixDomainToArray('icon',$navList);
+        //获取所有的在线优惠券
+        $couponList = Coupon::getCouponList();
+        //团购活动
+        $collectiveList = GoodsCollective::getList(1,5)['data'];
+        $collectiveList = self::prefixDomainToArray('thumb',$collectiveList);
 
         $data = [
             'channel'       => $channel,
@@ -74,6 +80,8 @@ class Index extends BaseController
             'hotGoodsList'  => $hotGoodsList,
             'newGoodsList'  => $recommendGoodsList,
             'topicList'     => $articleList,
+            'couponList'    => $couponList,
+            'collectiveList'   => $collectiveList
         ];
         $row = [
             'errno'     => 0,

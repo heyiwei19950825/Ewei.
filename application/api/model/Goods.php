@@ -105,10 +105,16 @@ class Goods extends BaseModel
      * @return null | Product
      */
     public static function getCategoryByGoodsId( $id ,$field ){
+        $now = date('Y-m-d H:i:s',time());
+
+        $map['g.btime']   = ['<=',$now];
+        $map['g.etime']   = ['>=',$now];
+        $map['g.status']  = ['=',1];
+        $map['g.id']      = ['=',$id];
         $product = self::alias('g')
             ->join('category c','g.cid = c.id','LEFT')
             ->field( $field )
-            ->where( ['g.id'=>$id,'g.status'=>1] )
+            ->where( $map )
             ->find();
         return $product;
     }
