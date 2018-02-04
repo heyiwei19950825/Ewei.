@@ -8,7 +8,7 @@
 
 namespace app\api\model;
 
-
+use think\Db;
 class Article extends BaseModel
 {
     /**
@@ -100,6 +100,11 @@ class Article extends BaseModel
             ->limit(4)
             ->select();
         return $row;
+    }
+
+    public static function updateReadingNum($id){
+        $sql = 'UPDATE ewei_article SET reading = reading+1 WHERE id='.$id;
+        Db::name('article')->query($sql);
     }
 
 

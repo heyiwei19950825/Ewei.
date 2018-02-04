@@ -59,5 +59,5 @@ return [
         'UPLOAD_EXPRESS' => UPLOAD . '/express/', // 存放物流
         'UPLOAD_CMS' => UPLOAD . '/cms/', // 存放文章图片
         'UPLOAD_VIDEO' => UPLOAD . "/video/"
-    ],
+    ]
 ];

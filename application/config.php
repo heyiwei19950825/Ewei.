@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
@@ -250,7 +250,8 @@ return [
 
     //设置
     'setting'       =>[
-        'domain' => 'http://admin.ewei.com'
-//       'domain' => 'https://small.redkylin.com'
+        //'domain' => 'http://admin.ewei.com',
+        'pay_back_url' => 'https://small.redkylin.com/pay/notify',
+       'domain' => 'https://small.redkylin.com'
     ]
 ];

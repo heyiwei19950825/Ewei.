@@ -173,7 +173,7 @@ class UserToken extends Token
                 'update_time'=>time(),
                 'openid' => $openid,
                 'last_login_time' => time(),
-                'last_login_ip' =>Request::ip(0,true)
+//                'last_login_ip' =>Request::ip(0,true)
             ]);
         return $user;
     }

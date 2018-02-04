@@ -38,14 +38,14 @@ class Integral extends AdminBase
     }
 
     /**
-     * 保存分类
+     * 保存规则
      */
     public function rule_save()
     {
         if ($this->request->isPost()) {
             $data = $this->request->post();
 
-            if (Db::name('user_rank')->insert($data)) {
+            if (Db::name('user_rank')->where(['rank_id'=>$data['rank_id']])->update($data)) {
                 $this->success('保存成功');
             } else {
                 $this->error('保存失败');
@@ -85,7 +85,7 @@ class Integral extends AdminBase
     {
 
         $rule_list = Db::name('user_integral_log')->select();
-
+        $log = [];
         return $this->fetch('user_integral_log', ['log' => $log]);
         
     }

@@ -56,9 +56,10 @@ class WxNotify extends \WxPayNotify
             Db::startTrans();
             try {
                 $order = Order::where('order_no', '=', $orderNo)->lock(true)->find();
-                if ($order->status == 1) {
+                if ($order->order_status == 1) {
                     $service = new OrderService();
                     $status = $service->checkOrderStock($order->id);
+                    $status['pass'] = true;
                     if ($status['pass']) {
                         $this->updateOrderStatus($order->id, true);
                         $this->reduceStock($status);
@@ -83,7 +84,7 @@ class WxNotify extends \WxPayNotify
 //        $pIDs = array_keys($status['pStatus']);
         foreach ($status['pStatusArray'] as $singlePStatus) {
             Product::where('id', '=', $singlePStatus['id'])
-                ->setDec('stock', $singlePStatus['count']);
+                ->setDec('sp_inventory', $singlePStatus['count']);
         }
     }
 

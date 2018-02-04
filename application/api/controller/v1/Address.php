@@ -35,7 +35,10 @@ class Address extends BaseController
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
         $uid = Token::getCurrentUid();
         $id = $this->request->param('id');
-
+        if( $id === 0 ){
+            $row['data'] = null;
+            return $row;
+        }
 
         if( !empty($id) ){//单个详情查询
             $userAddress = UserAddress::where([ 'id'=>$id] )->find()->toArray();
@@ -91,8 +94,12 @@ class Address extends BaseController
         // 根据规则取字段是很有必要的，防止恶意更新非客户端字段
         $data = $validate->getDataByRule(input('post.'));
         $data['is_default'] =  $data['is_default'] + 0;
+        if( $data['is_default'] == 1 ){
+            userAddress::update(['is_default'=>0],['is_default'=>1],'');
+        }
         if ( $id == 0  )
         {
+            $data['user_id'] = $uid;
             // 关联属性不存在，则新建
             userAddress::create($data);
         }

@@ -188,6 +188,7 @@ class Cart extends BaseController
         $freight = $goodsInfo = $checkedCoupon = [];
         $nowTime = date('Y-m-d',time());
         $couponId = $this->request->param('couponId');//使用的优惠券ID
+        $addressId = $this->request->param('addressId');//收货地址
         $userInfo = Db::name('user')->alias('u')->join('user_rank r','u.rank_id = r.rank_id','LEFT')->where(['u.id'=>$this->uid])->find();//用户信息
 
 
@@ -200,10 +201,14 @@ class Cart extends BaseController
 
         //收货地址
         $userAddressModel = new UserAddress();
-        $address = $userAddressModel->where([
-            'user_id'=>$this->uid,
-            'is_default'=>1
-        ])->find();
+        if( $addressId == 0){
+           $addressMap = ['user_id'=>$this->uid,'is_default'=>1];
+          
+        }else{
+            $addressMap = ['user_id'=>$this->uid,'id'=>$addressId];
+        }
+
+        $address = $userAddressModel->where($addressMap)->find();
         if( !empty($address) ){
             $address['province_name'] = Region::getRegionName($address['province_id']);
             $address['city_name'] = Region::getRegionName($address['city_id']);
@@ -218,7 +223,7 @@ class Cart extends BaseController
         $couponNumber = Coupon::countCoupon( $this->uid);
         if( $couponId != 0 ){
             //选中的优惠券信息
-            $checkedCoupon = Coupon::getInfoById($couponId);
+            $checkedCoupon = Coupon::getInfoById($this->uid,$couponId);
             $couponPrice = $checkedCoupon['money']*100;
         }
 
@@ -249,7 +254,6 @@ class Cart extends BaseController
 
         //最后商品订单价格   商品总价格 + 运费 - 会员折扣
         $actualPrice = $goodsTotalPrice - ($rankDiscount/100) + $freightPrice - $couponPrice;
-
         $row['data'] = [
             'checkedAddress'=>$address,//收货地址
             'checkedGoodsList'=> $cartList,//购物车列表
@@ -260,7 +264,7 @@ class Cart extends BaseController
             'orderTotalPrice'=>$orderTotalPrice,//订单价格
             'actualPrice'=>round($actualPrice/100,2),//最后的价格
             'freightPrice' => round($freightPrice/100,2),//运费
-            'couponPrice' => $couponPrice,//优惠券价格
+            'couponPrice' => $couponPrice/100,//优惠券价格
 
         ];
 

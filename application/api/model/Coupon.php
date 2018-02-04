@@ -113,7 +113,7 @@ class Coupon extends BaseModel
             if($item['need_user_level']<= $user['rank_id']){
                 //优惠券是否在购物车商品列表中
                 foreach ($goodsRow as $gItem) {
-                    if( in_array($gItem['goods_id'],$cartListId) && $item['money'] >= $totalPrice && $item['money'] ){
+                    if( in_array($gItem['goods_id'],$cartListId) && $item['money'] <= $totalPrice ){
                         $isOk = true;
                     }
                 };
@@ -184,13 +184,14 @@ class Coupon extends BaseModel
      * @param int $id
      * @return array
      */
-    public static function getInfoById( $id = -1 ){
+    public static function getInfoById( $uid,$id = -1 ){
         $now =date('Y-m-d H:i:s',time());
 
         $map['start_time']      = ['<=',$now];
         $map['end_time']        = ['>=',$now];
         $map['state']           = ['=',0];
         $map['coupon_id']       = ['=',$id];
+        $map['uid']             = ['=',$uid];
         $row = Db::name('coupon')->field('coupon_id,coupon_type_id')->where($map)->find();
 
         $data = Db::name('coupon_type')->field('coupon_name,money')->where(['coupon_type_id'=>$row['coupon_type_id']] )->find();
@@ -233,6 +234,13 @@ class Coupon extends BaseModel
         $row = Db::name('coupon')->insert( $data );
 
         return $row;
+    }
+
+    public static function updateCoupon($id){
+        Db::name('coupon')->where(['coupon_id'=>$id])->update([
+            'use_time'=>time(),
+            'state' => 1
+        ]);
     }
 
 }

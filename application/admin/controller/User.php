@@ -33,7 +33,7 @@ class User extends AdminBase
         if ($keyword) {
             $map['nickname|mobile|email'] = ['like', "%{$keyword}%"];
         }
-        $user_list = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.id')->where($map)->order('u.id DESC')->paginate(15, false, ['page' => $page]);
+        $user_list = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->paginate(15, false, ['page' => $page]);
         // $user_list = $this->user_model->where($map)->order('id DESC')->paginate(15, false, ['page' => $page]);
         return $this->fetch('index', ['user_list' => $user_list, 'keyword' => $keyword]);
     }

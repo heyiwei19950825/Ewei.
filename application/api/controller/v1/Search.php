@@ -9,7 +9,7 @@
 namespace app\api\controller\v1;
 
 
-use app\api\Controller\BaseController;
+use app\api\controller\BaseController;
 use think\Db;
 
 class Search extends BaseController

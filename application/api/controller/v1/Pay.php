@@ -24,9 +24,14 @@ class Pay extends BaseController
     
     public function getPreOrder($id='')
     {
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+
         (new IDMustBePositiveInt()) -> goCheck();
+
         $pay= new PayService($id);
-        return $pay->pay();
+        $row['data'] = $pay->pay();
+
+        return $row;
     }
 
     public function redirectNotify()

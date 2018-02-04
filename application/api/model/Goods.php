@@ -177,5 +177,15 @@ class Goods extends BaseModel
         return $product;
     }
 
+    public static function goodsCount(){
+        $now = date('Y-m-d H:i:s',time());
+        $map['btime']           = ['<=',$now];
+        $map['etime']           = ['>=',$now];
+        $map['status']          = ['=',1];
+
+        $row  = self::where($map)->count('id');
+        return $row;
+    }
+
 
     }

@@ -12,7 +12,7 @@ namespace app\api\service;
 
 
 use app\api\model\OrderProduct;
-use app\api\model\Product;
+use app\api\model\Goods;
 use app\api\model\Order as OrderModel;
 use app\api\model\UserAddress;
 use app\lib\enum\OrderStatusEnum;
@@ -71,16 +71,17 @@ class Order
      */
     public function checkOrderStock($orderID)
     {
-        //        if (!$orderNo)
-        //        {
-        //            throw new Exception('没有找到订单号');
-        //        }
+        if (!$orderID)
+        {
+            throw new Exception('没有找到订单号');
+        }
 
         // 一定要从订单商品表中直接查询
         // 不能从商品表中查询订单商品
         // 这将导致被删除的商品无法查询出订单商品来
         $oProducts = OrderProduct::where('order_id', '=', $orderID)
             ->select();
+
         $this->products = $this->getProductsByOrder($oProducts);
         $this->oProducts = $oProducts;
         $status = $this->getOrderStatus();
@@ -118,18 +119,21 @@ class Order
         foreach ($this->oProducts as $oProduct) {
             $pStatus =
                 $this->getProductStatus(
-                    $oProduct['product_id'], $oProduct['count'], $this->products);
+                    $oProduct['goods_id'], $oProduct['num'], $this->products);
+
             if (!$pStatus['haveStock']) {
                 $status['pass'] = false;
             }
-            $status['orderPrice'] += $pStatus['totalPrice'];
+//            $status['orderPrice'] += $pStatus['totalPrice'];
             array_push($status['pStatusArray'], $pStatus);
         }
+
         return $status;
     }
 
     private function getProductStatus($oPID, $oCount, $products)
     {
+
         $pIndex = -1;
         $pStatus = [
             'id' => null,
@@ -140,6 +144,7 @@ class Order
         ];
 
         for ($i = 0; $i < count($products); $i++) {
+
             if ($oPID == $products[$i]['id']) {
                 $pIndex = $i;
             }
@@ -156,9 +161,8 @@ class Order
             $pStatus['id'] = $product['id'];
             $pStatus['name'] = $product['name'];
             $pStatus['count'] = $oCount;
-            $pStatus['totalPrice'] = $product['price'] * $oCount;
 
-            if ($product['stock'] - $oCount >= 0) {
+            if ($product['sp_inventory'] - $oCount >= 0) {
                 $pStatus['haveStock'] = true;
             }
         }
@@ -171,12 +175,13 @@ class Order
     {
         $oPIDs = [];
         foreach ($oProducts as $item) {
-            array_push($oPIDs, $item['product_id']);
+            array_push($oPIDs, $item['goods_id']);
         }
         // 为了避免循环查询数据库
-        $products = Product::all($oPIDs)
-            ->visible(['id', 'price', 'stock', 'name', 'main_img_url'])
+        $products = Goods::all($oPIDs)
+            ->visible(['id', 'sp_price', 'sp_inventory', 'name', 'thumb'])
             ->toArray();
+
         return $products;
     }
 
@@ -290,4 +295,5 @@ class Order
                 '%02d', rand(0, 99));
         return $orderSn;
     }
+
 }

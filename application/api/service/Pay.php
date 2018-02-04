@@ -40,14 +40,11 @@ class Pay
     public function pay()
     {
         $this->checkOrderValid();
-        $order = new Order();
-        $status = $order->checkOrderStock($this->orderID);
-        if (!$status['pass'])
-        {
-            return $status;
-        }
-        return $this->makeWxPreOrder($status['orderPrice']);
-        //        $this->checkProductStock();
+
+        $order = OrderModel::get($this->orderID);
+
+        return $this->makeWxPreOrder($order['order_money']);
+
     }
 
     // 构建微信支付订单信息
@@ -59,13 +56,14 @@ class Pay
         {
             throw new TokenException();
         }
+
         $wxOrderData = new \WxPayUnifiedOrder();
         $wxOrderData->SetOut_trade_no($this->orderNo);
         $wxOrderData->SetTrade_type('JSAPI');
         $wxOrderData->SetTotal_fee($totalPrice * 100);
         $wxOrderData->SetBody('零食商贩');
         $wxOrderData->SetOpenid($openid);
-        $wxOrderData->SetNotify_url(config('secure.pay_back_url'));
+        $wxOrderData->SetNotify_url(config('setting.pay_back_url'));
 
         return $this->getPaySignature($wxOrderData);
     }
@@ -74,6 +72,7 @@ class Pay
     private function getPaySignature($wxOrderData)
     {
         $wxOrder = \WxPayApi::unifiedOrder($wxOrderData);
+
         // 失败时不会返回result_code
         if($wxOrder['return_code'] != 'SUCCESS' || $wxOrder['result_code'] !='SUCCESS'){
             Log::record($wxOrder,'error');
@@ -122,7 +121,7 @@ class Pay
             throw new OrderException();
         }
 //        $currentUid = Token::getCurrentUid();
-        if(!Token::isValidOperate($order->user_id))
+        if(!Token::isValidOperate($order->buyer_id))
         {
             throw new TokenException(
                 [
@@ -130,7 +129,7 @@ class Pay
                     'errorCode' => 10003
                 ]);
         }
-        if($order->status != 1){
+        if($order->order_status != 1){
             throw new OrderException([
                 'msg' => '订单已支付过啦',
                  'errorCode' => 80003,

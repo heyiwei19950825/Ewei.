@@ -44,4 +44,23 @@ class User extends BaseModel
         return $user;
     }
 
+    /**
+     * 修改用户积分并记录日志
+     * @param int $uid
+     * @param int $integral
+     * @param int $type
+     * @return array
+     */
+    public static function updateUserIntegral($uid = -1,$integral=0,$type = 0){
+        $user = Db::name('user')->where(['id'=>$uid])->find();
+        if( $type == 0 ){
+            $integral = $user['integral'] - $integral;
+        }else{
+            $integral = $user['integral'] + $integral;
+        }
+        $row = Db::name('user')->where(['id'=>$uid])->update(['integral'=>$integral]);
+
+        return $row;
+    }
+
 }

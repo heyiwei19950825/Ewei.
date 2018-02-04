@@ -22,13 +22,13 @@
                     <tbody>
                     {foreach name="rule_list" item="vo"}
                     <tr>
-                        <td>{$vo.id}</td>
+                        <td>{$vo.rank_id}</td>
                         <td>{$vo.rank_name}</td>
                         <td>{$vo.rank_integral}</td>
                         <td>{$vo.rank_discount}</td>
                         <td>
-                            <a href="{:url('admin/integral/rule_edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
-                            <a href="{:url('admin/integral/rule_delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                            <a href="{:url('admin/integral/rule_edit',['id'=>$vo['rank_id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                            <a href="{:url('admin/integral/rule_delete',['id'=>$vo['rank_id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
                         </td>
                     </tr>
                     {/foreach}

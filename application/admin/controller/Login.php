@@ -30,10 +30,10 @@ class Login extends Controller
     {
         if ($this->request->isPost()) {
             $data            = $this->request->only(['username', 'password', 'verify']);
-            $validate_result = $this->validate($data, 'Login');
-            if ($validate_result !== true) {
-                $this->error($validate_result);
-            } else {
+//            $validate_result = $this->validate($data, 'Login');
+//            if ($validate_result !== true) {
+//                $this->error($validate_result);
+//            } else {
                 $where['username'] = $data['username'];
                 $where['password'] = md5($data['password'] . Config::get('salt'));
                 $admin_user = Db::name('admin_user')->field('id,username,status')->where($where)->find();
@@ -54,7 +54,7 @@ class Login extends Controller
                 } else {
                     $this->error('用户名或密码错误');
                 }
-            }
+//            }
         }
     }
 

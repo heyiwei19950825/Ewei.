@@ -43,6 +43,8 @@ class Article extends BaseController
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
         $field = 'id,title,introduction,content,author,reading,thumb,publish_time';
         $data = ArticleModel::getArticleById( $id,$field );
+
+        ArticleModel::updateReadingNum($id);
         $data['thumb'] = self::prefixDomain($data['thumb']);
         $row['data'] = $data;
 

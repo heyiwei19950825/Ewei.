@@ -3,43 +3,53 @@
 namespace app\api\model;
 
 use think\Model;
+use think\Db;
 
 class Order extends BaseModel
 {
-    protected $hidden = ['user_id', 'delete_time', 'update_time'];
-    protected $autoWriteTimestamp = true;
-
-    public function getSnapItemsAttr($value)
-    {
-        if(empty($value)){
-            return null;
+    /**
+     * 添加订单信息
+     */
+    public static function addOrder( $param = [] ){
+        if( !is_array($param) || $param == [] ){
+            return [];
         }
-        return json_decode($value);
-    }
+        Db::name('order')->insert($param);
 
-    public function getSnapAddressAttr($value){
-        if(empty($value)){
-            return null;
+        $id = Db::name('order')->getLastInsID();
+
+        if( empty($id) || !$id  || $id == 0){
+            return 0;
         }
-        return json_decode(($value));
-    }
-    
-    public static function getSummaryByUser($uid, $page=1, $size=15)
-    {
-        $pagingData = self::where('user_id', '=', $uid)
-            ->order('create_time desc')
-            ->paginate($size, true, ['page' => $page]);
-        return $pagingData ;
+
+        //创建订单商品表数据
+
+        return $id;
     }
 
-    public static function getSummaryByPage($page=1, $size=20){
-        $pagingData = self::order('create_time desc')
-            ->paginate($size, true, ['page' => $page]);
-        return $pagingData ;
+    /**
+     * 修改订单状态
+     * @param array $param
+     */
+    public static function updateOrderStatic($param = [] ){
+
     }
 
-    public function products()
-    {
-        return $this->belongsToMany('Product', 'order_product', 'product_id', 'order_id');
+    public static function getSummaryByUser( $uid,$page,$ize){
+        $row = [];
+        $note = [1=>'未支付',2=>'已支付'];
+        $data = Db::name('order')->where(['buyer_id'=>$uid])->order('create_time desc,order_status asc')->select();
+        foreach ( $data as$key=> $item){
+            $row[$key]['id'] = $item['id'];
+            $row[$key]['order_sn'] = $item['order_no'];
+            $row[$key]['order_status_text'] = $note[$item['order_status']];
+            $row[$key]['actual_price'] = $item['order_money'];
+            $row[$key]['handleOption'] = $note[$item['order_status']] == 1 ? true:false;
+            $row[$key]['order_type'] = $item['order_type'];
+            $row[$key]['point'] = $item['point'];
+            $row[$key]['goodsList'] = Db::name('order_product')->where(['order_id'=>$item['id']])->field('num,goods_name,goods_picture')->select()->toArray();
+        }
+
+        return $row;
     }
 }

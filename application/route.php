@@ -49,6 +49,7 @@ Route::get('api/:version/Goods/by_category/paginate', 'api/:version.Goods/getByC
 Route::get('api/:version/Goods/by_category', 'api/:version.Goods/getAllInCategory');
 Route::get('api/:version/Goods/detail', 'api/:version.Goods/getOne');
 Route::get('api/:version/Goods/recent', 'api/:version.Goods/getRecent');
+Route::get('api/:version/goods/count', 'api/:version.Goods/goodsCount');
 Route::get('api/:version/Goods/integral', 'api/:version.Goods/getIsIntegralGoods');//积分兑换商品
 
 
@@ -74,15 +75,15 @@ Route::post('api/:version/address/delete', 'api/:version.Address/deleteAddress')
 
 //Order
 Route::post('api/:version/order', 'api/:version.Order/placeOrder');
-Route::get('api/:version/order/:id', 'api/:version.Order/getDetail',[], ['id'=>'\d+']);
-Route::put('api/:version/order/delivery', 'api/:version.Order/delivery');
+Route::get('api/:version/order/detail', 'api/:version.Order/getDetail');
+//Route::put('api/:version/order/delivery', 'api/:version.Order/delivery');
 
 //不想把所有查询都写在一起，所以增加by_user，很好的REST与RESTFul的区别
-Route::get('api/:version/order/by_user', 'api/:version.Order/getSummaryByUser');
+Route::get('api/:version/order/list', 'api/:version.Order/getSummaryByUser');
 Route::get('api/:version/order/paginate', 'api/:version.Order/getSummary');
 
 //Pay
-Route::post('api/:version/pay/pre_order', 'api/:version.Pay/getPreOrder');
+Route::get('api/:version/pay/pre_order', 'api/:version.Pay/getPreOrder');
 Route::post('api/:version/pay/notify', 'api/:version.Pay/receiveNotify');
 Route::post('api/:version/pay/re_notify', 'api/:version.Pay/redirectNotify');
 Route::post('api/:version/pay/concurrency', 'api/:version.Pay/notifyConcurrency');
@@ -141,6 +142,9 @@ Route::post('api/:version/integral/integralCart', 'api/:version.Integral/integra
 
 //开团
 Route::get('api/:version/collective/getList', 'api/:version.Collective/getList');
+Route::post('api/:version/collective/cart', 'api/:version.Collective/Cart');
+Route::get('api/:version/collective/detail', 'api/:version.Collective/getOne');
+
 
 Route::get('api/:version/getApi', 'api/:version.QueryLists/index');
 Route::post('api/:version/tengxunyun', 'api/:version.TengxunyunTest/index');
