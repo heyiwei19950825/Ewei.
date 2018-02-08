@@ -29,7 +29,7 @@ class Integral extends AdminBase
     }
 
     /**
-     * 积分规则
+     * 添加积分
      * @return mixed
      */
     public function rule_add()
@@ -44,7 +44,14 @@ class Integral extends AdminBase
     {
         if ($this->request->isPost()) {
             $data = $this->request->post();
+            if(!isset($data['rank_id'])){
+                if(Db::name('user_rank')->insert($data)){
+                    $this->success('保存成功');
+                }else{
+                    $this->error('保存失败');
+                }
 
+            }
             if (Db::name('user_rank')->where(['rank_id'=>$data['rank_id']])->update($data)) {
                 $this->success('保存成功');
             } else {

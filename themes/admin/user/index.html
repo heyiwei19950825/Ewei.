@@ -5,7 +5,7 @@
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">
             <li class="layui-this">用户管理</li>
-            <li class=""><a href="{:url('admin/user/add')}">添加用户</a></li>
+            <!-- <li class=""><a href="{:url('admin/user/add')}">添加用户</a></li> -->
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
@@ -43,7 +43,7 @@
                     {foreach name="user_list" item="vo"}
                     <tr>
                         <td>{$vo.id}</td>
-                        <td>{$vo.nickname}</td>
+                        <td>{$vo.nickname}<i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：VIP用户"></i></td>
                         <td>{$vo.mobile}</td>
                         <td>{$vo.email}</td>
                         <!--<td>{$vo.integral}<a class="layui-btn layui-btn-warm layui-btn-mini show-integral-log" style="margin-left: 15px;">积分日志</a><a class="layui-btn layui-btn-warm layui-btn-mini" style="margin-left: 5px;">修改积分</a></td>-->

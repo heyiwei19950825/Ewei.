@@ -90,13 +90,13 @@
                                             <input type="number" name="sp_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_price}">
                                         </div>
                                     </div>  
-                                   <!--  <div class="layui-inline">
+                                    <div class="layui-inline">
                                       <label class="layui-form-label">会员价:</label>
                                       <div class="layui-input-inline">
                                         <input type="number" name="sp_vip_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_vip_price}">
                                       </div>
-                                    </div>  -->
-                                    <!-- <div class="layui-inline">
+                                    </div> 
+                                <!--     <div class="layui-inline">
                                       <label class="layui-form-label">成本价:</label>
                                       <div class="layui-input-inline">
                                         <input type="number" name="sp_cost_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_cost_price}">
@@ -152,6 +152,7 @@
                                         <div class="layui-input-block">
                                             <input type="checkbox" name="" {if condition="$collective.state == 1"} checked{/if} lay-skin="switch" lay-filter="stateSwitchTest" lay-text="开启|关闭">
                                             <input type="hidden" name="collective_state" value="{$collective.state}">
+                                            <input type="hidden" name="is_collective" value="{$goods.is_collective}">
                                         </div>
                                     </div>
                                 </div>

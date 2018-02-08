@@ -168,7 +168,6 @@ class Goods extends AdminBase
         $this->where = ['id'=>$id];
         $field = 's.sku_name,s.attr_value_items,s.cost_price,s.price,s.stock,p.pic_cover,p.pic_id,group_id';
         $goods = $this->goods_model->where($this->where)->find();
-
         //没有查询到商品信息
         if( empty($goods) ){
             $this->error('没有找到对应的商品信息~');
@@ -216,6 +215,7 @@ class Goods extends AdminBase
                 $this->error('没有权限修改或修改商品不存在~');
             }
             $validate_result = $this->validate($data, 'Goods');
+            var_dump($data);die;
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
@@ -282,12 +282,7 @@ class Goods extends AdminBase
     {
         $id = $ids ? $ids : $id;
         if ($id) {
-
-            $this->where = array_merge($this->where,['id'=>$id]);
-            if ($this->goods_model->where($this->where)->delete()) {
-
-                Db::name('goods_collective')->where(['goods_id'=>$id])->delete();
-                Db::name('goods_sku')->where(['goods_id'=>$id])->delete();
+            if ($this->goods_model->destroy($id)) {
                 $this->success('删除成功');
             } else {
                 $this->error('删除失败');

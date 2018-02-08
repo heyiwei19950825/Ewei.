@@ -14,8 +14,8 @@
                     <tr>
                         <th style="width: 30px;">ID</th>
                         <th>积分名称</th>
-                        <th>积分个数</th>
-                        <th></th>
+                        <th>最少积分个数</th>
+                        <th>优惠折扣</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -25,7 +25,7 @@
                         <td>{$vo.rank_id}</td>
                         <td>{$vo.rank_name}</td>
                         <td>{$vo.rank_integral}</td>
-                        <td>{$vo.rank_discount}</td>
+                        <td>{$vo.rank_discount} 折</td>
                         <td>
                             <a href="{:url('admin/integral/rule_edit',['id'=>$vo['rank_id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
                             <a href="{:url('admin/integral/rule_delete',['id'=>$vo['rank_id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>

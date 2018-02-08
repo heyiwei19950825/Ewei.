@@ -75,7 +75,10 @@ class Category extends AdminBase
     public function edit($id)
     {
         $category = $this->category_model->find($id);
-
+        if( $category['thumb'] != ''){
+            $category['thumb'] = explode(',',$category['thumb']);
+        }
+        $category['thumbCount'] = count($category['thumb']);
         return $this->fetch('edit', ['category' => $category]);
     }
 
@@ -88,7 +91,6 @@ class Category extends AdminBase
         if ($this->request->isPost()) {
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Category');
-
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
@@ -96,6 +98,7 @@ class Category extends AdminBase
                 if (in_array($data['pid'], $children)) {
                     $this->error('不能移动到自己的子分类');
                 } else {
+                    $data['thumb'] = !empty($data['thumb'])?implode(',',$data['thumb']):'';
                     if ($this->category_model->allowField(true)->save($data, $id) !== false) {
                         $this->success('更新成功');
                     } else {

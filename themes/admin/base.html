@@ -6,6 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="__JS__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__JS__/layui/global.css" media="all">
     <link rel="stylesheet" href="__CSS__/font-awesome.min.css">
     <!--CSS引用-->
     {block name="css"}{/block}
@@ -21,13 +22,55 @@
 <body>
 <div class="layui-layout layui-layout-admin">
     <!--头部-->
+    <div class="fly-header layui-bg-black">
+      <div class="layui-container">
+        <a class="fly-logo" href="/">
+          <!-- <img src="../../res/images/logo.png" alt="layui"> -->
+        </a>
+        <ul class="layui-nav fly-nav layui-hide-xs">
+          <li class="layui-nav-item layui-this">
+            <a href=""><i class="iconfont icon-jiaoliu"></i>交流</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href=""><i class="iconfont icon-iconmingxinganli"></i>案例</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="" target="_blank"><i class="iconfont icon-ui"></i>框架</a>
+          </li>
+        </ul>
+        
+        <ul class="layui-nav fly-nav-user">
+          <!-- 登入后的状态 -->
+          <li class="layui-nav-item">
+            <a class="fly-nav-avatar" href="javascript:;">
+              <cite class="layui-hide-xs">{:session('admin_name')}</cite>
+              <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i>
+              <i class="layui-badge fly-badge-vip layui-hide-xs">VIP3</i>
+              <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">
+            </a>
+            <dl class="layui-nav-child">
+              <dd><a href="{:url('admin/shopInfo/index')}"><i class="layui-icon">&#xe620;</i>店铺设置</a></dd>
+              <dd><a href="../user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息<span class="layui-badge">99</span></a></dd>
+              <!-- <dd><a href="../user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a></dd> -->
+              <hr style="margin: 5px 0;">
+              <dd><a href="{:url('admin/change_password/index')}" style="text-align: center;">修改密码</a></dd>
+              <dd><a href="{:url('admin/login/logout')}" style="text-align: center;">退出</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
     <div class="layui-header header">
         <!-- <a href=""><img class="logo" src="__STATIC__/images/admin_logo.png" alt=""></a> -->
         <ul class="layui-nav" style="position: absolute;top: 0;right: 20px;background: none;">
-            <!-- <li class="layui-nav-item"><a href="{:url('/')}" target="_blank">前台首页</a></li> -->
+            <li class="layui-nav-item"><a href="{:url('/')}" target="_blank">新消息<span class="layui-badge">99</span></a></li>
+            <li class="layui-nav-item"><a href="{:url('/')}" target="_blank">未处理订单<span class="layui-badge">99</span></a></li>
             <li class="layui-nav-item"><a href="" data-url="{:url('admin/system/clear')}" id="clear-cache">清除缓存</a></li>
             <li class="layui-nav-item">
-                <a href="javascript:;">{:session('admin_name')}</a>
+                <a href="javascript:;">{:session('admin_name')}<i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i></a>
+
                 <dl class="layui-nav-child"> <!-- 二级菜单 -->
                     <dd><a href="{:url('admin/change_password/index')}">修改密码</a></dd>
                     <dd><a href="{:url('admin/login/logout')}">退出登录</a></dd>
@@ -40,7 +83,7 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree">
-                <li class="layui-nav-item layui-nav-title"><a>管理菜单</a></li>
+                <!-- <li class="layui-nav-item layui-nav-title"><a>管理菜单</a></li> -->
                 <li class="layui-nav-item">
                     <a href="{:url('admin/index/index')}"><i class="fa fa-home"></i> 网站信息</a>
                 </li>

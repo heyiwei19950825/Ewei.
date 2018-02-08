@@ -85,17 +85,17 @@ class Nav extends AdminBase
     {
         if ($this->request->isPost()) {
             $data            = $this->request->post();
-            $validate_result = $this->validate($data, 'Nav');
+            // $validate_result = $this->validate($data, 'Nav');
 
-            if ($validate_result !== true) {
-                $this->error($validate_result);
-            } else {
+            // if ($validate_result !== true) {
+            //     $this->error($validate_result);
+            // } else {
                 if ($this->nav_model->save($data, $id) !== false) {
                     $this->success('更新成功');
                 } else {
                     $this->error('更新失败');
                 }
-            }
+            // }
         }
     }
 

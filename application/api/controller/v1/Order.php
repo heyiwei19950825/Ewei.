@@ -64,8 +64,7 @@ class Order extends BaseController
 //        $status = $order->place($uid, $products);
 //        return $status;
 //    }
-    public function placeOrder()
-    {
+    public function placeOrder(){
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
         $finish_time = $pay_time  = 0;
         $order_status = 1;
@@ -243,7 +242,7 @@ class Order extends BaseController
             'user_money'=>0,//订单余额支付金额
             'user_platform_money'=>0,//用户平台余额支付
             'promotion_money'=>0,//订单优惠活动金额
-            'shipping_money'=>$freightPrice,//订单运费
+            'shipping_money'=>$freightPrice/100,//订单运费
             'pay_money'=>0,//订单实付金额
             'refund_money'=>'',//订单退款金额
 //            'give_point'=>$product['give_integral'],//订单赠送积分
@@ -390,6 +389,44 @@ class Order extends BaseController
 
         return $row;
     }
+
+    /**
+     * 删除订单
+     * @return [type] [description]
+     */
+    public function delOrder(){
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+        (new IDMustBePositiveInt())->goCheck( $id );
+        $orderDetail = OrderModel::del($id);
+
+        return $row;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * 根据用户id分页获取订单列表（简要信息）

@@ -28,9 +28,8 @@ class Index extends BaseController
         //初始化数据
         $channel = $banner = $brandList = $categoryList = $hotGoodsList = $recommendGoodsList = $articleList = [];
 
-        $channel = Category::filterCategory('id,thumb,name,sort')->toArray();
-        $channel = self::prefixDomainToArray('thumb',$channel);
-
+        $channel = Category::filterCategory('id,icon,name,sort')->toArray();
+        $channel = self::prefixDomainToArray('icon',$channel);
         //分类及其分类下的商品信息
         foreach ( $channel as $key=>$item) {
             $categoryList[$key] = $item;
@@ -64,7 +63,6 @@ class Index extends BaseController
 
         //获取所有的导航列表信息
         $navList = Theme::getAllThemeList('id,name,alias,link,icon',4);
-//        $navList = self::prefixDomainToArray('link',$navList);
         $navList = self::prefixDomainToArray('icon',$navList);
         //获取所有的在线优惠券
         $couponList = Coupon::getCouponList();

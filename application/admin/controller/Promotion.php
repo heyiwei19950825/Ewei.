@@ -113,14 +113,17 @@ class Promotion extends AdminBase
                                 $retval = $this->coupon_model->save($data_coupon);
                             }
                         }
-
-                        foreach ($ids as $key => $value) {//关联商品
-                             $req = array(
+                        if( $data['range_type'] == 0 ){
+                            foreach ($ids as $key => $value) {//关联商品
+                                $req = array(
                                 'coupon_type_id' => $id,
                                 'goods_id' => $value
-                            ); 
-                           $this->coupon_goods_model->insert($req);
+                                ); 
+                                $this->coupon_goods_model->insert($req);
+                            }
+
                         }
+                        
                     
                         Db::commit();
                         $this->success('保存成功');

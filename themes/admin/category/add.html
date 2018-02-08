@@ -122,7 +122,7 @@
                 uploadEditor.addListener('beforeInsertImage', function (t, arg) {
                     $('#photo-container').html('');
                     $.each(arg, function (index, item) {
-                        photoListItem = '<div class="photo-lis layui-inline"><input type="hidden" name="thumb" value="' + item.src + '" class="layui-input layui-input-inline"><img width="150px;" src="' + item.src + '"></div>';
+                        photoListItem = '<div class="photo-lis layui-inline"><input type="hidden" name="thumb[]" value="' + item.src + '" class="layui-input layui-input-inline"><img width="150px;" src="' + item.src + '"></div>';
                         $('#photo-container').append(photoListItem);
                     });
                 });

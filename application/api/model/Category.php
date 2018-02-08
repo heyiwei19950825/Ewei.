@@ -41,7 +41,6 @@ class Category extends BaseModel
             ->field($field)
             ->order('sort asc')
             ->select();
-
         return $filterCategory;
     }
 

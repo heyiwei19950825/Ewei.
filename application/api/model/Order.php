@@ -52,4 +52,17 @@ class Order extends BaseModel
 
         return $row;
     }
+
+
+    /**
+     * 删除订单信息
+     * @param  [type] $id  [description]
+     * @param  [type] $uid [description]
+     * @return [type]      [description]
+     */
+    public static function delOrder( $id,$uid ){
+        $row = [];
+        $row = Db::name('order')->where()->update(['order_status'=>10]);
+        return $row;
+    }
 }
