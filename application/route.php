@@ -9,6 +9,10 @@
 
 // 写完代码后对着路由表看，能否不看注释就知道这个接口的意义
 use think\Route;
+//admin
+Route::get('admin/refund/refundlist', 'admin/Order/refundList');
+
+
 //index
 Route::get('api/:version/Index/index', 'api/:version.Index/index');
 
@@ -144,6 +148,9 @@ Route::post('api/:version/integral/integralCart', 'api/:version.Integral/integra
 Route::get('api/:version/collective/getList', 'api/:version.Collective/getList');
 Route::post('api/:version/collective/cart', 'api/:version.Collective/Cart');
 Route::get('api/:version/collective/detail', 'api/:version.Collective/getOne');
+
+//用户反馈
+Route::post('api/:version/feedBack/add', 'api/:version.FeedBack/add');
 
 
 Route::get('api/:version/getApi', 'api/:version.QueryLists/index');

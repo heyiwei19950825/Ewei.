@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>取消订单</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="__JS__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__CSS__/admin1.css" media="all">
+
+</head>
+<form class="layui-form" action="">
+    <table class="layui-table layui-table-add" lay-skin="nob">
+        <tbody>
+        <tr>
+            <th width="100" ><span class="red">*</span>原因</th>
+            <td>
+                <input class="data_id" type="hidden" value="{$id}">
+                <textarea name="desc" style="resize: none;" placeholder="取消订单需填写原因" class="layui-textarea desc"></textarea>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div style="margin-left: 145px; margin-bottom: 15px;">
+        <div class="layui-btn cancel-btn" style=" min-width: 150px;">提 交</div>
+    </div>
+</form>
+
+
+<script src="__JS__/layui/lay/dest/layui.all.js"></script>
+<script src="__JS__/admin.js"></script>
+
+<script>
+    layui.use(['jquery','form'], function(){
+        var $ = layui.jquery;
+    });
+    $(function(){
+        $('.cancel-btn').on('click',function(){
+            var id = $('.data_id').val();
+            var note = $('.desc').val();
+            $.post('{:url("admin/order/cancelOption")}',{
+                id:id,
+                note:note
+            },function(e){
+                layer.msg(e.msg);
+            })
+        })
+
+    })
+</script>
+
+<body>
+</body>

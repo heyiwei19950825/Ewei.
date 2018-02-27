@@ -253,5 +253,18 @@ return [
         //'domain' => 'http://admin.ewei.com',
         'pay_back_url' => 'https://small.redkylin.com/pay/notify',
        'domain' => 'https://small.redkylin.com'
+    ],
+
+    //订单状态
+    'order' =>[
+        'status'=>[
+            '待支付','待发货','待签收','已签收','待退货','已退货','已退款','已完成','已取消',
+        ],
+        'type'=>[
+            '普通订单','团购订单','积分订单',
+        ],
+        'from'=>[
+            '小程序','微信公众号','App','PC','Wap'
+        ]
     ]
 ];

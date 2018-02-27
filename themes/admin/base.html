@@ -50,9 +50,10 @@
             </a>
             <dl class="layui-nav-child">
               <dd><a href="{:url('admin/shopInfo/index')}"><i class="layui-icon">&#xe620;</i>店铺设置</a></dd>
-              <dd><a href="../user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息<span class="layui-badge">99</span></a></dd>
+              <dd  class="message"><a href="javascript:"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息<span class="layui-badge">{$msgNum}</span></a></dd>
               <!-- <dd><a href="../user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a></dd> -->
               <hr style="margin: 5px 0;">
+              <dd><a href="javascript:"  data-url="{:url('admin/system/clear')}"  style="text-align: center;" id="clear-cache">清除缓存</a></dd>
               <dd><a href="{:url('admin/change_password/index')}" style="text-align: center;">修改密码</a></dd>
               <dd><a href="{:url('admin/login/logout')}" style="text-align: center;">退出</a></dd>
             </dl>
@@ -62,22 +63,22 @@
     </div>
 
 
-    <div class="layui-header header">
-        <!-- <a href=""><img class="logo" src="__STATIC__/images/admin_logo.png" alt=""></a> -->
-        <ul class="layui-nav" style="position: absolute;top: 0;right: 20px;background: none;">
-            <li class="layui-nav-item"><a href="{:url('/')}" target="_blank">新消息<span class="layui-badge">99</span></a></li>
-            <li class="layui-nav-item"><a href="{:url('/')}" target="_blank">未处理订单<span class="layui-badge">99</span></a></li>
-            <li class="layui-nav-item"><a href="" data-url="{:url('admin/system/clear')}" id="clear-cache">清除缓存</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">{:session('admin_name')}<i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i></a>
+    <!--<div class="layui-header header">-->
+        <!--&lt;!&ndash; <a href=""><img class="logo" src="__STATIC__/images/admin_logo.png" alt=""></a> &ndash;&gt;-->
+        <!--<ul class="layui-nav" style="position: absolute;top: 0;right: 20px;background: none;">-->
+            <!--<li class="layui-nav-item"><a href="{:url('/')}" target="_blank">新消息<span class="layui-badge">99</span></a></li>-->
+            <!--<li class="layui-nav-item"><a href="{:url('/')}" target="_blank">未处理订单<span class="layui-badge">99</span></a></li>-->
+            <!--<li class="layui-nav-item"><a href="javascript:" data-url="{:url('admin/system/clear')}" id="clear-cache">清除缓存</a></li>-->
+            <!--<li class="layui-nav-item">-->
+                <!--<a href="javascript:;">{:session('admin_name')}<i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i></a>-->
 
-                <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                    <dd><a href="{:url('admin/change_password/index')}">修改密码</a></dd>
-                    <dd><a href="{:url('admin/login/logout')}">退出登录</a></dd>
-                </dl>
-            </li>
-        </ul>
-    </div>
+                <!--<dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;-->
+                    <!--<dd><a href="{:url('admin/change_password/index')}">修改密码</a></dd>-->
+                    <!--<dd><a href="{:url('admin/login/logout')}">退出登录</a></dd>-->
+                <!--</dl>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
 
     <!--侧边栏-->
     <div class="layui-side layui-bg-black">
@@ -131,6 +132,22 @@
 <!--JS引用-->
 <script src="__JS__/layui/lay/dest/layui.all.js"></script>
 <script src="__JS__/admin.js"></script>
+<script>
+    /**
+     * 后台侧边菜单选中状态
+     */
+    $('.layui-nav-item').find('a').removeClass('layui-this');
+    $('.layui-nav-tree').find('a[href*="' + GV.current_controller + '"]').parent().addClass('layui-this').parents('.layui-nav-item').addClass('layui-nav-itemed');
+    //列表消息
+    $(document).on("click", ".message", function () {
+        layer.open({
+            type: 2
+            , area: ['50%', '90%']
+            , title: "列表消息"
+            , content: "{:url('admin/message/index')}"
+        });
+    });
+</script>
 {block name="js"}{/block}
 <!--页面JS脚本-->
 {block name="script"}{/block}

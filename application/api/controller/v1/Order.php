@@ -32,6 +32,7 @@ use app\api\model\Cart as CartModel;
 use app\api\model\Coupon;
 use think\Request;
 use think\Db;
+use think\Config;
 
 
 class Order extends BaseController
@@ -43,11 +44,13 @@ class Order extends BaseController
     ];
 
     public $uid = '';
+    private $orderConfig = null;
 
     public function _initialize()
     {
         parent::_initialize();
         $this->uid = Token::getCurrentUid();
+        $this->orderConfig = Config::get('order');
     }
     
     /**
@@ -55,19 +58,10 @@ class Order extends BaseController
      * @url /order
      * @HTTP POST
      */
-//    public function placeOrder()
-//    {
-//        (new OrderPlace())->goCheck();
-//        $products = input('post.products/a');
-//        $uid = Token::getCurrentUid();
-//        $order = new OrderService();
-//        $status = $order->place($uid, $products);
-//        return $status;
-//    }
     public function placeOrder(){
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
         $finish_time = $pay_time  = 0;
-        $order_status = 1;
+        $order_status = 0;
 
         $goodsId = $this->request->param('goodsId',0);
         $num = $this->request->param('num',0);
@@ -209,12 +203,10 @@ class Order extends BaseController
             }
         }
 
-
-
         //创建成功添加订单信息
         $param = [
             'shipping_type' => 1,//订单配送方式
-            'order_from'  => '小程序',//订单来源
+            'order_from'  => 0,//订单来源
             'order_no'  => date('YmdHis',time()).rand(1000,9999),//订单编号
             'out_trade_no'  => '',//外部交易号
             'order_type'  => $order_type,//订单类型
@@ -230,8 +222,8 @@ class Order extends BaseController
             'receiver_address' => $addressOld['address'],//收货人详细地址
             'receiver_zip' => '0000',//收货人邮编
             'receiver_name' => $address['name'],//收货人姓名
-//            'shop_id' => $product['sid'],//卖家店铺id
-//            'shop_name' => $shopName['shop_name'],//卖家店铺名称
+            'shop_id' => 0,//卖家店铺id
+            'shop_name' =>'官方旗舰店',//卖家店铺名称
             'seller_memo' => '',//卖家对订单的备注
             'goods_money' => $goodsPrice,//商品总价
             'order_money' => $actualPrice,//订单总价
@@ -364,7 +356,6 @@ class Order extends BaseController
     public function getDetail($id)
     {
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
-        $note = [1=>'未支付',2=>'已支付'];
 
         (new IDMustBePositiveInt())->goCheck();
         $orderDetail = OrderModel::get($id);
@@ -372,7 +363,7 @@ class Order extends BaseController
         {
             throw new OrderException();
         }
-        $orderDetail['order_status_text'] = $note[$orderDetail['order_status']];
+        $orderDetail['order_status_text'] = $this->orderConfig['status'][$orderDetail['order_status']];
 
         $address['province_name'] = Region::getRegionName($orderDetail['receiver_province']);
         $address['city_name'] = Region::getRegionName($orderDetail['receiver_city']);
@@ -394,39 +385,13 @@ class Order extends BaseController
      * 删除订单
      * @return [type] [description]
      */
-    public function delOrder(){
+    public function delOrder( $id ){
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
         (new IDMustBePositiveInt())->goCheck( $id );
         $orderDetail = OrderModel::del($id);
 
         return $row;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
      * 根据用户id分页获取订单列表（简要信息）
@@ -438,17 +403,24 @@ class Order extends BaseController
     public function getSummaryByUser($page = 1, $size = 15)
     {
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
-
+        $type = $this->request->param('types');
 //        (new PagingParameter())->goCheck();
         $uid = Token::getCurrentUid();
-        $pagingOrders = OrderModel::getSummaryByUser($uid, $page, $size);
+        $pagingOrders = OrderModel::getSummaryByUser($uid,$type, $page, $size);
 
         if ( empty($pagingOrders) )
         {
-            $row = ['errmsg'=>'暂无数据','errno'=>1,'data'=>[]];
+            $row = ['errmsg'=>'暂无数据','errno'=>1,'data'=> [
+                'list'=>[],
+                'types'=>$type
+            ]];
         }
 
-        $row['data'] = $pagingOrders;
+        $row['data'] = [
+            'list'=>$pagingOrders,
+            'types'=>$type
+        ];
+
         return $row;
 
 

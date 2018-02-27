@@ -1,11 +1,10 @@
 <?php 
 namespace app\common\model;
 
-use app\common\model\BaseModel;
 
 class OrderGoods extends BaseModel {
 
-    protected $table = 'ewei_order_goods';
+    protected $table = 'ewei_order_product';
     protected $rule = [
         'order_goods_id'  =>  '',
     ];

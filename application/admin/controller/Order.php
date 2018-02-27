@@ -3,8 +3,13 @@ namespace app\admin\controller;
 
 use app\common\controller\AdminBase;
 use app\common\model\Order as OrderModel;
-use app\common\model\Order\OrderStatus;
-use app\common\model\ExpressCompany as ExpressService;
+use app\common\model\OrderGoods as OrderGoodsModel;
+use app\common\model\User as UserModel;
+use app\common\model\OrderGoodsExpress;
+use app\common\model\Region;
+use app\common\model\Category;
+use think\Config;
+
 use think\Db;
 
 /**
@@ -15,14 +20,24 @@ use think\Db;
 class Order extends AdminBase
 {
     protected $orderModel = null;
+    protected $userModel = null;
     protected $page_size = 20;
+    protected $sid = 0;
+    protected $order_goods_model;
+    protected $order_goods_express;
+    protected $category_model;
+
     protected function _initialize()
     {
         parent::_initialize();
         $this->orderModel = new OrderModel();
+        $this->userModel  = new UserModel();
+        $this->order_goods_model  = new OrderGoodsModel();
+        $this->order_goods_express  = new OrderGoodsExpress();
+        $this->category_model  = new Category();
 
-
-
+        //获取商家信息
+        $sid = $this->shop['id'];
     }
 
     /**
@@ -30,108 +45,444 @@ class Order extends AdminBase
      */
     public function index()
     {
-        if (request()->isAjax()) {
-            $page_index = request()->post('page_index', 1);
-            $start_date = request()->post('start_date') == "" ? 0 : getTimeTurnTimeStamp(request()->post('start_date'));
-            $end_date = request()->post('end_date') == "" ? 0 : getTimeTurnTimeStamp(request()->post('end_date'));
-            $user_name = request()->post('user_name', '');
-            $order_no = request()->post('order_no', '');
-            $order_status = request()->post('order_status', '');
-            $receiver_mobile = request()->post('receiver_mobile', '');
-            $payment_type = request()->post('payment_type', 1);
-            $condition['order_type'] = 1; // 订单类型
-            $condition['is_deleted'] = 0; // 未删除订单
-            if ($start_date != 0 && $end_date != 0) {
+            //初始化数据
+            $condition = [];
+            $page = 1;
+            $order_no = $user_name = $start_time = $end_time = $order_from = $order_type = $order_status = $shop_id ='';
+            $params = $this->request->param();
+
+            extract($params);
+            if($start_time!=''){
+                $start_time = strtotime($start_time);
+            }
+
+            if($end_time != ''){
+                $end_time = strtotime($end_time);
+            }
+            //商家ID
+            if($shop_id !=''){
+                $shop_id = $shop_id+0;
+                $condition['shop_id'] = $this->shop_id;
+            }
+
+            //时间查询
+            if ($start_time != 0 && $end_time != 0) {
                 $condition["create_time"] = [
                     [
                         ">",
-                        $start_date
+                        $start_time
                     ],
                     [
                         "<",
-                        $end_date
+                        $end_time
                     ]
                 ];
-            } elseif ($start_date != 0 && $end_date == 0) {
+            } elseif ($start_time != 0 && $end_time == 0) {
                 $condition["create_time"] = [
                     [
                         ">",
-                        $start_date
+                        $start_time
                     ]
                 ];
-            } elseif ($start_date == 0 && $end_date != 0) {
+            } elseif ($start_time == 0 && $end_time != 0) {
                 $condition["create_time"] = [
                     [
                         "<",
-                        $end_date
+                        $end_time
                     ]
                 ];
             }
-            if ($order_status != '') {
-                // $order_status 1 待发货
-                if ($order_status == 1) {
-                    // 订单状态为待发货实际为已经支付未完成还未发货的订单
-                    $condition['shipping_status'] = 0; // 0 待发货
-                    $condition['pay_status'] = 2; // 2 已支付
-                    $condition['order_status'] = array(
-                        'neq',
-                        4
-                    ); // 4 已完成
-                    $condition['order_status'] = array(
-                        'neq',
-                        5
-                    ); // 5 关闭订单
-                } else
-                    $condition['order_status'] = $order_status;
-            }
-            if (! empty($payment_type)) {
-                $condition['payment_type'] = $payment_type;
-            }
-            if (! empty($user_name)) {
-                $condition['receiver_name'] = $user_name;
-            }
-            if (! empty($order_no)) {
+            //订单号条件
+            if( !empty($order_no) ){
                 $condition['order_no'] = $order_no;
             }
-            if (! empty($receiver_mobile)) {
-                $condition['receiver_mobile'] = $receiver_mobile;
+            //用户昵称
+            if( !empty($user_name) ){
+                $condition['user_name'] = ['like','%'.$user_name.'%'];
             }
-            $condition['shop_id'] = $this->instance_id;
-            $order_service = $this->orderModel;
-            $list = $order_service->getOrderList($page_index, $this->page_size, $condition, 'create_time desc');
-            return $list;
-        } else {
-            $param = $this->request->param();
-            $status = request()->get('status', '');
-            $all_status = OrderStatus::getOrderCommonStatus();
-            $child_menu_list = array();
-            $child_menu_list[] = array(
-                'url' => "Order/orderList",
-                'menu_name' => '全部',
-                "active" => $status == '' ? 1 : 0
-            );
-            foreach ($all_status as $k => $v) {
-                // 针对发货与提货状态名称进行特殊修改
-                /*
-                 * if($v['status_id'] == 1)
-                 * {
-                 * $status_name = '待发货/待提货';
-                 * }elseif($v['status_id'] == 3){
-                 * $status_name = '已收货/已提货';
-                 * }else{
-                 * $status_name = $v['status_name'];
-                 * }
-                 */
-                $child_menu_list[] = array(
-                    'url' => "order/orderlist?status=" . $v['status_id'],
-                    'menu_name' => $v['status_name'],
-                    "active" => $status == $v['status_id'] ? 1 : 0
-                );
+
+            //订单来源
+            if( $order_from != '' ){
+                $order_from = $order_from +0;
+                $condition['order_from'] = $order_from;
             }
-            // 获取物流公司
-            $express = new ExpressService();
-            $expressList = $express->select();
-            return $this->fetch('index', ['expressList' => $expressList,'child_menu_list'=>$child_menu_list,'keyword'=>1,'status'=>$status]);
+
+            //订单状态
+            if( $order_status != ''){
+                $order_status = $order_status +0;
+
+                $condition['o.order_status'] = $order_status;
+            }
+            //订单类型
+            if( $order_type != '' ){
+                $order_type = $order_type +0;
+                $condition['o.order_type'] = $order_type;
+            }
+
+            //根据条件获取订单数据
+            $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'create_time desc');
+            $order_list = $list->toArray();
+
+            foreach ( $order_list['data'] as &$v ){
+                $orderConfig = Config::get('order');
+                $v['status'] = $v['order_status'];//订单状态
+                $v['type'] = $v['order_type'];//订单类型
+                //判断是积分
+                if( $v['order_type'] == 2 ){
+                    $v['order_money'] = floor($v['order_money']);
+                }
+
+                $v['order_status'] = $orderConfig['status'][$v['order_status']];
+
+                $v['create_time'] = date('Y-m-d H:i:s',$v['create_time']);
+                $v['order_type'] = $orderConfig['type'][$v['order_type']];//订单类型
+                $v['order_from'] = $orderConfig['from'][$v['order_from']];//订单来源
+            }
+
+            if($start_time != ''){
+                $start_time = date('Y-m-d H:i:s',$start_time);
+            }
+            if( $end_time != ''){
+                $end_time   = date('Y-m-d H:i:s',$end_time);
+            }
+            return $this->fetch('index', [
+                'list' => $list,
+                'order_list'=>$order_list['data'],
+                'order_no'=>$order_no,
+                'start_time'=>$start_time,
+                'end_time'=>$end_time,
+                'user_name'=>$user_name,
+                'order_from'=>$order_from,
+                'order_type'=>$order_type,
+                'order_status'=>$order_status,
+                'sid'=>$this->sid,
+                'shop_id'=>$shop_id
+            ]);
+    }
+
+    /**
+     * 添加备注
+     */
+    public function addMsg( $id ){
+        $msg = $this->request->post('msg');
+        $row = Db::name('order')->where(['id'=>$id])->update(['seller_memo'=>$msg]);
+        if( $row ){
+            $this->success('备注成功');
+        }else{
+            $this->error('操作失败');
         }
-    } 
+    }
+
+    /**
+     * 获取订单详情
+     * @return array
+     */
+    public function detail( $id = -1 ){
+        if( empty($id)|| $id == 0 ){
+            $this->error('错误的订单~');
+        }
+        $orderConfig = Config::get('order');
+        //订单详情
+        $orderRow = $this->orderModel->getOrderDetail( $id);
+        $orderInfo = [
+            'order_no'     => $orderRow['order_no'],
+            'order_from'   => $orderRow['order_from'],
+            'order_status' => $orderRow['order_status'],
+            'order_type'   => $orderRow['order_type'],
+            'create_time'  => date('Y-m-d H:i:s',$orderRow['create_time']),
+            'sign_time'    => $orderRow['sign_time']!=0?date('Y-m-d H:i:s',$orderRow['sign_time']):0,//签收时间
+            'consign_time' => $orderRow['consign_time']!=0?date('Y-m-d H:i:s',$orderRow['consign_time']):0,//买家发货时间
+            'finish_time'  => $orderRow['finish_time']!=0?date('Y-m-d H:i:s',$orderRow['finish_time']):0,//订单完成时间
+            'type' => $orderRow['type'],//类型
+            'shop_name' => $orderRow['shop_name'],//类型
+            'status' => $orderRow['status'],//状态
+            'from' => $orderRow['from'],//来源
+            'goods_money' => $orderRow['type'] == 2 ?floor($orderRow['goods_money']):$orderRow['goods_money'],//订单商品价格
+            'order_money' => $orderRow['type'] == 2 ?floor($orderRow['order_money']):$orderRow['order_money'],//订单价格
+        ];
+
+        //用户信息
+        $userRow = $this->userModel->getInfo($orderRow['buyer_id'],'id,nickname,portrait,rank_id,is_vip,mobile')->toArray();
+        $userInfo = [
+            'id' => $userRow['id'],
+            'name' => $userRow['nickname'],
+            'portrait' => $userRow['portrait'],
+            'is_vip' => $userRow['is_vip'],
+            'rank_id' => $userRow['rank_id'],
+            'mobile' => $userRow['mobile'],
+        ];
+
+        //收货地址
+        $addressRow['province'] = Region::getRegionName($orderRow['receiver_province']);//省
+        $addressRow['city'] = Region::getRegionName($orderRow['receiver_province']);//市
+        $addressRow['district'] = Region::getRegionName($orderRow['receiver_province']);//区
+        $receiver = [
+            'name'=>$orderRow['receiver_name'],
+            'mobile'=>$orderRow['receiver_mobile'],
+            'address'=>$addressRow['province'].' '.$addressRow['city'].' '.$addressRow['district'].$orderRow['receiver_address'],
+        ];
+        //订单商品详情
+        $goodsField = 'o.goods_name,o.goods_id,o.goods_picture,o.goods_money,o.num,o.price,g.cid,g.id,o.goods_id';
+        $goodsList = $this->order_goods_model->alias('o')->join('goods g','g.id=o.goods_id','LEFT')->field($goodsField)->where(['order_id'=>$orderRow['id']])->select()->toArray();
+        //查询商品对应分类
+        foreach ($goodsList as &$v){
+            $category= $this->category_model->where(['id'=>$v['cid']])->find();
+            $v['category']  = $category['name'];
+        }
+        //备注
+        $note = [
+            'buy'=>$orderRow['buyer_message'],//买家留言
+            'sell'=>$orderRow['seller_memo'],//买家备注
+            'cancel'=>$orderRow['cancel_note'],//买家备注
+        ];
+
+        //快递信息
+        $expressRow = $this->order_goods_express->where(['order_id'=>$orderRow['order_no']])->find();
+        $express = [
+            'express_name' => $expressRow['express_company'],
+            'express_no' => $expressRow['express_no'],
+            'express_dynamic' => []
+        ];
+        //订单信息
+        $order = [
+            'order_info' => $orderInfo,
+            'user_info'  => $userInfo,
+            'receiver'   => $receiver,
+            'goods_list' => $goodsList,
+            'note'       =>  $note,
+            'express'   =>  $express,
+        ];
+
+
+        return $this->fetch('detail',['order'=>$order]);
+    }
+
+    /**
+     * 发货页面
+     * @param $id
+     * @return mixed
+     */
+    public function deliver( $id ){
+        if( empty($id) ){
+            $this->error('参数错误');
+        }
+
+        $field = 'order_no,receiver_mobile,cancel_note,receiver_name,receiver_province,receiver_district,receiver_city,receiver_address';
+        $row = $this->orderModel->field($field)->where(['id'=>$id])->find()->toArray();
+        //收货地址
+        $addressRow['province'] = Region::getRegionName($row['receiver_province']);//省
+        $addressRow['city'] = Region::getRegionName($row['receiver_city']);//市
+        $addressRow['district'] = Region::getRegionName($row['receiver_district']);//区
+        $row['address'] = $addressRow['province'].' '.$addressRow['city'].' '.$addressRow['district'].$row['receiver_address'];
+        $row['goods_list'] = $this->order_goods_model->field('goods_id,goods_name,goods_picture')->where(['order_id'=>$id])->select()->toArray();
+
+        return $this->fetch('deliver',['order'=>$row,'id'=>$id]);
+    }
+
+    /**
+     *
+     */
+    public function deliverOption(){
+        if( $this->request->isPost()){
+            $params = $this->request->param();
+            $validate_result = $this->validate($params, 'Deliver');
+            if ($validate_result !== true) {
+                $this->error($validate_result);
+            } else {
+                $params['order_goods_id_array'] = trim($params['goods_list'], ',');
+                $params['shipping_time'] = strtotime($params['shipping_time']);
+                //添加发货信息
+                $row = $this->order_goods_express->allowField(true)->save($params);
+                //修改订单状态
+                $orderUpdateRow = $this->orderModel->where(['id'=>$params['order_id']])->update([
+                    'order_status'=>2,//订单状态
+                    'consign_time'=>$params['shipping_time'],//发货时间
+                    'shipping_company_name' => $params['express_company']
+                ]);
+                if( $row ){
+                    $this->success('发货成功');
+                }else{
+                    $this->success('网络异常');
+                }
+            }
+        }
+    }
+
+    /**
+     * 取消订单页面
+     * @param int $id
+     * @return mixed
+     */
+    public function cancel( $id = -1 ){
+        if( $id == -1 || empty( $id )){
+            $this->error('参数错误');
+        }
+        return $this->fetch('cancel',['id'=>$id]);
+    }
+
+    /**
+     * 取消订单并备注信息
+     * @param int $id
+     */
+    public function cancelOption( $id = -1 ){
+        $note = $this->request->post('note');
+
+        if( $id == -1 || empty($id )){
+            $this->error('错误参数');
+        }
+
+        if( empty($note) ){
+            $this->error('取消备注必须填写~');
+        }
+
+        $row = $this->orderModel->cancel( $id,$note );
+        if( empty($row) ) {
+            $this->error('网络异常');
+
+        }else{
+            $this->success('订单取消成功');
+        }
+    }
+
+    /**
+     * 退款
+     * @param $id
+     */
+    public function refund( $id ){
+        if( empty($row) ) {
+            $this->error('网络异常');
+
+        }else{
+            $this->success('订单取消成功');
+        }
+    }
+
+
+    public function refundList( ){
+        //初始化数据
+        $condition = [];
+        $page = 1;
+        $order_no = $user_name = $start_time = $end_time = $order_from = $order_type = $order_status = $shop_id ='';
+        $params = $this->request->param();
+
+        extract($params);
+        if($start_time!=''){
+            $start_time = strtotime($start_time);
+        }
+
+        if($end_time != ''){
+            $end_time = strtotime($end_time);
+        }
+        //商家ID
+        if($shop_id !=''){
+            $shop_id = $shop_id+0;
+            $condition['shop_id'] = $this->shop_id;
+        }
+
+        //时间查询
+        if ($start_time != 0 && $end_time != 0) {
+            $condition["create_time"] = [
+                [
+                    ">",
+                    $start_time
+                ],
+                [
+                    "<",
+                    $end_time
+                ]
+            ];
+        } elseif ($start_time != 0 && $end_time == 0) {
+            $condition["create_time"] = [
+                [
+                    ">",
+                    $start_time
+                ]
+            ];
+        } elseif ($start_time == 0 && $end_time != 0) {
+            $condition["create_time"] = [
+                [
+                    "<",
+                    $end_time
+                ]
+            ];
+        }
+        //订单号条件
+        if( !empty($order_no) ){
+            $condition['order_no'] = $order_no;
+        }
+        //用户昵称
+        if( !empty($user_name) ){
+            $condition['user_name'] = ['like','%'.$user_name.'%'];
+        }
+
+        //订单来源
+        if( $order_from != '' ){
+            $order_from = $order_from +0;
+            $condition['order_from'] = $order_from;
+        }
+
+        //订单状态
+        if( $order_status != ''){
+            $order_status = $order_status +0;
+            $condition['o.order_status'] = $order_status;
+        }
+        //订单类型
+        if( $order_type != '' ){
+            $order_type = $order_type +0;
+            $condition['o.order_type'] = $order_type;
+        }
+        $condition["o.order_status"] = [
+                "in",
+                '4,5,6'
+        ];
+        //根据条件获取订单数据
+        $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'create_time desc');
+        $order_list = $list->toArray();
+
+        foreach ( $order_list['data'] as &$v ){
+            $orderConfig = Config::get('order');
+            $v['status'] = $v['order_status'];//订单状态
+            $v['type'] = $v['order_type'];//订单类型
+            //判断是积分
+            if( $v['order_type'] == 2 ){
+                $v['order_money'] = floor($v['order_money']);
+            }
+
+            $v['order_status'] = $orderConfig['status'][$v['order_status']];
+
+            $v['create_time'] = date('Y-m-d H:i:s',$v['create_time']);
+            $v['order_type'] = $orderConfig['type'][$v['order_type']];//订单类型
+            $v['order_from'] = $orderConfig['from'][$v['order_from']];//订单来源
+        }
+
+        if($start_time != ''){
+            $start_time = date('Y-m-d H:i:s',$start_time);
+        }
+        if( $end_time != ''){
+            $end_time   = date('Y-m-d H:i:s',$end_time);
+        }
+
+        return $this->fetch('refund_list', [
+            'list' => $list,
+            'order_list'=>$order_list['data'],
+            'order_no'=>$order_no,
+            'start_time'=>$start_time,
+            'end_time'=>$end_time,
+            'user_name'=>$user_name,
+            'order_from'=>$order_from,
+            'order_type'=>$order_type,
+            'order_status'=>$order_status,
+            'sid'=>$this->sid,
+            'shop_id'=>$shop_id,
+            'controller'=>'refund'
+        ]);
+    }
+
+    /**
+     * 退款详情
+     */
+    public function refundDetail(){
+        $temp = 'refund_detail1';
+        return $this->fetch($temp);
+    }
 }

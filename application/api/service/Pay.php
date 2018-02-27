@@ -37,6 +37,10 @@ class Pay
         $this->orderID = $orderID;
     }
 
+    /**
+     * 下单
+     * @return array
+     */
     public function pay()
     {
         $this->checkOrderValid();
@@ -45,6 +49,25 @@ class Pay
 
         return $this->makeWxPreOrder($order['order_money']);
 
+    }
+
+    /**
+     * 退款
+     */
+    public function refund(){
+        $order = OrderModel::get($this->orderID);
+        return $this->makeWxRefundOrder($order);
+    }
+
+    //构建微信退款订单信息
+    private function makeWxRefundOrder( $order ){
+        $wxOrderData = new \WxPayUnifiedOrder();
+        $openid =
+        $wxOrderData->SetOut_trade_no($order['order_no']);//商户退款单号
+        $wxOrderData->SetTotal_fee($order['order_money']);//退款金额
+        $wxOrderData->SetTotal_fee($order['order_money']);//订单金额
+        $wxOrderData->SetOpenid($openid);
+        $refund = \WxPayApi::refund($wxOrderData);
     }
 
     // 构建微信支付订单信息

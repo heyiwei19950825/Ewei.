@@ -69,8 +69,8 @@ class Goods extends AdminBase
         if (!empty($keyword)) {
             $map['name'] = ['like', "%{$keyword}%"];
         }
-
         $this->where = array_merge($this->where,$map);
+
         $goods_list  = $this->goods_model->field($field)->where($this->where)->order(['sort' => 'DESC'])->paginate(15, false, ['page' => $page]);
         foreach ($goods_list as $key => &$value) {
             $value['shop'] = Db::name('shop')->field('shop_logo,shop_name')->find($value['sid']);
@@ -215,7 +215,6 @@ class Goods extends AdminBase
                 $this->error('没有权限修改或修改商品不存在~');
             }
             $validate_result = $this->validate($data, 'Goods');
-            var_dump($data);die;
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {

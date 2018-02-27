@@ -23,6 +23,7 @@ class AdminBase extends Controller
         parent::_initialize();
         $this->checkAuth();
         $this->getMenu();
+        $this->messageNum();
         $this->instance_id = Session::get('admin_id');
         $uid = $this->instance_id;
         $this->shop     = Db::name('shop')->where(['uid'=>$uid])->find();
@@ -88,4 +89,15 @@ class AdminBase extends Controller
 
         $this->assign('menu', $menu);
     }
+
+    /**
+     * 返回消息数量
+     */
+    public function messageNum(){
+        //反馈消息数量
+        $msgNum = Db::name('feed_back')->where(['msg_status'=>0])->count('id');
+        $this->assign('msgNum',$msgNum);
+    }
+
+
 }

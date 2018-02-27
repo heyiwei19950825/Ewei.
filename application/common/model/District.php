@@ -7,8 +7,6 @@
  */
 namespace app\common\model;
 
-use app\common\model\BaseModel;
-
 
 class District extends BaseModel {
 

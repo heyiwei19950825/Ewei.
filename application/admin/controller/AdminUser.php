@@ -6,7 +6,7 @@ use app\common\model\AuthGroup as AuthGroupModel;
 use app\common\model\AuthGroupAccess as AuthGroupAccessModel;
 use app\common\controller\AdminBase;
 use think\Config;
-use think\Db;
+
 
 /**
  * 管理员管理

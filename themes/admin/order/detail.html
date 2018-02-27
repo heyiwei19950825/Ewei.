@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>订单详情</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="__JS__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__CSS__/admin1.css" media="all">
+</head>
+
+<body>
+<div class="layui-tab-content">
+<fieldset class="layui-elem-field site-demo-button">
+    <legend>订单信息</legend>
+    <table class="layui-table layui-table-add" lay-skin="nob">
+        <tbody>
+        <tr>
+            <th width="100" class="pad">订单编号</th>
+            <td>{$order.order_info['order_no']}</td>
+        </tr>
+        <tr>
+            <th width="100" class="pad">订单商品价格</th>
+            {if condition="$order.order_info.type == 2"}
+            <td style="color:#FF572">{$order.order_info['goods_money']} 积分</td>
+            {else}
+            <td class="price">{$order.order_info['goods_money']}</td>
+            {/if}
+        </tr>
+        <tr>
+            <th width="100" class="pad">订单最终价格</th>
+            {if condition="$order.order_info.type == 2"}
+            <td style="color:#FF572">{$order.order_info['order_money']} 积分</td>
+            {else}
+            <td class="price">{$order.order_info['order_money']}</td>
+            {/if}
+        </tr>
+        <tr>
+            <th class="pad">订单类型</th>
+            <td>{$order.order_info.order_type}</td>
+        </tr>
+        <tr>
+            <th class="pad">订单状态</th>
+            <td style="color:red">{$order.order_info.order_status}</td>
+        </tr>
+        <tr>
+            <th class="pad">交易时间</th>
+            <td>{$order.order_info.create_time}</td>
+        </tr>
+        {if condition='$order.order_info.status == 2 && $order.order_info.consign_time != 0' }
+            <tr>
+                <th class="pad">发货人</th>
+                <td>{$order.order_info.shop_name}</td>
+            </tr>
+            <tr>
+                <th class="pad">发货时间</th>
+                <td>{$order.order_info.consign_time}</td>
+            </tr>
+        {/if}
+        {if condition='$order.order_info.status == 3'}
+            <tr>
+                <th class="pad">签收时间</th>
+                <td>{$order.order_info.sign_time}</td>
+            </tr>
+        {/if}
+        {if condition='$order.order_info.status == 7'}
+        <tr>
+            <th class="pad">完成时间</th>
+            <td>{$order.order_info.finish_time}</td>
+        </tr>
+        {/if}
+        </tbody>
+    </table>
+</fieldset>
+
+<fieldset class="layui-elem-field site-demo-button">
+    <legend>会员信息</legend>
+    <table class="layui-table layui-table-add" lay-skin="nob">
+        <tbody>
+        <tr>
+            <th width="100" class="pad">会员ID</th>
+            <td>{$order.user_info.id}</td>
+        </tr>
+        <tr>
+            <th class="pad">会员姓名</th>
+            <td>{$order.user_info.name}</td>
+        </tr>
+        {if condition="$order.user_info.mobile != ''"}
+        <tr>
+            <th class="pad">手机号码</th>
+            <td>$order.user_info.mobile}</td>
+        </tr>
+        {/if}
+        </tbody>
+    </table>
+</fieldset>
+
+<fieldset class="layui-elem-field site-demo-button">
+    <legend>收货地址</legend>
+    <table class="layui-table layui-table-add" lay-skin="nob">
+        <tbody>
+        <tr>
+            <th width="100" class="pad">收货人</th>
+            <td>{$order.receiver.name}</td>
+        </tr>
+        <tr>
+            <th class="pad">手机号码</th>
+            <td>{$order.receiver.mobile}</td>
+        </tr>
+        <tr>
+            <th class="pad">收货地址</th>
+            <td>{$order.receiver.address}</td>
+        </tr>
+        </tbody>
+    </table>
+</fieldset>
+
+<fieldset class="layui-elem-field layui-field-title mtb10">
+    <legend>商品信息</legend>
+</fieldset>
+<table class="layui-table" lay-skin="line">
+    <thead>
+    <tr>
+        <th colspan="2">商品名称</th>
+        <th>所属分类</th>
+        <th>数量</th>
+        <th>商品单价</th>
+        <th>商品总价</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach name='$order.goods_list' item='vo'}
+    <tr>
+        <!-- 点击进入前台对应商品页面 -->
+        <td width="66" class="a3"><a href="" target="blank"><img class="img-cp" src="{$vo.goods_picture}" alt=""></a></td>
+        <td width="300" class="a3">
+            <a href=""><div>{$vo.goods_name}</div>
+                <!--<div class="gray">红色</div>-->
+            </a>
+        </td>
+        <td>{$vo.category}</td>
+        <td>{$vo.num}</td>
+        <td><span class="price">{$vo.price}</span></td>
+        <td><span class="price">{$vo.goods_money}</span></td>
+    </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+<fieldset class="layui-elem-field site-demo-button">
+    <legend>其它信息</legend>
+    <table class="layui-table layui-table-add" lay-skin="nob">
+        <tbody>
+        {if condition="$order.note.buy!=''"}
+            <tr>
+                <th width="100" class="pad">买家备注</th>
+                <td>{$order.note.buy}</td>
+            </tr>
+        {/if}
+        {if condition="$order.note.sell!=''"}
+            <tr>
+                <th width="100" class="pad">卖家备注</th>
+                <td>{$order.note.sell}</td>
+            </tr>
+        {/if}
+        {if condition="$order.note.cancel!=''"}
+            <tr>
+                <th width="100" class="pad">取消备注</th>
+                <td>{$order.note.cancel}</td>
+            </tr>
+        {/if}
+        </tbody>
+    </table>
+</fieldset>
+{if condition="$order.order_info.status == 2"}
+    <fieldset class="layui-elem-field site-demo-button">
+        <legend>快递信息</legend>
+        <table class="layui-table layui-table-add" lay-skin="nob">
+            <tbody>
+            <tr>
+                <th width="100" class="pad">快递公司</th>
+                <td>{$order.express.express_name}</td>
+            </tr>
+            <tr>
+                <th class="pad">快递单号</th>
+                <td>{$order.express.express_no}</td>
+            </tr>
+            <!--<tr>-->
+                <!--<th class="pad">快递动态</th>-->
+                <!--<td>-->
+                    <!--<p>[深圳市] 快件已在 深圳新宝城 签收 签收照片,感谢您使用中通快递，期待再次为您服务! 2016-09-18 10:55:30</p>-->
+                    <!--<p>[深圳市] 深圳新宝城 的 苏顺荣[18925277941] 正在派件 2016-09-18 08:18:45</p>-->
+                <!--</td>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+    </fieldset>
+{/if}
+</div>
+</body>
+</html>

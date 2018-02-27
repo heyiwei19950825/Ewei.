@@ -66,6 +66,10 @@ return [
 	        // 验证成功后是否重置
 	        'reset'    => true
 	    ],
+        // 是否开启路由
+        'url_route_on'           => true,
+        // 是否强制使用路由
+        'url_route_must'         => false,
 
 
 	    // +----------------------------------------------------------------------
@@ -122,9 +126,7 @@ return [
 	        'type' => 'Html',
 	    ],
 	    //开启自动写入时间
-	    'auto_timestamp' => true,
-	    'auto_timestamp' => 'datetime',
-
+//	    'auto_timestamp' => true,
 	]
 
 ];

@@ -3,6 +3,7 @@
 namespace app\api\model;
 
 use think\Model;
+use think\Config;
 use think\Db;
 
 class Order extends BaseModel
@@ -35,16 +36,26 @@ class Order extends BaseModel
 
     }
 
-    public static function getSummaryByUser( $uid,$page,$ize){
+    public static function getSummaryByUser( $uid,$type,$page,$ize){
         $row = [];
-        $note = [1=>'未支付',2=>'已支付'];
-        $data = Db::name('order')->where(['buyer_id'=>$uid])->order('create_time desc,order_status asc')->select();
+        $map['buyer_id'] = $uid;
+        if( $type != '9999' ){//不是全部查询
+            if( $type == '4' ){//退换货
+                $map['order_status'] = ['in','4,5,6'];
+            }else{
+                $map['order_status'] = $type;
+            }
+        }
+
+        $data = Db::name('order')->where($map)->order('create_time desc,order_status asc')->select();
+        $orderConfig = Config::get('order')['status'];
+
         foreach ( $data as$key=> $item){
             $row[$key]['id'] = $item['id'];
             $row[$key]['order_sn'] = $item['order_no'];
-            $row[$key]['order_status_text'] = $note[$item['order_status']];
+            $row[$key]['order_status_text'] = $orderConfig[$item['order_status']];
             $row[$key]['actual_price'] = $item['order_money'];
-            $row[$key]['handleOption'] = $note[$item['order_status']] == 1 ? true:false;
+            $row[$key]['handleOption'] = $item['order_status'] == 1 ? true:false;
             $row[$key]['order_type'] = $item['order_type'];
             $row[$key]['point'] = $item['point'];
             $row[$key]['goodsList'] = Db::name('order_product')->where(['order_id'=>$item['id']])->field('num,goods_name,goods_picture')->select()->toArray();

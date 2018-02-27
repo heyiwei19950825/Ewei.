@@ -74,6 +74,21 @@ class Promotion extends AdminBase
     }
 
     /**
+     * 优惠券领取记录
+     */
+    public function couponGetList( $id ){
+        $field = 'u.nickname,u.portrait,c.coupon_code,c.fetch_time,c.state';
+        $stateNote = ['未使用', '已使用','已过期'];
+        $couponList = $this->coupon_model->alias('c')->field($field)->join('user u','c.uid = u.id','LEFT')->where(['coupon_type_id'=>$id])->order('fetch_time desc')->select()->toArray();
+        if( !empty($couponList)){
+            foreach ( $couponList as &$v){
+                $v['state'] = $stateNote[$v['state']];
+            }
+        }
+        return $this->fetch('coupon_get_list',['coupon_list'=>$couponList]);
+
+    }
+    /**
      * 添加优惠券类型
      */
     public function addCoupon()
@@ -142,6 +157,10 @@ class Promotion extends AdminBase
         }
     }
 
+    /**
+     * 修改优惠券信息
+     * @return mixed
+     */
     public function updateCoupon( )
     {
         if(request()->isPost()){
@@ -234,8 +253,6 @@ class Promotion extends AdminBase
 
     /**
      * 功能：积分管理
-     * 创建：左骐羽
-     * 时间：2016年12月8日15:02:16
      */
     public function pointConfig()
     {

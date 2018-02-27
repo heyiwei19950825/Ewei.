@@ -189,6 +189,8 @@ class Cart extends BaseController
         $nowTime = date('Y-m-d',time());
         $couponId = $this->request->param('couponId');//使用的优惠券ID
         $addressId = $this->request->param('addressId');//收货地址
+        $goodsId = $this->request->param('goodsId');//商品ID
+        $num = $this->request->param('num');//商品ID
         $userInfo = Db::name('user')->alias('u')->join('user_rank r','u.rank_id = r.rank_id','LEFT')->where(['u.id'=>$this->uid])->find();//用户信息
 
 
@@ -197,8 +199,22 @@ class Cart extends BaseController
 
 
         //购物车商品列表
-        $cartList = CartModel::getCartAll($this->uid,true);
-
+        if($goodsId == 0 ){
+            $cartList = CartModel::getCartAll($this->uid,true);
+        }else{
+            $field = '';
+            $goods = Goods::getProductDetail($goodsId,$field);
+            $goods['num'] = $num;
+            $goods['price'] = $goods['sp_price'];
+            $goods['goods_id'] = $goods['id'];
+            $goods['goods_name'] = $goods['name'];
+            $goods['thumb'] = self::prefixDomain($goods['thumb']);
+            $goods['goods_picture'] = $goods['thumb'];
+//            $goods['goods_picture'] = $goods['shop_name'];
+            $goods['shop_id'] = $goods['sid'];
+            $cartList[] = $goods;
+        }
+//    var_dump($cartList);die;
         //收货地址
         $userAddressModel = new UserAddress();
         if( $addressId == 0){
@@ -265,7 +281,6 @@ class Cart extends BaseController
             'actualPrice'=>round($actualPrice/100,2),//最后的价格
             'freightPrice' => round($freightPrice/100,2),//运费
             'couponPrice' => $couponPrice/100,//优惠券价格
-
         ];
 
 

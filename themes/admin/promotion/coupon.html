@@ -36,7 +36,7 @@
                             <th>有效期开始时间</th>
                             <th>有效期结束时间</th>
                             <th>显示状态</th>
-                            <th style="width: 150px;">操作</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -51,6 +51,7 @@
                             <td>{$vo.end_time)|date("Y-m-d H:m:s",}</td>
                             <td>{php}echo $vo['is_show']==1 ? '显示' : '不显示';{/php}</td>
                             <td>
+                                <a href="javascript:" class="layui-btn layui-btn-mini coupon-list" data-id="{$vo.coupon_type_id}">领取记录</a>
                                 <a href="{:url('admin/Promotion/updateCoupon',['id'=>$vo['coupon_type_id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
                                 <a href="{:url('admin/Promotion/delcoupon',['id'=>$vo['coupon_type_id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
                             </td>
@@ -65,4 +66,17 @@
         </div>
     </div>
 </div>
+<script>
+    //领取记录
+    $(document).on("click", ".coupon-list", function () {
+        var id = $(this).attr('data-id');
+        var url = 'http://'+window.location.host+"/admin/promotion/couponGetList?id="+id;
+        layer.open({
+            type: 2
+            , area: ['50%', '90%']
+            , title: "领取记录"
+            , content: url
+        });
+    });
+</script>
 {/block}

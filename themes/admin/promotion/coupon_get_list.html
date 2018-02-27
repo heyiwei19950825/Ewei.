@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>坤飞科技</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="__JS__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__JS__/layui/global.css" media="all">
+    <link rel="stylesheet" href="__CSS__/font-awesome.min.css">
+    <!--CSS引用-->
+    {block name="css"}{/block}
+    <link rel="stylesheet" href="__CSS__/admin.css">
+
+    <!--[if lt IE 9]>
+    <script src="__CSS__/html5shiv.min.js"></script>
+    <script src="__CSS__/respond.min.js"></script>
+    <![endif]-->
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/layui/lay/dest/layui.all.js"></script>
+    <script src="__JS__/admin.js"></script>
+
+</head>
+<body>
+<style type="text/css">
+    .coupon-table{
+        margin: 20px;
+    }
+    .portrait{
+        width:50px; border-radius:25px;
+    }
+    .nickname{
+        margin-left: 20px;
+    }
+</style>
+
+<div class="layui-body" style="left:50% ;left:0">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-row layui-col-space15">
+            <table class="layui-table coupon-table">
+                <thead>
+                <tr>
+                    <th>领取人</th>
+                    <th>优惠券码</th>
+                    <th>领取时间</th>
+                    <th>使用状态</th>
+                </tr>
+                </thead>
+            {foreach name='coupon_list' item='vo'}
+                    <tr>
+                        <td><img class='portrait' src="{$vo.portrait}" alt=""> <span class="nickname">{$vo.nickname}</span> </td>
+                        <td>{$vo.coupon_code}</td>
+                        <td>{$vo.fetch_time}</td>
+                        <td>{$vo.state}</td>
+                    </tr>
+            {/foreach}
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        //点击查看
+        $('.use-msg').on('click',function(){
+            var id = $(this).attr('data-id');
+            $.post("{:url('admin/message/dispose')}",{id:id},function( e ){
+                if(e.code == 1 ){
+                    setTimeout(function () {
+                        location.href = location.pathname;
+                    }, 1000);
+                }
+                layer.msg(e.msg);
+            })
+        })
+    })
+</script>
+</body>

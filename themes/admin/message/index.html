@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>坤飞科技</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="__JS__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__JS__/layui/global.css" media="all">
+    <link rel="stylesheet" href="__CSS__/font-awesome.min.css">
+    <!--CSS引用-->
+    {block name="css"}{/block}
+    <link rel="stylesheet" href="__CSS__/admin.css">
+
+    <!--[if lt IE 9]>
+    <script src="__CSS__/html5shiv.min.js"></script>
+    <script src="__CSS__/respond.min.js"></script>
+    <![endif]-->
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/layui/lay/dest/layui.all.js"></script>
+    <script src="__JS__/admin.js"></script>
+
+</head>
+<body>
+    <div class="layui-body" style="left:50% ;left:0">
+        <div class="layui-tab layui-tab-brief">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md6 fly-home-da">
+                        <div class="fly-panel">
+                            <h3 class="fly-panel-title">用户反馈</h3>
+                            <ul class="home-jieda">
+                                {foreach name='message' item='vo'}
+                                <li>
+                                    <p>
+                                        <span>{$vo['msg_time']}</span>
+                                        <span style="color:#BE201B">{$vo['msg_type']}</span><a href="javascript:" target="_blank">{$vo['user_name']}</a>说：
+                                    </p>
+                                    <div class="home-dacontent">
+                                      {$vo['msg_content']}
+                                        {if condition="$vo['msg_status']==0"}
+                                            <div style="float:right;" class="layui-btn layui-btn-sm use-msg" data-id="{$vo['id']}">未查看</div>
+                                        {else}
+                                            <div style="float:right;" class="layui-btn layui-btn-warm layui-btn-sm " data-id="{$vo['id']}">已查看</div>
+                                        {/if}
+                                    </div>
+                                </li>
+                                {/foreach}
+                                <!-- <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;"><span>没有回答任何问题</span></div> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            //点击查看
+            $('.use-msg').on('click',function(){
+                var id = $(this).attr('data-id');
+                $.post("{:url('admin/message/dispose')}",{id:id},function( e ){
+                   if(e.code == 1 ){
+                       setTimeout(function () {
+                           location.href = location.pathname;
+                       }, 1000);
+                   }
+
+                   layer.msg(e.msg);
+                })
+            })
+        })
+    </script>
+</body>

@@ -34,14 +34,15 @@ class BaseValidate extends Validate
         //必须设置contetn-type:application/json
         $request = Request::instance();
         $params = $request->param();
+
         $params['token'] = $request->header('Ewei-Token');
         if (!$this->check($params)) {
             $exception = new ParameterException(
                 [
                     // $this->error有一个问题，并不是一定返回数组，需要判断
-                    'errmsg' => is_array($this->error) ? implode(
+                    'msg' => is_array($this->error) ? implode(
                         ';', $this->error) : $this->error,
-                    'errno' => 401
+                    'code' => 200
                 ]);
             throw $exception;
         }

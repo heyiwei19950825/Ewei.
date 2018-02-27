@@ -2,7 +2,6 @@
 /*平台资金*/
 
 namespace app\common\model;
-use app\common\model\BaseModel;
 use think\Db;
 
 class Account extends BaseModel
