@@ -37,10 +37,10 @@
                             <td>{$vo.express_no}</td>
                             <td>{if condition='$vo.cost==0.00'}免运费{else}{$vo.cost}元{/if}</td>
                             <td>{$vo.phone}</td>
-                            <td>{if condition='$vo.is_enabled==1'}是{else}否{/if}</td>
-                            <td>{$vo.orders}</td>
-                            <td>{if condition='$vo.is_default==1'}开启{else}关闭{/if}</td>
-                            <td >
+                             <td>{if condition='$vo.is_default==1'}开启{else}关闭{/if}</td>
+                             <td>{$vo.orders}</td>
+                             <td>{if condition='$vo.is_enabled==1'}是{else}否{/if}</td>
+                             <td >
                                 <a href="{:url('admin/expressage/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
                                 <a href="{:url('admin/expressage/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
                             </td>

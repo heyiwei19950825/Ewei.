@@ -23,7 +23,7 @@
         <tr>
             <th width="100" class="pad">订单商品价格</th>
             {if condition="$order.order_info.type == 2"}
-            <td style="color:#FF572">{$order.order_info['goods_money']} 积分</td>
+            <td style="color:#FF572">{$order.order_info['goods_money']}</td>
             {else}
             <td class="price">{$order.order_info['goods_money']}</td>
             {/if}
@@ -131,19 +131,19 @@
     </thead>
     <tbody>
     {foreach name='$order.goods_list' item='vo'}
-    <tr>
-        <!-- 点击进入前台对应商品页面 -->
-        <td width="66" class="a3"><a href="" target="blank"><img class="img-cp" src="{$vo.goods_picture}" alt=""></a></td>
-        <td width="300" class="a3">
-            <a href=""><div>{$vo.goods_name}</div>
-                <!--<div class="gray">红色</div>-->
-            </a>
-        </td>
-        <td>{$vo.category}</td>
-        <td>{$vo.num}</td>
-        <td><span class="price">{$vo.price}</span></td>
-        <td><span class="price">{$vo.goods_money}</span></td>
-    </tr>
+        <tr>
+            <!-- 点击进入前台对应商品页面 -->
+            <td width="66" class="a3"><a href="" target="blank"><img class="img-cp" src="{$vo.goods_picture}" alt=""></a></td>
+            <td width="300" class="a3">
+                <a href=""><div>{$vo.goods_name}</div>
+                    <!--<div class="gray">红色</div>-->
+                </a>
+            </td>
+            <td>{$vo.category}</td>
+            <td>{$vo.num}</td>
+            <td><span class="price">{$vo.price}</span></td>
+            <td><span class="price">{$vo.goods_money}</span></td>
+        </tr>
     {/foreach}
     </tbody>
 </table>
@@ -176,23 +176,33 @@
 {if condition="$order.order_info.status == 2"}
     <fieldset class="layui-elem-field site-demo-button">
         <legend>快递信息</legend>
-        <table class="layui-table layui-table-add" lay-skin="nob">
+        <table class="layui-table" lay-skin="line">
+                <thead>
+                    <tr>
+                        <th>包裹名称</th>
+                        <th>快递公司</th>
+                        <th>快递单号</th>
+                        <th>包裹商品</th>
+                        <!--<th class="pad">快递动态</th>-->
+                    </tr>
+                </thead>
             <tbody>
-            <tr>
-                <th width="100" class="pad">快递公司</th>
-                <td>{$order.express.express_name}</td>
-            </tr>
-            <tr>
-                <th class="pad">快递单号</th>
-                <td>{$order.express.express_no}</td>
-            </tr>
-            <!--<tr>-->
-                <!--<th class="pad">快递动态</th>-->
-                <!--<td>-->
-                    <!--<p>[深圳市] 快件已在 深圳新宝城 签收 签收照片,感谢您使用中通快递，期待再次为您服务! 2016-09-18 10:55:30</p>-->
-                    <!--<p>[深圳市] 深圳新宝城 的 苏顺荣[18925277941] 正在派件 2016-09-18 08:18:45</p>-->
-                <!--</td>-->
-            <!--</tr>-->
+                <tr>
+                    {foreach name="$order.express" item="vo1"}
+                        <td>{$vo1.express_name}</td>
+                        <td>{$vo1.express_company}</td>
+                        <td>{$vo1.express_no}</td>
+                        <td>
+                            {foreach name="$vo1.goods_list" item="goods_vo"}
+                                <a href="" target="blank"><img class="img-cp" src="{$goods_vo.goods_picture}" alt=""></a>
+                            {/foreach}
+                        </td>
+                        <!--<td>-->
+                        <!--<p>[深圳市] 快件已在 深圳新宝城 签收 签收照片,感谢您使用中通快递，期待再次为您服务! 2016-09-18 10:55:30</p>-->
+                        <!--<p>[深圳市] 深圳新宝城 的 苏顺荣[18925277941] 正在派件 2016-09-18 08:18:45</p>-->
+                        <!--</td>-->
+                    {/foreach}
+                </tr>
             </tbody>
         </table>
     </fieldset>

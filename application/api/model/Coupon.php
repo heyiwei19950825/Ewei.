@@ -172,8 +172,8 @@ class Coupon extends BaseModel
             ->where($map)
             ->select()->toArray();
         foreach ($row as &$item) {
-            $item['start_time'] = date('Y-m-d H:i:s',$item['start_time']);
-            $item['end_time']   = date('Y-m-d H:i:s',$item['end_time']);
+            $item['start_time'] = date('Y-m-d',$item['start_time']);
+            $item['end_time']   = date('Y-m-d',$item['end_time']);
             $item['range_type']   = $item['range_type']==0?'部分商品可用':'全商品可用';
         }
         return $row;

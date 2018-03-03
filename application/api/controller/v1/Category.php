@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by 七月.
- * Author: 七月
- * 微信公号：小楼昨夜又秋风
- * 知乎ID: 七月在夏天
+ * Created by Ewei..
+ * Author: Ewei.
+ * 微信公号：眉山同城
+
  * Date: 2017/2/19
  * Time: 11:28
  */
@@ -95,12 +95,18 @@ class Category extends BaseController
     public function getCategoryByCId( $id = -1 ){
         (new IDMustBePositiveInt())->goCheck();
         $field = 'id,name,alias,pid';
+        $categoryInfo = [];
         //查询当前分类
-        $categoryInfo = CategoryModel::getCategory( $id, $field );
-        if( !$categoryInfo ){
-            throw new CategoryException();
+        if( $id != 9999 ){
+            $categoryInfo = CategoryModel::getCategory( $id, $field );
+            if( !$categoryInfo ){
+                throw new CategoryException();
+            }
+            $categoryInfo = $categoryInfo->toArray();
+        }else{
+            $categoryInfo['pid'] = 0;
         }
-        $categoryInfo = $categoryInfo->toArray();
+
 
         //查询当前分类下的所有子分类
         $brotherCategory = CategoryModel::childCategory($categoryInfo['pid'],$field);

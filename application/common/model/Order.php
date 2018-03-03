@@ -22,11 +22,13 @@ class Order extends BaseModel
      * @param $desc
      * @return array
      */
-    public function getOrderList($page,$size,$condition,$desc){
-        $field = 'o.id,o.seller_memo,o.order_no,o.shop_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name';
-        $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id')->where($condition)->order($desc)->group('o.order_no')->paginate($size, false, ['page' => $page]);
-
-//        echo  Db::name('order')->getLastSql();die;
+    public function getOrderList($page,$size,$condition,$desc,$isPage = true){
+        $field = 'o.id,o.seller_memo,o.order_no,o.shop_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name,point';
+        if( $isPage ){
+            $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id')->where($condition)->order($desc)->group('o.order_no')->paginate($size, false, ['page' => $page]);
+        }else{
+            $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id')->where($condition)->order($desc)->group('o.order_no')->limit(1,$size)->select();
+        }
 
         return $order_list;
     }
@@ -36,7 +38,7 @@ class Order extends BaseModel
      * @return [type] [description]
      */
     public static function accountCount($time = '1 DAY'){
-        $amountSql =  'SELECT COUNT(goods_money) as money FROM ewei_order WHERE DATE_SUB(CURDATE(), INTERVAL '.$time.') <= DATE(create_time)';
+        $amountSql =  'SELECT COUNT(order_momey) as money FROM ewei_order WHERE DATE_SUB(CURDATE(), INTERVAL '.$time.') <= DATE(create_time)';
 
         $todayAmount = Db::query($amountSql);
 
@@ -65,16 +67,13 @@ class Order extends BaseModel
      * 统计有效订单总数
      * @return [type] [description]
      */
-    public static function getGoodsCount( $state = 0,$type= 'id'){
-        $where = '';
-        if($state != 0){
-            $where = 'WHERE order_status = '.$state;
-        }
-        $sql = ' SELECT COUNT('.$type.') as number FROM ewei_order_product'.$where;
+    public static function getOrderCount( ){
+
+        $sql = 'SELECT order_status,COUNT(id) AS number FROM ewei_order WHERE 1 = 1 GROUP BY order_status';
         
         $row = Db::query($sql);
 
-        return $row[0]['number'];
+        return $row;
     }
 
 

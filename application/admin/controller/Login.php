@@ -46,7 +46,7 @@ class Login extends Controller
                         Db::name('admin_user')->where(['id'=>$admin_user['id']])->update(
                             [
                                 'last_login_time' => date('Y-m-d H:i:s', time()),
-                                'last_login_ip'   => $this->request->ip()
+//                                'last_login_ip'   => $this->request->ip()
                             ]
                         );
                         $this->success('登录成功', 'admin/index/index');

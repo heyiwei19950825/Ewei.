@@ -12,7 +12,8 @@ class Helper {
     ////////////////////////////////
     //将秒数转换为时间（年、天、小时、分、秒）
     //
-    static function Sec2Time($time){  
+    static function Sec2Time($time){
+        $time = is_int($time)?$time:strtotime($time);
 	    if(is_numeric($time)){  
 	    $value = array(  
 	      "years" => 0, "days" => 0, "hours" => 0,  
@@ -82,7 +83,7 @@ class Helper {
                     if ($dur < 86400) {
                         return floor($dur / 3600) . '小时前';
                     } else {
-                        if ($dur < 259200) {//3天内
+                        if ($dur < 99999999) {//3天内
                             return floor($dur / 86400) . '天前';
                         } else {
                             return $the_time;

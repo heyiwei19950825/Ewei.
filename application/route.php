@@ -78,7 +78,9 @@ Route::get('api/:version/address', 'api/:version.Address/getUserAddress');
 Route::post('api/:version/address/delete', 'api/:version.Address/deleteAddress');
 
 //Order
-Route::post('api/:version/order', 'api/:version.Order/placeOrder');
+Route::post('api/:version/order/place', 'api/:version.Order/placeOrder');
+Route::post('api/:version/order/updatestatus', 'api/:version.Order/updateStatus');
+Route::get('api/:version/order/delorder', 'api/:version.Order/delOrder');
 Route::get('api/:version/order/detail', 'api/:version.Order/getDetail');
 //Route::put('api/:version/order/delivery', 'api/:version.Order/delivery');
 
@@ -151,6 +153,11 @@ Route::get('api/:version/collective/detail', 'api/:version.Collective/getOne');
 
 //用户反馈
 Route::post('api/:version/feedBack/add', 'api/:version.FeedBack/add');
+
+//用户评论
+Route::post('api/:version/comment/post', 'api/:version.Comment/add');
+
+
 
 
 Route::get('api/:version/getApi', 'api/:version.QueryLists/index');

@@ -13,11 +13,12 @@ use app\api\controller\BaseController;
 use app\api\model\Category;
 use app\api\model\Goods;
 use app\api\model\BannerItem;
+use app\api\model\Shop;
 use app\api\model\Theme;
 use app\api\model\Article;
 use app\api\model\Coupon;
 use app\api\model\GoodsCollective;
-
+use think\Config;
 
 class Index extends BaseController
 {
@@ -34,7 +35,7 @@ class Index extends BaseController
         foreach ( $channel as $key=>$item) {
             $categoryList[$key] = $item;
 
-            $categoryList[$key]['goodsList'] = Goods::getProductsByCategoryID($item['id'],false,'id,name,thumb,sp_price,prefix_title','','sort','asc',1,7);
+            $categoryList[$key]['goodsList'] = Goods::getProductsByCategoryID($item['id'],false,'id,name,thumb,sp_price,prefix_title,sp_o_price,sp_market','','sort','asc',1,6);
 
             $categoryList[$key]['goodsList'] = $categoryList[$key]['goodsList']->toArray();
             //添加图片域名
@@ -43,11 +44,13 @@ class Index extends BaseController
             }
         }
         //轮播图
-        $banner = BannerItem::getBannerList(1,'id,name,description,link,image',5)->toArray();
-
+        $banner = BannerItem::getBannerList(1,'id,name,description,link,image,actions,actions_id',5)->toArray();
         //处理Url和图片地址
         $banner = self::prefixDomainToArray('image',$banner);
         $banner = self::prefixDomainToArray('link',$banner);
+        foreach ($banner as &$v){
+            $v['actions'] = Config::get('hrefAction')[$v['actions']];
+        }
 
         //文章列表
         $articleList = Article::getTopArticle()->toArray();
@@ -70,6 +73,9 @@ class Index extends BaseController
         $collectiveList = GoodsCollective::getList(1,5)['data'];
         $collectiveList = self::prefixDomainToArray('thumb',$collectiveList);
 
+        //店铺信息[旗舰店信息]
+        $shopInfo = Shop::getShopInfoById(0);
+
         $data = [
             'channel'       => $channel,
             'banner'        => $banner,
@@ -79,7 +85,8 @@ class Index extends BaseController
             'newGoodsList'  => $recommendGoodsList,
             'topicList'     => $articleList,
             'couponList'    => $couponList,
-            'collectiveList'   => $collectiveList
+            'collectiveList'=> $collectiveList,
+            'shopInfo'      => $shopInfo
         ];
         $row = [
             'errno'     => 0,

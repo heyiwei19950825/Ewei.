@@ -113,19 +113,19 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">关联商品</label>
-                        <div data-method="setTop" class="layui-btn">选择</div>
-                        <input type="hidden" name="goods_ids" value=''>
-                    </div>
-                    <div class="layui-form-item">
-                    <label class="layui-form-label"></label>
-                         <ul class="fly-case-list goods-list">
-                           {foreach name ='$goods_list' item='vo'}
-                             <li data-id="123"><a class="fly-case-img" href="javascript:" target="_blank" ><img src="{$vo.thumb}" alt="{$vo.name}"><p class="">{$vo.name}</p><p style="padding-lfet:50px;">———</p><p style="color: #666;">{$vo.prefix_title}</p><div class="fly-case-info"><a href="javascript:" class="fly-case-user" target="_blank"><img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"></a><p class="layui-elip" style="font-size: 12px;"> ￥{$vo.sp_price}<span style="color: #666;"><s>{$vo.sp_o_price}</s></span></p> &nbsp;<p>{$vo.status}</p><div class="layui-btn  btn-click  layui-btn-primary goods-delete" data-id= "{$vo.id}" data-type="praise">删除</div></li>'
-                           {/foreach}
-                        </ul>
-                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">关联商品</label>-->
+                        <!--<div data-method="setTop" class="layui-btn">选择</div>-->
+                        <!--<input type="hidden" name="goods_ids" value=''>-->
+                    <!--</div>-->
+                    <!--<div class="layui-form-item">-->
+                    <!--<label class="layui-form-label"></label>-->
+                         <!--<ul class="fly-case-list goods-list">-->
+                           <!--{foreach name ='$goods_list' item='vo'}-->
+                             <!--<li data-id="123"><a class="fly-case-img" href="javascript:" target="_blank" ><img src="{$vo.thumb}" alt="{$vo.name}"><p class="">{$vo.name}</p><p style="padding-lfet:50px;">———</p><p style="color: #666;">{$vo.prefix_title}</p><div class="fly-case-info"><a href="javascript:" class="fly-case-user" target="_blank"><img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"></a><p class="layui-elip" style="font-size: 12px;"> ￥{$vo.sp_price}<span style="color: #666;"><s>{$vo.sp_o_price}</s></span></p> &nbsp;<p>{$vo.status}</p><div class="layui-btn  btn-click  layui-btn-primary goods-delete" data-id= "{$vo.id}" data-type="praise">删除</div></li>'-->
+                           <!--{/foreach}-->
+                        <!--</ul>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">状态</label>
                         <div class="layui-input-inline">

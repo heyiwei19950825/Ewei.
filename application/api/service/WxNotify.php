@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by 七月
- * Author: 七月
- * 微信公号: 小楼昨夜又秋风
- * 知乎ID: 七月在夏天
+ * Created by Ewei.
+ * Author: Ewei.
+ * 微信公号: 眉山同城
+
  * Date: 2017/2/28
  * Time: 18:12
  */
@@ -12,7 +12,8 @@ namespace app\api\service;
 
 
 use app\api\model\Order;
-use app\api\model\Product;
+use app\api\model\Goods;
+use app\api\model\User;
 use app\api\service\Order as OrderService;
 use app\lib\enum\OrderStatusEnum;
 use app\lib\order\OrderStatus;
@@ -20,6 +21,7 @@ use think\Db;
 use think\Exception;
 use think\Loader;
 use think\Log;
+use app\common\model\Shop;
 
 Loader::import('WxPay.WxPay', EXTEND_PATH, '.Api.php');
 
@@ -56,12 +58,16 @@ class WxNotify extends \WxPayNotify
             Db::startTrans();
             try {
                 $order = Order::where('order_no', '=', $orderNo)->lock(true)->find();
-                if ($order->order_status == 1) {
+                $this->updateOrderStatus($order->id, true);
+                if ($order->order_status == 0 ) {
                     $service = new OrderService();
                     $status = $service->checkOrderStock($order->id);
+                    Log::debug($status);
                     $status['pass'] = true;
                     if ($status['pass']) {
                         $this->updateOrderStatus($order->id, true);
+                        $this->updateShopBrief($data['total_fee'],$order);
+                        $this->updateUserIntegral($order->id);
                         $this->reduceStock($status);
                     } else {
                         $this->updateOrderStatus($order->id, false);
@@ -83,15 +89,33 @@ class WxNotify extends \WxPayNotify
     {
 //        $pIDs = array_keys($status['pStatus']);
         foreach ($status['pStatusArray'] as $singlePStatus) {
-            Product::where('id', '=', $singlePStatus['id'])
+            Goods::where('id', '=', $singlePStatus['id'])
                 ->setDec('sp_inventory', $singlePStatus['count']);
+            Goods::where('id', '=', $singlePStatus['id'])
+                ->setInc('sp_market', $singlePStatus['count']);
+
         }
+    }
+
+    private function updateUserIntegral($orderId){
+        $orderInfo = Order::where('id','=',$orderId)->find();
+
+        User::where('id', '=', $orderInfo->buyer_id)
+            ->setInc('integral', $orderInfo->give_point);
     }
 
     private function updateOrderStatus($orderID, $success)
     {
         $status = $success ? OrderStatusEnum::PAID : OrderStatusEnum::PAID_BUT_OUT_OF;
         Order::where('id', '=', $orderID)
-            ->update(['status' => $status]);
+            ->update(['order_status' => $status]);
+    }
+
+    private function updateShopBrief($free,$order){
+        $freeNum = Shop::where('id','=',$order['shop_id'])->find()->shop_sales;
+        $freeNum = $freeNum*100 + ($free+0);
+        $freeNum = round($freeNum/100,2);
+        Shop::where('id','=',$order['shop_id'])
+            ->update(['shop_sales'=>$freeNum]);
     }
 }

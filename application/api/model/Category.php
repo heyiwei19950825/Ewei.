@@ -26,6 +26,7 @@ class Category extends BaseModel
     
     public static function getCategory($id,$field)
     {
+
         $category = self::field($field)
             ->find($id);
         return $category;
@@ -50,7 +51,8 @@ class Category extends BaseModel
      * @return false|\PDOStatement|string|\think\Collection
      */
     public static function childCategory( $id,$field='' ){
-        $filterCategory = self::where(['pid'=>$id])
+        $map['pid'] = $id;
+        $filterCategory = self::where($map)
             ->field($field)
             ->order('sort asc')
             ->select();

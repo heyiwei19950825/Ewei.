@@ -33,7 +33,9 @@ class Order extends BaseModel
      * @param array $param
      */
     public static function updateOrderStatic($param = [] ){
+        $row = Db::name('order')->where(['id'=>$param['id'],'buyer_id'=>$param['uid']])->update(['order_status'=>$param['status']]);
 
+        return $row;
     }
 
     public static function getSummaryByUser( $uid,$type,$page,$ize){
@@ -72,8 +74,7 @@ class Order extends BaseModel
      * @return [type]      [description]
      */
     public static function delOrder( $id,$uid ){
-        $row = [];
-        $row = Db::name('order')->where()->update(['order_status'=>10]);
+        $row = Db::name('order')->where(['id'=>$id,'buyer_id'=>$uid])->delete();
         return $row;
     }
 }

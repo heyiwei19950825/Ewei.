@@ -51,7 +51,6 @@ class BannerItem extends AdminBase
         if ($this->request->isPost()) {
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Banner');
-
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {

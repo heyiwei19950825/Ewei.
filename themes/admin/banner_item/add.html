@@ -42,21 +42,32 @@
                                 <p id="demoText"></p>
                             </div>
                         </div>
-                    <div class="layui-form-mid layui-word-aux">推荐图片大小为300*150</div>
+                    <div class="layui-form-mid layui-word-aux">推荐图片大小为375*128</div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">链接</label>
+                        <label class="layui-form-label">跳转类型</label>
                         <div class="layui-input-block">
-                            <input type="text" name="link" value="" placeholder="（选填）请输入链接" class="layui-input">
+                            <select name="actions">
+                                <option value="">请选择</option>
+                                <option value="0">跳转到分类</option>
+                                <option value="1">跳转到文章</option>
+                                <option value="2">跳转到商品</option>
+                            </select>
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">打开方式</label>
+                        <label class="layui-form-label">ID号</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="target" value="_self" title="默认" checked="checked">
-                            <input type="radio" name="target" value="_blank" title="新窗口">
+                            <input type="number" name="actions_id" value="" placeholder="请输入对应类型的ID号" class="layui-input">
                         </div>
                     </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">打开方式</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input type="radio" name="target" value="_self" title="默认" checked="checked">-->
+                            <!--<input type="radio" name="target" value="_blank" title="新窗口">-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">状态</label>
                         <div class="layui-input-block">

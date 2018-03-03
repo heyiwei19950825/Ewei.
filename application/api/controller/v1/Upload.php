@@ -194,7 +194,6 @@ class Upload extends Controller
     {
         $this->file_path = request()->post("file_path", "");
 
-
         if ($this->file_path == "") {
             $this->return['message'] = "文件路径不能为空";
             return $this->ajaxFileReturn();
@@ -227,19 +226,18 @@ class Upload extends Controller
         $ext = "." . $file_name_explode[$suffix]; // 获取后缀名
         $newfile = $guid . $ext; // 重新命名文件
                                  // 特殊 判断如果是商品图
-        
-        $ok = $this->moveUploadFile($_FILES["file"]["tmp_name"], $this->reset_file_path . $newfile);
+
+        $ok = $this->moveUploadFile($_FILES["file"]["tmp_name"], $this->reset_file_path . $newfile,$_POST['width'],$_POST['height']);
 
         if ($ok["code"]) {
-            
             // 文件上传成功执行下边的操作
             if (! strstr(UPLOAD_VIDEO, $this->reset_file_path)) {
                 @unlink($_FILES['file']);
                 $image_size = @getimagesize($ok["path"]); // 获取图片尺寸
                 if ($image_size) {
                     
-                    $width = $image_size[0];
-                    $height = $image_size[1];
+                    $width = $_POST['width'];
+                    $height = $_POST['height'];
                     $name = $file_name_explode[0];
                     
                     switch ($this->file_path) {
@@ -287,6 +285,7 @@ class Upload extends Controller
                             $this->return['message'] = "上传成功";
                             break;
                         case UPLOAD_COMMON:
+
                             // 公共
                             $this->return['code'] = 1;                           
                             $this->return['data'] = $ok["path"];
@@ -419,7 +418,7 @@ class Upload extends Controller
         $file_new_name = implode(".", $tmp_array);
         $newfile = md5($file_new_name . $guid) . $ext; // 重新命名文件
                                                        // $ok = @move_uploaded_file($_FILES["file_upload"]["tmp_name"], $this->reset_file_path . $newfile);
-        
+
         $ok = $this->moveUploadFile($_FILES["file_upload"]["tmp_name"], $this->reset_file_path . $newfile);
         if ($ok["code"]) {
             @unlink($_FILES['file_upload']);
@@ -504,9 +503,16 @@ class Upload extends Controller
      * @param unknown $file_path            
      * @param unknown $key            
      */
-    public function moveUploadFile($file_path, $key)
+    public function moveUploadFile($file_path, $key,$width,$height)
     {
-        $ok = @move_uploaded_file($file_path, $key);
+        $image = \think\Image::open($file_path);
+        // 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb.png
+        $image->thumb($width,$height,\think\Image::THUMB_SCALING)->save($key);
+        if( !empty($image) ){
+            $ok = true;
+        }else{
+            $ok = false;
+        }
         $result = [
             "code" => $ok,
             "path" => $key,

@@ -6,6 +6,7 @@ use app\common\model\Order as OrderModel;
 use app\common\model\OrderGoods as OrderGoodsModel;
 use app\common\model\User as UserModel;
 use app\common\model\OrderGoodsExpress;
+use app\common\model\ExpressCompany;
 use app\common\model\Region;
 use app\common\model\Category;
 use think\Config;
@@ -26,6 +27,7 @@ class Order extends AdminBase
     protected $order_goods_model;
     protected $order_goods_express;
     protected $category_model;
+    protected $express_model;
 
     protected function _initialize()
     {
@@ -35,6 +37,7 @@ class Order extends AdminBase
         $this->order_goods_model  = new OrderGoodsModel();
         $this->order_goods_express  = new OrderGoodsExpress();
         $this->category_model  = new Category();
+        $this->express_model  = new ExpressCompany();
 
         //获取商家信息
         $sid = $this->shop['id'];
@@ -129,7 +132,7 @@ class Order extends AdminBase
                 $v['type'] = $v['order_type'];//订单类型
                 //判断是积分
                 if( $v['order_type'] == 2 ){
-                    $v['order_money'] = floor($v['order_money']);
+                    $v['order_money'] = $v['point'];
                 }
 
                 $v['order_status'] = $orderConfig['status'][$v['order_status']];
@@ -197,8 +200,8 @@ class Order extends AdminBase
             'shop_name' => $orderRow['shop_name'],//类型
             'status' => $orderRow['status'],//状态
             'from' => $orderRow['from'],//来源
-            'goods_money' => $orderRow['type'] == 2 ?floor($orderRow['goods_money']):$orderRow['goods_money'],//订单商品价格
-            'order_money' => $orderRow['type'] == 2 ?floor($orderRow['order_money']):$orderRow['order_money'],//订单价格
+            'goods_money' => $orderRow['type'] == 2 ?$orderRow['goods_money']:floor($orderRow['goods_money']),//订单商品价格
+            'order_money' => $orderRow['type'] == 2 ?$orderRow['point']:floor($orderRow['order_money']),//订单价格
         ];
 
         //用户信息
@@ -237,12 +240,19 @@ class Order extends AdminBase
         ];
 
         //快递信息
-        $expressRow = $this->order_goods_express->where(['order_id'=>$orderRow['order_no']])->find();
-        $express = [
-            'express_name' => $expressRow['express_company'],
-            'express_no' => $expressRow['express_no'],
-            'express_dynamic' => []
-        ];
+        $expressRow = $this->order_goods_express->where(['order_no'=>$orderRow['order_no']])->select()->toArray();
+        $express = [];
+        if( !empty($expressRow) ){
+            foreach ( $expressRow as $k=>$vs){
+                $express[$k] = [
+                    'express_name' => $vs['express_name'],
+                    'express_company' => $vs['express_company'],
+                    'express_no' => $vs['express_no'],
+                    'goods_list' => $this->order_goods_model->field('goods_name,goods_picture')->where(['goods_id'=>['in',$vs['order_goods_id_array']],'order_id'=>$orderRow['id']])->select()->toArray()
+                ];
+            }
+        }
+
         //订单信息
         $order = [
             'order_info' => $orderInfo,
@@ -252,7 +262,6 @@ class Order extends AdminBase
             'note'       =>  $note,
             'express'   =>  $express,
         ];
-
 
         return $this->fetch('detail',['order'=>$order]);
     }
@@ -273,6 +282,7 @@ class Order extends AdminBase
         $addressRow['province'] = Region::getRegionName($row['receiver_province']);//省
         $addressRow['city'] = Region::getRegionName($row['receiver_city']);//市
         $addressRow['district'] = Region::getRegionName($row['receiver_district']);//区
+        $row['express'] = $this->express_model->field('id,company_name,image,express_logo,is_default')->where(['is_enabled'=>1])->select()->toArray();
         $row['address'] = $addressRow['province'].' '.$addressRow['city'].' '.$addressRow['district'].$row['receiver_address'];
         $row['goods_list'] = $this->order_goods_model->field('goods_id,goods_name,goods_picture')->where(['order_id'=>$id])->select()->toArray();
 
@@ -291,10 +301,11 @@ class Order extends AdminBase
             } else {
                 $params['order_goods_id_array'] = trim($params['goods_list'], ',');
                 $params['shipping_time'] = strtotime($params['shipping_time']);
+
                 //添加发货信息
                 $row = $this->order_goods_express->allowField(true)->save($params);
                 //修改订单状态
-                $orderUpdateRow = $this->orderModel->where(['id'=>$params['order_id']])->update([
+                $orderUpdateRow = $this->orderModel->where(['order_no'=>$params['order_no']])->update([
                     'order_status'=>2,//订单状态
                     'consign_time'=>$params['shipping_time'],//发货时间
                     'shipping_company_name' => $params['express_company']

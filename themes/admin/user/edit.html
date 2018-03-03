@@ -5,7 +5,7 @@
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">
             <li class=""><a href="{:url('admin/user/index')}">用户管理</a></li>
-            <li class=""><a href="{:url('admin/user/add')}">添加用户</a></li>
+            <!--<li class=""><a href="{:url('admin/user/add')}">添加用户</a></li>-->
             <li class="layui-this">编辑用户</li>
         </ul>
         <div class="layui-tab-content">
@@ -17,18 +17,18 @@
                             <input type="text" name="nickname" value="{$user.nickname}" required  lay-verify="required" placeholder="请输入用户名" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">密码</label>
-                        <div class="layui-input-block">
-                            <input type="password" name="password" value="" placeholder="（选填）如不修改则留空" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">重复密码</label>
-                        <div class="layui-input-block">
-                            <input type="password" name="confirm_password" value="" placeholder="（选填）如不修改则留空" class="layui-input">
-                        </div>
-                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">密码</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input type="password" name="password" value="" placeholder="（选填）如不修改则留空" class="layui-input">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">重复密码</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input type="password" name="confirm_password" value="" placeholder="（选填）如不修改则留空" class="layui-input">-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">手机</label>
                         <div class="layui-input-block">
@@ -44,11 +44,11 @@
                      <div class="layui-form-item ">
                         <label class="layui-form-label">积分</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="integral" value="{$user.integral}" placeholder='' class="layui-input layui-disabled">
+                            <input type="text" name="integral" value="{$user.integral}" placeholder='' class="layui-input">
                         </div>
-                        <a class="layui-btn ">编辑</a>
+                        <!--<a class="layui-btn ">编辑</a>-->
                     </div>
-                    <div class="layui-form-item">
+                    <div class="layui-form-item" style="display:none">
                         <label class="layui-form-label">状态</label>
                         <div class="layui-input-block">
                             <input type="radio" name="status" value="1" title="启用" {if condition="$user.status==1"} checked="checked"{/if}>

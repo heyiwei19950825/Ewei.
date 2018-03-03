@@ -28,14 +28,15 @@
                     <tr>
                         <th style="width: 30px;">ID</th>
                         <th>用户名</th>
+                        <!--<th>来源</th>-->
                         <th>手机</th>
                         <th>邮箱</th>
                         <th>积分</th>
                         <th>级别</th>
-                        <th>状态</th>
+                        <!--<th>状态</th>-->
                         <th>创建时间</th>
                         <th>最后登录时间</th>
-                        <th>最后登录IP</th>
+                        <!--<th>最后登录IP</th>-->
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -43,17 +44,20 @@
                     {foreach name="user_list" item="vo"}
                     <tr>
                         <td>{$vo.id}</td>
-                        <td>{$vo.nickname}<i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：VIP用户"></i></td>
+                        <td>{$vo.nickname}</td>
+                        <!--<td>{$vo.nickname}{if condition="$vo.is_vip == 1 "}<i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：VIP用户" style="float:right"></i>{/if}</td>-->
+                        <!--<td>小程序</td>-->
                         <td>{$vo.mobile}</td>
                         <td>{$vo.email}</td>
                         <!--<td>{$vo.integral}<a class="layui-btn layui-btn-warm layui-btn-mini show-integral-log" style="margin-left: 15px;">积分日志</a><a class="layui-btn layui-btn-warm layui-btn-mini" style="margin-left: 5px;">修改积分</a></td>-->
                         <td>{$vo.integral}</td>
                         <td>{$vo.rank_name}</td>
-                        <td>{php}echo $vo['status']==1 ? '启用' : '禁用';{/php}</td>
+                        <!--<td>{php}echo $vo['status']==1 ? '启用' : '禁用';{/php}</td>-->
                         <td>{$vo.create_time}</td>
-                        <td>{$vo.last_login_time}</td>
-                        <td>{$vo.last_login_ip}</td>
+                        <td>{:date('Y-m-d H;:i:s',$vo.last_login_time)}</td>
+                        <!--<td>{$vo.last_login_ip}</td>-->
                         <td>
+                            <a href="javascript:" class="layui-btn layui-btn-mini integral-list" data-id="{$vo.id}">积分记录</a>
                             <a href="{:url('admin/user/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
                             <a href="{:url('admin/user/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
                         </td>
@@ -62,23 +66,23 @@
                     </tbody>
                 </table>
                 <!--分页-->
-                {$user_list->render()}
+                {$render}
             </div>
         </div>
     </div>
 </div>
-{/block}
-
-{block name="js"}
 <script type="text/javascript">
-$('.show-integral-log').click(function(){
-    layer.open({
-        type: 1,
-        skin: 'layui-layer-rim', //加上边框
-        area: ['420px', '240px'], //宽高
-        content: 'html内容'
+    //领取记录
+    $(document).on("click", ".integral-list", function () {
+        var id = $(this).attr('data-id');
+        var url = 'http://'+window.location.host+"/admin/integral/user_integral_log?id="+id;
+        layer.open({
+            type: 2
+            , area: ['50%', '90%']
+            , title: "使用记录"
+            , content: url
+        });
     });
-})
 
 </script>
 

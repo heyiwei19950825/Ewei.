@@ -22,7 +22,6 @@ class Cart
         //检测商品库存和状态
 
         $row = $this->checkGoods($params);
-
         //成功
         if( $row['errno'] == 0 ){
             $row = $row['data'];
@@ -30,6 +29,8 @@ class Cart
             $params['price']= $row['sp_price'];
             $params['goods_picture']=  config('setting.domain').$row['thumb'];
             $params['shop_id']= $row['sid'];
+            $params['cid']= $row['cid'];
+
             $rows = CartModel::add($uid, $params);
         }else{//错误
             $rows = $row;
@@ -40,7 +41,7 @@ class Cart
     }
 
     public function checkGoods( $params){
-        $field = 'sp_inventory,btime,etime,status,name,sid,thumb,sp_price';
+        $field = 'sp_inventory,btime,etime,status,name,sid,thumb,sp_price,cid';
         $goodsInfo = Goods::getProductDetail($params['goodsId'],$field);
         //商品不存在
         if( empty( $goodsInfo )){

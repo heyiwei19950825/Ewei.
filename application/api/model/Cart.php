@@ -18,12 +18,12 @@ class Cart extends BaseModel
            'uid' => $uid,
            'goods_id' => $params['goodsId']
        ])->find();
-
        //未添加过此商品
        if( empty($row) ){
            $createRow = self::create(
                [
                    'uid'                =>$uid,
+                   'cid'                =>$params['cid'],
                    'shop_id'            =>$params['shop_id'],
                    'shop_name'          =>'自选平台',
                    'goods_id'           =>$params['goodsId'],

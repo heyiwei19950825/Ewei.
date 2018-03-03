@@ -38,7 +38,6 @@ class Message extends AdminBase
             $v['msg_type'] = $note[$v['msg_type']];
             $v['msg_time'] =  Helper::time_tran($v['msg_time']);
         }
-
         return $this->fetch('index',['message' => $row]);
     }
 

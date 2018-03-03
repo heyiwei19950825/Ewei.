@@ -40,7 +40,7 @@ class Goods extends BaseController
             (new IDMustBePositiveInt())->goCheck();
         }
         (new PagingParameter())->goCheck();
-        $field = 'name,thumb,sp_price,id,sp_integral';
+        $field = 'name,thumb,sp_price,id,sp_integral,sp_o_price,sp_market';
         $sort = $sort=='category'?'btime':$sort;
 
         $pagingProducts = GoodsModel::getProductsByCategoryID(
@@ -105,7 +105,7 @@ class Goods extends BaseController
     public function getAllInCategory($id = -1,$keyword='', $sort='id', $order='asc',$page=1,$size=30)
     {
         (new IDMustBePositiveInt())->goCheck();
-        $field = 'name,thumb,sp_price';
+        $field = 'name,thumb,sp_price,sp_o_price,sp_market';
         $products = GoodsModel::getProductsByCategoryID(
             $id, false,$field,$keyword,$sort,$order,$page,$size);
         if ($products->isEmpty())

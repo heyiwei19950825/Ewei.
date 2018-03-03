@@ -91,9 +91,9 @@ class Integral extends AdminBase
     public function user_integral_log($id)
     {
 
-        $rule_list = Db::name('user_integral_log')->select();
-        $log = [];
-        return $this->fetch('user_integral_log', ['log' => $log]);
+        $log = Db::name('user_integral_log')->where(['u_id'=>$id])->select();
+
+        return $this->fetch('/user/user_integral_log', ['log' => $log]);
         
     }
 }

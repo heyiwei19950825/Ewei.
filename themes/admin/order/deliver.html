@@ -59,7 +59,7 @@
     <table class="layui-table layui-table-add" lay-skin="nob">
         <tbody>
         <tr>
-            <input type="hidden" value="{$id}" name="order_id">
+            <input type="hidden" value="{$order.order_no}" name="order_no">
             <th class="pad" width="100">订单编号</th>
             <td>{$order.order_no}</td>
         </tr>
@@ -106,7 +106,12 @@
         <tr>
             <th><span class="red">*</span>快递公司</th>
             <td>
-                <input type="text" name="express_company" placeholder="请输入快递公司" autocomplete="off" class="layui-input" lay-verify="required">
+                <select name="express_company" id="">
+                    <option value="">请选择</option>
+                    {foreach name="order.express" item="vo"}
+                        <option value="{$vo.id}">{$vo.company_name}</option>
+                    {/foreach}
+                </select>
             </td>
         </tr>
         <tr>
@@ -152,12 +157,13 @@
                    goods_list += ','+$(v).attr('data-id');
                }
             })
-
             var express_name = $('input[name=express_name]').val();
             var express_no = $('input[name=express_no]').val();
-            var express_company = $('input[name=express_company]').val();
+            var express_company_id = $('select[name=express_company]').val();
+            var express_company = $('select[name=express_company]').find("option:selected").text();
             var shipping_time = $('input[name=shipping_time]').val();
-            var order_id = $('input[name=order_id]').val();
+            var order_no = $('input[name=order_no]').val();
+            var memo = $('input[name=memo]').val();
             if(express_name == ''){
                layer.msg('必须填写包裹名称');return false;
             }
@@ -180,9 +186,11 @@
                     express_name:express_name,
                     express_no:express_no,
                     express_company:express_company,
+                    express_company_id:express_company_id,
                     shipping_time:shipping_time,
                     goods_list:goods_list,
-                    order_id:order_id,
+                    order_no:order_no,
+                    memo:memo,
                 },
                 success: function (info) {
                     if (info.code === 1) {

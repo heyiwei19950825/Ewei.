@@ -251,8 +251,8 @@ return [
     //设置
     'setting'       =>[
         //'domain' => 'http://admin.ewei.com',
-        'pay_back_url' => 'https://small.redkylin.com/pay/notify',
-       'domain' => 'https://small.redkylin.com'
+        'pay_back_url' => 'https://ld.mskfkj.com/api/v1/pay/notify',
+        'domain' => 'https://ld.mskfkj.com'
     ],
 
     //订单状态
@@ -266,5 +266,10 @@ return [
         'from'=>[
             '小程序','微信公众号','App','PC','Wap'
         ]
+    ],
+
+    //小程序跳转动作对应url
+    'hrefAction'=>[
+        '/pages/category/category?id=','/pages/topicDetail/topicDetail?id=','/pages/goods/goods?id='
     ]
 ];

@@ -90,4 +90,13 @@ class Category extends Model
         return $category_children_ids;
     }
 
+    /**
+     * 更具分类ID获取名称
+     * @return mixed
+     */
+    public function getNameById( $id ){
+        $name = $this->where(['id'=>$id])->find()['name'];
+        return $name;
+    }
+
 }

@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by 七月.
- * Author: 七月
- * 微信公号：小楼昨夜又秋风
- * 知乎ID: 七月在夏天
+ * Created by Ewei..
+ * Author: Ewei.
+ * 微信公号：眉山同城
+
  * Date: 2017/2/23
  * Time: 2:56
  */
@@ -100,8 +100,13 @@ class Address extends BaseController
         if ( $id == 0  )
         {
             $data['user_id'] = $uid;
+            if($data['is_default'] == 1){
+                userAddress::update(['is_default'=>0],['is_default'=>1],'');
+            }
             // 关联属性不存在，则新建
-            userAddress::create($data);
+            $createRow = userAddress::create($data);
+            $row['data'] = $createRow->id;
+            return $row;
         }
         else
         {

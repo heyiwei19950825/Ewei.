@@ -54,11 +54,24 @@ class User extends BaseModel
     public static function updateUserIntegral($uid = -1,$integral=0,$type = 0){
         $user = Db::name('user')->where(['id'=>$uid])->find();
         if( $type == 0 ){
-            $integral = $user['integral'] - $integral;
+            $last_integral = $user['integral'] - $integral;
         }else{
-            $integral = $user['integral'] + $integral;
+            $last_integral = $user['integral'] + $integral;
         }
-        $row = Db::name('user')->where(['id'=>$uid])->update(['integral'=>$integral]);
+
+        $row = Db::name('user')->where(['id'=>$uid])->update(['integral'=>$last_integral]);
+
+
+
+        $data = [
+            'note' => '积分购买商品消耗',
+            'u_id'=>$uid,
+            'integral'=>$integral,
+            'residue_integra'=>$last_integral,
+            'time' => date('Y-m-d H:i:s',time())
+        ];
+
+        Db::name('user_integral_log')->insert($data);
 
         return $row;
     }

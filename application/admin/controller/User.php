@@ -33,9 +33,21 @@ class User extends AdminBase
         if ($keyword) {
             $map['nickname|mobile|email'] = ['like', "%{$keyword}%"];
         }
-        $user_list = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->paginate(15, false, ['page' => $page]);
+        //查询积分规则获取用户等级注释
+        $rankList = Db::name('user_rank')->select()->toArray();
+        if( empty($rankList) ){
+            $user_list = $this->user_model->where($map)->order('id DESC')->select();
+            foreach ($user_list as &$v){
+                $v['rank_name'] = '普通用户';
+            }
+            $render = $this->user_model->where($map)->order('id DESC')->paginate(15, false, ['page' => $page]);
+        }else{
+            $user_list = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->select();
+            $render = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->paginate(15, false, ['page' => $page]);
+        }
+
         // $user_list = $this->user_model->where($map)->order('id DESC')->paginate(15, false, ['page' => $page]);
-        return $this->fetch('index', ['user_list' => $user_list, 'keyword' => $keyword]);
+        return $this->fetch('index', ['user_list' => $user_list,'render'=>$render, 'keyword' => $keyword]);
     }
 
     /**
@@ -101,6 +113,7 @@ class User extends AdminBase
                 $user->mobile   = $data['mobile'];
                 $user->email    = $data['email'];
                 $user->status   = $data['status'];
+                $user->integral = $data['integral'];
                 if (!empty($data['password']) && !empty($data['confirm_password'])) {
                     $user->password = md5($data['password'] . Config::get('salt'));
                 }
@@ -123,6 +136,28 @@ class User extends AdminBase
             $this->success('删除成功');
         } else {
             $this->error('删除失败');
+        }
+    }
+
+    /**
+     * Vip用户申请列表
+     */
+    public function vipList(){
+
+    }
+
+    /**
+     * 用户申请Vip
+     */
+    public function applyVip( $id ){
+        if( $id == '' || empty($id) ){
+           $this->error('参数错误');
+        }
+        $row = $this->user_model->where(['id'=>$id])->update(['is_vip'=>1]);
+        if( $row ){
+            $this->success('审批成功');
+        }else{
+            $this->error('网络异常');
         }
     }
 }

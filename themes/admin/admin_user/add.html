@@ -35,16 +35,16 @@
                             <input type="radio" name="status" value="0" title="禁用">
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">所属权限组</label>
-                        <div class="layui-input-block">
-                            <select name="group_id" lay-verify="required">
-                                {foreach name="auth_group_list" item="vo"}
-                                <option value="{$vo.id}">{$vo.title}</option>
-                                {/foreach}
-                            </select>
-                        </div>
-                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">所属权限组</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<select name="group_id" lay-verify="required">-->
+                                <!--{foreach name="auth_group_list" item="vo"}-->
+                                <!--<option value="{$vo.id}">{$vo.title}</option>-->
+                                <!--{/foreach}-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <button class="layui-btn" lay-submit lay-filter="*">保存</button>

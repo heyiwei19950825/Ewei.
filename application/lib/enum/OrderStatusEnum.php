@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by 七月
- * Author: 七月
- * 微信公号: 小楼昨夜又秋风
- * 知乎ID: 七月在夏天
+ * Created by Ewei.
+ * Author: Ewei.
+ * 微信公号: 眉山同城
+
  * Date: 2017/3/7
  * Time: 16:10
  */
@@ -14,10 +14,10 @@ namespace app\lib\enum;
 class OrderStatusEnum
 {
     // 待支付
-    const UNPAID = 1;
+    const UNPAID = 0;
 
     // 已支付
-    const PAID = 2;
+    const PAID = 1;
 
     // 已发货
     const DELIVERED = 3;

@@ -52,7 +52,9 @@ class Goods extends BaseModel
         $map['btime']   = ['<=',$now];
         $map['etime']   = ['>=',$now];
         $map['status']  = ['=',1];
-
+        if( $categoryId == 9999 ){
+            unset($map['cid']);
+        }
         if( !empty($keyword) ){
             $map['name']    = ['like','%'.$keyword.'%'];
         }
@@ -131,7 +133,7 @@ class Goods extends BaseModel
         $map['etime']   = ['>=',$now];
         $map['status']  = ['=',1];
         $product = self::where($map)
-            ->field('id,name,thumb,sp_price,prefix_title')
+            ->field('id,name,thumb,sp_price,prefix_title,sp_o_price,sp_market')
             ->order('sort asc')
             ->limit(4)
             ->select( );
@@ -151,7 +153,7 @@ class Goods extends BaseModel
         $map['is_recommend']     = ['=',1];
 
         $product = self::where($map)
-            ->field('id,name,thumb,sp_price,prefix_title')
+            ->field('id,name,thumb,sp_price,prefix_title,sp_o_price,sp_market')
             ->order('sort asc')
             ->limit(4)
             ->select( );

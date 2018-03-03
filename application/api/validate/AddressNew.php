@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by 七月.
- * Author: 七月
- * 微信公号：小楼昨夜又秋风
- * 知乎ID: 七月在夏天
+ * Created by Ewei..
+ * Author: Ewei.
+ * 微信公号：眉山同城
+
  * Date: 2017/2/23
  * Time: 3:01
  */
@@ -25,5 +25,10 @@ class AddressNew extends BaseValidate
         'district_id' => 'require|isNotEmpty',
         'address' => 'require|isNotEmpty',
         'is_default'=>'require'
+    ];
+
+    protected $message = [
+        'mobile.isMobile'   => '请填写正确手机号',
+
     ];
 }

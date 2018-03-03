@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by 七月.
- * Author: 七月
- * 微信公号：小楼昨夜又秋风
- * 知乎ID: 七月在夏天
+ * Created by Ewei..
+ * Author: Ewei.
+ * 微信公号：眉山同城
+
  * Date: 2017/2/26
  * Time: 16:02
  */
@@ -47,6 +47,15 @@ class Pay
 
         $order = OrderModel::get($this->orderID);
 
+        //积分购买计算运费
+        if( $order['order_type'] == 2 ){
+            if( $order['shipping_money'] != 0 ){
+                $order['order_money'] =  $order['shipping_money'];
+            }else{
+                return 'SUCCESS';
+            }
+        }
+
         return $this->makeWxPreOrder($order['order_money']);
 
     }
@@ -62,7 +71,7 @@ class Pay
     //构建微信退款订单信息
     private function makeWxRefundOrder( $order ){
         $wxOrderData = new \WxPayUnifiedOrder();
-        $openid =
+        $openid = '';
         $wxOrderData->SetOut_trade_no($order['order_no']);//商户退款单号
         $wxOrderData->SetTotal_fee($order['order_money']);//退款金额
         $wxOrderData->SetTotal_fee($order['order_money']);//订单金额
@@ -84,7 +93,7 @@ class Pay
         $wxOrderData->SetOut_trade_no($this->orderNo);
         $wxOrderData->SetTrade_type('JSAPI');
         $wxOrderData->SetTotal_fee($totalPrice * 100);
-        $wxOrderData->SetBody('零食商贩');
+        $wxOrderData->SetBody('蔬菜采购');
         $wxOrderData->SetOpenid($openid);
         $wxOrderData->SetNotify_url(config('setting.pay_back_url'));
 
@@ -152,7 +161,7 @@ class Pay
                     'errorCode' => 10003
                 ]);
         }
-        if($order->order_status != 1){
+        if($order->order_status != 0 && $order->order_type != 2){
             throw new OrderException([
                 'msg' => '订单已支付过啦',
                  'errorCode' => 80003,

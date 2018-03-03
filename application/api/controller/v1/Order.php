@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by 七月.
- * Author: 七月
- * 微信公号：小楼昨夜又秋风
- * 知乎ID: 七月在夏天
+ * Created by Ewei..
+ * Author: Ewei.
+ * 微信公号：眉山同城
+
  * Date: 2017/2/22
  * Time: 21:52
  */
@@ -31,6 +31,11 @@ use app\api\model\User;
 use app\api\model\Cart as CartModel;
 use app\api\model\Coupon;
 use think\Request;
+
+use app\common\model\OrderGoodsExpress;
+use app\common\model\OrderGoods;
+
+
 use think\Db;
 use think\Config;
 
@@ -52,7 +57,7 @@ class Order extends BaseController
         $this->uid = Token::getCurrentUid();
         $this->orderConfig = Config::get('order');
     }
-    
+
     /**
      * 下单
      * @url /order
@@ -101,8 +106,9 @@ class Order extends BaseController
 
 
         //获取商品详情
-        if( $goodsId == 0 ){
-            $goodsPrice = $orderTotalPrice = $actualPrice= $freightPrice = $couponPrice = $couponId = $rankDiscount = $userCouponList = $couponPrice = $shipping_company_id = $order_type = 0;
+        if( $goodsId == 0 ){//购物车购买
+            $goodsPrice = $orderTotalPrice = $actualPrice= $freightPrice = $couponPrice = $couponId = $rankDiscount = $userCouponList = $couponPrice = $shipping_company_id = $order_type = $give_point = 0;
+            ;
             $couponId = $this->request->param('couponId');//使用的优惠券ID
 
             $freight = $goodsInfo = $checkedCoupon = [];
@@ -119,7 +125,7 @@ class Order extends BaseController
             foreach ($cartList as $item) {
                 //商品总价格
                 $goodsPrice += ($item['price']*100) * $item['num'];
-                $goodsInfo = GoodsModel::getProductDetail($item['goods_id'],'eid');
+                $goodsInfo = GoodsModel::getProductDetail($item['goods_id'],'eid,give_integral');
                 if( !array_key_exists($goodsInfo['eid'],$freight)){
                     //运费
                     $express = Express::getDetail($goodsInfo['eid'],'cost,company_name,id');
@@ -128,7 +134,7 @@ class Order extends BaseController
                         'cost'=>$express['cost']*100,
                     );
                 }
-                $shipping_company_id = $express['id'];
+                $give_point += (int)$goodsInfo['give_integral'];
             }
             //计算运费
             foreach ($freight as $item ){
@@ -146,63 +152,78 @@ class Order extends BaseController
             $order_type = 0;
             $goodsPrice =$goodsPrice/100;
             $actualPrice = round($actualPrice/100,2);
-        }else{
+            $coupon_money = $couponPrice;
+            $coupon_id = $couponId;
+
+        }else {//直接购买
             $goodsPrice = 0;
+            $coupon_id = 0;
+            $coupon_money = 0;
             $field = '';
-            $product = GoodsModel::getProductDetail($goodsId,$field);
+            $product = GoodsModel::getProductDetail($goodsId, $field);
             $product['thumb'] = self::prefixDomain($product['thumb']);
-            
+            //运费
+            $express = Express::getDetail($product['eid'], 'cost,company_name,id');
+            $freightPrice = $express['cost'];
+
             //判断是否团购或者是积分购买
-            if( $type == 'integral'){
-                if($product['is_integral'] == 0 ){
+            if ($type == 'integral') {
+                if ($product['is_integral'] == 0) {
                     $row['errmsg'] = '非法请求';
-                    $row['errno']  = 10001;
-                    return  $row;
+                    $row['errno'] = 10001;
+                    return $row;
                 }
-                $goodsIntegral = $product['sp_integral'];
-                $order_type = 2;
-                if($userInfo['integral'] < $goodsIntegral){
-                    $row = ['errmsg'=>'积分不足','errno'=>1,'data'=>[]];
+                $goodsIntegral = $product['sp_integral'] * $num;
+                if ($userInfo['integral'] < $goodsIntegral) {
+                    $row = ['errmsg' => '积分不足', 'errno' => 1, 'data' => []];
 
                     return $row;
                 }
+                $order_status = 0;
 
-                $goodsPrice = 0;
-            }elseif( $type == 'collective'){
-                if($product['is_collective'] == 0 ){
+                if($freightPrice == 0 ){
+                    $integralRow = User::updateUserIntegral($this->uid, $goodsIntegral, 0);
+                    if ($integralRow == 1) {
+                        $finish_time = time();
+                        $pay_time = time();
+                        $order_status = 1;
+                        //修改销售状况
+                        GoodsModel::where('id', '=', $goodsId)
+                            ->setDec('sp_inventory', $num);
+                        GoodsModel::where('id', '=', $goodsId)
+                            ->setInc('sp_market', $num);
+                    }else{
+                        $row['errmsg'] = '网络异常';
+                        $row['errno'] = 10001;
+                        return $row;
+                    }
+                }
+
+                $order_type = 2;
+                $goodsPrice = ($product['sp_price']) *$num;
+                $give_point = 0;
+                $coupon_money = 0;
+            } elseif ($type == 'collective') {
+                if ($product['is_collective'] == 0) {
                     $row['errmsg'] = '非法请求';
-                    $row['errno']  = 10001;
-                    return  $row;
+                    $row['errno'] = 10001;
+                    return $row;
                 }
                 //团购信息
                 $product['collective'] = GoodsCollectiveModel::getCollectiveByGid($product['id']);
                 $goodsPrice = $product['collective']['goods_price'] * $num;
-
                 $order_type = 1;
+                $give_point = (int)$product['give_integral'] *$num;
+                $coupon_money = 0;
+            }else{
+                $goodsPrice = ($product['sp_price']) *$num;
+                $order_type = 0;
+                $give_point = (int)$product['give_integral'] *$num;
             }
-
-            //运费
-            $express = Express::getDetail($product['eid'],'cost,company_name,id');
-            $freightPrice = $express['cost'];
-            $shipping_company_id = $express['id'];
-
             //最终价格   商品价格 + 运费
-            $actualPrice = $goodsPrice + ($express['cost']+0);
-            //查询商家信息
-            $shopName = Shop::getShopInfoById($product['sid'],'shop_name');
+            $actualPrice = $goodsPrice + ($freightPrice + 0);
 
         }
-
-        //检测 并扣除用户积分
-        if($goodsPrice ==0 && $type=='integral' && ($freightPrice+0) == 0){
-            $integralRow = User::updateUserIntegral($this->uid,$goodsIntegral,0);
-            if( $integralRow == 1 ){
-                $finish_time = time();
-                $pay_time = time();
-                $order_status = 2;
-            }
-        }
-
         //创建成功添加订单信息
         $param = [
             'shipping_type' => 1,//订单配送方式
@@ -213,7 +234,7 @@ class Order extends BaseController
             'payment_type'  => 1,//支付类型。取值范围：1.WEIXIN (微信支付) 2.INTEGRAL (积分支付)
             'buyer_id' => $this->uid,//买家id
             'user_name' => $userInfo['nickname'],//买家会员名称
-            'buyer_ip' => Request::ip(0,true),//买家ip
+//            'buyer_ip' => Request::ip(0,true),//买家ip
             'buyer_message' => '',//买家附言
             'receiver_mobile' => $addressOld['mobile'],//收货人的手机号码
             'receiver_province' => $addressOld['province_id'],//收货人所在省
@@ -229,15 +250,15 @@ class Order extends BaseController
             'order_money' => $actualPrice,//订单总价
             'point'=>$order_type == 2?$goodsIntegral:0,//订单消耗积分
             'point_money'=>0,//订单消耗积分抵多少钱
-            'coupon_money'=>0,//订单代金券支付金额
-            'coupon_id'=>0,//订单代金券id
+            'coupon_money'=>$coupon_money,//订单代金券支付金额
+            'coupon_id'=>$coupon_id,//订单代金券id
             'user_money'=>0,//订单余额支付金额
             'user_platform_money'=>0,//用户平台余额支付
             'promotion_money'=>0,//订单优惠活动金额
-            'shipping_money'=>$freightPrice/100,//订单运费
+            'shipping_money'=>$freightPrice,//订单运费
             'pay_money'=>0,//订单实付金额
             'refund_money'=>'',//订单退款金额
-//            'give_point'=>$product['give_integral'],//订单赠送积分
+            'give_point'=>$give_point,//订单赠送积分
             'order_status'=>$order_status,//订单状态
             'pay_status'=>'0',//订单付款状态
             'shipping_status'=>'0',//订单配送状态
@@ -248,7 +269,6 @@ class Order extends BaseController
             'consign_time'=>'',//卖家发货时间
             'create_time'=>time(),//订单创建时间
             'finish_time'=>$finish_time,//订单完成时间
-            'is_deleted'=>'',//订单是否已删除
             'operator_type'=>'',//操作人类型  1店铺  2用户
             'operator_id'=>'',//操作人id
             'refund_balance_money'=>'',//订单退款余额
@@ -266,7 +286,8 @@ class Order extends BaseController
             foreach ($cartList as $product){
                 $data = [
                     'order_id'=>$orderId,//
-                    'goods_id'=>$product['id'],
+                    'cid'=>$product['cid'],
+                    'goods_id'=>$product['goods_id'],
                     'goods_name'=>$product['goods_name'],
                     'price'=>$product['price'],//商品价格
                     'cost_price'=>$product['price'],//商品成本价
@@ -284,6 +305,7 @@ class Order extends BaseController
                 ];
 
                 Db::name('order_product')->insert($data);
+                Db::name('cart')->where(['id'=>$product['id']])->delete();
             }
         }else{
             $data = [
@@ -372,9 +394,29 @@ class Order extends BaseController
 
         $orderDetail->hidden(['prepay_id']);
         $orderGoods = Db::name('order_product')->where(['order_id'=>$orderDetail['id']])->select()->toArray();
+
+        //快递信息
+        $orderGoodsExpressModel = new OrderGoodsExpress;
+        $orderGoodModel = new OrderGoods;
+        $expressRow = $orderGoodsExpressModel->where(['order_no'=>$orderDetail['order_no']])->select()->toArray();
+
+        $express = [];
+        if( !empty($expressRow) ){
+            foreach ( $expressRow as $k=>$vs){
+                $express[$k] = [
+                    'express_name' => $vs['express_name'],
+                    'express_company' => $vs['express_company'],
+                    'express_no' => $vs['express_no'],
+                    'goods_list' => $orderGoodModel->field('goods_name,goods_picture')->where(['goods_id'=>['in',$vs['order_goods_id_array']],'order_id'=>$orderDetail['id']])->select()->toArray()
+                ];
+            }
+        }
+
+
         $row['data'] =[
             'orderInfo'=>$orderDetail,
             'orderGoods' => $orderGoods,
+            'express' => $express,
             'handleOption' => $orderDetail['order_status'] == 1 ? true:false
         ];
 
@@ -385,10 +427,55 @@ class Order extends BaseController
      * 删除订单
      * @return [type] [description]
      */
-    public function delOrder( $id ){
+    public function delOrder( ){
+        $id = $this->request->param('id');
+        if( empty($id) ){
+            $row['errmsg'] = '网络异常';
+            $row['errno'] = 1;
+            return $row;
+        }
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
         (new IDMustBePositiveInt())->goCheck( $id );
-        $orderDetail = OrderModel::del($id);
+        $orderDetail = OrderModel::delOrder($id,$this->uid);
+
+        if( $orderDetail ){
+            $row['errmsg'] = '删除成功';
+        }else{
+            $row['errmsg'] = '网络异常';
+            $row['errno'] = 1;
+        }
+
+        return $row;
+    }
+
+    /**
+     * 取消订单
+     * @param $id
+     * @return array
+     */
+    public function updateStatus(){
+        $id = $this->request->param('id');
+        $status = $this->request->param('status');
+        if( empty($id) ){
+            $row['errmsg'] = '网络异常';
+            $row['errno'] = 1;
+            return $row;
+        }
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+
+        $params = [
+            'id'=>$id,
+            'uid'=>$this->uid,
+            'status' => $status
+        ];
+        $orderDetail = OrderModel::updateOrderStatic($params);
+
+        if( $orderDetail ){
+            $row['errmsg'] = '操作成功';
+        }else{
+            $row['errmsg'] = '网络异常';
+            $row['errno'] = 1;
+        }
 
         return $row;
     }

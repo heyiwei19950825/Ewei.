@@ -107,7 +107,9 @@
                             <td>{$vo.goods_name}</td>
                             <td>{if condition="$vo.type == 2"} <span style="color:#FF5722">{$vo.order_money} 积分</span>{else}<span class="price">{$vo.order_money}</span>{/if}</td>
                             <td class="shop_name">{$vo.shop_name}</td>
-                            <td><a href="javascript:;" class="a2">{$vo.user_name}</a></td>
+                            <!--<td><a href="javascript:;" class="a2">{$vo.user_name}</a></td>-->
+                            <td><a href="javascript:;">{$vo.user_name}</a></td>
+
                             <td>{$vo.receiver_name}</td>
                             <td>{$vo.receiver_mobile}</td>
                             <td><span class="red">{$vo.order_status}</span></td>
