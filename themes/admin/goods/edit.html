@@ -90,12 +90,12 @@
                                             <input type="number" name="sp_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_price}">
                                         </div>
                                     </div>  
-                                    <!--<div class="layui-inline">-->
-                                      <!--<label class="layui-form-label">会员价:</label>-->
-                                      <!--<div class="layui-input-inline">-->
-                                        <!--<input type="number" name="sp_vip_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_vip_price}">-->
-                                      <!--</div>-->
-                                    <!--</div> -->
+                                    <div class="layui-inline">
+                                      <label class="layui-form-label">会员价:</label>
+                                      <div class="layui-input-inline">
+                                        <input type="number" name="sp_vip_price" placeholder="￥" lay-verify="float" autocomplete="off" class="layui-input" value="{$goods.sp_vip_price}">
+                                      </div>
+                                    </div>
                                 <!--     <div class="layui-inline">
                                       <label class="layui-form-label">成本价:</label>
                                       <div class="layui-input-inline">
@@ -142,7 +142,7 @@
                             </div>
                         </div>
                     </fieldset>
-                    <fieldset class="layui-elem-field" style="display:none" >
+                    <fieldset class="layui-elem-field" >
                         <legend><b>团购设置</b></legend>
                         <div class="layui-field-box">
                             <div class="layui-form-item">
@@ -300,7 +300,7 @@
                                 <label class="layui-form-label">缩略图</label>
                                 <div class="layui-input-inline layui-upload">
                                     <input type="hidden" name="thumb" value="{$goods.thumb}" class="layui-input layui-input-inline" id="thumb" >
-                                    <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150' data-path='uploads/goods_brand/'>上传图片</button>
+                                    <button type="button" class="layui-btn" id="upload" data-width='400' data-height='400' data-path='uploads/goods_brand/'>上传图片</button>
                                     <div class="layui-input-inline" style='margin-top:10px;'>
                                         <img class="layui-upload-img" id="demo1" src="{$goods.thumb}" style='width:150px;'>
                                         <p id="demoText"></p>
@@ -492,9 +492,11 @@
             if(this.checked == true){
                 $('.collective-value').css('display','block');
                 $('input[name=collective_state]').val(1);
+                $('input[name=is_collective]').val(1);
             }else{
                 $('.collective-value').css('display','none');
                 $('input[name=collective_state]').val(0);
+                $('input[name=is_collective]').val(0);
 
             }
         });

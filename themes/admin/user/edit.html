@@ -56,6 +56,13 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
+                        <label class="layui-form-label">VIP用户</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_vip" value="2" title="启用" {if condition="$user.is_vip==2"} checked="checked"{/if}>
+                            <input type="radio" name="is_vip" value="0" title="关闭" {if condition="$user.is_vip==0"} checked="checked"{/if}>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
                         <div class="layui-input-block">
                             <input type="hidden" name="id" value="{$user.id}">
                             <button class="layui-btn" lay-submit lay-filter="*">更新</button>

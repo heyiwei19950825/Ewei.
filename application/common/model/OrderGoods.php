@@ -22,4 +22,10 @@ class OrderGoods extends BaseModel {
         return $row;
     }
 
+    public static function del($id){
+        Db::name('order_product')->where([
+            'order_id'=>$id
+        ])->delete();
+    }
+
 }

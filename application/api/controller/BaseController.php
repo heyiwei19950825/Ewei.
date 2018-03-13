@@ -13,11 +13,31 @@ namespace app\api\controller;
 
 use app\api\service\Token;
 use think\Controller;
+use think\Db;
+use think\Config;
+
+
 
 class BaseController extends Controller
 {
     public function _initialize(){
         parent::_initialize();
+        self::setSystem();
+    }
+
+    protected function setSystem(){
+        $site_config = Db::name('system')->field('value')->where('name', 'site_config')->find();
+        $site_config = unserialize($site_config['value']);
+        $system = [
+            'domain' => $site_config['domain'],
+            'pay_back_url' => $site_config['pay_back_url'],
+
+        ];
+
+        Config::set('setting',$system);
+        Config::set('wx.app_id',$site_config['app_id']);
+        Config::set('wx.app_secret',$site_config['app_secret']);
+
     }
     protected function checkExclusiveScope()
     {

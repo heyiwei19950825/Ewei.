@@ -9,46 +9,60 @@
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" action="{:url('admin/system/updateSiteConfig')}" method="post">
+
                     <div class="layui-form-item">
-                        <label class="layui-form-label">网站标题</label>
+                        <label class="layui-form-label">网站开关</label>
                         <div class="layui-input-block">
-                            <input type="text" name="site_config[site_title]" value="{$site_config.site_title|default=''}" required  lay-verify="required" placeholder="请输入网站标题" autocomplete="off" class="layui-input">
+                            <input type="hidden" name="site_config[switch]" value="{$site_config.switch|default=''}" class="site_switch" >
+                            <input type="checkbox" {if condition="$site_config.switch == 'true' "} checked{/if} lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF" >
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">SEO标题</label>
+                        <label class="layui-form-label">网站公告</label>
                         <div class="layui-input-block">
-                            <input type="text" name="site_config[seo_title]" value="{$site_config.seo_title|default=''}" placeholder="请输入SEO标题" autocomplete="off" class="layui-input">
+                            <input type="text" name="site_config[inform]" value="{$site_config.inform|default=''}" placeholder="请输入网站公告" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">SEO关键字</label>
+                        <label class="layui-form-label">网站域名</label>
                         <div class="layui-input-block">
-                            <input type="text" name="site_config[seo_keyword]" value="{$site_config.seo_keyword|default=''}" placeholder="请输入SEO关键字" autocomplete="off" class="layui-input">
+                            <input type="text" name="site_config[domain]" value="{$site_config.domain|default=''}" placeholder="请输入网站域名" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">SEO说明</label>
+                        <label class="layui-form-label">AppID</label>
                         <div class="layui-input-block">
-                            <textarea name="site_config[seo_description]" placeholder="请输入SEO说明" class="layui-textarea">{$site_config.seo_description|default=''}</textarea>
+                            <input  type="text" name="site_config[app_id]" placeholder="请输入AppID" class="layui-input" value="{$site_config.app_id|default=''}">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">版权信息</label>
+                        <label class="layui-form-label">AppSecret</label>
                         <div class="layui-input-block">
-                            <input type="text" name="site_config[site_copyright]" value="{$site_config.site_copyright|default=''}" placeholder="请输入版权信息" autocomplete="off" class="layui-input">
+                            <input type="text" name="site_config[app_secret]" value="{$site_config.app_secret|default=''}" placeholder="请输入AppSecret" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">ICP备案号</label>
+                        <label class="layui-form-label">商户号</label>
                         <div class="layui-input-block">
-                            <input type="text" name="site_config[site_icp]" value="{$site_config.site_icp|default=''}" placeholder="请输入版权信息" autocomplete="off" class="layui-input">
+                            <input type="text" name="site_config[shop_id]" value="{$site_config.shop_id|default=''}" placeholder="请输入商户号" autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">统计代码</label>
+                        <label class="layui-form-label">商户支付密钥</label>
                         <div class="layui-input-block">
-                            <textarea name="site_config[site_tongji]" placeholder="请输入统计代码" class="layui-textarea">{$site_config.site_tongji|default=''}</textarea>
+                            <input name="site_config[shop_key]" placeholder="请输入商户支付密钥" class="layui-input" value="{$site_config.shop_key|default=''}" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">支付回调地址</label>
+                        <div class="layui-input-block">
+                            <input name="site_config[pay_back_url]" placeholder="请输入支付回调地址" class="layui-input" value="{$site_config.pay_back_url|default=''}" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">帮助信息</label>
+                        <div class="layui-input-block">
+                            <textarea name="site_config[helper]" lay-verify="content" placeholder="" class="layui-textarea" id="content">{$site_config.helper}</textarea>
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -62,4 +76,22 @@
         </div>
     </div>
 </div>
+
+{/block}
+{block name="js"}
+<script src="__JS__/ueditor/ueditor.config.js"></script>
+<script src="__JS__/ueditor/ueditor.all.min.js"></script>
+
+<script>
+    var ue = UE.getEditor('content');
+
+    //监听指定开关
+    form.on('switch(switchTest)', function(data){
+        var switch_val = this.checked ? 'true' : 'false';
+        $('.site_switch').val(switch_val);
+//        $('input[name=site_config[switch]]')
+//        layer.msg(this.checked ? 'true' : 'true');
+
+    });
+</script>
 {/block}

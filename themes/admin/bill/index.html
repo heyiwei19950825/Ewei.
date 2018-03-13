@@ -1,0 +1,94 @@
+{extend name="base" /}
+{block name="body"}
+<link rel="stylesheet" href="__CSS__/admin1.css">
+<div class="layui-body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">订单管理</li>
+        </ul>
+        <div class="'layui-tab-content" style="padding: 10px">
+            <form class="layui-form layui-form-pane" action="{:url('admin/order/index')}">
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单编号</label>
+                    <div class="layui-input-block">
+                        <input name="order_no" placeholder="请输入订单编号" autocomplete="off" class="layui-input" type="text" value="{$order_no}"/>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">用户</label>
+                    <div class="layui-input-block">
+                        <input name="user_name" placeholder="用户昵称" autocomplete="off" class="layui-input" type="text"  value="{$user_name}"/>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">用户</label>
+                    <div class="layui-input-block">
+                        <input name="user_name" placeholder="用户昵称" autocomplete="off" class="layui-input" type="text"  value="{$user_name}"/>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">商家</label>
+                    <div class="layui-input-inline">
+                        <select name="order_from" lay-verify="">
+                            <option value="">请选择</option>
+                            <option value="0" {if condition="$shop_id===0"} selected="selected"{/if}>官方旗舰店</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单来源</label>
+                    <div class="layui-input-inline">
+                        <select name="order_from" lay-verify="">
+                            <option value="">请选择</option>
+                            <option value="0" {if condition="$order_from===0"} selected="selected"{/if}>小程序</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单类型</label>
+                    <div class="layui-input-inline">
+                        <select name="order_type">
+                            <option value="">请选择</option>
+                            <option value="0" {if condition="$order_type===0"} selected="selected"{/if}>普通订单</option>
+                            <option value="1" {if condition="$order_type===1"} selected="selected"{/if}>团购订单</option>
+                            <option value="2" {if condition="$order_type===2"} selected="selected"{/if}>积分订单</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单状态</label>
+                    <div class="layui-input-inline">
+                        <select name="order_status" lay-verify="">
+                            <option value="">请选择</option>
+                            <option value="0" {if condition="$order_status===0"} selected="selected"{/if}>待支付</option>
+                            <option value="1" {if condition="$order_status===1"} selected="selected"{/if}>待发货</option>
+                            <option value="2" {if condition="$order_status===2"} selected="selected"{/if}>待签收</option>
+                            <option value="3" {if condition="$order_status===3"} selected="selected"{/if}>已签收</option>
+                            <option value="4" {if condition="$order_status===4"} selected="selected"{/if}>待退货</option>
+                            <option value="5" {if condition="$order_status===5"} selected="selected"{/if}>已退货</option>
+                            <option value="6" {if condition="$order_status===6"} selected="selected"{/if}>已退款</option>
+                            <option value="7" {if condition="$order_status===7"} selected="selected"{/if}>已完成</option>
+                            <option value="8" {if condition="$order_status===8"} selected="selected"{/if}>已取消</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">开始时间</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input start_time datetime" placeholder="开始时间" id="start"  name="start_time"  value="{$start_time}">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">截止时间</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input end_time datetime" placeholder="结束时间" id="end" name="end_time"  value="{$end_time}">
+                    </div>
+                </div>
+                <div class="layui-inline"><button class="layui-btn" lay-submit="">查询</button></div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div id="table-pages" style="text-align:center"></div>
+{/block}

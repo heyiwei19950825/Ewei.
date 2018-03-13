@@ -218,6 +218,7 @@ class Goods extends AdminBase
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
+//                var_dump($data);die;
                 if ($this->goods_model->allowField(true)->save($data, $id) !== false) {
                     if( !empty($data['sku_name']) ){
                         $i = 1;

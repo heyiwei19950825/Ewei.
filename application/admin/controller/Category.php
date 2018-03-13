@@ -23,7 +23,6 @@ class Category extends AdminBase
         $this->category_model = new CategoryModel();
         $this->goods_model  = new GoodsModel();
         $category_level_list  = $this->category_model->getLevelList();
-
         $this->assign('category_level_list', $category_level_list);
     }
 
@@ -58,6 +57,10 @@ class Category extends AdminBase
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
+                if( $data['pid'] != 0){
+                    $pCategory = $this->category_model->find(['id'=>$data['pid']]);
+                    $data['is_hid'] = $pCategory['is_hide'];
+                }
                 if ($this->category_model->allowField(true)->save($data)) {
                     $this->success('保存成功');
                 } else {
@@ -95,6 +98,15 @@ class Category extends AdminBase
                 $this->error($validate_result);
             } else {
                 $children = $this->category_model->where(['path' => ['like', "%,{$id},%"]])->column('id');
+                if( $data['is_hide'] == 1){
+                    $map = [
+                      'id' => ['in',implode(',',$children)]
+                    ];
+                    //父类隐藏 所有子类都隐藏
+                    $this->category_model->where($map)->update(['is_hide' => 1]);
+                    //子类开启父类也开启
+                    $this->category_model->where(['id'=>$data['pid']])->update(['is_hide' => 1]);
+                }
                 if (in_array($data['pid'], $children)) {
                     $this->error('不能移动到自己的子分类');
                 } else {

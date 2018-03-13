@@ -12,7 +12,7 @@
 
 <body>
 <div class="layui-tab-content">
-<fieldset class="layui-elem-field site-demo-button">
+    <fieldset class="layui-elem-field site-demo-button">
     <legend>订单信息</legend>
     <table class="layui-table layui-table-add" lay-skin="nob">
         <tbody>
@@ -73,8 +73,54 @@
         </tbody>
     </table>
 </fieldset>
-
-<fieldset class="layui-elem-field site-demo-button">
+    <fieldset class="layui-elem-field site-demo-button">
+        <legend>优惠情况</legend>
+        <table class="layui-table layui-table-add" lay-skin="nob">
+            <tbody>
+            <tr>
+                <th width="100" class="pad">会员价格购买</th>
+                <td>{if condition="$order.order_info.is_vip == 1"}是{else}否{/if}</td>
+            </tr>
+            {if condition="$order.order_info.coupon_status == true"}
+            <tr>
+                <th width="100" class="pad">使用优惠券</th>
+                <td>优惠金额{$order.order_info.coupon_money}</td>
+            </tr>
+            {/if}
+            </tbody>
+        </table>
+    </fieldset>
+    {if condition="$order.collective != '' "}
+    <fieldset class="layui-elem-field site-demo-button">
+        <legend>团购信息</legend>
+        <table class="layui-table" lay-skin="line">
+            <thead>
+            <tr>
+                <th>头像</th>
+                <th>用户名</th>
+                <th>购买数量</th>
+                <th>是否为团章</th>
+                <th>添加时间</th>
+                <th>状态</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach name="$order.collective" item="vo"}
+            <tr>
+                <!-- 点击进入前台对应商品页面 -->
+                <td><span><img class="img-cp" src="{$vo.u_portrait}" alt=""></span></td>
+                <td>{$vo.u_name}</td>
+                <td>{$vo.num}</td>
+                <td><span>{if condition="$vo.identity == 1"}团长{else}成员{/if}</span></td>
+                <td><span>{:date('Y-m-d H:i:s',$vo.add_time)}</span></td>
+                <td><span class="red">{$vo.status}</span></td>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+    </fieldset>
+    {/if}
+    <fieldset class="layui-elem-field site-demo-button">
     <legend>会员信息</legend>
     <table class="layui-table layui-table-add" lay-skin="nob">
         <tbody>
@@ -86,10 +132,14 @@
             <th class="pad">会员姓名</th>
             <td>{$order.user_info.name}</td>
         </tr>
+        <tr>
+            <th class="pad">VIP</th>
+            <td>{if condition="$order.user_info.is_vip==2"}是{else}否{/if}</td>
+        </tr>
         {if condition="$order.user_info.mobile != ''"}
         <tr>
             <th class="pad">手机号码</th>
-            <td>$order.user_info.mobile}</td>
+            <td>{$order.user_info.mobile}</td>
         </tr>
         {/if}
         </tbody>
@@ -126,6 +176,7 @@
         <th>所属分类</th>
         <th>数量</th>
         <th>商品单价</th>
+        <th>VIP价格</th>
         <th>商品总价</th>
     </tr>
     </thead>
@@ -133,15 +184,16 @@
     {foreach name='$order.goods_list' item='vo'}
         <tr>
             <!-- 点击进入前台对应商品页面 -->
-            <td width="66" class="a3"><a href="" target="blank"><img class="img-cp" src="{$vo.goods_picture}" alt=""></a></td>
+            <td width="66" class="a3"><span><img class="img-cp" src="{$vo.goods_picture}" alt=""></span></td>
             <td width="300" class="a3">
-                <a href=""><div>{$vo.goods_name}</div>
+                <a href="javascript:"><div>{$vo.goods_name}</div>
                     <!--<div class="gray">红色</div>-->
                 </a>
             </td>
             <td>{$vo.category}</td>
             <td>{$vo.num}</td>
             <td><span class="price">{$vo.price}</span></td>
+            <td><span class="price">{$vo.vip_price}</span></td>
             <td><span class="price">{$vo.goods_money}</span></td>
         </tr>
     {/foreach}

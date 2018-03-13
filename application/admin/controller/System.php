@@ -35,7 +35,7 @@ class System extends AdminBase
     {
         if ($this->request->isPost()) {
             $site_config                = $this->request->post('site_config/a');
-            $site_config['site_tongji'] = htmlspecialchars_decode($site_config['site_tongji']);
+//            $site_config['site_tongji'] = htmlspecialchars_decode($site_config['site_tongji']);
             $data['value']              = serialize($site_config);
             if (Db::name('system')->where('name', 'site_config')->update($data) !== false) {
                 $this->success('提交成功');

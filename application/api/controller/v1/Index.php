@@ -17,17 +17,38 @@ use app\api\model\Shop;
 use app\api\model\Theme;
 use app\api\model\Article;
 use app\api\model\Coupon;
+use app\api\model\User;
 use app\api\model\GoodsCollective;
+use app\api\service\Token;
 use think\Config;
+use think\Db;
 
 class Index extends BaseController
 {
+
+    public function _initialize()
+    {
+        parent::_initialize();
+        $this->uid = Token::getCurrentUid(1);
+    }
+
+
     /**
      * 首页数据列表
      */
     public function index(){
+        //用户已登录
+        $filed = 'id,name,thumb,sp_price,prefix_title,sp_o_price,sp_market';
+        if( $this->uid != 999999){
+            $user = User::get(['id'=>$this->uid]);
+            if($user->is_vip == 2 ){
+                $filed += 'sp_vip_price';
+            }
+        }
+
         //初始化数据
         $channel = $banner = $brandList = $categoryList = $hotGoodsList = $recommendGoodsList = $articleList = [];
+
 
         $channel = Category::filterCategory('id,icon,name,sort')->toArray();
         $channel = self::prefixDomainToArray('icon',$channel);
@@ -35,7 +56,7 @@ class Index extends BaseController
         foreach ( $channel as $key=>$item) {
             $categoryList[$key] = $item;
 
-            $categoryList[$key]['goodsList'] = Goods::getProductsByCategoryID($item['id'],false,'id,name,thumb,sp_price,prefix_title,sp_o_price,sp_market','','sort','asc',1,6);
+            $categoryList[$key]['goodsList'] = Goods::getProductsByCategoryID($item['id'],false,$filed,'','sort','asc',1,6);
 
             $categoryList[$key]['goodsList'] = $categoryList[$key]['goodsList']->toArray();
             //添加图片域名
@@ -57,11 +78,11 @@ class Index extends BaseController
         $articleList = self::prefixDomainToArray('thumb',$articleList);
 
         //获取热门商品
-        $hotGoodsList = Goods::hotGoods()->toArray();
+        $hotGoodsList = Goods::hotGoods($filed)->toArray();
         $hotGoodsList = self::prefixDomainToArray('thumb',$hotGoodsList);
 
         //获取推荐商品
-        $recommendGoodsList = Goods::recommendGoods();
+        $recommendGoodsList = Goods::recommendGoods($filed)->toArray();
         $recommendGoodsList = self::prefixDomainToArray('thumb',$recommendGoodsList);
 
         //获取所有的导航列表信息
@@ -76,6 +97,14 @@ class Index extends BaseController
         //店铺信息[旗舰店信息]
         $shopInfo = Shop::getShopInfoById(0);
 
+        //系统设置
+        $site_config = Db::name('system')->field('value')->where('name', 'site_config')->find();
+        $site_config = unserialize($site_config['value']);
+        $system = [
+            'switch'=>$site_config['switch'],
+            'inform'=>$site_config['inform'],
+        ];
+
         $data = [
             'channel'       => $channel,
             'banner'        => $banner,
@@ -86,7 +115,8 @@ class Index extends BaseController
             'topicList'     => $articleList,
             'couponList'    => $couponList,
             'collectiveList'=> $collectiveList,
-            'shopInfo'      => $shopInfo
+            'shopInfo'      => $shopInfo,
+            'system'      => $system
         ];
         $row = [
             'errno'     => 0,

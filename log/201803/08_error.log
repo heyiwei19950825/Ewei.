@@ -1,0 +1,36 @@
+---------------------------------------------------------------
+[2018-03-08T01:30:11+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:91]
+---------------------------------------------------------------
+[2018-03-08T01:32:13+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-08T01:33:01+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [8]未定义数组索引: add_time[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\model\UserCollective.php:50]
+---------------------------------------------------------------
+[2018-03-08T01:33:15+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [1]Call to undefined function app\api\model\dumps()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\model\UserCollective.php:48]
+---------------------------------------------------------------
+[2018-03-08T01:47:07+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [1]Call to undefined method WxPayUnifiedOrder::IsOut_refund_noSet()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\extend\WxPay\WxPay.Api.php:148]
+---------------------------------------------------------------
+[2018-03-08T01:54:04+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'order_goods_id' cannot be null[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[2018-03-08T02:01:20+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'order_goods_id' cannot be null[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[2018-03-08T02:02:24+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'order_goods_id' cannot be null[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[2018-03-08T02:02:49+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'order_goods_id' cannot be null[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[2018-03-08T02:03:23+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [8]未定义数组索引: buy_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php:262]
+---------------------------------------------------------------
+[2018-03-08T02:03:36+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [8]未定义数组索引: buy_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php:262]
+---------------------------------------------------------------
+[2018-03-08T02:04:29+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ error ] [1]Call to undefined method WxPayUnifiedOrder::IsOut_refund_noSet()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\extend\WxPay\WxPay.Api.php:148]

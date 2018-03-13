@@ -16,7 +16,7 @@ class TengxunyunTest extends BaseController{
 
 	public function __construct()
     {
-       	Conf::setAppInfo($this->appid, $this->secretId, $this->secretKey, $this->userid,conf::API_YOUTU_END_POINT ); 
+       	Conf::setAppInfo($this->appid, $this->secretId, $this->secretKey, $this->userid,conf::API_YOUTU_END_POINT );
     }
 
     public function index(){

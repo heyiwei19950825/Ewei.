@@ -84,7 +84,6 @@ class Coupon extends BaseModel
      */
     public static function useCoupon( $uid = -1 ,$cartListId = [],$totalPrice = 0){
         $user = User::getInfoById( $uid);
-
         $names =  '';
         $datas =[];
         $now =date('Y-m-d H:i:s',time());
@@ -110,17 +109,20 @@ class Coupon extends BaseModel
             //检测变量
             $isOk = false;
 
-            if($item['need_user_level']<= $user['rank_id']){
-                //优惠券是否在购物车商品列表中
-                foreach ($goodsRow as $gItem) {
-                    if( in_array($gItem['goods_id'],$cartListId) && $item['money'] <= $totalPrice ){
-                        $isOk = true;
+//            if($item['need_user_level']<= $user['rank_id']){
+                if( $goodsRow != []){
+                    //优惠券是否在购物车商品列表中
+                    foreach ($goodsRow as $gItem) {
+                        if( in_array($gItem['goods_id'],$cartListId) && $item['money'] <= $totalPrice ){
+                            $isOk = true;
+                        }
                     }
-                };
-            }
+                    $item['is_ok'] = $isOk;
+                }else{
+                    $item['is_ok'] = true;
+                }
+//            }
 
-
-            $item['is_ok'] = $isOk;
         }
 
         //获取优惠券对应的商品

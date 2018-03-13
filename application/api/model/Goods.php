@@ -40,13 +40,16 @@ class Goods extends BaseModel
                 $ids = $categoryId;
             }
         }
-
         $now = date('Y-m-d H:i:s',time());
         if($categoryId != 0 ){
             $map['cid']     = ['in',$ids];
         }
         if( $types == 'integral' ){
             $map['is_integral'] = ['=',1];
+        }
+
+        if( $types == 'vip'){
+            $map['sp_vip_price'] = ['<>',0];
         }
 
         $map['btime']   = ['<=',$now];
@@ -89,7 +92,17 @@ class Goods extends BaseModel
      */
     public static function getProductDetail($id,$field)
     {
-        $product = self::field($field)->find($id)->toArray();
+        $now = date('Y-m-d H:i:s',time());
+        $map['btime']           = ['<=',$now];
+        $map['etime']           = ['>=',$now];
+        $map['status']          = ['=',1];
+        $map['sp_inventory']     = ['>',0];
+
+        $product = self::where($map)->field($field)->find($id);
+
+        if($product != NULL ){
+            $product = $product->toArray();
+        }
         return $product;
     }
 
@@ -113,6 +126,8 @@ class Goods extends BaseModel
         $map['g.etime']   = ['>=',$now];
         $map['g.status']  = ['=',1];
         $map['g.id']      = ['=',$id];
+        $map['sp_inventory']     = ['>',0];
+
         $product = self::alias('g')
             ->join('category c','g.cid = c.id','LEFT')
             ->field( $field )
@@ -125,15 +140,17 @@ class Goods extends BaseModel
      * 获取热门商品信息
      * @return string
      */
-    public static function hotGoods()
+    public static function hotGoods($filed='')
     {
         $now = date('Y-m-d H:i:s',time());
         $map['is_hot']     = ['=',1];
         $map['btime']   = ['<=',$now];
         $map['etime']   = ['>=',$now];
         $map['status']  = ['=',1];
+        $map['sp_inventory']     = ['>',0];
+
         $product = self::where($map)
-            ->field('id,name,thumb,sp_price,prefix_title,sp_o_price,sp_market')
+            ->field($filed)
             ->order('sort asc')
             ->limit(4)
             ->select( );
@@ -144,18 +161,40 @@ class Goods extends BaseModel
      * 获取最新商品信息
      * @return string
      */
-    public static function recommendGoods()
+    public static function recommendGoods($filed='')
     {
         $now = date('Y-m-d H:i:s',time());
         $map['btime']   = ['<=',$now];
         $map['etime']   = ['>=',$now];
         $map['status']  = ['=',1];
         $map['is_recommend']     = ['=',1];
+        $map['sp_inventory']     = ['>',0];
 
         $product = self::where($map)
-            ->field('id,name,thumb,sp_price,prefix_title,sp_o_price,sp_market')
+            ->field($filed)
             ->order('sort asc')
             ->limit(4)
+            ->select( );
+        return $product;
+    }
+
+    /**
+     * 会员商品
+     * @return false|\PDOStatement|string|\think\Collection
+     */
+    public static function vipGoods()
+    {
+        $now = date('Y-m-d H:i:s',time());
+        $map['btime']   = ['<=',$now];
+        $map['etime']   = ['>=',$now];
+        $map['sp_vip_price']   = ['<>',0];
+        $map['status']  = ['=',1];
+        $map['is_recommend']     = ['=',1];
+        $map['sp_inventory']     = ['>',0];
+
+        $product = self::where($map)
+            ->field('id,name,thumb,sp_price,prefix_title,sp_o_price,sp_market,sp_vip_price')
+            ->order('sort asc')
             ->select( );
         return $product;
     }
@@ -170,6 +209,7 @@ class Goods extends BaseModel
         $map['etime']           = ['>=',$now];
         $map['status']          = ['=',1];
         $map['is_integral']     = ['=',1];
+        $map['sp_inventory']     = ['>',0];
 
         $product = self::where($map)
             ->field('id,name,thumb,sp_price,prefix_title,sp_integral')
@@ -188,6 +228,4 @@ class Goods extends BaseModel
         $row  = self::where($map)->count('id');
         return $row;
     }
-
-
-    }
+}

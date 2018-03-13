@@ -80,14 +80,18 @@ class Token
         }
     }
     
-    public static function getCurrentTokenVar($key)
+    public static function getCurrentTokenVar($key,$returnType = 0)
     {
         $token = Request::instance()
             ->header('Ewei-Token');
         $vars = Cache::get($token);
         if (!$vars)
         {
-            throw new TokenException();
+            if($returnType == 0){
+                throw new TokenException();
+            }else{
+                return 0;
+            }
         }
         else {
             if(!is_array($vars))
@@ -140,10 +144,13 @@ class Token
      *而不应当自己解析UID
      *
      */
-    public static function getCurrentUid()
+    public static function getCurrentUid( $returnType = 0 )
     {
-        $uid = self::getCurrentTokenVar('uid');
-        $scope = self::getCurrentTokenVar('scope');
+        $uid = self::getCurrentTokenVar('uid',$returnType);
+        if( $uid === 0){
+            return 999999;
+        }
+        $scope = self::getCurrentTokenVar('scope',$returnType);
         if ($scope == ScopeEnum::Super)
         {
             // 只有Super权限才可以自己传入uid

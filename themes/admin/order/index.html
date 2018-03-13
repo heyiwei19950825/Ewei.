@@ -20,10 +20,16 @@
                             <input name="user_name" placeholder="用户昵称" autocomplete="off" class="layui-input" type="text"  value="{$user_name}"/>
                         </div>
                     </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">用户</label>
+                    <div class="layui-input-block">
+                        <input name="user_name" placeholder="用户昵称" autocomplete="off" class="layui-input" type="text"  value="{$user_name}"/>
+                    </div>
+                </div>
                     <div class="layui-inline">
                         <label class="layui-form-label">商家</label>
                         <div class="layui-input-inline">
-                            <select name="order_from" lay-verify="">
+                            <select name="order_shop" lay-verify="">
                                 <option value="">请选择</option>
                                 <option value="0" {if condition="$shop_id===0"} selected="selected"{/if}>官方旗舰店</option>
                             </select>
@@ -79,6 +85,7 @@
                         </div>
                     </div>
                     <div class="layui-inline"><button class="layui-btn" lay-submit="">查询</button></div>
+                    <div class="layui-inline"><div class="layui-btn layui-btn-normal export" >导出Excel数据</div></div>
                 </form>
             <div class="table-list roll-x">
                 <table class="layui-table" lay-skin="line">
@@ -321,6 +328,34 @@
             });
         });
 
+
     });
+    $(function(){
+        //导出
+        $(document).on('click','.export',function(){
+            var order_no = $('input[name=order_no]').val();
+            var user_name = $('input[name=user_name]').val();
+            var order_from = $('select[name=order_from]').val();
+            var order_shop = $('select[name=order_shop]').val();
+            var order_type = $('select[name=order_type]').val();
+            var order_status = $('select[name=order_status]').val();
+            var start_time = $('input[name=start_time]').val();
+            var end_time = $('input[name=end_time]').val();
+            
+            $.get("{:url('admin/order/index')}",{
+                order_no:order_no,
+                user_name:user_name,
+                order_from:order_from,
+                order_shop:order_shop,
+                order_type:order_type,
+                order_status:order_status,
+                start_time:start_time,
+                end_time:end_time,
+                type:'export'
+            },function () {
+                
+            })
+        })
+    })
 </script>
 {/block}

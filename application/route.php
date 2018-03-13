@@ -10,7 +10,10 @@
 // 写完代码后对着路由表看，能否不看注释就知道这个接口的意义
 use think\Route;
 //admin
-Route::get('admin/refund/refundlist', 'admin/Order/refundList');
+Route::get('admin/refund/refundlist', 'admin/Order/refundList');//退货订单
+Route::get('admin/apply/vip', 'admin/User/vipList');//VIP用户申请
+
+
 
 
 //index
@@ -54,6 +57,7 @@ Route::get('api/:version/Goods/by_category', 'api/:version.Goods/getAllInCategor
 Route::get('api/:version/Goods/detail', 'api/:version.Goods/getOne');
 Route::get('api/:version/Goods/recent', 'api/:version.Goods/getRecent');
 Route::get('api/:version/goods/count', 'api/:version.Goods/goodsCount');
+Route::get('api/:version/goods/vip', 'api/:version.Goods/vipGoods');
 Route::get('api/:version/Goods/integral', 'api/:version.Goods/getIsIntegralGoods');//积分兑换商品
 
 
@@ -68,6 +72,7 @@ Route::get('api/:version/Category/list', 'api/:version.Category/getCategoryByCId
 
 //Token
 Route::post('api/:version/token/user', 'api/:version.Token/getToken');
+
 
 Route::post('api/:version/token/app', 'api/:version.Token/getAppToken');
 Route::post('api/:version/token/verify', 'api/:version.Token/verifyToken');
@@ -124,6 +129,7 @@ Route::post('api/:version/cart/update', 'api/:version.Cart/updateCarts');
 Route::post('api/:version/cart/checked', 'api/:version.Cart/checked');
 Route::post('api/:version/cart/delete', 'api/:version.Cart/deleteCarts');
 Route::get('api/:version/cart/checkout', 'api/:version.Cart/checkoutCarts');
+Route::get('api/:version/cart/checkstatus', 'api/:version.Cart/checkGoodsStatus');
 
 
 //城市地址列表
@@ -150,21 +156,32 @@ Route::post('api/:version/integral/integralCart', 'api/:version.Integral/integra
 Route::get('api/:version/collective/getList', 'api/:version.Collective/getList');
 Route::post('api/:version/collective/cart', 'api/:version.Collective/Cart');
 Route::get('api/:version/collective/detail', 'api/:version.Collective/getOne');
+Route::get('api/:version/collective/order', 'api/:version.Collective/orderList');
+Route::get('api/:version/collective/detailbyid', 'api/:version.Collective/detailByID');
+
 
 //用户反馈
 Route::post('api/:version/feedBack/add', 'api/:version.FeedBack/add');
 
-//用户评论
-Route::post('api/:version/comment/post', 'api/:version.Comment/add');
+
+//文章评论
+Route::post('api/:version/comment/articlepost', 'api/:version.Comment/addArticleComment');
+Route::get('api/:version/comment/articlecount', 'api/:version.Comment/articleCommentCount');
+Route::get('api/:version/comment/articlelist', 'api/:version.Comment/articleCommentList');
 
 
 
+Route::post('api/:version/user/applyvip', 'api/:version.user/applyVip');
+Route::get('api/:version/shop/helper', 'api/:version.Shop/helper');
 
 Route::get('api/:version/getApi', 'api/:version.QueryLists/index');
 Route::post('api/:version/tengxunyun', 'api/:version.TengxunyunTest/index');
 
 
 
+//定时任务
+Route::get('api/:version/collective/check', 'api/:version.Collective/checkCollectiveStatus');//团购失败退款任务
+Route::get('api/:version/order/check', 'api/:version.Order/checkOrderStatus');//删除超时订单
 
 
 //return [

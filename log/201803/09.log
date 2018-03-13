@@ -1,0 +1,454 @@
+---------------------------------------------------------------
+[2018-03-09T00:25:24+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：2.075540s][吞吐率：0.48req/s] [内存消耗：2,870.35kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.020092s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T00:26:13+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.183502s][吞吐率：5.45req/s] [内存消耗：2,747.34kb] [文件加载：52]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001063s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T00:26:53+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.229838s][吞吐率：4.35req/s] [内存消耗：2,868.34kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000372s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T00:27:06+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.134348s][吞吐率：7.44req/s] [内存消耗：2,746.16kb] [文件加载：52]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000429s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T00:27:26+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.471963s][吞吐率：2.12req/s] [内存消耗：3,216.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000917s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T00:27:36+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.312207s][吞吐率：3.20req/s] [内存消耗：3,250.98kb] [文件加载：60]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000402s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T00:58:34+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.523203s][吞吐率：1.91req/s] [内存消耗：3,391.71kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001657s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T00:58:42+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.339722s][吞吐率：2.94req/s] [内存消耗：3,392.16kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000994s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T00:59:01+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.311247s][吞吐率：3.21req/s] [内存消耗：3,391.59kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000381s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T00:59:23+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.332165s][吞吐率：3.01req/s] [内存消耗：3,391.13kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000570s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T01:15:01+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.247368s][吞吐率：4.04req/s] [内存消耗：2,894.05kb] [文件加载：58]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001085s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T01:16:13+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.253348s][吞吐率：3.95req/s] [内存消耗：3,244.23kb] [文件加载：60]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000950s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T01:16:49+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.274778s][吞吐率：3.64req/s] [内存消耗：3,346.52kb] [文件加载：65]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000592s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-09T01:18:06+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/collective/check
+[ info ] admin.ewei.com/api/v1/collective/check [运行时间：0.434463s][吞吐率：2.30req/s] [内存消耗：3,347.25kb] [文件加载：65]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000404s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Collective',
+    2 => 'checkCollectiveStatus',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1520417217',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Collective->checkCollectiveStatus[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Collective.php ]
+[ info ] [ LOG ] INIT File

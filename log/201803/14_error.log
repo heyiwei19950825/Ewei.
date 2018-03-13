@@ -1,0 +1,18 @@
+---------------------------------------------------------------
+[2018-03-14T00:20:58+08:00] 127.0.0.1 127.0.0.1 GET /admin/article/commentList?id=undefined
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\c6c73babdcb00a9f40617cf682005f4e.php:53]
+---------------------------------------------------------------
+[2018-03-14T00:49:54+08:00] 127.0.0.1 127.0.0.1 GET /admin/article/commentList?id=17
+[ error ] [4]语法错误: unexpected '}'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Article.php:233]
+---------------------------------------------------------------
+[2018-03-14T00:59:25+08:00] 127.0.0.1 127.0.0.1 GET /admin/article/commentList?id=17
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.id' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-14T01:56:41+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/goods/by_category/paginate?id=undefined&page=undefined&size=undefined&order=undefined&sort=undefined&categoryId=undefined&types=vip
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\validate\BaseValidate.php:40]
+---------------------------------------------------------------
+[2018-03-14T02:20:02+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/detail.html?id=59
+[ error ] [8]未定义变量: collective[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\8aafcfabcd13bf55135272b18da24920.php:92]
+---------------------------------------------------------------
+[2018-03-14T02:23:29+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/detail.html?id=59
+[ error ] [0]method not exist:think\db\Query->selct[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:94]

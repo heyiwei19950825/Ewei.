@@ -3,6 +3,7 @@ namespace app\admin\controller;
 
 use app\common\controller\AdminBase;
 use app\common\model\Order as OrderModel;
+use app\common\model\UserCollective;
 use app\common\model\OrderGoods as OrderGoodsModel;
 use app\common\model\User as UserModel;
 use app\common\model\OrderGoodsExpress;
@@ -10,6 +11,7 @@ use app\common\model\ExpressCompany;
 use app\common\model\Region;
 use app\common\model\Category;
 use think\Config;
+use app\common\lib\Helper;
 
 use think\Db;
 
@@ -28,6 +30,7 @@ class Order extends AdminBase
     protected $order_goods_express;
     protected $category_model;
     protected $express_model;
+    protected $user_collective;
 
     protected function _initialize()
     {
@@ -38,6 +41,7 @@ class Order extends AdminBase
         $this->order_goods_express  = new OrderGoodsExpress();
         $this->category_model  = new Category();
         $this->express_model  = new ExpressCompany();
+        $this->user_collective  = new UserCollective();
 
         //获取商家信息
         $sid = $this->shop['id'];
@@ -51,7 +55,7 @@ class Order extends AdminBase
             //初始化数据
             $condition = [];
             $page = 1;
-            $order_no = $user_name = $start_time = $end_time = $order_from = $order_type = $order_status = $shop_id ='';
+            $order_no = $user_name = $start_time = $end_time = $order_from = $order_type = $order_status = $shop_id = $type = '';
             $params = $this->request->param();
 
             extract($params);
@@ -125,7 +129,60 @@ class Order extends AdminBase
             //根据条件获取订单数据
             $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'create_time desc');
             $order_list = $list->toArray();
-
+            if($type == 'export'){
+                $xlsName = "订单数据列表";
+                $xlsCell = array(
+                    array(
+                        'order_no',
+                        '订单编号'
+                    ),
+                    array(
+                        'user_name',
+                        '用户名称'
+                    ),
+                    array(
+                        'receiver_name',
+                        '收货人信息'
+                    ),
+                    array(
+                        'receiver_mobile',
+                        '收货人手机号'
+                    ),
+                    array(
+                        'order_money',
+                        '订单金额'
+                    ),
+                    array(
+                        'create_time',
+                        '创建时间'
+                    ),
+//                    array(
+//                        'shipping_type_name',
+//                        '配送方式'
+//                    ),
+                    array(
+                        'order_status',
+                        '支付状态'
+                    ),
+//                    array(
+//                        'status_name',
+//                        '发货状态'
+//                    ),
+//                    array(
+//                        'goods_info',
+//                        '商品信息'
+//                    ),
+//                    array(
+//                        'buyer_message',
+//                        '买家留言'
+//                    ),
+//                    array(
+//                        'seller_memo',
+//                        '卖家备注'
+//                    )
+                );
+                Helper::exportExport($xlsName,$xlsCell,$order_list['data']);die;
+            }
             foreach ( $order_list['data'] as &$v ){
                 $orderConfig = Config::get('order');
                 $v['status'] = $v['order_status'];//订单状态
@@ -139,6 +196,7 @@ class Order extends AdminBase
 
                 $v['create_time'] = date('Y-m-d H:i:s',$v['create_time']);
                 $v['order_type'] = $orderConfig['type'][$v['order_type']];//订单类型
+                $v['order_type'] = $v['is_vip'] ==1 ?'VIP订单':$v['order_type'];
                 $v['order_from'] = $orderConfig['from'][$v['order_from']];//订单来源
             }
 
@@ -187,6 +245,7 @@ class Order extends AdminBase
         $orderConfig = Config::get('order');
         //订单详情
         $orderRow = $this->orderModel->getOrderDetail( $id);
+
         $orderInfo = [
             'order_no'     => $orderRow['order_no'],
             'order_from'   => $orderRow['order_from'],
@@ -197,12 +256,26 @@ class Order extends AdminBase
             'consign_time' => $orderRow['consign_time']!=0?date('Y-m-d H:i:s',$orderRow['consign_time']):0,//买家发货时间
             'finish_time'  => $orderRow['finish_time']!=0?date('Y-m-d H:i:s',$orderRow['finish_time']):0,//订单完成时间
             'type' => $orderRow['type'],//类型
-            'shop_name' => $orderRow['shop_name'],//类型
+            'shop_name' => $orderRow['shop_name'],//商品名称
             'status' => $orderRow['status'],//状态
+            'coupon_status' => $orderRow['coupon_id']!=0?true:false,//优惠券使用状态
+            'coupon_money' => $orderRow['coupon_money'],//优惠券金额
             'from' => $orderRow['from'],//来源
-            'goods_money' => $orderRow['type'] == 2 ?$orderRow['goods_money']:floor($orderRow['goods_money']),//订单商品价格
-            'order_money' => $orderRow['type'] == 2 ?$orderRow['point']:floor($orderRow['order_money']),//订单价格
+            'goods_money' => $orderRow['type'] == 2 ?$orderRow['goods_money']:round($orderRow['goods_money'],2),//订单商品价格
+            'order_money' => $orderRow['type'] == 2 ?$orderRow['point']:round($orderRow['order_money'],2),//订单价格
+            'is_vip' => $orderRow['is_vip']
         ];
+
+        //团购信息
+        $collective = '';
+        if($orderRow['order_type'] == '团购订单' ){
+            $collectiveNote = ['开团中','开团成功','开团失败','未支付','开团失败并已退款'];
+            $collective = $this->user_collective->where(['order_id'=>$id])->find();
+            $collective = $this->user_collective->where(['collective_no'=>$collective['collective_no']])->select()->toArray();
+            foreach ( $collective as &$item) {
+                $item['status'] = $collectiveNote[$item['status']];
+            }
+        }
 
         //用户信息
         $userRow = $this->userModel->getInfo($orderRow['buyer_id'],'id,nickname,portrait,rank_id,is_vip,mobile')->toArray();
@@ -225,12 +298,13 @@ class Order extends AdminBase
             'address'=>$addressRow['province'].' '.$addressRow['city'].' '.$addressRow['district'].$orderRow['receiver_address'],
         ];
         //订单商品详情
-        $goodsField = 'o.goods_name,o.goods_id,o.goods_picture,o.goods_money,o.num,o.price,g.cid,g.id,o.goods_id';
+        $goodsField = 'o.goods_name,o.goods_id,o.goods_picture,o.goods_money,o.num,o.price,g.cid,g.id,o.goods_id,o.vip_price';
         $goodsList = $this->order_goods_model->alias('o')->join('goods g','g.id=o.goods_id','LEFT')->field($goodsField)->where(['order_id'=>$orderRow['id']])->select()->toArray();
         //查询商品对应分类
         foreach ($goodsList as &$v){
             $category= $this->category_model->where(['id'=>$v['cid']])->find();
             $v['category']  = $category['name'];
+            $v['goods_money']  = $v['vip_price']!=0?$v['vip_price']*$v['num']:$v['goods_money'];
         }
         //备注
         $note = [
@@ -261,6 +335,7 @@ class Order extends AdminBase
             'goods_list' => $goodsList,
             'note'       =>  $note,
             'express'   =>  $express,
+            'collective'   =>  $collective,
         ];
 
         return $this->fetch('detail',['order'=>$order]);

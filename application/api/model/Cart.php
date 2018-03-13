@@ -30,6 +30,8 @@ class Cart extends BaseModel
                    'goods_name'         =>$params['goods_name'],
                    'price'              =>$params['price'] ,
                    'num'                =>$params['number'],
+                   'cost_price'         =>$params['cost_price'],
+                   'vip_price'          =>$params['vip_price'],
                    'goods_picture'      =>$params['goods_picture'],
                ]
            );
@@ -56,8 +58,8 @@ class Cart extends BaseModel
      * @return array
      */
     public static function cartCount( $uid=-1 ){
-        $sql = "SELECT count(id)  AS goodsCount, sum(price * num) AS goodsAmount FROM ewei_cart WHERE  uid = {$uid}";
-        $checkSql = "SELECT count(id)  AS goodsCount, sum(price * num) AS goodsAmount FROM ewei_cart WHERE  uid = {$uid} AND checked = 1";
+        $sql = "SELECT count(id)  AS goodsCount, sum(price * num) AS goodsAmount,sum( vip_price * num ) AS goodsVipAmount FROM ewei_cart WHERE  uid = {$uid}";
+        $checkSql = "SELECT count(id)  AS goodsCount, sum(price * num) AS goodsAmount,sum( vip_price * num ) AS goodsVipAmount FROM ewei_cart WHERE  uid = {$uid} AND checked = 1";
         $row = self::query( $sql );
         $checkRow = self::query( $checkSql );
         $data = [];
@@ -69,8 +71,13 @@ class Cart extends BaseModel
         }else{
             $count = $row[0];
             $data['goodsCount']         = $count['goodsCount'];
-            $data['goodsAmount']        = $count['goodsAmount'];
-            $data['checkedGoodsAmount'] = !empty($checkRow[0]['goodsAmount'])?$checkRow[0]['goodsAmount']:0;
+            $data['goodsAmount']        = $count['goodsVipAmount']!=0 ? $count['goodsVipAmount']:$count['goodsAmount'];
+
+            if($checkRow[0]['goodsCount'] == 0 ){
+                $data['checkedGoodsAmount'] = 0;
+            }else{
+                $data['checkedGoodsAmount'] = !empty($checkRow[0]['goodsAmount'])&&$count['goodsVipAmount']!=0 ?$checkRow[0]['goodsVipAmount']:$checkRow[0]['goodsAmount'];
+            }
             $data['checkedGoodsCount']  = !empty($checkRow[0]['goodsCount'])?$checkRow[0]['goodsCount']:0;
         }
 

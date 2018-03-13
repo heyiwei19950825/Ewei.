@@ -33,23 +33,31 @@ class Order extends BaseModel
      * @param array $param
      */
     public static function updateOrderStatic($param = [] ){
-        $row = Db::name('order')->where(['id'=>$param['id'],'buyer_id'=>$param['uid']])->update(['order_status'=>$param['status']]);
+
+        $updateExecute = Db::name('order')->where(['id'=>$param['id'],'buyer_id'=>$param['uid']]);
+        $row = $updateExecute->update(['order_status'=>$param['status']]);
+        $orderInfo = $updateExecute->field('order_type')->find();
+
+        //检查判断订单如果是团购订单  则修改对应的团购信息
+        if( $param['status'] == 8 && $orderInfo != NULL && $orderInfo['order_type'] == 1 ){
+            Db::name('user_collective')->where(['order_id'=>$param['id']])->update(['status'=>1]);
+        }
 
         return $row;
     }
 
-    public static function getSummaryByUser( $uid,$type,$page,$ize){
+    public static function getSummaryByUser( $param,$uid){
         $row = [];
-        $map['buyer_id'] = $uid;
-        if( $type != '9999' ){//不是全部查询
-            if( $type == '4' ){//退换货
-                $map['order_status'] = ['in','4,5,6'];
+        $param['buyer_id'] = $uid;
+        if( $param['type'] != '9999' && $param['type'] != ''){//不是全部查询
+            if( $param['type'] == '4' ){//退换货
+                $param['order_status'] = ['in','4,5,6'];
             }else{
-                $map['order_status'] = $type;
+                $param['order_status'] = $param['type'];
             }
         }
-
-        $data = Db::name('order')->where($map)->order('create_time desc,order_status asc')->select();
+        unset($param['type']);
+        $data = Db::name('order')->where($param)->order('create_time desc,order_status asc')->select();
         $orderConfig = Config::get('order')['status'];
 
         foreach ( $data as$key=> $item){
@@ -60,6 +68,7 @@ class Order extends BaseModel
             $row[$key]['handleOption'] = $item['order_status'] == 1 ? true:false;
             $row[$key]['order_type'] = $item['order_type'];
             $row[$key]['point'] = $item['point'];
+            $row[$key]['order_status'] = $item['order_status'];
             $row[$key]['goodsList'] = Db::name('order_product')->where(['order_id'=>$item['id']])->field('num,goods_name,goods_picture')->select()->toArray();
         }
 
@@ -74,7 +83,58 @@ class Order extends BaseModel
      * @return [type]      [description]
      */
     public static function delOrder( $id,$uid ){
+        $updateExecute = Db::name('order')->where(['id'=>$id,'buyer_id'=>$uid]);
+        $orderInfo = $updateExecute->field('order_type')->find();
+
+        //检查判断订单如果是团购订单  则修改对应的团购信息
+        if( $orderInfo != NULL && $orderInfo['order_type'] == 1 ){
+            Db::name('user_collective')->where(['order_id'=>$id])->update(['status'=>1]);
+        }
+
         $row = Db::name('order')->where(['id'=>$id,'buyer_id'=>$uid])->delete();
+
         return $row;
+    }
+
+    /**
+     * 通过订单Id查询
+     * @return array
+     */
+    public static function getGoodsInfoByOrderId( $param = []){
+        $row = Db::name('order_product')->alias('p')
+            ->join('order o','p.order_id = o.id','LEFT')
+            ->where($param)
+            ->find();
+
+        return $row;
+    }
+
+    /**
+     * 检测订单状态判断是否支付是否已过期
+     */
+    public static function checkAndDelOrder(){
+        //查询已过期并且未支付的订单
+        $row = Db::name('order')->where([
+            'order_status' => 0
+        ])->select();
+
+        foreach ($row as $item) {
+            if( $item['create_time'] + 1800 < time() ){
+                //删除订单
+                Db::name('order')->where([
+                    'id'=>$item['id']
+                ])->delete();
+                //删除订单相关商品
+                Db::name('order_product')->where([
+                    'order_id'=>$item['id']
+                ])->select();
+                //判断是否是团购
+                if( $item['order_type'] == 1 ){
+                    Db::name('user_collective')->where([
+                        'order_id'=>$item['id']
+                    ])->delete();
+                }
+            }
+        }
     }
 }

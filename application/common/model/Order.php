@@ -23,7 +23,7 @@ class Order extends BaseModel
      * @return array
      */
     public function getOrderList($page,$size,$condition,$desc,$isPage = true){
-        $field = 'o.id,o.seller_memo,o.order_no,o.shop_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name,point';
+        $field = 'o.id,o.is_vip,o.seller_memo,o.order_no,o.shop_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name,point';
         if( $isPage ){
             $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id')->where($condition)->order($desc)->group('o.order_no')->paginate($size, false, ['page' => $page]);
         }else{
@@ -94,6 +94,7 @@ class Order extends BaseModel
 
         $row['order_status'] = $orderConfig['status'][$row['order_status']];
         $row['order_type'] = $orderConfig['type'][$row['order_type']];//订单类型
+        $row['order_type'] = $row['is_vip']?'VIP订单':$row['order_type'];//订单类型
         $row['order_from'] = $orderConfig['from'][$row['order_from']];//订单来源
 
         return $row;

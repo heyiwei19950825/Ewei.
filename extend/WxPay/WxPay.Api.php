@@ -132,8 +132,7 @@ class WxPayApi
 	/**
 	 * 
 	 * 申请退款，WxPayRefund中out_trade_no、transaction_id至少填一个且
-	 * out_refund_no、total_fee、refund_fee、op_user_id为必填参数
-	 * appid、mchid、spbill_create_ip、nonce_str不需要填入
+	 * out_refund_no、total_fee、refund_fee、op_user_id为必填参数https://api.mch.weixin.qq.com/secapi/pay/refund
 	 * @param WxPayRefund $inputObj
 	 * @param int $timeOut
 	 * @throws WxPayException

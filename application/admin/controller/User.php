@@ -142,8 +142,58 @@ class User extends AdminBase
     /**
      * Vip用户申请列表
      */
-    public function vipList(){
+    public function vipList( $keyword = '', $page = 1 ){
+        $map = [];
+        $map['is_vip'] = ['in','1,2,3'];
+        if ($keyword) {
+            $map['nickname|mobile|email'] = ['like', "%{$keyword}%"];
+        }
+        //查询积分规则获取用户等级注释
+        $rankList = Db::name('user_rank')->select()->toArray();
+        if( empty($rankList) ){
+            $user_list = $this->user_model->where($map)->order('is_vip ASC')->select();
+            foreach ($user_list as &$v){
+                $v['rank_name'] = '普通用户';
+            }
+            $render = $this->user_model->where($map)->order('id DESC')->paginate(15, false, ['page' => $page]);
+        }else{
+            $user_list = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->select();
+            $render = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->paginate(15, false, ['page' => $page]);
+        }
 
+        foreach ( $user_list as $item) {
+            switch ($item['is_vip']){
+                case 1:
+                    $item['is_vip'] = '申请VIP';
+                    break;
+                case 2:
+                    $item['is_vip'] = '审核通过';
+                    break;
+                case 3:
+                    $item['is_vip'] = '拒绝申请';
+                    break;
+            }
+        }
+
+        // $user_list = $this->user_model->where($map)->order('id DESC')->paginate(15, false, ['page' => $page]);
+        return $this->fetch('user_vip_list', ['user_list' => $user_list,'render'=>$render, 'keyword' => $keyword,'controller'=>'apply']);
+    }
+
+    /**
+     * 用户VIP操作
+     */
+    public function optionVipUser(){
+        $param = $this->request->param();
+        if( $param['id'] == '' || empty($param['id']) ){
+            $this->error('参数错误');
+        }
+        $row = UserModel::update(['is_vip'=>$param['is_vip'],'vip_refuse_note'=>$param['note']],['id'=>$param['id']]);
+
+        if( $row ){
+            $this->success('审批成功');
+        }else{
+            $this->error('网络异常');
+        }
     }
 
     /**

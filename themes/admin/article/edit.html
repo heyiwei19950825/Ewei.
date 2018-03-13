@@ -87,13 +87,13 @@
                         <label class="layui-form-label">缩略图</label>
                         <div class="layui-input-inline layui-upload">
                             <input type="hidden" name="thumb" value="{$article.thumb}" class="layui-input layui-input-inline" id="thumb">
-                            <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150' data-path='uploads/common/'>上传图片</button>
+                            <button type="button" class="layui-btn" id="upload" data-width='375' data-height='128' data-path='uploads/common/'>上传图片</button>
                             <div class="layui-input-block" style='margin-top:10px;'>
                                 <img class="layui-upload-img" style='width:300px;' id="demo1" src="{$article.thumb}">
                                 <p id="demoText"></p>
                             </div>
                         </div>
-                    <div class="layui-form-mid layui-word-aux">推荐图片大小为300*300</div>
+                    <div class="layui-form-mid layui-word-aux">推荐图片大小为375*128</div>
                     </div>
 
                    <!--  <div class="layui-form-item">
@@ -113,19 +113,19 @@
                             </div>
                         </div>
                     </div> -->
-                    <!--<div class="layui-form-item">-->
-                        <!--<label class="layui-form-label">关联商品</label>-->
-                        <!--<div data-method="setTop" class="layui-btn">选择</div>-->
-                        <!--<input type="hidden" name="goods_ids" value=''>-->
-                    <!--</div>-->
-                    <!--<div class="layui-form-item">-->
-                    <!--<label class="layui-form-label"></label>-->
-                         <!--<ul class="fly-case-list goods-list">-->
-                           <!--{foreach name ='$goods_list' item='vo'}-->
-                             <!--<li data-id="123"><a class="fly-case-img" href="javascript:" target="_blank" ><img src="{$vo.thumb}" alt="{$vo.name}"><p class="">{$vo.name}</p><p style="padding-lfet:50px;">———</p><p style="color: #666;">{$vo.prefix_title}</p><div class="fly-case-info"><a href="javascript:" class="fly-case-user" target="_blank"><img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"></a><p class="layui-elip" style="font-size: 12px;"> ￥{$vo.sp_price}<span style="color: #666;"><s>{$vo.sp_o_price}</s></span></p> &nbsp;<p>{$vo.status}</p><div class="layui-btn  btn-click  layui-btn-primary goods-delete" data-id= "{$vo.id}" data-type="praise">删除</div></li>'-->
-                           <!--{/foreach}-->
-                        <!--</ul>-->
-                    <!--</div>-->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关联商品</label>
+                        <div data-method="setTop" class="layui-btn">选择</div>
+                        <input type="hidden" name="goods_ids" value=''>
+                    </div>
+                    <div class="layui-form-item">
+                    <label class="layui-form-label"></label>
+                         <ul class="fly-case-list goods-list">
+                           {foreach name ='$goods_list' item='vo'}
+                             <li data-id="123"><a class="fly-case-img" href="javascript:" target="_blank" ><img src="{$vo.thumb}" alt="{$vo.name}"><p class="">{$vo.name}</p><p style="padding-lfet:50px;">———</p><p style="color: #666;">{$vo.prefix_title}</p><div class="fly-case-info"><a href="javascript:" class="fly-case-user" target="_blank"><img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"></a><p class="layui-elip" style="font-size: 12px;"> ￥{$vo.sp_price}<span style="color: #666;"><s>{$vo.sp_o_price}</s></span></p> &nbsp;<p>{$vo.status}</p><div class="layui-btn  btn-click  layui-btn-primary goods-delete" data-id= "{$vo.id}" data-type="praise">删除</div></li>'
+                           {/foreach}
+                        </ul>
+                    </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">状态</label>
                         <div class="layui-input-inline">

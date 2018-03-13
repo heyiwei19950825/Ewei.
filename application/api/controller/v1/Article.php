@@ -11,6 +11,7 @@ namespace app\api\controller\v1;
 
 use app\api\controller\BaseController;
 use app\api\model\Article AS ArticleModel;
+use app\api\model\ArticleGoods;
 
 class Article extends BaseController
 {
@@ -43,11 +44,11 @@ class Article extends BaseController
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
         $field = 'id,title,introduction,content,author,reading,thumb,publish_time';
         $data = ArticleModel::getArticleById( $id,$field );
-
+        $data['goodsList'] = ArticleGoods::getGoodsByArticleId($id);
+        $data['goodsList'] = self::prefixDomainToArray('thumb',$data['goodsList']);
         ArticleModel::updateReadingNum($id);
         $data['thumb'] = self::prefixDomain($data['thumb']);
         $row['data'] = $data;
-
         return $row;
     }
 

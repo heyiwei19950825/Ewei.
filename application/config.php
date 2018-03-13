@@ -251,20 +251,25 @@ return [
     //设置
     'setting'       =>[
         //'domain' => 'http://admin.ewei.com',
-        'pay_back_url' => 'https://ld.mskfkj.com/api/v1/pay/notify',
-        'domain' => 'https://ld.mskfkj.com'
+//        'pay_back_url' => 'https://ld.mskfkj.com/api/v1/pay/notify',
+//        'domain' => 'https://ld.mskfkj.com'
     ],
 
     //订单状态
     'order' =>[
         'status'=>[
-            '待支付','待发货','待签收','已签收','待退货','已退货','已退款','已完成','已取消',
+            '待支付','待发货','待签收','已签收','待退货','已退货','已退款','已完成','已取消','拼团中',
         ],
         'type'=>[
             '普通订单','团购订单','积分订单',
         ],
         'from'=>[
             '小程序','微信公众号','App','PC','Wap'
+        ]
+    ],
+    'collective' =>[
+        'status' => [
+            '开团中','开团成功' ,'开团失败','未支付','已退款'
         ]
     ],
 

@@ -11,15 +11,15 @@ namespace app\api\controller\v1;
 
 use app\api\controller\BaseController;
 use app\api\model\GoodsCollective as GoodsCollectiveModel;
+use app\api\model\User;
 use app\api\model\UserAddress;
 use app\api\model\Goods as GoodsModel;
 use app\api\model\Region;
 use app\api\model\Express;
 use app\api\model\Order;
-use app\api\model\Shop;
-use app\api\model\User;
+use app\api\model\UserCollective;
 use app\api\service\Token;
-use think\Request;
+use app\api\service\Pay;
 
 class Collective extends BaseController
 {
@@ -28,7 +28,9 @@ class Collective extends BaseController
     public function _initialize()
     {
         parent::_initialize();
-        $this->uid = Token::getCurrentUid();
+        if( $_SERVER['PATH_INFO'] != '/api/v1/collective/check'){
+            $this->uid = Token::getCurrentUid();
+        }
     }
 
     /**
@@ -38,6 +40,13 @@ class Collective extends BaseController
         $page = $this->request->param('page');
         $size = $this->request->param('size');
         $collectiveList = GoodsCollectiveModel::getList($page,$size);
+        //商品相册
+        foreach ( $collectiveList['data'] as &$item) {
+            $item['photo'] = unserialize($item['photo']);
+            foreach ( $item['photo']as &$pItem) {
+                $pItem =  config('setting.domain').$pItem;
+            }
+        }
         $collectiveList['data'] = self::prefixDomainToArray('thumb',$collectiveList['data']);
 
         //配置参数
@@ -45,7 +54,6 @@ class Collective extends BaseController
             'count' => $collectiveList['total'],//总数
             'last_page' => $collectiveList['last_page'],//下一页页码
             'currentPage' => $collectiveList['current_page'],//当前页码
-            'goodsList'=>$collectiveList['data'],//商品列表
             'pagesize'  => $size,//每页长度
             'totalPages' => 1, //总页数
             'data' => $collectiveList['data'],
@@ -84,7 +92,7 @@ class Collective extends BaseController
     }
 
     /**
-     * 团购
+     * 团购购物车
      * @return array
      */
     public function Cart(){
@@ -143,5 +151,117 @@ class Collective extends BaseController
 
         ];
         return $row;
+    }
+
+    /**
+     * 团购订单
+     * @return array
+     */
+    public function orderList(){
+        $param['order_type'] = 1;
+        $param['type'] = 9999;
+        //查询订单信息
+        $data = Order::getSummaryByUser($param,$this->uid);
+
+        //查询订单对应的团购信息
+        foreach ($data as &$v){
+            $v['collective'] = UserCollective::getInfo(['order_id'=>$v['id']]);
+            $v['collective']['order_status_text'] = config('collective.status')[$v['collective']['status']];
+        }
+        if( empty($data) ){
+            $row = [
+                'errno' => 1,
+                'errmsg' => '暂无数据',
+                'data' => []
+            ];
+        }else{
+            $row = [
+                'errno' => 0,
+                'errmsg' => '查询成功',
+                'data' => $data
+            ];
+        }
+
+        return $row;
+    }
+
+    /**
+     * 获取用拼团信息
+     * @return array
+     */
+    public function detailByID(){
+        //查询当前用户的开团信息
+        $param['collective_id'] = $this->request->param('id');
+        $collectiveInfo = UserCollective::getInfo($param);
+
+        //查询当前用户开团信息中的商品信息
+        $oParam['p.order_id']= $collectiveInfo['order_id'];
+        $goodsInfo = Order::getGoodsInfoByOrderId($oParam);
+        //查询开团规则
+        $collectiveRule = GoodsCollectiveModel::getCollectiveByGid($goodsInfo['goods_id']);
+        //多少人开团
+        $goodsInfo['user_number'] = $collectiveRule['user_number'];
+
+        if( empty($collectiveRule) || $collectiveRule['state'] == 0){
+            $row = [
+                'errno' => 1,
+                'errmsg' => '开团活动已结束',
+                'data' => []
+            ];
+        }
+
+        //查询当前开团订单的信息
+        $cParam['collective_no'] = $collectiveInfo['collective_no'];
+        $cParam['status'] = ['<>','3'];
+        $cField = 'u_name,u_portrait';
+        $cOrderBy = 'identity desc';
+        $collectiveList = UserCollective::getList($cParam,$cField,$cOrderBy);
+
+        //团购到期时间
+        $limitTime = $collectiveInfo['add_time']+$collectiveInfo['limit_time'];
+        $limit_time_ms  = explode('-',date('Y-m-d-H-i-s',$limitTime));
+
+        //剩余多少人
+        $surplus = $collectiveRule['user_number'] - count($collectiveList);
+        for ($i=0;$i<$surplus;$i++){
+            array_push($collectiveList,['u_portrait' => 0]);
+        }
+
+        //是否是团长
+        $in_group = $collectiveInfo['identity']==1 && $collectiveInfo['uid'] == $this->uid?true:false;
+
+        //更多团购信息
+        $goodsList  = GoodsCollectiveModel::getList(1,10);
+        $goodsList['data'] = self::prefixDomainToArray('thumb',$goodsList['data']);
+
+        $row = [
+            'errno' => 0,
+            'errmsg' => '查询成功',
+            'data'=>[
+                'surplus' => $surplus,
+                'goodsList' => $goodsList,
+                'inGroup' => $in_group,
+                'goodsInfo' => $goodsInfo,
+                'collectiveRule' => $collectiveRule,
+                'collectiveInfo' => $collectiveInfo,
+                'collectiveList' => $collectiveList,
+                'limit_time_ms' => $limit_time_ms,
+                'cid' => $param['collective_id'],
+            ],
+        ];
+
+        return $row;
+    }
+
+    /**
+     * 定时任务检测拼团情况
+     */
+    public function checkCollectiveStatus(){
+        $orderList = UserCollective::getNoOnLine();
+        foreach ($orderList as $item){
+            $openid = User::getInfoById($item['buyer_id'])['openid'];
+            $pay= new Pay($item['id']);
+            $pay->refund($openid);
+        }
     }
 }

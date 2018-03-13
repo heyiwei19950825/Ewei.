@@ -3,36 +3,25 @@
 <link rel="stylesheet" type="text/css" href="__CSS__/page/index.css">
 <script src="__JS__/echarts.js"></script>
 
-<div class="layui-body" style="left:50% ;left:0">
+<div class="layui-body">
 <div class="fly-home fly-panel" style="background-image: url();">
   <img src="{$shop.shop_logo}" alt="贤心">
   <i class="iconfont icon-renzheng" title="官方平台"></i>
   <h1>
-    <!--{:session('admin_name')}-->
     {$shop.shop_name}
-    <!-- <i class="iconfont icon-nan"></i> -->
-    <!-- <i class="iconfont icon-nv"></i>  -->
-    <!--<i class="layui-badge fly-badge-vip">VIP999</i>-->
-    <!--
-    <span style="color:#c00;">（管理员）</span>
-    <span style="color:#5FB878;">（社区之光）</span>
-    <span>（该号已被封）</span>
-    -->
   </h1>
 
   <p style="padding: 10px 0; color: #5FB878;">认证信息：官方平台</p>
   <p class="fly-home-info">
     <i class="iconfont icon-kiss" title="飞吻"></i> 总收入<span style="color: #FF7200;"> ￥{$shop.shop_sales} </span>
     <i class="iconfont icon-shijian"></i><span>2017-2-27</span>
-    <i class="iconfont icon-chengshi"></i><span>{$shop.address}</span>
+    <!--<i class="iconfont icon-chengshi"></i><span>{$shop.address}</span>-->
   </p>
 
   <p class="fly-home-sign">平台简介</p>
   <p class="fly-home-sign">{$shop.brief}</p>
 
   <div class="fly-sns" data-user="">
-    <!-- <a href="javascript:;" class="layui-btn layui-btn-primary fly-imActive" data-type="addFriend">加为好友</a> -->
-    <!-- <a href="javascript:;" class="layui-btn layui-btn-normal fly-imActive" data-type="chat">发起会话</a> -->
   </div>
 
 </div>

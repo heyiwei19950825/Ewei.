@@ -66,6 +66,7 @@
                             <td>{php}echo $vo['status']==1 ? '已审核' : '未审核';{/php}</td>
                             <td>{$vo.publish_time}</td>
                             <td>
+                                <div class="layui-btn layui-btn-normal layui-btn-mini comment-list"  data-id="{$vo['id']}">查看评论</div>
                                 <a href="{:url('admin/article/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
                                 <a href="{:url('admin/article/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
                             </td>
@@ -80,4 +81,18 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    //领取记录
+    $(document).on("click", ".comment-list", function () {
+        var id = $(this).attr('data-id');
+        var url = 'http://'+window.location.host+"/admin/article/commentList?id="+id;
+        layer.open({
+            type: 2
+            , area: ['50%', '90%']
+            , title: "使用记录"
+            , content: url
+        });
+    });
+
+</script>
 {/block}

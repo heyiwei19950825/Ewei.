@@ -28,6 +28,7 @@ class Category extends BaseModel
     {
 
         $category = self::field($field)
+            ->where(['is_hide'=>0])
             ->find($id);
         return $category;
     }
@@ -38,7 +39,7 @@ class Category extends BaseModel
      * @return object FilterCategory
      */
     public static function filterCategory( $field='' ){
-        $filterCategory = self::where(['pid'=>0])
+        $filterCategory = self::where(['pid'=>0,'is_hide'=>0])
             ->field($field)
             ->order('sort asc')
             ->select();
@@ -52,6 +53,7 @@ class Category extends BaseModel
      */
     public static function childCategory( $id,$field='' ){
         $map['pid'] = $id;
+        $map['is_hide'] = 0;
         $filterCategory = self::where($map)
             ->field($field)
             ->order('sort asc')

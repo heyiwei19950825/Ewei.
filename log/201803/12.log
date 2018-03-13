@@ -1,0 +1,616 @@
+---------------------------------------------------------------
+[2018-03-12T19:26:11+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.275908s][吞吐率：3.62req/s] [内存消耗：3,003.11kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000457s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:49237',
+  'ewei-token' => '24c041f0f2ffcc5d01a545426ae7c2fa',
+  'user-agent' => 'wechatdevtools appservice port/58191',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 0,
+  'num' => 0,
+  'addressId' => 1,
+  'couponId' => 0,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T19:26:15+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.267142s][吞吐率：3.74req/s] [内存消耗：3,003.12kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000648s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:49237',
+  'ewei-token' => '24c041f0f2ffcc5d01a545426ae7c2fa',
+  'user-agent' => 'wechatdevtools appservice port/58191',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 0,
+  'num' => 0,
+  'addressId' => 1,
+  'couponId' => 0,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T19:26:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.312750s][吞吐率：3.20req/s] [内存消耗：3,003.20kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000773s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:49237',
+  'ewei-token' => '24c041f0f2ffcc5d01a545426ae7c2fa',
+  'user-agent' => 'wechatdevtools appservice port/58191',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 0,
+  'num' => 0,
+  'addressId' => 1,
+  'couponId' => 0,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T19:33:27+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/add
+[ info ] admin.ewei.com/api/v1/cart/add [运行时间：0.233016s][吞吐率：4.29req/s] [内存消耗：2,940.25kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001769s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:49237',
+  'ewei-token' => '24c041f0f2ffcc5d01a545426ae7c2fa',
+  'user-agent' => 'wechatdevtools appservice port/58191',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 42,
+  'number' => 1,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->add[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T19:47:19+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/update
+[ info ] admin.ewei.com/api/v1/cart/update [运行时间：0.322165s][吞吐率：3.10req/s] [内存消耗：2,995.65kb] [文件加载：60]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001497s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'updateCarts',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '32',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:49237',
+  'ewei-token' => '05509de1a6f8cfd0179e2f5b0d7c577e',
+  'user-agent' => 'wechatdevtools appservice port/58191',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 42,
+  'number' => 3,
+  'id' => 1,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->updateCarts[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T19:48:14+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/update
+[ info ] admin.ewei.com/api/v1/cart/update [运行时间：0.737990s][吞吐率：1.36req/s] [内存消耗：3,120.68kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000534s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'updateCarts',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '32',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:49237',
+  'ewei-token' => '05509de1a6f8cfd0179e2f5b0d7c577e',
+  'user-agent' => 'wechatdevtools appservice port/58191',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 42,
+  'number' => 4,
+  'id' => 1,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->updateCarts[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T19:48:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/update
+[ info ] admin.ewei.com/api/v1/cart/update [运行时间：0.124628s][吞吐率：8.02req/s] [内存消耗：1,446.54kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000646s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'updateCarts',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '32',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:49237',
+  'ewei-token' => '05509de1a6f8cfd0179e2f5b0d7c577e',
+  'user-agent' => 'wechatdevtools appservice port/58191',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 42,
+  'number' => 5,
+  'id' => 1,
+  'version' => 'v1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T20:13:17+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/add
+[ info ] admin.ewei.com/api/v1/cart/add [运行时间：0.496052s][吞吐率：2.02req/s] [内存消耗：3,119.49kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000699s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:49237',
+  'ewei-token' => '9ddf87e31c53f55cc065522b9a3787da',
+  'user-agent' => 'wechatdevtools appservice port/58191',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 43,
+  'number' => 2,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->add[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T20:13:20+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/add
+[ info ] admin.ewei.com/api/v1/cart/add [运行时间：0.285647s][吞吐率：3.50req/s] [内存消耗：3,119.49kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000453s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:49237',
+  'ewei-token' => '9ddf87e31c53f55cc065522b9a3787da',
+  'user-agent' => 'wechatdevtools appservice port/58191',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 43,
+  'number' => 2,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->add[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T20:33:10+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/add
+[ info ] admin.ewei.com/api/v1/cart/add [运行时间：0.631572s][吞吐率：1.58req/s] [内存消耗：3,119.50kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000450s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:50793',
+  'ewei-token' => '7a8197229d651fd3a538510894f68d82',
+  'user-agent' => 'wechatdevtools appservice port/55704',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 42,
+  'number' => 1,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->add[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T20:33:32+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/add
+[ info ] admin.ewei.com/api/v1/cart/add [运行时间：0.239548s][吞吐率：4.17req/s] [内存消耗：3,119.50kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000518s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:50793',
+  'ewei-token' => '7a8197229d651fd3a538510894f68d82',
+  'user-agent' => 'wechatdevtools appservice port/55704',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 42,
+  'number' => 1,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->add[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T20:35:26+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/add
+[ info ] admin.ewei.com/api/v1/cart/add [运行时间：0.280821s][吞吐率：3.56req/s] [内存消耗：3,119.50kb] [文件加载：67]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000476s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:50793',
+  'ewei-token' => '4549ea56d41bd921507588b4a6bc68cc',
+  'user-agent' => 'wechatdevtools appservice port/55704',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 42,
+  'number' => 1,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->add[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T20:36:09+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/add
+[ info ] admin.ewei.com/api/v1/cart/add [运行时间：0.223268s][吞吐率：4.48req/s] [内存消耗：2,995.79kb] [文件加载：60]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000408s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:50793',
+  'ewei-token' => '4549ea56d41bd921507588b4a6bc68cc',
+  'user-agent' => 'wechatdevtools appservice port/55704',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 42,
+  'number' => 1,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->add[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T20:36:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/add
+[ info ] admin.ewei.com/api/v1/cart/add [运行时间：0.238496s][吞吐率：4.19req/s] [内存消耗：2,995.88kb] [文件加载：60]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000455s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:50793',
+  'ewei-token' => '4549ea56d41bd921507588b4a6bc68cc',
+  'user-agent' => 'wechatdevtools appservice port/55704',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 42,
+  'number' => 1,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->add[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T20:50:41+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.346099s][吞吐率：2.89req/s] [内存消耗：3,006.55kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000471s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '48',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:50793',
+  'ewei-token' => 'a3f762985e9129f7bac995fb791927bc',
+  'user-agent' => 'wechatdevtools appservice port/55704',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 0,
+  'num' => 0,
+  'addressId' => 1,
+  'couponId' => 0,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-12T20:51:46+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/cart/add
+[ info ] admin.ewei.com/api/v1/cart/add [运行时间：0.212937s][吞吐率：4.70req/s] [内存消耗：2,997.41kb] [文件加载：60]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000448s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '25',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:50793',
+  'ewei-token' => 'a3f762985e9129f7bac995fb791927bc',
+  'user-agent' => 'wechatdevtools appservice port/55704',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx720cf9c5765a5c4d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 43,
+  'number' => 1,
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\api\controller\v1\Cart->add[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php ]
+[ info ] [ LOG ] INIT File

@@ -74,11 +74,11 @@ class Article extends AdminBase
             $req             = [];
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Article');
-
-            if( $data['goods_ids'] != ''){//关联商品
+            if( isset($data['goods_ids']) && $data['goods_ids'] != ''){//关联商品
                 $ids = explode(',',trim($data['goods_ids'],',') );
                 $data['range_type'] = 0;
             }else{
+                $ids = [];
                 $data['range_type'] = 1;
             }
 
@@ -86,14 +86,17 @@ class Article extends AdminBase
                 $this->error($validate_result);
             } else {
                 if ($this->article_model->allowField(true)->save($data)) {
-                    foreach ($ids as $key => $value) {//关联商品
-                        $req[$key] = array(
-                            'article_id' => $this->article_model->id,
-                            'goods_id' => $value
-                        ); 
+                    if($ids != []){
+                        foreach ($ids as $key => $value) {//关联商品
+                            $req[$key] = array(
+                                'article_id' => $this->article_model->id,
+                                'goods_id' => $value
+                            );
+                        }
+
+                        Db::name('article_goods')->insertAll($req);
                     }
 
-                    Db::name('article_goods')->insertAll($req);
                     $this->success('保存成功');
                 } else {
                     $this->error('保存失败');
@@ -208,6 +211,34 @@ class Article extends AdminBase
             }
         } else {
             $this->error('请选择需要操作的文章');
+        }
+    }
+
+    /**
+     * 获取文章列表
+     * @param $id
+     * @return mixed
+     */
+    public function commentList(  ){
+        $id = $this->request->param('id');
+        $list = Db::name('article_comment')->alias('c')
+            ->join('user u','u.id=c.uid','LEFT')
+            ->field('c.id,c.content,c.time,u.nickname')
+            ->where(['aid'=>$id])
+            ->order('time desc')->select();
+
+        return $this->fetch('comment_list',['list'=>$list]);
+    }
+    public function commentDel($id){
+        if ($id) {
+            if ( Db::name('article_comment')->where(['id'=>$id])->delete()) {
+                $this->success('删除成功');
+            } else {
+                $this->error('删除失败');
+
+            }
+        } else {
+            $this->error('请选择需要删除的商品');
         }
     }
 }

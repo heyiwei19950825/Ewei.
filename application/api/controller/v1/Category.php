@@ -32,7 +32,7 @@ class Category extends BaseController
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
 
         $cateNavList = CategoryModel::all(function($query){
-            $query->where(['pid'=>0])->field('id,name')->order('sort', 'asc');
+            $query->where(['pid'=>0,'is_hide'=>0])->field('id,name')->order('sort', 'asc');
         });
         if(empty($cateNavList)){
            return $row;
@@ -106,7 +106,6 @@ class Category extends BaseController
         }else{
             $categoryInfo['pid'] = 0;
         }
-
 
         //查询当前分类下的所有子分类
         $brotherCategory = CategoryModel::childCategory($categoryInfo['pid'],$field);

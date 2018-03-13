@@ -16,11 +16,27 @@ use app\api\model\Category as CategoryModel;
 use app\api\model\GoodsSku;
 use app\api\model\Footprint;
 use app\api\model\Collect;
+use app\api\service\Token;
+use app\api\model\User;
+
 use think\Exception;
 use think\Config;
 
 class Goods extends BaseController
 {
+    public $is_vip = false;
+    public function _initialize()
+    {
+        parent::_initialize();
+        $this->uid = Token::getCurrentUid(1);
+        //判断是否是VIP用户
+        $user = User::get(['id'=>$this->uid]);
+
+        if( $user->is_vip == 2 ){
+            $this->is_vip = true;
+        }
+    }
+
     protected $beforeActionList = [
         'checkSuperScope' => ['only' => 'createOne,deleteOne']
     ];
@@ -40,7 +56,7 @@ class Goods extends BaseController
             (new IDMustBePositiveInt())->goCheck();
         }
         (new PagingParameter())->goCheck();
-        $field = 'name,thumb,sp_price,id,sp_integral,sp_o_price,sp_market';
+        $field = 'name,thumb,sp_price,id,sp_integral,sp_o_price,sp_market,sp_vip_price';
         $sort = $sort=='category'?'btime':$sort;
 
         $pagingProducts = GoodsModel::getProductsByCategoryID(
@@ -168,7 +184,9 @@ class Goods extends BaseController
     public function getOne($id)
     {
         (new IDMustBePositiveInt())->goCheck();
-        $field = '';
+        $field = 'id,name,prefix_title,sp_o_price,sp_price,give_integral,sp_inventory,content,thumb,photo';
+        if( $this->is_vip) $field .= ',sp_vip_price';
+
         $product = GoodsModel::getProductDetail($id,$field);
 
         if (!$product )
@@ -264,6 +282,21 @@ class Goods extends BaseController
 
         return $row;
 
+    }
+
+    /**
+     * 获取Vip用户指定商品
+     */
+    public function vipGoods(){
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+
+        if( $this->is_vip ){
+            $vipGoodsList = GoodsModel::vipGoods();
+            $vipGoodsList = self::prefixDomainToArray('thumb',$vipGoodsList);
+            $row['data'] = $vipGoodsList;
+        }
+
+        return $row;
     }
 
     /**

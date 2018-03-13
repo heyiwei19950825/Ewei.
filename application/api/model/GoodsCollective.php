@@ -24,7 +24,7 @@ class GoodsCollective extends BaseModel
         $map['g.is_collective']  = ['=',1];
         $row = Db::name('goods_collective')->alias('c')
             ->join('goods g','c.goods_id = g.id','LEFT')
-            ->field('g.id,g.thumb,g.sp_price,g.name,g.prefix_title,c.user_number,c.goods_price')
+            ->field('g.id,g.thumb,g.sp_price,g.name,g.prefix_title,c.user_number,c.goods_price,sp_market,g.photo')
             ->where($map)
             ->paginate(
                 $limit, false, [
@@ -65,4 +65,5 @@ class GoodsCollective extends BaseModel
         $row = Db::name('goods_collective')->where(['goods_id'=>$id])->field('')->find();
         return $row;
     }
+
 }

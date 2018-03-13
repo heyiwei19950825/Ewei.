@@ -28,6 +28,7 @@
                     <tr>
                         <th style="width: 30px;">ID</th>
                         <th>用户名</th>
+                        <th>VIP</th>
                         <!--<th>来源</th>-->
                         <th>手机</th>
                         <th>邮箱</th>
@@ -45,6 +46,7 @@
                     <tr>
                         <td>{$vo.id}</td>
                         <td>{$vo.nickname}</td>
+                        <td>{if condition="$vo.is_vip == 2 "}是{else}否{/if}</td>
                         <!--<td>{$vo.nickname}{if condition="$vo.is_vip == 1 "}<i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：VIP用户" style="float:right"></i>{/if}</td>-->
                         <!--<td>小程序</td>-->
                         <td>{$vo.mobile}</td>

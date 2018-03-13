@@ -1,0 +1,49 @@
+---------------------------------------------------------------
+[2018-03-12T15:39:17+08:00] 10.139.166.66 101.226.103.61 POST /api/v1/pay/notify
+[ info ] small.redkylin.com/api/v1/pay/notify [运行时间：0.038724s][吞吐率：25.82req/s] [内存消耗：3,612.50kb] [文件加载：53]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000252s ]
+[ info ] [ LANG ] /www/wwwroot/ewei_admin/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Pay',
+    2 => 'receiveNotify',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'connection' => 'Keep-Alive',
+  'pragma' => 'no-cache',
+  'content-length' => '779',
+  'host' => 'small.redkylin.com',
+  'user-agent' => 'Mozilla/4.0',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Pay->receiveNotify[ /www/wwwroot/ewei_admin/application/api/controller/v1/Pay.php ]
+[ notice ] array (
+  'appid' => 'wx720cf9c5765a5c4d',
+  'bank_type' => 'CFT',
+  'cash_fee' => '1',
+  'fee_type' => 'CNY',
+  'is_subscribe' => 'N',
+  'mch_id' => '1493263542',
+  'nonce_str' => 'e1l5070tlbslsy3f368denr5z0as0q27',
+  'openid' => 'ouYH20H-GEulJYIo8Q4WHQRREEik',
+  'out_trade_no' => '201803121539119836',
+  'result_code' => 'SUCCESS',
+  'return_code' => 'SUCCESS',
+  'sign' => '94B9C9BB4BC09F378D2A203A0E5232D0',
+  'time_end' => '20180312153918',
+  'total_fee' => '1',
+  'trade_type' => 'JSAPI',
+  'transaction_id' => '4200000052201803127386335349',
+)
+[ info ] [ CACHE ] INIT File
+[ notice ] 测试写入{"collective_id":80,"collective_no":"201803125aa62e9f8c98f","order_id":2,"uid":9,"gid":73,"num":3,"u_name":"\ua9c1\uaade Ewei \uaade\ua9c2","u_portrait":"https:\/\/wx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTJ68cLQuNYst2U0RC9bcbPd4fsehhAHqatmTic0l67FHkVq3HeHSjzjTxRIolGmWugWeW8gic9GyetQ\/0","identity":1,"limit_time":3600,"add_time":1520840351,"status":3}

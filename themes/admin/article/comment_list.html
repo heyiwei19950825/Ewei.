@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>坤飞科技</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="__JS__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__JS__/layui/global.css" media="all">
+    <link rel="stylesheet" href="__CSS__/font-awesome.min.css">
+    <!--CSS引用-->
+    {block name="css"}{/block}
+    <link rel="stylesheet" href="__CSS__/admin.css">
+
+    <!--[if lt IE 9]>
+    <script src="__CSS__/html5shiv.min.js"></script>
+    <script src="__CSS__/respond.min.js"></script>
+    <![endif]-->
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/layui/lay/dest/layui.all.js"></script>
+    <script src="__JS__/admin.js"></script>
+
+</head>
+<body>
+<style type="text/css">
+    .coupon-table{
+        margin: 20px;
+    }
+</style>
+
+<div class="layui-body" style="left:50% ;left:0">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-row layui-col-space15">
+            <table class="layui-table coupon-table">
+                <thead>
+                <tr>
+                    <th>用户名称</th>
+                    <th>评论内容</th>
+                    <th>评论时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                {foreach name='list' item='vo'}
+                <tr>
+                    <td>{$vo.nickname}</td>
+                    <td>{$vo.content}</td>
+                    <td>{:date('Y-m-d H:i:s',$vo.time)}</td>
+                    <td>
+                        <a href="{:url('admin/article/commentDel',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                    </td>
+                </tr>
+                {/foreach}
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    var layer = layui.layer
+    /**
+     * 通用删除
+     */
+    $('.ajax-delete').on('click', function () {
+        var _href = $(this).attr('href');
+        layer.open({
+            shade: false,
+            content: '确定删除？',
+            btn: ['确定', '取消'],
+            yes: function (index) {
+                $.ajax({
+                    url: _href,
+                    type: "get",
+                    success: function (info) {
+                        if (info.code === 1) {
+                            setTimeout(function () {
+                                location.href = info.url;
+                            }, 1000);
+                        }
+                        layer.msg(info.msg);
+                    }
+                });
+                layer.close(index);
+            }
+        });
+
+        return false;
+    });
+</script>
+</body>
+</html>

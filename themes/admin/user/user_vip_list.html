@@ -1,0 +1,92 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">VIP申请</li>
+            <!-- <li class=""><a href="{:url('admin/user/add')}">添加用户</a></li> -->
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+
+                <form class="layui-form layui-form-pane" action="{:url('admin/user/index')}" method="get">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">关键词</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="keyword" value="{$keyword}" placeholder="请输入关键词" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn">搜索</button>
+                    </div>
+                </form>
+                <hr>
+
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th style="width: 30px;">ID</th>
+                        <th>用户名</th>
+                        <th>VIP</th>
+                        <!--<th>来源</th>-->
+                        <th>手机</th>
+                        <th>邮箱</th>
+                        <th>创建时间</th>
+                        <th>拒绝理由</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {foreach name="user_list" item="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.nickname}</td>
+                        <td style="color:red">{$vo.is_vip}</td>
+                        <!--<td>小程序</td>-->
+                        <td>{$vo.mobile}</td>
+                        <td>{$vo.email}</td>
+                        <td>{$vo.create_time}</td>
+                        <th>{$vo.vip_refuse_note}</th>
+                        <td>
+                            <a href="javascript:" class="layui-btn layui-btn-mini vip_yes" data-id="{$vo.id}">同意</a>
+                            <a href="javascript:" class="layui-btn layui-btn-danger layui-btn-mini vip_no" data-id="{$vo.id}">拒绝</a>
+                        </td>
+                    </tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+                <!--分页-->
+                {$render}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{/block}
+{block name='js'}
+<script type="text/javascript">
+    // 拒绝申请
+    $(document).on("click", ".vip_no", function() {
+        var id = $(this).attr('data-id');
+        layer.prompt(function(val, index){
+            var msg = val;
+            $.post("{:url('admin/user/optionVipUser')}",{id:id,note:msg,is_vip:3},function(e){
+                layer.msg(e.msg);
+            })
+            layer.close(index);
+            window.location.reload();
+        });
+    });
+
+    //同意申请
+    $(document).on("click", ".vip_yes", function() {
+        var id = $(this).attr('data-id');
+        $.post("{:url('admin/user/optionVipUser')}",{id:id,note:'',is_vip:2},function(e){
+            layer.msg(e.msg);
+        })
+        window.location.reload();
+    });
+</script>
+{/block}
