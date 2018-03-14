@@ -263,7 +263,7 @@ class Order extends AdminBase
             'from' => $orderRow['from'],//来源
             'goods_money' => $orderRow['type'] == 2 ?$orderRow['goods_money']:round($orderRow['goods_money'],2),//订单商品价格
             'order_money' => $orderRow['type'] == 2 ?$orderRow['point']:round($orderRow['order_money'],2),//订单价格
-            'is_vip' => $orderRow['is_vip']
+            'is_vip' => $orderRow['is_vip'],//是否是VIP价格购买
         ];
 
         //团购信息

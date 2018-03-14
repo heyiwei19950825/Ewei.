@@ -1,11 +1,11 @@
 {extend name="base" /}
 {block name="body"}
-<link rel="stylesheet" type="text/css" href="__CSS__/page/index.css">
+<!--<link rel="stylesheet" type="text/css" href="__CSS__/page/index.css">-->
 <script src="__JS__/echarts.js"></script>
 
 <div class="layui-body">
 <div class="fly-home fly-panel" style="background-image: url();">
-  <img src="{$shop.shop_logo}" alt="贤心">
+  <img src="{$shop.shop_logo}" alt="">
   <i class="iconfont icon-renzheng" title="官方平台"></i>
   <h1>
     {$shop.shop_name}
@@ -13,7 +13,8 @@
 
   <p style="padding: 10px 0; color: #5FB878;">认证信息：官方平台</p>
   <p class="fly-home-info">
-    <i class="iconfont icon-kiss" title="飞吻"></i> 总收入<span style="color: #FF7200;"> ￥{$shop.shop_sales} </span>
+    <i class="iconfont icon-kiss" title="飞吻"></i> 总收入<span style="color: #FF7200;"> ￥{$shop.shop_account} </span>
+    <i class="iconfont icon-kiss" title="飞吻"></i> 总销售额【不包含退款】<span style="color: #FF7200;"> ￥{$shop.shop_sales} </span>
     <i class="iconfont icon-shijian"></i><span>2017-2-27</span>
     <!--<i class="iconfont icon-chengshi"></i><span>{$shop.address}</span>-->
   </p>
@@ -66,12 +67,12 @@
         <h3 class="fly-panel-title">最近订单</h3>
         <ul class="jie-row">
           {foreach name="order" item="vo"}
-          <li>
-            <span class="fly-jing">新</span>
-            <a href="javascript:" class="jie-title"> {$vo.order_no} {$vo.user_name} </a>
-            <i>{$vo.create_time}</i>
-            <em class="layui-hide-xs">价格：￥{$vo.order_money}</em>
-          </li>
+            <li>
+              <span class="fly-jing">新</span>
+              <a href="{:url('admin/order/index')}" class="jie-title"> {$vo.order_no} {$vo.user_name} </a>
+              <i>{$vo.create_time}</i>
+              <em class="layui-hide-xs">价格：￥{$vo.order_money}</em>
+            </li>
           {/foreach}
           <!-- <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;"><i style="font-size:14px;">没有发表任何求解</i></div> -->
         </ul>

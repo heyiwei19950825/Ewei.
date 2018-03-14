@@ -114,7 +114,7 @@
                         <td><span class="red">{$vo.order_status}</span></td>
                         <td>{$vo.create_time}</td>
                         <td>
-                            <span style="color:red">退货失败</span>
+                            <!--<span style="color:red">退货失败</span>-->
                         </td>
                     </tr>
                     {/foreach}
@@ -130,179 +130,179 @@
 {/block}
 {block name="js"}
 <script type="text/javascript">
-    layui.use(['jquery', 'laydate','form','layer'], function(){
-        var $ = layui.jquery,
-                laydate = layui.laydate,
-                layer = layui.layer
-        var url_detail1 = $('input[name=data-url]').val();
-        // 开始时间及截止时间
-        var start = {
-            choose: function(datas){
-                end.min = datas; //开始日选好后，重置结束日的最小日期
-                end.start = datas //将结束日的初始值设定为开始日
-            }
-        };
-
-        var end = {
-            choose: function(datas){
-                start.max = datas; //结束日选好后，重置开始日的最大日期
-            }
-        };
-
-        $('#start').click(function(){
-            start.elem = this;
-            laydate(start);
-        });
-
-        $('#end').click(function(){
-            end.elem = this
-            laydate(end);
-        });
-
-
-        //待发货详情
-        $(document).on("click", ".a1", function() {
-            var url = url_detail1+'?id='+$(this).attr('data-class');
-            layer.open({
-                type:2
-                ,area:['80%', '90%']
-                ,title:"订单详情"
-                ,content: url
-            });
-        });
-
-        //待发货详情
-        var tipsi = '';
-        var data_note ='';
-        $(".a1").hover( function(){
-            var data_class = $(this).attr('data-class');
-            data_note = $(this).attr('data-note');
-            if(data_note != ''){
-                tipsi = layer.tips(data_note, '.'+data_class, {
-                    tips: [2, '#78BA32']
-                });
-            }else{
-                data_note = '空';
-            }
-
-        },function(){
-            if(data_note != '') {
-                layer.close(tipsi);
-            }
-        });
-
-
-        $(document).on("click", ".a5", function() {
-            layer.open({
-                type:2
-                ,area:['80%', '90%']
-                ,title:"订单详情"
-                ,content: '第三方待发货详情.html'
-            });
-        });
-
-        // 待签收，已签收详情
-        $(document).on("click", ".a7", function() {
-            layer.open({
-                type:2
-                ,area:['80%', '90%']
-                ,title:"订单详情"
-                ,content: '平台已发货详情.html'
-            });
-        });
-        $(document).on("click", ".a8", function() {
-            layer.open({
-                type:2
-                ,area:['80%', '90%']
-                ,title:"订单详情"
-                ,content: '第三方已发货详情.html'
-            });
-        });
-
-        // 会员详情
-        $(document).on("click", ".a2", function() {
-            layer.open({
-                type:2
-                ,area:['50%', '70%']
-                ,title:"会员详情"
-                ,content: '会员详情.html'
-            });
-        });
-        // 平台发货
-        $(document).on("click", ".a3", function() {
-            var url = 'deliver.html?id='+$(this).attr('data-id');
-            layer.open({
-                type:2
-                ,area:['50%', '60%']
-                ,title:"平台发货"
-                ,content: url
-            });
-        });
-        // 平台替第三方发货
-        $(document).on("click", ".a6", function() {
-            var note = '该订单为第三方（'+$(this).parents('tr').find('.shop_name').text()+'）订单您确认由平台发货吗?';
-            layer.open({
-                title:"第三方发货提醒"
-                ,content: note
-                ,btn: ['取消', '确认']
-                ,yes: function(index, layero){
-                    layer.closeAll();
-                }
-                ,btn2: function(index, layero){
-                    layer.open({
-                        type:2
-                        ,area:['50%', '70%']
-                        ,title:"平台发货"
-                        ,content: 'deliver.html'
-                    });
-                }
-            });
-
-        });
-        //退款
-        $(document).on('click','.a10',function(){
-            var id = $(this).attr('data-id');
-            layer.open({
-                title:"第三方发货提醒"
-                ,content: '确认要退款吗？'
-                ,btn: ['取消', '确认']
-                ,yes: function(index, layero){
-                    layer.closeAll();
-                }
-                ,btn2: function(index, layero){
-                    $.post('{:url("admin/order/refund")}',{
-                        id:id
-                    },function(e){
-                        layer.msg(e.msg);
-                    })
-                }
-            });
-        })
-
-        // 取消订单
-        $(document).on("click", ".a4", function() {
-            var id = $(this).attr('data-id');
-            var url = 'cancel.html?id='+id;
-            layer.open({
-                type:2
-                ,area:['40%', '40%']
-                ,title:"取消订单"
-                ,content: url
-            });
-        });
-
-        // 添加备注
-        $(document).on("click", ".a9", function() {
-            var id = $(this).attr('data-id');
-            layer.prompt(function(val, index){
-                var msg = val;
-                $.post("{:url('admin/order/addMsg')}",{id:id,msg:msg},function(e){
-                    layer.msg(e.msg);
-                })
-                layer.close(index);
-            });
-        });
-
-    });
+//    layui.use(['jquery', 'laydate','form','layer'], function(){
+//        var $ = layui.jquery,
+//                laydate = layui.laydate,
+//                layer = layui.layer
+//        var url_detail1 = $('input[name=data-url]').val();
+//        // 开始时间及截止时间
+//        var start = {
+//            choose: function(datas){
+//                end.min = datas; //开始日选好后，重置结束日的最小日期
+//                end.start = datas //将结束日的初始值设定为开始日
+//            }
+//        };
+//
+//        var end = {
+//            choose: function(datas){
+//                start.max = datas; //结束日选好后，重置开始日的最大日期
+//            }
+//        };
+//
+//        $('#start').click(function(){
+//            start.elem = this;
+//            laydate(start);
+//        });
+//
+//        $('#end').click(function(){
+//            end.elem = this
+//            laydate(end);
+//        });
+//
+//
+//        //待发货详情
+//        $(document).on("click", ".a1", function() {
+//            var url = url_detail1+'?id='+$(this).attr('data-class');
+//            layer.open({
+//                type:2
+//                ,area:['80%', '90%']
+//                ,title:"订单详情"
+//                ,content: url
+//            });
+//        });
+//
+//        //待发货详情
+//        var tipsi = '';
+//        var data_note ='';
+//        $(".a1").hover( function(){
+//            var data_class = $(this).attr('data-class');
+//            data_note = $(this).attr('data-note');
+//            if(data_note != ''){
+//                tipsi = layer.tips(data_note, '.'+data_class, {
+//                    tips: [2, '#78BA32']
+//                });
+//            }else{
+//                data_note = '空';
+//            }
+//
+//        },function(){
+//            if(data_note != '') {
+//                layer.close(tipsi);
+//            }
+//        });
+//
+//
+//        $(document).on("click", ".a5", function() {
+//            layer.open({
+//                type:2
+//                ,area:['80%', '90%']
+//                ,title:"订单详情"
+//                ,content: '第三方待发货详情.html'
+//            });
+//        });
+//
+//        // 待签收，已签收详情
+//        $(document).on("click", ".a7", function() {
+//            layer.open({
+//                type:2
+//                ,area:['80%', '90%']
+//                ,title:"订单详情"
+//                ,content: '平台已发货详情.html'
+//            });
+//        });
+//        $(document).on("click", ".a8", function() {
+//            layer.open({
+//                type:2
+//                ,area:['80%', '90%']
+//                ,title:"订单详情"
+//                ,content: '第三方已发货详情.html'
+//            });
+//        });
+//
+//        // 会员详情
+//        $(document).on("click", ".a2", function() {
+//            layer.open({
+//                type:2
+//                ,area:['50%', '70%']
+//                ,title:"会员详情"
+//                ,content: '会员详情.html'
+//            });
+//        });
+//        // 平台发货
+//        $(document).on("click", ".a3", function() {
+//            var url = 'deliver.html?id='+$(this).attr('data-id');
+//            layer.open({
+//                type:2
+//                ,area:['50%', '60%']
+//                ,title:"平台发货"
+//                ,content: url
+//            });
+//        });
+//        // 平台替第三方发货
+//        $(document).on("click", ".a6", function() {
+//            var note = '该订单为第三方（'+$(this).parents('tr').find('.shop_name').text()+'）订单您确认由平台发货吗?';
+//            layer.open({
+//                title:"第三方发货提醒"
+//                ,content: note
+//                ,btn: ['取消', '确认']
+//                ,yes: function(index, layero){
+//                    layer.closeAll();
+//                }
+//                ,btn2: function(index, layero){
+//                    layer.open({
+//                        type:2
+//                        ,area:['50%', '70%']
+//                        ,title:"平台发货"
+//                        ,content: 'deliver.html'
+//                    });
+//                }
+//            });
+//
+//        });
+//        //退款
+//        $(document).on('click','.a10',function(){
+//            var id = $(this).attr('data-id');
+//            layer.open({
+//                title:"第三方发货提醒"
+//                ,content: '确认要退款吗？'
+//                ,btn: ['取消', '确认']
+//                ,yes: function(index, layero){
+//                    layer.closeAll();
+//                }
+//                ,btn2: function(index, layero){
+//                    $.post('{:url("admin/order/refund")}',{
+//                        id:id
+//                    },function(e){
+//                        layer.msg(e.msg);
+//                    })
+//                }
+//            });
+//        })
+//
+//        // 取消订单
+//        $(document).on("click", ".a4", function() {
+//            var id = $(this).attr('data-id');
+//            var url = 'cancel.html?id='+id;
+//            layer.open({
+//                type:2
+//                ,area:['40%', '40%']
+//                ,title:"取消订单"
+//                ,content: url
+//            });
+//        });
+//
+//        // 添加备注
+//        $(document).on("click", ".a9", function() {
+//            var id = $(this).attr('data-id');
+//            layer.prompt(function(val, index){
+//                var msg = val;
+//                $.post("{:url('admin/order/addMsg')}",{id:id,msg:msg},function(e){
+//                    layer.msg(e.msg);
+//                })
+//                layer.close(index);
+//            });
+//        });
+//
+//    });
 </script>
 {/block}

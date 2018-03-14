@@ -70,15 +70,17 @@ class Count extends AdminBase
         }
         $y = date('Y',time());
         $m = date('m',time());
+//        dump($userRow);die;
         $userRows = [];
-        for($i=1;$i<=31;$i++){
-            $userRows[] = [$y.'-'.$m.'-'.$i,0];
+//        for($i=1;$i<=31;$i++){
+//            $userRows[] = [$y.'-'.$m.'-'.$i,0];
+            $userRows[] = ['2018-02-25',0];
             foreach ($userRow as $key => $value) {
-                if(strtotime($y.'-'.$m.'-'.$i) == strtotime($value['create_time']) ){
-                    $userRows[] = [$y.'-'.$m.'-'.$i,$value['number']];
-                }
+//                if(strtotime($y.'-'.$m.'-'.$i) == strtotime($value['create_time']) ){
+                    $userRows[] = [$value['create_time'],$value['number']];
+//                }
             }
-        }
+//        }
 
         return json(['data'=>$userRows,'code'=>1,'message'=>'操作完成']);
     }

@@ -73,7 +73,9 @@ class Pay
         $wxOrderData->SetOut_refund_no($order->refund_trade_no);//商户系统内部的退款单号
         $wxOrderData->SetTotal_fee($order->refund_money*100);//订单金额
         $wxOrderData->SetRefund_fee($order->refund_money*100);//退款金额
-        $wxOrderData->SetOp_user_id(1493263542);//商户号操作用户ID
+//        $wxOrderData->SetOp_user_id(1493263542);//商户号操作用户ID // 眉山同城平台
+        $wxOrderData->SetOp_user_id(1492410722);//商户号操作用户ID  //九宴食材 小程序美食e+
+
         $refund = \WxPayApi::refund($wxOrderData);
 
         //退款成功
@@ -96,7 +98,7 @@ class Pay
         //修改订单状态
         OrderModel::update([
             'order_status' => 6,
-            'refund_money' => $refund['refund_fee']
+            'refund_money' => $refund['refund_fee']/100
         ],['order_no'=>$orderRow['order_no']]);
         //修改退款信息状态
         OrderRefund::update([
@@ -104,6 +106,16 @@ class Pay
             'remark' => '退款成功',
             'refund_time' => time()
         ],['order_id'=>$orderRow['id']]);
+
+        //修改账户余额
+        $shop = Shop::where('id','=',$orderRow['shop_id'])->find();
+        $account = $shop['shop_account'];
+        $account = $account*100 - ($refund['refund_fee']+0);
+        $account = round($account/100,2);
+
+        Shop::where(['id'=>$orderRow['shop_id']])->update(
+           [ 'shop_account'=>$account]
+        );
 
         if($orderRow['order_type'] == 1){
             //修改用户开团状态

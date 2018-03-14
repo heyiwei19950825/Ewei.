@@ -21,12 +21,20 @@ class WxPayConfig
 	 * 获取地址：https://mp.weixin.qq.com/advanced/advanced?action=dev&t=advanced/dev&token=2005451881&lang=zh_CN
 	 * @var string
 	 */
-	const APPID = 'wx720cf9c5765a5c4d';
-	const MCHID = '1493263542';
-	const KEY = '126ie371ed1i27s1bdGY82jks92ufsjk';
-	const APPSECRET = 'your appsecret';
-	
-	//=======【证书路径设置】=====================================
+//	眉山同城生活
+//	const APPID = 'wx720cf9c5765a5c4d';
+//    const MCHID = '1493263542';
+//    const KEY = '126ie371ed1i27s1bdGY82jks92ufsjk';
+//    const APPSECRET = 'your appsecret';
+
+//九宴食材
+	const APPID = 'wxf390c9e08ca6387f';
+    const MCHID = '1492410722';
+    const KEY = '4SNeMexpKkqsaOCqiaipN70gtKHyQuHh';
+
+
+
+    //=======【证书路径设置】=====================================
 	/**
 	 * TODO：设置商户证书路径
 	 * 证书路径,注意应该填写绝对路径（仅退款、撤销订单时需要，可登录商户平台下载，

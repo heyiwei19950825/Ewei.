@@ -1,20 +1,37 @@
 {extend name="base" /}
 {block name="body"}
-
+<style>
+    .price {
+        color: #FF5722;
+    }
+</style>
 <div class="layui-body">
     <div class="fly-home fly-panel" style="text-align:left">
-        <blockquote class="layui-elem-quote">
-            下单总金额：0
-        </blockquote>
-        <blockquote class="layui-elem-quote">
-            下单总会员数：0
-        </blockquote>
-        <blockquote class="layui-elem-quote">
-            下单总量：0
-        </blockquote>
-        <blockquote class="layui-elem-quote">
-            下单总商品数：0
-        </blockquote>
+        <fieldset class="layui-elem-field site-demo-button">
+            <legend>销售统计</legend>
+            <div class="layui-form">
+                <table class="layui-table" lay-skin="nob">
+                    <tbody>
+                    <tr>
+                        <td>订单总数：{$totalOrderNumber}个</td>
+                        <td>总收入（包含'待发货','待签收','已签收'）：<span class="price">{$totalMoney}元</span></td>
+                    </tr>
+                    <tr>
+                        <td>待发货订单：{$totalDeliver}个</td>
+                        <td>待签收订单：{$totalNoSign}个</td>
+                    </tr>
+                    <tr>
+                        <td>退款订单：{$totalRetreatNum}个</td>
+                        <td>退款金额：<span class="price">{$totalRetreat}元</span></td>
+                    </tr>
+                    <tr>
+                        <td>总销售商品数量：{$totalSellGoodsNum}个</td>
+                        <!--<td>总销售商品总金额：<span class="price">{$totalSellGoodsTotal}元</span></td>-->
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
     </div>
     <div class="layui-col-m12 fly-home-jie">
         <div class="fly-panel">

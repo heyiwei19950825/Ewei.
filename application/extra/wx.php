@@ -10,11 +10,16 @@ return [
     //  +---------------------------------
     //  微信相关配置
     //  +---------------------------------
+//眉山同城生活
+//    // 小程序app_id
+//    'app_id' => 'wx720cf9c5765a5c4d',
+//    // 小程序app_secret
+//    'app_secret' => '515b4aa89149e5ca84a20d3278d995a6',
 
     // 小程序app_id
-    'app_id' => 'wx720cf9c5765a5c4d',
+    'app_id' => 'wxf390c9e08ca6387f',
     // 小程序app_secret
-    'app_secret' => '515b4aa89149e5ca84a20d3278d995a6',
+    'app_secret' => '0ea37635889c1e7e54ace066b50b8596',
 
     // 微信使用code换取用户openid及session_key的url地址
     'login_url' => "https://api.weixin.qq.com/sns/jscode2session?" .

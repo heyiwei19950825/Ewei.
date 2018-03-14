@@ -128,13 +128,20 @@ class WxNotify extends \WxPayNotify
 
     private function updateShopBrief($free,$order){
 
-        $freeNum = Shop::where('id','=',$order['shop_id'])->find();
+        $shop = Shop::where('id','=',$order['shop_id'])->find();
 
-        $freeNum = $freeNum['shop_sales'];
+        //总销售额【不计算退款】
+        $freeNum = $shop['shop_sales'];
         $freeNum = $freeNum*100 + ($free+0);
         $freeNum = round($freeNum/100,2);
+
+        //账户余额
+        $account = $shop['shop_account'];
+        $account = $account*100 + ($free+0);
+        $account = round($account/100,2);
+
         Shop::where('id','=',$order['shop_id'])
-            ->update(['shop_sales'=>$freeNum]);
+            ->update(['shop_sales'=>$freeNum,'shop_account'=>$account]);
 
     }
 
