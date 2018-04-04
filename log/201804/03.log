@@ -1,0 +1,3424 @@
+---------------------------------------------------------------
+[2018-04-03T00:02:08+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.080419s][吞吐率：12.43req/s] [内存消耗：1,449.69kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001235s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:02:27+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.072479s][吞吐率：13.80req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001267s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:02:49+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.088569s][吞吐率：11.29req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002059s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:04:42+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.084154s][吞吐率：11.88req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001872s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:04:51+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/upload/uploadBase64Img
+[ info ] admin.ewei.com/api/v1/upload/uploadBase64Img [运行时间：0.095616s][吞吐率：10.46req/s] [内存消耗：1,884.18kb] [文件加载：47]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000469s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Upload',
+    2 => 'uploadBase64Img',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '9226',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'img' => 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAD8AXcDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCvRRRQAUUUUAFFFFABQKKKAClB4wen8qSigBwO3hhkHvRggkd8U5Tt4Ygqf1p4XoQMEcH8KQxgGzGeWPal2ux54FOxzubjPb1/z6UpyevSgBpVcYDcCkCoejH+lKyqpy3QdB2/KkKluXOB2AoAQj0Kn6Gm7SR1x9aU+WDgAk03d22gfjQAu1e7infKi7gv0z1NNUAnHr1NO27nLH8BQwtcZtdzk/rTxGQPf2p9BNK47ATtXrk1GePc/wAqU8c0wtk46ChCasLRSUoqhBSim0vegALDGAOfU0neilVSfYepoATvTgvqce1OAC9PzNNLjsKVwHcKOw9qaWphNFIBc0lJmkzk4FMBTxTxA7DPC/WnQwnO5xwO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',
+  'type' => 'image/png',
+  'version' => 'v1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Upload->uploadBase64Img[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Upload.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:08:16+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.096837s][吞吐率：10.33req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002130s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:08:56+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.080388s][吞吐率：12.44req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000948s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:08:59+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/upload/uploadBase64Img
+[ info ] admin.ewei.com/api/v1/upload/uploadBase64Img [运行时间：0.090350s][吞吐率：11.07req/s] [内存消耗：1,896.31kb] [文件加载：43]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000743s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Upload',
+    2 => 'uploadBase64Img',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '9226',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'img' => 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAD8AXcDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCvRRRQAUUUUAFFFFABQKKKAClB4wen8qSigBwO3hhkHvRggkd8U5Tt4Ygqf1p4XoQMEcH8KQxgGzGeWPal2ux54FOxzubjPb1/z6UpyevSgBpVcYDcCkCoejH+lKyqpy3QdB2/KkKluXOB2AoAQj0Kn6Gm7SR1x9aU+WDgAk03d22gfjQAu1e7infKi7gv0z1NNUAnHr1NO27nLH8BQwtcZtdzk/rTxGQPf2p9BNK47ATtXrk1GePc/wAqU8c0wtk46ChCasLRSUoqhBSim0vegALDGAOfU0neilVSfYepoATvTgvqce1OAC9PzNNLjsKVwHcKOw9qaWphNFIBc0lJmkzk4FMBTxTxA7DPC/WnQwnO5xwO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',
+  'type' => 'image/png',
+  'version' => 'v1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Upload->uploadBase64Img[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Upload.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:11:12+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.094708s][吞吐率：10.56req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002743s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:11:15+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/upload/uploadBase64Img
+[ info ] admin.ewei.com/api/v1/upload/uploadBase64Img [运行时间：0.080822s][吞吐率：12.37req/s] [内存消耗：1,854.58kb] [文件加载：41]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000780s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Upload',
+    2 => 'uploadBase64Img',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '9226',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'img' => 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAD8AXcDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCvRRRQAUUUUAFFFFABQKKKAClB4wen8qSigBwO3hhkHvRggkd8U5Tt4Ygqf1p4XoQMEcH8KQxgGzGeWPal2ux54FOxzubjPb1/z6UpyevSgBpVcYDcCkCoejH+lKyqpy3QdB2/KkKluXOB2AoAQj0Kn6Gm7SR1x9aU+WDgAk03d22gfjQAu1e7infKi7gv0z1NNUAnHr1NO27nLH8BQwtcZtdzk/rTxGQPf2p9BNK47ATtXrk1GePc/wAqU8c0wtk46ChCasLRSUoqhBSim0vegALDGAOfU0neilVSfYepoATvTgvqce1OAC9PzNNLjsKVwHcKOw9qaWphNFIBc0lJmkzk4FMBTxTxA7DPC/WnQwnO5xwO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',
+  'type' => 'image/png',
+  'version' => 'v1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Upload->uploadBase64Img[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Upload.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:11:30+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.095477s][吞吐率：10.47req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002856s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:11:34+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/upload/uploadBase64Img
+[ info ] admin.ewei.com/api/v1/upload/uploadBase64Img [运行时间：0.078516s][吞吐率：12.74req/s] [内存消耗：1,896.31kb] [文件加载：43]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000500s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Upload',
+    2 => 'uploadBase64Img',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '9226',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'img' => 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAFA3PEY8MlBGQUZaVVBfeMiCeG5uePWvuZHI////////////////////////////////////////////////////2wBDAVVaWnhpeOuCguv/////////////////////////////////////////////////////////////////////////wAARCAD8AXcDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCvRRRQAUUUUAFFFFABQKKKAClB4wen8qSigBwO3hhkHvRggkd8U5Tt4Ygqf1p4XoQMEcH8KQxgGzGeWPal2ux54FOxzubjPb1/z6UpyevSgBpVcYDcCkCoejH+lKyqpy3QdB2/KkKluXOB2AoAQj0Kn6Gm7SR1x9aU+WDgAk03d22gfjQAu1e7infKi7gv0z1NNUAnHr1NO27nLH8BQwtcZtdzk/rTxGQPf2p9BNK47ATtXrk1GePc/wAqU8c0wtk46ChCasLRSUoqhBSim0vegALDGAOfU0neilVSfYepoATvTgvqce1OAC9PzNNLjsKVwHcKOw9qaWphNFIBc0lJmkzk4FMBTxTxA7DPC/WnQwnO5xwO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',
+  'type' => 'image/png',
+  'version' => 'v1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Upload->uploadBase64Img[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Upload.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:15:06+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.077432s][吞吐率：12.91req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002099s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:19:33+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.083962s][吞吐率：11.91req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002003s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:19:52+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.084728s][吞吐率：11.80req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002521s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:25:20+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.082152s][吞吐率：12.17req/s] [内存消耗：1,449.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001537s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:25:20+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/feedback
+[ info ] admin.ewei.com/api/v1/feedback [运行时间：0.090741s][吞吐率：11.02req/s] [内存消耗：1,471.12kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002186s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'feedback',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'cache-control' => 'max-age=0',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:25:59+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.079876s][吞吐率：12.52req/s] [内存消耗：1,451.23kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000818s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:25:59+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.078803s][吞吐率：12.69req/s] [内存消耗：1,472.79kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001979s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'feedback',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:26:10+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.071556s][吞吐率：13.98req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001314s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:26:11+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.236822s][吞吐率：4.22req/s] [内存消耗：2,614.86kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000473s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:26:28+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.074144s][吞吐率：13.49req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000730s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:28:04+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagecategoryedit/id/1.html
+[ info ] admin.ewei.com/admin/message/messagecategoryedit/id/1.html [运行时间：0.342904s][吞吐率：2.92req/s] [内存消耗：3,056.34kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000473s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagecategoryedit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messageCategory',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:28:23+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagecategoryedit/id/1.html
+[ info ] admin.ewei.com/admin/message/messagecategoryedit/id/1.html [运行时间：0.315432s][吞吐率：3.17req/s] [内存消耗：3,052.39kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001207s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagecategoryedit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messageCategory',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:32:39+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.064305s][吞吐率：15.55req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002259s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:32:39+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.197600s][吞吐率：5.06req/s] [内存消耗：2,413.84kb] [文件加载：48]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002196s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\FeedBack->category[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\FeedBack.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:36:30+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.097490s][吞吐率：10.26req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002420s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:36:30+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.213598s][吞吐率：4.68req/s] [内存消耗：2,418.44kb] [文件加载：48]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001281s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\FeedBack->category[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\FeedBack.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:36:55+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.113906s][吞吐率：8.78req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.003179s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:36:55+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.198498s][吞吐率：5.04req/s] [内存消耗：2,418.79kb] [文件加载：48]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000510s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\FeedBack->category[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\FeedBack.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:37:39+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.097313s][吞吐率：10.28req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000993s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:38:37+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.082726s][吞吐率：12.09req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002209s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:39:06+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.079418s][吞吐率：12.59req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002546s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:39:22+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.075041s][吞吐率：13.33req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002167s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:39:59+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.067581s][吞吐率：14.80req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000653s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:41:22+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.070932s][吞吐率：14.10req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002038s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:43:23+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.081890s][吞吐率：12.21req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002086s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:43:43+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.257567s][吞吐率：3.88req/s] [内存消耗：2,619.45kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001854s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:43:43+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.081568s][吞吐率：12.26req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002424s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:46:23+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.091632s][吞吐率：10.91req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.003004s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:46:46+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.082058s][吞吐率：12.19req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002124s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:47:17+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.088252s][吞吐率：11.33req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002147s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:47:17+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.173461s][吞吐率：5.76req/s] [内存消耗：2,619.75kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000669s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/FeedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:39+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.071418s][吞吐率：14.00req/s] [内存消耗：1,451.24kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000652s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:39+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.196408s][吞吐率：5.09req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002011s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:40+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.067966s][吞吐率：14.71req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002823s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:40+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.150314s][吞吐率：6.65req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000527s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:41+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.056884s][吞吐率：17.58req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000526s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:41+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.141393s][吞吐率：7.07req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000458s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:42+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.066469s][吞吐率：15.04req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000741s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:42+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.133599s][吞吐率：7.49req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000576s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:43+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.058217s][吞吐率：17.18req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001164s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:43+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.135069s][吞吐率：7.40req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000530s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:44+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.062010s][吞吐率：16.13req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000572s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:44+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.142590s][吞吐率：7.01req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000466s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:45+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.059973s][吞吐率：16.67req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000706s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:45+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.159065s][吞吐率：6.29req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000658s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:46+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.059287s][吞吐率：16.87req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000704s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:46+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.143805s][吞吐率：6.95req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000450s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:47+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.064922s][吞吐率：15.40req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000726s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:48+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.137622s][吞吐率：7.27req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000500s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:48+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.065382s][吞吐率：15.29req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001043s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:51:49+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.143159s][吞吐率：6.99req/s] [内存消耗：2,619.52kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000506s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:53:01+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.061130s][吞吐率：16.36req/s] [内存消耗：1,451.45kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000650s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.4639554301479576:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:56:42+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.081606s][吞吐率：12.25req/s] [内存消耗：1,452.82kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.003638s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:59:18+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.086486s][吞吐率：11.56req/s] [内存消耗：1,452.82kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002338s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T00:59:48+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.081984s][吞吐率：12.20req/s] [内存消耗：1,452.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002295s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.9845916721645083:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:00:04+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/feedBack/send
+[ info ] admin.ewei.com/api/v1/feedBack/send [运行时间：0.103044s][吞吐率：9.70req/s] [内存消耗：2,372.81kb] [文件加载：47]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000447s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'create',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://admin.ewei.com',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.9845916721645083:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\FeedBack->create[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\FeedBack.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:02:09+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.085811s][吞吐率：11.65req/s] [内存消耗：1,452.82kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001703s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:02:16+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/feedBack/send
+[ info ] admin.ewei.com/api/v1/feedBack/send [运行时间：0.137118s][吞吐率：7.29req/s] [内存消耗：2,373.99kb] [文件加载：47]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000574s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'create',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '76',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'ewei-token' => 'undefined',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.9845916721645083:=http:',
+)
+[ info ] [ PARAM ] array (
+  'msg_time' => '2018-04-03 00:00:00',
+  'msg_type' => '123',
+  'address' => '123',
+  'msg_content' => '123123',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\FeedBack->create[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\FeedBack.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:05:49+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.071803s][吞吐率：13.93req/s] [内存消耗：1,452.82kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002151s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:06:37+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.079900s][吞吐率：12.52req/s] [内存消耗：1,452.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002233s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.9845916721645083:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:06:38+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/feedback/category
+[ info ] admin.ewei.com/api/v1/feedback/category [运行时间：0.183095s][吞吐率：5.46req/s] [内存消耗：2,424.58kb] [文件加载：48]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001966s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'ewei-token' => 'undefined',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.9845916721645083:=http:',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\FeedBack->category[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\FeedBack.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:06:56+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.080417s][吞吐率：12.44req/s] [内存消耗：1,452.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002659s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.9845916721645083:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:07:16+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.092432s][吞吐率：10.82req/s] [内存消耗：1,452.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002223s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.9845916721645083:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:15:30+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.083404s][吞吐率：11.99req/s] [内存消耗：1,452.82kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002064s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:17:01+08:00] 127.0.0.1 127.0.0.1 GET /static/js/jquery.min.map
+[ info ] admin.ewei.com/static/js/jquery.min.map [运行时间：0.083447s][吞吐率：11.98req/s] [内存消耗：1,452.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002270s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'js',
+    2 => 'jquery.min.map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040; __session:0.9845916721645083:=http:',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:22:08+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.349369s][吞吐率：2.86req/s] [内存消耗：3,134.86kb] [文件加载：61]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001232s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:23:17+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.353861s][吞吐率：2.83req/s] [内存消耗：3,135.20kb] [文件加载：61]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001884s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:23:34+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.332223s][吞吐率：3.01req/s] [内存消耗：3,061.19kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001318s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:23:39+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.330733s][吞吐率：3.02req/s] [内存消耗：3,061.19kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000465s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:23:46+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.338420s][吞吐率：2.95req/s] [内存消耗：3,061.26kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000725s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:24:12+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.357468s][吞吐率：2.80req/s] [内存消耗：3,061.32kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002073s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:24:30+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.348652s][吞吐率：2.87req/s] [内存消耗：3,061.70kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001354s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:24:38+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.333442s][吞吐率：3.00req/s] [内存消耗：3,061.70kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001242s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:24:42+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.344175s][吞吐率：2.91req/s] [内存消耗：3,135.09kb] [文件加载：61]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000503s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:24:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.370591s][吞吐率：2.70req/s] [内存消耗：3,135.41kb] [文件加载：61]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000645s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:24:54+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.384175s][吞吐率：2.60req/s] [内存消耗：3,135.20kb] [文件加载：61]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000495s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:25:04+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.344998s][吞吐率：2.90req/s] [内存消耗：3,061.70kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000753s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:25:29+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.299994s][吞吐率：3.33req/s] [内存消耗：3,061.51kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000435s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:30:53+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-27+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-27+00%3A00%3A00&end_time= [运行时间：0.315727s][吞吐率：3.17req/s] [内存消耗：3,075.74kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000530s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-27+00%3A00%3A00&end_time=',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-27 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:34:00+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-03+00%3A00%3A00&end_time= [运行时间：0.287591s][吞吐率：3.48req/s] [内存消耗：3,073.70kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000456s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=&end_time=',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'start_time' => '2018-04-03 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:48:39+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=%E7%BD%91%E5%90%A7&start_time=2018-04-02+00%3A00%3A00&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=%E7%BD%91%E5%90%A7&start_time=2018-04-02+00%3A00%3A00&end_time= [运行时间：0.322670s][吞吐率：3.10req/s] [内存消耗：3,133.29kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001361s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?keyword=&start_time=2018-04-02+00%3A00%3A00&end_time=',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '网吧',
+  'start_time' => '2018-04-02 00:00:00',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:51:41+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&msg_status=0&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&msg_status=0&start_time=&end_time= [运行时间：0.542557s][吞吐率：1.84req/s] [内存消耗：3,517.63kb] [文件加载：68]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001217s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?page=2',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'msg_status' => '0',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ VIEW ] ../themes/admin/message\message_list.html [ array (
+  0 => 'menu',
+  1 => 'msgNum',
+  2 => 'controller',
+  3 => 'category_level_list',
+  4 => 'list',
+  5 => 'start_time',
+  6 => 'end_time',
+  7 => 'keyword',
+  8 => 'render',
+  9 => 0,
+  10 => 1,
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:53:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&page=5&msg_status=1&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&page=5&msg_status=1&start_time=&end_time= [运行时间：0.513948s][吞吐率：1.95req/s] [内存消耗：3,513.02kb] [文件加载：68]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000458s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?keyword=&page=5&msg_status=0&start_time=&end_time=',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'page' => '5',
+  'msg_status' => '1',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ VIEW ] ../themes/admin/message\message_list.html [ array (
+  0 => 'menu',
+  1 => 'msgNum',
+  2 => 'controller',
+  3 => 'category_level_list',
+  4 => 'list',
+  5 => 'start_time',
+  6 => 'end_time',
+  7 => 'keyword',
+  8 => 'render',
+  9 => 'page',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:54:06+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&page=5&msg_status=1&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&page=5&msg_status=1&start_time=&end_time= [运行时间：0.354476s][吞吐率：2.82req/s] [内存消耗：3,327.73kb] [文件加载：66]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001402s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?keyword=&page=5&msg_status=0&start_time=&end_time=',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'page' => '5',
+  'msg_status' => '1',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ VIEW ] ../themes/admin/message\message_list.html [ array (
+  0 => 'menu',
+  1 => 'msgNum',
+  2 => 'controller',
+  3 => 'category_level_list',
+  4 => 'list',
+  5 => 'start_time',
+  6 => 'end_time',
+  7 => 'keyword',
+  8 => 'render',
+  9 => 'page',
+  10 => 'msg_status',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:54:31+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&page=5&msg_status=0&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&page=5&msg_status=0&start_time=&end_time= [运行时间：0.350899s][吞吐率：2.85req/s] [内存消耗：3,327.22kb] [文件加载：66]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001206s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?page=5',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'page' => '5',
+  'msg_status' => '0',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ VIEW ] ../themes/admin/message\message_list.html [ array (
+  0 => 'menu',
+  1 => 'msgNum',
+  2 => 'controller',
+  3 => 'category_level_list',
+  4 => 'list',
+  5 => 'start_time',
+  6 => 'end_time',
+  7 => 'keyword',
+  8 => 'render',
+  9 => 'page',
+  10 => 'msg_status',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:54:33+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?page=5
+[ info ] admin.ewei.com/admin/message/messagelist.html?page=5 [运行时间：0.348979s][吞吐率：2.87req/s] [内存消耗：3,326.69kb] [文件加载：66]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000466s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?keyword=&page=1&msg_status=0&start_time=&end_time=',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'page' => '5',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ VIEW ] ../themes/admin/message\message_list.html [ array (
+  0 => 'menu',
+  1 => 'msgNum',
+  2 => 'controller',
+  3 => 'category_level_list',
+  4 => 'list',
+  5 => 'start_time',
+  6 => 'end_time',
+  7 => 'keyword',
+  8 => 'render',
+  9 => 'page',
+  10 => 'msg_status',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:55:22+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&page=1&msg_status=0&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&page=1&msg_status=0&start_time=&end_time= [运行时间：0.303727s][吞吐率：3.29req/s] [内存消耗：3,063.80kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000451s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?page=1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'page' => '1',
+  'msg_status' => '0',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:55:42+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&page=1&msg_status=0&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&page=1&msg_status=0&start_time=&end_time= [运行时间：0.333923s][吞吐率：2.99req/s] [内存消耗：3,063.65kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001245s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?page=1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'page' => '1',
+  'msg_status' => '0',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:56:07+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&page=1&msg_status=0&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&page=1&msg_status=0&start_time=&end_time= [运行时间：0.345342s][吞吐率：2.90req/s] [内存消耗：3,063.89kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001220s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?page=1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'page' => '1',
+  'msg_status' => '0',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:56:26+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&page=1&msg_status=0&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&page=1&msg_status=0&start_time=&end_time= [运行时间：0.296457s][吞吐率：3.37req/s] [内存消耗：3,064.02kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000462s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?page=1',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'page' => '1',
+  'msg_status' => '0',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:58:09+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&msg_status=&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&msg_status=&start_time=&end_time= [运行时间：0.304796s][吞吐率：3.28req/s] [内存消耗：3,063.82kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000461s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?keyword=&msg_status=&start_time=&end_time=',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'msg_status' => '',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T01:59:18+08:00] 127.0.0.1 127.0.0.1 GET /admin/message/messagelist.html?keyword=&msg_status=&start_time=&end_time=
+[ info ] admin.ewei.com/admin/message/messagelist.html?keyword=&msg_status=&start_time=&end_time= [运行时间：0.336084s][吞吐率：2.98req/s] [内存消耗：3,063.57kb] [文件加载：55]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001284s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'message',
+    2 => 'messagelist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/message/messagelist.html?keyword=&msg_status=&start_time=&end_time=',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '___rl__test__cookies=1522682092671; OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'keyword' => '',
+  'msg_status' => '',
+  'start_time' => '',
+  'end_time' => '',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Message->messageList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Message.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-03T02:32:59+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/feedBack/send
+[ info ] admin.ewei.com/api/v1/feedBack/send [运行时间：0.147581s][吞吐率：6.78req/s] [内存消耗：2,629.25kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001204s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.FeedBack',
+    2 => 'create',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '234',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'ewei-token' => 'undefined',
+  'referer' => 'http://admin.ewei.com/home/feedBack/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=ncs8mrr8i5k2p1havks08obs77; pgv_pvi=3481007104; pgv_si=s4951639040',
+)
+[ info ] [ PARAM ] array (
+  'msg_time' => '2018-04-03 00:00:00',
+  'msg_type' => '文化文物 网吧',
+  'address' => '山西大同',
+  'msg_content' => '黑网吧',
+  'msg_img' => ',/uploads/common/15226894479045.png',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File

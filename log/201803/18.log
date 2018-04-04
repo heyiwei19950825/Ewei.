@@ -1,0 +1,54 @@
+---------------------------------------------------------------
+[2018-03-18T12:39:10+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1520144045.png
+[ info ] admin.ewei.com/uploads/goods_brand/1520144045.png [运行时间：0.279700s][吞吐率：3.58req/s] [内存消耗：1,405.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001212s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1520144045.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/goods/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1521122679; PHPSESSID=p3fdouau3415prkik1hduvncg5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-18T12:39:10+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1520265545.png
+[ info ] admin.ewei.com/uploads/goods_brand/1520265545.png [运行时间：0.284673s][吞吐率：3.51req/s] [内存消耗：1,405.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000579s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1520265545.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/goods/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=1615a67d1fa91-07528a454624f2-7e107977-1fa400-1615a67d1fb273; OUTFOX_SEARCH_USER_ID_NCOO=2042612758.9405384; CNZZDATA1272387699=644497730-1517640208-null%7C1521122679; PHPSESSID=p3fdouau3415prkik1hduvncg5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

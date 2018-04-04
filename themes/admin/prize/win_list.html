@@ -1,0 +1,147 @@
+{extend name="base" /}
+{block name="body"}
+<link href="__STATIC__/css/hplus/animate.css?v=2.2.0" rel="stylesheet">
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li ><a href="{:url('/admin/prize/index')}">抽奖规则</a></li>
+            <li class="layui-this">中奖记录列表</li>
+        </ul>
+        <div class="layui-tab-content">
+                <form class="layui-form layui-form-pane" action="{:url('/admin/prize/winList')}" method="get">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">关键词</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="keyword" value="" placeholder="用户真实姓名" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn">搜索</button>
+                    </div>
+
+                    <div class="layui-inline" style="margin-left: 50px;">
+                        <div class="layui-btn layui-btn-warm">兑换码兑换核实</div>
+                    </div>
+                </form>
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th style="width: 30px;">ID</th>
+                        <th>奖项</th>
+                        <th>中奖人信息</th>
+                        <th>来源</th>
+                        <th>兑换码</th>
+                        <th>中奖日期</th>
+                        <th>兑奖日期</th>
+                        <th>状态</th>
+                        <th>备注</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {foreach name='list' item='vo'}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.name}</td>
+                        <td><img src="{$vo.portrait}" alt="" width="50px"> {$vo.username}</td>
+                        <td>{php}echo $vo['from']==0 ? '小程序' : '公众号';{/php}</td>
+                        <td>{$vo.code}</td>
+                        <td>{:date('Y-m-d H:i:s',$vo.add_time)}</td>
+                        <td>{:date('Y-m-d H:i:s',$vo.exchange_time)}</td>
+                        <td class="status">{php}echo $vo['status']==0 ? '未兑换' : '已兑换';{/php}</td>
+                        <td class="note">{$vo.note}</td>
+                        <td width="200px">
+                            {if condition="$vo.status == 0 "}
+                                <div href="javascript:" class="layui-btn layui-btn-normal layui-btn-mini a8" data-id="{$vo.id}">兑换</div>
+                            {/if}
+                            <div href="javascript:" class="layui-btn  layui-btn-mini a9" data-id="{$vo.id}">备注</div>
+                        </td>
+                    </tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+            {$list->render()}
+        </div>
+
+    </div>
+    <table class="layui-hide" id="api-list" lay-filter="api-list">
+    </table>
+</div>
+
+<!--兑换弹窗-->
+<div class="modal inmodal " id="myModal2" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1050;top:150px;">
+    <div class="modal-dialog" >
+        <div class="modal-content animated flipInY" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">CODE码兑换</h4>
+            </div>
+                <div class="modal-body">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label class="control-label">CODE码:</label>
+                            <input type="text" name="code" class="form-control" style="text-transform:uppercase;">
+                        </div>
+                    </form>
+                </div>
+            <div class="modal-footer" >
+                <div type="button" class="btn btn-white" data-dismiss="modal">关闭</div>
+                <button type="button" class="btn btn-primary verify-code" data-id="0">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+{block name='js'}
+<script src="__STATIC__/js/hplus/jquery-2.1.1.min.js"></script>
+<script src="__STATIC__/js/hplus/bootstrap.min.js?v=3.4.0"></script>
+<script src="__STATIC__/js/hplus/toastr/toastr.min.js"></script>
+<script>
+    $(function(){
+        // 添加备注
+        $(document).on("click", ".a9", function() {
+            var id = $(this).attr('data-id');
+            var that = $(this);
+            layer.prompt(function(val, index){
+                var msg = val;
+                $.post("{:url('admin/prize/addNote')}",{id:id,msg:msg},function(e){
+                    if( e.code == 1 ){
+                        that.parents('tr').find('.note').html(msg);
+                    }
+                    layer.msg(e.msg);
+                })
+                layer.close(index);
+            });
+        });
+
+        //兑换弹窗
+        $(document).on("click", ".a8", function() {
+            var id  = $(this).attr('data-id');
+            $('.verify-code').attr('data-id',id);
+            $('#myModal2').modal('show')
+
+        });
+
+        //兑换
+        $(document).on('click','.verify-code',function(){
+            var id  = $(this).attr('data-id');
+            var code = $('input[name=code]').val();
+            var that = $(this);
+
+            $.post('/admin/prize/verifyCode',{
+                id:id,
+                code:code
+            },function( e ){
+                if( e.code == 1 ){
+                    $('#myModal2').modal('hide')
+                    window.location.reload();
+                }
+                layer.msg(e.msg);
+
+            })
+        })
+    })
+</script>
+{/block}

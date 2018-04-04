@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>早安瑜伽</title>
+
+    <link rel="stylesheet" type="text/css" href="__CSS__/home/styles.css">
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/jquerysession.js"></script>
+    <style type="text/css">
+        body,td,th { font-family: "Source Sans Pro", sans-serif; }
+        body { background-color: #2B2B2B; }
+    </style>
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div class="container">
+        <h1>早安瑜伽钢管舞</h1>
+        <h1 class="number" style="margin-top: 20px; display: none">抽奖号码1</h1>
+        <form>
+            <input type="text" placeholder="姓名" name="username">
+            <input type="text" placeholder="联系电话" name="mobile">
+            <button type="button" id="login-button">报名抽奖</button>
+        </form>
+    </div>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+$(function(){
+    var token = GetQueryString('token');
+    if(token != null ){
+        $.session.set('token',token,7600);
+        window.location.href = window.location.pathname;
+    }else{
+        token = $.session.get('token');
+    }
+    //检测用户是否已抽过奖
+    $.ajax({
+        url:'https://small.redkylin.com/api/v2/prize/check',
+        data:{
+            'key':'早安瑜伽抽奖',
+        },
+        type: "post",
+        async: false,
+        dataType: 'json',
+        beforeSend: function(req) {
+            req.setRequestHeader('Ewei-Token', token);
+        },
+        success: function(res) {
+            console.log(res);
+            if(res.code == 0){
+                alert(res.msg);
+            }else{
+                if(res.data != ''){
+                    $('.number').text('抽奖号码为'+res.data);
+                    $('.number').css('display','block');
+                    event.preventDefault();
+                    $('form').fadeOut(500);
+                    $('.wrapper').addClass('form-success');
+                }
+            }
+        }
+    });
+
+    $('#login-button').click(function(event){
+        var name = $('input[name=username]').val();
+        var mobile = $('input[name=mobile]').val();
+        $.ajax({
+            url:'https://small.redkylin.com/api/v2/internet/authenticationuser',
+            data:{
+                'name':name,
+                'mobile':mobile,
+                'key':'早安瑜伽抽奖',
+                'type':'take'
+            },
+            type: "post",
+            async: false,
+            dataType: 'json',
+            beforeSend: function(req) {
+                req.setRequestHeader('Ewei-Token', token);
+            },
+            success: function(res) {
+                if(res.code == 0){
+                    alert(res.msg);
+                }else{
+                    $('.number').text('抽奖号码为'+res.data.number);
+                    $('.number').css('display','block');
+                    event.preventDefault();
+                    $('form').fadeOut(500);
+                    $('.wrapper').addClass('form-success');
+                }
+            }
+        });
+    });
+
+    function GetQueryString(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r != null) return unescape(r[2]); return null;
+    }
+});
+</script>
+
+</body>
+</html>

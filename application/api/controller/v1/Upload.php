@@ -2,12 +2,13 @@
 namespace app\api\controller\v1;
 
 use think\Controller;
+use think\Exception;
 use think\Session;
 use think\Image;
 use think\File;
 use think\Config;
 
- // 存放商品图片、主图、sku
+// 存放商品图片、主图、sku
 define("UPLOAD_GOODS", Config::get('view_replace_str.UPLOAD_GOODS'));
 // 存放商品图片、主图、sku
 define("UPLOAD_GOODS_SKU", Config::get('view_replace_str.UPLOAD_GOODS_SKU'));
@@ -50,22 +51,22 @@ define("UPLOAD_VIDEO", Config::get('view_replace_str.UPLOAD_VIDEO'));
 class Upload extends Controller
 {
 
-   
+
 
     private $return = array();
-    
+
     // 文件路径
     private $file_path = "";
-    
+
     // 重新设置的文件路径
     private $reset_file_path = "";
 
-     // 文件名称
+    // 文件名称
     private $file_name = "";
-    
+
     // 文件大小
     private $file_size = 0;
-    
+
     // 文件类型
     private $file_type = "";
 
@@ -103,7 +104,7 @@ class Upload extends Controller
 
     //     $file        = $this->request->file('file');
     //     $data        = $this->request->param();
- 
+
     //     $upload_path = str_replace('\\', '/', ROOT_PATH . 'public/uploads/');
     //     $save_path   = '/uploads/';
     //     $info        = $file->validate($config)->move($upload_path);
@@ -187,7 +188,7 @@ class Upload extends Controller
         $this->reset_file_path = $file_path;
     }
 
-     /**
+    /**
      * 功能说明：文件(图片)上传(存入相册)
      */
     public function upload()
@@ -210,12 +211,12 @@ class Upload extends Controller
         $this->file_name = $_FILES["file"]["name"]; // 文件原名
         $this->file_size = $_FILES["file"]["size"]; // 文件大小
         $this->file_type = $_FILES["file"]["type"]; // 文件类型
-        
+
         if ($this->file_size == 0) {
             $this->return['message'] = "文件大小为0MB";
             return $this->ajaxFileReturn();
         }
-        
+
         // 验证文件
         if (! $this->validationFile()) {
             return $this->ajaxFileReturn();
@@ -225,7 +226,7 @@ class Upload extends Controller
         $suffix = count($file_name_explode) - 1;
         $ext = "." . $file_name_explode[$suffix]; // 获取后缀名
         $newfile = $guid . $ext; // 重新命名文件
-                                 // 特殊 判断如果是商品图
+        // 特殊 判断如果是商品图
 
         $ok = $this->moveUploadFile($_FILES["file"]["tmp_name"], $this->reset_file_path . $newfile,$_POST['width'],$_POST['height']);
 
@@ -235,11 +236,11 @@ class Upload extends Controller
                 @unlink($_FILES['file']);
                 $image_size = @getimagesize($ok["path"]); // 获取图片尺寸
                 if ($image_size) {
-                    
+
                     $width = $_POST['width'];
                     $height = $_POST['height'];
                     $name = $file_name_explode[0];
-                    
+
                     switch ($this->file_path) {
                         case UPLOAD_GOODS:
                             // 商品图
@@ -287,7 +288,7 @@ class Upload extends Controller
                         case UPLOAD_COMMON:
 
                             // 公共
-                            $this->return['code'] = 1;                           
+                            $this->return['code'] = 1;
                             $this->return['data'] = $ok["path"];
                             $this->return['message'] = "上传成功";
                             break;
@@ -336,12 +337,12 @@ class Upload extends Controller
                             break;
                     }
                 } else {
-                    
+
                     // 强制将文件后缀改掉，文件流不同会导致上传文件失败
                     $this->return['message'] = "请检查您的上传参数配置或上传的文件是否有误";
                 }
             } else {
-                
+
                 switch ($this->file_path) {
                     case UPLOAD_VIDEO:
                         // 视频文件
@@ -363,7 +364,7 @@ class Upload extends Controller
     }
 
 
-     /**
+    /**
      * 用于相册多图上传
      *
      * @return string|multitype:string NULL Ambigous <unknown, boolean, number, \think\false, string>
@@ -386,11 +387,11 @@ class Upload extends Controller
             $mode = intval('0777', 8);
             mkdir($this->reset_file_path, $mode, true);
         }
-        
+
         $this->file_name = $_FILES["file_upload"]["name"]; // 文件原名
         $this->file_size = $_FILES["file_upload"]["size"]; // 文件大小
         $this->file_type = $_FILES["file_upload"]["type"]; // 文件类型
-        
+
         if ($this->file_size == 0) {
             $data['state'] = '0';
             $data['message'] = "文件大小为0MB";
@@ -403,7 +404,7 @@ class Upload extends Controller
             $data['origin_file_name'] = $this->file_name;
             return $data;
         }
-        
+
         // 验证文件
         if (! $this->validationFile()) {
             return $this->ajaxFileReturn();
@@ -412,12 +413,12 @@ class Upload extends Controller
         $file_name_explode = explode(".", $this->file_name); // 图片名称
         $suffix = count($file_name_explode) - 1;
         $ext = "." . $file_name_explode[$suffix]; // 获取后缀名
-                                                  // 获取原文件名
+        // 获取原文件名
         $tmp_array = $file_name_explode;
         unset($tmp_array[$suffix]);
         $file_new_name = implode(".", $tmp_array);
         $newfile = md5($file_new_name . $guid) . $ext; // 重新命名文件
-                                                       // $ok = @move_uploaded_file($_FILES["file_upload"]["tmp_name"], $this->reset_file_path . $newfile);
+        // $ok = @move_uploaded_file($_FILES["file_upload"]["tmp_name"], $this->reset_file_path . $newfile);
 
         $ok = $this->moveUploadFile($_FILES["file_upload"]["tmp_name"], $this->reset_file_path . $newfile);
         if ($ok["code"]) {
@@ -435,7 +436,7 @@ class Upload extends Controller
                 $upload_flag = request()->post("upload_flag", "");
                 // 上传到相册管理，生成四张大小不一的图
                 $retval = $this->photoCreate($this->reset_file_path, $this->reset_file_path . $newfile, "." . $file_name_explode[$suffix], $type, $pic_name, $album_id, $width, $height, $pic_tag, $pic_id, $ok["domain"], $ok["bucket"], $ok["path"]);
-                
+
                 if ($retval > 0) {
 //                     $album = new Album();
 //                     $picture_info = $album->getAlubmPictureDetail([
@@ -477,18 +478,18 @@ class Upload extends Controller
      *
      * 2017年6月9日 19:54:46 王永杰
      *
-     * @param array $return            
+     * @param array $return
      */
     private function ajaxFileReturn()
     {
         if (empty($this->return['code']) || null == $this->return['code'] || "" == $this->return['code']) {
             $this->return['code'] = 0; // 错误码
         }
-        
+
         if (empty($this->return['message']) || null == $this->return['message'] || "" == $this->return['message']) {
             $this->return['message'] = ""; // 消息
         }
-        
+
         if (empty($this->return['data']) || null == $this->return['data'] || "" == $this->return['data']) {
             $this->return['data'] = ""; // 数据
         }
@@ -500,14 +501,20 @@ class Upload extends Controller
     /**
      * 原图上传(上传到外网的同时,也会在本地生成图片(在缩略图生成使用后会被删除))
      *
-     * @param unknown $file_path            
-     * @param unknown $key            
+     * @param unknown $file_path
+     * @param unknown $key
      */
     public function moveUploadFile($file_path, $key,$width,$height)
     {
         $image = \think\Image::open($file_path);
+        $type = explode('.',$key);
+
+        if($type[1] == 'png' ) {
+            $image->save($key);
+        }else{
+            $image->thumb($width,$height,\think\Image::THUMB_SCALING)->save($key);
+        }
         // 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb.png
-        $image->thumb($width,$height,\think\Image::THUMB_SCALING)->save($key);
         if( !empty($image) ){
             $ok = true;
         }else{
@@ -635,5 +642,31 @@ class Upload extends Controller
                 break;
         }
         return $flag;
+    }
+
+    /**
+     * 上传base64位数据
+     * @param data 图片的base64位数据
+     * @param path 上传位置
+     **/
+    public function uploadBase64Img(){
+        $data = $this->request->param('img');
+        $type = $this->request->param('type');
+        $suffix = explode('/',$type);
+        try{
+            if (!preg_match('/data:([^;]*);base64,(.*)/', $data, $matches)) {
+                die("error");
+            }
+            $content = str_replace(' ','+',$matches[2]);
+            $img = base64_decode( $content );
+            $filename = time().rand(1000,9999).'.'.$suffix[1];
+            file_put_contents(UPLOAD.'/common/'.$filename, $img);
+            $this->success('上传成功','',['filename'=>'/'.UPLOAD.'/common/'.$filename]);
+        } catch(Exception $e)
+        {
+            echo $e->getMessage();die;
+            $this->error('上传失败','',['filename'=>'']);
+        }
+        exit;
     }
 }

@@ -1,0 +1,74 @@
+---------------------------------------------------------------
+[2018-03-25T15:39:15+08:00] 127.0.0.1 127.0.0.1 GET /admin
+[ info ] admin.ewei.com/admin [运行时间：0.639587s][吞吐率：1.56req/s] [内存消耗：3,132.48kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002220s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=kngs101uobbgp807qq3odoccj3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-25T23:06:18+08:00] 127.0.0.1 127.0.0.1 GET /admin/index/index.html
+[ info ] admin.ewei.com/admin/index/index.html [运行时间：0.265484s][吞吐率：3.77req/s] [内存消耗：3,132.67kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000649s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=dlhs2ekrf5qmvplfh1rtnf6m54',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!-- saved from url=(0117)http://wechat.leaderc.com/weisite/home.php?pid=105&uid=0&code=f810e2017feeeb399a2a5f3050932f32&wxref=mp.weixin.qq.com -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="__JS__/jquery-2.1.1.min.js"></script>
+    <title>我要投诉</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!-- Mobile Devices Support @begin -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="__CSS__/culture/mobileSelect.css" />
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.5/lodash.min.js"></script>
+    <style type="text/css">
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            box-sizing: border-box;
+            padding-bottom: 60px;
+            overflow: scroll;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        .form {
+            padding: 10px;
+        }
+
+        .btn_group {
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+
+        .upLoadCon {
+            padding: 0;
+        }
+
+        ol {
+            padding: 0;
+            float: left;
+        }
+
+        #choose {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .upLoadCon li {
+            float: left;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 15px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .upLoadChoice {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+
+        .icon-delete {
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-radius: 50%;
+            background: url(__STATIC__/images/culture/delete.png);
+            background-size: 100%;
+        }
+
+        .camera_con {
+            width: 60%;
+        }
+
+        .camera_con img {
+            width: 100%;
+            height: auto;
+        }
+
+        .border-dash {
+            border: 1px dashed #ccc;
+        }
+    </style>
+</head>
+
+<body onselectstart="return true;" ondragstart="return false;" cz-shortcut-listen="true">
+<div class="form">
+    <div class="form-group">
+        <label for="complainTime">举报时间</label>
+        <input type="text" class="form-control" id="complainTime" placeholder="请选择举报时间" onfocus="this.blur();">
+    </div>
+    <div class="form-group">
+        <label for="complainAddr">举报地点</label>
+        <input type="text" class="form-control" id="complainAddr" placeholder="请输入举报地点">
+    </div>
+    <div class="form-group">
+        <label for="complainType">举报类型</label>
+        <input type="text" class="form-control" id="complainType" placeholder="请选择举报类型" onfocus="this.blur();">
+    </div>
+    <div class="form-group">
+        <label for="complainContent">举报类型</label>
+        <textarea class="form-control" id="complainContent" rows="4" placeholder="请输入(10-1000字)"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="complainPhoto">拍照上传</label>
+        <ul class="upLoadCon clearfix"><ol class="clearfix" style="display: inline-block;">
+
+        </ol>
+            <li class="upLoadChoice border-dash">
+                <div class="camera_con">
+                    <img src="__STATIC__/images/culture/camera.png" />
+                </div>
+                <input type="file" name="file" id="choose" class="file" value="" accept="image/*"/>
+                <input type="hidden" name="msg_img" id="msg_img">
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="btn_group">
+    <button type="submit" class="btn btn-info btn-lg btn-block">提交</button>
+</div>
+</body>
+
+</html>
+<script src="__JS__/culture/laydate.js" type="text/javascript" charset="utf-8"></script>
+<script src="__JS__/culture/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="__JS__/culture/mobileSelect.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__JS__/culture/getImgFiles.js" type="text/javascript" charset="utf-8"></script>
+<script src="__JS__/culture/files.js" type="text/javascript" charset="utf-8"></script>
+<script src="__JS__/jquerysession.js"></script>
+
+<script type="text/javascript">
+    window.onload = function(){
+        //body定高
+        var height = window.screen.height;
+        document.getElementsByTagName('body').height = height + 'px';
+    }
+    function UploadPhoto() {
+        this.$imageArr = [];
+        this.formData = null;
+        this.init();
+    }
+    UploadPhoto.prototype = {
+        init: function() {
+            var _this = this;
+            $("#choose").getImgFile(function(res) {
+                $.post('/api/v1/upload/uploadBase64Img',{
+                    img:res.fileData,
+                    type:res.type
+                },function(e){
+                    if(e.code == 1){
+                        var filename = $('#msg_img').val()+','+e.data.filename;
+                        $('#msg_img').val(filename);
+                    }
+                });
+                _this.$imageArr.push(res);
+                _this.$imageArr = _.uniqWith(_this.$imageArr, _.isEqual);
+                _this.formData = _this.getFiles();
+                _this.render();
+            });
+        },
+        deleteImg: function(i) {
+            this.$imageArr.splice(i, 1);
+        },
+        getFiles: function() {
+            var formData = FILES.getFormData(),
+                    param;
+            for(var i in this.imageArr) {
+                var text = window.atob(this.imageArr[i].fileData.split(",")[1]); //二进制文件转换
+                var buffer = new Uint8Array(text.length);
+                for(var j = 0; j < text.length; j++) {
+                    buffer[j] = text.charCodeAt(j);
+                }
+                var blob = FILES.getBlob([buffer], this.imageArr[i].type);
+                param = 'image' + i + 1; //图片上传参数，带索引
+                formData.append(param, blob);
+            }
+            return formData;
+        },
+        render:function() {
+            var _this = this;
+            var li = '';
+            for(var i = 0; i < this.$imageArr.length; i++) {
+                var text = "<li>" +
+                        "<img src='" + this.$imageArr[i].fileData + "' />" +
+                        "<i class='icon icon-delete'></i>" +
+                        "</li>"
+                li += text;
+            }
+            $('.upLoadCon ol').html(li);
+            $('.icon-delete').click(function() {
+                var index = $(this).parent().index();
+                _this.deleteImg(index);
+                _this.render();
+            })
+            if(this.$imageArr.length > 5) {
+                $('.upLoadChoice').hide();
+            } else {
+                $('.upLoadChoice').show();
+            }
+        }
+    }
+    var phontObj = new UploadPhoto();
+</script>
+<script type="text/javascript">
+    var token = GetQueryString('token');
+    if(token != null ){
+        $.session.set('token',token,7600);
+        window.location.href = window.location.pathname;
+    }else{
+        token = $.session.get('token');
+        if( token == undefined){
+            window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxce8e7c288f106be0&redirect_uri=https%3a%2f%2fsmall.redkylin.com%2fapi%2fv2%2fwechat%2fresponse&response_type=code&scope=snsapi_base&state=https://small.redkylin.com/home/feedBack/index';
+        }
+    }
+    function GetQueryString(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r != null) return unescape(r[2]); return null;
+    }
+    var $complainTime = $('#complainTime');
+    var $complainAddr = $('#complainAddr');
+    var $complainType = $('#complainType');
+    var $complainContent = $('#complainContent');
+    var $msgImg = $('#msg_img');
+    var $formData = new FormData();
+    var $btn = $('.btn');
+    //执行一个laydate实例
+    laydate.render({
+        elem: '#complainTime', //指定元素
+        type: 'datetime',
+        theme: 'molv',
+        calendar: true,
+        done: function(value, date) {
+            console.log(value); //得到日期生成的值，如：2017-08-18
+            console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+        }
+    });
+    var complainTypeData = [];
+    //投诉类型数据
+    $.ajax({
+        url: '/api/v1/feedback/category',
+        type: "get",
+        async: false,
+        dataType: 'json',
+        beforeSend: function (req) {
+            req.setRequestHeader('Ewei-Token', token);
+        },
+        success: function (e) {
+            if(e.error_code == 10001){
+                window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxce8e7c288f106be0&redirect_uri=https%3a%2f%2fsmall.redkylin.com%2fapi%2fv2%2fwechat%2fresponse&response_type=code&scope=snsapi_base&state=https://small.redkylin.com/home/feedBack/index';
+            }else{
+                if( e.code == 1 ){
+                    complainTypeData = e.data;
+                    var mobileSelect = new MobileSelect({
+                        trigger: '#complainType',
+                        title: '举报类型',
+                        wheels: [{
+                            data: complainTypeData
+                        }],
+                        callback: function(indexArr, data) {
+                            var typeBox = data.map(function(val) {
+                                return val.value;
+                            })
+                            var text = typeBox.join(' ');
+                            $complainType.val(text);
+                        }
+                    });
+                }
+            }
+        }
+    });
+
+    $btn.on('click', function() {
+        var complain_time = $complainTime.val();
+        var complain_type = $complainType.val();
+        var complain_addr = $complainAddr.val();
+        var complain_content = $complainContent.val();
+        var complain_content = $complainContent.val();
+        var msg_img = $msgImg.val();
+        if(!complain_time) {
+            return layer.open({
+                type: 0,
+                title: '提示',
+                content: '请选择正确的时间',
+            })
+        }
+        if(!complain_addr) {
+            return layer.open({
+                type: 0,
+                title: '提示',
+                content: '请输入举报地点',
+            })
+        }
+        if(!complain_type) {
+            return layer.open({
+                type: 0,
+                title: '提示',
+                content: '请选择举报类型',
+            })
+        }
+        if(!complain_content) {
+            return layer.open({
+                type: 0,
+                title: '提示',
+                content: '请输入举报类容',
+            })
+        }
+
+        //投诉类型数据
+        $.ajax({
+            url: '/api/v1/feedBack/send',
+            type: "post",
+            async: true,
+            data:{
+                msg_time : complain_time,
+                msg_type:complain_type,
+                address:complain_addr,
+                msg_content: complain_content,
+                msg_img: msg_img
+            },
+            dataType: 'json',
+            beforeSend: function (req) {
+                req.setRequestHeader('Ewei-Token', token);
+            },
+            success:function(res){
+                if(res.error_code == 10001){
+                    window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxce8e7c288f106be0&redirect_uri=https%3a%2f%2fsmall.redkylin.com%2fapi%2fv2%2fwechat%2fresponse&response_type=code&scope=snsapi_base&state=https://small.redkylin.com/home/feedBack/index';
+                }else {
+                    layer.msg(res.msg);
+                }
+            }
+        });
+
+//        $.ajax({
+//            type:"post",
+//            url:$url,
+//            async:true,
+//            data:$formData,       //图片和普通数据上传同一在formData里
+//            dataType:'json',
+//            success:function(res){
+//                console.log(res);
+//            }
+//        });
+    })
+</script>

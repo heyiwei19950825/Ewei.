@@ -1,0 +1,62 @@
+{extend name='base'/}
+{block name='body'}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:url('admin/api/apiList')}">API接口管理</a></li>
+            <li class="layui-this">添加接口</li>
+        </ul>
+
+    </div>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+            <form class="layui-form form-container" action="{:url('admin/api/addApi')}" method="post">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" value="" required lay-verify="required" placeholder="输入接口名称" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">接口地址</label>
+                    <div class="layui-input-block" data-width="5ss00px">
+                        <input type="text" name="api" value="" required lay-verify="required" placeholder="输入接口地址 URL必须为http://开头" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">接口关键字</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="key" class="layui-input" required lay-verify="required">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">接口类型</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="type" value="0" title="GET" checked="">
+                        <input type="radio" name="type" value="1" title="POST">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">接口参数</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="value" value="" placeholder="参数变量为json格式" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">描述</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入描述内容" class="layui-textarea" name="note"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="*">添加</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{/block}

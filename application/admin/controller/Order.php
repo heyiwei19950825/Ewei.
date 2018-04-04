@@ -14,6 +14,7 @@ use think\Config;
 use app\common\lib\Helper;
 
 use think\Db;
+use think\Validate;
 
 /**
  * 订单管理
@@ -126,63 +127,71 @@ class Order extends AdminBase
                 $condition['o.order_type'] = $order_type;
             }
 
-            //根据条件获取订单数据
-            $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'create_time desc');
-            $order_list = $list->toArray();
+            //导出订单列表信息
             if($type == 'export'){
                 $xlsName = "订单数据列表";
+                //表头设置
                 $xlsCell = array(
                     array(
-                        'order_no',
-                        '订单编号'
-                    ),
-                    array(
-                        'user_name',
-                        '用户名称'
-                    ),
-                    array(
-                        'receiver_name',
-                        '收货人信息'
-                    ),
-                    array(
-                        'receiver_mobile',
-                        '收货人手机号'
-                    ),
-                    array(
-                        'order_money',
-                        '订单金额'
-                    ),
-                    array(
-                        'create_time',
-                        '创建时间'
-                    ),
-//                    array(
-//                        'shipping_type_name',
-//                        '配送方式'
-//                    ),
-                    array(
-                        'order_status',
-                        '支付状态'
-                    ),
-//                    array(
-//                        'status_name',
-//                        '发货状态'
-//                    ),
-//                    array(
-//                        'goods_info',
-//                        '商品信息'
-//                    ),
-//                    array(
-//                        'buyer_message',
-//                        '买家留言'
-//                    ),
-//                    array(
-//                        'seller_memo',
-//                        '卖家备注'
-//                    )
+                        '订单编号',
+                        '订单类型',
+                        '成交金额',
+                        '会员昵称',
+                        '收货人',
+                        '收货人手机号码',
+                        '收货地址',
+                        '订单状态',
+                        '支付时间',
+                        '买家留言',
+                        '取消备注',
+                        '商品信息',
+                    )
                 );
-                Helper::exportExport($xlsName,$xlsCell,$order_list['data']);die;
+                $field = 'o.id,o.order_no,o.order_type,o.order_money,o.point,o.user_name,o.receiver_name,o.receiver_mobile,o.receiver_province,o.receiver_city,o.receiver_district,o.receiver_address,o.order_status,o.pay_time,o.buyer_message,o.cancel_note';
+                $list = $this->orderModel->getOrderList(0,999, $condition, 'create_time desc',false,$field)->toArray();
+                foreach ($list as &$v){
+                    //收货地址
+                    $addressRow['province'] = Region::getRegionName($v['receiver_province']);//省
+                    $addressRow['city'] = Region::getRegionName($v['receiver_city']);//市
+                    $addressRow['district'] = Region::getRegionName($v['receiver_district']);//区
+                    $v['receiver_address'] = $addressRow['province'].' '.$addressRow['city'].' '.$addressRow['district'].$v['receiver_address'];
+                    unset($v['receiver_province']);
+                    unset($v['receiver_city']);
+                    unset($v['receiver_district']);
+
+                    //订单价格
+                    if($v['point'] != 0 ){
+                        $v['order_money'] = $v['point'].'积分';
+                        unset($v['point']);
+                    }
+                    //订单商品详情
+                   $goods_info  = Db::name('order_product')->field('goods_name,num,goods_money,integral_money,point_exchange_type')->where([
+                       'order_id'=>$v['id']
+                   ])->select()->toArray();
+                    $goodsInfo = '';
+                    foreach ($goods_info as $gv){
+                        $money = $gv['point_exchange_type']==1?$gv['integral_money'].'积分':$gv['goods_money'];
+                        $goodsInfo .= $gv['goods_name'].' 购买'.$gv['num'].'件'.'商品总计'.$money.' |||| ';
+                    }
+                    $v['goods_info'] = trim($goodsInfo,' |||| ');
+                    unset($v['id']);
+                    $type = config('order.type');
+                    $status = config('order.status');
+                    $v['order_type'] = $type[$v['order_type']];
+                    $v['order_status'] = $status[$v['order_status']];
+                    $v['pay_time']  = date('Y-m-d H:i:s',$v['pay_time']);
+                    unset($v['point']);
+                }
+
+                $data = array_merge($xlsCell,$list);
+                Helper::exportExport($xlsName,$data);die;
             }
+
+
+            $field = 'o.id,o.is_vip,o.seller_memo,o.order_no,o.shop_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name,point,is_virtual';
+            //根据条件获取订单数据
+            $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'create_time desc',true,$field);
+            $order_list = $list->toArray();
             foreach ( $order_list['data'] as &$v ){
                 $orderConfig = Config::get('order');
                 $v['status'] = $v['order_status'];//订单状态
@@ -206,7 +215,8 @@ class Order extends AdminBase
             if( $end_time != ''){
                 $end_time   = date('Y-m-d H:i:s',$end_time);
             }
-            return $this->fetch('index', [
+
+        return $this->fetch('index', [
                 'list' => $list,
                 'order_list'=>$order_list['data'],
                 'order_no'=>$order_no,
@@ -290,8 +300,8 @@ class Order extends AdminBase
 
         //收货地址
         $addressRow['province'] = Region::getRegionName($orderRow['receiver_province']);//省
-        $addressRow['city'] = Region::getRegionName($orderRow['receiver_province']);//市
-        $addressRow['district'] = Region::getRegionName($orderRow['receiver_province']);//区
+        $addressRow['city'] = Region::getRegionName($orderRow['receiver_city']);//市
+        $addressRow['district'] = Region::getRegionName($orderRow['receiver_district']);//区
         $receiver = [
             'name'=>$orderRow['receiver_name'],
             'mobile'=>$orderRow['receiver_mobile'],
@@ -521,10 +531,10 @@ class Order extends AdminBase
                 "in",
                 '4,5,6'
         ];
+        $field = 'o.id,o.is_vip,o.seller_memo,o.order_no,o.shop_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name,point,is_virtual';
         //根据条件获取订单数据
-        $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'create_time desc');
+        $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'create_time desc',$field);
         $order_list = $list->toArray();
-
         foreach ( $order_list['data'] as &$v ){
             $orderConfig = Config::get('order');
             $v['status'] = $v['order_status'];//订单状态
@@ -570,5 +580,88 @@ class Order extends AdminBase
     public function refundDetail(){
         $temp = 'refund_detail1';
         return $this->fetch($temp);
+    }
+
+    /**
+     * 订单数据核销
+     */
+    public function verify(){
+        if( $this->request->isPost()){
+            $params = $this->request->param();
+            $rules = [
+                'username'  => 'require|chs',
+                'mobile'    => 'number',
+                'id'        => 'require|number',
+            ];
+            $msg = [
+                'id'     => '请选择验证的订单',
+                'name'   => '请填写真实姓名',
+                'mobile' => '请填写正确手机号码',
+            ];
+
+            $validate = new Validate($rules,$msg);
+            if (!$validate->check($params)) {
+                $this->error($validate->getError());
+            }
+            $row = Db::name('order')->alias('o')
+                ->join('user u','u.id=o.buyer_id','LEFT')
+                ->field('u.id')
+                ->where([
+                    'o.id'=>$params['id'],
+                    'u.username' => $params['username'],
+                    'u.mobile' => $params['mobile'],
+                ])->find();
+
+            if( $row ){
+                $orderOrw = Db::name('order')->where(['id'=>$params['id']])
+                    ->update(['order_status'=>7,'finish_time'=>time()]);
+                if($orderOrw){
+                    $this->success('验证成功');
+                }else{
+                    $this->error('');
+                }
+            }else{
+                $this->error('验证错误');
+            }
+
+        }else{
+            $this->error('错误请求');
+        }
+    }
+
+    /**
+     * 单据打印
+     */
+    public function orderPrint(){
+        $id = $this->request->param('id',0);
+        if( $id  == 0 ){
+            $this->error('没有指定的订单数据');
+        }
+        $condition['id'] = ['=',$id];
+        $field = 'o.id,o.order_type,o.order_no,o.order_money,point,o.user_name,o.receiver_name,o.receiver_mobile,o.receiver_province,o.receiver_city,o.receiver_district,o.receiver_address,o.order_status,o.pay_time,o.buyer_message,o.cancel_note,o.create_time,o.shipping_money';
+
+        //根据条件获取订单数据
+        $orderInfo = $this->orderModel->getOrderList(0, 1, $condition, 'create_time desc',false,$field);
+        $orderInfo = $orderInfo[0];
+
+        //收货地址
+        $orderInfo['receiver_province'] = Region::getRegionName($orderInfo['receiver_province']);//省
+        $orderInfo['receiver_city'] = Region::getRegionName($orderInfo['receiver_city']);//市
+        $orderInfo['receiver_district'] = Region::getRegionName($orderInfo['receiver_district']);//区
+
+
+        //订单商品详情
+        $goods_info  = Db::name('order_product')->field('goods_name,num,goods_money,sp_integral,price,integral_money,point_exchange_type,adjust_money')->where([
+            'order_id'=>$orderInfo['id']
+        ])->select()->toArray();
+
+        foreach ($goods_info as &$gv){
+            $gv['money'] = $gv['point_exchange_type']==1?$gv['integral_money'].'积分':$gv['goods_money'];
+        }
+        $orderInfo['goods_info'] = $goods_info;
+        $orderInfo['create_time'] = date('Y-m-d H:i:s',$orderInfo['create_time']);
+        $orderInfo['pay_time'] = date('Y-m-d H:i:s',$orderInfo['pay_time']);
+
+        return $this->fetch('order_print',['info'=>$orderInfo]);
     }
 }

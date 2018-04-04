@@ -1,0 +1,442 @@
+{extend name='base'}
+{block name='css'}
+<link href="__STATIC__/css/hplus/animate.css?v=2.2.0" rel="stylesheet">
+<link href="__STATIC__/css/hplus/toastr/toastr.min.css" rel="stylesheet">
+{/block}
+{block name='body'}
+<style>
+    .machine{
+        width:110px;
+        height:100px;
+        text-align: center;
+        line-height: 90px;
+        background-size:100px 100px;
+        color: #00B83F;
+        cursor:pointer;
+    }
+    .offline{
+        background: url('__STATIC__/images/interentbar/machine_offline.png');
+    }
+    .block{
+        background: url('__STATIC__/images/interentbar/machine_block.png');
+    }
+    .online{
+        background: url('__STATIC__/images/interentbar/machine_online.png');
+    }
+    .online-man{
+        background: url('__STATIC__/images/interentbar/machine_online2.png');
+    }
+    .online-woman{
+        background: url('__STATIC__/images/interentbar/machine_online1.png');
+    }
+    .layui-tab-content{
+        margin-top: 20px;
+    }
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+    }
+    #animation_box{
+        position: fixed;
+        right:20px;
+        top:70px;
+        width:350px;
+        opacity:0.9;
+        background-color: #C65A56;
+        display: none;
+    }
+    .close-order-hint{
+        position:absolute;
+        top: 5px;
+        right: 10px;
+        color:#fff;
+        cursor:pointer;
+    }
+    .order-info{
+        position:inherit;
+        top:10px;
+        left:20px;
+        color: #fff;
+    }
+    .order-info-href{
+        position:inherit;
+        top:50px;
+        left:230px;
+        color: #fff;
+        cursor:pointer;
+        text-decoration:underline
+    }
+</style>
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">网吧实况</li>
+            <li><a href="{:url('/admin/internet/setting')}">网吧配置</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <div id="animation_box" class="tada animated">
+                <img src="__STATIC__/images/close.png" alt="" class="close-order-hint">
+                <div class="order-info">
+                </div>
+                <div class="order-info-href" type="button"  data-toggle="modal" data-target="#myModal2">
+                    查看
+                </div>
+            </div>
+            <!--统计数据-->
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-success pull-right">全部</span>
+                            <h5>收入</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">{$statistics.income}</h1>
+                            <!--<div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>-->
+                            <!--</div>-->
+                            <!--<small>总收入</small>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-info pull-right">全年</span>
+                            <h5>订单</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">{$statistics.success_order_number}</h1>
+                            <!--<div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i>-->
+                            <!--</div>-->
+                            <!--<small>新订单</small>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-primary pull-right">全部</span>
+                            <h5>访客</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">{$statistics.visit}</h1>
+                            <!--<div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i>-->
+                            <!--</div>-->
+                            <!--<small>新访客</small>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-danger pull-right">全部</span>
+                            <h5>用户总数</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">{$statistics.user_number}</h1>
+                            <!--<div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i>-->
+                            <!--</div>-->
+                            <!--<small>全部</small>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--机器在线状态-->
+            <div class="layui-col-md9">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>用户在线状态</h5>
+                        <div style="margin-left: 150px;">
+                            <span class="label" style="background: #1296DB;color:#fff">男生订机</span>
+                            <span class="label" style="background: #D4237A;color:#fff">女生订机</span>
+                            <span class="label" style="background: #2D2B2D;color:#fff">关机状态</span>
+                            <span class="label" style="background: #1AFA29;color:#fff">开机状态</span>
+                            <span class="label" style="background: #C0BEC0;color:#fff"> 未配置</span>
+                        </div>
+                    </div>
+                    <div class="layui-row">
+                    </div>
+                </div>
+            </div>
+            <!--订单状态-->
+            <div class="layui-col-md3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>订单实况</h5>
+                            <a href="javascript:" style="float: right" class="order-more"> 更多订单<span><img src="__STATIC__/images/more.png" alt="" height="20px;"></span></a>
+                        </div>
+                        <audio id="audio" src="http://gdlt.sc.chinaz.com/files/download/sound1/201404/4331.wav"></audio>
+                        <div class="ibox-content ibox-heading">
+                            <h3><i class="fa fa-envelope-o"></i> 新订单</h3>
+                            <small><i class="fa fa-tim"></i> 您有<span class="new-order-number" style="color:red">0</span>条未读订单消息</small>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="feed-activity-list">
+                                <div class="feed-element">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--通知弹窗-->
+<div class="modal inmodal " id="myModal2" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1050;top:150px;width: 1400px;">
+    <div class="modal-dialog">
+        <div class="modal-content animated flipInY" style="width: 1000px;">
+            <div class="modal-header" style="width: 1000px;">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">新订单消息</h4>
+                <small class="font-bold" style="color:darkred">请确认清楚后再点击确认按钮。</small>
+            </div>
+            <div class="modal-body">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th>订单号</th>
+                        <th>订单用户</th>
+                        <th>订单价格</th>
+                        <th>预定机器信息</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="data-tbody" >
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer" style="width: 1000px;">
+                <div type="button" class="btn btn-white" data-dismiss="modal">关闭</div>
+                <!--<button type="button" class="btn btn-primary">保存</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--确认订单弹窗-->
+<div class="modal inmodal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="z-index: 1050;top:150px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">确认用户到店上机</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="control-label">CODE码:</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary verify-code" data-number="0" data-order-no="0">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name='js'}
+<script src="__STATIC__/js/hplus/jquery-2.1.1.min.js"></script>
+<script src="__STATIC__/js/hplus/bootstrap.min.js?v=3.4.0"></script>
+<script src="__STATIC__/js/hplus/toastr/toastr.min.js"></script>
+<script>
+    $(function() {
+        var orderList = [];
+
+        layer.load(0, {
+            shade: [0.1, '#393D49']
+        });
+//        机器状态定时查询
+        setInterval(function () {
+            $.post('/api/v2/internet/api', {
+                uid: 1
+            }, function (e) {
+                //接口请求错误停止运行并报错
+                if (e.code == 1) {
+                    var html = '';
+                    var list = e.data.list;
+                    //初始化
+                    $('.layui-row').html();
+                    for (var v in list) {
+                        var val = list[v];
+                        var lineType = val.line;
+                        html += '<div class="layui-col-md1 machine machine' + v + ' ' + lineType + ' " data-id="' + val.number + '" data-order-no="'+val.order_no+'">';
+                        html += '<div >' + val.number + '</div>';
+                        html += '</div>';
+                    }
+                    $('.layui-row').html(html);
+                    affirmOrder();
+                    layer.closeAll('loading');
+                } else {
+                    layer.closeAll('loading');
+                    layer.msg(e.msg);
+                    return false;
+                }
+
+            }, 'json')
+        }, 5000);
+
+        //显示验证CODE码弹窗
+        var affirmOrder = function(){
+                $('.machine').on('click',function(){
+                    $('.form-control').val('');
+                    if($(this).hasClass('offline')  || $(this).hasClass('block')|| $(this).hasClass('offline')){
+                        layer.msg('没有上机或没有配置预约规则');
+                    }else{
+                        if($(this).hasClass('online')){
+                            layer.msg('线下订单或预约已完成订单');
+                            return false;
+                        }
+                        var number = $(this).attr('data-id');
+                        var orderNo = $(this).attr('data-order-no');
+                        if(number !=0 && orderNo!=0 ){
+                            $('.verify-code').attr('data-number',number);
+                            $('.verify-code').attr('data-order-no',orderNo);
+                            $('#exampleModal').modal('show')
+                        }else{
+                            layer.msg('网络异常');
+                            window.location.reload();
+                        }
+                    }
+                })
+        };
+
+        //验证CODE码是否正确
+        $('.verify-code').click(function(){
+                var number = $(this).attr('data-number');
+                var orderNo = $(this).attr('data-order-no');
+                var code = $('.form-control').val();
+                $.post('/admin/subscribe/verifyCode',{
+                    number:number,
+                    code:code,
+                    order_no:orderNo
+                },function(e){
+                    if(e.code == 1){
+                        $('#exampleModal').modal('hide')
+                    }
+
+                    layer.msg(e.msg);
+                })
+        })
+
+
+        //订单定时查询
+        setInterval(function () {
+            $.post('/admin/internet/orderList', {
+                page:1,
+                size:20
+            }, function (e) {
+                $('#animation_box').attr('class', '');
+                var html = '';
+                var machineHtml = '';
+                var check = '';
+                var checkShow = $('#myModal2').attr('aria-hidden');
+                if (e.code == 1) {
+                    orderList = e.data.data;
+                    var checkNumber = 0;
+                    for (var v in orderList) {
+                        check = '';
+                        machineHtml = '';
+                        var val = orderList[v]
+                        if (val.check_status == 0) {
+                            checkNumber++;
+                            check = '<span class="layui-badge layui-bg-orange">新</span>';
+                        }
+                        //未处理订单数量
+                        $('.new-order-number').text(checkNumber);
+                        var machineList = val.machineList;
+                        for (var vs in machineList) {
+                            var vals = machineList[vs];
+                            machineHtml += '<span>' + vals.machine_number + '机器 预定' + vals.duration + '小时</span></br>'
+                        }
+                        var htmlDiv = '<div>' +
+                                '<small class="pull-right text-navy">'+val.time+'</small> ' +
+                                '<strong>'+val.order_no+'</strong> ' + check +
+                                '<div>'+val.name+'预定</br>'+machineHtml+'</div> ' +
+                                '<small class="text-muted">'+val.add_time+'</small> ' +
+                                '</div>';
+                        //循环生成订单信息html
+                        html += htmlDiv;
+                    }
+                    $('.feed-element').html(html);
+
+                    if (checkNumber != 0 && checkShow == 'true') {
+                        var animatedType = ['rubberBand', 'shake', 'swing', 'tada', 'wobble'];
+                        var animated = animatedType[Math.floor(Math.random() * animatedType.length)];
+                        $('#animation_box').addClass(animated);
+                        $('#animation_box').addClass('animated');
+                        $('#animation_box').css('display', 'block');
+                        $('.order-info').text('您有' + checkNumber + '条新的订单信息请注意查收~');
+                        var audio = $("#audio")[0];
+                        audio.pause();
+                        audio.play();
+                    } else {
+                        $('#animation_box').css('display', 'none');
+                    }
+                }else{
+                    $('.feed-element').html('');
+                    $('.new-order-number').text(0);
+                    $('#animation_box').css('display', 'none');
+                }
+
+            }, 'json')
+        }, 5000)
+
+        //查看订单新消息
+        $('.order-info-href').on('click', function () {
+            var html = ''
+            var machineHtml = '';
+            for (var v in orderList) {
+                var val = orderList[v]
+                if (val.check_status == 0) {
+                    var machineList = val.machineList;
+                    for (var vs in machineList) {
+                        var vals = machineList[vs];
+                        machineHtml += '<span>' + vals.machine_number + '机器 预定' + vals.duration + '小时</span></br>'
+                    }
+
+                    html += '<tr><td>' + val.order_no + '</td> ' +
+                            '<td>' + val.name + '</td>' +
+                            '<td style="color:red">￥' + val.order_money + '</td>' +
+                            '<td>' + machineHtml + '</td>' +
+                            '<td>' +
+                            '<div href="" class="layui-btn layui-btn-danger layui-btn-mini ajax-affirm" data-order="'+val.order_no+'">确认</div> ' +
+                            '</td></tr>';
+                }
+            }
+            $('#myModal2').find('.data-tbody').html(html);
+            ajaxAffirm();
+        })
+        //查收信息
+        var ajaxAffirm = function () {
+            $('.ajax-affirm').on('click', function () {
+                var that = $(this);
+                var orderNo = that.attr('data-order');
+                $.post('/admin/Subscribe/affirmOrderCheckStatus',{
+                    order_no : orderNo
+                },function(e){
+                    layer.msg(e.msg);
+                    if( e.code == 1){
+                        that.parents('tr').remove();
+                    }
+                })
+            })
+        }
+
+        $(document).on("click", ".order-more", function() {
+            layer.open({
+                type:2
+                ,area:['80%', '90%']
+                ,title:"订单详情"
+                ,content: '/admin/internet/orderList.html'
+            });
+        });
+    })
+
+
+</script>
+{/block}

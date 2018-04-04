@@ -9,13 +9,26 @@
 
 // 写完代码后对着路由表看，能否不看注释就知道这个接口的意义
 use think\Route;
-//admin
+//=============================================admin====================================================================
 Route::get('admin/refund/refundlist', 'admin/Order/refundList');//退货订单
 Route::get('admin/apply/vip', 'admin/User/vipList');//VIP用户申请
 
 
+Route::get('admin/internet/setting', 'admin/Subscribe/setting');//网吧配置
+Route::post('admin/internet/internetMachineAdd', 'admin/Subscribe/internetMachineAdd');//生成网吧机器数量
+Route::post('admin/internet/relevanceCheck', 'admin/Subscribe/relevanceCheck');//网吧机器配置列表
+Route::post('admin/internet/relevanceSave', 'admin/Subscribe/relevanceSave');//保存网吧机器配置
+Route::post('admin/internet/internetBarSting', 'admin/Subscribe/internetBarSting');//保存网吧配置
+Route::post('admin/internet/delRule', 'admin/Subscribe/delRule');//删除配置规则
+Route::get('admin/virtual/goods', 'admin/Goods/virtual');//虚拟商品
+Route::post('admin/internet/orderList', 'admin/Subscribe/getOrderList');//订单列表
+Route::get('admin/internet/orderList', 'admin/Subscribe/getOrderList');//订单列表
+Route::get('admin/signin/setting', 'admin/Promotion/signIn');//签到配置数据获取
+Route::post('admin/signin/setting', 'admin/Promotion/signIn');//签到数据提交
 
 
+
+//=============================================api====================================================================
 //index
 Route::get('api/:version/Index/index', 'api/:version.Index/index');
 
@@ -30,24 +43,12 @@ Route::post('api/:version/sample/test3', 'api/:version.Sample/test3');
 //Banner
 Route::get('api/:version/banner/:id', 'api/:version.Banner/getBanner');
 
-//Theme
-// 如果要使用分组路由，建议使用闭包的方式，数组的方式不允许有同名的key
-//Route::group('api/:version/theme',[
-//    '' => ['api/:version.Theme/getThemes'],
-//    ':t_id/Goods/:p_id' => ['api/:version.Theme/addThemeGoods'],
-//    ':t_id/Goods/:p_id' => ['api/:version.Theme/addThemeGoods']
-//]);
-
 Route::group('api/:version/theme',function(){
     Route::get('', 'api/:version.Theme/getSimpleList');
     Route::get('/:id', 'api/:version.Theme/getComplexOne');
     Route::post(':t_id/Goods/:p_id', 'api/:version.Theme/addThemeGoods');
     Route::delete(':t_id/Goods/:p_id', 'api/:version.Theme/deleteThemeGoods');
 });
-
-//Route::get('api/:version/theme', 'api/:version.Theme/getThemes');
-//Route::post('api/:version/theme/:t_id/Goods/:p_id', 'api/:version.Theme/addThemeGoods');
-//Route::delete('api/:version/theme/:t_id/Goods/:p_id', 'api/:version.Theme/deleteThemeGoods');
 
 //Goods
 Route::post('api/:version/Goods', 'api/:version.Goods/createOne');
@@ -59,13 +60,10 @@ Route::get('api/:version/Goods/recent', 'api/:version.Goods/getRecent');
 Route::get('api/:version/goods/count', 'api/:version.Goods/goodsCount');
 Route::get('api/:version/goods/vip', 'api/:version.Goods/vipGoods');
 Route::get('api/:version/Goods/integral', 'api/:version.Goods/getIsIntegralGoods');//积分兑换商品
+Route::get('api/:version/goods/virtual', 'api/:version.Goods/getGoodsList');//虚拟物品
 
 
 //Category
-//Route::get('api/:version/category', 'api/:version.Category/getCategories');
-// 正则匹配区别id和all，注意d后面的+号，没有+号将只能匹配个位数
-//Route::get('api/:version/category/:id', 'api/:version.Category/getCategory',[], ['id'=>'\d+']);
-//Route::get('api/:version/category/:id/Goodss', 'api/:version.Category/getCategory',[], ['id'=>'\d+']);
 Route::get('api/:version/Category/all', 'api/:version.Category/getAllCategories');
 Route::get('api/:version/Category/list', 'api/:version.Category/getCategoryByCId');
 
@@ -102,11 +100,15 @@ Route::post('api/:version/pay/concurrency', 'api/:version.Pay/notifyConcurrency'
 //Message
 Route::post('api/:version/message/delivery', 'api/:version.Message/sendDeliveryMsg');
 
+//Nav 导航
+Route::post('api/:version/nav/list', 'api/:version.Nav/navList');
+
 
 //上传图片插件api
 Route::get('api/:version/ueditor/index', 'api/:version.Ueditor/index');
 Route::post('api/:version/ueditor/index', 'api/:version.Ueditor/index');
 Route::post('api/:version/upload/upload', 'api/:version.Upload/upload');
+Route::post('api/:version/upload/uploadBase64Img', 'api/:version.Upload/uploadBase64Img');//上传base64位图片
 
 
 //article
@@ -144,6 +146,7 @@ Route::get('api/:version/collect/list', 'api/:version.Collect/getList');
 Route::post('api/:version/collect/addordelete', 'api/:version.Collect/addOrDelete');
 
 //优惠券
+Route::get('api/:version/coupon/list', 'api/:version.Coupon/couponList');
 Route::get('api/:version/coupon/userCouponList', 'api/:version.Coupon/getUserCouponList');
 Route::get('api/:version/coupon/useCouponList', 'api/:version.Coupon/getUseCouponList');
 Route::post('api/:version/coupon/userGetCoupon', 'api/:version.Coupon/userGetCoupon');
@@ -162,6 +165,8 @@ Route::get('api/:version/collective/detailbyid', 'api/:version.Collective/detail
 
 //用户反馈
 Route::post('api/:version/feedBack/add', 'api/:version.FeedBack/add');
+Route::get('api/:version/feedBack/category', 'api/:version.FeedBack/category');
+Route::post('api/:version/feedBack/send', 'api/:version.FeedBack/create');//创建反馈
 
 
 //文章评论
@@ -177,23 +182,35 @@ Route::get('api/:version/shop/helper', 'api/:version.Shop/helper');
 Route::get('api/:version/getApi', 'api/:version.QueryLists/index');
 Route::post('api/:version/tengxunyun', 'api/:version.TengxunyunTest/index');
 
+//网吧 interent
+Route::post('api/:version/internet/api', 'api/:version.Internet/internetAjax');//获取网吧电脑信息
+Route::get('api/:version/internet/api', 'api/:version.Internet/internetAjax');//获取网吧电脑信息
+Route::post('api/:version/internet/config', 'api/:version.Internet/internetConfig');//获取网吧配置
+Route::post('api/:version/internet/addorder', 'api/:version.InternetOrder/addOrder');//创建订单
+Route::get('api/:version/internet/orderlist', 'api/:version.InternetOrder/orderList');//订单列表
+
+
+Route::post('api/:version/internet/authenticationuser', 'api/:version.User/authenticationUser');//用户认证
+
+Route::get('api/:version/prize/rule', 'api/:version.Prize/rule');//抽奖规则接口
+Route::post('api/:version/prize/win', 'api/:version.Prize/win');//用户中奖
+Route::post('api/:version/user/win', 'api/:version.User/win');//用户中奖信息
+Route::get('api/:version/integral/log', 'api/:version.User/integralLog');//积分日志记录
+Route::post('api/:version/order/pay', 'api/:version.Pay/pay');//微信支付信息
+Route::post('api/:version/prize/check', 'api/:version.Prize/check');//检测用户是否参与过
+
+
+
+//微信
+Route::get('api/:version/wechat/response', 'api/:version.WeChat/response');
+Route::post('api/:version/wechat/user', 'api/:version.User/getUserInfo');
+Route::post('api/:version/wechat/config', 'api/:version.WeChat/wxConfig');
 
 
 //定时任务
 Route::get('api/:version/collective/check', 'api/:version.Collective/checkCollectiveStatus');//团购失败退款任务
 Route::get('api/:version/order/check', 'api/:version.Order/checkOrderStatus');//删除超时订单
 
-
-//return [
-//        ':version/banner/[:location]' => 'api/:version.Banner/getBanner'
-//];
-
-//Route::miss(function () {
-//    return [
-//        'msg' => 'your required resource are not found',
-//        'error_code' => 10001
-//    ];
-//});
 
 
 

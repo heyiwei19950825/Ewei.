@@ -1,0 +1,57 @@
+---------------------------------------------------------------
+[2018-03-19T09:26:45+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [0]模板文件不存在:../themes/admin/subscribe\setting.html[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[2018-03-19T10:40:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/internetMachineAdd
+[ error ] [8]Array to string conversion[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:98]
+---------------------------------------------------------------
+[2018-03-19T11:33:47+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/internetMachineAdd
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[2018-03-19T17:05:03+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceSave
+[ error ] [8]未定义变量: row[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:64]
+---------------------------------------------------------------
+[2018-03-19T17:43:31+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/internetMachineAdd
+[ error ] [8]Undefined property: app\admin\controller\Subscribe::$uid[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:113]
+---------------------------------------------------------------
+[2018-03-19T17:43:38+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/internetMachineAdd
+[ error ] [8]Undefined property: app\admin\controller\Subscribe::$uid[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:113]
+---------------------------------------------------------------
+[2018-03-19T17:59:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceSave
+[ error ] [8]未定义数组索引: [D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:68]
+---------------------------------------------------------------
+[2018-03-19T18:34:12+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ error ] [8]未定义数组索引: billing_rule[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:143]
+---------------------------------------------------------------
+[2018-03-19T18:34:43+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ error ] [8]未定义数组索引: billing_rule[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:143]
+---------------------------------------------------------------
+[2018-03-19T18:37:41+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ error ] [8]未定义数组索引: billing_rule[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:143]
+---------------------------------------------------------------
+[2018-03-19T18:49:44+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[2018-03-19T18:58:33+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ error ] [8]未定义变量: ruleId[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:154]
+---------------------------------------------------------------
+[2018-03-19T19:03:14+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceSave
+[ error ] [8]未定义数组索引: relevance[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:66]
+---------------------------------------------------------------
+[2018-03-19T19:04:38+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceSave
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:76]
+---------------------------------------------------------------
+[2018-03-19T19:11:51+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: number[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:148]
+---------------------------------------------------------------
+[2018-03-19T19:12:16+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: machine_number[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:148]
+---------------------------------------------------------------
+[2018-03-19T19:20:53+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: price[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:190]
+---------------------------------------------------------------
+[2018-03-19T19:21:35+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: price[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:190]
+---------------------------------------------------------------
+[2018-03-19T19:21:42+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: price[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:190]

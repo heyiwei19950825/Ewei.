@@ -1,0 +1,90 @@
+---------------------------------------------------------------
+[2018-03-23T11:23:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/prize/index.html
+[ info ] admin.ewei.com/admin/prize/index.html [运行时间：0.290344s][吞吐率：3.44req/s] [内存消耗：2,888.02kb] [文件加载：51]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000536s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'prize',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '245',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://admin.ewei.com/admin/prize/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=kngs101uobbgp807qq3odoccj3',
+)
+[ info ] [ PARAM ] array (
+  'integral' => '125',
+  'goods_id' => 
+  array (
+    0 => '44',
+    1 => '45',
+    2 => '44',
+    3 => '44',
+    4 => '45',
+    6 => '45',
+  ),
+  'rule_odds' => 
+  array (
+    0 => '50',
+    1 => '20',
+    2 => '10',
+    3 => '10',
+    4 => '10',
+    6 => '1',
+  ),
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Prize->index[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Prize.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-23T11:56:42+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1520405232.jpg
+[ info ] admin.ewei.com/uploads/common/1520405232.jpg [运行时间：0.305521s][吞吐率：3.27req/s] [内存消耗：1,439.09kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000427s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1520405232.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/banner_item/edit/id/1.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=kngs101uobbgp807qq3odoccj3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-03-23T11:56:49+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/api/v1/upload/upload
+[ info ] admin.ewei.com/index.php/api/v1/upload/upload [运行时间：0.777302s][吞吐率：1.29req/s] [内存消耗：1,933.82kb] [文件加载：48]
+[ error ] [2]unlink() expects parameter 1 to be a valid path, array given[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Upload.php:235]

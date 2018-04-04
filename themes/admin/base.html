@@ -5,6 +5,8 @@
     <title>坤飞科技</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="__STATIC__/css/hplus/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="__STATIC__/css/hplus/style.css?v=2.2.0" rel="stylesheet">
     <link rel="stylesheet" href="__JS__/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="__JS__/layui/global.css" media="all">
     <link rel="stylesheet" href="__CSS__/font-awesome.min.css">
@@ -51,9 +53,9 @@
               <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">
             </a>
             <dl class="layui-nav-child">
-              <dd><a href="{:url('admin/shopInfo/index')}"><i class="layui-icon">&#xe620;</i>店铺设置</a></dd>
-              <dd  class="message"><a href="javascript:"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息<span class="layui-badge">{$msgNum}</span></a></dd>
-              <!-- <dd><a href="../user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a></dd> -->
+              <!--<dd><a href="{:url('admin/shopInfo/index')}"><i class="layui-icon">&#xe620;</i>店铺设置</a></dd>-->
+              <!--<dd  class="message"><a href="javascript:"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息<span class="layui-badge">{$msgNum}</span></a></dd>-->
+              <!--&lt;!&ndash; <dd><a href="../user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a></dd> &ndash;&gt;-->
               <hr style="margin: 5px 0;">
               <dd><a href="javascript:"  data-url="{:url('admin/system/clear')}"  style="text-align: center;" id="clear-cache">清除缓存</a></dd>
               <dd><a href="{:url('admin/change_password/index')}" style="text-align: center;">修改密码</a></dd>
@@ -87,7 +89,7 @@
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree">
                 <!-- <li class="layui-nav-item layui-nav-title"><a>管理菜单</a></li> -->
-                <li class="layui-nav-item">
+                <li class="layui-nav-item" style="display: none;">
                     <a href="{:url('admin/index/index')}"><i class="fa fa-home"></i> 网站信息</a>
                 </li>
                 {foreach name="menu" item="vo"}
@@ -119,7 +121,7 @@
     <div class="layui-footer footer">
         <div class="layui-main">
             <p>Copyright2015-2017 眉山市坤飞网络科技有限公司 版权所有</p>
-          	<script src="https://s19.cnzz.com/z_stat.php?id=1272387699&web_id=1272387699" language="JavaScript"></script>
+          	<!--<script src="https://s19.cnzz.com/z_stat.php?id=1272387699&web_id=1272387699" language="JavaScript"></script>-->
         </div>
     </div>
 </div>

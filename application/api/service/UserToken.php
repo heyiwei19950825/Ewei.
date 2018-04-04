@@ -6,6 +6,7 @@ use app\api\model\User;
 use app\lib\enum\ScopeEnum;
 use app\lib\exception\TokenException;
 use app\lib\exception\WeChatException;
+use think\Cache;
 use think\Exception;
 use think\Request;
 use think\Model;
@@ -25,6 +26,7 @@ class UserToken extends Token
 
     function __construct($code,$userInfo)
     {
+
         $this->code = $code;
         $this->wxAppID = config('wx.app_id');
         $this->wxAppSecret = config('wx.app_secret');
@@ -33,17 +35,19 @@ class UserToken extends Token
         $this->userInfo = $userInfo;
     }
 
-    
+
     /**
      * 登陆
      * 思路1：每次调用登录接口都去微信刷新一次session_key，生成新的Token，不删除久的Token
      * 思路2：检查Token有没有过期，没有过期则直接返回当前Token
      * 思路3：重新去微信刷新session_key并删除当前Token，返回新的Token
+     * @param string $wxType
+     * @return array
+     * @throws Exception
      */
     public function get()
     {
         $result = curl_get($this->wxLoginUrl);
-
         // 注意json_decode的第一个参数true
         // 这将使字符串被转化为数组而非对象
 

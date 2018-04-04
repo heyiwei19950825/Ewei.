@@ -1,0 +1,60 @@
+---------------------------------------------------------------
+[2018-03-30T10:08:24+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义数组下标: 0[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Prize.php:96]
+---------------------------------------------------------------
+[2018-03-30T10:09:43+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义数组索引: goodsInfo[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:214]
+---------------------------------------------------------------
+[2018-03-30T10:10:11+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义数组索引: thumb[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:214]
+---------------------------------------------------------------
+[2018-03-30T10:18:29+08:00] 127.0.0.1 127.0.0.1 GET /admin/signin/setting.html
+[ error ] [0]模板文件不存在:../themes/admin/promotion\signIn.html[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[2018-03-30T11:16:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [8]未定义数组索引: is_virtual[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:239]
+---------------------------------------------------------------
+[2018-03-30T11:19:08+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/deliver.html
+[ error ] [0]方法参数错误:id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\App.php:282]
+---------------------------------------------------------------
+[2018-03-30T11:44:29+08:00] 127.0.0.1 127.0.0.1 POST /admin/order/verify
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in where clause is ambiguous[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-30T11:44:44+08:00] 127.0.0.1 127.0.0.1 POST /admin/order/verify
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'o.uid' in 'on clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-30T15:21:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html?order_no=&user_name=&order_from=&order_shop=&order_type=&order_status=&start_time=&end_time=&type=export
+[ error ] [8]Array to string conversion[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:64]
+---------------------------------------------------------------
+[2018-03-30T15:22:24+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html?order_no=&user_name=&order_from=&order_shop=&order_type=&order_status=&start_time=&end_time=&type=export
+[ error ] [8]Array to string conversion[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:63]
+---------------------------------------------------------------
+[2018-03-30T15:32:57+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]语法错误: unexpected 'id' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:229]
+---------------------------------------------------------------
+[2018-03-30T15:34:16+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]语法错误: unexpected 'id' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:229]
+---------------------------------------------------------------
+[2018-03-30T15:34:57+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]语法错误: unexpected 'id' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:229]
+---------------------------------------------------------------
+[2018-03-30T15:37:26+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]语法错误: unexpected 'id' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:229]
+---------------------------------------------------------------
+[2018-03-30T15:37:31+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]语法错误: unexpected 'order_type' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:229]
+---------------------------------------------------------------
+[2018-03-30T15:38:52+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]语法错误: unexpected 'id' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:230]
+---------------------------------------------------------------
+[2018-03-30T15:39:03+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]语法错误: unexpected 'id' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:230]
+---------------------------------------------------------------
+[2018-03-30T15:49:53+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]语法错误: unexpected 'id' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:229]
+---------------------------------------------------------------
+[2018-03-30T15:59:45+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]语法错误: unexpected 'id' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:229]
+---------------------------------------------------------------
+[2018-03-30T16:02:08+08:00] 127.0.0.1 127.0.0.1 GET /admin/order/index.html
+[ error ] [4]syntax error, unexpected '')?$controller:'' (T_CONSTANT_ENCAPSED_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\6ed1e726b426a161845ed68a4c36700a.php:279]

@@ -1,0 +1,378 @@
+{extend name='base'}
+{block name='css'}
+<link href="__STATIC__/css/hplus/animate.css?v=2.2.0" rel="stylesheet">
+{/block}
+{block name='body'}
+<style>
+    .machine{
+        height:70px;
+        cursor:pointer;
+        font-size: 10px;
+    }
+    .show-row .col-md-1{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+</style>
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li ><a href="{:url('/admin/subscribe/internet')}">网吧实况</a></li>
+            <li class="layui-this">网吧配置</li>
+        </ul>
+        <div class="layui-tab-content">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend>网吧信息配置</legend>
+            </fieldset>
+            <form class="layui-form" action="{:url('/admin/internet/internetBarSting')}" method="post">
+                <div class="layui-form-item">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">机器数量</label>
+                        <div class="layui-input-block">
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <input name="machine_number" placeholder="机器数量" autocomplete="off" class="layui-input" type="number" value="{$info.machine_number}">
+                            </div>
+                            <div class="layui-btn" id="check_number">检测</div>
+                            <!--<div class="layui-btn layui-btn-warm" id="add_number">生成</div>-->
+                            <div class="layui-form-mid layui-word-aux">请谨慎操作</div>
+                        </div>
+                    </div>
+                    <label class="layui-form-label">计费规则</label>
+                    <div class="layui-input-inline" style="width: 200px;">
+                        <div class="layui-btn add-rule" >添加计费规则</div>
+                    </div>
+                    <div class="rule-dome" >
+                        {if condition="$rule_list == []"}
+                        <div class="layui-block">
+                            <div class="layui-form-item rule-dome-list">
+                                <label class="layui-form-label"></label>
+                                <div class="layui-input-inline" style="width: 200px;">
+                                    <input name="rule_name[]" placeholder="规则名称" autocomplete="off" class="layui-input rule_name" type="text">
+                                </div>
+                                <div class="layui-btn relevance" data-color="#99CCCC" data-id="0">
+                                    关联商品
+                                </div>
+                                <div class="layui-input-inline">
+                                    <div class="layui-btn layui-btn-danger del-rule" data-id="0">删除</div>
+                                </div>
+                            </div>
+                        </div>
+                        {else}
+                        {foreach name="rule_list" item="vo"}
+                        <div class="layui-form-item rule-dome-list">
+                            <label class="layui-form-label"></label>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <input name="rule_name[]" placeholder="规则名称" autocomplete="off" class="layui-input rule_name" type="text" value="{$vo.name}">
+                            </div>
+                            <div class="layui-form-mid"> - 价格</div>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <input name="rule_price[]" placeholder="￥" autocomplete="off" class="layui-input rule_price" type="number" value="{$vo.price}">
+                            </div>
+                            <!--<div class="layui-form-mid">-会员价格</div>-->
+                            <!--<div class="layui-input-inline" style="width: 200px;">-->
+                            <!--<input name="rule_vip_price[]" placeholder="￥" autocomplete="off" class="layui-input" type="number">-->
+                            <!--</div>-->
+                            <div class="layui-btn relevance" data-color="{$vo.color}" data-id="{$vo.id}">
+                                关联座位
+                            </div>
+                            <div class="layui-input-inline">
+                                <div class="layui-btn layui-btn-danger del-rule" data-id="{$vo.id}">删除</div>
+                            </div>
+                        </div>
+                        {/foreach}
+                        {/if}
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">可预订时长</label>
+                    <div class="layui-input-inline" style="width: 200px;">
+                        <div class="layui-btn add-time-rule" >添加时间规则</div>
+                    </div>
+                    {if condition="$time_rule == []"}
+                    <div class="time-dome">
+                        <div class="layui-form-item time-dome-list">
+                            <label class="layui-form-label"></label>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <input name="time_rule[]" placeholder="长度 单位小时" autocomplete="off" class="layui-input" type="number">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">/小时</div>
+                        </div>
+                    </div>
+                    {else}
+                    <div class="time-dome">
+                        {foreach name="time_rule" item="vo"}
+                                <div class="layui-form-item time-dome-list">
+                                    <label class="layui-form-label"></label>
+                                    <div class="layui-input-inline" style="width: 200px;">
+                                        <input name="time_rule[]" placeholder="长度 单位小时" autocomplete="off" class="layui-input" type="number" value="{$vo}">
+                                    </div>
+                                    <div class="layui-form-mid layui-word-aux">/小时</div>
+                                    <div class="layui-input-inline" style="width: 200px;">
+                                        <div class="layui-btn layui-btn-danger del-time-rule" >删除</div>
+                                    </div>
+                                </div>
+                        {/foreach}
+                    </div>
+                    {/if}
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">可预订数量</label>
+                    <div class="layui-input-inline">
+                        <input type="number" name="reserve_number" autocomplete="off" placeholder="输入人数" class="layui-input" value="{$reserve_number}">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">人</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">获得积分</label>
+                    <div class="layui-form-mid layui-word-aux">1元 = </div>
+                    <div class="layui-input-inline">
+                        <input type="number" name="integral" autocomplete="off" placeholder="输入现金和积分比例" class="layui-input" value="{$info.integral}">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">积分 （只允许输入正整数）</div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="*" lay-filter="demo1">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true" style="top:50px;width:100%">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">选择关联座位</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row show-row machine-list">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div type="button" class="btn btn-white" data-dismiss="modal">关闭</div>
+                <div type="button" class="btn btn-primary save-rule">保存</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name='js'}
+<script src="__STATIC__/js/hplus/jquery-2.1.1.min.js"></script>
+<script src="__STATIC__/js/hplus/bootstrap.min.js?v=3.4.0"></script>
+
+<script>
+    $(function(){
+        $('#check_number').click(function(){
+            var number = $('input[name=machine_number]').val();
+            $.post('/admin/Subscribe/internetNumberCheck',{
+                number:number
+            },function(e){
+                $('input[name=machine_number]').val(e.data.count);
+                layer.msg(e.msg);
+            })
+        });
+        var colors = ['#99CCCC','#FFCC99','#FFFF66','#CC0033','#CC3333','#0099CC','#FF6666','#FFFF00'];
+        //添加规则选项
+        $('.add-rule').on('click',function(){
+            var key = $('.rule-dome-list').length;
+            var data_color = colors[key];
+
+            var html ='<div class="layui-form-item rule-dome-list"> ' +
+                    '<label class="layui-form-label"></label> ' +
+                    '<div class="layui-input-inline" style="width: 200px;"> ' +
+                    '<input name="rule_name[]" placeholder="规则名称" autocomplete="off" class="layui-input rule_name" type="text"> ' +
+                    '</div> ' +
+                    '<div class="layui-form-mid"> - 价格</div> ' +
+                    '<div class="layui-input-inline" style="width: 200px;"> ' +
+                    '<input name="rule_price[]" placeholder="￥" autocomplete="off" class="layui-input rule_price" type="number"> ' +
+                    '</div> ' +
+                    '<!--<div class="layui-form-mid">-会员价格</div>--> ' +
+                    '<!--<div class="layui-input-inline" style="width: 200px;">--> ' +
+                    '<!--<input name="rule_vip_price[]" placeholder="￥" autocomplete="off" class="layui-input" type="number">--> ' +
+                    '<!--</div>--> ' +
+                    '<div class="layui-btn relevance" data-color="'+data_color+'" data-id="0">关联座位 </div> ' +
+                    '<div class="layui-input-inline"> ' +
+                    '<div class="layui-btn layui-btn-danger del-rule" data-id="0">删除</div></div> ' +
+                    '</div>';
+
+            $('.rule-dome').append(html);
+            relevance();
+            delRule();
+        });
+        //删除计费规则框
+        var delRule = function(){
+            $('.del-rule').on('click',function() {
+                var _action = '/admin/internet/delRule';
+                var id = $(this).attr('data-id');
+                var that = $(this);
+                if( id == 0 ){
+                    that.parents('.rule-dome-list').remove();
+                    return false;
+                }
+                layer.open({
+                    shade: false,
+                    content: '确定执行此操作？',
+                    btn: ['确定', '取消'],
+                    yes: function (index) {
+                        $.ajax({
+                            url: _action,
+                            type: 'POST',
+                            data: {id: id},
+                            success: function (info) {
+                                if (info.code === 1) {
+                                    that.parents('.rule-dome-list').remove();
+                                }
+                                layer.msg(info.msg);
+                            }
+                        });
+                        layer.close(index);
+                    }
+                })
+            })
+        };
+        delRule();
+        //添加时间规则选项
+        $('.add-time-rule').on('click',function(){
+            var html ='<div class="layui-form-item time-dome-list">' +
+                    '<label class="layui-form-label"></label>' +
+                    '<div class="layui-input-inline" style="width: 200px;">' +
+                    '<input name="time_rule[]" placeholder="长度 单位小时" autocomplete="off" class="layui-input" type="number" >' +
+                    '</div>' +
+                    '<div class="layui-form-mid layui-word-aux">/小时</div>' +
+                    '<div class="layui-input-inline" style="width: 200px;">' +
+                    '<div class="layui-btn layui-btn-danger del-time-rule" >删除</div>' +
+                    '</div>' +
+                    '</div>';
+            $('.time-dome').append(html);
+            delTimeRule();
+        });
+        //删除时间规则框
+        var delTimeRule = function(){
+            $('.del-time-rule').on('click',function(){
+                $(this).parents('.time-dome-list').remove();
+            })
+        };
+        delTimeRule();
+
+//        //添加网吧机器
+//        $('#add_number').on('click',function(){
+//            var number = $('input[name=machine_number]').val();
+//            $.post('/admin/internet/internetMachineAdd',{
+//                number:number
+//            },function( e ){
+//               layer.msg(e.msg);
+//            },'json')
+//        });
+
+        //绑定触发按钮
+        var relevance = function(){
+            //点击关联查询添加的机器
+            $('.relevance').bind('click',function(){
+                var then = $(this);
+                var rule_name  = then.parents('.rule-dome-list').find('.rule_name').val();
+                var rule_price = then.parents('.rule-dome-list').find('.rule_price').val();
+                var rule_color = then.attr('data-color');
+                var rule_id    = then.attr('data-id');
+                if( rule_name == '' || rule_price == '' ){
+                    layer.msg('请先填写规则信息');
+                    return false;
+                }
+                $.post('/admin/internet/relevanceCheck',{
+                    ruleName:rule_name,
+                    rulePrice:rule_price,
+                    ruleColor:rule_color,
+                    ruleId:rule_id
+                },function(e){
+                    var html = '';
+                    if(e.code == 0 ){
+                        $('#myModal5').modal('hide');
+                        layer.msg(e.msg);
+                    }else{
+                        var list = e.data.list;
+                        //初始化
+                        $('.machine-list').html();
+                        $('.save-rule').attr('data-name','');
+                        $('.save-rule').attr('data-price','');
+                        $('.save-rule').attr('data-color',rule_color);
+                        then.attr('data-id',e.data.ruleId);
+                        then.parents('.rule-dome-list').find('.del-rule').attr('data-id',e.data.ruleId);
+                        $('.save-rule').attr('data-id',e.data.ruleId);
+                        for( var v in list) {
+                            var val = list[v];
+                            if(val.price != null){
+                                html += '<div class="col-md-1 machine" style="background-color:'+val.color+' " data-number="'+val.number+'"><center>'+val.number+'号</center>' +
+                                        '<div class="rule-info"><div>'+val.name+':</div><div>'+val.price+'/小时</div></div></div>';
+                            }else{
+                                html += '<div class="col-md-1 machine" data-number="'+val.number+'"><center>'+val.number+'号</center></div>';
+                            }
+                        }
+                        //添加机器信息
+                        $('.save-rule').attr('data-name',rule_name);
+                        $('.save-rule').attr('data-price',rule_price);
+                        $('.machine-list').html(html);
+                        //绑定li的点击事件
+                        machineSelect();
+                        //显示弹窗
+                        $('#myModal5').modal('show')
+                    }
+                })
+            })
+        };
+        //选择需绑定机器
+        var machineSelect = function(){
+            $('.machine').on('click',function(){
+                if($(this).attr('data-relevance') == 'true'){
+                    $(this).attr('data-relevance','false');
+                    $(this).find('.rule-info').remove();
+                    $(this).css('background-color','');
+
+                }else{
+                    $(this).find('.rule-info').html('');
+                    var rule_name = $('.save-rule').attr('data-name');
+                    var rule_price = $('.save-rule').attr('data-price');
+                    var rule_color = $('.save-rule').attr('data-color');
+                    $(this).css('background-color',rule_color);
+                    $(this).attr('data-relevance','true');
+                    $(this).append('<div class="rule-info"><div>'+rule_name+':</div><div>'+rule_price+'/小时</div></div>');
+                }
+            })
+        };
+        relevance();
+
+        //保存座位绑定信息
+        $('.save-rule').click(function(){
+            var selectData = '';
+            var delData = '';
+            var rule_id = $(this).attr('data-id');
+
+            $('.machine').each(function(i,v){
+                if($(v).attr('data-relevance') == 'true'){
+                    selectData += $(v).attr('data-number')+',';
+                }
+                if($(v).attr('data-relevance') == 'false'){
+                    delData += $(v).attr('data-number')+',';
+                }
+            });
+            $.post('/admin/internet/relevanceSave',{
+                ruleId:rule_id,
+                relevance:selectData,
+                delData:delData,
+
+            },function( e ){
+                layer.msg(e.msg);
+                if(e.code == 1 ){
+                    $('#myModal5').modal('hide');
+                }
+
+            })
+        });
+
+    })
+</script>
+{/block}

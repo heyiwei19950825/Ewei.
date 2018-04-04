@@ -74,7 +74,7 @@ class Count extends AdminBase
         $userRows = [];
 //        for($i=1;$i<=31;$i++){
 //            $userRows[] = [$y.'-'.$m.'-'.$i,0];
-            $userRows[] = ['2018-02-25',0];
+            $userRows[] = ['2018-03-2',0];
             foreach ($userRow as $key => $value) {
 //                if(strtotime($y.'-'.$m.'-'.$i) == strtotime($value['create_time']) ){
                     $userRows[] = [$value['create_time'],$value['number']];

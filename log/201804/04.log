@@ -1,0 +1,65 @@
+---------------------------------------------------------------
+[2018-04-04T10:08:29+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/goods/virtual?type=integral
+[ info ] admin.ewei.com/api/v2/goods/virtual?type=integral [运行时间：0.256876s][吞吐率：3.89req/s] [内存消耗：2,762.30kb] [文件加载：51]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000446s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v2.Goods',
+    2 => 'getGoodsList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; pgv_pvi=3481007104; PHPSESSID=vhqc9v18evu1hsn5lh0tjf5sb3',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'integral',
+  'version' => 'v2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v2\Goods->getGoodsList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Goods.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-04-04T10:08:42+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/goods/virtual?type=integral
+[ info ] admin.ewei.com/api/v2/goods/virtual?type=integral [运行时间：0.137142s][吞吐率：7.29req/s] [内存消耗：2,761.14kb] [文件加载：51]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000478s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v2.Goods',
+    2 => 'getGoodsList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; pgv_pvi=3481007104; PHPSESSID=vhqc9v18evu1hsn5lh0tjf5sb3',
+)
+[ info ] [ PARAM ] array (
+  'type' => 'integral',
+  'version' => 'v2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v2\Goods->getGoodsList[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Goods.php ]
+[ info ] [ LOG ] INIT File

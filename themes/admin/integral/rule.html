@@ -4,8 +4,8 @@
     <!--tab标签-->
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">
-            <li class="layui-this">积分规则</li>
-            <li class=""><a href="{:url('admin/integral/rule_add')}">添加积分规则</a></li>
+            <li class="layui-this">等级规则</li>
+            <li class=""><a href="{:url('admin/integral/rule_add')}">添加等级规则</a></li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
@@ -13,8 +13,8 @@
                     <thead>
                     <tr>
                         <th style="width: 30px;">ID</th>
-                        <th>积分名称</th>
-                        <th>最少积分个数</th>
+                        <th>等级名称</th>
+                        <th>等级经验值</th>
                         <th>优惠折扣</th>
                         <th>操作</th>
                     </tr>
@@ -28,7 +28,7 @@
                         <td>{$vo.rank_discount} 折</td>
                         <td>
                             <a href="{:url('admin/integral/rule_edit',['id'=>$vo['rank_id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
-                            <a href="{:url('admin/integral/rule_delete',['id'=>$vo['rank_id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                            <!--<a href="{:url('admin/integral/rule_delete',['id'=>$vo['rank_id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>-->
                         </td>
                     </tr>
                     {/foreach}

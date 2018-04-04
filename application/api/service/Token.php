@@ -84,6 +84,7 @@ class Token
     {
         $token = Request::instance()
             ->header('Ewei-Token');
+        $token = trim($token,'"');
         $vars = Cache::get($token);
         if (!$vars)
         {

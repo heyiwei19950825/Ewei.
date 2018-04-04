@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+
+    <title>单据打印</title>
+    <link href="__CSS__/hplus/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="__CSS__/font-awesome.min.css?v=4.3.0" rel="stylesheet">
+
+    <link href="__CSS__/hplus/animate.css" rel="stylesheet">
+    <link href="__CSS__/hplus/style.css?v=2.2.0" rel="stylesheet">
+
+</head>
+
+<body class="white-bg">
+<div class="wrapper wrapper-content p-xl">
+    <div class="ibox-content p-xl">
+        <div class="row">
+            <div class="col-sm-6">
+                <!--<address>-->
+                    <!--<strong>北京百度在线网络技术有限公司</strong><br>-->
+                    <!--北京市海淀区上地十街10号<br>-->
+                    <!--<abbr title="Phone">总机：</abbr> (+86 10) 5992 8888-->
+                <!--</address>-->
+            </div>
+
+            <div class="col-sm-6 text-right">
+                <h4>订单号：</h4>
+                <h4 class="text-navy">{$info.order_no}</h4>
+                <address>
+                    <strong>{$info.user_name}</strong><br><br>
+                    {$info.receiver_province} {$info.receiver_city} {$info.receiver_district} {$info.receiver_address}<br>
+                    <abbr title="Phone">电话：</abbr> {$info.receiver_mobile}
+                </address>
+                <p>
+                    <span><strong>订单日期：</strong> {$info.create_time}</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="table-responsive m-t">
+            <table class="table invoice-table">
+                <thead>
+                <tr>
+                    <th>清单</th>
+                    <th>数量</th>
+                    <th>单价</th>
+                    <th>优惠价格</th>
+                    <th>总价</th>
+                </tr>
+                </thead>
+                <tbody>
+                {foreach name="$info.goods_info" item="vo"}
+                    <tr>
+                        <td>
+                            <div><strong>{$vo.goods_name}</strong>
+                            </div>
+                        </td>
+                        <td>{$vo.num}</td>
+                        <td>{if condition="$vo.point_exchange_type == 1 "}{$vo.sp_integral}积分{else}&yen;{$vo.price}{/if}</td>
+                        <td>{if condition="$vo.point_exchange_type == 1 "}{$vo.adjust_money}积分{else}&yen;{$vo.adjust_money}{/if}</td>
+                        <td>{if condition="$vo.point_exchange_type == 1 "}{$vo.integral_money}积分{else}&yen;{$vo.goods_money}{/if}</td>
+                    </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </div>
+        <!-- /table-responsive -->
+
+        <table class="table invoice-total">
+            <tbody>
+            <tr>
+                <td><strong>总价：</strong>
+                </td>
+                <td>{if condition="$info.order_type == 2 "}{$info.point}积分{else}&yen;{$info.order_money}{/if}</td>
+            </tr>
+            <tr>
+                <td><strong>运费：</strong>
+                </td>
+                <td>&yen;{$info.shipping_money}</td>
+            </tr>
+            <tr>
+                <td><strong>总计</strong>
+                </td>
+                <td>{if condition="$info.order_type == 2 "}{$info.point}积分{else}&yen;{$info.order_money}{/if}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!--<div class="well m-t"><strong>注意：</strong>-->
+            <!--请在30日内完成付款，否则订单会自动取消。-->
+        <!--</div>-->
+    </div>
+
+</div>
+<script type="text/javascript">
+    window.print();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+---------------------------------------------------------------
+[2018-03-25T15:39:15+08:00] 127.0.0.1 127.0.0.1 GET /admin
+[ error ] [1]Class 'WxPayUnifiedOrder' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Index.php:44]
+---------------------------------------------------------------
+[2018-03-25T23:06:18+08:00] 127.0.0.1 127.0.0.1 GET /admin/index/index.html
+[ error ] [1]Class 'WxPayUnifiedOrder' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Index.php:44]

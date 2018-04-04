@@ -11,20 +11,27 @@ namespace app\admin\controller;
 
 use app\common\controller\AdminBase;
 use app\common\model\FeedBack ;
+use app\common\model\FeedBackCategory;
 use app\common\model\User as UserModel;
 use app\common\lib\Helper;
+use think\Db;
 
 
 class Message extends AdminBase
 {
     private $feedBack = null;
     private $user_model = null;
+    protected $category_model;
+
     protected function _initialize()
     {
         parent::_initialize();
         $this->feedBack = new FeedBack();
         $this->user_model = new UserModel();
+        $this->category_model = new FeedBackCategory();
+        $category_level_list  = $this->category_model->getLevelList();
 
+        $this->assign('category_level_list', $category_level_list);
     }
 
 
@@ -38,6 +45,7 @@ class Message extends AdminBase
             $v['msg_type'] = $note[$v['msg_type']];
             $v['msg_time'] =  Helper::time_tran($v['msg_time']);
         }
+
         return $this->fetch('index',['message' => $row]);
     }
 
@@ -56,17 +64,231 @@ class Message extends AdminBase
         }
     }
 
-    /**
-     * 反馈
-     */
-    public function fanKui(){
 
+    /**
+     * 反馈列表
+     */
+    public function messageList(){
+        $list = [];
+        $size = 10;
+        $page = 1;
+        $start_time = $end_time = $keyword = $cid = $msg_status = '';
+        $params = $this->request->param();
+        $condition  = [];
+        extract($params);
+        $endTime = strtotime($end_time);
+        $startTime = strtotime($start_time);
+        //搜过关键字
+        if( !empty($params['keyword']) ){
+            $condition['msg_type_name'] = ['like','%'.$keyword.'%'];
+        }
+        if( (!empty($msg_status) || $msg_status ==0) && $msg_status!='' ){
+            $condition['msg_status'] = ['=',$msg_status];
+        }
+
+        //时间查询
+        if ($start_time != '' && $end_time !=  '') {
+            $condition["msg_time"] = [
+                [
+                    ">",
+                    $startTime
+                ],
+                [
+                    "<",
+                    $endTime
+                ]
+            ];
+        } elseif ($start_time != '' && $end_time == '') {
+            $condition["msg_time"] = [
+                    ">",
+                $startTime
+            ];
+        } elseif ($start_time == '' && $end_time != '') {
+            $condition["msg_time"] = [
+                    "<",
+                $endTime
+            ];
+        }
+        $number = ($page*$size)-$size;
+        $limit = $number.','.$size;
+        $list = Db::name('feed_back')->where($condition)->order('msg_time desc')->limit($limit)->select()->toArray();
+        $render =  Db::name('feed_back')->where($condition)->order('msg_time desc')->paginate($size, false, ['page' => $page]);
+        foreach ($list as &$v){
+           $v['time'] = Helper::time_tran($v['time']);
+           $v['msg_time'] = date('Y-m-d H;i:s',$v['msg_time']);
+        }
+
+        return $this->fetch('message_list',['list'=>$list, 'start_time'=>$start_time,
+            'end_time'=>$end_time,'keyword'=>$keyword,'render'=>$render,'msg_status'=>$msg_status]);
     }
 
     /**
-     * 反馈处理
+     * 添加备注
      */
-    public function fanKuiDispose(){
+    public function addNote(){
+        if($this->request->isPost()){
+            $params = $this->request->param();
+            if( empty($params['id']) ){
+                $this->error('参数错误');
+            }
 
+            $row = Db::name('feed_back')->where([
+                'id'=>$params['id']
+            ])->update([
+                'note'=>$params['msg']
+            ]);
+            if( $row ){
+                $this->success('备注成功');
+            }else{
+                $this->error('备注失败');
+            }
+        }else{
+            $this->error('备注失败');
+        }
+    }
+
+    /**
+     * 详情
+     */
+    public function info(){
+        if($this->request->isPost()){
+            $params = $this->request->param();
+            if( empty($params['id']) ){
+                $this->error('参数错误');
+            }
+            //查询信息
+            $row = Db::name('feed_back')->where([
+                'id'=>$params['id']
+                ])->field('msg_img,msg_time,msg_time,address,user_name,msg_content,msg_time,msg_type_name')->find();
+
+            //修改查看状态
+            Db::name('feed_back')->where([
+                'id'=>$params['id']
+                ])->update([
+                    'msg_status' => 1,
+            ]);
+            $row['msg_time'] = date('Y-m-d H:i:s',$row['msg_time']);
+            $row['msg_img'] = explode(',',$row['msg_img']);
+            $row['msg_img'] = empty($row['msg_img'])?[]:$row['msg_img'];
+
+            $this->success('查询成功','',$row);
+        }else{
+            $this->error('错误请求');
+        }
+    }
+
+
+
+    /**
+     * 栏目管理
+     * @return mixed
+     */
+    public function messageCategory()
+    {
+        return $this->fetch('message_category');
+    }
+
+    /**
+     * 添加栏目
+     * @param string $pid
+     * @return mixed
+     */
+    public function messageCategoryAdd($pid = '')
+    {
+        return $this->fetch('message_category_add', ['pid' => $pid]);
+    }
+
+    /**
+     * 保存栏目
+     */
+    public function messageCategorySave()
+    {
+        if ($this->request->isPost()) {
+            $data            = $this->request->param();
+            $validate_result = $this->validate($data, 'Category');
+
+            if ($validate_result !== true) {
+                $this->error($validate_result);
+            } else {
+                if( $data['pid'] != 0){
+                    $pCategory = $this->category_model->find(['id'=>$data['pid']]);
+                    $data['is_hid'] = $pCategory['is_hide'];
+                }
+                if ($this->category_model->allowField(true)->save($data)) {
+                    $this->success('保存成功');
+                } else {
+                    $this->error('保存失败');
+                }
+            }
+        }
+    }
+
+    /**
+     * 编辑栏目
+     * @param $id
+     * @return mixed
+     */
+    public function messageCategoryEdit($id)
+    {
+        $category = $this->category_model->find($id);
+
+        return $this->fetch('message_category_edit', ['category' => $category]);
+    }
+
+    /**
+     * 更新栏目
+     * @param $id
+     */
+    public function messageCategoryUpdate($id)
+    {
+        if ($this->request->isPost()) {
+            $data            = $this->request->param();
+            $validate_result = $this->validate($data, 'Category');
+            if ($validate_result !== true) {
+                $this->error($validate_result);
+            } else {
+                $children = $this->category_model->where(['path' => ['like', "%,{$id},%"]])->column('id');
+                if( $data['is_hide'] == 1){
+                    $map = [
+                        'id' => ['in',implode(',',$children)]
+                    ];
+                    //父类隐藏 所有子类都隐藏
+                    $this->category_model->where($map)->update(['is_hide' => 1]);
+                    //子类开启父类也开启
+                    $this->category_model->where(['id'=>$data['pid']])->update(['is_hide' => 1]);
+                }
+                if (in_array($data['pid'], $children)) {
+                    $this->error('不能移动到自己的子分类');
+                } else {
+                    if ($this->category_model->allowField(true)->save($data, $id) !== false) {
+                        $this->success('更新成功');
+                    } else {
+                        $this->error('更新失败');
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * 删除栏目
+     * @param $id
+     */
+    public function messageCategoryDelete($id)
+    {
+        $category = $this->category_model->where(['pid' => $id])->find();
+        $goods  = Db::name('feed_back')->where(['msg_type' => $id])->find();
+
+        if (!empty($category)) {
+            $this->error('此分类下存在子分类，不可删除');
+        }
+        if (!empty($goods)) {
+            $this->error('此分类下存在消息，不可删除');
+        }
+        if ($this->category_model->destroy($id)) {
+            $this->success('删除成功');
+        } else {
+            $this->error('删除失败');
+        }
     }
 }

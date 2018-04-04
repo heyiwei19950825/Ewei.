@@ -76,9 +76,11 @@
                             <td>{$vo.sp_market}</td>
                             <td>{$vo.publish_time}</td>
                             <td>
-                                <a href="{:url('admin/goods/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
-                                <!-- <a  data-method="offset" href='javascript:' class="layui-btn layui-btn-warm layui-btn-mini goods-show">预览</a> -->
-                                <a href="{:url('admin/goods/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                                {if condition="$vo['status']==0"}
+                                    <a href="{:url('admin/goods/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                    <!-- <a  data-method="offset" href='javascript:' class="layui-btn layui-btn-warm layui-btn-mini goods-show">预览</a> -->
+                                    <a href="{:url('admin/goods/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                                {/if}
                             </td>
                         </tr>
                         {/foreach}

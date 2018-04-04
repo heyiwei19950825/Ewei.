@@ -68,7 +68,7 @@ class Goods extends BaseModel
             ->field($field)
             ->order(
                 $sort.' '.$order
-            );
+            )->limit($size);
         if (!$paginate)
         {
             return $query->select();

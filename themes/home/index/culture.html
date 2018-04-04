@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0117)http://wechat.leaderc.com/weisite/home.php?pid=105&uid=0&code=f810e2017feeeb399a2a5f3050932f32&wxref=mp.weixin.qq.com -->
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="__CSS__/culture/snower.css" media="all">
+		<link rel="stylesheet" type="text/css" href="__CSS__/culture/common.css" media="all">
+		<link rel="stylesheet" type="text/css" href="__CSS__/culture/reset.css" media="all">
+		<link rel="stylesheet" type="text/css" href="__CSS__/culture/home-11.css" media="all">
+		<script type="text/javascript" src="__JS__/culture/maivl.js"></script>
+		<script type="text/javascript" src="__JS__/jquery.min.js"></script>
+		<script src="__JS__/jquerysession.js"></script>
+		<title>眉山市文化市场综合行政执法支队</title>
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<!-- Mobile Devices Support @begin -->
+
+		<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="0" http-equiv="expires">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- apple devices fullscreen -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<!-- Mobile Devices Support @end -->
+	</head>
+
+	<body onselectstart="return true;" ondragstart="return false;" cz-shortcut-listen="true">
+		<link rel="stylesheet" type="text/css" href="__STATIC__/font-awesome/css/font-awesome.css" media="all">
+		<style>
+			.body {
+				max-width: 640px;
+				margin: auto;
+				height: 100%;
+				background-color: #f4f4f4;
+				position: relative;
+				background: url(__STATIC__/images/culture/20170905161232_69411.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			.card_lol {
+				width: 264px;
+			}
+			.card_lol li {
+				position: relative;
+				line-height: inherit;
+				width: 88px;
+			}
+			.card_lol li img {
+				position: absolute;
+				z-index: 1;
+				top: 4px;
+				left: 16px;
+			}
+			.card_lol a {
+				height: 83px;
+			}
+			.card_lol label {
+				background-color: inherit;
+				color: #ffffff;
+				bottom: -55px;
+				position: relative;
+				line-height: 20px;
+				overflow: hidden;
+				padding: 0 5px;
+			}
+		</style>
+		<div class="body">
+			<section>
+				<ul class="card_lol" style="display:block; padding-bottom:50px;">
+				</ul>
+			</section>
+		</div>
+		<footer>
+			<div class="weimob-copyright">
+				<a href="#">技术支持 眉山坤飞网络科技有限公司</a>
+			</div> <span class="weimob-support" style="display:none;">技术支持 眉山坤飞网络科技有限公司</span>
+		</footer>
+		<div mark="stat_code" style="width:0px; height:0px; display:none;"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+
+		var token = GetQueryString('token');
+		if(token != null ){
+			$.session.set('token',token,7600);
+			window.location.href = window.location.pathname;
+		}else{
+			token = $.session.get('token');
+		}
+
+		$.ajax({
+			url: '/api/v1/nav/list',
+			type: "post",
+			async: false,
+			dataType: 'json',
+			beforeSend: function (req) {
+				req.setRequestHeader('Ewei-Token', token);
+			},
+			success: function (res) {
+				//如果token过期则重新授权
+				if(res.error_code == 10001 ){
+
+				}else{
+					if(res.code == 1 ){
+						var data = res.data;
+						var html = '';
+						for( var i in data ){
+							var info = data[i];
+							html += '<li> ' +
+									'<a href="'+info.link+'" style="background-color:'+info.background_color+';"> ' +
+									'<img src="'+info.icon+'" style="width: 50px; height: 50px; margin-top: 3px; margin-left: 0px;"> ' +
+									'<label>'+info.name+'</label> ' +
+									'</a> ' +
+									'</li>';
+						}
+						$('.card_lol').html(html);
+					}
+				}
+			}
+		});
+
+		function GetQueryString(name)
+		{
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if(r != null) return unescape(r[2]); return null;
+		}
+	})
+
+</script>

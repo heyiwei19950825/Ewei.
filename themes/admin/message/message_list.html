@@ -1,0 +1,197 @@
+{extend name="base" /}
+{block name="body"}
+<link href="__STATIC__/css/hplus/animate.css?v=2.2.0" rel="stylesheet">
+
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">消息列表</li>
+            <li><a href="/admin/message/messageCategory">消息分类</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <form class="layui-form layui-form-pane" action="{:url('admin/message/messageList')}" method="get">
+                <div class="layui-inline">
+                    <label class="layui-form-label">类型 关键字</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="keyword" placeholder="请输入关键词" class="layui-input" value="{$keyword}">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">查看类型</label>
+                    <div class="layui-input-inline">
+                        <select name="msg_status" id="">
+                            <option value="" {if condition='$msg_status == ""  && $msg_status != 0'}selected{/if}>全部</option>
+                            <option value="0" {if condition='$msg_status == 0 && $msg_status != "" '}selected{/if}>未查看</option>
+                            <option value="1" {if condition='$msg_status == 1 '}selected{/if}>已查看</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">开始时间</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input start_time datetime" placeholder="开始时间" id="start"  name="start_time"  value="{$start_time}">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">截止时间</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input end_time datetime" placeholder="结束时间" id="end" name="end_time"  value="{$end_time}">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn">搜索</button>
+                </div>
+            </form>
+
+            <div class="layui-tab-item layui-show">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th style="width: 30px;">ID</th>
+                        <th>类型</th>
+                        <th>地点</th>
+                        <th>内容</th>
+                        <th>时间</th>
+                        <th>备注</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {foreach name="list" item="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.msg_type_name}</td>
+                        <td>{$vo.address}</td>
+                        <td>{$vo.msg_content}</td>
+                        <td>{$vo.msg_time}</td>
+                        <td class="note">{$vo.note}</td>
+                        <td width="200px;">
+                            <button class="layui-btn layui-btn-mini a8" data-id="{$vo.id}">{if condition='$vo.msg_status == 1 '}已查看{else}查看{/if}</button>
+                            <button class="layui-btn layui-btn-normal layui-btn-mini a9" data-id="{$vo.id}">备注</button>
+                        </td>
+                    </tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+                <!--分页-->
+                {$render->render()}
+            </div>
+        </div>
+    </div>
+</div>
+<!--详情弹窗-->
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true" style="top:50px;width:100%">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">消息详情</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row show-row machine-list">
+                    <div class="fadeInRight">
+                        <div class="mail-box-header">
+                            <div class="mail-tools tooltip-demo " style="margin-top: 5px;">
+                                <h3>
+                                    <span class="font-noraml">消息类型： </span> <span class="msg-type"></span>
+                                </h3>
+                                <h5 style="margin-top: 5px;">
+                                    <span class="pull-right font-noraml"  class="msg-time"></span>
+                                    <span class="font-noraml">反馈用户： </span><span class="msg-name"></span>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="mail-box">
+                            <div class="mail-body ">
+                                <p class="msg-content">
+                                </p>
+                                <p class="text-right msg-address">
+                                </p>
+                            </div>
+                            <div class="mail-attachment">
+                                <div class="attachment">
+                                    <div class="msg-img">
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div type="button" class="btn btn-white" data-dismiss="modal">关闭</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="js"}
+<script src="__STATIC__/js/hplus/jquery-2.1.1.min.js"></script>
+<script src="__STATIC__/js/hplus/bootstrap.min.js?v=3.4.0"></script>
+<script>
+    $(function(){
+        // 添加备注
+        $(document).on("click", ".a9", function() {
+            var id = $(this).attr('data-id');
+            var that = $(this);
+            layer.prompt(function(val, index){
+                var msg = val;
+                $.post("{:url('admin/message/addNote')}",{id:id,msg:msg},function(e){
+                    if(e.code == 1){
+                        that.parents('tr').find('.note').text(msg);
+                    }
+                    layer.msg(e.msg);
+                });
+                layer.close(index);
+            });
+        });
+
+        //查看详情
+        $(document).on("click", ".a8", function() {
+            var id = $(this).attr('data-id');
+            var that = $(this);
+            $.post("{:url('admin/message/info')}",{id:id},function(e){
+                var data = e.data;
+                $('.msg-name').text('');
+                $('.msg-content').text('');
+                $('.msg-type').text('');
+                $('.msg-address').text('');
+                if(e.code == 1){
+                    $('.msg-name').text(data.user_name);
+                    $('.msg-content').text(data.msg_content);
+                    $('.msg-type').text(data.msg_type_name);
+                    $('.msg-address').text('举报地址：'+data.address);
+                    var html = '';
+                    var img = data.msg_img;
+                    if( img != []){
+                        for( var k in img){
+                            html  += '<div class="file-box"> ' +
+                                    '<div class="file"> ' +
+                                    '<a href="javascript:"> ' +
+                                    '<span class="corner"></span> ' +
+                                    '<div class="image"> ' +
+                                    '<img alt="image" class="img-responsive" src="'+img[k]+'"> ' +
+                                    '</div> ' +
+                                    '</a> ' +
+                                    '</div> ' +
+                                    '</div>';
+                        }
+                        $('.msg-img').html(html);
+                    }
+
+                    $('#myModal5').modal('show');
+                    that.text('已查看');
+                }
+
+            },'json');
+
+        });
+    })
+</script>
+{/block}

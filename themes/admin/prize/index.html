@@ -1,0 +1,257 @@
+{extend name='base'}
+{block name='css'}
+<link href="__STATIC__/css/hplus/animate.css?v=2.2.0" rel="stylesheet">
+{/block}
+{block name='body'}
+<style>
+    .goods-info{
+        height:180px;
+        width: 150px;
+        margin-left: 20px;
+        cursor:pointer;
+        font-size: 10px;
+        position: relative;
+    }
+    .goods-price{
+        margin-top: 10px;
+        color: darkred;
+    }
+    .goods-thumb,.goods_thumb{
+        width: 150px;
+    }
+    .goods-name{
+        margin-top: 10px;
+    }
+    .goods-checkout{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+    .show-row .col-md-1{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+</style>
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">抽奖规则</li>
+            <li><a href="{:url('/admin/prize/winList')}">中奖记录列表</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+                <legend>抽奖规则</legend>
+            </fieldset>
+            <form class="layui-form" action="{:url('/admin/prize/index')}" method="post">
+                <div class="layui-form-item">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">消耗积分</label>
+                        <div class="layui-input-block">
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <input name="integral" placeholder="积分个数" autocomplete="off" class="layui-input" type="number" value="{$integral}">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">积分个数为正整数</div>
+                        </div>
+                    </div>
+                    <label class="layui-form-label">中奖规则</label>
+                    <div class="layui-input-inline" style="width: 200px;">
+                        <div class="layui-btn add-rule" >添加中奖规则</div>
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">必须填写12个中奖信息</div>
+                    <div class="rule-dome" >
+                        {if condition="$rule == []"}
+                        <div class="layui-block">
+                            <div class="layui-form-item rule-dome-list">
+                                <label class="layui-form-label"></label>
+                                <div class="layui-input-inline">
+                                    <div class="layui-btn relevance" data-id="0" data-key="1">
+                                        选择商品
+                                    </div>
+                                </div>
+                                <input type="hidden" name="goods_id[]" class="goods_id">
+                                <div class="layui-input-inline">
+                                    <img src="" alt="" class="goods_thumb">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <div class="goods_name"></div>
+                                </div>
+                                <div class="layui-input-inline" style="width: 200px;">
+                                    <input name="rule_odds[]" placeholder="中奖概率" autocomplete="off" class="layui-input rule_name" type="text">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">% 百分比</div>
+                                <div class="layui-input-inline">
+                                    <div class="layui-btn layui-btn-danger del-rule" data-id="0">删除</div>
+                                </div>
+                            </div>
+                        </div>
+                        {else}
+                        {foreach name="rule" item="vo"}
+                            {if condition="$vo['goodsInfo']!= []"}
+                            <div class="layui-block">
+                                    <div class="layui-form-item rule-dome-list">
+                                        <label class="layui-form-label"></label>
+                                        <div class="layui-input-inline">
+                                            <div class="layui-btn relevance" data-id="0" data-key="{$vo.goods_id}">
+                                                选择商品
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="goods_id[]" class="goods_id" value="{$vo.goods_id}">
+                                        <div class="layui-input-inline">
+                                            <img src="{$vo.goodsInfo.thumb}" alt="" class="goods_thumb">
+                                        </div>
+                                        <div class="layui-input-inline">
+                                            <div class="goods_name">{$vo.goodsInfo.name}</div>
+                                        </div>
+                                        <div class="layui-input-inline" style="width: 200px;">
+                                            <input name="rule_odds[]" placeholder="中奖概率" autocomplete="off" class="layui-input rule_name" type="text" value="{$vo.rule_odds}">
+                                        </div>
+                                        <div class="layui-form-mid layui-word-aux">% 百分比</div>
+                                        <div class="layui-input-inline">
+                                            <div class="layui-btn layui-btn-danger del-rule" data-id="0">删除</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {/if}
+                        {/foreach}
+                        {/if}
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="*" lay-filter="demo1">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true" style="top:50px;width:100%">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">选择商品</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row show-row goods-list">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div type="button" class="btn btn-white" data-dismiss="modal">关闭</div>
+                <div type="button" class="btn btn-primary save-rule" data-key="0">保存</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name='js'}
+<script src="__STATIC__/js/hplus/jquery-2.1.1.min.js"></script>
+<script src="__STATIC__/js/hplus/bootstrap.min.js?v=3.4.0"></script>
+
+<script>
+    $(function(){
+        //add添加规则
+        $('.add-rule').on('click',function(){
+            var ruleKey = $('.rule-dome-list').length + 1;
+            var html ='<div class="layui-form-item rule-dome-list"> ' +
+                    '<label class="layui-form-label"></label> ' +
+                    '<div class="layui-input-inline"> ' +
+                    '<div class="layui-btn relevance" data-id="0" data-key="'+ruleKey+'">' +
+                    '选择商品 ' +
+                    '</div> ' +
+                    '</div> ' +
+                    '<input type="hidden" name="goods_id['+ruleKey+']" class="goods_id"> ' +
+                    '<div class="layui-input-inline"> ' +
+                    '<img src="" alt="" class="goods_thumb"> ' +
+                    '</div> ' +
+                    '<div class="layui-input-inline"> ' +
+                    '<div class="goods_name"></div> ' +
+                    '</div> ' +
+                    '<div class="layui-input-inline" style="width: 200px;"> ' +
+                    '<input name="rule_odds['+ruleKey+']" placeholder="中奖概率" autocomplete="off" class="layui-input rule_name" type="text"> ' +
+                    '</div> <div class="layui-form-mid layui-word-aux">% 百分比</div>' +
+                    '<div class="layui-input-inline"> ' +
+                    '<div class="layui-btn layui-btn-danger del-rule" data-id="0">删除</div> ' +
+                    '</div> ' +
+                    '</div>';
+
+            $('.rule-dome').append(html);
+            relevance();
+            delData();
+        });
+        //点击选择商品按钮
+        var relevance = function(){
+            //选择商品
+            $('.relevance').on('click',function(){
+                var that= $(this);
+                $.get('/api/v2/goods/virtual',{},function(e){
+                    var html ='';
+                    if(e.code == 0 ){
+                        layer.msg(e.msg);
+                        $('.goods-list').html('<content>没有符合要求的商品信息</content>');
+                        return false;
+                    }
+                    var ruleKey = that.attr('data-key');
+                    $('.save-rule').attr('data-key',ruleKey);
+                    var list = e.data;
+                    for( var v in list) {
+                        for( var vs in list[v]) {
+                            var val = list[v][vs];
+                            html += '<div class="col-md-1 goods-info" data-id="'+val.id+'" data-click="0">' +
+                                    '<img src="'+val.thumb+'" alt="" class="goods-thumb">'+
+                                    '<center class="goods-price">'+val.sp_integral+'积分</center>'+
+                                    '<center class="goods-name">'+val.name+'</center>' +
+                                    '<img src="__STATIC__/images/checkout1.png" alt="" class="goods-checkout"></div>';
+                        }
+                    }
+                    $('.goods-list').html(html);
+                    $('#myModal5').modal('show');
+                    clickGoods();
+                });
+            })
+        };
+        relevance();
+        //点击选择商品
+        var clickGoods = function(){
+            $('.goods-info').on('click',function(){
+                //初始化
+                $('.goods-checkout').attr('src','__STATIC__/images/checkout1.png');
+                $('.goods-info').attr('data-click',0);
+                $(this).attr('data-click',1);
+                $(this).find('.goods-checkout').attr('src','__STATIC__/images/checkout2.png');
+            })
+        }
+
+        //保存选择的商品
+        $('.save-rule').on('click',function(){
+            var dataKey = $(this).attr('data-key');
+            $('.goods-info').each(function(i,v){
+                var that = $(this);
+                if($(v).attr('data-click') == 1){
+                    $('.relevance').each(function(i,v){
+                       if($(v).attr('data-key') == dataKey) {
+                           var obj = $(v).parents('.rule-dome-list');
+                           obj.find('.goods_thumb').attr('src',that.find('.goods-thumb').attr('src'));
+                           obj.find('.goods_name').text( that.find('.goods-name').text());
+                           obj.find('.goods_id').val( that.attr('data-id'));
+                       }
+                    });
+                }
+            })
+            $('#myModal5').modal('hide');
+        });
+        var delData = function(){
+            $('.del-rule').on('click',function(){
+                    $(this).parents('.layui-block').remove();
+            })
+        }
+        delData();
+
+
+    })
+</script>
+{/block}

@@ -2,6 +2,9 @@
 namespace app\admin\controller;
 
 use app\common\controller\AdminBase;
+use app\common\model\InternetMachine;
+use app\common\model\InternetOrder;
+use app\common\model\InternetOrderMachine;
 use app\common\model\Shop as ShopModel;
 use app\common\model\ShopGroup as ShopGroupModel;
 use app\common\model\City as CityModel;//城市
@@ -41,6 +44,7 @@ class Index extends AdminBase
      */
     public function index()
     {
+       
         $version = Db::query('SELECT VERSION() AS ver');
         $config  = [
             'url'             => $_SERVER['HTTP_HOST'],

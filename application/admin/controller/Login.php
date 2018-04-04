@@ -49,7 +49,7 @@ class Login extends Controller
 //                                'last_login_ip'   => $this->request->ip()
                             ]
                         );
-                        $this->success('登录成功', 'admin/index/index');
+                        $this->success('登录成功', 'admin/subscribe/internet');
                     }
                 } else {
                     $this->error('用户名或密码错误');

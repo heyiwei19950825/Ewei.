@@ -4,16 +4,17 @@ use think\Model;
 
 
 class BaseModel extends Model{
-	 /**
+    /**
      * 列表查询
-     *
-     * @param unknown $page_index            
-     * @param number $page_size            
-     * @param string $order            
-     * @param string $where            
-     * @param string $field            
+     * @param $page_index
+     * @param $page_size
+     * @param $condition
+     * @param $order
+     * @param $field
+     * @param $paginate
+     * @return array
      */
-    public function pageQuery($page_index, $page_size, $condition, $order, $field)
+    public function pageQuery($page_index, $page_size, $condition, $order, $field,$paginate = false)
     {
         $count = $this->where($condition)->count();
         if ($page_size == 0) {
@@ -23,17 +24,27 @@ class BaseModel extends Model{
                 ->select();
             $page_count = 1;
         } else {
-            $start_row = $page_size * ($page_index - 1);
-            $list = $this->field($field)
-                ->where($condition)
-                ->order($order)
-                ->limit($start_row . "," . $page_size)
-                ->select();
-            if ($count % $page_size == 0) {
-                $page_count = $count / $page_size;
-            } else {
-                $page_count = (int) ($count / $page_size) + 1;
+            if( $paginate == true ){
+                $list = $this->field($field)
+                    ->where($condition)
+                    ->order($order)
+                    ->paginate($page_size, false, ['page' => $page_index]);
+
+                return $list;
+            }else{
+                $start_row = $page_size * ($page_index - 1);
+                $list = $this->field($field)
+                    ->where($condition)
+                    ->order($order)
+                    ->limit($start_row . "," . $page_size)
+                    ->select();
+                if ($count % $page_size == 0) {
+                    $page_count = $count / $page_size;
+                } else {
+                    $page_count = (int) ($count / $page_size) + 1;
+                }
             }
+
         }
         return array(
             'data' => $list,

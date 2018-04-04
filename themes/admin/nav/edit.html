@@ -14,31 +14,22 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">导航名称</label>
                         <div class="layui-input-block">
-                            {if condition="$nav.id != 1 && $nav.id != 2"}
-                                <input type="text" name="name" value="{$nav.name}"  lay-verify="required" placeholder="请输入导航名称" class="layui-input" >
-                            {else}
-                                <input type="text" name="name" value="{$nav.name}" placeholder="请输入导航名称" class="layui-input" disabled >
-                            {/if}
+                            <input type="text" name="name" value="{$nav.name}"  lay-verify="required" placeholder="请输入导航名称" class="layui-input" >
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">别名</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="alias" value="{$nav.alias}" placeholder="（选填）请输入导航别名" class="layui-input">
-                        </div>
-                    </div>
-                    {if condition="$nav.id != 1 && $nav.id != 2"}
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">别名</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input type="text" name="alias" value="{$nav.alias}" placeholder="（选填）请输入导航别名" class="layui-input">-->
+                        <!--</div>-->
+                    <!--</div>-->
                         <div class="layui-form-item">
                             <label class="layui-form-label">链接</label>
                             <div class="layui-input-block">
-                                {if condition="$nav.id != 1 && $nav.id != 2"}
                                     <input type="text" name="link" value="{$nav.link}" placeholder="（选填）请输入导航链接" class="layui-input">
-                                {else}
-                                    <input type="text" name="link" value="{$nav.link}" placeholder="（选填）请输入导航链接" class="layui-input" disabled >
-                                {/if}
                             </div>
                         </div>
-                    {/if}
+
  <!--                    <div class="layui-form-item">
                         <label class="layui-form-label">图标</label>
                         <div class="layui-input-block">
@@ -55,14 +46,14 @@
                                 <p id="demoText"></p>
                             </div>
                         </div>
-                    <div class="layui-form-mid layui-word-aux">推荐图片大小为150*150</div>
+                    <!--<div class="layui-form-mid layui-word-aux">推荐图片大小为150*150</div>-->
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">描述</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="description" value="{$nav.description}" placeholder="（选填）简单描述" class="layui-input">
-                        </div>
-                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">描述</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input type="text" name="description" value="{$nav.description}" placeholder="（选填）简单描述" class="layui-input">-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">状态</label>
                         <div class="layui-input-block">
@@ -70,11 +61,17 @@
                             <input type="radio" name="status" value="0" title="隐藏" {if condition="$nav.status==0"} checked="checked"{/if}>
                         </div>
                     </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">打开方式</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input type="radio" name="target" value="_self" title="默认" {if condition="$nav.target=='_self'"} checked="checked"{/if}>-->
+                            <!--<input type="radio" name="target" value="_blank" title="新窗口" {if condition="$nav.target=='_blank'"} checked="checked"{/if}>-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
-                        <label class="layui-form-label">打开方式</label>
-                        <div class="layui-input-block">
-                            <input type="radio" name="target" value="_self" title="默认" {if condition="$nav.target=='_self'"} checked="checked"{/if}>
-                            <input type="radio" name="target" value="_blank" title="新窗口" {if condition="$nav.target=='_blank'"} checked="checked"{/if}>
+                        <label class="layui-form-label">背景颜色</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="background_color" value="{$nav.background_color}" placeholder="（选填）RGB颜色码" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -95,4 +92,6 @@
         </div>
     </div>
 </div>
+{/block}
+{block name='js'}
 {/block}

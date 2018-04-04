@@ -178,6 +178,7 @@ class Coupon extends BaseModel
             $item['end_time']   = date('Y-m-d',$item['end_time']);
             $item['range_type']   = $item['range_type']==0?'部分商品可用':'全商品可用';
         }
+
         return $row;
     }
 
@@ -221,6 +222,11 @@ class Coupon extends BaseModel
             if( $userGetNumber > $coupon['max_fetch']){
                     return false;
             }
+        }
+        //判断用户等级是否符合
+        $user = User::get(['id'=>$uid]);
+        if( $user['rank_id'] != $coupon['need_rank']){
+            return false;
         }
 
         $data = [

@@ -12,12 +12,15 @@ namespace app\api\service;
 
 
 use app\api\model\GoodsCollective;
+use app\api\model\InternetOrder;
 use app\api\model\Order;
 use app\api\model\Goods;
 use app\api\model\OrderProduct;
 use app\api\model\User;
 use app\api\model\UserCollective;
 use app\api\service\Order as OrderService;
+use app\common\model\InternetMachine;
+use app\common\model\InternetOrderMachine;
 use app\lib\enum\OrderStatusEnum;
 use think\Db;
 use think\Exception;
@@ -32,26 +35,6 @@ Loader::import('WxPay.WxPay', EXTEND_PATH, '.Api.php');
 
 class WxNotify extends \WxPayNotify
 {
-//    protected $data = <<<EOD
-//<xml><appid><![CDATA[wxaaf1c852597e365b]]></appid>
-//<bank_type><![CDATA[CFT]]></bank_type>
-//<cash_fee><![CDATA[1]]></cash_fee>
-//<fee_type><![CDATA[CNY]]></fee_type>
-//<is_subscribe><![CDATA[N]]></is_subscribe>
-//<mch_id><![CDATA[1392378802]]></mch_id>
-//<nonce_str><![CDATA[k66j676kzd3tqq2sr3023ogeqrg4np9z]]></nonce_str>
-//<openid><![CDATA[ojID50G-cjUsFMJ0PjgDXt9iqoOo]]></openid>
-//<out_trade_no><![CDATA[A301089188132321]]></out_trade_no>
-//<result_code><![CDATA[SUCCESS]]></result_code>
-//<return_code><![CDATA[SUCCESS]]></return_code>
-//<sign><![CDATA[944E2F9AF80204201177B91CEADD5AEC]]></sign>
-//<time_end><![CDATA[20170301030852]]></time_end>
-//<total_fee>1</total_fee>
-//<trade_type><![CDATA[JSAPI]]></trade_type>
-//<transaction_id><![CDATA[4004312001201703011727741547]]></transaction_id>
-//</xml>
-//EOD;
-
     public function NotifyProcess($data, &$msg)
     {
         if ($data['result_code'] == 'SUCCESS') {
@@ -59,13 +42,24 @@ class WxNotify extends \WxPayNotify
             Log::write($data,'notice');
             Db::startTrans();
             try {
+
                 $order = Order::where('order_no', '=', $orderNo)->lock(true)->find();
-                $this->updateOrderStatus($order, true,$data);
+                if(!empty($order)){
+                    $this->updateOrderStatus($order, true,$data);
+                }else{
+                    //网吧订单
+                   $order = InternetOrder::where('order_no', '=', $orderNo)->lock(true)->find();
+                    if($order['status'] == 0){
+                        //修改订单状态
+                        $this->updateInternetOrder($order);
+                    }
+
+                    return true;
+                }
 
                 if ($order['order_status'] == 0 ) {
                     $service = new OrderService();
                     $status = $service->checkOrderStock($order['id']);
-//                    Log::debug($status);
                     $status['pass'] = true;
                     if ($status['pass']) {
                         $this->updateOrderStatus($order, true,$data);
@@ -93,6 +87,58 @@ class WxNotify extends \WxPayNotify
         return true;
     }
 
+    /**
+     * 网吧修改状态
+     */
+    private  function updateInternetOrder($order){
+        //修改状态
+        Db::startTrans();
+        try {
+            InternetOrder::where('order_no', '=', $order['order_no'])
+                ->update(['status' => 1]);
+            InternetOrderMachine::where('order_no','=',$order['order_no'])
+                ->update(['status'=>1]);
+            $machineList = InternetOrderMachine::where('order_no','=',$order['order_no'])->select()->toArray();
+            $uid = '';
+            foreach ($machineList as $k=>$v){
+                InternetMachine::where(['number'=>$v['machine_number']])->update([
+                    'status' => 2,
+                    'order_no'=>$order['order_no']
+                ]);
+                $uid = $v['uid'];
+            }
+            //系统配置  获得积分比例
+            $rule = Db::name('internet_bar_setting')->where([
+                'uid' =>1
+            ])->field('integral')->find();
+
+            $integral = $order['order_money']*$rule['integral'];
+
+            //修改用户积分
+            User::where([
+                'id' => $uid
+            ])->setInc('integral', $integral);
+
+            //记录日志
+            User::updateUserIntegral($uid,$integral,1,'订座获得积分');
+
+            //增加下单数量
+            Db::name('statistics')->where(['uid'=>1])->setInc('success_order_number');
+            //增加下单成功交易金额
+            Db::name('statistics')->where(['uid'=>1])->setInc('success_order_money',$order['order_money']);
+            //总收入
+            Db::name('statistics')->where(['uid'=>1])->setInc('income',$order['order_money']);
+
+            //积分增长数
+            Db::name('statistics')->where(['uid'=>1])->setInc('integral_number',$integral);
+            Db::commit();
+        } catch (Exception $ex) {
+            Db::rollback();
+            Log::error($ex->getMessage());
+            // 如果出现异常，向微信返回false，请求重新发送通知
+            return false;
+        }
+    }
 
     private function reduceStock($status)
     {

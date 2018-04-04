@@ -59,7 +59,6 @@ class Order extends BaseController
             $this->uid = Token::getCurrentUid();
             $this->orderConfig = Config::get('order');
         }
-
     }
 
     /**
@@ -77,6 +76,7 @@ class Order extends BaseController
         $type = $this->request->param('type','default');
         $collectiveNo = $this->request->param('collectiveNo','');
         $buyerMessage = $this->request->param('buyer_message','');
+        $virtual = $this->request->param('virtual',0);//判断是否是虚拟商品
 
 
         //收货地址
@@ -87,12 +87,24 @@ class Order extends BaseController
             $addresssMap = ['is_default'=>1,'user_id'=>$this->uid];
         }
         $address = $userAddressModel->where($addresssMap)->find();
-        $addressOld = $address->toArray();
-
+        if($address != NULL){
+            $addressOld = $address->toArray();
+        }
+        //获取用户信息
+        $userInfo = Db::name('user')->alias('u')->join('user_rank r','u.rank_id = r.rank_id','LEFT')->where(['u.id'=>$this->uid])->find();//用户信息
         //没有添加收货地址
         if( empty($addressOld)){
-            $row = ['errmsg'=>'请选择或创建收货地址','errno'=>1,'data'=>[]];
-            return $row;
+            if($virtual != 1 ){
+                $row = ['errmsg'=>'请选择或创建收货地址','errno'=>1,'data'=>[]];
+                return $row;
+            }else{//虚拟商品没有收货地址
+                $addressOld['mobile'] = $userInfo['mobile'];
+                $addressOld['province_id'] = 0;
+                $addressOld['city_id'] = 0;
+                $addressOld['district_id'] = 0;
+                $addressOld['address'] = $userInfo['city']==NULL?'':$userInfo['city'];
+                $userName = $userInfo['username'];
+            }
         }
 
         if( !empty($address) ){
@@ -103,10 +115,6 @@ class Order extends BaseController
         }else{
             $address = ['id'=>0];
         }
-
-
-        //获取用户信息
-        $userInfo = Db::name('user')->alias('u')->join('user_rank r','u.rank_id = r.rank_id','LEFT')->where(['u.id'=>$this->uid])->find();//用户信息
 
         //获取商品详情
         if( $goodsId == 0 ){//购物车购买
@@ -169,10 +177,11 @@ class Order extends BaseController
             $coupon_money = 0;
             $field = '';
             $product = GoodsModel::getProductDetail($goodsId, $field);
+
             $product['thumb'] = self::prefixDomain($product['thumb']);
             //运费
             $express = Express::getDetail($product['eid'], 'cost,company_name,id');
-            $freightPrice = $express['cost'];
+            $freightPrice = !empty($express['cost'])?$express['cost']:0;
 
             //判断是否团购或者是积分购买
             if ($type == 'integral') {
@@ -188,7 +197,6 @@ class Order extends BaseController
                     return $row;
                 }
                 $order_status = 0;
-
                 if($freightPrice == 0 ){
                     $integralRow = User::updateUserIntegral($this->uid, $goodsIntegral, 0);
                     if ($integralRow == 1) {
@@ -211,6 +219,7 @@ class Order extends BaseController
                 $goodsPrice = ($product['sp_price']) *$num;
                 $give_point = 0;
                 $coupon_money = 0;
+
             } elseif ($type == 'collective') {
                 if ($product['is_collective'] == 0) {
                     $row['errmsg'] = '非法请求';
@@ -225,6 +234,13 @@ class Order extends BaseController
                 $give_point = (int)$product['give_integral'] *$num;
                 $coupon_money = 0;
             }else{
+
+                if( $virtual == 1 && $product['need_rank'] < $userInfo['rank_id'] ){//虚拟货物验证需求等级
+                    $row['errmsg'] = '您的会员等级不够，无法购买';
+                    $row['errno'] = 10005;
+                    return $row;
+                }
+
                 $couponId = $this->request->param('couponId');//使用的优惠券ID
                 $couponPrice = 0;//优惠券价格
                 //优惠券 总数
@@ -255,7 +271,7 @@ class Order extends BaseController
         //创建成功添加订单信息
         $param = [
             'shipping_type' => 1,//订单配送方式
-            'order_from'  => 0,//订单来源
+            'order_from'  => $userInfo['from'],//订单来源
             'order_no'  => date('YmdHis',time()).rand(1000,9999),//订单编号
             'out_trade_no'  => '',//外部交易号
             'order_type'  => $order_type,//订单类型
@@ -270,7 +286,7 @@ class Order extends BaseController
             'receiver_district' => $addressOld['district_id'],//收货人所在街道
             'receiver_address' => $addressOld['address'],//收货人详细地址
             'receiver_zip' => '0000',//收货人邮编
-            'receiver_name' => $address['name'],//收货人姓名
+            'receiver_name' => isset($userName)?$userName:$address['name'],//收货人姓名
             'shop_id' => 0,//卖家店铺id
             'shop_name' =>'官方旗舰店',//卖家店铺名称
             'seller_memo' => '',//卖家对订单的备注
@@ -302,6 +318,7 @@ class Order extends BaseController
             'refund_balance_money'=>'',//订单退款余额
             'fixed_telephone'=>'',//固定电话
             'is_vip'=>$is_vip,//Vip订单
+            'is_virtual' => $virtual //是否是虚拟订单
         ];
 
         $orderId = OrderModel::addOrder($param);
@@ -353,6 +370,7 @@ class Order extends BaseController
                 'shop_id'=>$product['sid'],//商铺ID
                 'buyer_id'=>$this->uid,//用户ID
                 'sp_integral'=>$type == 'integral'?$product['sp_integral']:0,//积分价格
+                'integral_money'=>$type == 'integral'?$product['sp_integral']*$product['num']:0,//积分总价
                 'point_exchange_type'=>$type == 'integral'?1:0,//积分兑换类型0.非积分兑换1.积分兑换
                 'goods_type'=>1,//商品类型
                 'order_type'=>$param['order_type'],//订单类型
@@ -387,21 +405,21 @@ class Order extends BaseController
         $row['data'] = [
             'orderInfo' => [
                 'order_sn'=> $param['order_no'],
-                'user_id'=> $param['buyer_id'],
-                'consignee'=>$param['receiver_name'],//收件人
-                'mobile'=> $param['receiver_mobile'],//手机号
-                'province'=> $param['receiver_province'],
-                'city'=> $param['receiver_city'],
-                'address'=> $param['receiver_district'],
-                'freight_price'=> $param['shipping_money'],
-                'coupon_id'=> 0,
-                'coupon_price'=> 0,
-                'add_time'=> time(),
-                'goods_price'=> $param['goods_money'],
+//                'user_id'=> $param['buyer_id'],
+//                'consignee'=>$param['receiver_name'],//收件人
+//                'mobile'=> $param['receiver_mobile'],//手机号
+//                'province'=> $param['receiver_province'],
+//                'city'=> $param['receiver_city'],
+//                'address'=> $param['receiver_district'],
+//                'freight_price'=> $param['shipping_money'],
+//                'coupon_id'=> 0,
+//                'coupon_price'=> 0,
+//                'add_time'=> time(),
+//                'goods_price'=> $param['goods_money'],
                 'order_price'=> $param['order_money'],
-                'actual_price'=> $param['order_money'],
-                'id' => $orderId,
-                'cId' => isset($collectiveId)?$collectiveId:0 //团购ID号
+//                'actual_price'=> $param['order_money'],
+//                'id' => $orderId,
+//                'cId' => isset($collectiveId)?$collectiveId:0 //团购ID号
             ]
         ];
         return $row;

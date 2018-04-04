@@ -246,13 +246,9 @@ return [
 
     //开启自动写入时间
     'auto_timestamp' => true,
-    'auto_timestamp' => 'datetime',
 
     //设置
     'setting'       =>[
-        //'domain' => 'http://admin.ewei.com',
-//        'pay_back_url' => 'https://ld.mskfkj.com/api/v1/pay/notify',
-//        'domain' => 'https://ld.mskfkj.com'
     ],
 
     //订单状态
@@ -272,9 +268,14 @@ return [
             '开团中','开团成功' ,'开团失败','未支付','已退款'
         ]
     ],
+    'internet'=>[
+        'orderStatus'=>[
+            '未支付','已支付','已完成'
+        ]
+    ],
 
     //小程序跳转动作对应url
     'hrefAction'=>[
         '/pages/category/category?id=','/pages/topicDetail/topicDetail?id=','/pages/goods/goods?id='
-    ]
+    ],
 ];

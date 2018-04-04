@@ -59,7 +59,7 @@ class Goods extends AdminBase
     {
         $map = [];
         $field = 'id,sid,name,cid,thumb,is_recommend,status,is_hot,is_top,sort,sp_price,sp_inventory,sp_market,publish_time';
-
+        $map['is_virtual'] = 0;
         if ($cid > 0) {
             $category_children_ids = $this->category_model->where(['path' => ['like', "%,{$cid},%"]])->column('id');
             $category_children_ids = (!empty($category_children_ids) && is_array($category_children_ids)) ? implode(',', $category_children_ids) . ',' . $cid : $cid;
@@ -218,7 +218,6 @@ class Goods extends AdminBase
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
-//                var_dump($data);die;
                 if ($this->goods_model->allowField(true)->save($data, $id) !== false) {
                     if( !empty($data['sku_name']) ){
                         $i = 1;
@@ -383,8 +382,71 @@ class Goods extends AdminBase
                 }
 
             }
-
-
         }
+    }
+
+    /**
+     * 虚拟商品列表
+     * */
+    public function virtual($keyword = '', $page = 1){
+        $map = [];
+        $field = 'id,sid,name,cid,thumb,status,sort,sp_price,sp_inventory,sp_market,publish_time,sp_integral';
+        $map['is_virtual'] = 1;
+        if (!empty($keyword)) {
+            $map['name'] = ['like', "%{$keyword}%"];
+        }
+        $this->where = array_merge($this->where,$map);
+
+        $goods_list  = $this->goods_model->field($field)->where($this->where)->order(['sort' => 'DESC'])->paginate(15, false, ['page' => $page]);
+        foreach ($goods_list as $key => &$value) {
+            $value['shop'] = Db::name('shop')->field('shop_logo,shop_name')->find($value['sid']);
+        }
+        $category_list = $this->category_model->column('name', 'id');
+        return $this->fetch('virtual', ['controller'=>'virtual','goods_list' => $goods_list, 'category_list' => $category_list, 'keyword' => $keyword]);
+    }
+    /**
+     * 添加虚拟物品
+     */
+    public function virtualAdd(){
+        if($this->request->isPost()){
+            $params = $this->request->param();
+            if($this->goods_model->allowField(true)->save($params)){
+                $this->success('添加成功');
+            }else{
+                $this->error('添加失败');
+            }
+        }else{
+            $rank = Db::name('user_rank')->select();
+            return $this->fetch('',['controller'=>'virtual','rank'=>$rank]);
+        }
+    }
+    /**
+     * 编辑虚拟物品
+     */
+    public function virtualEdit($id){
+        if($this->request->isPost()){
+            $data = $this->request->param();
+            if ($this->goods_model->allowField(true)->save($data, $id) !== false) {
+                $this->success('更新成功');
+            }else{
+                $this->error('更新失败');
+            }
+        }else{
+            $this->where = ['id'=>$id];
+            $goods = $this->goods_model->where($this->where)->find();
+            //没有查询到商品信息
+            if( empty($goods) ){
+                $this->error('没有找到对应的商品信息~');
+            }
+            $rank = Db::name('user_rank')->select();
+            return $this->fetch('',['controller'=>'virtual','goods'=>$goods,'rank'=>$rank]);
+        }
+    }
+
+    /**
+     * 删除虚拟物品
+     */
+    public function virtualDelete(){
+        return $this->fetch();
     }
 }

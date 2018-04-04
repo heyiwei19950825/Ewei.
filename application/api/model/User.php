@@ -4,7 +4,7 @@ namespace app\api\model;
 
 use think\Model;
 use think\Db;
-
+use app\lib\exception\ParameterException;
 class User extends BaseModel
 {
     protected $autoWriteTimestamp = true;
@@ -51,7 +51,7 @@ class User extends BaseModel
      * @param int $type
      * @return array
      */
-    public static function updateUserIntegral($uid = -1,$integral=0,$type = 0){
+    public static function updateUserIntegral($uid = -1,$integral=0,$type = 0,$note='积分购买商品消耗'){
         $user = Db::name('user')->where(['id'=>$uid])->find();
         if( $type == 0 ){
             $last_integral = $user['integral'] - $integral;
@@ -61,10 +61,8 @@ class User extends BaseModel
 
         $row = Db::name('user')->where(['id'=>$uid])->update(['integral'=>$last_integral]);
 
-
-
         $data = [
-            'note' => '积分购买商品消耗',
+            'note' => $note,
             'u_id'=>$uid,
             'integral'=>$integral,
             'residue_integra'=>$last_integral,
@@ -76,4 +74,23 @@ class User extends BaseModel
         return $row;
     }
 
+    /**
+     * 检查用户是否认证过
+     * @param int $id
+     * @return bool
+     * @throws ParameterException
+     */
+    public static  function verifyAttestation($id = 0 ){
+        $info = Db::name('user')->field('is_authentication')->find([
+            'id'=>$id
+        ]);
+        if($info['is_authentication'] == 1 ){
+            return true;
+        }else{
+            throw new ParameterException(
+                [
+                    'msg' => '用户未认证，请先认证后再操作'
+                ]);
+        }
+    }
 }

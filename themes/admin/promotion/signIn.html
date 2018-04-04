@@ -1,0 +1,60 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">签到管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('admin/signin/setting')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">背景图</label>
+                        <div class="layui-input-block">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手机</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="mobile" value="" placeholder="（选填）请输入手机" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">邮箱</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="email" value="" placeholder="（选填）请输入邮箱" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item" >
+                        <label class="layui-form-label">积分</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="integral" value="" placeholder="（选填）输入积分" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="display:none">
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="status" value="1" title="启用" checked="checked">
+                            <input type="radio" name="status" value="0" title="禁用">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">VIP用户</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="status" value="1" title="启用">
+                            <input type="radio" name="status" value="0" title="关闭"  checked="checked">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}

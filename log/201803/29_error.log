@@ -1,0 +1,70 @@
+---------------------------------------------------------------
+[2018-03-29T09:57:39+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:92]
+---------------------------------------------------------------
+[2018-03-29T09:59:15+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:92]
+---------------------------------------------------------------
+[2018-03-29T09:59:35+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:92]
+---------------------------------------------------------------
+[2018-03-29T10:00:25+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:92]
+---------------------------------------------------------------
+[2018-03-29T10:01:02+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:92]
+---------------------------------------------------------------
+[2018-03-29T10:01:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:92]
+---------------------------------------------------------------
+[2018-03-29T10:01:42+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:92]
+---------------------------------------------------------------
+[2018-03-29T10:03:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:92]
+---------------------------------------------------------------
+[2018-03-29T10:03:49+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:92]
+---------------------------------------------------------------
+[2018-03-29T10:05:41+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'coupon_id' cannot be null[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[2018-03-29T10:08:20+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [1]Call to a member function toArray() on a non-object[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:90]
+---------------------------------------------------------------
+[2018-03-29T10:11:55+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义变量: addressOld[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:270]
+---------------------------------------------------------------
+[2018-03-29T10:15:17+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: name[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:282]
+---------------------------------------------------------------
+[2018-03-29T10:16:15+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: province_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:113]
+---------------------------------------------------------------
+[2018-03-29T10:17:25+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'receiver_address' cannot be null[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[2018-03-29T10:22:55+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: cost[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:184]
+---------------------------------------------------------------
+[2018-03-29T11:35:48+08:00] 127.0.0.1 127.0.0.1 GET /admin/goods/virtualedit/id/45.html
+[ error ] [8]未定义变量: collective[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\47b64bd981d91945f1665e86f3c8633f.php:177]
+[ error ] [1]Uncaught exception 'think\exception\ErrorException' with message 'A non well formed numeric value encountered' in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:450
+Stack trace:
+#0 [internal function]: think\Error::appError(8, 'A non well form...', 'D:\\work\\phpstud...', 450, Array)
+#1 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php(450): date('Y-m-d H:i:s', '0000-00-00 00:0...')
+#2 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php(549): think\Model->formatDateTime('0000-00-00 00:0...', 'Y-m-d H:i:s')
+#3 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php(813): think\Model->getAttr('create_time')
+#4 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php(2135): think\Model->toArray()
+#5 [internal function]: think\Model->jsonSerialize()
+#6 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\tpl\think_exception.tpl(385): json_encode(Array, 128)
+#7 D:\work\[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\tpl\think_exception.tpl:385]
+---------------------------------------------------------------
+[2018-03-29T23:43:51+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internet.html
+[ error ] [4]语法错误: unexpected '['[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:183]
+---------------------------------------------------------------
+[2018-03-29T23:48:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-29T23:52:29+08:00] 127.0.0.1 127.0.0.1 GET /admin/user/edit/id/10.html
+[ error ] [8]未定义变量: goods[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\a024cbee38cef0b6760386e80981f667.php:172]

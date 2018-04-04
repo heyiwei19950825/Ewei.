@@ -123,12 +123,10 @@ class Pay
                 'status' => 4
             ],['order_id'=>$orderRow['id']]);
         }
-        echo 1111;die;
-
     }
 
     // 构建微信支付订单信息
-    private function makeWxPreOrder($totalPrice)
+    private function makeWxPreOrder($totalPrice,$body = '蔬菜采购')
     {
         $openid = Token::getCurrentTokenVar('openid');
 
@@ -140,7 +138,7 @@ class Pay
         $wxOrderData->SetOut_trade_no($this->orderNo);
         $wxOrderData->SetTrade_type('JSAPI');
         $wxOrderData->SetTotal_fee($totalPrice * 100);
-        $wxOrderData->SetBody('蔬菜采购');
+        $wxOrderData->SetBody($body);
         $wxOrderData->SetOpenid($openid);
         $wxOrderData->SetNotify_url(config('setting.pay_back_url'));
 
@@ -181,7 +179,6 @@ class Pay
         $sign = $jsApiPayData->MakeSign();
         $rawValues = $jsApiPayData->GetValues();
         $rawValues['paySign'] = $sign;
-        unset($rawValues['appId']);
         return $rawValues;
     }
 

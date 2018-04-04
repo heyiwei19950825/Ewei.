@@ -1,0 +1,1433 @@
+---------------------------------------------------------------
+[2018-03-29T09:57:29+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.316741s][吞吐率：3.16req/s] [内存消耗：1,463.95kb] [文件加载：40]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000952s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '123edde9-233e-4212-9637-cdd7c1ff4d03',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T09:57:39+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.491793s][吞吐率：2.03req/s] [内存消耗：2,674.56kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000378s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '6836f445-8ab7-44c8-97af-1c3c8786e8b5',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------111215495180995914938542',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T09:59:15+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.114984s][吞吐率：8.70req/s] [内存消耗：2,674.31kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000391s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '5b8c15bd-56e6-4953-9994-d4004f6e98a6',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------198212810944657804309050',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T09:59:35+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.143724s][吞吐率：6.96req/s] [内存消耗：2,674.47kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000956s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'a195314c-a85c-464d-99bf-2603d35497da',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------368315047194610366190517',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T09:59:59+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.128868s][吞吐率：7.76req/s] [内存消耗：2,425.27kb] [文件加载：47]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000668s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'd341744b-e9dd-4e3f-8a1c-85e1d50e4a33',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------398859512750050020409571',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:00:25+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.141568s][吞吐率：7.06req/s] [内存消耗：2,674.54kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000377s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '8e126288-9c32-4785-af25-f51fdd57c265',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------579362219660845079067793',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:01:02+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.111833s][吞吐率：8.94req/s] [内存消耗：2,674.77kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000383s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '776cd609-e645-4e68-9ff4-10c8f746fa10',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------954931639868705465789125',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:01:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.107013s][吞吐率：9.34req/s] [内存消耗：2,674.47kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000391s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'd5a6354c-ee72-4b13-9545-debd52facbaf',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------940940738143055702958121',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:01:42+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.113526s][吞吐率：8.81req/s] [内存消耗：2,674.47kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000930s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '5ee0f788-b9f7-4f9d-8372-7e915f432122',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------468458089568846906618271',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:03:29+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.107130s][吞吐率：9.33req/s] [内存消耗：2,425.27kb] [文件加载：47]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000393s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '91c4e88c-bc16-4c76-abdf-b034538ab6a8',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------522729639044721432405486',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:03:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.122324s][吞吐率：8.18req/s] [内存消耗：2,673.36kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000394s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '39c7ca5b-bfbe-436b-b169-05f923287281',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------527949148168848654367706',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:03:49+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.124773s][吞吐率：8.01req/s] [内存消耗：2,673.47kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000942s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '11ca8898-8100-4afc-b85c-4d1510394139',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------343161929178197327337451',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:04:35+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.091812s][吞吐率：10.89req/s] [内存消耗：2,424.97kb] [文件加载：47]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000386s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '812639e7-2183-443f-b2bc-f44f4039bd5e',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------881818770582137962308861',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:04:41+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.102284s][吞吐率：9.78req/s] [内存消耗：2,426.15kb] [文件加载：47]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000401s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'c435a1a5-b195-4d59-98c2-6b5cd9ca837c',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------905307822026960027076255',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:05:41+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.700333s][吞吐率：1.43req/s] [内存消耗：3,175.28kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000386s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '37357a7e-a52a-41d9-9d95-f3691675c26b',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------809499727182618326094205',
+  'content-length' => '159',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'uid' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:08:20+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.233372s][吞吐率：4.29req/s] [内存消耗：2,916.08kb] [文件加载：57]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000410s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'ef1cce57-0830-4583-bbe4-808f2635598d',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------675944122966607794456206',
+  'content-length' => '267',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'num' => '2',
+  'couponId' => '0',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:08:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.135879s][吞吐率：7.36req/s] [内存消耗：2,774.22kb] [文件加载：50]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000386s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'b7fdbe6c-d02c-4a83-b627-cc72d4905ffc',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------177542682526741959341090',
+  'content-length' => '267',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'num' => '2',
+  'couponId' => '0',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:11:55+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.293612s][吞吐率：3.41req/s] [内存消耗：3,025.38kb] [文件加载：60]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000950s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '515dc60d-5321-4ad0-84b8-3c871d155b6d',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------534090315054817662981951',
+  'content-length' => '588',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'gid' => '45',
+  'type' => 'default',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:15:17+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.229916s][吞吐率：4.35req/s] [内存消耗：3,026.76kb] [文件加载：60]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000939s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '37483144-84a1-4052-bec5-0fee855f7568',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------823212917753624882298749',
+  'content-length' => '588',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'gid' => '45',
+  'type' => 'default',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:16:15+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.186247s][吞吐率：5.37req/s] [内存消耗：2,948.73kb] [文件加载：58]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000392s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '4c4f19b5-cd88-45d6-890c-e06e2d6c00d2',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------005296477319814658164920',
+  'content-length' => '588',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'gid' => '45',
+  'type' => 'default',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:17:25+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.292501s][吞吐率：3.42req/s] [内存消耗：3,132.09kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000966s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '1be4dd41-7e22-4de2-b161-63b3c8afa2d8',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------840925544954994959292130',
+  'content-length' => '588',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'gid' => '45',
+  'type' => 'default',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:17:51+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.225252s][吞吐率：4.44req/s] [内存消耗：2,907.71kb] [文件加载：53]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000398s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'd3ac4dea-4f1d-4bd8-a4cb-f8367caaa494',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------574368847273839480278291',
+  'content-length' => '588',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'gid' => '45',
+  'type' => 'default',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:18:22+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.168501s][吞吐率：5.93req/s] [内存消耗：2,800.88kb] [文件加载：50]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000386s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '5d83b020-86fc-40b5-8106-64d472a6f2b9',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------520221497265437796850886',
+  'content-length' => '588',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'gid' => '45',
+  'type' => 'default',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:18:52+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.188895s][吞吐率：5.29req/s] [内存消耗：2,800.74kb] [文件加载：50]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000559s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'cc4818f8-1c7f-4a77-8d70-cfbdee20cad3',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------295942929400472732822816',
+  'content-length' => '588',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'gid' => '45',
+  'type' => 'default',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:22:55+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.341170s][吞吐率：2.93req/s] [内存消耗：3,022.35kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000409s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'e015b967-5df4-451f-96dd-727ccae033a5',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------928296612529101552123758',
+  'content-length' => '593',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => '45',
+  'type' => 'integral',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:23:22+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.222290s][吞吐率：4.50req/s] [内存消耗：2,907.99kb] [文件加载：52]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000410s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '7aba3fb8-4c09-4e56-89ef-4737430af89a',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------278904615145387316886675',
+  'content-length' => '593',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => '45',
+  'type' => 'integral',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:23:55+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.243785s][吞吐率：4.10req/s] [内存消耗：2,907.84kb] [文件加载：52]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000399s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => 'c7041b7e-1a6a-4cd5-bba4-7767fbd2f641',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------587264380658881813492630',
+  'content-length' => '593',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => '45',
+  'type' => 'integral',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:24:11+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.249588s][吞吐率：4.01req/s] [内存消耗：2,908.20kb] [文件加载：52]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000410s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '1fc2eed9-efbe-47e0-86bf-f9cc9f81f2ea',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------694791568931043879737694',
+  'content-length' => '593',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => '45',
+  'type' => 'integral',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T10:24:39+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.242054s][吞吐率：4.13req/s] [内存消耗：2,908.30kb] [文件加载：52]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000950s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'no-cache',
+  'postman-token' => '12c74d43-72a7-4f64-b581-a8d70395def9',
+  'user-agent' => 'PostmanRuntime/6.3.2',
+  'accept' => '*/*',
+  'host' => 'admin.ewei.com',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=--------------------------177939258375654198006590',
+  'content-length' => '593',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => '45',
+  'type' => 'integral',
+  'num' => '2',
+  'couponId' => '0',
+  'virtual' => '1',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T11:33:24+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1520265545.png
+[ info ] admin.ewei.com/uploads/goods_brand/1520265545.png [运行时间：0.052280s][吞吐率：19.13req/s] [内存消耗：1,444.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000616s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1520265545.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/goods/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=3ukmugbfav42jrrrlt5lco2341; __session:0.6364171162799006:key=11111; __session:0.6364171162799006:token=null',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T11:33:24+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1520144045.png
+[ info ] admin.ewei.com/uploads/goods_brand/1520144045.png [运行时间：0.069549s][吞吐率：14.38req/s] [内存消耗：1,444.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.003279s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1520144045.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/goods/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=3ukmugbfav42jrrrlt5lco2341; __session:0.6364171162799006:key=11111; __session:0.6364171162799006:token=null',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T11:33:32+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1520265545.png
+[ info ] admin.ewei.com/uploads/goods_brand/1520265545.png [运行时间：0.044226s][吞吐率：22.61req/s] [内存消耗：1,444.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000402s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1520265545.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/goods/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=3ukmugbfav42jrrrlt5lco2341; __session:0.6364171162799006:key=11111; __session:0.6364171162799006:token=null',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T11:33:32+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1520144045.png
+[ info ] admin.ewei.com/uploads/goods_brand/1520144045.png [运行时间：0.046717s][吞吐率：21.41req/s] [内存消耗：1,444.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000514s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1520144045.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/goods/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=3ukmugbfav42jrrrlt5lco2341; __session:0.6364171162799006:key=11111; __session:0.6364171162799006:token=null',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T11:33:35+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1520265545.png
+[ info ] admin.ewei.com/uploads/goods_brand/1520265545.png [运行时间：0.044782s][吞吐率：22.33req/s] [内存消耗：1,444.95kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000425s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1520265545.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/goods/edit/id/43.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=3ukmugbfav42jrrrlt5lco2341; __session:0.6364171162799006:key=11111; __session:0.6364171162799006:token=null',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T11:35:48+08:00] 127.0.0.1 127.0.0.1 GET /admin/goods/virtualedit/id/45.html
+[ info ] admin.ewei.com/admin/goods/virtualedit/id/45.html [运行时间：0.631114s][吞吐率：1.58req/s] [内存消耗：3,544.46kb] [文件加载：64]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000467s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'virtualedit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/virtual/goods.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=3ukmugbfav42jrrrlt5lco2341; __session:0.6364171162799006:key=11111; __session:0.6364171162799006:token=null',
+)
+[ info ] [ PARAM ] array (
+  'id' => '45',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Goods->virtualEdit[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] ../themes/admin/goods\virtualedit.html [ array (
+  0 => 'menu',
+  1 => 'msgNum',
+  2 => 'controller',
+  3 => 'category_level_list',
+  4 => 'express',
+  5 => 'goods',
+  6 => 'rank',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T23:43:51+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internet.html
+[ info ] admin.ewei.com/admin/subscribe/internet.html [运行时间：0.333420s][吞吐率：3.00req/s] [内存消耗：1,504.50kb] [文件加载：39]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000386s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'subscribe',
+    2 => 'internet',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/login/login.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=c8d9gqb0u7is0qktgmrh58et35',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T23:45:28+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ info ] admin.ewei.com/admin/internet/relevanceCheck [运行时间：0.387225s][吞吐率：2.58req/s] [内存消耗：2,956.85kb] [文件加载：52]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000947s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Subscribe',
+    2 => 'relevanceCheck',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '89',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://admin.ewei.com/admin/internet/setting.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=c8d9gqb0u7is0qktgmrh58et35',
+)
+[ info ] [ PARAM ] array (
+  'ruleName' => '吃鸡专区',
+  'rulePrice' => '2.0',
+  'ruleColor' => '#99CCCC',
+  'ruleId' => '13',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Subscribe->relevanceCheck[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T23:45:31+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ info ] admin.ewei.com/admin/internet/relevanceCheck [运行时间：0.270175s][吞吐率：3.70req/s] [内存消耗：2,956.85kb] [文件加载：52]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000412s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Subscribe',
+    2 => 'relevanceCheck',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '89',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://admin.ewei.com/admin/internet/setting.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=c8d9gqb0u7is0qktgmrh58et35',
+)
+[ info ] [ PARAM ] array (
+  'ruleName' => '吃鸡专区',
+  'rulePrice' => '2.0',
+  'ruleColor' => '#99CCCC',
+  'ruleId' => '13',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Subscribe->relevanceCheck[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T23:46:27+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ info ] admin.ewei.com/admin/internet/relevanceCheck [运行时间：0.279026s][吞吐率：3.58req/s] [内存消耗：2,962.77kb] [文件加载：52]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000582s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Subscribe',
+    2 => 'relevanceCheck',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '90',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://admin.ewei.com/admin/internet/setting.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=c8d9gqb0u7is0qktgmrh58et35',
+)
+[ info ] [ PARAM ] array (
+  'ruleName' => '吃鸡专区',
+  'rulePrice' => '20.0',
+  'ruleColor' => '#99CCCC',
+  'ruleId' => '13',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Subscribe->relevanceCheck[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T23:48:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ info ] admin.ewei.com/admin/internet/relevanceCheck [运行时间：0.325218s][吞吐率：3.07req/s] [内存消耗：3,028.20kb] [文件加载：57]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000998s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Subscribe',
+    2 => 'relevanceCheck',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '90',
+  'accept' => '*/*',
+  'origin' => 'http://admin.ewei.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://admin.ewei.com/admin/internet/setting.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=c8d9gqb0u7is0qktgmrh58et35',
+)
+[ info ] [ PARAM ] array (
+  'ruleName' => '吃鸡专区',
+  'rulePrice' => '20.0',
+  'ruleColor' => '#99CCCC',
+  'ruleId' => '13',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Subscribe->relevanceCheck[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-03-29T23:52:29+08:00] 127.0.0.1 127.0.0.1 GET /admin/user/edit/id/10.html
+[ info ] admin.ewei.com/admin/user/edit/id/10.html [运行时间：0.554155s][吞吐率：1.80req/s] [内存消耗：3,238.13kb] [文件加载：61]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000391s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/user/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; PHPSESSID=c8d9gqb0u7is0qktgmrh58et35',
+)
+[ info ] [ PARAM ] array (
+  'id' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\User->edit[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\User.php ]
+[ info ] [ VIEW ] ../themes/admin/user\edit.html [ array (
+  0 => 'menu',
+  1 => 'msgNum',
+  2 => 'controller',
+  3 => 'user',
+  4 => 'rank',
+) ]
+[ info ] [ LOG ] INIT File

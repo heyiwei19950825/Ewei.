@@ -1,0 +1,102 @@
+---------------------------------------------------------------
+[2018-03-16T11:06:40+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetApiData
+[ error ] [4]语法错误: unexpected '}', expecting ';' or '{'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:81]
+---------------------------------------------------------------
+[2018-03-16T11:07:09+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetApiData
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:79]
+---------------------------------------------------------------
+[2018-03-16T11:07:09+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetApiData
+[ error ] [4]语法错误: unexpected ')', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:79]
+---------------------------------------------------------------
+[2018-03-16T11:07:14+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetApiData
+[ error ] [4]语法错误: unexpected ')', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:79]
+---------------------------------------------------------------
+[2018-03-16T11:07:14+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetApiData
+[ error ] [4]语法错误: unexpected ')', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:79]
+---------------------------------------------------------------
+[2018-03-16T11:07:48+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internet.html
+[ error ] [8]Use of undefined constant admin - assumed 'admin'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\a82b4957ee36aa77abe8276dd7e8f04a.php:152]
+---------------------------------------------------------------
+[2018-03-16T11:08:04+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internet.html
+[ error ] [4]语法错误: unexpected '/'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\a82b4957ee36aa77abe8276dd7e8f04a.php:152]
+---------------------------------------------------------------
+[2018-03-16T11:08:21+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/sting.html
+[ error ] [8]Use of undefined constant admin - assumed 'admin'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\87baf45b014845d74c7899c3638b8455.php:125]
+---------------------------------------------------------------
+[2018-03-16T11:08:30+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/sting.html
+[ error ] [8]Use of undefined constant admin - assumed 'admin'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\87baf45b014845d74c7899c3638b8455.php:125]
+---------------------------------------------------------------
+[2018-03-16T11:51:04+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:09+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:14+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:19+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:24+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:29+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:34+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:39+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:44+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:49+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:54+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:51:59+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:04+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:09+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:14+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:19+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:24+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:29+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:34+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:39+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:44+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:49+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:54+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:52:59+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\server\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]
+---------------------------------------------------------------
+[2018-03-16T11:53:04+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internetAjax
+[ error ] [1]Class 'app\admin\controller\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:41]

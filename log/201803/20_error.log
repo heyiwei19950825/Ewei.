@@ -1,0 +1,69 @@
+---------------------------------------------------------------
+[2018-03-20T08:34:44+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: rule[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:157]
+---------------------------------------------------------------
+[2018-03-20T08:35:38+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: price[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:190]
+---------------------------------------------------------------
+[2018-03-20T08:36:22+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: price[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:191]
+---------------------------------------------------------------
+[2018-03-20T08:38:06+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [4]语法错误: unexpected 'return' (T_RETURN)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:112]
+---------------------------------------------------------------
+[2018-03-20T08:38:19+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义变量: rule[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:157]
+---------------------------------------------------------------
+[2018-03-20T08:38:32+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: price[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:190]
+---------------------------------------------------------------
+[2018-03-20T08:39:21+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: price[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:191]
+---------------------------------------------------------------
+[2018-03-20T08:47:45+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: price[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:192]
+---------------------------------------------------------------
+[2018-03-20T08:48:44+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [8]未定义数组索引: color[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:197]
+---------------------------------------------------------------
+[2018-03-20T10:17:32+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/setting.html
+[ error ] [2]Illegal string offset 'id'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\62b83e1d7130de38095a96f196dd5c1f.php:341]
+---------------------------------------------------------------
+[2018-03-20T13:51:57+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/api
+[ error ] [1]Class 'app\api\controller\v2\Helper' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Internet.php:26]
+---------------------------------------------------------------
+[2018-03-20T13:52:01+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/api
+[ error ] [1]Class 'app\api\controller\v2\Helper' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Internet.php:26]
+---------------------------------------------------------------
+[2018-03-20T13:52:06+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/api
+[ error ] [1]Class 'app\api\controller\v2\Helper' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Internet.php:26]
+---------------------------------------------------------------
+[2018-03-20T13:52:11+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/api
+[ error ] [1]Class 'app\api\controller\v2\Helper' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Internet.php:26]
+---------------------------------------------------------------
+[2018-03-20T13:52:16+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/api
+[ error ] [1]Class 'app\api\controller\v2\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Internet.php:29]
+---------------------------------------------------------------
+[2018-03-20T13:52:21+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/api
+[ error ] [1]Class 'app\api\controller\v2\InternetServer' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Internet.php:29]
+---------------------------------------------------------------
+[2018-03-20T14:14:53+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/internetBarSting.html
+[ error ] [8]未定义数组索引: $params[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:210]
+---------------------------------------------------------------
+[2018-03-20T14:14:59+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/internetBarSting.html
+[ error ] [8]未定义数组索引: $params[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:210]
+---------------------------------------------------------------
+[2018-03-20T15:33:52+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/config
+[ error ] [8]Array to string conversion[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Loader.php:525]
+---------------------------------------------------------------
+[2018-03-20T15:35:00+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/config
+[ error ] [8]Array to string conversion[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Loader.php:525]
+---------------------------------------------------------------
+[2018-03-20T15:35:27+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/config
+[ error ] [2]trim() expects parameter 1 to be string, array given[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Loader.php:525]
+---------------------------------------------------------------
+[2018-03-20T15:35:49+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/config
+[ error ] [2]trim() expects parameter 1 to be string, array given[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Loader.php:525]
+---------------------------------------------------------------
+[2018-03-20T17:58:12+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/wechat/response
+[ error ] [8]未定义数组索引: code[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\WeChat.php:23]

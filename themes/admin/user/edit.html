@@ -14,25 +14,33 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">用户名</label>
                         <div class="layui-input-block">
-                            <input type="text" name="nickname" value="{$user.nickname}" required  lay-verify="required" placeholder="请输入用户名" class="layui-input">
+                            <input type="text" name="nickname" value="{$user.nickname}" required  lay-verify="required" placeholder="请输入用户名" class="layui-input" disabled="disabled">
                         </div>
                     </div>
-                    <!--<div class="layui-form-item">-->
-                        <!--<label class="layui-form-label">密码</label>-->
-                        <!--<div class="layui-input-block">-->
-                            <!--<input type="password" name="password" value="" placeholder="（选填）如不修改则留空" class="layui-input">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="layui-form-item">-->
-                        <!--<label class="layui-form-label">重复密码</label>-->
-                        <!--<div class="layui-input-block">-->
-                            <!--<input type="password" name="confirm_password" value="" placeholder="（选填）如不修改则留空" class="layui-input">-->
-                        <!--</div>-->
-                    <!--</div>-->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">真实姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="username" value="{$user.username}" required  lay-verify="required" placeholder="请输入真实信命" class="layui-input">
+                        </div>
+                    </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">手机</label>
                         <div class="layui-input-block">
                             <input type="text" name="mobile" value="{$user.mobile}" placeholder="（选填）请输入手机" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">身份证号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="id_card" value="{$user.id_card}" placeholder="（选填）请输入身份证号" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item" >
+                        <label class="layui-form-label">性别</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="sex" value="0" title="不详" {if condition="$user.sex==0"} checked="checked"{/if}>
+                            <input type="radio" name="sex" value="1" title="男" {if condition="$user.sex==1"} checked="checked"{/if}>
+                            <input type="radio" name="sex" value="2" title="女" {if condition="$user.sex==2"} checked="checked"{/if}>
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -48,6 +56,24 @@
                         </div>
                         <!--<a class="layui-btn ">编辑</a>-->
                     </div>
+                    <div class="layui-form-item ">
+                        <label class="layui-form-label">经验值</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="experience" value="{$user.experience}" placeholder='' class="layui-input">
+                        </div>
+                        <!--<a class="layui-btn ">编辑</a>-->
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">需要级别:</label>
+                        <div class="layui-input-inline">
+                            <select name="rank_id" id="">
+                                <option value="">请选择</option>
+                                {foreach name='rank' item='vo'}
+                                <option value="{$vo.rank_id}" {if condition="$user.rank_id==$vo.rank_id"} selected="selected"{/if}>{$vo.rank_name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
                     <div class="layui-form-item" style="display:none">
                         <label class="layui-form-label">状态</label>
                         <div class="layui-input-block">
@@ -62,6 +88,18 @@
                             <input type="radio" name="is_vip" value="0" title="关闭" {if condition="$user.is_vip==0"} checked="checked"{/if}>
                         </div>
                     </div>
+                    <!--<div class="layui-form-item">-->
+                    <!--<label class="layui-form-label">密码</label>-->
+                    <!--<div class="layui-input-block">-->
+                    <!--<input type="password" name="password" value="" placeholder="（选填）如不修改则留空" class="layui-input">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="layui-form-item">-->
+                    <!--<label class="layui-form-label">重复密码</label>-->
+                    <!--<div class="layui-input-block">-->
+                    <!--<input type="password" name="confirm_password" value="" placeholder="（选填）如不修改则留空" class="layui-input">-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <input type="hidden" name="id" value="{$user.id}">

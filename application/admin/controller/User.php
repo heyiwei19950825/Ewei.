@@ -43,10 +43,12 @@ class User extends AdminBase
             $render = $this->user_model->where($map)->order('id DESC')->paginate(15, false, ['page' => $page]);
         }else{
             $user_list = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->select();
+            foreach ( $user_list as $k => $v){
+                $user_list[$k]['from'] = config('order.from')[$v['from']];
+            }
             $render = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->paginate(15, false, ['page' => $page]);
         }
 
-        // $user_list = $this->user_model->where($map)->order('id DESC')->paginate(15, false, ['page' => $page]);
         return $this->fetch('index', ['user_list' => $user_list,'render'=>$render, 'keyword' => $keyword]);
     }
 
@@ -56,7 +58,8 @@ class User extends AdminBase
      */
     public function add()
     {
-        return $this->fetch();
+        $rank = Db::name('user_rank')->select();
+        return $this->fetch('',['rank'=>$rank]);
     }
 
     /**
@@ -90,8 +93,8 @@ class User extends AdminBase
     public function edit($id)
     {
         $user = $this->user_model->find($id);
-
-        return $this->fetch('edit', ['user' => $user]);
+        $rank = Db::name('user_rank')->select();
+        return $this->fetch('edit', ['user' => $user,'rank'=>$rank]);
     }
 
     /**
@@ -102,27 +105,32 @@ class User extends AdminBase
     {
         if ($this->request->isPost()) {
             $data            = $this->request->post();
-            $validate_result = $this->validate($data, 'User');
-
-            if ($validate_result !== true) {
-                $this->error($validate_result);
-            } else {
-                $user           = $this->user_model->find($id);
-                $user->id       = $id;
-                $user->nickname = $data['nickname'];
-                $user->mobile   = $data['mobile'];
-                $user->email    = $data['email'];
-                $user->status   = $data['status'];
-                $user->integral = $data['integral'];
-                if (!empty($data['password']) && !empty($data['confirm_password'])) {
-                    $user->password = md5($data['password'] . Config::get('salt'));
-                }
-                if ($user->save() !== false) {
+//            $validate_result = $this->validate($data, 'User');
+//
+//            if ($validate_result !== true) {
+//                $this->error($validate_result);
+//            } else {
+//                $user           = $this->user_model->where(['id'=>$id])->update($data);
+//                $user->id       = $id;
+//                $user->nickname = $data['nickname'];
+//                $user->mobile   = $data['mobile'];
+//                $user->email    = $data['email'];
+//                $user->status   = $data['status'];
+//                $user->experience = $data['experience'];
+//                $user->rank_id = $data['rank_id'];
+//                $user->sex = $data['sex'];
+//                $user->id_card = $data['id_card'];
+//                $user->username = $data['username'];
+//                $user->is_vip = $data['is_vip'];
+//                if (!empty($data['password']) && !empty($data['confirm_password'])) {
+//                    $user->password = md5($data['password'] . Config::get('salt'));
+//                }
+                if ($this->user_model->where(['id'=>$id])->update($data) !== false) {
                     $this->success('更新成功');
                 } else {
                     $this->error('更新失败');
                 }
-            }
+//            }
         }
     }
 

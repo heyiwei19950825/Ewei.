@@ -76,5 +76,4 @@ class Token
             'isValid' => $valid
         ];
     }
-
 }

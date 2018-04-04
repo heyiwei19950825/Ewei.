@@ -15,7 +15,6 @@ use app\api\service\Token;
 use app\api\model\Cart as CartModel;
 
 
-
 class Coupon extends  BaseController
 {
     public $uid = '';
@@ -23,8 +22,30 @@ class Coupon extends  BaseController
     public function _initialize()
     {
         parent::_initialize();
-        $this->uid = Token::getCurrentUid();
+
+        if($_SERVER['PATH_INFO'] != '/api/v1/coupon/list'){
+            $this->uid = Token::getCurrentUid();
+        }
     }
+
+    public function couponList(){
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+        //获取所有的在线优惠券
+        $couponList = CouponModel::getCouponList();
+        if( $couponList ){
+            $row['errmsg'] = '查询成功';
+            $row['data'] = $couponList;
+        }else{
+            $row['errno'] = 1;
+            $row['errmsg'] = '没有更多优惠券';
+        }
+        return $row;
+    }
+
+    /**
+     * 领取优惠券
+     * @return array
+     */
     public function userGetCoupon(){
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
         $cid = $this->request->param('cid',0);

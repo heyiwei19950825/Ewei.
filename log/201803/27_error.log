@@ -1,0 +1,724 @@
+---------------------------------------------------------------
+[2018-03-27T00:48:26+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义数组下标: 0[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Prize.php:96]
+---------------------------------------------------------------
+[2018-03-27T00:50:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'return' (T_RETURN)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:50:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'return' (T_RETURN)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:50:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'return' (T_RETURN)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:50:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'return' (T_RETURN)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:50:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'return' (T_RETURN)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:50:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$this' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:50:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$this' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:50:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$this' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:51:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$this' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:51:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$this' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:51:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$this' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:34]
+---------------------------------------------------------------
+[2018-03-27T00:51:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '=>' (T_DOUBLE_ARROW)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:33]
+---------------------------------------------------------------
+[2018-03-27T00:58:46+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:298]
+---------------------------------------------------------------
+[2018-03-27T01:11:21+08:00] 127.0.0.1 127.0.0.1 GET /admin/goods/virtualedit/id/45.html
+[ error ] [8]未定义变量: rank[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\47b64bd981d91945f1665e86f3c8633f.php:161]
+[ error ] [1]Uncaught exception 'think\exception\ErrorException' with message 'A non well formed numeric value encountered' in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:450
+Stack trace:
+#0 [internal function]: think\Error::appError(8, 'A non well form...', 'D:\\work\\phpstud...', 450, Array)
+#1 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php(450): date('Y-m-d H:i:s', '0000-00-00 00:0...')
+#2 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php(549): think\Model->formatDateTime('0000-00-00 00:0...', 'Y-m-d H:i:s')
+#3 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php(813): think\Model->getAttr('create_time')
+#4 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php(2135): think\Model->toArray()
+#5 [internal function]: think\Model->jsonSerialize()
+#6 D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\tpl\think_exception.tpl(385): json_encode(Array, 128)
+#7 D:\work\[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\tpl\think_exception.tpl:385]
+---------------------------------------------------------------
+[2018-03-27T01:13:36+08:00] 127.0.0.1 127.0.0.1 GET /admin/goods/virtualedit/id/45.html
+[ error ] [0]类的属性不存在:app\common\model\Goods->rank_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:560]
+---------------------------------------------------------------
+[2018-03-27T01:27:02+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:299]
+---------------------------------------------------------------
+[2018-03-27T01:27:26+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:299]
+---------------------------------------------------------------
+[2018-03-27T01:42:41+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:299]
+---------------------------------------------------------------
+[2018-03-27T02:04:58+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:299]
+---------------------------------------------------------------
+[2018-03-27T02:55:32+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internet.html
+[ error ] [0]查询表达式错误:1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Builder.php:331]
+---------------------------------------------------------------
+[2018-03-27T03:22:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [2]Missing argument 1 for think\db\Query::where(), called in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php on line 54 and defined[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:938]
+---------------------------------------------------------------
+[2018-03-27T03:22:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [2]Missing argument 1 for think\db\Query::where(), called in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php on line 54 and defined[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:938]
+---------------------------------------------------------------
+[2018-03-27T03:22:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:22:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:22:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:22:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:22:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:22:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:22:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:22:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:23:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:23:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:55]
+---------------------------------------------------------------
+[2018-03-27T03:23:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:55]
+---------------------------------------------------------------
+[2018-03-27T03:23:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:55]
+---------------------------------------------------------------
+[2018-03-27T03:23:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:23:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:23:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:23:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:23:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:23:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:23:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:23:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:24:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:25:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:25:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:25:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:25:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:55]
+---------------------------------------------------------------
+[2018-03-27T03:25:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:55]
+---------------------------------------------------------------
+[2018-03-27T03:25:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:55]
+---------------------------------------------------------------
+[2018-03-27T03:25:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:55]
+---------------------------------------------------------------
+[2018-03-27T03:25:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:25:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:25:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:25:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:25:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:26:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:26:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:26:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:26:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:26:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:26:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:57]
+---------------------------------------------------------------
+[2018-03-27T03:26:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:57]
+---------------------------------------------------------------
+[2018-03-27T03:26:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:57]
+---------------------------------------------------------------
+[2018-03-27T03:26:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:57]
+---------------------------------------------------------------
+[2018-03-27T03:26:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:57]
+---------------------------------------------------------------
+[2018-03-27T03:26:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:57]
+---------------------------------------------------------------
+[2018-03-27T03:26:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:57]
+---------------------------------------------------------------
+[2018-03-27T03:27:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:57]
+---------------------------------------------------------------
+[2018-03-27T03:27:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:57]
+---------------------------------------------------------------
+[2018-03-27T03:27:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:27:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:27:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:27:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:27:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:27:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:27:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:27:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:27:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:27:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:28:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:29:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:30:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:31:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:32:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:33:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:34:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:35:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:36:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:37:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:38:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:39:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:39:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:39:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:39:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-27T03:45:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T03:45:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T03:45:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T03:45:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T03:45:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T03:45:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T03:45:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T03:45:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T03:45:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T03:45:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:26]
+---------------------------------------------------------------
+[2018-03-27T04:02:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'public' (T_PUBLIC)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:126]

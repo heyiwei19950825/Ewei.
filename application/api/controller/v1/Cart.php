@@ -178,11 +178,46 @@ class Cart extends BaseController
     public function add(){
         $params = $this->request->param();
         (new CartValidate())->goCheck();
-
-
+        $cartModel = new CartModel();
         $cart = new CartService();
-        $row = $cart->add($this->uid , $params,$this->is_vip);
 
+        //判断是否是购物车数组添加
+        if( isset($params['cartArray'])){//首页直接添加购物车
+            foreach ( $params['cartArray'] as $k=>$v){
+                $params = [];
+                $params['goodsId'] = $k;
+                $params['number']   = $v;
+                $params['uid']   = $this->uid;
+
+                //检测是否已经添加到购物车 如果没有添加则创建   如果添加则修改购物车信息
+                $cartInfo = $cartModel->where([
+                    'uid' => $this->uid,
+                    'goods_id'=>$k
+                ])->field('id')->find();
+                $params['id']   =$cartInfo['id'];
+
+                //检测是否存在
+                if( empty($cartInfo) ){
+
+                    $data = $cart->add($this->uid , $params,$this->is_vip);
+                    //判断返回code是否为0不为0则返回错误信息
+                    if( isset($data['errno']) && $data['errno'] != 0 ){
+                        return $data;
+                    }
+                }else{//修改购物车数量
+                    $row = (new CartService())->checkGoods($params,'cart');
+                    //检测库存和状态
+                    if($row['errno']!= 0){
+                        return $row;
+                    }
+                    CartModel::updateNumber( $params);
+                }
+            }
+            $row = [ 'errno' => '0',
+                'errmsg' => '添加成功~'];
+        }else{
+            $row = $cart->add($this->uid , $params,$this->is_vip);
+        }
         $row['data'] = [
             'openAttr' => false,
             'cartTotal'=>[
@@ -266,8 +301,8 @@ class Cart extends BaseController
         //收货地址
         $userAddressModel = new UserAddress();
         if( $addressId == 0){
-           $addressMap = ['user_id'=>$this->uid,'is_default'=>1];
-          
+            $addressMap = ['user_id'=>$this->uid,'is_default'=>1];
+
         }else{
             $addressMap = ['user_id'=>$this->uid,'id'=>$addressId];
         }

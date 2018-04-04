@@ -1,6 +1,7 @@
 {extend name="base" /}
 {block name="body"}
 <link rel="stylesheet" href="__CSS__/admin1.css">
+<link href="__STATIC__/css/hplus/animate.css?v=2.2.0" rel="stylesheet">
 <div class="layui-body">
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">
@@ -8,85 +9,88 @@
         </ul>
         <div class="'layui-tab-content" style="padding: 10px">
             <form class="layui-form layui-form-pane" action="{:url('admin/order/index')}">
-                    <div class="layui-inline">
-                        <label class="layui-form-label">订单编号</label>
-                        <div class="layui-input-block">
-                            <input name="order_no" placeholder="请输入订单编号" autocomplete="off" class="layui-input" type="text" value="{$order_no}"/>
-                        </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单编号</label>
+                    <div class="layui-input-block">
+                        <input name="order_no" placeholder="请输入订单编号" autocomplete="off" class="layui-input" type="text" value="{$order_no}"/>
                     </div>
-                    <div class="layui-inline">
-                        <label class="layui-form-label">用户</label>
-                        <div class="layui-input-block">
-                            <input name="user_name" placeholder="用户昵称" autocomplete="off" class="layui-input" type="text"  value="{$user_name}"/>
-                        </div>
-                    </div>
+                </div>
                 <div class="layui-inline">
                     <label class="layui-form-label">用户</label>
                     <div class="layui-input-block">
                         <input name="user_name" placeholder="用户昵称" autocomplete="off" class="layui-input" type="text"  value="{$user_name}"/>
                     </div>
                 </div>
-                    <div class="layui-inline">
-                        <label class="layui-form-label">商家</label>
-                        <div class="layui-input-inline">
-                            <select name="order_shop" lay-verify="">
-                                <option value="">请选择</option>
-                                <option value="0" {if condition="$shop_id===0"} selected="selected"{/if}>官方旗舰店</option>
-                            </select>
-                        </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">用户</label>
+                    <div class="layui-input-block">
+                        <input name="user_name" placeholder="用户昵称" autocomplete="off" class="layui-input" type="text"  value="{$user_name}"/>
                     </div>
-                    <div class="layui-inline">
-                        <label class="layui-form-label">订单来源</label>
-                        <div class="layui-input-inline">
-                            <select name="order_from" lay-verify="">
-                                <option value="">请选择</option>
-                                <option value="0" {if condition="$order_from===0"} selected="selected"{/if}>小程序</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">商家</label>
+                    <div class="layui-input-inline">
+                        <select name="order_shop" lay-verify="">
+                            <option value="">请选择</option>
+                            <option value="0" {if condition="$shop_id===0"} selected="selected"{/if}>官方旗舰店</option>
+                        </select>
                     </div>
-                    <div class="layui-inline">
-                        <label class="layui-form-label">订单类型</label>
-                        <div class="layui-input-inline">
-                            <select name="order_type">
-                                <option value="">请选择</option>
-                                <option value="0" {if condition="$order_type===0"} selected="selected"{/if}>普通订单</option>
-                                <option value="1" {if condition="$order_type===1"} selected="selected"{/if}>团购订单</option>
-                                <option value="2" {if condition="$order_type===2"} selected="selected"{/if}>积分订单</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单来源</label>
+                    <div class="layui-input-inline">
+                        <select name="order_from" lay-verify="">
+                            <option value="">请选择</option>
+                            <option value="0" {if condition="$order_from===0"} selected="selected"{/if}>小程序</option>
+                        </select>
                     </div>
-                    <div class="layui-inline">
-                        <label class="layui-form-label">订单状态</label>
-                        <div class="layui-input-inline">
-                            <select name="order_status" lay-verify="">
-                                <option value="">请选择</option>
-                                <option value="0" {if condition="$order_status===0"} selected="selected"{/if}>待支付</option>
-                                <option value="1" {if condition="$order_status===1"} selected="selected"{/if}>待发货</option>
-                                <option value="2" {if condition="$order_status===2"} selected="selected"{/if}>待签收</option>
-                                <option value="3" {if condition="$order_status===3"} selected="selected"{/if}>已签收</option>
-                                <option value="4" {if condition="$order_status===4"} selected="selected"{/if}>待退货</option>
-                                <option value="5" {if condition="$order_status===5"} selected="selected"{/if}>已退货</option>
-                                <option value="6" {if condition="$order_status===6"} selected="selected"{/if}>已退款</option>
-                                <option value="7" {if condition="$order_status===7"} selected="selected"{/if}>已完成</option>
-                                <option value="8" {if condition="$order_status===8"} selected="selected"{/if}>已取消</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单类型</label>
+                    <div class="layui-input-inline">
+                        <select name="order_type">
+                            <option value="">请选择</option>
+                            <option value="0" {if condition="$order_type===0"} selected="selected"{/if}>普通订单</option>
+                            <option value="1" {if condition="$order_type===1"} selected="selected"{/if}>团购订单</option>
+                            <option value="2" {if condition="$order_type===2"} selected="selected"{/if}>积分订单</option>
+                        </select>
                     </div>
-                    <div class="layui-inline">
-                        <label class="layui-form-label">开始时间</label>
-                        <div class="layui-input-inline">
-                            <input class="layui-input start_time datetime" placeholder="开始时间" id="start"  name="start_time"  value="{$start_time}">
-                        </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单状态</label>
+                    <div class="layui-input-inline">
+                        <select name="order_status" lay-verify="">
+                            <option value="">请选择</option>
+                            <option value="0" {if condition="$order_status===0"} selected="selected"{/if}>待支付</option>
+                            <option value="1" {if condition="$order_status===1"} selected="selected"{/if}>待发货</option>
+                            <option value="2" {if condition="$order_status===2"} selected="selected"{/if}>待签收</option>
+                            <option value="3" {if condition="$order_status===3"} selected="selected"{/if}>已签收</option>
+                            <option value="4" {if condition="$order_status===4"} selected="selected"{/if}>待退货</option>
+                            <option value="5" {if condition="$order_status===5"} selected="selected"{/if}>已退货</option>
+                            <option value="6" {if condition="$order_status===6"} selected="selected"{/if}>已退款</option>
+                            <option value="7" {if condition="$order_status===7"} selected="selected"{/if}>已完成</option>
+                            <option value="8" {if condition="$order_status===8"} selected="selected"{/if}>已取消</option>
+                        </select>
                     </div>
-                    <div class="layui-inline">
-                        <label class="layui-form-label">截止时间</label>
-                        <div class="layui-input-inline">
-                            <input class="layui-input end_time datetime" placeholder="结束时间" id="end" name="end_time"  value="{$end_time}">
-                        </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">开始时间</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input start_time datetime" placeholder="开始时间" id="start"  name="start_time"  value="{$start_time}">
                     </div>
-                    <div class="layui-inline"><button class="layui-btn" lay-submit="">查询</button></div>
-                    <div class="layui-inline"><div class="layui-btn layui-btn-normal export" >导出Excel数据</div></div>
-                </form>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">截止时间</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input end_time datetime" placeholder="结束时间" id="end" name="end_time"  value="{$end_time}">
+                    </div>
+                </div>
+                <div class="layui-inline"><button class="layui-btn" lay-submit="">查询</button></div>
+
+            </form>
+            <form action="{:url('admin/order/index?type=export')}" method="get">
+                <div class="layui-inline"><input type="submit" class="layui-btn layui-btn-normal" value="导出Excel数据"></div>
+            </form>
             <div class="table-list roll-x">
                 <table class="layui-table" lay-skin="line">
                     <thead>
@@ -107,41 +111,57 @@
                     </thead>
                     <tbody>
                     {foreach name='$order_list' item='vo'}
-                        <tr>
-                            <td><a href="javascript:;" class="a1 {$vo.id}" data-class="{$vo.id}" data-note="{$vo.seller_memo}">{$vo.order_no}</a></td>
-                            <td>{$vo.order_type}</td>
-                            <td>{$vo.order_from}</td>
-                            <td>{$vo.goods_name}</td>
-                            <td>{if condition="$vo.type == 2"} <span style="color:#FF5722">{$vo.order_money} 积分</span>{else}<span class="price">{$vo.order_money}</span>{/if}</td>
-                            <td class="shop_name">{$vo.shop_name}</td>
-                            <!--<td><a href="javascript:;" class="a2">{$vo.user_name}</a></td>-->
-                            <td><a href="javascript:;">{$vo.user_name}</a></td>
+                    <tr>
+                        <td><a href="javascript:;" class="a1 {$vo.id}" data-class="{$vo.id}" data-note="{$vo.seller_memo}">{$vo.order_no}</a></td>
+                        <td>{$vo.order_type}</td>
+                        <td>{$vo.order_from}</td>
+                        <td>{$vo.goods_name}</td>
+                        <td>{if condition="$vo.type == 2"} <span style="color:#FF5722">{$vo.order_money} 积分</span>{else}<span class="price">{$vo.order_money}</span>{/if}</td>
+                        <td class="shop_name">{$vo.shop_name}</td>
+                        <!--<td><a href="javascript:;" class="a2">{$vo.user_name}</a></td>-->
+                        <td><a href="javascript:;">{$vo.user_name}</a></td>
 
-                            <td>{$vo.receiver_name}</td>
-                            <td>{$vo.receiver_mobile}</td>
-                            <td><span class="red">{$vo.order_status}</span></td>
-                            <td>{$vo.create_time}</td>
-                            <td>
-                                {if condition="$vo['status'] != 8"}
-                                    <button class="layui-btn layui-btn-small a9" data-id="{$vo.id}">备注</button>
-                                    {if condition="$vo['status'] == 5"}
-                                        <button class="layui-btn layui-btn-warm layui-btn-small a10">退款</button>
-                                    {/if}
-                                    {if condition="$vo['status'] == 1"}
-                                        {if condition="$vo['shop_id'] != 0"}
-                                            <button class="layui-btn layui-btn-warm layui-btn-small a6">发货</button>
-                                        {else}
-                                            <button class="layui-btn layui-btn-normal layui-btn-small a3" data-id='{$vo.id}'>发货</button>
-                                        {/if}
-                                    {/if}
-                                    {if condition="$vo['status'] != 3 && $vo['status'] != 4 &&$vo['status'] != 5 && $vo['status'] != 6 && $vo['status'] != 7" && $vo.cancel_note == '' }
-                                        <button class="layui-btn layui-btn-danger layui-btn-small a4" data-id="{$vo['id']}">取消订单</button>
-                                    {/if}
-                                {else}
-                                     <span class="red">{$vo.cancel_note}</span>
-                                {/if}
-                            </td>
-                        </tr>
+                        <td>{$vo.receiver_name}</td>
+                        <td>{$vo.receiver_mobile}</td>
+                        <td><span class="red">{$vo.order_status}</span></td>
+                        <td>{$vo.create_time}</td>
+                        {if condition="$vo['is_virtual'] == 1"  }
+                        {if condition="$vo['status'] == 1"}
+                        <td>
+                            <button class="layui-btn layui-btn-small b1" data-id="{$vo.id}">核销</button>
+                        </td>
+                        {else}
+                        <td>
+                            <!--<span class="red">已经兑换</span>-->
+                            <a href="/admin/order/orderPrint?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-small" target="_blank">打印详单</a>
+                        </td>
+                        {/if}
+                        {else}
+                        <td>
+                            {if condition="$vo['status'] != 8"}
+                            <button class="layui-btn layui-btn-small a9" data-id="{$vo.id}">备注</button>
+                            {if condition="$vo['status'] == 5"}
+                            <button class="layui-btn layui-btn-warm layui-btn-small a10">退款</button>
+                            {/if}
+                            {if condition="$vo['status'] == 1"}
+                            {if condition="$vo['shop_id'] != 0"}
+                            <button class="layui-btn layui-btn-warm layui-btn-small a6">发货</button>
+                            <a href="/admin/order/orderPrint?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-small" target="_blank">打印详单</a>
+                            {else}
+                            <button class="layui-btn layui-btn-normal layui-btn-small a3" data-id='{$vo.id}'>发货</button>
+                            <a href="/admin/order/orderPrint?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-small" target="_blank">打印详单</a>
+                            {/if}
+                            {/if}
+                            {if condition="$vo['status'] != 3 && $vo['status'] != 4 &&$vo['status'] != 5 && $vo['status'] != 6 && $vo['status'] != 7" && $vo.cancel_note == '' }
+                            <button class="layui-btn layui-btn-danger layui-btn-small a4" data-id="{$vo['id']}">取消订单</button>
+                            {/if}
+                            {else}
+                            <span class="red">{$vo.cancel_note}</span>
+                            {/if}
+
+                        </td>
+                        {/if}
+                    </tr>
                     {/foreach}
                     </tbody>
                 </table>
@@ -152,8 +172,39 @@
     </div>
 </div>
 <div id="table-pages" style="text-align:center"></div>
+<!--兑换弹窗-->
+<div class="modal inmodal " id="myModal2" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1050;top:150px;">
+    <div class="modal-dialog" >
+        <div class="modal-content animated flipInY" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">订单验证</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="control-label">姓名:</label>
+                        <input type="text" name="username" class="form-control" style="text-transform:uppercase;">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">手机号:</label>
+                        <input type="text" name="mobile" class="form-control" style="text-transform:uppercase;">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" >
+                <div type="button" class="btn btn-white" data-dismiss="modal">关闭</div>
+                <button type="button" class="btn btn-primary verify-order" data-id="0">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {/block}
 {block name="js"}
+<script src="__STATIC__/js/hplus/jquery-2.1.1.min.js"></script>
+<script src="__STATIC__/js/hplus/bootstrap.min.js?v=3.4.0"></script>
+<script src="__STATIC__/js/hplus/toastr/toastr.min.js"></script>
 <script type="text/javascript">
     layui.use(['jquery', 'laydate','form','layer'], function(){
         var $ = layui.jquery,
@@ -295,11 +346,11 @@
                     layer.closeAll();
                 }
                 ,btn2: function(index, layero){
-                  $.post('{:url("admin/order/refund")}',{
-                      id:id
-                  },function(e){
-                      layer.msg(e.msg);
-                  })
+                    $.post('{:url("admin/order/refund")}',{
+                        id:id
+                    },function(e){
+                        layer.msg(e.msg);
+                    })
                 }
             });
         })
@@ -327,35 +378,44 @@
                 layer.close(index);
             });
         });
+        //兑换弹窗
+        $(document).on("click", ".b1", function() {
+            $('input[name=username]').val('');
+            $('input[name=mobile]').val('');
+            var id  = $(this).attr('data-id');
+            $('.verify-order').attr('data-id',id);
+            $('#myModal2').modal('show')
 
+        });
 
-    });
-    $(function(){
-        //导出
-        $(document).on('click','.export',function(){
-            var order_no = $('input[name=order_no]').val();
-            var user_name = $('input[name=user_name]').val();
-            var order_from = $('select[name=order_from]').val();
-            var order_shop = $('select[name=order_shop]').val();
-            var order_type = $('select[name=order_type]').val();
-            var order_status = $('select[name=order_status]').val();
-            var start_time = $('input[name=start_time]').val();
-            var end_time = $('input[name=end_time]').val();
-            
-            $.get("{:url('admin/order/index')}",{
-                order_no:order_no,
-                user_name:user_name,
-                order_from:order_from,
-                order_shop:order_shop,
-                order_type:order_type,
-                order_status:order_status,
-                start_time:start_time,
-                end_time:end_time,
-                type:'export'
-            },function () {
-                
+        //兑换
+        $(document).on('click','.verify-order',function(){
+            var id  = $(this).attr('data-id');
+            var username = $('input[name=username]').val();
+            var mobile = $('input[name=mobile]').val();
+            var that = $(this);
+            if( username == '' || mobile == ''){
+                layer.msg('请填写完整的验证信息');
+                return false;
+            }
+            $.post('/admin/order/verify',{
+                id:id,
+                mobile:mobile,
+                username:username
+            },function( e ){
+                if( e.code == 1 ){
+                    $('#myModal2').modal('hide');
+                    $('tr').each(function(i,v){
+                        if( $(v).find('.b1').attr('data-id') == id ){
+                            $(v).find('.a1').click();
+                        }
+                    })
+                }
+                layer.msg(e.msg);
+
             })
         })
-    })
+
+    });
 </script>
 {/block}

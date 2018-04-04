@@ -22,15 +22,16 @@ class WxPayConfig
 	 * @var string
 	 */
 //	眉山同城生活
-//	const APPID = 'wx720cf9c5765a5c4d';
+//	const APPID = 'wx720cf9c5765a5c4d';//小程序的
 //    const MCHID = '1493263542';
 //    const KEY = '126ie371ed1i27s1bdGY82jks92ufsjk';
 //    const APPSECRET = 'your appsecret';
 
 //九宴食材
-	const APPID = 'wxf390c9e08ca6387f';
+	const APPID = 'wxf390c9e08ca6387f';//小程序的
     const MCHID = '1492410722';
     const KEY = '4SNeMexpKkqsaOCqiaipN70gtKHyQuHh';
+    const APPSECRET = '49a1d6ca5f5040d46641ca46ffda55dd';
 
 
 

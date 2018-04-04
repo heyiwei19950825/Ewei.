@@ -107,6 +107,8 @@ class Promotion extends AdminBase
                 }else{
                     $data['range_type'] = 1;
                 }
+                $data['start_time']=strtotime( $data['start_time']);
+                $data['end_time']=strtotime( $data['end_time']);
                 try {
                     //开始事物
                     Db::startTrans();
@@ -122,10 +124,11 @@ class Promotion extends AdminBase
                                     'create_order_id' => 0,
                                     'money' => $data['money'],
                                     'state' => 0,
-                                    "start_time" => strtotime($data['start_time']),
-                                    "end_time" => strtotime($data['end_time'])
+                                    "start_time" =>$data['start_time'],
+                                    "end_time" => $data['end_time']
                                 );
-                                $retval = $this->coupon_model->save($data_coupon);
+
+                                $this->coupon_model->insert($data_coupon);
                             }
                         }
                         if( $data['range_type'] == 0 ){
@@ -138,8 +141,6 @@ class Promotion extends AdminBase
                             }
 
                         }
-                        
-                    
                         Db::commit();
                         $this->success('保存成功');
                     } else {
@@ -153,7 +154,9 @@ class Promotion extends AdminBase
                 }
             }
         }else{
-            return $this->fetch('add_coupon');
+            $rank = Db::name('user_rank')->select();
+
+            return $this->fetch('add_coupon',['rank'=>$rank]);
         }
     }
 
@@ -235,8 +238,9 @@ class Promotion extends AdminBase
                 $goods_ids .= $value['id'].',';
             }
             $coupon = $this->coupon_type_model->find($data['id']);
+            $rank = Db::name('user_rank')->select();
 
-            return $this->fetch('update_coupon', ['coupon' => $coupon,'goods_list'=>$list,'goods_ids'=>$goods_ids]);
+            return $this->fetch('update_coupon', ['coupon' => $coupon,'goods_list'=>$list,'goods_ids'=>$goods_ids,'rank'=>$rank]);
         }
     }
 
@@ -251,6 +255,12 @@ class Promotion extends AdminBase
         return $coupon_type_data;
     }
 
+    /**
+     * 签到管理
+     */
+    public function SignIn(){
+        return $this->fetch('',['controller'=>'signin']);
+    }
     /**
      * 功能：积分管理
      */

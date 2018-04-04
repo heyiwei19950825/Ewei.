@@ -1,0 +1,132 @@
+---------------------------------------------------------------
+[2018-03-22T01:35:30+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/coupon/list
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:91]
+---------------------------------------------------------------
+[2018-03-22T01:36:38+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/coupon/list
+[ error ] [2]Missing argument 1 for dump(), called in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Coupon.php on line 25 and defined[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\helper.php:265]
+---------------------------------------------------------------
+[2018-03-22T01:49:59+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [0]模板文件不存在:../themes/admin/prize\index.html[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[2018-03-22T01:51:10+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义变量: info[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:149]
+---------------------------------------------------------------
+[2018-03-22T01:51:33+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义数组索引: machine_number[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:149]
+---------------------------------------------------------------
+[2018-03-22T01:51:49+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]Array to string conversion[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:149]
+---------------------------------------------------------------
+[2018-03-22T01:51:56+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义变量: rule_list[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:161]
+---------------------------------------------------------------
+[2018-03-22T01:52:32+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义变量: time_rule[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:215]
+---------------------------------------------------------------
+[2018-03-22T01:52:47+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义变量: reserve_number[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:245]
+---------------------------------------------------------------
+[2018-03-22T02:03:06+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ error ] [8]未定义数组索引: ruleColor[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:182]
+---------------------------------------------------------------
+[2018-03-22T02:03:07+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/relevanceCheck
+[ error ] [8]未定义数组索引: ruleColor[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:182]
+---------------------------------------------------------------
+[2018-03-22T02:20:21+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/internetBarSting.html
+[ error ] [8]未定义数组索引: time_rule[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:260]
+---------------------------------------------------------------
+[2018-03-22T03:58:36+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Prize.php:76]
+---------------------------------------------------------------
+[2018-03-22T03:59:23+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Prize.php:76]
+---------------------------------------------------------------
+[2018-03-22T03:59:31+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [1]Call to a member function toArray() on a non-object[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Prize.php:73]
+---------------------------------------------------------------
+[2018-03-22T03:59:53+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Prize.php:76]
+---------------------------------------------------------------
+[2018-03-22T04:09:13+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [4]语法错误: unexpected 'foreach' (T_FOREACH)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Prize.php:80]
+---------------------------------------------------------------
+[2018-03-22T04:12:35+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义数组索引: thumb[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:212]
+---------------------------------------------------------------
+[2018-03-22T04:12:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/prize/index.html
+[ error ] [8]未定义数组索引: name[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\4ab7c12bb55819cfb2bafd7e0e451267.php:214]
+---------------------------------------------------------------
+[2018-03-22T04:38:54+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/prize/rule?uid=1
+[ error ] [8]Undefined property: app\api\controller\v2\Prize::$goods[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:35]
+---------------------------------------------------------------
+[2018-03-22T04:39:52+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/prize/rule?uid=1
+[ error ] [1]Class 'app\api\controller\v2\GoodsModel' not found[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:24]
+---------------------------------------------------------------
+[2018-03-22T04:42:27+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/prize/rule?uid=1
+[ error ] [8]未定义数组索引: thumb[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:42]
+---------------------------------------------------------------
+[2018-03-22T04:57:41+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/user/win
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'g.uid' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-22T05:40:17+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/integral/log
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'uid' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-22T14:37:32+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/addorder
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:91]
+---------------------------------------------------------------
+[2018-03-22T15:21:58+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/orderlist
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:683]
+---------------------------------------------------------------
+[2018-03-22T15:22:06+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/orderlist
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:683]
+---------------------------------------------------------------
+[2018-03-22T15:22:34+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/orderlist
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:683]
+---------------------------------------------------------------
+[2018-03-22T15:22:51+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/orderlist
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:683]
+---------------------------------------------------------------
+[2018-03-22T15:23:43+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/orderlist
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'uid' in where clause is ambiguous[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-22T15:25:31+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/orderlist
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'o.uid' in 'where clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-22T15:33:40+08:00] 127.0.0.1 127.0.0.1 GET /api/v2/internet/orderlist
+[ error ] [8]未定义数组索引: machine_number[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\InternetOrder.php:132]
+---------------------------------------------------------------
+[2018-03-22T21:06:10+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [1]Call to a member function toArray() on a non-object[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:62]
+---------------------------------------------------------------
+[2018-03-22T21:06:40+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [1]Call to a member function fetch() on a non-object[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:62]
+---------------------------------------------------------------
+[2018-03-22T21:09:41+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [1]Call to a member function toArray() on a non-object[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:63]
+---------------------------------------------------------------
+[2018-03-22T21:12:34+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [1]Call to a member function toArray() on a non-object[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:62]
+---------------------------------------------------------------
+[2018-03-22T21:19:27+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zerg.sp_integral' doesn't exist[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-22T21:21:30+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [1]Call to undefined function app\api\controller\v2\get_rand()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:89]
+---------------------------------------------------------------
+[2018-03-22T21:23:26+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [8]未定义数组下标: 43[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:91]
+---------------------------------------------------------------
+[2018-03-22T21:24:16+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [8]未定义数组下标: 45[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:91]
+---------------------------------------------------------------
+[2018-03-22T21:25:30+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [8]未定义数组索引: goods_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:88]
+---------------------------------------------------------------
+[2018-03-22T21:25:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [8]未定义数组索引: goods[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:88]
+---------------------------------------------------------------
+[2018-03-22T21:28:31+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [8]未定义变量: gid[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Prize.php:105]
+---------------------------------------------------------------
+[2018-03-22T21:41:04+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/prize/win
+[ error ] [401][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:91]

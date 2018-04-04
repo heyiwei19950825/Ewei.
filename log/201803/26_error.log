@@ -1,0 +1,1036 @@
+---------------------------------------------------------------
+[2018-03-26T00:18:27+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[2018-03-26T00:18:28+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internet.html
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[2018-03-26T00:18:32+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[2018-03-26T00:18:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[2018-03-26T00:18:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[2018-03-26T00:18:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[2018-03-26T00:18:54+08:00] 127.0.0.1 127.0.0.1 GET /admin
+[ error ] [2002]SQLSTATE[HY000] [2002] �������ӷ���һ��ʱ���û����ȷ�𸴻����ӵ�����û�з�Ӧ�����ӳ���ʧ�ܡ�
+[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:293]
+---------------------------------------------------------------
+[2018-03-26T00:24:42+08:00] 127.0.0.1 127.0.0.1 GET /admin/subscribe/internet.html
+[ error ] [1]Call to protected think\Request::__construct() from context 'app\admin\controller\Subscribe'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:31]
+---------------------------------------------------------------
+[2018-03-26T09:20:15+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList?uid=1
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T09:20:20+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList?uid=1
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T09:20:30+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList?uid=1
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T09:20:35+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList?uid=1
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T09:20:40+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList?uid=1
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:47:01+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:47:06+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:47:11+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:47:16+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:47:21+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:47:26+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:47:31+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:47:51+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:47:55+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:01+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:05+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:10+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:15+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:20+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:25+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:30+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:36+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:40+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:45+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:48:55+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:49:00+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:49:05+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:49:10+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:49:15+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:49:20+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'check_status asc LIMIT 0,10' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:51:16+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [1]Call to a member function toArray() on a non-object[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:293]
+---------------------------------------------------------------
+[2018-03-26T14:51:40+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [2]Missing argument 1 for dump(), called in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php on line 294 and defined[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\helper.php:265]
+---------------------------------------------------------------
+[2018-03-26T14:51:45+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [2]Missing argument 1 for dump(), called in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php on line 294 and defined[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\helper.php:265]
+---------------------------------------------------------------
+[2018-03-26T14:57:51+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [2]Missing argument 1 for app\common\model\InternetOrderMachine::getList(), called in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php on line 300 and defined[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\model\InternetOrderMachine.php:14]
+---------------------------------------------------------------
+[2018-03-26T14:57:56+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [2]Missing argument 1 for app\common\model\InternetOrderMachine::getList(), called in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php on line 300 and defined[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\model\InternetOrderMachine.php:14]
+---------------------------------------------------------------
+[2018-03-26T14:58:00+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [2]Missing argument 1 for app\common\model\InternetOrderMachine::getList(), called in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php on line 300 and defined[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\model\InternetOrderMachine.php:14]
+---------------------------------------------------------------
+[2018-03-26T14:58:06+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [2]Missing argument 1 for app\common\model\InternetOrderMachine::getList(), called in D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php on line 300 and defined[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\model\InternetOrderMachine.php:14]
+---------------------------------------------------------------
+[2018-03-26T14:58:10+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T14:58:15+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T14:58:20+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T14:58:25+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T14:58:30+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T14:58:35+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T14:58:40+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T14:58:45+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T14:58:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T14:58:55+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'if' (T_IF), expecting function (T_FUNCTION)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:303]
+---------------------------------------------------------------
+[2018-03-26T14:59:01+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:06+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:11+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'add_time' in 'order clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:16+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'add_time' in 'order clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:21+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'add_time' in 'order clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:26+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'add_time' in 'order clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:31+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'add_time' in 'order clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:36+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'add_time' in 'order clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:41+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'add_time' in 'order clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:46+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'add_time' in 'order clause'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T14:59:51+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [1]Call to undefined function app\admin\controller\dumnp()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T14:59:56+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [1]Call to undefined function app\admin\controller\dumnp()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T15:00:01+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [1]Call to undefined function app\admin\controller\dumnp()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T15:01:56+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [8]未定义变量: MachineList[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T15:02:01+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [8]未定义变量: MachineList[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T15:02:06+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [8]未定义变量: MachineList[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T15:59:22+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:312]
+---------------------------------------------------------------
+[2018-03-26T15:59:27+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:312]
+---------------------------------------------------------------
+[2018-03-26T15:59:32+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:312]
+---------------------------------------------------------------
+[2018-03-26T15:59:37+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:312]
+---------------------------------------------------------------
+[2018-03-26T16:00:02+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:315]
+---------------------------------------------------------------
+[2018-03-26T16:00:07+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:315]
+---------------------------------------------------------------
+[2018-03-26T16:00:12+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:315]
+---------------------------------------------------------------
+[2018-03-26T16:00:17+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:315]
+---------------------------------------------------------------
+[2018-03-26T16:00:22+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:315]
+---------------------------------------------------------------
+[2018-03-26T16:00:27+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:314]
+---------------------------------------------------------------
+[2018-03-26T16:00:32+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:314]
+---------------------------------------------------------------
+[2018-03-26T16:11:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [64]Cannot use app\common\lib\Helper as Helper because the name is already in use[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:18]
+---------------------------------------------------------------
+[2018-03-26T16:11:55+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [64]Cannot use app\common\lib\Helper as Helper because the name is already in use[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:18]
+---------------------------------------------------------------
+[2018-03-26T16:12:10+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'dump' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T16:12:15+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'dump' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T16:12:20+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'dump' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T16:12:25+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'dump' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T16:12:30+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [4]语法错误: unexpected 'dump' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:301]
+---------------------------------------------------------------
+[2018-03-26T16:12:35+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [8]未定义数组索引: add_time[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T16:12:40+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [8]未定义数组索引: add_time[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T16:12:45+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [8]未定义数组索引: add_time[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T16:12:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [8]未定义数组索引: add_time[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T16:12:55+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [8]未定义数组索引: add_time[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T16:13:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [1]Call to undefined method app\common\lib\Helper::Sec2Time()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T16:13:55+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [1]Call to undefined method app\common\lib\Helper::Sec2Time()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:300]
+---------------------------------------------------------------
+[2018-03-26T16:15:15+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [64]Cannot redeclare app\common\lib\Helper::time_tran()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:54]
+---------------------------------------------------------------
+[2018-03-26T16:15:15+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList
+[ error ] [64]Cannot redeclare app\common\lib\Helper::time_tran()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:54]
+---------------------------------------------------------------
+[2018-03-26T16:52:04+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [0]模板文件不存在:internet.order[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[2018-03-26T16:52:20+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [0]模板文件不存在:../themes/admin/internet\order.html[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[2018-03-26T18:20:23+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [0]模板文件不存在:../themes/admin/internet\order.html[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[2018-03-26T18:20:29+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [0]模板文件不存在:../themes/admin/internet\order.html[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[2018-03-26T18:23:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:23:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:23:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:23:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:23:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:23:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:24:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:25:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:26:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:27:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:28:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:29:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:30:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:30:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:30:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:30:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:30:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:30:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:30:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:30:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '$condition' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:294]
+---------------------------------------------------------------
+[2018-03-26T18:31:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义变量: params[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:296]
+---------------------------------------------------------------
+[2018-03-26T18:31:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:16+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:31:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:32:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:33:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:34:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:35:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:36:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:37:00+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:37:05+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:37:10+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:37:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:37:20+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:37:25+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:37:30+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:37:35+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T18:46:22+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [8]未定义数组索引: rank_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\a94fa69ef4abde2e76143544b7369476.php:141]
+---------------------------------------------------------------
+[2018-03-26T19:09:01+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T19:14:03+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T19:51:03+08:00] 127.0.0.1 127.0.0.1 GET /admin/index/index.html
+[ error ] [4]语法错误: unexpected '$version' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Index.php:54]
+---------------------------------------------------------------
+[2018-03-26T21:09:11+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '(', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:132]
+---------------------------------------------------------------
+[2018-03-26T21:09:11+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '(', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:132]
+---------------------------------------------------------------
+[2018-03-26T21:09:16+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '(', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:132]
+---------------------------------------------------------------
+[2018-03-26T21:09:16+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '(', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:132]
+---------------------------------------------------------------
+[2018-03-26T21:09:21+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '(', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:132]
+---------------------------------------------------------------
+[2018-03-26T21:09:21+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '(', expecting identifier (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\lib\Helper.php:132]
+---------------------------------------------------------------
+[2018-03-26T21:10:31+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '$computer' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Internet.php:77]
+---------------------------------------------------------------
+[2018-03-26T21:10:36+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '$computer' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v2\Internet.php:77]
+---------------------------------------------------------------
+[2018-03-26T21:46:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.id_' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T21:46:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.id_' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-03-26T22:19:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/internet/orderList.html
+[ error ] [8]未定义数组索引: page[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:297]
+---------------------------------------------------------------
+[2018-03-26T22:42:28+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:344]
+---------------------------------------------------------------
+[2018-03-26T22:42:33+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:344]
+---------------------------------------------------------------
+[2018-03-26T22:44:28+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:347]
+---------------------------------------------------------------
+[2018-03-26T22:44:33+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:347]
+---------------------------------------------------------------
+[2018-03-26T23:36:33+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:367]
+---------------------------------------------------------------
+[2018-03-26T23:36:38+08:00] 127.0.0.1 127.0.0.1 POST /admin/internet/orderList
+[ error ] [4]语法错误: unexpected '}'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Subscribe.php:367]
+---------------------------------------------------------------
+[2018-03-26T23:39:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'Db' (T_STRING), expecting '('[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:33]
+---------------------------------------------------------------
+[2018-03-26T23:39:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'Db' (T_STRING), expecting '('[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:33]
+---------------------------------------------------------------
+[2018-03-26T23:39:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:31]
+---------------------------------------------------------------
+[2018-03-26T23:39:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:31]
+---------------------------------------------------------------
+[2018-03-26T23:39:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:31]
+---------------------------------------------------------------
+[2018-03-26T23:39:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '}', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:39]
+---------------------------------------------------------------
+[2018-03-26T23:39:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '}', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:40]
+---------------------------------------------------------------
+[2018-03-26T23:39:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '}', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:40]
+---------------------------------------------------------------
+[2018-03-26T23:39:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '}', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:40]
+---------------------------------------------------------------
+[2018-03-26T23:40:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '}', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:40]
+---------------------------------------------------------------
+[2018-03-26T23:40:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '}', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:40]
+---------------------------------------------------------------
+[2018-03-26T23:40:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '}', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:40]
+---------------------------------------------------------------
+[2018-03-26T23:40:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:40:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:40:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:40:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:40:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:40:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:40:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:40:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:40:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:41:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:41:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:41:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '$map' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:33]
+---------------------------------------------------------------
+[2018-03-26T23:41:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '$map' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:33]
+---------------------------------------------------------------
+[2018-03-26T23:41:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected '$map' (T_VARIABLE)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:33]
+---------------------------------------------------------------
+[2018-03-26T23:41:28+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:41:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:41:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:41:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:41:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:41:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:41:58+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:42:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:42:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:42:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:42:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:42:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:43:33+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:43:38+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:43:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:43:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [0]缺少更新条件[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:2210]
+---------------------------------------------------------------
+[2018-03-26T23:44:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [8]未定义数组索引: [D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:32]
+---------------------------------------------------------------
+[2018-03-26T23:44:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [8]未定义数组索引: [D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:32]
+---------------------------------------------------------------
+[2018-03-26T23:44:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [8]未定义数组索引: [D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:32]
+---------------------------------------------------------------
+[2018-03-26T23:44:23+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [8]未定义数组索引: [D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:32]
+---------------------------------------------------------------
+[2018-03-26T23:45:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:76]
+---------------------------------------------------------------
+[2018-03-26T23:45:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:76]
+---------------------------------------------------------------
+[2018-03-26T23:45:53+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:77]
+---------------------------------------------------------------
+[2018-03-26T23:56:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'dump' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:67]
+---------------------------------------------------------------
+[2018-03-26T23:56:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'dump' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:67]
+---------------------------------------------------------------
+[2018-03-26T23:56:18+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected 'dump' (T_STRING)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:67]
+---------------------------------------------------------------
+[2018-03-26T23:56:43+08:00] 127.0.0.1 127.0.0.1 POST /api/v2/internet/api
+[ error ] [4]语法错误: unexpected ')'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\server\InternetServer.php:66]

@@ -7,70 +7,30 @@ use think\Db;
 
 class Goods extends Model
 {
-    protected $insert = ['create_time'];
-    protected $update = ['update_time'];
-    protected $delete = ['delete_time'];
-
     /**
-     * 文章作者
-     * @param $value
+     * 查询商品列表信息
+     * @param array $map
+     * @param bool $paginate
+     * @param int $page
+     * @param int $size
+     * @param string $field
+     * @param string $group
      * @return mixed
      */
-    protected function setAuthorAttr($value)
-    {
-        return $value ? $value : Session::get('admin_name');
-    }
+    public function getGoodsList( $map = array(), $paginate = true,$page = 1, $size = 15,$field = '',$group ='id' ){
+        $now = date('Y-m-d H:i:s',time());
+        $map['btime']   = ['<=',$now];
+        $map['etime']   = ['>=',$now];
+        $map['status']  = ['=',1];
+        $goods_list  = $this->field($field)->where($map)->order(['publish_time' => 'DESC'])->group($group);
+        if($paginate){
+            $row = $goods_list->paginate($size, false, ['page' => $page])->toArray();
+        }else{
+            $row = $goods_list->select();
+        }
 
-    /**
-     * 反转义HTML实体标签
-     * @param $value
-     * @return string
-     */
-    protected function setContentAttr($value)
-    {
-        return htmlspecialchars_decode($value);
-    }
 
-    /**
-     * 序列化photo图集
-     * @param $value
-     * @return string
-     */
-    protected function setPhotoAttr($value)
-    {
-        return serialize($value);
-    }
-
-    /**
-     * 反序列化photo图集
-     * @param $value
-     * @return mixed
-     */
-    protected function getPhotoAttr($value)
-    {
-        return unserialize($value);
-    }
-
-    /**
-     * 创建时间
-     * @return bool|string
-     */
-    protected function setCreateTimeAttr()
-    {
-        return date('Y-m-d H:i:s');
-    }
-
-    /**
-    * 查询商品列表信息
-    * @param $map    array   查询条件数组
-    * @param $page   int     页码
-    * @param $field  string  查询的商品表字段
-    **/
-    public function getGoodsList( $map = array(), $page = 1, $field = '' ){
-
-        $article_list  = $this->field($field)->where($map)->order(['publish_time' => 'DESC'])->paginate(15, false, ['page' => $page])->toArray();
-
-        return $article_list;
+        return $row;
     }
 
     /**
