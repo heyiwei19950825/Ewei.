@@ -9,7 +9,9 @@
 namespace app\common\model;
 
 use think\Db;
-class Api extends BaseModel
+use think\Model;
+
+class Api extends Model
 {
     static $tableName = 'api';
 

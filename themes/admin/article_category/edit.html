@@ -34,23 +34,35 @@
                             <input type="text" name="alias" value="{$category.alias}" placeholder="（选填）请输入分类别名" class="layui-input">
                         </div>
                     </div> -->
-             <!--        <div class="layui-form-item">
-                        <label class="layui-form-label">图标</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="icon" value="{$category.icon}" placeholder="（选填）如：fa fa-home" class="layui-input">
-                        </div>
-                    </div> -->
                     <div class="layui-form-item">
-                        <label class="layui-form-label">缩略图</label>
+                        <label class="layui-form-label">图标</label>
                         <div class="layui-upload">
-                        <input type="hidden" name="thumb" value="{$category.thumb}" class="layui-input layui-input-inline" id="thumb">
-                        <button type="button" class="layui-btn" id="upload" data-width='300' data-height='300'>上传图片</button>
+                        <input type="hidden" name="icon" value="{$category.icon}" class="layui-input layui-input-inline" id="thumb">
+                        <button type="button" class="layui-btn" id="upload" data-path="uploads/cms/">上传图片</button>
                         <div class="layui-input-block" style='margin-top:10px;'>
-                            <img class="layui-upload-img" id="demo1" src='{$category.thumb}'>
+                            <img class="layui-upload-img" id="demo1" src='{$category.icon}' width="150px">
                             <p id="demoText"></p>
                         </div>
                         </div>  
                     </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Banner图</label>
+                        <div class="layui-input-block">
+                            <button type="button" id="upload-photo-btn" class="layui-btn">上传图集</button>
+                            <div id="photo-container">
+                                {if condition="!empty($category.thumb)"}
+                                {foreach name="$category.thumb" item="vo"}
+                                <div class="photo-list layui-inline">
+                                    <img src="{$vo}" alt="" style='width:150px;'>
+                                    <input type="hidden" name="thumb[]" value="{$vo}" class="layui-input layui-input-inline">
+                                    <div class="layui-btn-warm remove-photo-btn">移除</div>
+                                </div>
+                                {/foreach}
+                                {/if}
+                            </div>
+                        </div>
+                    </div>
+
                  <!--    <div class="layui-form-item">
                         <label class="layui-form-label">内容</label>
                         <div class="layui-input-block">
@@ -66,6 +78,13 @@
                             </select>
                         </div>
                     </div> -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline">
+                            <input type="radio" name="status" value="1" title="显示" {if condition="$category.status==1"} checked="checked"{/if}>
+                            <input type="radio" name="status" value="0" title="不显示" {if condition="$category.status==0"} checked="checked"{/if}>
+                        </div>
+                    </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">排序</label>
                         <div class="layui-input-block">
@@ -103,6 +122,28 @@
 {/block}
 {block name="script"}
 <script>
-    var ue = UE.getEditor('content');
+    var ue = UE.getEditor('content'),
+            uploadEditor = UE.getEditor('upload-photo-btn'),
+            photoListItem,
+            uploadImage;
+
+    uploadEditor.ready(function () {
+        uploadEditor.setDisabled();
+        uploadEditor.hide();
+        uploadEditor.addListener('beforeInsertImage', function (t, arg) {
+            $.each(arg, function (index, item) {
+                photoListItem = '<div class="photo-list layui-inline"><input type="hidden" name="thumb[]" value="' + item.src + '" class="layui-input layui-input-inline"><img width="150px;" src="' + item.src + '">';
+                photoListItem += '<div class="layui-btn-warm remove-photo-btn">移除</div></div>';
+                $('#photo-container').append(photoListItem).on('click', '.remove-photo-btn', function () {
+                    $(this).parent('.photo-list').remove();
+                });
+            });
+        });
+    });
+
+    $('#upload-photo-btn').on('click', function () {
+        uploadImage = uploadEditor.getDialog("insertimage");
+        uploadImage.open();
+    });
 </script>
 {/block}

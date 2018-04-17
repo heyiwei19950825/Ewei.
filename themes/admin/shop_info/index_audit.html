@@ -1,0 +1,142 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li ><a href="{:url('admin/shopInfo/index')}">当前商城配置</a></li>
+            <li class="layui-this">审核中商城配置</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" >
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">当前状态</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" type="text" value="{$info.shop_status}" disabled>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">店铺名称</label>
+                        <div class="layui-input-block">
+                            <input disabled type="text" name="shop_name" value="{$info.shop_name}" required lay-verify="required" placeholder="输入店铺名称" class="layui-input">
+                        </div>
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">联系电话</label>
+                        <div class="layui-input-block">
+                            <input disabled type="number" name="shop_phone" value="{$info.shop_phone}" required lay-verify="phone" placeholder="输入联系电话" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">店铺分类</label>
+                        <div class="layui-input-block">
+                            <select name="shop_group_id" lay-verify="required">
+                                {foreach name="shop_group_list" item="vo"}
+                                    <option value="{$vo.id}" {if condition="$info.shop_category==$vo.id"} selected="selected"{/if}>{$vo.group_name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Logo</label>
+                        <div class="layui-input-inline layui-upload">
+                            <input disabled type="hidden" name="shop_logo" value="{$info.shop_logo}" class="layui-input layui-input-inline" id="thumb">
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <img class="layui-upload-img" style='width:150px;' id="demo1" src='{$info.shop_logo}'>
+                                <p id="demoText"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Banner</label>
+                        <div class="layui-input-inline layui-upload">
+                            <input disabled type="hidden" name="shop_banner" value="{$info.shop_banner}" class="layui-input layui-input-inline" id="banner-thumb">
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <img class="layui-upload-img" id="demo2" src='{$info.shop_banner}' width="300px;">
+                                <p id="demoText1"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item" style="display: none;">
+					    <label class="layui-form-label">地区设置</label>
+					    <div class="layui-input-inline">
+					      <select name="province_id" id='province' lay-search lay-filter="province">
+                            <option value="">请选择省</option>
+                            {foreach name ='provinceList' item="vo"}
+                                <option value="{$vo.province_id}" {if condition="$info.province_id==$vo.province_id"} selected="selected"{/if}>{$vo.province_name}</option>
+                            {/foreach}
+					      </select>
+					    </div>
+					    <div class="layui-input-inline">
+					      <select name="city_id"  id='city' lay-search lay-filter="city">
+					        <option value="">请选择市</option>
+                             {foreach name ='cityList' item="vo"}
+                                <option value="{$vo.city_id}" {if condition="$info.city_id==$vo.city_id"} selected="selected"{/if}  >{$vo.city_name}</option>
+                            {/foreach}
+					      </select>
+					    </div>
+					    <div class="layui-input-inline">
+					      <select name="district_id" id='district' lay-search lay-filter="district">
+					        <option value="">请选择县/区</option>
+                             {foreach name ='districtList' item="vo"}
+                                <option value="{$vo.district_id}" data-id='{$vo.district_id}' {if condition="$info.district_id==$vo.district_id"} selected="selected"{/if}>{$vo.district_name}</option>
+                            {/foreach}
+					      </select>
+					    </div>
+					</div>
+					 <div class="layui-form-item">
+                        <label class="layui-form-label">详细地址</label>
+                        <div class="layui-input-block">
+                            <input disabled type="text" name="shop_address" value="{$info.shop_address}" required lay-verify="required" placeholder="输入店铺名称" class="layui-input">
+                        </div>
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">邮编</label>
+                        <div class="layui-input-block">
+                            <input disabled type="number" name="shop_zip" value="{$info.shop_zip}" required lay-verify="" placeholder="输入邮编" class="layui-input">
+                        </div>
+                    </div>
+                     <div class="layui-form-item">
+                        <label class="layui-form-label">坐标地址</label>
+                        <div class="layui-input-inline">
+                            <input disabled type="text" name="latitude_longitude" value="{$info.latitude_longitude}" required lay-verify="required" placeholder="" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">简介</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入内容" class="layui-textarea" name="brief" disabled>{$info.brief}</textarea>
+                        </div>
+                    </div>
+                    {if condition ='$info.shop_status == "审核通过"'}
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <div class="layui-btn use-update" lay-filter="demo1">应用当前版本</div>
+                        </div>
+                    </div>
+                    {/if}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name='js'}
+<script>
+    //点击使用当前班额本
+    $(function(){
+        $('.use-update').on('click',function(){
+            $.post("{:url('admin/shopInfo/useUpdate')}",{
+            },function( e ){
+s                window.location.href = "{:url('admin/shopInfo/index')}";
+            })
+        })
+    });
+</script>
+{/block}

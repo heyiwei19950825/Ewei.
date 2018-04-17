@@ -101,10 +101,10 @@ class FeedBack extends BaseController
             $params = $this->request->param();
             $userInfo = Db::name('user')->where(['id'=>$this->uid])->find();
 
-            $verifyTime = Db::name('feed_back')->order('time desc')->find()['time'];
-            $verifyTime = $verifyTime+86400;
+            $verifyTime = Db::name('feed_back')->where(['user_id'=>$this->uid])->order('time desc')->find()['time'];
+            $verifyTime = $verifyTime+7200;
             if($verifyTime >= time()){
-                $this->error('您今天已经反馈过啦~请明天再来');
+                $this->error('您今天已经反馈过啦~请稍后再试');
             }
             $row = Db::name('feed_back')->insert([
                 'user_id' =>$this->uid,

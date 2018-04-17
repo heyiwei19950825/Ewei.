@@ -9,6 +9,8 @@
 namespace app\common\model;
 
 
-class InternetMachineRule extends BaseModel
+use think\Model;
+
+class InternetMachineRule extends Model
 {
 }

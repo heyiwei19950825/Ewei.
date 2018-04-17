@@ -20,6 +20,16 @@
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" style="max-width:80%" action="{:url('admin/goods/virtualEdit')}" method="post">
                     <div class="layui-form-item">
+                        <label class="layui-form-label">所属分类</label>
+                        <div class="layui-input-block">
+                            <select name="cid" lay-verify="required">
+                                {foreach name="category_level_list" item="vo"}
+                                <option value="{$vo.id}" {eq name="vo.level" value="1"}disabled=""{/eq} {if condition="$goods.cid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
                         <div class="layui-block">
                             <label class="layui-form-label">商品名称：</label>
                             <div class="layui-input-block">
@@ -113,6 +123,13 @@
                                 <div class="layui-input-inline">
                                     <input type="radio" name="status" value="1" title="已审核" {if condition="$goods.status==1"} checked="checked"{/if}>
                                     <input type="radio" name="status" value="0" title="未审核" {if condition="$goods.status==0"} checked="checked"{/if}>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">商城显示</label>
+                                <div class="layui-input-inline">
+                                    <input type="radio" name="is_recommend" value="1" title="是" {if condition="$goods.is_recommend==1"} checked="checked"{/if}>
+                                    <input type="radio" name="is_recommend" value="0" title="否" {if condition="$goods.is_recommend==0"} checked="checked"{/if}>
                                 </div>
                             </div>
                             <div class="layui-form-item">

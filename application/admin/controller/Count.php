@@ -8,6 +8,7 @@ use app\common\model\Order;
 use app\common\model\Category;
 
 use think\Config;
+use think\Controller;
 use think\Db;
 
 /**
@@ -15,13 +16,8 @@ use think\Db;
  * Class Index
  * @package app\admin\controller
  */
-class Count extends AdminBase
+class Count extends Controller
 {
-    protected function _initialize()
-    {
-        parent::_initialize();
-    }
-
     /**
      * 统计近一个月的用户增长数
      * @return [type] [description]
@@ -110,36 +106,41 @@ class Count extends AdminBase
      * 订单数据统计
      */
     public function orderCount(){
-        $datas = [];
-        $data = Order::getOrderCount();
+        $data = [];
+        $order = Order::getOrderCount();
         $config = Config::get('order.status');
-        if( empty($data) ){
+        if( empty($order) ){
             return json(['data'=>[],'code'=>1,'message'=>'操作完成']);
         }
-        foreach ($data as $v){
-            $datas[] = [$config[$v['order_status']],$v['number']];
+        foreach ($order as $v){
+            $data[] = [$config[$v['order_status']],$v['number']];
         }
-        return json(['data'=>$datas,'code'=>1,'message'=>'操作完成']);
+        return json(['data'=>$data,'code'=>1,'message'=>'操作完成']);
     }
 
+    /**
+     * 更具分类ID查询 商品销售数量
+     * @return \think\response\Json
+     */
     public function categoryCountGoodsNumber(){
-        $datas = [];
+        $data = [];
         $orderGoodsModel = new OrderGoods();
-        $data = $orderGoodsModel::countGoodsNumberByCId();
+        $orderGoods = $orderGoodsModel->pageQuery(0,0,'','',' cid,SUM(num) as number',false,'cid');
 
-        if( empty($data) ){
+        if( empty($orderGoods['data']) ){
             return json(['data'=>[],'code'=>1,'message'=>'操作完成']);
         }
+
         $cateModel = new Category();
-        foreach ($data as $v) {
-            $name = $cateModel->getNameById($v['cid']);
-            $datas[] = ['value'=>$v['number'],'name'=>$name];
+        foreach ($orderGoods['data'] as $v) {
+            $info = $cateModel->getInfo(['id'=>$v['cid']],'name');
+            $data[] = [
+                'value'=>$v['number'],
+                'name'=> empty($info['name'])?'已删除商品':$info['name']
+            ];
         }
 
-
-        return json(['data'=>$datas,'code'=>1,'message'=>'操作完成']);
-
+        return json(['data'=>$data,'code'=>1,'message'=>'操作完成']);
     }
-
 }
 

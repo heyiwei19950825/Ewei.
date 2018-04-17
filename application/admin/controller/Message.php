@@ -39,10 +39,17 @@ class Message extends AdminBase
      * 消息列表
      */
     public function index(){
-        $row = $this->feedBack->order('msg_time desc')->select()->toArray();
-        $note = array('','商品相关', '物流状况', '客户服务', '优惠活动', '功能异常', '产品建议', '其他');
+        $cateNote = [];
+        $row = $this->feedBack->where(['s_id'=>$this->instance_id])->order('msg_time desc')->select()->toArray();
+        $note = $this->category_model->where(['s_id'=>$this->instance_id])->select();
+        if( $note ){
+            foreach ($note as $v ){
+                $cateNote[$v['id']] = $v['name'];
+            }
+        }
+
         foreach ( $row as &$v ){
-            $v['msg_type'] = $note[$v['msg_type']];
+            $v['msg_type'] = empty($note) ? '': $cateNote[$v['msg_type']];
             $v['msg_time'] =  Helper::time_tran($v['msg_time']);
         }
 
@@ -54,8 +61,7 @@ class Message extends AdminBase
      */
     public function dispose( $id ){
         if( $this->request->isPost() ){
-            $row = '';
-            $msgRow = $this->feedBack->where(['id'=>$id])->update(['msg_status'=>1]);
+            $msgRow = $this->feedBack->where(['s_id'=>$this->instance_id,'id'=>$id])->update(['msg_status'=>1]);
             if( $msgRow ){
                 $this->success('操作成功');
             }else{
@@ -69,7 +75,6 @@ class Message extends AdminBase
      * 反馈列表
      */
     public function messageList(){
-        $list = [];
         $size = 10;
         $page = 1;
         $start_time = $end_time = $keyword = $cid = $msg_status = '';
@@ -90,25 +95,28 @@ class Message extends AdminBase
         if ($start_time != '' && $end_time !=  '') {
             $condition["msg_time"] = [
                 [
-                    ">",
+                    ">=",
                     $startTime
                 ],
                 [
-                    "<",
+                    "<=",
                     $endTime
                 ]
             ];
         } elseif ($start_time != '' && $end_time == '') {
             $condition["msg_time"] = [
-                    ">",
+                    ">=",
                 $startTime
             ];
         } elseif ($start_time == '' && $end_time != '') {
             $condition["msg_time"] = [
-                    "<",
+                    "<=",
                 $endTime
             ];
         }
+
+        $condition['s_id'] = $this->instance_id;
+
         $number = ($page*$size)-$size;
         $limit = $number.','.$size;
         $list = Db::name('feed_back')->where($condition)->order('msg_time desc')->limit($limit)->select()->toArray();
@@ -133,6 +141,7 @@ class Message extends AdminBase
             }
 
             $row = Db::name('feed_back')->where([
+                's_id'=>$this->instance_id,
                 'id'=>$params['id']
             ])->update([
                 'note'=>$params['msg']
@@ -158,7 +167,8 @@ class Message extends AdminBase
             }
             //查询信息
             $row = Db::name('feed_back')->where([
-                'id'=>$params['id']
+                'id'=>$params['id'],
+                's_id'=>$this->instance_id,
                 ])->field('msg_img,msg_time,msg_time,address,user_name,msg_content,msg_time,msg_type_name')->find();
 
             //修改查看状态
@@ -189,7 +199,7 @@ class Message extends AdminBase
     }
 
     /**
-     * 添加栏目
+     * 添加消息栏目
      * @param string $pid
      * @return mixed
      */
@@ -199,13 +209,14 @@ class Message extends AdminBase
     }
 
     /**
-     * 保存栏目
+     * 保存消息栏目
      */
     public function messageCategorySave()
     {
         if ($this->request->isPost()) {
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Category');
+            $data['s_id'] = $this->instance_id;
 
             if ($validate_result !== true) {
                 $this->error($validate_result);
@@ -224,19 +235,19 @@ class Message extends AdminBase
     }
 
     /**
-     * 编辑栏目
+     * 编辑消息栏目
      * @param $id
      * @return mixed
      */
     public function messageCategoryEdit($id)
     {
-        $category = $this->category_model->find($id);
+        $category = $this->category_model->where(['s_id'=>$this->instance_id])->find($id);
 
         return $this->fetch('message_category_edit', ['category' => $category]);
     }
 
     /**
-     * 更新栏目
+     * 更新消息栏目
      * @param $id
      */
     public function messageCategoryUpdate($id)
@@ -247,15 +258,16 @@ class Message extends AdminBase
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
-                $children = $this->category_model->where(['path' => ['like', "%,{$id},%"]])->column('id');
+                $children = $this->category_model->where(['path' => ['like', "%,{$id},%"],'s_id'=>$this->instance_id])->column('id');
                 if( $data['is_hide'] == 1){
                     $map = [
-                        'id' => ['in',implode(',',$children)]
+                        'id' => ['in',implode(',',$children)],
+                        's_id'=>$this->instance_id
                     ];
                     //父类隐藏 所有子类都隐藏
                     $this->category_model->where($map)->update(['is_hide' => 1]);
                     //子类开启父类也开启
-                    $this->category_model->where(['id'=>$data['pid']])->update(['is_hide' => 1]);
+                    $this->category_model->where(['id'=>$data['pid'],'s_id'=>$this->instance_id])->update(['is_hide' => 1]);
                 }
                 if (in_array($data['pid'], $children)) {
                     $this->error('不能移动到自己的子分类');
@@ -271,13 +283,13 @@ class Message extends AdminBase
     }
 
     /**
-     * 删除栏目
+     * 删除消息栏目
      * @param $id
      */
     public function messageCategoryDelete($id)
     {
-        $category = $this->category_model->where(['pid' => $id])->find();
-        $goods  = Db::name('feed_back')->where(['msg_type' => $id])->find();
+        $category = $this->category_model->where(['pid' => $id,'s_id'=>$this->instance_id])->find();
+        $goods  = Db::name('feed_back')->where(['msg_type' => $id,'s_id'=>$this->instance_id])->find();
 
         if (!empty($category)) {
             $this->error('此分类下存在子分类，不可删除');

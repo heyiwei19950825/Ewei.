@@ -5,8 +5,17 @@ use think\Model;
 use think\Session;
 use think\Db;
 
-class Goods extends Model
+class Goods extends BaseModel
 {
+
+    protected $table = 'goods';
+
+    public function __construct()
+    {
+        $this->table = config('database.prefix').$this->table;
+        parent::__construct();
+    }
+
     /**
      * 查询商品列表信息
      * @param array $map

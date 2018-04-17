@@ -26,33 +26,45 @@ class Prize extends AdminBase
     public function index(){
         $uid = $this->instance_id;
         if( $this->request->isPost()){
-
+            $goods_id = $rule_odds = $integral = $rule = $photo = $describe =  '';
+            $rule_odds_count = 0;
             $params = $this->request->param();
-            if ($params['integral'] == ''){
+            extract($params);
+
+            if ($integral == ''){
                 $this->error('请填写消耗积分数量');
             }
-            $rule = '';
 
-            $rule_odds = 0;
-            foreach ($params['goods_id'] as $k=>$v ){
-                if($v == '' && $params['rule_odds'][$k] == ''){
+            if( $goods_id == ''){
+                $this->error('请填写中奖规则');
+            }
+            if( $rule_odds == ''){
+                $this->error('请填写中奖概率');
+            }
+            if( $photo == ''){
+                $this->error('请添加轮播图');
+            }
+
+
+            foreach ($goods_id as $k=>$v ){
+                if($v == '' && $rule_odds[$k] == ''){
                     continue;
                 }
-                if($v != '' && $params['rule_odds'][$k] == ''){
+                if($v != '' && $rule_odds[$k] == ''){
                     $this->error('请填写完整规则');
                 }
                 $rule[$k] = [
                     'goods_id'=> $v,
-                    'rule_odds'=> $params['rule_odds'][$k]
+                    'rule_odds'=> $rule_odds[$k]
                 ];
-                $rule_odds +=  $params['rule_odds'][$k]+0;
+                $rule_odds_count +=  $rule_odds[$k]+0;
             }
 
             if(count($rule) < 12 ){
                 $this->error('请选填12个奖品信息');
             }
 
-            if($rule_odds  !== 100 ){
+            if($rule_odds_count  !== 100 ){
                 $this->error('中奖几率相加必须为100');
             }
 
@@ -66,17 +78,20 @@ class Prize extends AdminBase
                     'uid'=>$uid
                 ])->update([
                     'rule' => $rule,
-                    'integral' => $params['integral']
+                    'integral' => $integral,
+                    'photo' =>  implode(',',$photo),
+                    'describe' => $describe
                 ]);
             }else{
                 Db::name('prize')->insert([
                     'uid' => $uid,
                     'rule' => $rule,
-                    'integral' => $params['integral']
+                    'integral' => $integral,
+                    'photo' =>  implode(',',$photo),
+                    'describe' => $describe
                 ]);
             }
             $this->success('操作成功');
-
         }else{
 
             $map = $rule = [];
@@ -90,19 +105,28 @@ class Prize extends AdminBase
             if($prize){
                 $rule = json_decode($prize['rule'],true);
                 $integral = $prize['integral'];
-                foreach ( $rule  as $k => &$v){
-                    $map['id'] = $v['goods_id'];
-                    $goodsInfo = $this->goods->getGoodsList($map,false,0,0,'id,name,content,thumb,sp_integral,need_rank')->toArray();
-                    if( !empty($goodsInfo) ){
-                        $v['goodsInfo'] = $goodsInfo[0];
-                    }else{
-                        $v['goodsInfo'] = [];
+                $photo = $prize['photo'];
+
+                if($photo != NULL ){
+                    $photo = explode(',',$prize['photo']);
+                }
+
+                if( !empty($rule) ){
+                    foreach ( $rule  as $k => &$v){
+                        $map['id'] = $v['goods_id'];
+                        $goodsInfo = $this->goods->getGoodsList($map,false,0,0,'id,name,content,thumb,sp_integral,need_rank')->toArray();
+                        if( !empty($goodsInfo) ){
+                            $v['goodsInfo'] = $goodsInfo[0];
+                        }else{
+                            $v['goodsInfo'] = [];
+                        }
                     }
                 }
+
             }
 
-            
-            return $this->fetch('',['rule'=>$rule,'integral'=>$integral]);
+
+            return $this->fetch('',['rule'=>$rule,'integral'=>$integral,'describe'=>$prize['describe'],'photo'=>$photo]);
         }
 
     }

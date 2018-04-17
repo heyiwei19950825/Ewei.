@@ -4,108 +4,156 @@
     <!--tab标签-->
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">
-            <li class="layui-this">小程序配置</li>
-            <li>公众号配置</li>
+            <li class="layui-this">微信配置</li>
+            <li>系统设置</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" action="{:url('admin/system/updateSiteConfig')}" method="post">
-                    <fieldset class="layui-elem-field" >
-                        <legend><b>小程序配置</b></legend>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">网站开关</label>
-                            <div class="layui-input-block">
-                                <input type="hidden" name="site_config[switch]" value="{$site_config.switch|default=''}" class="site_switch" >
-                                <input type="checkbox" {if condition="$site_config.switch == 'true' "} checked{/if} lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF" >
+                <div class="layui-tab layui-tab-card">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">小程序配置</li>
+                            <li>公众号配置</li>
+                            <li>支付配置</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <fieldset class="layui-elem-field" >
+                                        <legend><b>小程序配置</b></legend>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">网站开关</label>
+                                            <div class="layui-input-block">
+                                                <input type="hidden" name="x_switch" value="{$site_config.switch|default=''}" class="site_switch" >
+                                                <input type="checkbox" {if condition="$site_config.x_switch == 1 "} checked{/if} lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF" >
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">网站关闭后显示图片</label>
+                                            <div class="layui-input-inline layui-upload">
+                                                <input type="hidden" name="x_switch_img" value="" class="layui-input layui-input-inline" id="thumb">
+                                                <button type="button" class="layui-btn" data-path='uploads/goods_brand/' id="upload" data-width='640' data-height='1136'>上传图片</button>
+                                                <div class="layui-input-inline" style='margin-top:10px;'>
+                                                    <img class="layui-upload-img" id="demo1" style='width:100px;' src="{$site_config.x_switch_img|default=''}">
+                                                    <p id="demoText"></p>
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-mid layui-word-aux">推荐图片大小为640*1136</div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">公告</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name="x_inform" value="{$site_config.x_inform|default=''}" placeholder="请输入公告" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">网站域名</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name="x_domain" value="{$site_config.x_domain|default=''}" placeholder="请输入网站域名" autocomplete="off" class="layui-input" lay-verify="url">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">小程序AppID</label>
+                                            <div class="layui-input-block">
+                                                <input  type="text" name="x_app_id" placeholder="请输入AppID" class="layui-input" value="{$site_config.x_app_id|default=''}">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">小程序AppSecret</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" name="x_app_secret" value="{$site_config.x_app_secret|default=''}" placeholder="请输入AppSecret" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                    </fieldset>
                             </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">网站公告</label>
-                            <div class="layui-input-block">
-                                <input type="text" name="site_config[inform]" value="{$site_config.inform|default=''}" placeholder="请输入网站公告" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">网站域名</label>
-                            <div class="layui-input-block">
-                                <input type="text" name="site_config[domain]" value="{$site_config.domain|default=''}" placeholder="请输入网站域名" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">小程序AppID</label>
-                            <div class="layui-input-block">
-                                <input  type="text" name="site_config[app_id]" placeholder="请输入AppID" class="layui-input" value="{$site_config.app_id|default=''}">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">小程序AppSecret</label>
-                            <div class="layui-input-block">
-                                <input type="text" name="site_config[app_secret]" value="{$site_config.app_secret|default=''}" placeholder="请输入AppSecret" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">帮助信息</label>
-                            <div class="layui-input-block">
-                                <textarea name="site_config[helper]" lay-verify="content" placeholder="" class="layui-textarea" id="content">{$site_config.helper}</textarea>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset class="layui-elem-field" >
-                        <legend><b>公众号配置</b></legend>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">网站开关</label>
-                            <div class="layui-input-block">
-                                <input type="hidden" name="site_config[switch]" value="{$site_config.switch|default=''}" class="site_switch" >
-                                <input type="checkbox" {if condition="$site_config.switch == 'true' "} checked{/if} lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF" >
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">网站公告</label>
-                            <div class="layui-input-block">
-                                <input type="text" name="site_config[inform]" value="{$site_config.inform|default=''}" placeholder="请输入网站公告" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">网站域名</label>
-                            <div class="layui-input-block">
-                                <input type="text" name="site_config[domain]" value="{$site_config.domain|default=''}" placeholder="请输入网站域名" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">公众号AppID</label>
-                            <div class="layui-input-block">
-                                <input  type="text" name="site_config[app_id]" placeholder="请输入AppID" class="layui-input" value="{$site_config.app_id|default=''}">
-                            </div>
-                        </div>
-                        <div class="layui-form-item">
-                            <label class="layui-form-label">公众号AppSecret</label>
-                            <div class="layui-input-block">
-                                <input type="text" name="site_config[app_secret]" value="{$site_config.app_secret|default=''}" placeholder="请输入AppSecret" autocomplete="off" class="layui-input">
-                            </div>
-                        </div>
+                            <div class="layui-tab-item">
+                                <fieldset class="layui-elem-field" >
+                                    <legend><b>公众号配置</b></legend>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">公众号开关</label>
+                                        <div class="layui-input-block">
+                                            <input type="hidden" name="switch" value="{$site_config.switch|default=''}" class="site_switch" >
+                                            <input type="checkbox" {if condition="$site_config.switch == 1 "} checked{/if} lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF" >
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">公告</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="inform" value="{$site_config.inform|default=''}" placeholder="请输入公告" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">网站域名</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="domain" value="{$site_config.domain|default=''}" placeholder="请输入网站域名" autocomplete="off" class="layui-input"  lay-verify="url">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">公众号AppID</label>
+                                        <div class="layui-input-block">
+                                            <input  type="text" name="app_id" placeholder="请输入AppID" class="layui-input" value="{$site_config.app_id|default=''}">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">公众号AppSecret</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="app_secret" value="{$site_config.app_secret|default=''}" placeholder="请输入AppSecret" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">公众号签名</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="app_noncestr" value="{$site_config.app_noncestr|default=''}" placeholder="请输入AppSecret" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
 
-                    </fieldset>
-                    <fieldset class="layui-elem-field" >
-                        <legend><b>支付配置</b></legend>
-                            <div class="layui-form-item">
-                            <label class="layui-form-label">商户号</label>
-                            <div class="layui-input-block">
-                                <input type="text" name="site_config[shop_id]" value="{$site_config.shop_id|default=''}" placeholder="请输入商户号" autocomplete="off" class="layui-input">
-                                </div>
+                                </fieldset>
                             </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">商户支付密钥</label>
-                                <div class="layui-input-block">
-                                    <input name="site_config[shop_key]" placeholder="请输入商户支付密钥" class="layui-input" value="{$site_config.shop_key|default=''}" >
-                                </div>
+                            <div class="layui-tab-item">
+                                <fieldset class="layui-elem-field" >
+                                    <legend><b>支付配置</b></legend>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">商户号</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="shop_id" value="{$site_config.shop_id|default=''}" placeholder="请输入商户号" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">商户支付密钥</label>
+                                        <div class="layui-input-block">
+                                            <input name="shop_key" placeholder="请输入商户支付密钥" class="layui-input" value="{$site_config.shop_key|default=''}" >
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">小程序支付回调地址</label>
+                                        <div class="layui-input-block">
+                                            <input name="x_pay_back_url" placeholder="请输入支付回调地址" class="layui-input" value="{$site_config.pay_back_url|default=''}"  lay-verify="url">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">公众号支付回调地址</label>
+                                        <div class="layui-input-block">
+                                            <input name="pay_back_url" placeholder="请输入支付回调地址" class="layui-input" value="{$site_config.pay_back_url|default=''}"  lay-verify="url">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">微信支付apiclient_cert</label>
+                                        <div class="layui-input-block">
+                                            <textarea name="apiclient_cert" placeholder="请输入内容" class="layui-textarea" >{$site_config.apiclient_cert|default=''}</textarea>
+                                            <div class="layui-form-mid layui-word-aux">使用文本编辑器打开apiclient_cert.pem文件，将文件的全部内容复制进来</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">微信支付apiclient_key</label>
+                                        <div class="layui-input-block">
+                                            <textarea name="apiclient_key" placeholder="请输入内容" class="layui-textarea">{$site_config.apiclient_key|default=''}</textarea>
+                                            <div class="layui-form-mid layui-word-aux">使用文本编辑器打开apiclient_key.pem文件，将文件的全部内容复制进来</div>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">支付回调地址</label>
-                                <div class="layui-input-block">
-                                    <input name="site_config[pay_back_url]" placeholder="请输入支付回调地址" class="layui-input" value="{$site_config.pay_back_url|default=''}" >
-                                </div>
-                            </div>
-                     </fieldset>
+                        </div>
+                    </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <button class="layui-btn" lay-submit lay-filter="*">提交</button>
@@ -124,11 +172,11 @@
 <script src="__JS__/ueditor/ueditor.all.min.js"></script>
 
 <script>
-    var ue = UE.getEditor('content');
+//    var ue = UE.getEditor('content');
 
     //监听指定开关
     form.on('switch(switchTest)', function(data){
-        var switch_val = this.checked ? 'true' : 'false';
+        var switch_val = this.checked ? 1 : 0;
         $('.site_switch').val(switch_val);
     });
 </script>

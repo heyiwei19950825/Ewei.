@@ -89,7 +89,7 @@
                 <div class="col-lg-3">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <span class="label label-success pull-right">全部</span>
+                            <span class="label label-success pull-right" > 全部 </span>
                             <h5>收入</h5>
                         </div>
                         <div class="ibox-content">
@@ -247,9 +247,9 @@
     $(function() {
         var orderList = [];
 
-        layer.load(0, {
-            shade: [0.1, '#393D49']
-        });
+//        layer.load(0, {
+//            shade: [0.1, '#393D49']
+//        });
 //        机器状态定时查询
         setInterval(function () {
             $.post('/api/v2/internet/api', {
@@ -338,6 +338,7 @@
                 if (e.code == 1) {
                     orderList = e.data.data;
                     var checkNumber = 0;
+
                     for (var v in orderList) {
                         check = '';
                         machineHtml = '';
@@ -353,6 +354,7 @@
                             var vals = machineList[vs];
                             machineHtml += '<span>' + vals.machine_number + '机器 预定' + vals.duration + '小时</span></br>'
                         }
+
                         var htmlDiv = '<div>' +
                                 '<small class="pull-right text-navy">'+val.time+'</small> ' +
                                 '<strong>'+val.order_no+'</strong> ' + check +

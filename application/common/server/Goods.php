@@ -18,18 +18,12 @@ class Goods extends BaseServer {
     }
 
     public function getGoodsListByIds($ids= ''){
-    	$field = 'id,name,cid,thumb,status,sort,sp_price,sp_o_price,status,prefix_title,sp_inventory,sp_market,publish_time';
-        $data = $list = array();
+        $field = 'id,name,cid,thumb,status,sort,sp_price,sp_o_price,status,prefix_title,sp_inventory,sp_market,publish_time';
         if( $ids != ''){
+            $map['id'] = ['in',$ids];
             //数据处理
-            $ids .= '0';
-            $goods_list = $this->goods_model->where('id','in',$ids)->field($field)->select()->toArray();
-            foreach ($goods_list as $key => $value) {
-                $value['status'] = $value['status'] == 1?'审核通过':'未审核通过';
-                $list[$key] = $value;
-            }
+            $goods_list = $this->goods_model->pageQuery(0,0,$map,'id desc',$field);
+            return $goods_list['data'];
         }
-
-        return $list;
     }
 }

@@ -7,9 +7,13 @@
  */
 namespace app\common\model;
 
-use app\Common\Model\BaseModel;
-
 
 class Province extends BaseModel {
+    protected $table = 'province';
 
+    public function __construct()
+    {
+        $this->table = config('database.prefix').$this->table;
+        parent::__construct();
+    }
 }

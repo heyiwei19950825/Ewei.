@@ -1,10 +1,13 @@
 <?php
 namespace app\common\model;
 
-use think\Db;
-use think\Model;
-
-class Shop extends Model
+class Shop extends BaseModel
 {
-   
+    protected $table = 'shop';
+
+    public function __construct()
+    {
+        $this->table = config('database.prefix').$this->table;
+        parent::__construct();
+    }
 }

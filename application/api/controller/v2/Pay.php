@@ -24,8 +24,19 @@ class Pay extends BaseController
     public function _initialize(){
         parent::_initialize();
         $this->uid = Token::getCurrentUid();
-//        $this->uid = 9;
         User::verifyAttestation($this->uid);
+        $wxConfig = config('wx');
+
+
+        //微信支付配置
+        define('APPID', $wxConfig['wx_id']);
+        define('MCHID', $wxConfig['shop_id']);
+        define('KEY', $wxConfig['shop_key']);
+        define('APPSECRET', $wxConfig['wx_noncestr']);
+
+
+        define('SSLCERT_PATH', $wxConfig['apiclient_cert']);
+        define('SSLKEY_PATH', $wxConfig['apiclient_key']);
     }
 
     //创建微信支付订单
@@ -72,13 +83,14 @@ class Pay extends BaseController
         $wxOrderData->SetTotal_fee($totalPrice * 100);
         $wxOrderData->SetBody($body);
         $wxOrderData->SetOpenid($openid);
-        $wxOrderData->SetNotify_url(config('setting.pay_back_url'));
+        $wxOrderData->SetNotify_url(config('wx.pay_back_url'));
 
         return $this->getPaySignature($wxOrderData);
     }
 
     private function getPaySignature($wxOrderData)
     {
+
         $wxOrder = \WxPayApi::unifiedOrder($wxOrderData);
         // 失败时不会返回result_code
         if($wxOrder['return_code'] != 'SUCCESS' || $wxOrder['result_code'] !='SUCCESS'){
@@ -92,6 +104,7 @@ class Pay extends BaseController
 
 
     private function recordPreOrder($wxOrder){
+
         // 必须是update，每次用户取消支付后再次对同一订单支付，prepay_id是不同的
         Db::name('internet_order')->where('order_no', '=', $this->orderNo)
             ->update(['prepay_id' => $wxOrder['prepay_id']]);

@@ -95,7 +95,7 @@ class WxNotify extends \WxPayNotify
         Db::startTrans();
         try {
             InternetOrder::where('order_no', '=', $order['order_no'])
-                ->update(['status' => 1]);
+                ->update(['status' => 1,'pay_time'=>time()]);
             InternetOrderMachine::where('order_no','=',$order['order_no'])
                 ->update(['status'=>1]);
             $machineList = InternetOrderMachine::where('order_no','=',$order['order_no'])->select()->toArray();
@@ -169,7 +169,7 @@ class WxNotify extends \WxPayNotify
         }
 
         Order::where('id', '=', $order['id'])
-            ->update(['order_status' => $status,'transaction_id'=>$data['transaction_id']]);
+            ->update(['order_status' => $status,'transaction_id'=>$data['transaction_id'],'pay_time'=>time()]);
     }
 
     private function updateShopBrief($free,$order){

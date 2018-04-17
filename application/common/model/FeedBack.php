@@ -9,6 +9,8 @@
 namespace app\common\model;
 
 
-class FeedBack extends BaseModel {
+use think\Model;
+
+class FeedBack extends Model {
 
 }

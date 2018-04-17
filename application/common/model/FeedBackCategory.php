@@ -9,7 +9,9 @@
 namespace app\common\model;
 
 
-class FeedBackCategory extends BaseModel
+use think\Model;
+
+class FeedBackCategory extends Model
 {
     protected $insert = ['create_time'];
 

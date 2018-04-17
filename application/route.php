@@ -19,6 +19,9 @@ Route::post('admin/internet/internetMachineAdd', 'admin/Subscribe/internetMachin
 Route::post('admin/internet/relevanceCheck', 'admin/Subscribe/relevanceCheck');//网吧机器配置列表
 Route::post('admin/internet/relevanceSave', 'admin/Subscribe/relevanceSave');//保存网吧机器配置
 Route::post('admin/internet/internetBarSting', 'admin/Subscribe/internetBarSting');//保存网吧配置
+Route::get('admin/finance/internet', 'admin/Subscribe/internetFinance');//网吧财务报表
+Route::post('admin/finance/internet', 'admin/Subscribe/internetFinance');//网吧财务报表
+
 Route::post('admin/internet/delRule', 'admin/Subscribe/delRule');//删除配置规则
 Route::get('admin/virtual/goods', 'admin/Goods/virtual');//虚拟商品
 Route::post('admin/internet/orderList', 'admin/Subscribe/getOrderList');//订单列表
@@ -210,6 +213,7 @@ Route::post('api/:version/wechat/config', 'api/:version.WeChat/wxConfig');
 //定时任务
 Route::get('api/:version/collective/check', 'api/:version.Collective/checkCollectiveStatus');//团购失败退款任务
 Route::get('api/:version/order/check', 'api/:version.Order/checkOrderStatus');//删除超时订单
+Route::get('api/:version/goods/check', 'api/:version.Goods/checkGoodsStatus');//检测商品状态
 
 
 

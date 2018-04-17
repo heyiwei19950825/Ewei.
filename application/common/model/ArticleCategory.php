@@ -77,13 +77,13 @@ class ArticleCategory extends Model
     }
 
     /**
-    *   根据父类ID查询该分类下面的所有分类ID
-    **/
+     *   根据父类ID查询该分类下面的所有分类ID
+     **/
     public function getChildrenId( $cid )
     {
         //查询
         $category_children_ids = $this->where(['path' => ['like', "%,{$cid},%"]])->column('id');
-        
+
         //拼接成字符串
         $category_children_ids = (!empty($category_children_ids) && is_array($category_children_ids)) ? implode(',', $category_children_ids) . ',' . $cid : $cid;
 

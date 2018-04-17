@@ -28,7 +28,7 @@ class Goods extends BaseController
         $map['is_virtual']       = 1;
         $map['sp_inventory']     = ['>',0];
         $isGroup = $this->request->param('isGroup',1);
-        $type= $this->request->param('type');
+        $type= $this->request->param('type','');
         $field = 'id,name,content,thumb,sp_integral,need_rank,sp_inventory';
         if($type == 'integral' ){
             $map['is_integral'] = 1;
@@ -39,6 +39,11 @@ class Goods extends BaseController
             $field .=',sp_price';
             $map['sp_price'] = ['>',0];
         }
+
+        if($type == ''){
+            $map['is_recommend'] =  1;
+        }
+
 
         $row = $this->goods->getGoodsList($map,false,0,0,$field);
         $data = [];

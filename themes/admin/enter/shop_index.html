@@ -1,0 +1,81 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">商家入驻列表</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form action="" method="post" class="ajax-form">
+                    <table class="layui-table">
+                        <thead>
+                        <tr>
+                            <th style="width: 30px;">ID</th>
+                            <th>店铺名称</th>
+                            <th>店铺分类</th>
+                            <th>申请人</th>
+                            <th>登录密码</th>
+                            <th>手机号</th>
+                            <th>微信号</th>
+                            <th>详细地址</th>
+                            <th>申请理由</th>
+                            <th>申请时间</th>
+                            <th>状态</th>
+                            <th>平台描述</th>
+                            <th style="width: 300px;">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach name="list" item="vo"}
+                        <tr>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.shop_name}</td>
+                            <td>{$vo.shop_category}</td>
+                            <td>{$vo.user_name}</td>
+                            <td>{$vo.password}</td>
+                            <td>{$vo.user_phone}</td>
+                            <td>{$vo.wechat}</td>
+                            <td>{$vo.address}</td>
+                            <td>{$vo.reason}</td>
+                            <td>{$vo.enter_time}</td>
+                            <td>
+                                {switch name="$vo.status" }
+                                {case value="0" }申请中{/case}
+                                {case value="1"}不同意{/case}
+                                {case value="2"}同意{/case}
+                                {/switch}
+                            </td>
+                            <td>{$vo.description}</td>
+                            <td>
+                                <div class="layui-btn layui-btn-warm a9" data-id="{$vo['id']}" data-status="2">通过</div>
+                                <div class="layui-btn layui-bg-red a9" data-id="{$vo['id']}" data-status="1">不通过</div>
+                            </td>
+                            </td>
+                        </tr>
+                        {/foreach}
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 添加备注
+    $(document).on("click", ".a9", function() {
+        var id = $(this).attr('data-id');
+        var status = $(this).attr('data-status');
+        layer.prompt(function(val, index){
+            var description = val;
+            $.post("{:url('admin/enter/optionStatus')}",{id:id,description:description,status:status},function(e){
+                layer.msg(e.msg);
+//                window.location.reload();
+            })
+            layer.close(index);
+        });
+    });
+</script>
+{/block}

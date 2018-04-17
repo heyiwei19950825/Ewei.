@@ -3,6 +3,7 @@ namespace app\admin\controller;
 
 use app\common\controller\AdminBase;
 use app\common\model\Order as OrderModel;
+use app\common\model\Shop;
 use app\common\model\UserCollective;
 use app\common\model\OrderGoods as OrderGoodsModel;
 use app\common\model\User as UserModel;
@@ -32,6 +33,7 @@ class Order extends AdminBase
     protected $category_model;
     protected $express_model;
     protected $user_collective;
+    protected $shop_model;
 
     protected function _initialize()
     {
@@ -43,9 +45,7 @@ class Order extends AdminBase
         $this->category_model  = new Category();
         $this->express_model  = new ExpressCompany();
         $this->user_collective  = new UserCollective();
-
-        //获取商家信息
-        $sid = $this->shop['id'];
+        $this->shop_model  = new Shop();
     }
 
     /**
@@ -56,7 +56,7 @@ class Order extends AdminBase
             //初始化数据
             $condition = [];
             $page = 1;
-            $order_no = $user_name = $start_time = $end_time = $order_from = $order_type = $order_status = $shop_id = $type = '';
+            $order_no = $user_name = $start_time = $end_time = $order_from = $order_type = $order_status = $shop_id = $type = $order_shop = '';
             $params = $this->request->param();
 
             extract($params);
@@ -67,12 +67,6 @@ class Order extends AdminBase
             if($end_time != ''){
                 $end_time = strtotime($end_time);
             }
-            //商家ID
-            if($shop_id !=''){
-                $shop_id = $shop_id+0;
-                $condition['shop_id'] = $this->shop_id;
-            }
-
             //时间查询
             if ($start_time != 0 && $end_time != 0) {
                 $condition["create_time"] = [
@@ -114,6 +108,9 @@ class Order extends AdminBase
                 $order_from = $order_from +0;
                 $condition['order_from'] = $order_from;
             }
+            if( $order_shop != '' && $order_shop  != 0){
+                $condition['o.s_id'] = $order_shop;
+            }
 
             //订单状态
             if( $order_status != ''){
@@ -121,12 +118,12 @@ class Order extends AdminBase
 
                 $condition['o.order_status'] = $order_status;
             }
+
             //订单类型
-            if( $order_type != '' ){
+            if( $order_type != 0 ){
                 $order_type = $order_type +0;
                 $condition['o.order_type'] = $order_type;
             }
-
             //导出订单列表信息
             if($type == 'export'){
                 $xlsName = "订单数据列表";
@@ -134,6 +131,7 @@ class Order extends AdminBase
                 $xlsCell = array(
                     array(
                         '订单编号',
+                        '店铺名称',
                         '订单类型',
                         '成交金额',
                         '会员昵称',
@@ -147,67 +145,81 @@ class Order extends AdminBase
                         '商品信息',
                     )
                 );
-                $field = 'o.id,o.order_no,o.order_type,o.order_money,o.point,o.user_name,o.receiver_name,o.receiver_mobile,o.receiver_province,o.receiver_city,o.receiver_district,o.receiver_address,o.order_status,o.pay_time,o.buyer_message,o.cancel_note';
-                $list = $this->orderModel->getOrderList(0,999, $condition, 'create_time desc',false,$field)->toArray();
-                foreach ($list as &$v){
-                    //收货地址
-                    $addressRow['province'] = Region::getRegionName($v['receiver_province']);//省
-                    $addressRow['city'] = Region::getRegionName($v['receiver_city']);//市
-                    $addressRow['district'] = Region::getRegionName($v['receiver_district']);//区
-                    $v['receiver_address'] = $addressRow['province'].' '.$addressRow['city'].' '.$addressRow['district'].$v['receiver_address'];
-                    unset($v['receiver_province']);
-                    unset($v['receiver_city']);
-                    unset($v['receiver_district']);
+                $field = 'o.id,o.order_no,o.s_id,o.order_type,o.order_money,o.point,o.user_name,o.receiver_name,o.receiver_mobile,o.receiver_province,o.receiver_city,o.receiver_district,o.receiver_address,o.order_status,o.pay_time,o.buyer_message,o.cancel_note';
+                $list = $this->orderModel->getOrderList(0,999, $condition, 's_id asc,create_time desc',false,$field)->toArray();
+                if($list){
+                    foreach ($list as &$v){
+                        //收货地址
+                        $addressRow['province'] = Region::getRegionName($v['receiver_province']);//省
+                        $addressRow['city'] = Region::getRegionName($v['receiver_city']);//市
+                        $addressRow['district'] = Region::getRegionName($v['receiver_district']);//区
 
-                    //订单价格
-                    if($v['point'] != 0 ){
-                        $v['order_money'] = $v['point'].'积分';
+                        $v['receiver_address'] = $addressRow['province'].' '.$addressRow['city'].' '.$addressRow['district'].$v['receiver_address'];
+                        unset($v['receiver_province']);
+                        unset($v['receiver_city']);
+                        unset($v['receiver_district']);
+
+                        //订单价格
+                        if($v['point'] != 0 ){
+                            $v['order_money'] = $v['point'].'积分';
+                            unset($v['point']);
+                        }
+
+                        //订单商品详情
+                        $goods_info  = Db::name('order_product')->field('goods_name,num,goods_money,integral_money,point_exchange_type')->where([
+                            'order_id'=>$v['id']
+                        ])->select()->toArray();
+
+                        $goodsInfo = '';
+                        foreach ($goods_info as $gv){
+                            $money = $gv['point_exchange_type']==1?$gv['integral_money'].'积分':$gv['goods_money'];
+                            $goodsInfo .= $gv['goods_name'].' 购买'.$gv['num'].'件'.'商品总计'.$money.' |||| ';
+                        }
+                        $v['goods_info'] = trim($goodsInfo,' |||| ');
+                        unset($v['id']);
+                        $type = config('order.type');
+                        $status = config('order.status');
+                        $v['order_type'] = $type[$v['order_type']];
+                        $v['s_id']    = $this->shop_model->getInfo(['id'=>$v['s_id']],'shop_name')['shop_name'];
+                        $v['order_status'] = $status[$v['order_status']];
+                        $v['pay_time']  = date('Y-m-d H:i:s',$v['pay_time']);
                         unset($v['point']);
                     }
-                    //订单商品详情
-                   $goods_info  = Db::name('order_product')->field('goods_name,num,goods_money,integral_money,point_exchange_type')->where([
-                       'order_id'=>$v['id']
-                   ])->select()->toArray();
-                    $goodsInfo = '';
-                    foreach ($goods_info as $gv){
-                        $money = $gv['point_exchange_type']==1?$gv['integral_money'].'积分':$gv['goods_money'];
-                        $goodsInfo .= $gv['goods_name'].' 购买'.$gv['num'].'件'.'商品总计'.$money.' |||| ';
-                    }
-                    $v['goods_info'] = trim($goodsInfo,' |||| ');
-                    unset($v['id']);
-                    $type = config('order.type');
-                    $status = config('order.status');
-                    $v['order_type'] = $type[$v['order_type']];
-                    $v['order_status'] = $status[$v['order_status']];
-                    $v['pay_time']  = date('Y-m-d H:i:s',$v['pay_time']);
-                    unset($v['point']);
+                    $data = array_merge($xlsCell,$list);
+                    Helper::exportExport($xlsName,$data);die;
+                }else{
+                    return $this->error('暂无数据无法导出');
                 }
-
-                $data = array_merge($xlsCell,$list);
-                Helper::exportExport($xlsName,$data);die;
             }
 
 
-            $field = 'o.id,o.is_vip,o.seller_memo,o.order_no,o.shop_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name,point,is_virtual';
+            $field = 'o.id,o.is_vip,o.seller_memo,o.order_no,o.s_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name,point,is_virtual';
             //根据条件获取订单数据
-            $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'create_time desc',true,$field);
-            $order_list = $list->toArray();
-            foreach ( $order_list['data'] as &$v ){
-                $orderConfig = Config::get('order');
-                $v['status'] = $v['order_status'];//订单状态
-                $v['type'] = $v['order_type'];//订单类型
-                //判断是积分
-                if( $v['order_type'] == 2 ){
-                    $v['order_money'] = $v['point'];
+            $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'o.s_id asc,create_time desc',true,$field);
+            //检测是否有数据
+            if($list){
+                $order_list = $list->toArray();
+                foreach ( $order_list['data'] as &$v ){
+                    $orderConfig = Config::get('order');
+                    $v['status'] = $v['order_status'];//订单状态
+                    $v['type'] = $v['order_type'];//订单类型
+                    //判断是积分
+                    if( $v['order_type'] == 2 ){
+                        $v['order_money'] = $v['point'];
+                    }
+
+                    $v['order_status'] = $orderConfig['status'][$v['order_status']];
+
+                    $v['create_time'] = date('Y-m-d H:i:s',$v['create_time']);
+                    $v['order_type'] = $orderConfig['type'][$v['order_type']];//订单类型
+                    $v['order_type'] = $v['is_vip'] ==1 ?'VIP订单':$v['order_type'];
+                    $v['order_from'] = $orderConfig['from'][$v['order_from']];//订单来源
+                    $v['shop']    = $this->shop_model->getInfo(['id'=>$v['s_id']],'shop_name,shop_logo');
                 }
-
-                $v['order_status'] = $orderConfig['status'][$v['order_status']];
-
-                $v['create_time'] = date('Y-m-d H:i:s',$v['create_time']);
-                $v['order_type'] = $orderConfig['type'][$v['order_type']];//订单类型
-                $v['order_type'] = $v['is_vip'] ==1 ?'VIP订单':$v['order_type'];
-                $v['order_from'] = $orderConfig['from'][$v['order_from']];//订单来源
+            }else{
+                $order_list = [];
             }
+
 
             if($start_time != ''){
                 $start_time = date('Y-m-d H:i:s',$start_time);
@@ -216,19 +228,21 @@ class Order extends AdminBase
                 $end_time   = date('Y-m-d H:i:s',$end_time);
             }
 
-        return $this->fetch('index', [
-                'list' => $list,
-                'order_list'=>$order_list['data'],
-                'order_no'=>$order_no,
-                'start_time'=>$start_time,
-                'end_time'=>$end_time,
-                'user_name'=>$user_name,
-                'order_from'=>$order_from,
-                'order_type'=>$order_type,
-                'order_status'=>$order_status,
-                'sid'=>$this->sid,
-                'shop_id'=>$shop_id
-            ]);
+            $shopList = $this->shop_model->pageQuery(0,0,[],'id desc','shop_name,id');
+            return $this->fetch('index', [
+                    'list' => $list,
+                    'order_list'=>$order_list['data'],
+                    'order_no'=>$order_no,
+                    'start_time'=>$start_time,
+                    'end_time'=>$end_time,
+                    'user_name'=>$user_name,
+                    'order_from'=>$order_from,
+                    'order_type'=>$order_type,
+                    'order_status'=>$order_status,
+                    'sid'=>$this->sid,
+                    'shop_id'=>$order_shop,
+                    'shop_list' => $shopList['data']
+                ]);
     }
 
     /**
@@ -253,6 +267,7 @@ class Order extends AdminBase
             $this->error('错误的订单~');
         }
         $orderConfig = Config::get('order');
+
         //订单详情
         $orderRow = $this->orderModel->getOrderDetail( $id);
 
@@ -275,20 +290,20 @@ class Order extends AdminBase
             'order_money' => $orderRow['type'] == 2 ?$orderRow['point']:round($orderRow['order_money'],2),//订单价格
             'is_vip' => $orderRow['is_vip'],//是否是VIP价格购买
         ];
-
         //团购信息
-        $collective = '';
+        $collective = [];
         if($orderRow['order_type'] == '团购订单' ){
             $collectiveNote = ['开团中','开团成功','开团失败','未支付','开团失败并已退款'];
-            $collective = $this->user_collective->where(['order_id'=>$id])->find();
+            $collective = $this->user_collective->getInfo(['order_id'=>$id]);
             $collective = $this->user_collective->where(['collective_no'=>$collective['collective_no']])->select()->toArray();
             foreach ( $collective as &$item) {
                 $item['status'] = $collectiveNote[$item['status']];
             }
         }
-
         //用户信息
         $userRow = $this->userModel->getInfo($orderRow['buyer_id'],'id,nickname,portrait,rank_id,is_vip,mobile')->toArray();
+
+
         $userInfo = [
             'id' => $userRow['id'],
             'name' => $userRow['nickname'],
@@ -310,12 +325,15 @@ class Order extends AdminBase
         //订单商品详情
         $goodsField = 'o.goods_name,o.goods_id,o.goods_picture,o.goods_money,o.num,o.price,g.cid,g.id,o.goods_id,o.vip_price';
         $goodsList = $this->order_goods_model->alias('o')->join('goods g','g.id=o.goods_id','LEFT')->field($goodsField)->where(['order_id'=>$orderRow['id']])->select()->toArray();
+
         //查询商品对应分类
         foreach ($goodsList as &$v){
-            $category= $this->category_model->where(['id'=>$v['cid']])->find();
+            $category= $this->category_model->getInfo(['id'=>$v['cid']]);
+
             $v['category']  = $category['name'];
             $v['goods_money']  = $v['vip_price']!=0?$v['vip_price']*$v['num']:$v['goods_money'];
         }
+
         //备注
         $note = [
             'buy'=>$orderRow['buyer_message'],//买家留言
@@ -324,10 +342,11 @@ class Order extends AdminBase
         ];
 
         //快递信息
-        $expressRow = $this->order_goods_express->where(['order_no'=>$orderRow['order_no']])->select()->toArray();
+        $expressRow = $this->order_goods_express->pageQuery(1,10,['order_no'=>$orderRow['order_no']]);
         $express = [];
-        if( !empty($expressRow) ){
-            foreach ( $expressRow as $k=>$vs){
+
+        if( $expressRow['total_count'] != 0  ){
+            foreach ( $expressRow['data'] as $k=>$vs){
                 $express[$k] = [
                     'express_name' => $vs['express_name'],
                     'express_company' => $vs['express_company'],
@@ -337,15 +356,16 @@ class Order extends AdminBase
             }
         }
 
+
         //订单信息
         $order = [
-            'order_info' => $orderInfo,
-            'user_info'  => $userInfo,
-            'receiver'   => $receiver,
-            'goods_list' => $goodsList,
-            'note'       =>  $note,
-            'express'   =>  $express,
-            'collective'   =>  $collective,
+            'order_info'    => $orderInfo,
+            'user_info'     => $userInfo,
+            'receiver'      => $receiver,
+            'goods_list'    => $goodsList,
+            'note'          =>  $note,
+            'express'       =>  $express,
+            'collective'    =>  $collective,
         ];
 
         return $this->fetch('detail',['order'=>$order]);
@@ -362,20 +382,21 @@ class Order extends AdminBase
         }
 
         $field = 'order_no,receiver_mobile,cancel_note,receiver_name,receiver_province,receiver_district,receiver_city,receiver_address';
-        $row = $this->orderModel->field($field)->where(['id'=>$id])->find()->toArray();
+        $row =  $this->orderModel->getInfo(['id'=>$id],$field);
+
         //收货地址
         $addressRow['province'] = Region::getRegionName($row['receiver_province']);//省
         $addressRow['city'] = Region::getRegionName($row['receiver_city']);//市
         $addressRow['district'] = Region::getRegionName($row['receiver_district']);//区
-        $row['express'] = $this->express_model->field('id,company_name,image,express_logo,is_default')->where(['is_enabled'=>1])->select()->toArray();
-        $row['address'] = $addressRow['province'].' '.$addressRow['city'].' '.$addressRow['district'].$row['receiver_address'];
-        $row['goods_list'] = $this->order_goods_model->field('goods_id,goods_name,goods_picture')->where(['order_id'=>$id])->select()->toArray();
+        $row['express'] = $this->express_model->pageQuery()['data'];
 
+        $row['address'] = $addressRow['province'].' '.$addressRow['city'].' '.$addressRow['district'].$row['receiver_address'];
+        $row['goods_list'] = $this->order_goods_model->pageQuery(0,0,['order_id'=>$id],'goods_id,goods_name,goods_picture')['data'];
         return $this->fetch('deliver',['order'=>$row,'id'=>$id]);
     }
 
     /**
-     *
+     *修改状态
      */
     public function deliverOption(){
         if( $this->request->isPost()){
@@ -531,7 +552,7 @@ class Order extends AdminBase
                 "in",
                 '4,5,6'
         ];
-        $field = 'o.id,o.is_vip,o.seller_memo,o.order_no,o.shop_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name,point,is_virtual';
+        $field = 'o.id,o.is_vip,o.seller_memo,o.order_no,o.s_id,o.shop_name,o.order_from,o.order_type,o.order_status,o.user_name,o.order_type,o.buyer_message,o.receiver_mobile,o.cancel_note,o.receiver_name,o.order_money,o.create_time,p.goods_name,point,is_virtual';
         //根据条件获取订单数据
         $list = $this->orderModel->getOrderList($page, $this->page_size, $condition, 'create_time desc',$field);
         $order_list = $list->toArray();

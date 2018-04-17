@@ -23,7 +23,7 @@ class Shop extends BaseModel
     public static function getShopInfoById( $id=-1,$field = ''){
         $row = Db::name('shop')->where([
             'id'=>$id,
-            'shop_state' => 1,
+            'shop_status' => 1,
         ])->field($field)->find();
 
         return $row;

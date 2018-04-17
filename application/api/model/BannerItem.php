@@ -18,7 +18,7 @@ class BannerItem extends BaseModel
             ->order('sort asc')
             ->limit($limit)
             ->select();
-            
+
         return $row;
     }
 }

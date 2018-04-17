@@ -10,6 +10,21 @@
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" action="{:url('admin/goods/virtualAdd')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">所属分类</label>
+                        <div class="layui-input-block">
+                            <select name="cid" lay-verify="required">
+                                {if empty($category_level_list)}
+                                <option>暂无分类请先创建</option>
+                                {else}
+                                {foreach name="category_level_list" item="vo"}
+                                <option value="{$vo.id}" {eq name="vo.level" value="1"}disabled=""{/eq}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+                                {/foreach}
+                                {/if}
+
+                            </select>
+                        </div>
+                    </div>
                     <input type="hidden" name="is_virtual" value="1">
                     <div class="layui-form-item">
                         <label class="layui-form-label">商品名称</label>
@@ -101,6 +116,13 @@
                                 <div class="layui-input-block">
                                     <input type="radio" name="status" value="1" title="已审核">
                                     <input type="radio" name="status" value="0" title="未审核" checked="checked">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">商城显示</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="is_recommend" value="1" title="是">
+                                    <input type="radio" name="is_recommend" value="0" title="否" checked="checked">
                                 </div>
                             </div>
                             <div class="layui-form-item">

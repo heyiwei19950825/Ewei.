@@ -1,0 +1,120 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:url('admin/picModels/index')}">图片魔方</a></li>
+            <li class="layui-this">添加图片魔方</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('admin/nav/update')}" method="post">
+                    <div class="layui-tab-item layui-show">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图片示例：</label>
+                            <div class="layui-input-block">
+                                <img src="__STATIC__/images/img-block-demo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"></label>
+                            <div class="layui-input-block">
+                                <div class="layui-form-mid" style="color: darkred;">单图的图片高度不限定，高度根据原图比例自动调整</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">
+                                    模板名称：
+                                </label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="name[]" class="layui-input" maxlength="5">
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">链接</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="url[]" value="" placeholder="选填导航链接" class="layui-input link-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">图标</label>
+                                    <div class="layui-input-inline layui-upload">
+                                        <input type="hidden" name="pic_url[]" value="" class="layui-input layui-input-inline" id="thumb">
+                                        <button type="button" class="layui-btn" id="upload" data-path='uploads/common/'>上传图片</button>
+                                        <div class="layui-input-block" style='margin-top:10px;'>
+                                            <img class="layui-upload-img" style='width:150px;' id="demo1" src="">
+                                            <p id="demoText"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true" style="top:50px;width:100%">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">选择链接</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3"><span class="input-group-addon">可选链接</span>
+                    <select class="form-control link-list-select"><option value="">点击选择链接</option>
+                        {foreach name='list' item='vo'}
+                        <option value="{$vo.route}" data-params="{$vo.params}">
+                            {$vo.name}
+                        </option>
+                        {/foreach}
+                    </select>
+                </div>
+                <!--<div class="form-group row">-->
+                    <!--<label class="col-sm-2 text-right col-form-label">cat_id</label>-->
+                    <!--<div class="col-sm-5">-->
+                        <!--<input class="form-control">-->
+                        <!--<div class="fs-sm text-muted">cat_id请填写在商品分类中相关分类的ID</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="link-data">
+
+                </div>
+                <div class="text-center text-muted" style="display:none;">此页面无需配置参数</div></div>
+            <div class="modal-footer">
+                <div type="button" class="btn btn-white" data-dismiss="modal">关闭</div>
+                <div type="button" class="btn btn-primary save-rule">保存</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name='js'}
+<script src="__STATIC__/js/hplus/jquery-2.1.1.min.js"></script>
+<script src="__STATIC__/js/hplus/bootstrap.min.js?v=3.4.0"></script>
+<script>
+    $(function () {
+        $(".link-input").on('focus',function(){
+            //显示弹窗
+            $('#myModal5').modal('show')
+        });
+
+        $(document).on("change", ".link-list-select", function () {
+           var params =  $("select option:selected").attr("data-params");
+
+            if(params != '' ){
+                var paramsData = params .split(",");
+                var html = '';
+                $(paramsData).each(function(i,v){
+                   html += '<div class="input-group mb-3"><span class="input-group-addon">'+v+'</span> <input class="form-control" name="'+v+'"> </div>';
+                });
+
+                $('.link-data').html(html);
+            }
+        });
+    })
+</script>
+{/block}

@@ -20,8 +20,9 @@ class GoodsCollective extends BaseModel
         $map['g.btime']   = ['<=',$now];
         $map['g.etime']   = ['>=',$now];
         $map['g.status']  = ['=',1];
-        $map['c.state']  = ['=',1];
+        $map['c.status']  = ['=',1];
         $map['g.is_collective']  = ['=',1];
+
         $row = Db::name('goods_collective')->alias('c')
             ->join('goods g','c.goods_id = g.id','LEFT')
             ->field('g.id,g.thumb,g.sp_price,g.name,g.prefix_title,c.user_number,c.goods_price,sp_market,g.photo')
@@ -30,6 +31,7 @@ class GoodsCollective extends BaseModel
                 $limit, false, [
                 'page' => $page
             ]);
+
         $row = $row->toArray();
         return $row;
     }
@@ -44,7 +46,7 @@ class GoodsCollective extends BaseModel
         $map['g.btime']   = ['<=',$now];
         $map['g.etime']   = ['>=',$now];
         $map['g.status']  = ['=',1];
-        $map['c.state']  = ['=',1];
+        $map['c.status']  = ['=',1];
         $map['c.goods_id']  = ['=',$id];
 
         $row = Db::name('goods_collective')->alias('c')

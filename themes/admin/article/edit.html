@@ -87,7 +87,7 @@
                         <label class="layui-form-label">缩略图</label>
                         <div class="layui-input-inline layui-upload">
                             <input type="hidden" name="thumb" value="{$article.thumb}" class="layui-input layui-input-inline" id="thumb">
-                            <button type="button" class="layui-btn" id="upload" data-width='375' data-height='128' data-path='uploads/common/'>上传图片</button>
+                            <button type="button" class="layui-btn" id="upload" data-path='uploads/cms/'>上传图片</button>
                             <div class="layui-input-block" style='margin-top:10px;'>
                                 <img class="layui-upload-img" style='width:300px;' id="demo1" src="{$article.thumb}">
                                 <p id="demoText"></p>
@@ -116,7 +116,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">关联商品</label>
                         <div data-method="setTop" class="layui-btn">选择</div>
-                        <input type="hidden" name="goods_ids" value=''>
+                        <input type="hidden" name="goods_ids" value='{$article.goods_ids}'>
                     </div>
                     <div class="layui-form-item">
                     <label class="layui-form-label"></label>
@@ -207,7 +207,17 @@
         $('.remove-photo-btn').on('click',function(){
             $(this).parent('.photo-list').remove();
         })
+        //点击删除关联商品
+        $('.goods-delete').on('click',function(){
+            //删除元素
+            $(this).parents('li').remove();
 
+            //删除表单中的相关数据
+            var ids = $('input[name=goods_ids]').val();
+            var id = $(this).attr('data-id');
+            ids = ids.replace(id+',','');
+            $('input[name=goods_ids]').val(ids);
+        })
         //关联商品
         layui.use('layer', function(){ //独立版的layer无需执行这一句
           var active = {
@@ -236,7 +246,7 @@
                          }
                     })
                    //查询对应的商品数据
-                    $.post('/admin/goods/getGoodsListByIds',{ids,ids},function(res){
+                    $.post('/admin/goods/getGoodsListByIds',{ids:ids},function(res){
                         $(res.data).each(function(index, item){
                              lis += ' <li data-id="123"><a class="fly-case-img" href="javascript:" target="_blank" ><img src="'+item.thumb+'" alt="'+item.name+'"><p class="">'+item.name+'</p><p style="padding-lfet:50px;">———</p><p style="color: #666;">'+item.prefix_title+'</p><div class="fly-case-info"><a href="javascript:" class="fly-case-user" target="_blank"><img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"></a><p class="layui-elip" style="font-size: 12px;"> ￥'+item.sp_price+'<span style="color: #666;"><s>'+item.sp_o_price+'</s></span></p> &nbsp;<p>'+item.status+'</p><div class="layui-btn  btn-click  layui-btn-primary goods-delete" data-id= "'+item.id+'"data-type="praise">删除</div></li>';
                         })
@@ -248,10 +258,10 @@
                             $(this).parents('li').remove();
 
                             //删除表单中的相关数据
-                            var ids = $('input[name=goods_id]').val();
+                            var ids = $('input[name=goods_ids]').val();
                             var id = $(this).attr('data-id');
                             ids = ids.replace(id+',','');
-                            $('input[name=goods_id]').val(ids);
+                            $('input[name=goods_ids]').val(ids);
                         })
 
                     })

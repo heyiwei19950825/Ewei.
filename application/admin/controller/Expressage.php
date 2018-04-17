@@ -21,20 +21,14 @@ class Expressage extends AdminBase {
     protected function _initialize()
     {
         parent::_initialize();
-        $shop_id = $this->shop['id'];
-        if( $shop_id != 1 ){
-            $this->where = ['shop_id'=>$shop_id];
-        }
-
         $this->expressa_model = new ExpressaModel();
 
     }
   
 	public function index( $page = 1){
-		$list = [];
-		$list  = $this->expressa_model->field('*')->where($this->where)->order(['orders' => 'DESC'])->paginate(15, false, ['page' => $page]);
+		$list  = $this->expressa_model->pageQuery($page,30,[],'s_id desc,orders desc','',true);
 
-	return $this->fetch('index',['list'=>$list]);
+	    return $this->fetch('index',['list'=>$list]);
 	}
 
 	/**
@@ -43,12 +37,12 @@ class Expressage extends AdminBase {
 	public function add(){
 		if( $this->request->isPost()){
 			$data = $this->request->param();
-            $data['shop_id'] = $this->shop['id'];
 			$validate_result = $this->validate($data, 'ExpressageCompanys');
 
 			if( $validate_result !== true){
-			$this->error($validate_result);
+			    $this->error($validate_result);
 			}else{
+                $data['s_id'] = $this->instance_id;
 				if ($this->expressa_model->allowField(true)->save($data)) {
 	            $this->success('保存成功');
 	        } else {
@@ -93,14 +87,18 @@ class Expressage extends AdminBase {
             	$data            = $this->request->param();
             	$validate_result = $this->validate($data, 'ExpressageCompanys');
 
-                $this->where['id']      = $data['id'];
-                if($this->expressa_model->where($this->where)->find() == false){
+                if($this->expressa_model->getInfo(['id'=>$data['id']]) == false){
                     $this->error('没有权限访问');
                 }
                 if ($validate_result !== true) {
                     $this->error($validate_result);
                 } else {
-                    if ($this->expressa_model->allowField(true)->save($data) !== false) {
+                    if( $data['is_default'] == 1 ){
+                        $this->expressa_model->allowField(true)->save(['is_default'=>0],['id'=>$data['id']]);
+                    }
+
+                    if ($this->expressa_model->allowField(true)->save($data,['id'=>$data['id']]) !== false) {
+
                         $this->success('更新成功');
                     } else {
                         $this->error('更新失败');

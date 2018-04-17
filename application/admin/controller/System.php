@@ -22,9 +22,7 @@ class System extends AdminBase
      */
     public function siteConfig()
     {
-        $site_config = Db::name('system')->field('value')->where('name', 'site_config')->find();
-        $site_config = unserialize($site_config['value']);
-
+        $site_config = Db::name('system')->where(['s_id'=>1])->find();
         return $this->fetch('site_config', ['site_config' => $site_config]);
     }
 
@@ -34,10 +32,13 @@ class System extends AdminBase
     public function updateSiteConfig()
     {
         if ($this->request->isPost()) {
-            $site_config                = $this->request->post('site_config/a');
-//            $site_config['site_tongji'] = htmlspecialchars_decode($site_config['site_tongji']);
-            $data['value']              = serialize($site_config);
-            if (Db::name('system')->where('name', 'site_config')->update($data) !== false) {
+            $site_config                = $this->request->post();
+            foreach ($site_config as $k=>&$v){
+               if( $v === '' ){
+                   unset($site_config[$k]);
+               }
+            }
+            if (Db::name('system')->where(['s_id'=>1])->update($site_config) !== false) {
                 $this->success('提交成功');
             } else {
                 $this->error('提交失败');

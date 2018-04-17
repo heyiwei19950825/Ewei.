@@ -9,7 +9,9 @@
 namespace app\common\model;
 
 
-class Region extends BaseModel
+use think\Model;
+
+class Region extends Model
 {
     /**
      * 获取城市列表

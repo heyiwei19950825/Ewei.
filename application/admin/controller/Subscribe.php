@@ -22,6 +22,7 @@ class Subscribe extends AdminBase
     private $api = '';
     public function _initialize(){
         parent::_initialize();
+
         $this->api = (new Api())->where(['key'=>'INTERNETBAR'])->find();
     }
 
@@ -108,11 +109,9 @@ class Subscribe extends AdminBase
     }
 
     public function setting(){
-
         $info = Db::name('internet_bar_setting')->where([
             'uid'=>$this->instance_id
         ])->find();
-
         if( $info == '' ){
             $info = [
                 'machine_number' => '',
@@ -374,4 +373,97 @@ class Subscribe extends AdminBase
         }
     }
 
+    /**
+     * 网吧财务
+     */
+    public function internetFinance(){
+            //初始化数据
+            $params = $this->request->param();
+            $where = ' where status in(1,2,3,7) ';
+
+            if( !isset($params['start_time'])){
+                $params['start_time'] = 0;
+            }
+            if( !isset($params['end_time'])){
+                $params['end_time'] = 0;
+            }
+            if( !isset($params['type'])){
+                $params['type'] = 0;
+            }
+
+            if ($params['start_time'] != 0 && $params['end_time'] != 0) {
+                $params['start_time'] =  str_replace('+',' ',$params['start_time']);
+                $params['end_time'] =  str_replace('+',' ',$params['end_time']);
+                $start_time = strtotime($params['start_time']);
+                $end_time = strtotime($params['end_time']);
+                $where .= ' and '.$end_time.'>= pay_time>='.$start_time;
+            } elseif ($params['start_time'] != 0 && $params['end_time'] == 0) {
+                $params['start_time'] =  str_replace('+',' ',$params['start_time']);
+                $start_time = strtotime($params['start_time']);
+                $where .= ' and pay_time>"'.$start_time.'"';
+            } elseif ($params['start_time'] == 0 && $params['end_time'] != 0) {
+                $params['end_time'] =  str_replace('+',' ',$params['end_time']);
+                $end_time = strtotime($params['end_time']);
+                $where .= ' and pay_time<"'.$end_time.'"';
+            }
+
+            //预约数据单统计
+            $sql = 'select FROM_UNIXTIME(pay_time,"%Y-%m-%d") as date ,year(FROM_UNIXTIME(pay_time)) as years,day(FROM_UNIXTIME(pay_time)) as days,month(FROM_UNIXTIME(pay_time)) as months, SUM(order_money) AS money,COUNT(id) as number FROM ewei_internet_order '.$where.' GROUP BY DAY(FROM_UNIXTIME(pay_time)),Month(FROM_UNIXTIME(pay_time)),YEAR (FROM_UNIXTIME(pay_time)) ORDER BY pay_time DESC';
+            $row = Db::name('internet_order')->query($sql);
+
+
+            //商品数据单统计
+            $where = str_replace('status','order_status',$where);
+            $where .= ' and order_type in(0,1)';
+            $goodsSql =  'select FROM_UNIXTIME(pay_time,"%Y-%m-%d") as date ,year(FROM_UNIXTIME(pay_time)) as years,day(FROM_UNIXTIME(pay_time)) as days,month(FROM_UNIXTIME(pay_time)) as months, SUM(order_money) AS money,COUNT(id) as number FROM ewei_order '.$where.' GROUP BY DAY(FROM_UNIXTIME(pay_time)),Month(FROM_UNIXTIME(pay_time)),YEAR (FROM_UNIXTIME(pay_time)) ORDER BY pay_time DESC';
+            $goodsRow = Db::name('internet_order')->query($goodsSql);
+
+
+            $statisticsInfo = Db::name('statistics')->where(['uid'=>1])->find();
+            $echartsData = [];
+            $statistics = [
+                'order_number' => 0,
+                'order_money' => 0,
+                'count_money' => $statisticsInfo['success_order_money']
+            ];
+            $goodsStatistics = [
+                'order_number' => 0,
+                'order_money' => 0,
+                'count_money' => $statisticsInfo['order_goods_money']
+            ];
+            if(!empty($row)){
+                foreach ($row as $k=>$v){
+                    $echartsData[] = [
+                        $v['date'],
+                        $v['money']
+                    ];
+                    $statistics['order_number'] += $v['number']+0;
+                    $statistics['order_money']  +=  $v['money']+0;
+                }
+            }
+
+            if(!empty($goodsRow)){
+                foreach ($goodsRow as $k=>$v){
+                    $goodsStatistics['order_number'] += $v['number']+0;
+                    $goodsStatistics['order_money']  +=  $v['money']+0;
+                }
+            }
+
+            if( $params['start_time'] == 0 ){
+                $params['start_time'] = '';
+            }
+            if( $params['end_time'] == 0){
+                $params['end_time'] = '';
+            }
+
+            if($this->request->isPost()){
+                if( $params['type'] == 1 ){
+                    $this->error('查询成功','',$row);
+                }else{
+                    $this->success('查询成功','',['echarts'=>$echartsData]);
+                }
+            }else{
+                return $this->fetch('subscribe/internet_finance',['controller'=>'finance','start_time'=>$params['start_time'],'end_time'=>$params['end_time'],'statistics'=>$statistics,'goodsStatistics'=>$goodsStatistics]);
+            }
+    }
 }

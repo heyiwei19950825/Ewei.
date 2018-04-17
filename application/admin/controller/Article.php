@@ -6,6 +6,7 @@ use app\common\model\ArticleCategory as ArticleCategoryModel;
 use app\common\server\Goods as GoodsServer;
 use app\common\controller\AdminBase;
 use think\Db;
+use think\Session;
 
 /**
  * 文章管理
@@ -17,6 +18,7 @@ class Article extends AdminBase
     protected $article_model;
     protected $category_model;
     protected $goods_server;
+
     protected function _initialize()
     {
         parent::_initialize();
@@ -24,7 +26,7 @@ class Article extends AdminBase
         $this->category_model = new ArticleCategoryModel();
         $this->goods_server   = new GoodsServer;
 
-        $category_level_list = $this->category_model->getLevelList();
+        $category_level_list = $this->category_model->getLevelList(['s_id'=>$this->instance_id]);
         $this->assign('category_level_list', $category_level_list);
     }
 
@@ -37,11 +39,13 @@ class Article extends AdminBase
      */
     public function index($cid = 0, $keyword = '', $page = 1)
     {
-        $map   = [];
+        $map = [];
         $field = 'id,title,cid,author,reading,status,publish_time,sort';
 
         if ($cid > 0) {
-            $category_children_ids = $this->category_model->where(['path' => ['like', "%,{$cid},%"]])->column('id');
+            $map['path'] = ['like', "%,{$cid},%"];
+
+            $category_children_ids = $this->category_model->where($map)->column('id');
             $category_children_ids = (!empty($category_children_ids) && is_array($category_children_ids)) ? implode(',', $category_children_ids) . ',' . $cid : $cid;
             $map['cid']            = ['IN', $category_children_ids];
         }
@@ -50,6 +54,11 @@ class Article extends AdminBase
             $map['title'] = ['like', "%{$keyword}%"];
         }
 
+        if(  Session::get('admin_id') != 1 ){
+            $admin_id = Session::get('admin_p_id')!=0?Session::get('admin_p_id'):Session::get('admin_id');
+            $map['s_id'] = ['=',$admin_id];
+        }
+        unset($map['path']);
         $article_list  = $this->article_model->field($field)->where($map)->order(['publish_time' => 'DESC'])->paginate(15, false, ['page' => $page]);
         $category_list = $this->category_model->column('name', 'id');
 
@@ -73,6 +82,7 @@ class Article extends AdminBase
         if ($this->request->isPost()) {
             $req             = [];
             $data            = $this->request->param();
+            $data['s_id'] = $this->instance_id;
             $validate_result = $this->validate($data, 'Article');
             if( isset($data['goods_ids']) && $data['goods_ids'] != ''){//关联商品
                 $ids = explode(',',trim($data['goods_ids'],',') );
@@ -90,10 +100,10 @@ class Article extends AdminBase
                         foreach ($ids as $key => $value) {//关联商品
                             $req[$key] = array(
                                 'article_id' => $this->article_model->id,
-                                'goods_id' => $value
+                                'goods_id' => $value,
+                                's_id' =>$this->$this->instance_id
                             );
                         }
-
                         Db::name('article_goods')->insertAll($req);
                     }
 
@@ -112,15 +122,17 @@ class Article extends AdminBase
      */
     public function edit($id)
     {
-        $article = $this->article_model->find($id);
+        $article = $this->article_model->where(['id'=>$id,'s_id'=>$this->instance_id])->find();
 
-        $ids = Db::name('article_goods')->where(['article_id'=>$id])->select()->toArray();
+        $ids = Db::name('article_goods')->where(['article_id'=>$id,'s_id'=>$this->instance_id])->select()->toArray();
         $idsStr = '';
         foreach ($ids as $key => &$value) {
            $idsStr .= $value['goods_id'].',';
         }
+        $article['goods_ids'] = $idsStr;
 
         $list = $this->goods_server->getGoodsListByIds($idsStr);
+
         $goods_ids = '';
         foreach ($list as $key => $value) {
             $goods_ids .= $value['id'].',';
@@ -144,19 +156,14 @@ class Article extends AdminBase
                 $this->error($validate_result);
             } else {
                 if ($this->article_model->allowField(true)->save($data, $id) !== false) {
-                    if( $data['goods_ids'] != ''){//关联商品
-                        $ids = explode(',',trim($data['goods_ids'],',') );
-                        $data['range_type'] = 0;
-                    }else{
-                        $data['range_type'] = 1;
-                    }
                     //关联商品
-                    if( !empty($data['goods_ids'])){
-                        $data['goods_ids'] = explode(',',$data['goods_ids']);
+                    if( !empty( $data['goods_ids'])){
+                        $data['goods_ids'] = explode(',',trim($data['goods_ids'],','));
                         foreach ($data['goods_ids'] as $key => $value) {//关联商品
                             $req[$key] = array(
                                 'article_id' => $id,
-                                'goods_id' => $value
+                                'goods_id' => $value,
+                                's_id' =>$this->instance_id
                             );
                         }
                         Db::name('article_goods')->where(['article_id'=>$id])->delete();

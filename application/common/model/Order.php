@@ -1,19 +1,20 @@
 <?php
 namespace app\common\model;
 
-use app\common\model\BaseModel;
-use app\common\model\OrderGoods as OrderGoodsModel;
-use app\common\model\GoodsSku as GoodsSkuModel;
-use app\common\model\Province as ProvinceModel;
-use app\common\model\City as CityModel;
-use app\common\model\District as DistrictModel;
-use app\common\model\Order\OrderStatus;
-use app\common\model\AlbumPicture as AlbumPictureModel;
 use think\Db;
 use think\Config;
+use think\Session;
 
 class Order extends BaseModel
 {
+    protected $table = 'order';
+
+    public function __construct()
+    {
+        $this->table = config('database.prefix').$this->table;
+        parent::__construct();
+    }
+
     /**
      * 订单查询
      * @param $page
@@ -22,12 +23,23 @@ class Order extends BaseModel
      * @param $desc
      * @return array
      */
-    public function getOrderList($page,$size,$condition,$desc,$isPage = true,$field = ''){
+    public function getOrderList($page,$size,$condition,$desc,$isPage = true,$field = '' ){
+        $parentCondition = $this->condition;
+
+        if($this->condition ){
+            foreach ($parentCondition as $k=>$v){
+                $parentCondition['o.'.$k] = $v;
+                unset($parentCondition[$k]);
+            }
+        }
+
+        $condition = empty($condition)?$parentCondition:array_merge($parentCondition,$condition);
+
         if( $isPage ){
-            $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id')->where($condition)->order($desc)->group('o.order_no')->paginate($size, false, ['page' => $page]);
+            $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id','LEFT')->where($condition)->order($desc)->group('o.order_no')->paginate($size, false, ['page' => $page]);
         }else{
 
-            $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id')->where($condition)->order($desc)->group('o.order_no')->limit($page,$size)->select();
+            $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id','LEFT')->where($condition)->order($desc)->group('o.order_no')->limit($page,$size)->select();
         }
 
         return $order_list;
@@ -68,9 +80,10 @@ class Order extends BaseModel
      * @return [type] [description]
      */
     public static function getOrderCount( ){
+        $admin_id = Session::get('admin_p_id')!=0?Session::get('admin_p_id'):Session::get('admin_id');
 
-        $sql = 'SELECT order_status,COUNT(id) AS number FROM ewei_order WHERE 1 = 1 GROUP BY order_status';
-        
+        $sql = 'SELECT order_status,COUNT(id) AS number FROM ewei_order WHERE s_id = '.$admin_id.' GROUP BY order_status';
+
         $row = Db::query($sql);
 
         return $row;

@@ -370,7 +370,7 @@ class Order extends BaseController
                 'shop_id'=>$product['sid'],//商铺ID
                 'buyer_id'=>$this->uid,//用户ID
                 'sp_integral'=>$type == 'integral'?$product['sp_integral']:0,//积分价格
-                'integral_money'=>$type == 'integral'?$product['sp_integral']*$product['num']:0,//积分总价
+                'integral_money'=>$type == 'integral'?$product['sp_integral']*$num:0,//积分总价
                 'point_exchange_type'=>$type == 'integral'?1:0,//积分兑换类型0.非积分兑换1.积分兑换
                 'goods_type'=>1,//商品类型
                 'order_type'=>$param['order_type'],//订单类型

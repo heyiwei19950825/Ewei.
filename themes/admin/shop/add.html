@@ -4,14 +4,20 @@
     <!--tab标签-->
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">
-            <li class=""><a href="{:url('admin/shop/index')}">管理员</a></li>
-            <li class="layui-this">添加管理员</li>
+            <li class=""><a href="{:url('admin/shop/index')}">店铺管理</a></li>
+            <li class="layui-this">添加店铺</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" action="{:url('admin/shop/add')}" method="post">
                     <div class="layui-form-item">
                         <label class="layui-form-label">用户名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" value="" required lay-verify="required" placeholder="请输入用户名" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">账户</label>
                         <div class="layui-input-block">
                             <input type="text" name="username" value="" required lay-verify="required" placeholder="请输入用户名" class="layui-input">
                         </div>
@@ -53,8 +59,8 @@
                      <div class="layui-form-item">
                         <label class="layui-form-label">状态</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="shop_state" value="1" title="启用">
-                            <input type="radio" name="shop_state" value="0" title="禁用"  checked="checked">
+                            <input type="radio" name="shop_status" value="1" title="启用">
+                            <input type="radio" name="shop_status" value="0" title="禁用"  checked="checked">
                         </div>
                     </div>
                     <div class="layui-form-item">

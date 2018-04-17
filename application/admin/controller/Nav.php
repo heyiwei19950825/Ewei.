@@ -1,9 +1,10 @@
 <?php
 namespace app\admin\controller;
 
-use app\api\model\Theme as NavModel;
+use app\common\model\Nav as NavModel;
 use app\common\controller\AdminBase;
 use think\Db;
+
 
 /**
  * 导航管理
@@ -19,9 +20,9 @@ class Nav extends AdminBase
     {
         parent::_initialize();
         $this->nav_model = new NavModel();
-        $nav_list        = $this->nav_model->order(['sort' => 'ASC', 'id' => 'ASC'])->select();
-        $nav_level_list  = array2level($nav_list);
+        $nav_list        = $this->nav_model->pageQuery(0,0,[],[ 's_id' => 'ASC','sort' => 'DESC']);
 
+        $nav_level_list  = array2level($nav_list['data']);
         $this->assign('nav_level_list', $nav_level_list);
     }
 
@@ -51,12 +52,19 @@ class Nav extends AdminBase
     {
         if ($this->request->isPost()) {
             $data            = $this->request->post();
+            $data['s_id'] =$this->instance_id;
             $validate_result = $this->validate($data, 'Nav');
+
+            //检测导航名称是否存在
+            $checkName = $this->nav_model->getInfo(['name'=>$data['name']],'id');
+            if($checkName){
+                $this->error('导航名称已经存在');
+            }
 
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
-                if ($this->nav_model->save($data)) {
+                if ($this->nav_model->pageSave($data)) {
                     $this->success('保存成功');
                 } else {
                     $this->error('保存失败');
@@ -72,7 +80,10 @@ class Nav extends AdminBase
      */
     public function edit($id)
     {
-        $nav = $this->nav_model->find($id);
+        $nav = $this->nav_model->getInfo(['id'=>$id]);
+        if( empty($nav) ){
+            $this->error('您没有权限操作');
+        }
 
         return $this->fetch('edit', ['nav' => $nav]);
     }
@@ -85,17 +96,24 @@ class Nav extends AdminBase
     {
         if ($this->request->isPost()) {
             $data            = $this->request->post();
-            // $validate_result = $this->validate($data, 'Nav');
+            //数据验证
+            $validate_result = $this->validate($data, 'Nav');
+            //检测导航名称是否存在
+            $checkName = $this->nav_model->getInfo(['name'=>$data['name'],'id'=>['<>',$id]],'id');
+            if($checkName){
+                $this->error('导航名称已经存在');
+            }
 
-            // if ($validate_result !== true) {
-            //     $this->error($validate_result);
-            // } else {
-                if ($this->nav_model->save($data, $id) !== false) {
+             if ($validate_result !== true) {
+                 $this->error($validate_result);
+             } else {
+
+                if ($this->nav_model->pageSave($data,['id'=>$id]) !== false) {
                     $this->success('更新成功');
                 } else {
                     $this->error('更新失败');
                 }
-            // }
+             }
         }
     }
 
@@ -105,23 +123,10 @@ class Nav extends AdminBase
      */
     public function delete($id)
     {
-        if ($this->nav_model->destroy($id)) {
+        if ($this->nav_model->pageDel(['id'=>$id])) {
             $this->success('删除成功');
         } else {
             $this->error('删除失败');
         }
     }
-
-
-    // <div class="layui-form-item">
-    //                     <label class="layui-form-label">上级导航</label>
-    //                     <div class="layui-input-block">
-    //                         <select name="pid" required lay-verify="required">
-    //                             <option value="0">一级导航</option>
-    //                             {foreach name="nav_level_list" item="vo"}
-    //                             <option value="{$vo.id}" {if condition="$pid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
-    //                             {/foreach}
-    //                         </select>
-    //                     </div>
-    //                 </div>
 }

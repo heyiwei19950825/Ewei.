@@ -27,6 +27,7 @@ class WeChat extends BaseController
     private $wx_noncestr;
     public function _initialize()
     {
+        parent::_initialize();
         $this->wx_id = config('wx.wx_id');
         $this->wx_secret = config('wx.wx_secret');
         $this->wx_noncestr = config('wx.wx_noncestr');
@@ -54,7 +55,7 @@ class WeChat extends BaseController
             $accessTokenUrl = sprintf(config('wx.access_token_url'),$this->wx_id,$this->wx_secret);
             $accessToken = curl_get($accessTokenUrl);
             $accessToken = json_decode($accessToken,true);
-            cache('access_token',$accessToken['access_token'],$accessToken['expires_in']);
+            Cache::set('access_token',$accessToken['access_token']);
             if(  array_key_exists('errcode',$accessToken) ){
                 throw new Exception('未获取到用户数据，微信内部错误');
             }
@@ -121,8 +122,8 @@ class WeChat extends BaseController
         $TokenServer = new Token();
         $key = $TokenServer::generateToken();
         $value = json_encode($wxResult);
-        $expire_in = config('setting.token_expire_in');
-        $result = cache($key, $value, $expire_in);
+//        $expire_in = config('setting.token_expire_in');
+        $result = Cache::set($key, $value);
         if (!$result){
             throw new TokenException([
                 'msg' => '服务器缓存异常',
@@ -188,7 +189,7 @@ class WeChat extends BaseController
             $accessTokenUrl = sprintf(config('wx.access_token_url'),$this->wx_id,$this->wx_secret);
             $accessToken = curl_get($accessTokenUrl);
             $accessToken = json_decode($accessToken,true);
-            cache('access_token',$accessToken['access_token'],$accessToken['expires_in']);
+            Cache::set('access_token',$accessToken['access_token']);
         }
         if( Cache::get('js_ticket') == false || Cache::get('js_ticket') == '' ){
             $getJsTicket = sprintf(
@@ -198,7 +199,7 @@ class WeChat extends BaseController
             if($result['errcode'] != 0 ){
                 throw new Exception('未获取到用户数据，微信内部错误');
             }
-            cache('js_ticket',$result['ticket'],$result['expires_in']);
+            Cache::set('js_ticket',$result['ticket']);
             $ticket= $result['ticket'];
         }else{
             $ticket = Cache::get('js_ticket');

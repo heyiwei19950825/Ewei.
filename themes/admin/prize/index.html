@@ -32,6 +32,11 @@
         padding-bottom: 10px;
         border: 1px solid #ddd;
     }
+    .remove-photo-btn{
+        text-align: center;
+        cursor:pointer;
+
+    }
 </style>
 <div class="layui-body">
     <!--tab标签-->
@@ -55,10 +60,35 @@
                             <div class="layui-form-mid layui-word-aux">积分个数为正整数</div>
                         </div>
                     </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">多图显示</label>
+                        <div class="layui-input-block">
+                            <button type="button" id="upload-photo-btn" class="layui-btn">上传图集</button>
+                            <div id="photo-container">
+                                {if condition="!empty($photo)"}
+                                {foreach name="$photo" item="vo"}
+                                <div class="photo-list layui-inline">
+                                    <img src="{$vo}" alt="" style='width:150px;'>
+                                    <input type="hidden" name="photo[]" value="{$vo}" class="layui-input layui-input-inline">
+                                    <div class="layui-btn-warm remove-photo-btn">移除</div>
+                                </div>
+                                {/foreach}
+                                {/if}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">中奖规则描述</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入内容" class="layui-textarea" name="describe">{$describe}</textarea>
+                        </div>
+                    </div>
+
                     <label class="layui-form-label">中奖规则</label>
                     <div class="layui-input-inline" style="width: 200px;">
                         <div class="layui-btn add-rule" >添加中奖规则</div>
                     </div>
+
                     <div class="layui-form-mid layui-word-aux">必须填写12个中奖信息</div>
                     <div class="rule-dome" >
                         {if condition="$rule == []"}
@@ -151,7 +181,8 @@
 {block name='js'}
 <script src="__STATIC__/js/hplus/jquery-2.1.1.min.js"></script>
 <script src="__STATIC__/js/hplus/bootstrap.min.js?v=3.4.0"></script>
-
+<script src="__JS__/ueditor/ueditor.config.js"></script>
+<script src="__JS__/ueditor/ueditor.all.min.js"></script>
 <script>
     $(function(){
         //add添加规则
@@ -250,6 +281,31 @@
             })
         }
         delData();
+
+
+        var ue = UE.getEditor('content'),
+                uploadEditor = UE.getEditor('upload-photo-btn'),
+                photoListItem,
+                uploadImage;
+
+        uploadEditor.ready(function () {
+            uploadEditor.setDisabled();
+            uploadEditor.hide();
+            uploadEditor.addListener('beforeInsertImage', function (t, arg) {
+                $.each(arg, function (index, item) {
+                    photoListItem = '<div class="photo-list layui-inline"><input type="hidden" name="photo[]" value="' + item.src + '" class="layui-input layui-input-inline"><img width="150px;" src="' + item.src + '">';
+                    photoListItem += '<div class="layui-btn-warm remove-photo-btn">移除</div></div>';
+                    $('#photo-container').append(photoListItem).on('click', '.remove-photo-btn', function () {
+                        $(this).parent('.photo-list').remove();
+                    });
+                });
+            });
+        });
+
+        $('#upload-photo-btn').on('click', function () {
+            uploadImage = uploadEditor.getDialog("insertimage");
+            uploadImage.open();
+        });
 
 
     })

@@ -19,6 +19,7 @@ use app\api\model\Collect;
 use app\api\service\Token;
 use app\api\model\User;
 
+use think\Db;
 use think\Exception;
 use think\Config;
 
@@ -28,7 +29,8 @@ class Goods extends BaseController
     public function _initialize()
     {
         parent::_initialize();
-        $this->uid = Token::getCurrentUid(1);
+//        $this->uid = Token::getCurrentUid(1);
+        $this->uid = 9;
         //判断是否是VIP用户
         $user = User::get(['id'=>$this->uid]);
 
@@ -184,7 +186,7 @@ class Goods extends BaseController
     public function getOne($id)
     {
         (new IDMustBePositiveInt())->goCheck();
-        $field = 'id,name,prefix_title,sp_o_price,sp_price,give_integral,sp_inventory,content,thumb,photo';
+        $field = 'id,name,prefix_title,sp_o_price,sp_price,give_integral,sp_inventory,content,thumb,photo,sp_integral';
         if( $this->is_vip) $field .= ',sp_vip_price';
 
         $product = GoodsModel::getProductDetail($id,$field);
@@ -297,6 +299,34 @@ class Goods extends BaseController
         }
 
         return $row;
+    }
+
+    /**
+     * 检测商品状态并下架
+     */
+    public function checkGoodsStatus(){
+        $now = date('Y-m-d H:i:s',time());
+        $ids = '';
+        $row = Db::name('goods')->field('id')
+            ->whereOr([
+            'btime'=>['>',$now]
+            ])->whereOr([
+                'etime'=>['<',$now]
+            ])->whereOr([
+                'sp_inventory'=>['<=',0]
+            ])->whereOr([
+                'status'=>['<>',2]
+            ])
+            ->select()->toArray();
+        if( !empty($row) ){
+            foreach ( $row as $v){
+                $ids .= $v['id'].',';
+            }
+            $ids = trim($ids,',');
+        }
+        Db::name('goods')->where(['id'=>['in',$ids]])->update(['status'=>2]);
+
+
     }
 
     /**

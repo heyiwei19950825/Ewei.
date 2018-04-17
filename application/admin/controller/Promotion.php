@@ -259,7 +259,46 @@ class Promotion extends AdminBase
      * 签到管理
      */
     public function SignIn(){
-        return $this->fetch('',['controller'=>'signin']);
+
+        if( $this->request->isPost()){
+            $thumb = $award_type = $award_number = $status = '';
+
+            $params = $this->request->param();
+            extract($params);
+            if($thumb == '') $this->error('请上传背景图');
+            if($award_type == '') $this->error('请选择对应规则');
+            if($award_number == '') $this->error('请填写规则对应数量');
+
+            if($award_type == 0 ) $award_number = 0;
+            if(  Db::name('sign_in')->where(['s_id' => 1])->find()){
+                Db::name('sign_in')->where([
+                    's_id' => $this->instance_id
+                ])->update(
+                    [
+                        'thumb'=>$thumb,
+                        'award_type'=>$award_type,
+                        'award_number'=>$award_number,
+                        'status'=>$status,
+                    ]
+                );
+            }else{
+                Db::name('sign_in')->where([
+                    's_id' => $this->instance_id
+                ])->insert(
+                    [
+                        'thumb'=>$thumb,
+                        'award_type'=>$award_type,
+                        'award_number'=>$award_number,
+                        'status'=>$status,
+                        's_id' => $this->instance_id
+                    ]
+                );
+            }
+            $this->success('修改成功');
+        }else{
+            $info = Db::name('sign_in')->where(['s_id' => 1])->find();
+            return $this->fetch('',['controller'=>'signin','info'=>$info]);
+        }
     }
     /**
      * 功能：积分管理

@@ -37,13 +37,19 @@
                             <input type="text" name="prefix_title" value="" required  lay-verify="required" placeholder="请输入名称" class="layui-input">
                         </div>
                     </div>
-                    
-                     <fieldset class="layui-elem-field" >
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开启购买</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="" checked="" lay-skin="switch" lay-filter="paySwitch" lay-text="开启|关闭">
+                            <input type="hidden" name="is_pay" value="1">
+                        </div>
+                    </div>
+                     <fieldset class="layui-elem-field integral-buy" >
                           <legend><b>积分购买设置</b></legend>
                             <div class="layui-field-box">
                                    <div class="layui-inline ">
                                 <div class="layui-input-inline">
-                                    <label class="layui-form-label">积分购买：</label>
+                                    <label class="layui-form-label">积分购买</label>
                                     <div class="layui-input-block">
                                         <input type="checkbox" name=""  lay-skin="switch" lay-filter="integralSwitch" lay-text="开启|关闭">
                                         <input type="hidden" name="is_integral" value="">
@@ -55,14 +61,14 @@
                             <div class="layui-inline">
                               <label class="layui-form-label">购买赠送:</label>
                               <div class="layui-input-inline">
-                                <input type="number" name="give_integral" placeholder="" autocomplete="off" class="layui-input" value="">
+                                <input type="number" name="give_integral" placeholder="" autocomplete="off" class="layui-input" value="0">
                               </div>
                             </div>
                             <div class="layui-form-item">
-                                <div class="layui-inline sp_integral">
+                                <div class="layui-inline sp_integral" style="display: none;">
                                   <label class="layui-form-label">积分价格:</label>
                                   <div class="layui-input-inline">
-                                    <input type="number" name="sp_integral" placeholder="￥ 积分购买价格" autocomplete="off" class="layui-input" value="">
+                                    <input type="number" name="sp_integral" placeholder="￥ 积分购买价格" autocomplete="off" class="layui-input" value="0">
                                   </div>
                                 </div>
                             </div>    
@@ -70,104 +76,104 @@
                         </div> 
                       </fieldset>
 
-                    <fieldset class="layui-elem-field" >
+                    <fieldset class="layui-elem-field " >
                           <legend><b>销售设置</b></legend>
                             <div class="layui-field-box">
-                               <div class="layui-form-item">
+                                 <div class="layui-form-item sell-price">
                                     <div class="layui-inline">
                                       <label class="layui-form-label">原价:</label>
                                       <div class="layui-input-inline">
-                                        <input type="number" name="sp_o_price" placeholder="￥" lay-verify="required" autocomplete="off" class="layui-input">
+                                        <input type="number" name="sp_o_price" placeholder="￥" lay-verify="required" autocomplete="off" class="layui-input" value="0.0">
                                       </div>
                                     </div>  
                                     <div class="layui-inline">
                                       <label class="layui-form-label">销售价:</label>
                                       <div class="layui-input-inline">
-                                        <input type="number" name="sp_price" placeholder="￥" lay-verify="required" autocomplete="off" class="layui-input">
+                                        <input type="number" name="sp_price" placeholder="￥" lay-verify="required" autocomplete="off" class="layui-input"  value="0.0">
                                       </div>
                                     </div>  
-                                    <div class="layui-inline" style="display:none">
+                                    <div class="layui-inline" >
                                       <label class="layui-form-label">会员价:</label>
                                       <div class="layui-input-inline">
-                                        <input type="number" name="sp_vip_price" placeholder="￥" lay-verify="required" autocomplete="off" class="layui-input" value="0">
+                                        <input type="number" name="sp_vip_price" placeholder="￥" lay-verify="required" autocomplete="off" class="layui-input" value="0.0">
                                       </div>
                                     </div>
                             </div>
-                            <div class="layui-form-item">
-                                 <div class="layui-inline">
-                                    <label class="layui-form-label">销售数量:</label>
-                                    <div class="layui-input-inline">
-                                    <input type="number" name="sp_market" lay-verify="number" class="layui-input">
+                                 <div class="layui-form-item sell-price">
+                                     <div class="layui-inline">
+                                        <label class="layui-form-label">销售数量:</label>
+                                        <div class="layui-input-inline">
+                                        <input type="number" name="sp_market" lay-verify="number" class="layui-input"  value="0">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                      <label class="layui-form-label">库存数量:</label>
+                                      <div class="layui-input-inline">
+                                        <input type="number" name="sp_inventory" lay-verify="number" class="layui-input"  value="0">
+                                      </div>
                                     </div>
                                 </div>
-                                <div class="layui-inline">
-                                  <label class="layui-form-label">库存数量:</label>
-                                  <div class="layui-input-inline">
-                                    <input type="number" name="sp_inventory" lay-verify="number" class="layui-input">
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">发布时间</label>
-                                <div class="layui-input-block">
-                                    <input type="text" name="publish_time" class="layui-input datetime">
-                                </div>
-                            </div>
-                             <div class="layui-form-item">
-                                 <div class="layui-inline">
-                                    <label class="layui-form-label">开始时间:</label>
-                                    <div class="layui-input-inline">
-                                        <input type="text" name="btime" class="layui-input datetime">
-                                    </div>
-                                    <label class="layui-form-label">结束时间:</label>
-                                    <div class="layui-input-inline">
-                                        <input type="text" name="etime" class="layui-input datetime">
+                                 <div class="layui-form-item">
+                                    <label class="layui-form-label">发布时间</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="publish_time" class="layui-input datetime" value="{:date('Y-m-d H:i:s',time())}">
                                     </div>
                                 </div>
+                                 <div class="layui-form-item">
+                                     <div class="layui-inline">
+                                        <label class="layui-form-label">开始时间:</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="btime" class="layui-input datetime" value="{:date('Y-m-d H:i:s',time())}">
+                                        </div>
+                                        <label class="layui-form-label">结束时间:</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="etime" class="layui-input datetime" value="{:date('Y-m-d H:i:s',time())}">
+                                        </div>
+                                     </div>
+                                 </div>
                             </div>
-                        </div>
                     </fieldset>
-                    <fieldset class="layui-elem-field" style="display:none" >
+                    <fieldset class="layui-elem-field sell-collective" >
                           <legend><b>团购设置</b></legend>
                             <div class="layui-field-box">
                                 <div class="layui-inline">
                                     <div class="layui-input-inline">
                                         <label class="layui-form-label">开启：</label>
                                         <div class="layui-input-block">
-                                            <input type="checkbox" name="is_collective" lay-skin="switch" lay-filter="stateSwitchTest" lay-text="开启|关闭">
-                                            <input type="hidden" name="collective_state" value="">
+                                            <input type="checkbox" name="" lay-skin="switch" lay-filter="stateSwitchTest" lay-text="开启|关闭">
+                                            <input type="hidden" name="is_collective" value="0">
                                         </div>
                                     </div>
                                 </div>
-                                <div class='collective-value'>
+                                <div class='collective-value' style="display: none;">
                                     <div class="layui-inline">
                                         <label class="layui-form-label">开团人数：</label>
                                         <div class="layui-input-inline">
-                                            <input type="number" name="collective_number" placeholder="几人开团" value="" class="layui-input">
+                                            <input type="number" name="collective[collective_number]" placeholder="几人开团" value="0" class="layui-input">
                                         </div>
                                     </div>
                                     <div class="layui-inline">
                                         <label class="layui-form-label">开团价格：</label>
                                         <div class="layui-input-inline">
-                                            <input type="number" name="collective_price"  placeholder="满足开团人数后价格" value="" class="layui-input ">
+                                            <input type="number" name="collective[collective_price]"  placeholder="满足开团人数后价格" value="0.0" class="layui-input ">
                                         </div>
                                     </div>
                                     <div class="layui-inline">
                                         <label class="layui-form-label">等待时间：</label>
                                         <div class="layui-input-inline">
-                                            <input type="number" name="collective_time" value="" placeholder="单位秒" class="layui-input">
+                                            <input type="number" name="collective[collective_time]" value="0" placeholder="单位秒" class="layui-input">
                                         </div>
                                     </div>
                                     <div class="layui-inline">
                                         <label class="layui-form-label">开始时间：</label>
                                         <div class="layui-input-inline">
-                                            <input type="text" name="collective_start_time" value="" placeholder="" class="layui-input datetime">
+                                            <input type="text" name="collective[collective_start_time]" value="{:date('Y-m-d H:i:s',time())}" placeholder="" class="layui-input datetime">
                                         </div>
                                     </div>
                                     <div class="layui-inline">
                                         <label class="layui-form-label">结束时间：</label>
                                         <div class="layui-input-inline">
-                                            <input type="text" name="collective_end_time" value="" placeholder="" lay-verify="datetime" class="layui-input datetime">
+                                            <input type="text" name="collective[collective_end_time]" value="{:date('Y-m-d H:i:s',time())}" placeholder="" lay-verify="datetime" class="layui-input datetime">
                                         </div>
                                     </div>
                                 </div>
@@ -221,7 +227,7 @@
                                 <select name="eid" lay-verify="required" lay-search="">
                                   <option value="">直接选择或搜索选择</option>
                                     {foreach name="express" item="e_vo"}
-                                        <option value="{$e_vo.id}">{$e_vo.company_name} 费用：{$e_vo.cost}元</option>
+                                        <option value="{$e_vo.id}"  {if condition="$e_vo.is_default==1"} selected {/if}>{$e_vo.company_name} 费用：{$e_vo.cost}元</option>
                                     {/foreach}
                                 </select>
                               </div>
@@ -274,13 +280,13 @@
                         <label class="layui-form-label">缩略图</label>
                         <div class="layui-input-inline layui-upload">
                             <input type="hidden" name="thumb" value="" class="layui-input layui-input-inline" id="thumb">
-                            <button type="button" class="layui-btn" data-path='uploads/goods_brand/' id="upload" data-width='500' data-height='500'>上传图片</button>
+                            <button type="button" class="layui-btn" data-path='uploads/goods_brand/' id="upload" >上传图片</button>
                             <div class="layui-input-inline" style='margin-top:10px;'>
                                 <img class="layui-upload-img" id="demo1" style='width:150px;'>
                                 <p id="demoText"></p>
                             </div>
-                        </div> 
-                        <div class="layui-form-mid layui-word-aux">推荐图片大小为500*500</div>
+                        </div>
+                        <!--<div class="layui-form-mid layui-word-aux">推荐图片大小为500*500</div>-->
                         </div>
                         <div class="layui-field-box">
                             <label class="layui-form-label">多图显示</label>
@@ -290,7 +296,7 @@
                             </div>
                         </div>
                     </fieldset>
-                   
+
                    <!--  <div class="layui-form-item">
                         <label class="layui-form-label">简介</label>
                         <div class="layui-input-block">
@@ -339,8 +345,8 @@
             uploadEditor.hide();
             uploadEditor.addListener('beforeInsertImage', function (t, arg) {
                 $.each(arg, function (index, item) {
-                    photoListItem = '<div class="photo-lis layui-inline"><input type="hidden" name="photo[]" value="' + item.src + '" class="layui-input layui-input-inline"><img width="150px;" src="' + item.src + '">';
-                    photoListItem += '<button type="button" class="layui-btn layui-btn-danger remove-photo-btn">移除</button></div>';
+                    photoListItem = '<div class="photo-lis layui-inline" style="margin-left: 20px;"><input type="hidden" name="photo[]" value="' + item.src + '" class="layui-input layui-input-inline"><img width="150px;" src="' + item.src + '">';
+                    photoListItem += '<div class="layui-btn-danger remove-photo-btn" style="text-align: center">移除</div></div>';
                     $('#photo-container').append(photoListItem).on('click', '.remove-photo-btn', function () {
                         $(this).parent('.photo-list').remove();
                     });
@@ -412,11 +418,9 @@
         form.on('switch(stateSwitchTest)', function(data){
             if(this.checked == true){
                 $('.collective-value').css('display','block');
-                $('input[name=collective_state]').val(1);
                 $('input[name=is_collective]').val(1);
             }else{
                 $('.collective-value').css('display','none');
-                $('input[name=collective_state]').val(0);
                 $('input[name=is_collective]').val(0);
 
             }
@@ -431,6 +435,21 @@
                 $('.sp_integral').css('display','none');
                 $('input[name=is_integral]').val(0);
 
+            }
+        });
+
+        //是否开启购买开关
+        form.on('switch(paySwitch)', function(data){
+            if(this.checked == true){
+                $('.sell-price').css('display','block');
+                $('.integral-buy').css('display','block');
+                $('.sell-collective').css('display','block');
+                $('input[name=is_pay]').val(1);
+            }else{
+                $('.sell-price').css('display','none');
+                $('.integral-buy').css('display','none');
+                $('.sell-collective').css('display','none');
+                $('input[name=is_pay]').val(0);
             }
         });
 

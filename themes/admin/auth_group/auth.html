@@ -21,6 +21,8 @@
     </div>
 </div>
 {/block}
+{block name='admin_js'}
+{/block}
 {block name="js"}
 <script src="__JS__/jquery.ztree.all.min.js"></script>
 {/block}
@@ -67,7 +69,8 @@
                 id: _id
             },
             success: function (data) {
-                zTree = $.fn.zTree.init(tree, setting, data);
+                zTree = $.fn.zTree.inits(tree, setting, data);
+
             }
         });
 

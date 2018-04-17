@@ -56,35 +56,59 @@
 </body>
 
 <script>
+$(function(){
+    var getOrderList = function(page){
+
+    }
+
     layui.use('flow', function() {
         var flow = layui.flow;
         flow.load({
             elem: '#LAY_demo1' //流加载容器
             , scrollElem: '#LAY_demo1' //滚动条所在元素，一般不用填，此处只是演示需要。
             , done: function (page, next) { //执行下一页的回调
+                var total_page = 0;
+                var page_val  = [];
+                $.post('/admin/internet/orderList',{
+                    page:page,
+                    size:20
+                },function(e){
+                    if(e.code == 1 ){
+                        total_page = e.data.page_count;
+                        page_val = e.data.data;
+                    }
+                })
 
                 //模拟数据插入
                 setTimeout(function () {
                     var lis = [];
-                    for (var i = 0; i < 8; i++) {
-                        lis.push('<li>' + ( (page - 1) * 8 + i + 1 ) + '</li>')
+                    for (var i = 0; i < page_val.length; i++) {
+                        var html = '';
+                        var pages_val = page_val[i];
+                        if( pages_val.status == 2 ){
+                            pages_val.status = '已完成';
+                        }
+                        if( pages_val.status == 1 ){
+                            pages_val.status = '已支付';
+                        }
+                        if( pages_val.status == 0 ){
+                            pages_val.status = '未支付';
+                        }
+                        html = '<tr><td>'+pages_val.order_no+'</td><td>'+pages_val.order_money+'元</td><td>'+pages_val.name+'</td><td></td><td>'+pages_val.add_time+'</td><td>'+ pages_val.status+'</td><td></td></tr>'
+                        lis.push(html)
                     }
-
                     //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
                     //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
-                    next(lis.join(''), page < 3); //假设总页数为 10
+                    next(lis.join(''), page < total_page); //假设总页数为 10
                 }, 500);
             }
         });
     })
-//    $(function(){
-//        $.post('/admin/internet/orderList',{
-//            page:1,
-//            size:20
-//        },function(e){
-//
-//        })
-//    })
+})
+
+
+
+
 //    var html = ''
 //    var machineHtml = '';
 //    for (var v in orderList) {

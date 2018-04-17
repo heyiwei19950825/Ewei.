@@ -10,22 +10,15 @@ return [
     //  +---------------------------------
     //  微信相关配置
     //  +---------------------------------
-//眉山同城生活
-//    // 小程序app_id
-    'app_id' => 'wx720cf9c5765a5c4d',
-//    // 小程序app_secret
-    'app_secret' => '515b4aa89149e5ca84a20d3278d995a6',
-
     // 小程序app_id
-//    'app_id' => 'wxf390c9e08ca6387f',
+    'app_id' => 'wx720cf9c5765a5c4d',
     // 小程序app_secret
-//    'app_secret' => '0ea37635889c1e7e54ace066b50b8596',
+    'app_secret' => '515b4aa89149e5ca84a20d3278d995a6',
 
     // 公众号APPID
     'wx_id' => 'wxce8e7c288f106be0',
     // 公众号app_secret
     'wx_secret' => '49a1d6ca5f5040d46641ca46ffda55dd',
-
     //签名
     'wx_noncestr' => 'l9c44aS4491RdNl4ydEWN9OW7nN9rN1s',
 

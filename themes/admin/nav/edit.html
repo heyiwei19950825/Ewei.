@@ -12,10 +12,22 @@
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" action="{:url('admin/nav/update')}" method="post">
                     <div class="layui-form-item">
-                        <label class="layui-form-label">导航名称</label>
+                        <label class="layui-form-label">上级导航</label>
                         <div class="layui-input-block">
-                            <input type="text" name="name" value="{$nav.name}"  lay-verify="required" placeholder="请输入导航名称" class="layui-input" >
+                            <select name="pid" required lay-verify="required">
+                                <option value="0">一级导航</option>
+                                {foreach name="nav_level_list" item="vo"}
+                                <option value="{$vo.id}" {if condition="$nav.id==$vo.id"} disabled="disabled"{/if} {if condition="$nav.pid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+                                {/foreach}
+                            </select>
                         </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">导航名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" value="{$nav.name}"  lay-verify="required" placeholder="请输入导航名称" class="layui-input" maxlength="5" >
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">字符长度为5</div>
                     </div>
                     <!--<div class="layui-form-item">-->
                         <!--<label class="layui-form-label">别名</label>-->
@@ -29,13 +41,6 @@
                                     <input type="text" name="link" value="{$nav.link}" placeholder="（选填）请输入导航链接" class="layui-input">
                             </div>
                         </div>
-
- <!--                    <div class="layui-form-item">
-                        <label class="layui-form-label">图标</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="icon" value="{$nav.icon}" placeholder="（选填）如：fa fa-home" class="layui-input">
-                        </div>
-                    </div> -->
                      <div class="layui-form-item">
                         <label class="layui-form-label">图标</label>
                         <div class="layui-input-inline layui-upload">
@@ -76,8 +81,8 @@
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">排序</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="sort" value="{$nav.sort}" required  lay-verify="required" class="layui-input">
+                        <div class="layui-input-inline">
+                            <input type="number" name="sort" value="{$nav.sort}" required  lay-verify="required" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">

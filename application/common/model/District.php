@@ -9,5 +9,11 @@ namespace app\common\model;
 
 
 class District extends BaseModel {
+    protected $table = 'district';
 
+    public function __construct()
+    {
+        $this->table = config('database.prefix').$this->table;
+        parent::__construct();
+    }
 }

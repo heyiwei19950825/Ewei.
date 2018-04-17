@@ -7,10 +7,15 @@
  */
 
 namespace app\common\model;
-use think\Db;
 
 
 class OrderGoodsExpress extends BaseModel
 {
+    protected $table = 'order_goods_express';
 
+    public function __construct()
+    {
+        $this->table = config('database.prefix').$this->table;
+        parent::__construct();
+    }
 }

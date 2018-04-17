@@ -7,9 +7,16 @@
  */
 namespace app\common\model;
 
-use app\common\model\BaseModel;
 
 
 class City extends BaseModel {
+
+    protected $table = 'city';
+
+    public function __construct()
+    {
+        $this->table = config('database.prefix').$this->table;
+        parent::__construct();
+    }
 
 }

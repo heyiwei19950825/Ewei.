@@ -8,6 +8,7 @@ use app\common\model\AdminUser as AdminUserModel;
 use app\common\model\AuthGroupAccess as AuthGroupAccessModel;
 
 
+use app\common\model\ShopReplace;
 use think\Session;
 use think\Config;
 
@@ -25,6 +26,7 @@ class Shop extends AdminBase
     protected $shop_group_model;
     protected $admin_user_model;
     protected $auth_group_access_model;
+    protected $shop_replace_model;
 
 
 
@@ -35,63 +37,64 @@ class Shop extends AdminBase
         $this->shop_group_model        = new ShopGroupModel();
         $this->admin_user_model        = new AdminUserModel();
         $this->auth_group_access_model = new AuthGroupAccessModel();
+        $this->shop_replace_model      = new ShopReplace();
 
     }
 
     public function index( $page = 1,$keyword =''){
-        $list = [];
         $map = [];
-        $field = 'id,shop_name,uid,shop_recommend,shop_sort,shop_platform_commission_rate,shop_type,shop_state,shop_logo';
+        $field = 'id,shop_name,pid,shop_recommend,shop_sort,shop_platform_commission_rate,shop_type,shop_status,shop_logo,audit_status';
 
         if (!empty($keyword)) {
             $map['shop_name'] = ['like', "%{$keyword}%"];
         }
 
         $list  = $this->shop_model->field($field)->where($map)->order(['shop_sort' => 'DESC'])->paginate(15, false, ['page' => $page]);
-
-    return $this->fetch('index',['list'=>$list,'keyword'=>$keyword]);
+        return $this->fetch('index',['list'=>$list,'keyword'=>$keyword]);
     }
 
     /**
-    *   添加商家
-    **/
+     *   添加商家
+     **/
     public function add(){
         if( $this->request->isPost()){
             $data = $this->request->param();
             $userData = array(
+                'name'     => $data['name'],
                 'username' => $data['username'],
                 'password' => md5($data['password'] . Config::get('salt')),
                 'status'   => 1
             );
 
             //检测用户是否存在
-            if( $this->admin_user_model->where(['username'=>$data['username']])->find()){
-                $this->error('用户名已存在');
+            if( $this->admin_user_model->getInfo('`username` = "'.$data['username'].'" OR `name` = "'.$data['name'].'"')){
+                $this->error('用户名或账户已存在');
             }
+
             //创建平台用户
             if( $this->admin_user_model->allowField(true)->save($userData) ){
-                $userInfo = $this->admin_user_model->field('id')->where(['username'=>$data['username']])->find();
+
+                $userInfo = $this->admin_user_model->getInfo(['username'=>$data['username']]);
                 //添加商家权限
                 $auth_group_access['uid']      = $userInfo['id'];
-                $auth_group_access['group_id'] = 4;
-                $this->auth_group_access_model->save($auth_group_access);
-                
+                $auth_group_access['group_id'] = 2;
+                $this->auth_group_access_model->pageSave($auth_group_access);
+
                 //验证并创建商家
                 $validate_result = $this->validate($data, 'Shop');
                 if( $validate_result !== true ){
                     $this->error($validate_result);
                 }else{
                     $shopData = array(
+                        'id'            => $userInfo['id'],
                         'shop_name'     => $data['shop_name'],
                         'shop_logo'     => $data['shop_logo'],
-                        'shop_group_id' => $data['shop_group_id'],
-                        'shop_state'    => $data['shop_state']
+                        'shop_category' => $data['shop_group_id'],
+                        'shop_status'   => $data['shop_status']
                     );
-                    if ($this->shop_model->save($shopData)) {
-                        $this->success('保存成功');
-                    } else {
-                        $this->error('保存失败');
-                    }
+                    $this->shop_model->pageSave($shopData);
+
+                    $this->success('保存成功');
                 }
             }
         }else{
@@ -121,10 +124,10 @@ class Shop extends AdminBase
     }
 
     /**
-    * 编辑商家
-    * @param $id
-    * @return mixed
-    */
+     * 编辑商家
+     * @param $id
+     * @return mixed
+     */
     public function edit( $id = 0 )
     {
         if( $this->request->isPost()){
@@ -149,7 +152,7 @@ class Shop extends AdminBase
             $shop_group_list = $this->shop_group_model->field('id,group_name')->select();
             return $this->fetch('edit', ['info' => $info,'shop_group_list'=>$shop_group_list]);
         }
-      
+
     }
 
 
@@ -164,8 +167,9 @@ class Shop extends AdminBase
         $status = $type == 'audit' ? 1 : 0;
         if (!empty($ids)) {
             foreach ($ids as $value) {
-                $data[] = ['id' => $value, 'shop_state' => $status];
+                $data[] = ['id' => $value, 'shop_status' => $status];
             }
+
             if ($this->shop_model->saveAll($data)) {
                 $this->success('操作成功');
             } else {
@@ -175,4 +179,80 @@ class Shop extends AdminBase
             $this->error('请选择需要操作的店铺');
         }
     }
+
+    /**
+     * 审核详情页面
+     * @return mixed
+     */
+    public function auditDetail(){
+        return $this->fetch('audit_detail');
+    }
+
+    /**
+     * 审核
+     */
+    public function addNote(){
+        if($this->request->isPost()){
+            $id = $status = $msg = '';
+            $data = $this->request->param();
+            extract($data);
+            if(empty($id)){
+                $this->error('非法请求');
+            }
+
+            $data = [
+                'audit_status' =>$status,
+                'audit_note'   =>$msg,
+            ];
+
+            $row = $this->shop_model->pageSave($data,['id'=>$id]);
+            if( $row ){
+                if( $status == 1 ){
+                    $replaceRow = $this->shop_replace_model->getInfo(['id'=>$id]);
+                    $replaceData = [
+                        'shop_name'=> $replaceRow['shop_name'],
+                        'shop_category'=> $replaceRow['shop_category'],
+                        'shop_phone'=> $replaceRow['shop_phone'],
+                        'shop_logo'=> $replaceRow['shop_logo'],
+                        'shop_banner'=> $replaceRow['shop_banner'],
+                        'shop_address'=> $replaceRow['shop_address'],
+                        'brief'=> $replaceRow['brief'],
+                        'shop_zip'=> $replaceRow['shop_zip'],
+                        'latitude_longitude'=> $replaceRow['latitude_longitude'],
+                    ];
+                    $row = $this->shop_model->pageSave($replaceData,['id'=>$id]);
+                    if( !$row ){
+                        $this->error('操作失败');
+                    }
+                }
+
+                $this->success('操作成功');
+            }else{
+                $this->error('操作失败');
+            }
+        }else{
+            $this->error('非法请求');
+        }
+    }
+
+    /**
+     * 修改列表参数
+     */
+    public function updateVal(){
+        if( $this->request->isPost()){
+            $id = $key = $value = '';
+            $param = $this->request->param();
+            extract($param);
+
+            $row = $this->shop_model->pageSave([$key=>$value],['id'=>$id]);
+            if( $row != false){
+                $this->success('修改成功');
+            }else{
+                $this->error('修改失败');
+            }
+        }else{
+            $this->error('非法请求');
+        }
+    }
+
 }

@@ -10,11 +10,22 @@
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" action="{:url('admin/nav/save')}" method="post">
-                    
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">上级导航</label>
+                        <div class="layui-input-block">
+                            <select name="pid" required lay-verify="required">
+                                <option value="0">一级导航</option>
+                                {foreach name="nav_level_list" item="vo"}
+                                <option value="{$vo.id}" {if condition="$pid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">导航名称</label>
                         <div class="layui-input-block">
-                            <input type="text" name="name" value="" required  lay-verify="required" placeholder="请输入导航名称" class="layui-input">
+                            <input type="text" name="name" value="" required  lay-verify="required" placeholder="请输入导航名称" class="layui-input"  maxlength="5">
+                            <div class="layui-form-mid layui-word-aux">字符长度为5</div>
                         </div>
                     </div>
                     <!--<div class="layui-form-item">-->
@@ -75,8 +86,8 @@
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">排序</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="sort" value="0" required  lay-verify="required" class="layui-input">
+                        <div class="layui-input-inline">
+                            <input type="number" name="sort" value="0" required  lay-verify="required" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">

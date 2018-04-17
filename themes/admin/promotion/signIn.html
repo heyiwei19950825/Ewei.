@@ -1,5 +1,18 @@
 {extend name="base" /}
 {block name="body"}
+<style>
+    .iphone-mode{
+        width:327px;
+        height:695px;
+        background: transparent url(__STATIC__/images/bg-mobile.png) no-repeat 0 0;
+    }
+    .layui-upload-img{
+        width: 271px;
+        height: 433px;
+        margin-top: 148px;
+        margin-left: 28px;
+    }
+</style>
 <div class="layui-body">
     <!--tab标签-->
     <div class="layui-tab layui-tab-brief">
@@ -11,39 +24,34 @@
                 <form class="layui-form form-container" action="{:url('admin/signin/setting')}" method="post">
                     <div class="layui-form-item">
                         <label class="layui-form-label">背景图</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline layui-upload">
+                            <input type="hidden" name="thumb" value="{$info.thumb}" class="layui-input layui-input-inline" id="thumb">
+                            <button type="button" class="layui-btn" id="upload"  data-path='uploads/common/' data-width="327" data-height="695">上传图片</button>
+                            <div class="layui-input-block" style='margin-top:10px;'>
+                                <div class="iphone-mode">
+                                    <img class="layui-upload-img"  id="demo1" src="{$info.thumb}">
+                                </div>
+                                <p id="demoText"></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">手机</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="mobile" value="" placeholder="（选填）请输入手机" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">邮箱</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="email" value="" placeholder="（选填）请输入邮箱" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item" >
-                        <label class="layui-form-label">积分</label>
+                    <div class="layui-form-item" style="margin-top: 30px;">
+                        <label class="layui-form-label">签到奖励</label>
                         <div class="layui-input-inline">
-                            <input type="number" name="integral" value="" placeholder="（选填）输入积分" class="layui-input">
+                            <select name="award_type" id="" lay-verify="required">
+                                <option value="0" {if condition="$info.award_type==0"} selected="selected"{/if}>无</option>
+                                <option value="1" {if condition="$info.award_type==1"} selected="selected"{/if}>积分</option>
+                                <option value="2" {if condition="$info.award_type==2"} selected="selected"{/if}>经验</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="number" name="award_number" value="{$info.award_number}" placeholder="输入对应奖励的数值" class="layui-input" lay-verify="required">
                         </div>
                     </div>
-                    <div class="layui-form-item" style="display:none">
+                    <div class="layui-form-item">
                         <label class="layui-form-label">状态</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="status" value="1" title="启用" checked="checked">
-                            <input type="radio" name="status" value="0" title="禁用">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">VIP用户</label>
-                        <div class="layui-input-block">
-                            <input type="radio" name="status" value="1" title="启用">
-                            <input type="radio" name="status" value="0" title="关闭"  checked="checked">
+                            <input type="radio" name="status" value="1" title="启用" {if condition="$info.status==1"} checked="checked"{/if}>
+                            <input type="radio" name="status" value="0" title="禁用" {if condition="$info.status==0"} checked="checked"{/if}>
                         </div>
                     </div>
                     <div class="layui-form-item">

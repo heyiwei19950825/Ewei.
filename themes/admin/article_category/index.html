@@ -14,7 +14,9 @@
                     <tr>
                         <th style="width: 30px;">ID</th>
                         <th style="width: 30px;">排序</th>
+                        <th>状态</th>
                         <th>分类名称</th>
+                        <th>缩略图</th>
                         <th>操作</th>
                     </tr>
                     </thead>
@@ -23,7 +25,14 @@
                     <tr>
                         <td>{$vo.id}</td>
                         <td>{$vo.sort}</td>
+                        <td>{if condition="$vo.status==0"}显示{else}隐藏{/if}</td>
                         <td>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</td>
+                        <td>
+                            {if condition="$vo.status==''"}
+                            {else}
+                            <img src="{$vo.icon}" alt="" height="50px;">
+                            {/if}
+                        </td>
                         <td>
                             <a href="{:url('admin/ArticleCategory/add',['pid'=>$vo['id']])}" class="layui-btn layui-btn-mini">添加子分类</a>
                             <a href="{:url('admin/ArticleCategory/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>

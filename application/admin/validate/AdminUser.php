@@ -11,6 +11,7 @@ use think\Validate;
 class AdminUser extends Validate
 {
     protected $rule = [
+        'name'             => 'require|unique:admin_user',
         'username'         => 'require|unique:admin_user',
         'password'         => 'confirm:confirm_password',
         'confirm_password' => 'confirm:password',
@@ -19,8 +20,10 @@ class AdminUser extends Validate
     ];
 
     protected $message = [
-        'username.require'         => '请输入用户名',
-        'username.unique'          => '用户名已存在',
+        'name.require'             => '请输入用户名',
+        'name.unique'              => '用户名已存在',
+        'username.require'         => '请输入登录账户',
+        'username.unique'          => '登录账户已存在',
         'password.confirm'         => '两次输入密码不一致',
         'confirm_password.confirm' => '两次输入密码不一致',
         'status.require'           => '请选择状态',

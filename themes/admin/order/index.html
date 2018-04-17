@@ -22,17 +22,13 @@
                     </div>
                 </div>
                 <div class="layui-inline">
-                    <label class="layui-form-label">用户</label>
-                    <div class="layui-input-block">
-                        <input name="user_name" placeholder="用户昵称" autocomplete="off" class="layui-input" type="text"  value="{$user_name}"/>
-                    </div>
-                </div>
-                <div class="layui-inline">
                     <label class="layui-form-label">商家</label>
                     <div class="layui-input-inline">
                         <select name="order_shop" lay-verify="">
-                            <option value="">请选择</option>
-                            <option value="0" {if condition="$shop_id===0"} selected="selected"{/if}>官方旗舰店</option>
+                            <option value="0">全部</option>
+                            {foreach name="shop_list" item="vo"}
+                                <option value="{$vo.id}" {if condition="$shop_id==$vo.id"} selected="selected"{/if}>{$vo.shop_name}</option>
+                            {/foreach}
                         </select>
                     </div>
                 </div>
@@ -88,7 +84,7 @@
                 <div class="layui-inline"><button class="layui-btn" lay-submit="">查询</button></div>
 
             </form>
-            <form action="{:url('admin/order/index?type=export')}" method="get">
+            <form action="{:url('admin/order/index?type=export&order_shop='.$shop_id.'&order_no='.$order_no.'&user_name='.$user_name.'&order_from='.$order_from.'&order_type='.$order_type.'&order_status='.$order_status.'&start_time='.$start_time.'&end_time='.$end_time)}" method="get">
                 <div class="layui-inline"><input type="submit" class="layui-btn layui-btn-normal" value="导出Excel数据"></div>
             </form>
             <div class="table-list roll-x">
@@ -117,10 +113,9 @@
                         <td>{$vo.order_from}</td>
                         <td>{$vo.goods_name}</td>
                         <td>{if condition="$vo.type == 2"} <span style="color:#FF5722">{$vo.order_money} 积分</span>{else}<span class="price">{$vo.order_money}</span>{/if}</td>
-                        <td class="shop_name">{$vo.shop_name}</td>
                         <!--<td><a href="javascript:;" class="a2">{$vo.user_name}</a></td>-->
+                        <td><a href="javascript:;">{$vo.shop.shop_name}</a></td>
                         <td><a href="javascript:;">{$vo.user_name}</a></td>
-
                         <td>{$vo.receiver_name}</td>
                         <td>{$vo.receiver_mobile}</td>
                         <td><span class="red">{$vo.order_status}</span></td>
@@ -133,7 +128,7 @@
                         {else}
                         <td>
                             <!--<span class="red">已经兑换</span>-->
-                            <a href="/admin/order/orderPrint?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-small" target="_blank">打印详单</a>
+                            <a href="/admin/order/orderPrint?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-small" target="_blank" style="color: #ffffff;" >打印详单</a>
                         </td>
                         {/if}
                         {else}
@@ -144,13 +139,8 @@
                             <button class="layui-btn layui-btn-warm layui-btn-small a10">退款</button>
                             {/if}
                             {if condition="$vo['status'] == 1"}
-                            {if condition="$vo['shop_id'] != 0"}
-                            <button class="layui-btn layui-btn-warm layui-btn-small a6">发货</button>
-                            <a href="/admin/order/orderPrint?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-small" target="_blank">打印详单</a>
-                            {else}
                             <button class="layui-btn layui-btn-normal layui-btn-small a3" data-id='{$vo.id}'>发货</button>
-                            <a href="/admin/order/orderPrint?id={$vo.id}" class="layui-btn layui-btn-warm layui-btn-small" target="_blank">打印详单</a>
-                            {/if}
+                            <a href="/admin/order/orderPrint?id={$vo.id}"  style="color: #ffffff;" class="layui-btn layui-btn-warm layui-btn-small" target="_blank">打印详单</a>
                             {/if}
                             {if condition="$vo['status'] != 3 && $vo['status'] != 4 &&$vo['status'] != 5 && $vo['status'] != 6 && $vo['status'] != 7" && $vo.cancel_note == '' }
                             <button class="layui-btn layui-btn-danger layui-btn-small a4" data-id="{$vo['id']}">取消订单</button>

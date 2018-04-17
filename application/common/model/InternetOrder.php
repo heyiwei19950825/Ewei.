@@ -9,7 +9,9 @@
 namespace app\common\model;
 
 
-class InternetOrder extends BaseModel
+use think\Model;
+
+class InternetOrder extends Model
 {
     public function getOrderList($page_index, $page_size, $condition, $order, $field){
        $row = $this->pageQuery($page_index, $page_size, $condition, $order, $field);

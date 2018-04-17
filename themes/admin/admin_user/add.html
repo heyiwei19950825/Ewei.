@@ -11,9 +11,27 @@
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" action="{:url('admin/admin_user/save')}" method="post">
                     <div class="layui-form-item">
+                        <label class="layui-form-label">父级管理</label>
+                        <div class="layui-input-block">
+                            <select name="p_id"  lay-filter="p_id">
+                                <option value="0">一级管理</option>
+                                {foreach name="admin_list" item="vo"}
+                                <option value="{$vo.id}">{$vo.name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
                         <label class="layui-form-label">用户名</label>
                         <div class="layui-input-block">
-                            <input type="text" name="username" value="" required lay-verify="required" placeholder="请输入用户名" class="layui-input">
+                            <input type="text" name="name" value="" required lay-verify="required" placeholder="请输入用户名" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">账户</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="username" value="" required lay-verify="required" placeholder="请输入登录账号" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -35,16 +53,39 @@
                             <input type="radio" name="status" value="0" title="禁用">
                         </div>
                     </div>
-                    <!--<div class="layui-form-item">-->
-                        <!--<label class="layui-form-label">所属权限组</label>-->
-                        <!--<div class="layui-input-block">-->
-                            <!--<select name="group_id" lay-verify="required">-->
-                                <!--{foreach name="auth_group_list" item="vo"}-->
-                                <!--<option value="{$vo.id}">{$vo.title}</option>-->
-                                <!--{/foreach}-->
-                            <!--</select>-->
-                        <!--</div>-->
-                    <!--</div>-->
+                    <div class="layui-form-item in_shop">
+                        <label class="layui-form-label">创建店铺</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="in_shop" value="1" title="是" lay-filter="inShop" >
+                            <input type="radio" name="in_shop" value="0" title="否" checked="checked" lay-filter="inShop">
+                        </div>
+                    </div>
+                    <div class="layui-form-item shop_name" style="display:none">
+                        <label class="layui-form-label">商铺名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="shop_name" value="" placeholder="商铺名称" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item shop_category" style="display:none">
+                        <label class="layui-form-label">商铺分类</label>
+                        <div class="layui-input-block">
+                            <select name="shop_category" >
+                                {foreach name="shop_category" item="vo"}
+                                <option value="{$vo.id}">{$vo.group_name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">所属权限组</label>
+                        <div class="layui-input-block">
+                            <select name="group_id" lay-verify="required">
+                                {foreach name="auth_group_list" item="vo"}
+                                <option value="{$vo.id}">{$vo.title}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <button class="layui-btn" lay-submit lay-filter="*">保存</button>
@@ -56,4 +97,39 @@
         </div>
     </div>
 </div>
+<script>
+    $(function(){
+
+        form.on('select(p_id)', function(data){
+           if(data.value != 0 ){
+               $('.shop_name').css('display','none');
+               $('.shop_category').css('display','none');
+               $('.in_shop').css('display','none');
+               $('input[name=in_shop]').each(function (i,v) {
+                   if($(v).val() == 0 ){
+                       $(v).prop("checked",true)
+                   }
+               })
+           }else{
+               $('.in_shop').css('display','block');
+           }
+        });
+
+        form.on('radio(inShop)', function(data){
+            if(data.value == 1 ){
+                $('.shop_name').css('display','block');
+                $('.shop_category').css('display','block');
+            }else{
+                $('.shop_name').css('display','none');
+                $('.shop_category').css('display','none');
+            }
+        });
+
+
+    })
+</script>
+{/block}
+
+{block name="script"}
+
 {/block}

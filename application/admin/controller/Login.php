@@ -1,6 +1,8 @@
 <?php
 namespace app\admin\controller;
 
+use app\common\model\AdminUser;
+use app\common\model\AuthGroupAccess;
 use think\Config;
 use think\Controller;
 use think\Db;
@@ -36,20 +38,24 @@ class Login extends Controller
 //            } else {
                 $where['username'] = $data['username'];
                 $where['password'] = md5($data['password'] . Config::get('salt'));
-                $admin_user = Db::name('admin_user')->field('id,username,status')->where($where)->find();
+                $admin_user = (new AdminUser())->getInfo($where,'id,username,name,status,p_id');
                 if (!empty($admin_user)) {
                     if ($admin_user['status'] != 1) {
                         $this->error('当前用户已禁用');
                     } else {
-                        Session::set('admin_id', $admin_user['id']);
-                        Session::set('admin_name', $admin_user['username']);
+                        $admin_auth = (new AuthGroupAccess())->getInfo(['uid'=>$admin_user['id']]);
+                        Session::set('admin_id', $admin_user['id']);//当前用户ID
+                        Session::set('admin_p_id', $admin_user['p_id']);//当前用户的父级ID
+                        Session::set('admin_name', $admin_user['name']);//当前用户名称
+                        Session::set('admin_group', $admin_auth['group_id']);//权限
+
                         Db::name('admin_user')->where(['id'=>$admin_user['id']])->update(
                             [
                                 'last_login_time' => date('Y-m-d H:i:s', time()),
 //                                'last_login_ip'   => $this->request->ip()
                             ]
                         );
-                        $this->success('登录成功', 'admin/subscribe/internet');
+                        $this->success('登录成功', 'admin/Index/index','',1);
                     }
                 } else {
                     $this->error('用户名或密码错误');
@@ -65,6 +71,6 @@ class Login extends Controller
     {
         Session::delete('admin_id');
         Session::delete('admin_name');
-        $this->success('退出成功', 'admin/login/index');
+        $this->success('退出成功', 'admin/login/index','',1);
     }
 }

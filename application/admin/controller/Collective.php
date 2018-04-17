@@ -36,11 +36,11 @@ class Collective extends AdminBase {
      */
     public function index($keyword = '', $page = 1){
         $map   = [];
-        if($this->shop['id']!= 1){
-            $map['c.sid'] = $this->shop['id'];
+        if($this->instance_id!= 1){
+            $map['c.s_id'] = $this->instance_id;
         }
         
-    	$field = 'c.id,c.goods_id,c.time,c.start_time,c.end_time,c.goods_price,g.name,g.sp_price,c.state as c_state,c.user_number';
+    	$field = 'c.id,c.goods_id,c.time,c.start_time,c.end_time,c.goods_price,g.name,g.sp_price,c.status as c_status,c.user_number,s.shop_name,g.id as g_id';
 
 
     	if (!empty($keyword)) {
@@ -49,19 +49,12 @@ class Collective extends AdminBase {
 
         $collective_list = Db::table('ewei_goods_collective')
 		->alias('c')
-		->join('goods g','c.goods_id = g.id')
+		->join('goods g','c.goods_id = g.id','LEFT')
+        ->join('shop s','g.s_id = s.id','LEFT')
 		->field( $field )
 		->where( $map )
 		->order(['start_time' => 'DESC'])->paginate(15, false, ['page' => $page]);
 		$list = array();
-
-		//重新赋值
-		// foreach ($collective_list as $key => &$value) {
-		// 	if( isset($list) ){
-		// 		$list[$key] = $value;
-		// 		$list[$key]['time'] = $this->helper_class->Sec2Time($value['time']);
-		// 	}
-		// }
 
  		return $this->fetch('index', ['list'=>$list,'collective_list' => $collective_list , 'keyword' => $keyword]);
     }
@@ -72,22 +65,20 @@ class Collective extends AdminBase {
      * @return [type]     [description]
      */
     public function edit($id){
-        $field = 'c.id,c.goods_id,c.time,c.start_time,c.end_time,c.goods_price,g.thumb,g.name,g.sp_price,c.state as c_state,c.user_number';
+        $field = 'c.id,c.goods_id,c.time,c.start_time,c.end_time,c.goods_price,g.thumb,g.name,g.sp_price,c.status as c_status,c.user_number';
         $collective_info = Db::table('ewei_goods_collective')
         ->alias('c')
         ->join('goods g','c.goods_id = g.id')
         ->field( $field )
         ->where(['c.id'=>$id] )
         ->find();
-        // var_dump($collective_info);die;
+
     	return $this->fetch('edit',['collective_info'=>$collective_info]);
     }
 
     public function update(){
         if($this->request->isPost()){
             $data            = $this->request->param();
-            // $validate_result = $this->validate($data, 'Collective');
-
             if( Db::table('ewei_goods_collective')->where([ 'goods_id'=>$data['goods_id'] ])->update($data) !== false){
                 $this->success('更新成功');
             }else{
@@ -122,7 +113,7 @@ class Collective extends AdminBase {
         $data   = [];
         if (!empty($ids)) {
             foreach ($ids as $value) {
-                $data[] = ['id' => $value, 'state' => $state];
+                $data[] = ['id' => $value, 'status' => $state];
             }
 
             if ( $this->collective_model->saveAll($data)) {

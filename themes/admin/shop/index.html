@@ -8,11 +8,11 @@
             <li class=""><a href="{:url('admin/shop/add')}">添加店铺</a></li>
         </ul>
         <div class="layui-tab-content">
-         <form class="layui-form layui-form-pane" action="{:url('admin/shop/index')}" method="get">
+            <form class="layui-form layui-form-pane" action="{:url('admin/shop/index')}" method="get">
                 <div class="layui-inline">
                     <label class="layui-form-label">分类</label>
                     <div class="layui-input-inline">
-                      
+
                     </div>
                 </div>
                 <div class="layui-inline">
@@ -27,46 +27,143 @@
                 <hr>
             </form>
             <div class="layui-tab-item layui-show">
-               <!--  <button type="button" class="layui-btn layui-btn-small ajax-action" data-action="{:url('admin/shop/toggle',['type'=>'audit'])}">开启</button>
-                <button type="button" class="layui-btn layui-btn-warm layui-btn-small ajax-action" data-action="{:url('admin/shop/toggle',['type'=>'cancel_audit'])}">关闭</button>
-                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/shop/delete')}">删除</button> -->
-                <table class="layui-table">
-                    <thead>
-                    <tr>
-                        <th style="width: 15px;"><input type="checkbox" class="check-all"></th>
-                        <th style="width: 30px;">ID</th>
-                        <th>店铺名称</th>
-                        <th>账户名</th>
-                        <th>Logo</th>
-                        <th>是否推荐</th>
-                        <th>排序</th>
-                        <!-- <th>平台抽取比率</th> -->
-                        <th>状态</th>
-                        <th style="width: 300px;">操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                     {foreach name="list" item="vo"}
-                         <tr>
+                <form action="" method="post" class="ajax-form layui-from">
+                    <button type="button" class="layui-btn layui-btn-small ajax-action" data-action="{:url('admin/shop/toggle',['type'=>'audit'])}">开启店铺</button>
+                    <button type="button" class="layui-btn layui-btn-warm layui-btn-small ajax-action" data-action="{:url('admin/shop/toggle',['type'=>'cancel_audit'])}">关闭店铺</button>
+                    <table class="layui-table">
+                        <thead>
+                        <tr>
+                            <th style="width: 15px;"><input type="checkbox" class="check-all"></th>
+                            <th style="width: 30px;">ID</th>
+                            <th>店铺名称</th>
+                            <th>Logo</th>
+                            <th>首页推荐</th>
+                            <th>排序</th>
+                            <!-- <th>平台抽取比率</th> -->
+                            <th>状态</th>
+                            <th>审核状态</th>
+                            <th style="width: 300px;">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach name="list" item="vo"}
+                        <tr>
                             <td><input type="checkbox" name="ids[]" value="{$vo.id}"></td>
                             <td>{$vo.id}</td>
                             <td>{$vo.shop_name}</td>
-                            <td>{$vo.uid}</td>
                             <td><img src="{$vo.shop_logo}" alt="" widht='50px' height='50px'></td>
-                            <td>{if condition='$vo.shop_recommend==1'}是{else}否{/if}</td>
-                            <td>{$vo.shop_sort}</td>
+                            <td>
+                                <input type="checkbox" data-key="shop_recommend" class='update-value' name='shop_recommend' data-id="{$vo.id}" {if condition='$vo.shop_recommend==1'}checked{else}{/if}>
+                            </td>
+                            <td>
+                                <div class="layui-input-inline">
+                                    <span><input type="number" class="layui-input shop-sort" value="{$vo.shop_sort}" data-id="{$vo.id}" data-key="shop_sort"></span>
+                                </div>
+                            </td>
                             <!-- <td>{$vo.shop_platform_commission_rate}</td> -->
-                            <td>{if condition='$vo.shop_state==1'}已开启{else}已关闭{/if}</td>
-                            <td >
-                                <a href="{:url('admin/shop/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                            <td>
+                                {switch name="$vo.shop_status" }
+                                {case value="0" }关闭{/case}
+                                {case value="1"}开启{/case}
+                                {case value="2"}审核中{/case}
+                                {/switch}
+                            </td>
+                            <td>
+                                {switch name="$vo.audit_status" }
+                                {case value="0"}暂无修改{/case}
+                                {case value="1"}审核通过{/case}
+                                {case value="2"}提交审核{/case}
+                                {case value="3"}审核不通过{/case}
+                                {/switch}
+                            </td>
+                            <td>
+                                {if condition="$vo.audit_status == 2 "}
+                                <div class="layui-btn  layui-btn-mini a1" data-id="{$vo['id']}" data-status="{$vo.audit_status}">查看审核</div>
+                                <div class="layui-btn layui-btn-warm a9" data-id="{$vo['id']}" data-status="1">通过</div>
+                                <div class="layui-btn layui-bg-red a9" data-id="{$vo['id']}" data-status="3">不通过</div>
+                                {else}
+                                <div class="layui-btn  layui-btn-mini a1" data-id="{$vo['id']}" data-status="{$vo.audit_status}">查看店铺</div>
+                                {/if}
                             </td>
                         </tr>
-
                         {/foreach}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </form>
             </div>
         </div>
     </div>
 </div>
+{/block}
+{block name='js'}
+<script>
+    $(function(){
+        //查看店铺信息
+        $(document).on("click", ".a1", function() {
+            if( $(this).attr('data-status') == 2 ){
+                var url = "{:url('admin/shopInfo/index')}"+'?type=audit&id='+$(this).attr('data-id');
+                var title = '审核详情';
+            }else{
+                var url = "{:url('admin/shopInfo/index')}"+'?type=index&id='+$(this).attr('data-id');
+                var title = '店铺详情';
+            }
+            layer.open({
+                type:2
+                ,area:['80%', '90%']
+                ,title:title
+                ,content: url
+            });
+        });
+
+        // 添加备注
+        $(document).on("click", ".a9", function() {
+            var id = $(this).attr('data-id');
+            var status = $(this).attr('data-status');
+            layer.prompt(function(val, index){
+                var msg = val;
+                $.post("{:url('admin/shop/addNote')}",{id:id,msg:msg,status:status},function(e){
+                    layer.msg(e.msg);
+
+                    window.location.reload();
+                })
+                layer.close(index);
+            });
+        });
+
+        //首页推荐
+//        $(document).on('click','.shop_recommend',function(i,v){
+//            console.log(11111);
+//            if($(this).attr('checked')){
+//                alert(1111);
+//            }
+//        })
+        $('.update-value').click(function(v){
+            var id = $(this).attr('data-id');
+            var key = $(this).attr('data-key');
+            if( key = 'shop_recommend'){
+                var vals = $(this).is(':checked') == true?1:0;
+            }
+            $.post('/admin/shop/updateVal',{
+                id:id,
+                value:vals,
+                key:key
+            },function(e){
+                layer.msg(e.msg);
+            })
+        })
+
+        $('.shop-sort').blur(function(){
+            var vals = $(this).val();
+            var key = $(this).attr('data-key');
+            var id = $(this).attr('data-id');
+            $.post('/admin/shop/updateVal',{
+                id:id,
+                value:vals,
+                key:key
+            },function(e){
+                layer.msg(e.msg);
+            })
+        })
+    })
+</script>
 {/block}

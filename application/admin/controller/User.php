@@ -36,7 +36,7 @@ class User extends AdminBase
         //查询积分规则获取用户等级注释
         $rankList = Db::name('user_rank')->select()->toArray();
         if( empty($rankList) ){
-            $user_list = $this->user_model->where($map)->order('id DESC')->select();
+            $user_list = $this->user_model->where($map)->order('id DESC')->limit(($page-1)*15,15)->select();
             foreach ($user_list as &$v){
                 $v['rank_name'] = '普通用户';
             }

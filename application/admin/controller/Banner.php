@@ -23,7 +23,7 @@ class Banner extends AdminBase
      */
     public function index()
     {
-        $banner_list = Db::name('banner')->select();
+        $banner_list = Db::name('banner')->where(['s_id'=>$this->instance_id])->select();
 
         return $this->fetch('index', ['banner_list' => $banner_list]);
     }
@@ -44,6 +44,7 @@ class Banner extends AdminBase
     {
         if ($this->request->isPost()) {
             $data = $this->request->post();
+            $data['s_id'] = $this->instance_id;
 
             if (Db::name('banner')->insert($data)) {
                 $this->success('保存成功');
@@ -60,7 +61,7 @@ class Banner extends AdminBase
      */
     public function edit($id)
     {
-        $banner = Db::name('banner')->find($id);
+        $banner = Db::name('banner')->where(['s_id'=>$this->instance_id])->find($id);
 
         return $this->fetch('edit', ['banner' => $banner]);
     }
@@ -73,6 +74,7 @@ class Banner extends AdminBase
     {
         if ($this->request->isPost()) {
             $data = $this->request->post();
+            $data['s_id'] = $this->instance_id;
 
             if (Db::name('banner')->update($data) !== false) {
                 $this->success('更新成功');
@@ -89,7 +91,8 @@ class Banner extends AdminBase
      */
     public function delete($id)
     {
-        if (Db::name('banner')->delete($id) !== false) {
+        if (Db::name('banner')->delete(['id'=>$id,'s_id'=>$this->instance_id]) !== false) {
+
             $this->success('删除成功');
         } else {
             $this->error('删除失败');

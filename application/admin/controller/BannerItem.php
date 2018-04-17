@@ -25,9 +25,10 @@ class BannerItem extends AdminBase
      */
     public function index()
     {
-        $banner_model = new BannerCategoryModel();
-        $banner_list  = $banner_model->column('name', 'id');
-        $banner_item           = BannerItemModel::all();
+        $banner_model           = new BannerCategoryModel();
+        $banner_item_model      = new BannerItemModel();
+        $banner_list            = $banner_model->column('name', 'id');
+        $banner_item            = $banner_item_model->where(['s_id'=>$this->instance_id])->select();
 
         return $this->fetch('index', ['banner_item' => $banner_item, 'banner_list' => $banner_list]);
     }
@@ -38,7 +39,8 @@ class BannerItem extends AdminBase
      */
     public function add()
     {
-        $banner_list = BannerCategoryModel::all();
+        $banner_model   = new BannerCategoryModel();
+        $banner_list = $banner_model->where(['s_id'=>$this->instance_id])->select();
 
         return $this->fetch('add', ['banner_list' => $banner_list]);
     }
@@ -50,6 +52,8 @@ class BannerItem extends AdminBase
     {
         if ($this->request->isPost()) {
             $data            = $this->request->param();
+            $data['s_id']    = $this->instance_id;
+
             $validate_result = $this->validate($data, 'Banner');
             if ($validate_result !== true) {
                 $this->error($validate_result);
@@ -71,8 +75,10 @@ class BannerItem extends AdminBase
      */
     public function edit($id)
     {
-        $banner_list = BannerCategoryModel::all();
-        $banner_item = BannerItemModel::get($id);
+        $banner_model           = new BannerCategoryModel();
+        $banner_item_model      = new BannerItemModel();
+        $banner_list            = $banner_model->where(['s_id'=>$this->instance_id])->select();
+        $banner_item            = $banner_item_model->where(['s_id'=>$this->instance_id,'id'=>$id])->find();
 
         return $this->fetch('edit', ['banner_item' => $banner_item, 'banner_list' => $banner_list]);
     }
@@ -86,6 +92,7 @@ class BannerItem extends AdminBase
         if ($this->request->isPost()) {
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Banner');
+            $data['s_id']    = $this->instance_id;
 
             //如果状态为2则修改喊出时间
             if( $data['status'] == 0 ){

@@ -17,7 +17,7 @@
                     </div> -->
                      <div class="layui-form-item">
                         <label class="layui-form-label">商品：</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                            <input type="text" autocomplete="off" class="layui-input" value='{$collective_info.name}' disabled="">
                            <input type="hidden" name="goods_id" value="{$collective_info.goods_id}">
                         </div>
@@ -26,7 +26,7 @@
                      <div class="layui-form-item">
                      <label class="layui-form-label"></label>
                         <div class="layui-input-inline">
-                           <img src="{$collective_info.thumb}">
+                           <img src="{$collective_info.thumb}" width="150px;">
                         </div>
                         <div class="layui-form-mid layui-word-aux"></div>
                     </div>
@@ -67,8 +67,8 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">状态</label>
                         <div class="layui-input-block">
-                            <input type="checkbox" name="" {if condition="$collective_info.c_state == 1"} checked{/if} lay-skin="switch" lay-filter="stateSwitchTest" lay-text="开启|关闭">
-                            <input type="hidden" name="state" value="{$collective_info.c_state}">
+                            <input type="checkbox" name="" {if condition="$collective_info.c_status == 1"} checked{/if} lay-skin="switch" lay-filter="stateSwitchTest" lay-text="开启|关闭">
+                            <input type="hidden" name="status" value="{$collective_info.c_status}">
                         </div>
                     </div>
                     <div class="layui-form-item">

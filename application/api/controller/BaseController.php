@@ -17,7 +17,6 @@ use think\Db;
 use think\Config;
 
 
-
 class BaseController extends Controller
 {
     public function _initialize(){
@@ -26,18 +25,41 @@ class BaseController extends Controller
     }
 
     protected function setSystem(){
-        $site_config = Db::name('system')->field('value')->where('name', 'site_config')->find();
-        $site_config = unserialize($site_config['value']);
-        $system = [
-            'domain' => $site_config['domain'],
-            'pay_back_url' => $site_config['pay_back_url'],
+        $site_config = Db::name('system')->where(['s_id'=>1])->find();
 
+        $wxConfig = [
+            //小程序配置
+            'x_domain' => $site_config['x_domain'],
+            'app_id' => $site_config['x_app_id'],
+            'app_secret' => $site_config['x_app_secret'],
+            //公众号配置
+            'domain' => $site_config['domain'],
+            'wx_id' => $site_config['app_id'],
+            'wx_secret' => $site_config['app_secret'],
+            'wx_noncestr' => $site_config['app_noncestr'],
+
+            //商户配置
+            'shop_id' => $site_config['shop_id'],
+            'shop_key' => $site_config['shop_key'],
+            'pay_back_url' => $site_config['pay_back_url'],//公众号回调
+            'x_pay_back_url' => $site_config['x_pay_back_url'],//小程序回调
+
+            //支付密钥文件
+            'apiclient_cert' => $site_config['apiclient_cert'],
+            'apiclient_key' => $site_config['apiclient_key'],
+        ];
+        $system = [
+            'x_switch' => $site_config['x_switch'],
+            'x_domain' => $site_config['x_domain'],
+            'domain'   => $site_config['domain'],
         ];
 
         Config::set('setting',$system);
-        Config::set('wx.app_id',$site_config['app_id']);
-        Config::set('wx.app_secret',$site_config['app_secret']);
-
+        Config::set('wx.app_id',$wxConfig['app_id']);
+        Config::set('wx.app_secret',$wxConfig['app_secret']);
+        Config::set('wx.wx_id',$wxConfig['wx_id']);
+        Config::set('wx.wx_secret',$wxConfig['wx_secret']);
+        Config::set('wx.wx_noncestr',$wxConfig['wx_noncestr']);
     }
     protected function checkExclusiveScope()
     {
@@ -73,7 +95,7 @@ class BaseController extends Controller
     protected function  prefixDomainToArray($value, $data){
         if( !empty($data) ){
             foreach ( $data as $key=>&$item) {
-                    $item[$value] = config('setting.domain').$item[$value];
+                $item[$value] = config('setting.domain').$item[$value];
             }
         }
         return $data;
