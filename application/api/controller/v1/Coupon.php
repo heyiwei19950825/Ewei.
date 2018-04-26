@@ -51,11 +51,11 @@ class Coupon extends  BaseController
         $cid = $this->request->param('cid',0);
         $uid = Token::getCurrentUid();
         $data = CouponModel::addUserCoupon( $uid,$cid);
-        if( $data ){
+        if( $data === true ){
             $row['errmsg'] = '领取成功';
         }else{
             $row['errno'] = 1;
-            $row['errmsg'] = '领取条件不满足';
+            $row['errmsg'] = $data;
         }
         return $row;
     }

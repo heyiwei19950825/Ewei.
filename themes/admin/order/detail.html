@@ -178,6 +178,8 @@
         <th>商品单价</th>
         <th>VIP价格</th>
         <th>商品总价</th>
+        <th>运费</th>
+        <th>发货状态</th>
     </tr>
     </thead>
     <tbody>
@@ -195,6 +197,8 @@
             <td><span class="price">{$vo.price}</span></td>
             <td><span class="price">{$vo.vip_price}</span></td>
             <td><span class="price">{$vo.goods_money}</span></td>
+            <td><span class="price">{$vo.shipping_money}</span></td>
+            <td><span>{if condition="$vo.shipping_status!=1"}未发货{else}已发货{/if}</span></td>
         </tr>
     {/foreach}
     </tbody>
@@ -235,26 +239,22 @@
                         <th>快递公司</th>
                         <th>快递单号</th>
                         <th>包裹商品</th>
-                        <!--<th class="pad">快递动态</th>-->
                     </tr>
                 </thead>
             <tbody>
+            {foreach name="$order.express" item="vo1"}
                 <tr>
-                    {foreach name="$order.express" item="vo1"}
-                        <td>{$vo1.express_name}</td>
-                        <td>{$vo1.express_company}</td>
-                        <td>{$vo1.express_no}</td>
-                        <td>
-                            {foreach name="$vo1.goods_list" item="goods_vo"}
-                                <a href="" target="blank"><img class="img-cp" src="{$goods_vo.goods_picture}" alt=""></a>
-                            {/foreach}
-                        </td>
-                        <!--<td>-->
-                        <!--<p>[深圳市] 快件已在 深圳新宝城 签收 签收照片,感谢您使用中通快递，期待再次为您服务! 2016-09-18 10:55:30</p>-->
-                        <!--<p>[深圳市] 深圳新宝城 的 苏顺荣[18925277941] 正在派件 2016-09-18 08:18:45</p>-->
-                        <!--</td>-->
-                    {/foreach}
+                    <td>{$vo1.express_name}</td>
+                    <td>{$vo1.express_company}</td>
+                    <td>{$vo1.express_no}</td>
+                    <td>
+                        {foreach name="$vo1.goods_list" item="goods_vo"}
+                            <a href="" target="blank"><img class="img-cp" src="{$goods_vo.goods_picture}" alt=""></a>
+                        {/foreach}
+                    </td>
                 </tr>
+            {/foreach}
+
             </tbody>
         </table>
     </fieldset>

@@ -16,7 +16,7 @@ class Theme extends BaseModel
         $row = self::where(['status'=>1])
             ->field($field)
             ->limit($limit)
-            ->order('sort asc')
+            ->order('sort desc')
             ->select();
 
         return $row;

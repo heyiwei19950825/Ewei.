@@ -72,18 +72,18 @@
                             <input type="radio" name="is_show" value="0" title="不显示" {if condition = '$coupon.is_show == 0'} checked="checked" {/if}>
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">缩略图</label>
-                        <div class="layui-input-inline layui-upload">
-                            <input type="hidden" name="thumb" value="{$coupon.thumb}" class="layui-input layui-input-inline" id="thumb">
-                            <button type="button" class="layui-btn" id="upload" data-width='400' data-height='150' data-path='uploads/common/'>上传图片</button>
-                            <div class="layui-input-block" style='margin-top:10px;'>
-                                <img class="layui-upload-img" style='width:300px;' id="demo1" src="{$coupon.thumb}">
-                                <p id="demoText"></p>
-                            </div>
-                        </div>
-                    <div class="layui-form-mid layui-word-aux">推荐图片大小为400*150</div>
-                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">缩略图</label>-->
+                        <!--<div class="layui-input-inline layui-upload">-->
+                            <!--<input type="hidden" name="thumb" value="{$coupon.thumb}" class="layui-input layui-input-inline" id="thumb">-->
+                            <!--<button type="button" class="layui-btn" id="upload" data-width='400' data-height='150' data-path='uploads/common/'>上传图片</button>-->
+                            <!--<div class="layui-input-block" style='margin-top:10px;'>-->
+                                <!--<img class="layui-upload-img" style='width:300px;' id="demo1" src="{$coupon.thumb}">-->
+                                <!--<p id="demoText"></p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--<div class="layui-form-mid layui-word-aux">推荐图片大小为400*150</div>-->
+                    <!--</div>-->
                      <div class="layui-form-item">
                         <label class="layui-form-label">关联商品</label>
                         <div class="layui-input-inline">

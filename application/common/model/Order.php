@@ -24,16 +24,8 @@ class Order extends BaseModel
      * @return array
      */
     public function getOrderList($page,$size,$condition,$desc,$isPage = true,$field = '' ){
-        $parentCondition = $this->condition;
-
-        if($this->condition ){
-            foreach ($parentCondition as $k=>$v){
-                $parentCondition['o.'.$k] = $v;
-                unset($parentCondition[$k]);
-            }
-        }
-
-        $condition = empty($condition)?$parentCondition:array_merge($parentCondition,$condition);
+//        $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id','LEFT')->where($condition)->order($desc)->group('o.order_no')->paginate($size, false, ['page' => $page]);
+        $order_list  = Db::name('order_product')->alias('p')->field($field)->join('order o','p.order_id = o.id','LEFT')->where($condition)->order($desc)->group('o.order_no')->paginate($size, false, ['page' => $page]);
 
         if( $isPage ){
             $order_list  = Db::name('order')->alias('o')->field($field)->join('order_product p','p.order_id = o.id','LEFT')->where($condition)->order($desc)->group('o.order_no')->paginate($size, false, ['page' => $page]);

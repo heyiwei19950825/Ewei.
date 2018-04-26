@@ -20,13 +20,13 @@ class Goods extends BaseModel
      * @param string $sort      排序字段
      * @param string $order     排序方式
      * @param string $type      查询类型    积分
+     * @param string $condition  附加查询条件
      * @param int $page
      * @param int $size
      * @return \think\Paginator
      */
-    public static function getProductsByCategoryID($categoryId, $paginate = true, $field='', $keyword='', $sort='is_recommend', $order='asc', $page = 1, $size = 30,$types = 'defalut')
+    public static function getProductsByCategoryID($categoryId, $paginate = true, $field='', $keyword='', $sort='is_recommend', $order='asc', $page = 1, $size = 30,$types = 'defalut',$condition=[])
     {
-
         $ids = '';
         if( $categoryId !=0 ){
             //查询判断手否是父级分类
@@ -40,6 +40,7 @@ class Goods extends BaseModel
                 $ids = $categoryId;
             }
         }
+
         $now = date('Y-m-d H:i:s',time());
         if($categoryId != 0 ){
             $map['cid']     = ['in',$ids];
@@ -55,16 +56,19 @@ class Goods extends BaseModel
         $map['btime']   = ['<=',$now];
         $map['etime']   = ['>=',$now];
         $map['status']  = ['=',1];
+        $map['s_id']    = ['=',1];
         if( $categoryId == 9999 ){
             unset($map['cid']);
         }
         if( !empty($keyword) ){
             $map['name']    = ['like','%'.$keyword.'%'];
         }
+
         $query = self::
         where(
            $map
         )
+            ->where($condition)
             ->field($field)
             ->order(
                 $sort.' '.$order
@@ -140,7 +144,7 @@ class Goods extends BaseModel
      * 获取热门商品信息
      * @return string
      */
-    public static function hotGoods($filed='')
+    public static function hotGoods($filed='',$limit=4)
     {
         $now = date('Y-m-d H:i:s',time());
         $map['is_hot']     = ['=',1];
@@ -152,7 +156,7 @@ class Goods extends BaseModel
         $product = self::where($map)
             ->field($filed)
             ->order('sort asc')
-            ->limit(4)
+            ->limit($limit)
             ->select( );
         return $product;
     }
@@ -161,7 +165,7 @@ class Goods extends BaseModel
      * 获取最新商品信息
      * @return string
      */
-    public static function recommendGoods($filed='')
+    public static function recommendGoods($filed='',$condition=[],$limit='4')
     {
         $now = date('Y-m-d H:i:s',time());
         $map['btime']   = ['<=',$now];
@@ -171,9 +175,10 @@ class Goods extends BaseModel
         $map['sp_inventory']     = ['>',0];
 
         $product = self::where($map)
+            ->where($condition)
             ->field($filed)
             ->order('sort asc')
-            ->limit(4)
+            ->limit($limit)
             ->select( );
         return $product;
     }
@@ -227,5 +232,48 @@ class Goods extends BaseModel
 
         $row  = self::where($map)->count('id');
         return $row;
+    }
+
+    public static function getAll($condition =[],$field='',$order='',$paginate,$page_index = 0,$page_size = 0){
+        $count = self::where($condition)->count();
+
+        if ($page_size == 0) {
+            $list = self::field($field)
+                ->where($condition)
+                ->order($order)
+                ->select();
+            if( $list){
+                $list = $list->toArray();
+            }
+            $page_count = 1;
+        } else {
+            if( $paginate == true ){
+                $list =  self::field($field)
+                    ->where($condition)
+                    ->order($order)
+                    ->paginate($page_size, false, ['page' => $page_index]);
+                return $list;
+            }else{
+                $start_row = $page_size * ($page_index - 1);
+                $list = self::field($field)
+                    ->where($condition)
+                    ->order($order)
+                    ->limit($start_row . "," . $page_size)
+                    ->select();
+                if( $list){
+                    $list = $list->toArray();
+                }
+                if ($count % $page_size == 0) {
+                    $page_count = $count / $page_size;
+                } else {
+                    $page_count = (int) ($count / $page_size) + 1;
+                }
+            }
+        }
+        return array(
+            'data' => $list,
+            'total_count' => $count,
+            'page_count' => $page_count
+        );
     }
 }

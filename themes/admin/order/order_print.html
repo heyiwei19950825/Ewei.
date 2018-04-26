@@ -15,16 +15,11 @@
 
 </head>
 
-<body class="white-bg">
-<div class="wrapper wrapper-content p-xl">
-    <div class="ibox-content p-xl">
+<body class="white-bg" style="widows: ;">
+<div class="wrapper">
+    <div class="ibox-content">
         <div class="row">
             <div class="col-sm-6">
-                <!--<address>-->
-                    <!--<strong>北京百度在线网络技术有限公司</strong><br>-->
-                    <!--北京市海淀区上地十街10号<br>-->
-                    <!--<abbr title="Phone">总机：</abbr> (+86 10) 5992 8888-->
-                <!--</address>-->
             </div>
 
             <div class="col-sm-6 text-right">
@@ -48,7 +43,6 @@
                     <th>清单</th>
                     <th>数量</th>
                     <th>单价</th>
-                    <th>优惠价格</th>
                     <th>总价</th>
                 </tr>
                 </thead>
@@ -61,7 +55,6 @@
                         </td>
                         <td>{$vo.num}</td>
                         <td>{if condition="$vo.point_exchange_type == 1 "}{$vo.sp_integral}积分{else}&yen;{$vo.price}{/if}</td>
-                        <td>{if condition="$vo.point_exchange_type == 1 "}{$vo.adjust_money}积分{else}&yen;{$vo.adjust_money}{/if}</td>
                         <td>{if condition="$vo.point_exchange_type == 1 "}{$vo.integral_money}积分{else}&yen;{$vo.goods_money}{/if}</td>
                     </tr>
                 {/foreach}
@@ -89,10 +82,6 @@
             </tr>
             </tbody>
         </table>
-
-        <!--<div class="well m-t"><strong>注意：</strong>-->
-            <!--请在30日内完成付款，否则订单会自动取消。-->
-        <!--</div>-->
     </div>
 
 </div>

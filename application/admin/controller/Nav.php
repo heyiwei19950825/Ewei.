@@ -24,6 +24,11 @@ class Nav extends AdminBase
 
         $nav_level_list  = array2level($nav_list['data']);
         $this->assign('nav_level_list', $nav_level_list);
+
+        //页面菜单
+        $page_list       =  Db::name('pages')->select();
+        $this->assign('page_list', $page_list);
+
     }
 
     /**
@@ -54,6 +59,8 @@ class Nav extends AdminBase
             $data            = $this->request->post();
             $data['s_id'] =$this->instance_id;
             $validate_result = $this->validate($data, 'Nav');
+            $data['link'] =  $data['link'].'?'.$data['link-value'];
+            unset($data['link-value']);
 
             //检测导航名称是否存在
             $checkName = $this->nav_model->getInfo(['name'=>$data['name']],'id');
@@ -84,6 +91,9 @@ class Nav extends AdminBase
         if( empty($nav) ){
             $this->error('您没有权限操作');
         }
+        $link = explode('?',$nav['link']);
+        $nav['link'] = $link[0];
+        $nav['params'] = $link[1];
 
         return $this->fetch('edit', ['nav' => $nav]);
     }
@@ -103,6 +113,9 @@ class Nav extends AdminBase
             if($checkName){
                 $this->error('导航名称已经存在');
             }
+
+            $data['link'] =  $data['link'].'?'.$data['link-value'];
+            unset($data['link-value']);
 
              if ($validate_result !== true) {
                  $this->error($validate_result);

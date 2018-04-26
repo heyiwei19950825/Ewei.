@@ -21,9 +21,11 @@ class Article extends BaseController
      * @param int $size
      * @return array
      */
-    public function articleList( $page = 1, $size = 10){
+    public function articleList( $page = 1, $size = 10,$cid=0){
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
-        $data = ArticleModel::getAllArticle($page,$size)->toArray();
+        $condition =[];
+        $condition['cid'] = $cid;
+        $data = ArticleModel::getAllArticle($page,$size,true,'sort','desc',$condition)->toArray();
 
         $data['data'] = self::prefixDomainToArray('thumb',$data['data']);
         //配置参数
@@ -39,6 +41,36 @@ class Article extends BaseController
         return $row;
     }
 
+    /**
+     * 获取在线的文章分类
+     */
+    public function articleCategoryList($id= 0 ){
+        $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
+        $data = ArticleModel::gteCategoryList([
+            'status' => 1
+        ],'id,name,icon,thumb,description','sort desc');
+        $currentCategory = [];
+        $brotherCategory = self::prefixDomainToArray('icon',$data);
+        if($id != 0 ){
+            foreach ($brotherCategory as $v){
+                if( $v['id'] == $id){
+                    $currentCategory = $v;
+                }
+            }
+        }
+
+        $row['data'] = [
+            'brotherCategory'=>$brotherCategory,
+            'currentCategory'=>$currentCategory,
+        ];
+
+        return $row;
+    }
+    /**
+     * 获取文章内容
+     * @param int $id
+     * @return array
+     */
     public function articleOne( $id = -1 ){
 
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
@@ -52,6 +84,11 @@ class Article extends BaseController
         return $row;
     }
 
+    /**
+     * 更具分类ID获取文藏
+     * @param int $id
+     * @return array
+     */
     public function relatedByCid( $id = -1 ){
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
 

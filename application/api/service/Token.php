@@ -86,6 +86,7 @@ class Token
             ->header('Ewei-Token');
         $token = trim($token,'"');
         $vars = Cache::get($token);
+
         if (!$vars)
         {
             if($returnType == 0){

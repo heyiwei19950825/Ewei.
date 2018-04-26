@@ -10,6 +10,7 @@ namespace app\api\controller\v1;
 
 
 use app\api\controller\BaseController;
+use app\api\model\Shop;
 use app\api\model\UserAddress;
 use app\api\service\Cart as CartService;
 use app\api\service\Token;
@@ -57,14 +58,13 @@ class Cart extends BaseController
                 $upData['goods_picture'] =  self::prefixDomain($goods['thumb']);
                 $upData['goods_name'] = $goods['name'];
                 $upData['price'] = $goods['sp_price'];
-                $upData['vip_price'] = $this->is_vip&&$goods['sp_vip_price']!=0?$goods['sp_vip_price']:0;
+                $upData['vip_price'] = $this->is_vip&&$goods['sp_vip_price']!=0&&$goods['sp_vip_price']!='0.00'?$goods['sp_vip_price']:0;
                 $upData['cost_price'] = $goods['sp_o_price'];
                 CartModel::update($upData,['id'=>$v['id']]);
             }
         }
         //统计购物车商品数据
         $count = CartModel::cartCount($this->uid );
-
         $row['data'] = [
             'cartList' => CartModel::getCartAll($this->uid ),
             'cartTotal'=>[
@@ -182,7 +182,33 @@ class Cart extends BaseController
         $cart = new CartService();
 
         //判断是否是购物车数组添加
-        if( isset($params['cartArray'])){//首页直接添加购物车
+        if( isset($params['cartArray'])){//首页直接添加购物车 商铺直接添加
+            //检测已添加商品
+            $data  = CartModel::getCartAll($this->uid );
+            if( !empty($data)){
+                $delIds = '';
+                $upDateIds = '';
+                foreach ( $data as $k=>$v){
+                    foreach ($params['cartArray'] as $ck=>$cv){
+                        if( $ck == $v['goods_id']){
+                            $delIds .= $v['id'].',';
+                        }
+                    }
+                    $upDateIds .= $v['id'].',';
+                }
+                //修改所有的购物车商品选中状态
+
+                $updateParams['uid']        = $this->uid;
+                $updateParams['isChecked']  = 0;
+                $updateParams['productIds'] = trim($upDateIds,',');
+                $data = CartModel::updateChecked($updateParams);
+
+                //删除已存在的购物车商品
+                $delParams['uid'] = $this->uid;
+                $delParams['productIds'] = trim($delIds,',');
+                $row = CartModel::deleteCart($delParams);
+            }
+
             foreach ( $params['cartArray'] as $k=>$v){
                 $params = [];
                 $params['goodsId'] = $k;
@@ -195,7 +221,6 @@ class Cart extends BaseController
                     'goods_id'=>$k
                 ])->field('id')->find();
                 $params['id']   =$cartInfo['id'];
-
                 //检测是否存在
                 if( empty($cartInfo) ){
 
@@ -273,17 +298,17 @@ class Cart extends BaseController
 
         //数据验证
         (new CartValidate())->goCheck();
-
         //购物车商品列表
         if($goodsId == 0 ){
             $cartList = CartModel::getCartAll($this->uid,true);
-            foreach ($cartList as &$v) {
-                if($v['vip_price'] != 1 ){
+
+            foreach ($cartList as $v) {
+                if($v['vip_price'] != 0 ){
                     $vipOrderTotalPrice= 1;
                 }
             }
         }else{
-            $field = '';
+            $field = 'id,sp_price,sp_vip_price,name,thumb,s_id';
             $goods = Goods::getProductDetail($goodsId,$field);
             $goods['num'] = $num;
             $goods['price'] = $goods['sp_price'];
@@ -293,8 +318,8 @@ class Cart extends BaseController
             $goods['goods_name'] = $goods['name'];
             $goods['thumb'] = self::prefixDomain($goods['thumb']);
             $goods['goods_picture'] = $goods['thumb'];
-//            $goods['goods_picture'] = $goods['shop_name'];
-            $goods['shop_id'] = $goods['sid'];
+            $goods['shop_id'] = $goods['s_id'];
+            $goods['shop_name'] = Shop::getShopInfoById($goods['s_id'])['shop_name'];
             $cartList[] = $goods;
         }
 
@@ -341,18 +366,30 @@ class Cart extends BaseController
                 );
             }
         }
+
         //计算运费
         foreach ($freight as $item ){
             $freightPrice += $item['cost']+0;
         }
 
         //计算 会员等级获得优惠价格折扣
-        if( $userInfo['rank_id'] != 0){
+        if( $userInfo['is_vip'] == 2 ){
             $rankDiscount = $goodsTotalPrice*100 - ($goodsTotalPrice* ($userInfo['rank_discount'])*10);
         }
-
         //最后商品订单价格   商品总价格 + 运费 - 会员折扣
         $actualPrice = $goodsTotalPrice - ($rankDiscount/100) + $freightPrice - $couponPrice;
+
+        //按店铺分组
+        $shopCartList = [];
+        foreach($cartList as $v){
+//            dump($v);
+            $shopRow = Db::name('shop')->where(['id'=>$v['shop_id']])->find();
+            $shopCartList[$shopRow['shop_name']][] = $v;
+        }
+//        dump($cartList);die;
+        $cartList = $shopCartList;
+
+
         $row['data'] = [
             'checkedAddress'=>$address,//收货地址
             'checkedGoodsList'=> $cartList,//购物车列表
@@ -364,7 +401,7 @@ class Cart extends BaseController
             'actualPrice'=>round($actualPrice/100,2),//最后的价格
             'freightPrice' => round($freightPrice/100,2),//运费
             'couponPrice' => $couponPrice/100,//优惠券价格
-            'vipOrderTotalPrice' => $vipOrderTotalPrice
+            'vipOrderTotalPrice' => $vipOrderTotalPrice,
         ];
 
 

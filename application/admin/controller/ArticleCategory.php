@@ -55,7 +55,9 @@ class ArticleCategory extends AdminBase
         if ($this->request->isPost()) {
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Category');
-            $data['thumb'] = implode(',',$data['thumb']);
+            if(isset($data['thumb'])&&!empty($data['thumb'])){
+                $data['thumb'] = implode(',',$data['thumb']);
+            }
             $data['s_id'] = $this->instance_id;
             if ($validate_result !== true) {
                 $this->error($validate_result);
@@ -94,7 +96,9 @@ class ArticleCategory extends AdminBase
         if ($this->request->isPost()) {
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Category');
-            $data['thumb'] = implode(',',$data['thumb']);
+            if(isset($data['thumb'])&&!empty($data['thumb'])){
+                $data['thumb'] = implode(',',$data['thumb']);
+            }
             $data['s_id'] = $this->instance_id;
 
             if ($validate_result !== true) {

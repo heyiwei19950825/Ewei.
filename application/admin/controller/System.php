@@ -57,4 +57,29 @@ class System extends AdminBase
             $this->error('清除缓存失败');
         }
     }
+
+    /**
+     * 系统常规参数配置
+     */
+    public function sysConfig(){
+        $config = Db::name('constant_value')->select()->toArray();
+        $configList = [];
+        foreach ($config as $k=>$v){
+            if($v['key'] == 'commitment'){
+                $commitment = json_decode($v['value'],true);
+            }
+            $configList[$v['key']] = array_merge(json_decode($v['value'],true),['name'=>$v['name']]);
+        }
+        return $this->fetch('sys_config',['configList'=>$configList,'commitment'=>$commitment]);
+    }
+
+    public function updateSysConfig(){
+        $data = $this->request->param();
+        foreach($data as $k=>$v){
+            $value = json_encode($v);
+            Db::name('constant_value')->where(['key'=>$k])->update(['value'=>$value]);
+        }
+
+        $this->success('修改成功');
+    }
 }

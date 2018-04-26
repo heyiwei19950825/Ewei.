@@ -42,9 +42,17 @@ class User extends AdminBase
             }
             $render = $this->user_model->where($map)->order('id DESC')->paginate(15, false, ['page' => $page]);
         }else{
-            $user_list = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->select();
+            $user_list = $this->user_model->where($map)->order('id DESC')->select()->toArray();
             foreach ( $user_list as $k => $v){
                 $user_list[$k]['from'] = config('order.from')[$v['from']];
+                foreach ($rankList as $rk=>$rv){
+                    if( $rv['rank_id'] ==$v['rank_id'] ){
+                        $user_list[$k]['rank_name'] = $rv['rank_name'];
+                    }
+                }
+               if( !isset($user_list[$k]['rank_name'])){
+                   $user_list[$k]['rank_name']  = '普通会员';
+               }
             }
             $render = $this->user_model->alias('u')->field('u.*,k.rank_name')->join('user_rank k','u.rank_id = k.rank_id')->where($map)->order('u.id DESC')->paginate(15, false, ['page' => $page]);
         }

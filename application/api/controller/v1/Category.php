@@ -32,7 +32,7 @@ class Category extends BaseController
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
 
         $cateNavList = CategoryModel::all(function($query){
-            $query->where(['pid'=>0,'is_hide'=>0])->field('id,name')->order('sort', 'asc');
+            $query->where(['pid'=>0,'is_hide'=>0,'s_id'=>1])->field('id,name')->order('sort', 'asc');
         });
         if(empty($cateNavList)){
            return $row;

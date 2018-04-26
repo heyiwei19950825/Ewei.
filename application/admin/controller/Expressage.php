@@ -43,6 +43,9 @@ class Expressage extends AdminBase {
 			    $this->error($validate_result);
 			}else{
                 $data['s_id'] = $this->instance_id;
+                if( $data['is_default'] == 1 ){
+                    $this->expressa_model->where(['id'=>['<>',0]])->update(['is_default'=>0]);
+                }
 				if ($this->expressa_model->allowField(true)->save($data)) {
 	            $this->success('保存成功');
 	        } else {

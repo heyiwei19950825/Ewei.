@@ -29,11 +29,9 @@ class Goods extends BaseController
     public function _initialize()
     {
         parent::_initialize();
-//        $this->uid = Token::getCurrentUid(1);
-        $this->uid = 9;
+        $this->uid = Token::getCurrentUid(1);
         //判断是否是VIP用户
         $user = User::get(['id'=>$this->uid]);
-
         if( $user->is_vip == 2 ){
             $this->is_vip = true;
         }
@@ -200,9 +198,9 @@ class Goods extends BaseController
 
         $product['thumb'] = self::prefixDomain($product['thumb']);
         //处理轮播图片信息
-        preg_match_all ('/\"\/uploads(.*?)\"/', $product['photo'], $m);
-        foreach ( $m[1] as $k=>$v){
-            $product['gallery'][] = self::prefixDomain('/uploads'.$v);
+        $photo = explode(',',$product['photo']);
+        foreach ( $photo as $k=>$v){
+            $product['gallery'][] = self::prefixDomain($v);
         }
         //商品规格
         $property = GoodsSku::getSkuByGId($id);
@@ -235,11 +233,7 @@ class Goods extends BaseController
                 $sku[$ii] = $v;
                 $ii++;
             }
-
-
         }
-
-
         $product = [
             'info' => $product,
             'specificationList' => $sku,
@@ -251,6 +245,7 @@ class Goods extends BaseController
             'errmsg'=>'',
             'data' => $product
         ];
+
         return $data;
     }
 
@@ -314,8 +309,6 @@ class Goods extends BaseController
                 'etime'=>['<',$now]
             ])->whereOr([
                 'sp_inventory'=>['<=',0]
-            ])->whereOr([
-                'status'=>['<>',2]
             ])
             ->select()->toArray();
         if( !empty($row) ){

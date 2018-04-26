@@ -12,7 +12,6 @@ class Coupon extends Validate
         'at_least'    => 'require',
         'start_time'  => 'require',
         'end_time'    => 'require|gt:start_time',
-        'thumb'       => 'require',
     ];
 
     protected $message = [
@@ -24,6 +23,5 @@ class Coupon extends Validate
         'start_time.require'  => '请输入开始时间',
         'end_time.require'    => '请输入结束时间',
         'end_time.gt'         => '结束时间必须大于开始时间',
-        'thumb.require'       => '请上传缩略图',
     ];
 }

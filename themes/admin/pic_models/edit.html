@@ -12,36 +12,50 @@
                 <form class="layui-form form-container" action="{:url('admin/nav/update')}" method="post">
                     <div class="layui-tab-item layui-show">
                         <div class="layui-form-item">
-                            <label class="layui-form-label">图片示例：</label>
+                            <label class="layui-input-inline">图片示例：</label>
                             <div class="layui-input-block">
                                 <img src="__STATIC__/images/img-block-demo.png" alt="">
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label"></label>
-                            <div class="layui-input-block">
+                            <div class="layui-input-inline">
                                 <div class="layui-form-mid" style="color: darkred;">单图的图片高度不限定，高度根据原图比例自动调整</div>
                             </div>
                         </div>
-                        <div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">
-                                    模板名称：
-                                </label>
-                                <div class="layui-input-block">
-                                    <input type="text" name="name[]" class="layui-input" maxlength="5">
-                                </div>
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">
+                                模板名称：
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="name[]" class="layui-input" maxlength="5">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button type="button" class="layui-btn pic-model-add" >添加</button>
+                            </div>
+                        </div>
+                        <div class="pic-model-list">
+                            <div class="pic-model">
                                 <div class="layui-form-item">
-                                    <label class="layui-form-label">链接</label>
-                                    <div class="layui-input-block">
-                                        <input type="text" name="url[]" value="" placeholder="选填导航链接" class="layui-input link-input">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">链接</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="url[]" value="" placeholder="选填导航链接" class="layui-input link-input" style="width: 500px;">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">图标</label>
+                                        <div class="layui-input-inline layui-upload">
+                                            <input type="hidden" name="pic_url[]" value="" class="layui-input layui-input-inline" id="thumb">
+                                            <button type="button" class="layui-btn upload" id="upload" data-path='uploads/common/'>上传图片</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
-                                    <label class="layui-form-label">图标</label>
-                                    <div class="layui-input-inline layui-upload">
-                                        <input type="hidden" name="pic_url[]" value="" class="layui-input layui-input-inline" id="thumb">
-                                        <button type="button" class="layui-btn" id="upload" data-path='uploads/common/'>上传图片</button>
+                                    <div class=" layui-upload">
                                         <div class="layui-input-block" style='margin-top:10px;'>
                                             <img class="layui-upload-img" style='width:150px;' id="demo1" src="">
                                             <p id="demoText"></p>
@@ -50,7 +64,7 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -73,13 +87,6 @@
                         {/foreach}
                     </select>
                 </div>
-                <!--<div class="form-group row">-->
-                    <!--<label class="col-sm-2 text-right col-form-label">cat_id</label>-->
-                    <!--<div class="col-sm-5">-->
-                        <!--<input class="form-control">-->
-                        <!--<div class="fs-sm text-muted">cat_id请填写在商品分类中相关分类的ID</div>-->
-                    <!--</div>-->
-                <!--</div>-->
                 <div class="link-data">
 
                 </div>
@@ -98,23 +105,50 @@
 <script>
     $(function () {
         $(".link-input").on('focus',function(){
+            var index = $(".link-input").index(this);
             //显示弹窗
-            $('#myModal5').modal('show')
+            $('#myModal5').modal('show');
+            $('.save-rule').attr('data-eq',index);
         });
 
         $(document).on("change", ".link-list-select", function () {
-           var params =  $("select option:selected").attr("data-params");
+            var params =  $("select option:selected").attr("data-params");
 
             if(params != '' ){
                 var paramsData = params .split(",");
                 var html = '';
                 $(paramsData).each(function(i,v){
-                   html += '<div class="input-group mb-3"><span class="input-group-addon">'+v+'</span> <input class="form-control" name="'+v+'"> </div>';
+                    html += '<div class="input-group mb-3"><span class="input-group-addon">'+v+'</span> <input class="form-control" name="'+v+'"> </div>';
                 });
-
+                $('.text-muted').css('display','none');
                 $('.link-data').html(html);
+            }else{
+                $('.link-data').html('');
+                $('.text-muted').css('display','block');
             }
         });
+
+
+        $(document).on('click','.save-rule',function(){
+            var index = $(this).attr('data-eq');
+            var params =  $('.link-data').find('input');
+            var data = '';
+
+            params.each(function(i,v){
+                data += '&'+$(v).attr('name')+'='+$(v).val();
+            });
+            if(data ){
+                data = '?'+data;
+            }
+            var route =  $("select option:selected").val();
+            var url = route+data;
+            $('.link-input').eq(index).val(url);
+            $('#myModal5').modal('hide')
+        })
+        $(document).on('click','.pic-model-add',function () {
+            var html = $('.pic-model').html();
+            $('.pic-model-list').append('<div class="pic-model">'+html+"</div>");
+        })
     })
 </script>
 {/block}

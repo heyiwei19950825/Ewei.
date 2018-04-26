@@ -6,7 +6,7 @@ use think\Session;
 
 class Article extends Model
 {
-    protected $insert = ['create_time'];
+//    protected $insert = ['create_time'];
 
     /**
      * 文章作者
@@ -48,12 +48,12 @@ class Article extends Model
         return unserialize($value);
     }
 
-    /**
-     * 创建时间
-     * @return bool|string
-     */
-    protected function setCreateTimeAttr()
-    {
-        return date('Y-m-d H:i:s');
-    }
+//    /**
+//     * 创建时间
+//     * @return bool|string
+//     */
+//    protected function setCreateTimeAttr()
+//    {
+//        return date('Y-m-d H:i:s');
+//    }
 }

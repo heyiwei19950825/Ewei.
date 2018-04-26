@@ -60,6 +60,7 @@
         <tbody>
         <tr>
             <input type="hidden" value="{$order.order_no}" name="order_no">
+            <input type="hidden" value="{$order.id}" name="order_id">
             <th class="pad" width="100">订单编号</th>
             <td>{$order.order_no}</td>
         </tr>
@@ -163,6 +164,7 @@
             var express_company = $('select[name=express_company]').find("option:selected").text();
             var shipping_time = $('input[name=shipping_time]').val();
             var order_no = $('input[name=order_no]').val();
+            var order_id = $('input[name=order_id]').val();
             var memo = $('input[name=memo]').val();
             if(express_name == ''){
                layer.msg('必须填写包裹名称');return false;
@@ -190,6 +192,7 @@
                     shipping_time:shipping_time,
                     goods_list:goods_list,
                     order_no:order_no,
+                    order_id:order_id,
                     memo:memo,
                 },
                 success: function (info) {

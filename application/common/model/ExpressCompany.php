@@ -28,5 +28,4 @@ class ExpressCompany extends BaseModel {
             ->field($field)
             ->select();
     }
-    
 }

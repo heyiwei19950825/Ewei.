@@ -36,9 +36,18 @@
                     <!--</div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">链接</label>
-                        <div class="layui-input-block">
-                            <input type="text" name="link" value="" placeholder="（选填）请输入导航链接" class="layui-input">
-                        </div>
+                            <div class="layui-input-inline">
+                                <select name="link" lay-filter="link">
+                                    <option value=""></option>
+                                    {foreach name="page_list" item="vo"}
+                                    <option value="{$vo.route}" data-params="{$vo.params}">{$vo.name}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="link-value" value="" required  lay-verify="required" placeholder="输入链接参数" class="layui-input">
+                                <div class="layui-form-mid layui-word-aux">跳转地址参数</div>
+                            </div>
                     </div>
                   <!--   <div class="layui-form-item">
                         <label class="layui-form-label">图标</label>
@@ -101,4 +110,12 @@
         </div>
     </div>
 </div>
+<script>
+
+    $(function(){
+        form.on('select(link)', function(data){
+
+        });
+    })
+</script>
 {/block}

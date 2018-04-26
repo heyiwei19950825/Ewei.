@@ -3,6 +3,7 @@
 namespace app\admin\controller;
 
 use app\common\controller\AdminBase;
+use app\common\lib\Helper;
 use app\common\model\Shop as ShopModel;
 use app\common\model\ShopReplace as ShopReplaceModel;
 use app\common\model\ShopGroup as ShopGroupModel;
@@ -51,6 +52,11 @@ class ShopInfo extends AdminBase
                 $validate_result = $this->validate($data, 'Shop');
                 $where['id'] =$id;
 
+                //百度地图坐标转换成腾讯坐标
+                $latitude_longitude = explode(',',$data['latitude_longitude']);
+                $latitude_longitude = Helper::Convert_BD09_To_GCJ02($latitude_longitude[0],$latitude_longitude[1]);
+                $data['latitude_longitude'] = $latitude_longitude['lat'].','.$latitude_longitude['lng'];
+
                 if ($validate_result !== true) {
                     $this->error($validate_result);
                 } else {
@@ -70,7 +76,13 @@ class ShopInfo extends AdminBase
 
 
             $info = $model->getInfo(['id'=>$id]);
-
+            if(empty($info)){
+                if($type =='audit'){
+                    return $this->error('没有修改版本');
+                }else{
+                    return $this->error('暂未开通商城');
+                }
+            }
             if( empty($info) &&  $type =='audit'){
                return $this->error('暂无审核数据');
             }
@@ -101,7 +113,6 @@ class ShopInfo extends AdminBase
             $id = $this->instance_id;
             //查询替换版本数据
             $replaceRow = $this->shop_replace_model->getInfo(['id'=>$id]);
-
             if($replaceRow){
                 $replaceData = [
                     'shop_name'=> $replaceRow['shop_name'],
@@ -113,6 +124,7 @@ class ShopInfo extends AdminBase
                     'brief'=> $replaceRow['brief'],
                     'shop_zip'=> $replaceRow['shop_zip'],
                     'latitude_longitude'=> $replaceRow['latitude_longitude'],
+                    'content'=> $replaceRow['content'],
                 ];
 
                 //替换当前版本

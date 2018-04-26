@@ -37,8 +37,17 @@
                     <!--</div>-->
                         <div class="layui-form-item">
                             <label class="layui-form-label">链接</label>
-                            <div class="layui-input-block">
-                                    <input type="text" name="link" value="{$nav.link}" placeholder="（选填）请输入导航链接" class="layui-input">
+                            <div class="layui-input-inline">
+                                <select name="link" lay-filter="link">
+                                    <option value=""></option>
+                                    {foreach name="page_list" item="vo"}
+                                    <option value="{$vo.route}" {if condition="$nav.link==$vo.route"} selected="selected"{/if}>{$vo.name}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="link-value" value="{$nav.params}" required  lay-verify="required" placeholder="输入链接参数" class="layui-input">
+                                <div class="layui-form-mid layui-word-aux">跳转地址参数</div>
                             </div>
                         </div>
                      <div class="layui-form-item">

@@ -97,5 +97,25 @@ class AdminBase extends Controller
         $this->assign('msgNum',$msgNum);
     }
 
+    /**
+     * 序列化photo图集
+     * @param $value
+     * @return string
+     */
+    protected function setPhotoAttr($value)
+    {
+        return serialize($value);
+    }
+
+
+    /**
+     * 反序列化photo图集
+     * @param $value
+     * @return mixed
+     */
+    protected function getPhotoAttr($value)
+    {
+        return unserialize($value);
+    }
 
 }

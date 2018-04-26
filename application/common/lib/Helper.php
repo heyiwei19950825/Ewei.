@@ -122,56 +122,7 @@ class Helper {
         $objwriter->save('php://output');
         exit;
         
-        
-        
-//        
-//        $objPHPExcel = new PHPExcel();
-//        $xlsTitle = $expTitle;
-////        $xlsTitle = iconv('utf-8', 'gb2312', $expTitle); // 文件名称
-//        $fileName = $expTitle . date('_YmdHis'); // or $xlsTitle 文件名称可根据自己情况设定
-//        $cellName = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'AA', 'AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH', 'AI', 'AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS', 'AT', 'AU', 'AV', 'AW', 'AX', 'AY', 'AZ'
-//        );
-//        $cellNum = count($expCellName);
-//        $dataNum = count($expTableData);
-//        // 实例化完了之后就先把数据库里面的数据查出来
-//        // 设置表头信息
-////        foreach ($title as $key=>$item) {
-////            $objPHPExcel->setActiveSheetIndex(0)
-////                ->setCellValue($cellName[$key].($key+1), $item);
-////        }
-////
-////
-////        /*--------------开始从数据库提取信息插入Excel表中------------------*/
-////
-//////        $i=2;  //定义一个i变量，目的是在循环输出数据是控制行数
-//////        $count = count($data);  //计算有多少条数据
-//////        for ($i = 2; $i <= $count+1; $i++) {
-////            foreach ($data as  $item ){
-////                foreach ( $item as $key=>$Item) {
-////                    $objPHPExcel->getActiveSheet()->setCellValue($cellName[$key+2] . ($key+2), $Item);
-////                }
-////            }
-//////            $objPHPExcel->getActiveSheet()->setCellValue('A' . $i, $sql[$i-2]['nickname']);
-//////        }
-//        for ($i = 0; $i < $cellNum; $i ++) {
-//            $objPHPExcel->setActiveSheetIndex(0)->setCellValue($cellName[$i] . '2', $expCellName[$i][1]);
-//        }
-//        for ($i = 0; $i < $dataNum; $i ++) {
-//            for ($j = 0; $j < $cellNum; $j ++) {
-//                $objPHPExcel->getActiveSheet(0)->setCellValue($cellName[$j] . ($i + 3), " " . $expTableData[$i][$expCellName[$j][0]]);
-//            }
-//        }
-//        /*--------------下面是设置其他信息------------------*/
-//        $objPHPExcel->getActiveSheet()->setTitle('productaccess');      //设置sheet的名称
-//        $objPHPExcel->setActiveSheetIndex(0);                   //设置sheet的起始位置
-//        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');   //通过PHPExcel_IOFactory的写函数将上面数据写出来
-//        ob_end_clean();
-//        ob_start();
-//        header('Content-type:application/vnd.ms-excel;charset=utf-8;name="' . $xlsTitle . '.xls"');
-//        header('Content-Disposition: attachment;filename="'.$fileName.'.xls"');
-//        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-//
-//        $objWriter->save("php://output");die; //表示在$path路径下面生成demo.xlsx文件
+
     }
 
 
@@ -209,6 +160,24 @@ class Helper {
         }
 
         return $code;
+    }
+
+    /*
+    * 百度地图BD09坐标---->中国正常GCJ02坐标
+    * 腾讯地图用的也是GCJ02坐标
+    * @param double $lat 纬度
+    * @param double $lng 经度
+    * @return array();
+    */
+    public static function Convert_BD09_To_GCJ02($lat,$lng){
+        $x_pi = 3.14159265358979324 * 3000.0 / 180.0;
+        $x = $lng - 0.0065;
+        $y = $lat - 0.006;
+        $z = sqrt($x * $x + $y * $y) - 0.00002 * sin($y * $x_pi);
+        $theta = atan2($y, $x) - 0.000003 * cos($x * $x_pi);
+        $lng = $z * cos($theta);
+        $lat = $z * sin($theta);
+        return array('lng'=>$lng,'lat'=>$lat);
     }
    
 }

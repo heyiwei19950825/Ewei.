@@ -1,1 +1,0 @@
-[2018-04-09T17:12:20+08:00][ error ] [2]Cannot modify header information - headers already sent by (output started at D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\config.php:1)[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\behavior\CORS.php:20]

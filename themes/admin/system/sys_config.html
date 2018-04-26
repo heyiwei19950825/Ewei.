@@ -1,0 +1,170 @@
+{extend name="base" /}
+{block name="body"}
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li ><a href="{:url('admin/system/siteConfig')}">微信配置</a></li>
+            <li class="layui-this">系统设置</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('admin/system/updateSysConfig')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">首页显示导航：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <input type="tel" name="index_show_nav[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_nav.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <input type="tel" name="index_show_nav[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_nav.number}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">轮播图显示：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <input type="tel" name="index_show_banner[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_banner.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <input type="tel" name="index_show_banner[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_banner.number}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">首页显示人气：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_recommend[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_recommend.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_recommend[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_recommend.number}">
+                        </div>
+
+                        <label class="layui-form-label">描述名称</label>
+                        <div class="layui-input-inline">
+                        <input type="tel" name="index_show_recommend[title]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_recommend.title}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">首页显示最热：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_hot[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_hot.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_hot[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_hot.number}">
+                        </div>
+
+                        <label class="layui-form-label">描述名称</label>
+                        <div class="layui-input-inline">
+                        <input type="tel" name="index_show_hot[title]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_hot.title}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">首页显示最新：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <input type="tel" name="index_show_new[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_new.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <input type="tel" name="index_show_new[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_new.number}">
+                        </div>
+
+                        <label class="layui-form-label">描述名称</label>
+                        <div class="layui-input-inline">
+                            <input type="tel" name="index_show_new[title]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_new.title}">
+                        </div>
+
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 120px;">首页显示优惠券：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_coupon[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_coupon.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_coupon[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_coupon.number}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">首页显示商铺：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_shop[status]" lay-verify="required" autocomplete="off" class="layui-input"  value="{$configList.index_show_shop.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_shop[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_shop.number}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">首页显示分类：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_category[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_category.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_category[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_category.number}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">首页显示团购：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_showc_ollective[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_showc_ollective.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_showc_ollective[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_showc_ollective.number}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">首页显示专题：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_article[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_article.status}">
+                        </div>
+                        <label class="layui-form-label">显示数量</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                        <input type="tel" name="index_show_article[number]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_article.number}">
+                        </div>
+
+                        <label class="layui-form-label">描述名称</label>
+                        <div class="layui-input-inline">
+                        <input type="tel" name="index_show_article[title]" lay-verify="required" autocomplete="off" class="layui-input" value="{$configList.index_show_article.title}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="width: 100px;">承诺：</label>
+                        <label class="layui-form-label">状态</label>
+                        <div class="layui-input-inline" style="width: 100px;">
+                            <input type="tel" name="commitment[status]" lay-verify="required" autocomplete="off" class="layui-input" value="{$commitment.status}">
+                        </div>
+                        {foreach name="commitment.value" item="vo"}
+                        <label class="layui-form-label">承诺描述</label>
+                        <div class="layui-input-inline" style="width: 200px;">
+                            <input type="tel" name="commitment[value][]" lay-verify="required" autocomplete="off" class="layui-input" value="{$vo}">
+                        </div>
+                        {/foreach}
+
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}

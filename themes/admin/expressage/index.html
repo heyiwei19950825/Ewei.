@@ -9,17 +9,17 @@
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/goods/delete')}">删除</button>
+                <!--<button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/goods/delete')}">删除</button>-->
                 <table class="layui-table">
                     <thead>
                     <tr>
-                        <th style="width: 15px;"><input type="checkbox" class="check-all"></th>
+                        <!--<th style="width: 15px;"><input type="checkbox" class="check-all"></th>-->
                         <th style="width: 30px;">ID</th>
                         <th>物流公司</th>
-                        <th>Logo</th>
-                        <th>物流编号</th>
+                        <!--<th>Logo</th>-->
+                        <!--<th>物流编号</th>-->
                         <th>费用</th>
-                        <th>联系电话</th>
+                        <!--<th>联系电话</th>-->
                         <th>是否默认</th>
                         <th>排序</th>
                         <th style="width: 80px;">是否开启</th>
@@ -30,13 +30,13 @@
                    
                         {foreach name="list" item="vo"}
                          <tr>
-                            <td><input type="checkbox" name="ids[]" value="{$vo.id}"></td>
+                            <!--<td><input type="checkbox" name="ids[]" value="{$vo.id}"></td>-->
                             <td>{$vo.id}</td>
                             <td>{$vo.company_name}</td>
-                            <td><img src="{$vo.express_logo}"></td>
-                            <td>{$vo.express_no}</td>
+                            <!--<td><img src="{$vo.express_logo}"></td>-->
+                            <!--<td>{$vo.express_no}</td>-->
                             <td>{if condition='$vo.cost==0.00'}免运费{else}{$vo.cost}元{/if}</td>
-                            <td>{$vo.phone}</td>
+                            <!--<td>{$vo.phone}</td>-->
                              <td>{if condition='$vo.is_default==1'}开启{else}关闭{/if}</td>
                              <td>{$vo.orders}</td>
                              <td>{if condition='$vo.is_enabled==1'}是{else}否{/if}</td>

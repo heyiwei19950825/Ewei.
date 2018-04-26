@@ -42,6 +42,8 @@ class Goods extends BaseModel
         return $row;
     }
 
+
+
     /**
     * 通过条件查询商品信息
     * @param $id     int     商品ID号

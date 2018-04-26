@@ -42,7 +42,6 @@ class WxNotify extends \WxPayNotify
             Log::write($data,'notice');
             Db::startTrans();
             try {
-
                 $order = Order::where('order_no', '=', $orderNo)->lock(true)->find();
                 if(!empty($order)){
                     $this->updateOrderStatus($order, true,$data);
@@ -63,7 +62,7 @@ class WxNotify extends \WxPayNotify
                     $status['pass'] = true;
                     if ($status['pass']) {
                         $this->updateOrderStatus($order, true,$data);
-                        $this->updateShopBrief($data['total_fee'],$order);
+                        $this->updateShopBrief($data,$order);
                         $this->updateUserIntegral($order);
                         $this->reduceStock($status);
 
@@ -167,28 +166,59 @@ class WxNotify extends \WxPayNotify
         if( $order['order_type'] == 1){
             $status = 9;
         }
-
+        Log::record($status,'notice');
         Order::where('id', '=', $order['id'])
             ->update(['order_status' => $status,'transaction_id'=>$data['transaction_id'],'pay_time'=>time()]);
     }
 
-    private function updateShopBrief($free,$order){
+    private function updateShopBrief($data,$order){
+        //查询订单下的商品信息
+        $goodsList = Db::name('order_product')->where(['order_id'=>$order['id']])->field('s_id,num,price,vip_price,goods_money,shipping_money,give_point,goods_id,goods_name')->select();
+        $shopArray = [];
+        //统计出订单中每个商家获利
+        foreach ( $goodsList as $v){
+            if(array_key_exists($v['s_id'],$shopArray)){
+                $shopArray[$v['s_id']]['money']      += $v['vip_price']!=0?$v['vip_price']*$v['num']:$v['price']*$v['num'];
+                $shopArray[$v['s_id']]['goods_id']   .= ','.$v['goods_id'];
+                $shopArray[$v['s_id']]['detail']     .= ','.$v['goods_name'].'X'.$v['num'];
+            }else{
+                $shopArray[$v['s_id']]['goods_id']    = $v['goods_id'];
+                $shopArray[$v['s_id']]['detail']      = '运费【'.$v['shipping_money'].'元】,'.$v['goods_name'].'X'.$v['num'];
+                $shopArray[$v['s_id']]['money']       = $v['vip_price']!=0?$v['vip_price']*$v['num']:$v['price']*$v['num']+$v['shipping_money'];
+            }
+        }
+        Log::record($shopArray,'notice');
+        foreach($shopArray as $k=>$v){
+            $payment = [
+                'out_trade_no'  => $data['out_trade_no'],
+                'goods_id'      => $v['goods_id'],
+                'shop_id'       => $k,
+                'type'          => 1,
+                'pay_body'      => '购买商品订单数据',
+                'pay_detail'    => $v['detail'],
+                'pay_status'    => 2,
+                'pay_money'     => $v['money'],
+                'pay_type'      => 1,
+                'create_time'   => time(),
+                'pay_time'      => $data['time_end'],
+                'trade_no'      => $data['transaction_id'],
+            ];
+            //添加支付数据
+            Db::name('order_payment')->insert($payment);
+            //添加店铺数据
+            $shop = Shop::where('id','=',$k)->find();
+            //总销售额【不计算退款】
+            $freeNum = $shop['shop_sales'];
+            $freeNum = $freeNum*100 + ($v['money']*100+0);
+            $freeNum = round($freeNum/100,2);
+            //账户余额
+            $account = $shop['shop_account'];
+            $account = $account*100 + ($v['money']*100+0);
+            $account = round($account/100,2);
 
-        $shop = Shop::where('id','=',$order['shop_id'])->find();
-
-        //总销售额【不计算退款】
-        $freeNum = $shop['shop_sales'];
-        $freeNum = $freeNum*100 + ($free+0);
-        $freeNum = round($freeNum/100,2);
-
-        //账户余额
-        $account = $shop['shop_account'];
-        $account = $account*100 + ($free+0);
-        $account = round($account/100,2);
-
-        Shop::where('id','=',$order['shop_id'])
-            ->update(['shop_sales'=>$freeNum,'shop_account'=>$account]);
-
+            Shop::where('id','=',$k)
+                ->update(['shop_sales'=>$freeNum,'shop_account'=>$account]);
+            }
     }
 
     /**

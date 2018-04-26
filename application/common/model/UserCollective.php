@@ -9,9 +9,13 @@
 namespace app\common\model;
 
 
-use think\Model;
-
-class UserCollective extends Model
+class UserCollective extends BaseModel
 {
+    protected $table = 'user_collective';
 
+    public function __construct()
+    {
+        $this->table = config('database.prefix').$this->table;
+        parent::__construct();
+    }
 }

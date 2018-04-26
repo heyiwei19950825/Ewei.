@@ -24,7 +24,6 @@ class WxPayApi
 	 */
 	public static function unifiedOrder($inputObj, $timeOut = 6)
 	{
-	    dump(WxPayConfig::APPID);die;
 		$url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
 		//检测必填参数
 		if(!$inputObj->IsOut_trade_noSet()) {
@@ -49,7 +48,7 @@ class WxPayApi
 		if(!$inputObj->IsNotify_urlSet()){
 			$inputObj->SetNotify_url(WxPayConfig::NOTIFY_URL);//异步通知url
 		}
-		
+
 		$inputObj->SetAppid(WxPayConfig::APPID);//公众账号ID
 		$inputObj->SetMch_id(WxPayConfig::MCHID);//商户号
 		$inputObj->SetSpbill_create_ip($_SERVER['REMOTE_ADDR']);//终端ip	  
@@ -59,12 +58,12 @@ class WxPayApi
 		//签名
 		$inputObj->SetSign();
 		$xml = $inputObj->ToXml();
-		
+
 		$startTimeStamp = self::getMillisecond();//请求开始时间
 		$response = self::postXmlCurl($xml, $url, false, $timeOut);
 		$result = WxPayResults::Init($response);
 		self::reportCostTime($url, $startTimeStamp, $result);//上报请求花费时间
-		
+
 		return $result;
 	}
 	

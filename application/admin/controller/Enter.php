@@ -11,6 +11,7 @@ namespace app\admin\controller;
 
 use app\common\controller\AdminBase;
 use app\common\model\ShopGroup;
+use think\Config;
 use think\Db;
 
 class Enter extends AdminBase
@@ -58,21 +59,20 @@ class Enter extends AdminBase
             ]);
             if( $row ){
                 $enterData = Db::name('shop_enter')->where(['id'=>$id])->find();
-
                 if($status == 2 ){//审核通过
+                    $password = uniqid();
                     //创建用户
                     $admninData = [
                         'username'     => $enterData['user_phone'],
                         'name'          => $enterData['shop_name'],
-                        'password'      => uniqid(),
+                        'password'      => md5($password . Config::get('salt')),
                         'mobile'        => $enterData['user_phone'],
                         'create_time'   => time(),
                         'p_id'          => 0,
                     ];
                     $admninRow = Db::name('admin_user')->insertGetId($admninData);
                     Db::name('shop_enter')->where(['id'=>$id])->update([
-                        'password' => $admninData['password'],
-
+                        'password' => $password,
                     ]);
                     //创建商铺
                     $shopData = [
@@ -83,8 +83,18 @@ class Enter extends AdminBase
                         'live_store_address' => $enterData['address'],
                         'shop_status'   => 1,
                     ];
-
                     Db::name('shop')->insert($shopData);
+
+                    //创建配送信息
+                    $expressData = [
+                        's_id' => $admninRow,
+                        'company_name' => '商家免费配送',
+                        'is_enabled' => 1,
+                        'is_default' => 1,
+                    ];
+
+                    Db::name('express_company')->insert($expressData);
+
                 }
                 $this->success('操作成功');
             }else{

@@ -96,6 +96,7 @@ class InternetServer extends BaseServer
 
                 //修改机器状态
                 Db::name('internet_machine')->where(['number'=>$key,'ip'=>$item,'status'=>['<>',2]])->update(['line'=>'online','status'=>1]);
+                Db::name('internet_machine')->getLastSql();
                 $online++;
             }
         }

@@ -22,13 +22,13 @@ class Pay extends BaseController
         'checkExclusiveScope' => ['only' => 'getPreOrder']
     ];
     
-    public function getPreOrder($id='')
+    public function getPreOrder($id='',$type ='xWeChat')
     {
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
 
         (new IDMustBePositiveInt()) -> goCheck();
 
-        $pay= new PayService($id);
+        $pay= new PayService($id,$type);
         $row['data'] = $pay->pay();
 
         return $row;

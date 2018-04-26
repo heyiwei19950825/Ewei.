@@ -118,6 +118,13 @@
                     </div>
 
                     <div class="layui-form-item">
+                        <label class="layui-form-label">店铺详情</label>
+                        <div class="layui-input-block">
+                            <textarea name="content" placeholder="" class="layui-textarea" id="content">{$info.content}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
                         <label class="layui-form-label"></label>
                         <div class="layui-input-inline">
                             <button class="layui-btn" lay-submit lay-filter="*">保存</button>
@@ -133,8 +140,13 @@
 {/block}
 
 {block name='js'}
+<script src="__JS__/ueditor/ueditor.config.js"></script>
+<script src="__JS__/ueditor/ueditor.all.min.js"></script>
 <script>
 $(function(){
+    var ue = UE.getEditor('content'),
+            uploadEditor = UE.getEditor('upload-photo-btn');
+
 layui.use('layer', function(){ //独立版的layer无需执行这一句
     var active = {
      setTop: function(){

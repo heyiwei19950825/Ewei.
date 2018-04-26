@@ -10,7 +10,11 @@
   <h1>
     {$shop.shop_name}
   </h1>
+  {php}if($_SESSION['think']['admin_group'] == 1){ {/php}
   <p style="padding: 10px 0; color: #5FB878;">认证信息：官方平台</p>
+  {php}
+  }
+  {/php}
   <p class="fly-home-info">
     <i class="iconfont icon-kiss" title="收入"></i> 总收入<span style="color: #FF7200;"> ￥{$shop.shop_account} </span>
     <i class="iconfont icon-kiss" title="收入"></i> 总销售额【不包含退款】<span style="color: #FF7200;"> ￥{$shop.shop_sales} </span>

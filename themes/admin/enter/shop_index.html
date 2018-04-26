@@ -49,8 +49,9 @@
                             </td>
                             <td>{$vo.description}</td>
                             <td>
-                                <div class="layui-btn layui-btn-warm a9" data-id="{$vo['id']}" data-status="2">通过</div>
+                                {if condition="$vo.status == 0"}<div class="layui-btn layui-btn-warm a9" data-id="{$vo['id']}" data-status="2">通过</div>
                                 <div class="layui-btn layui-bg-red a9" data-id="{$vo['id']}" data-status="1">不通过</div>
+                                {/if}
                             </td>
                             </td>
                         </tr>

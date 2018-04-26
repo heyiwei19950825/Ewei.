@@ -63,7 +63,8 @@ class UserCollective extends  BaseModel
                         'pay_id' =>$order['prepay_id'],
                         'order_id' =>$order['id'],
                         'transaction_id' =>$order['transaction_id'],
-                        'remark' => '团购失败 退款'
+                        'remark' => '团购失败 退款',
+                        's_id' => $order['s_id']
                     ];
                     Db::name('order_refund_account_records')->where(['id'=>$item['order_id']])->insert($data);
 

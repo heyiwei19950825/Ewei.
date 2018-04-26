@@ -123,7 +123,6 @@ class Article extends AdminBase
     public function edit($id)
     {
         $article = $this->article_model->where(['id'=>$id,'s_id'=>$this->instance_id])->find();
-
         $ids = Db::name('article_goods')->where(['article_id'=>$id,'s_id'=>$this->instance_id])->select()->toArray();
         $idsStr = '';
         foreach ($ids as $key => &$value) {
@@ -134,9 +133,12 @@ class Article extends AdminBase
         $list = $this->goods_server->getGoodsListByIds($idsStr);
 
         $goods_ids = '';
-        foreach ($list as $key => $value) {
-            $goods_ids .= $value['id'].',';
+        if($list){
+            foreach ($list as $key => $value) {
+                $goods_ids .= $value['id'].',';
+            }
         }
+
 
         return $this->fetch('edit', ['article' => $article,'goods_list'=>$list]);
     }
@@ -155,7 +157,7 @@ class Article extends AdminBase
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
-                if ($this->article_model->allowField(true)->save($data, $id) !== false) {
+                if ($this->article_model->where(['id'=>$id])->update($data) !== false) {
                     //关联商品
                     if( !empty( $data['goods_ids'])){
                         $data['goods_ids'] = explode(',',trim($data['goods_ids'],','));

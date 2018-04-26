@@ -215,21 +215,16 @@ class Message extends AdminBase
     {
         if ($this->request->isPost()) {
             $data            = $this->request->param();
-            $validate_result = $this->validate($data, 'Category');
             $data['s_id'] = $this->instance_id;
 
-            if ($validate_result !== true) {
-                $this->error($validate_result);
+            if( $data['pid'] != 0){
+                $pCategory = $this->category_model->find(['id'=>$data['pid']]);
+                $data['is_hid'] = $pCategory['is_hide'];
+            }
+            if ($this->category_model->allowField(true)->save($data)) {
+                $this->success('保存成功');
             } else {
-                if( $data['pid'] != 0){
-                    $pCategory = $this->category_model->find(['id'=>$data['pid']]);
-                    $data['is_hid'] = $pCategory['is_hide'];
-                }
-                if ($this->category_model->allowField(true)->save($data)) {
-                    $this->success('保存成功');
-                } else {
-                    $this->error('保存失败');
-                }
+                $this->error('保存失败');
             }
         }
     }

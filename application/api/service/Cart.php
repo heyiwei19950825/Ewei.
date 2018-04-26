@@ -21,6 +21,7 @@ class Cart
     public function add($uid, $params,$vip){
         //检测商品库存和状态
         $row = $this->checkGoods($params,'cart');
+
         //成功
         if( $row['errno'] == 0 ){
             $row = $row['data'];
@@ -29,8 +30,10 @@ class Cart
             $params['vip_price']= $vip&&$row['sp_vip_price']!=0?$row['sp_vip_price']:0;
             $params['cost_price']= $row['sp_o_price'];
             $params['goods_picture']=  config('setting.domain').$row['thumb'];
-            $params['shop_id']= $row['sid'];
+            $params['shop_id']= $row['s_id'];
             $params['cid']= $row['cid'];
+            $params['give_integral']= $row['give_integral'];
+            $params['eid']= $row['eid'];
             $rows = CartModel::add($uid, $params);
         }else{//错误
             $rows = $row;
@@ -41,7 +44,7 @@ class Cart
     }
 
     public function checkGoods( $params,$type){
-        $field = 'sp_inventory,btime,etime,status,name,sid,thumb,sp_price,cid,sp_vip_price,sp_o_price';
+        $field = 'sp_inventory,btime,etime,status,name,s_id,thumb,sp_price,cid,sp_vip_price,sp_o_price,give_integral,eid';
         $goodsInfo = Goods::getProductDetail($params['goodsId'],$field);
         //商品不存在
         if( empty( $goodsInfo )){

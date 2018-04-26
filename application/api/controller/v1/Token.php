@@ -11,6 +11,7 @@
 namespace app\api\controller\v1;
 
 
+use app\api\controller\BaseController;
 use app\api\service\AppToken;
 use app\api\service\UserToken;
 use app\api\service\Token as TokenService;
@@ -21,8 +22,11 @@ use app\lib\exception\ParameterException;
 /**
  * 获取令牌，相当于登录
  */
-class Token
+class Token extends BaseController
 {
+    public function _initialize(){
+        parent::_initialize();
+    }
     /**
      * 用户获取令牌（登陆）
      * @url /token
@@ -35,7 +39,6 @@ class Token
         (new TokenGet())->goCheck();
         $wx = new UserToken($code,$userInfo);
         $row = $wx->get();
-
         return [
             'errno' => 0,
             'data' => [

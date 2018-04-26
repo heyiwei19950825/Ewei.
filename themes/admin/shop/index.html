@@ -39,7 +39,7 @@
                             <th>Logo</th>
                             <th>首页推荐</th>
                             <th>排序</th>
-                            <!-- <th>平台抽取比率</th> -->
+                            <th>余额</th>
                             <th>状态</th>
                             <th>审核状态</th>
                             <th style="width: 300px;">操作</th>
@@ -60,7 +60,7 @@
                                     <span><input type="number" class="layui-input shop-sort" value="{$vo.shop_sort}" data-id="{$vo.id}" data-key="shop_sort"></span>
                                 </div>
                             </td>
-                            <!-- <td>{$vo.shop_platform_commission_rate}</td> -->
+                             <td>{$vo.shop_account}</td>
                             <td>
                                 {switch name="$vo.shop_status" }
                                 {case value="0" }关闭{/case}
@@ -83,6 +83,7 @@
                                 <div class="layui-btn layui-bg-red a9" data-id="{$vo['id']}" data-status="3">不通过</div>
                                 {else}
                                 <div class="layui-btn  layui-btn-mini a1" data-id="{$vo['id']}" data-status="{$vo.audit_status}">查看店铺</div>
+                                <div class="layui-btn layui-btn-normal" data-id="{$vo['id']}" data-status="{$vo.audit_status}">收入账单</div>
                                 {/if}
                             </td>
                         </tr>

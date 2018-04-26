@@ -112,6 +112,13 @@
                             <textarea placeholder="请输入内容" class="layui-textarea" name="brief" disabled>{$info.brief}</textarea>
                         </div>
                     </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">店铺详情</label>
+                        <div class="layui-input-block">
+                            <textarea name="content" placeholder="" class="layui-textarea" id="content">{$info.content}</textarea>
+                        </div>
+                    </div>
+
                     {if condition ='$info.shop_status == "审核通过"'}
                     <div class="layui-form-item">
                         <div class="layui-input-block">
@@ -128,13 +135,17 @@
 {/block}
 
 {block name='js'}
+<script src="__JS__/ueditor/ueditor.config.js"></script>
+<script src="__JS__/ueditor/ueditor.all.min.js"></script>
 <script>
     //点击使用当前班额本
     $(function(){
+        var ue = UE.getEditor('content'),
+                uploadEditor = UE.getEditor('upload-photo-btn');
         $('.use-update').on('click',function(){
             $.post("{:url('admin/shopInfo/useUpdate')}",{
             },function( e ){
-s                window.location.href = "{:url('admin/shopInfo/index')}";
+                window.location.href = "{:url('admin/shopInfo/index')}";
             })
         })
     });

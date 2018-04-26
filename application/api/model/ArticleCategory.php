@@ -15,9 +15,10 @@ class ArticleCategory extends BaseModel
             $row = self::where([
                 'pid' => 0,
                 's_id' => 1,
-                'status' => 1
+                'status' => 1,
+                'show_index'=>1
             ])
-                ->field('id,icon')
+                ->field('id,icon,name,description')
                 ->order('sort desc')
                 ->limit(0,$size)
                 ->select();

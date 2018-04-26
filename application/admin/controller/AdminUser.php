@@ -138,16 +138,13 @@ class AdminUser extends AdminBase
                 unset($data['confirm_password']);
                 unset($data['group_id']);
                 unset($data['id']);
-                if ($this->admin_user_model->pageSave($data,['id'=>$id]) !== false) {
-                    if($this->auth_group_access_model->getInfo(['uid'=>$id])){
-                        $this->auth_group_access_model->pageSave($auth_group_access,['uid'=>$id]);
-                    }else{
-                        $this->auth_group_access_model->pageSave($auth_group_access);
-                    }
-                    $this->success('更新成功');
-                } else {
-                    $this->error('更新失败');
+                $this->admin_user_model->pageSave($data,['id'=>$id]);
+                if($this->auth_group_access_model->getInfo(['uid'=>$id])){
+                    $this->auth_group_access_model->pageSave($auth_group_access,['uid'=>$id]);
+                }else{
+                    $this->auth_group_access_model->pageSave($auth_group_access);
                 }
+                $this->success('更新成功');
             }
         }
     }

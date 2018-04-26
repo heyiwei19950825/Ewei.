@@ -11,6 +11,7 @@
 namespace app\api\controller\v1;
 
 use app\api\controller\BaseController;
+use app\api\model\ExpressCompany;
 use app\api\model\Order as OrderModel;
 use app\api\model\UserCollective;
 use app\api\service\Order as OrderService;
@@ -68,8 +69,8 @@ class Order extends BaseController
      */
     public function placeOrder(){
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
-        $finish_time = $pay_time  = $is_vip = $order_status = 0;
-
+        $finish_time = $pay_time  = $is_vip = $order_status = $promotion_money = 0;
+        $payment_type = 1; //支付方式 默认微信支付
         $goodsId = $this->request->param('goodsId',0);
         $num = $this->request->param('num',0);
         $addressId = $this->request->param('addressId',0);
@@ -115,28 +116,33 @@ class Order extends BaseController
         }else{
             $address = ['id'=>0];
         }
-
         //获取商品详情
         if( $goodsId == 0 ){//购物车购买
             $goodsPrice = $orderTotalPrice = $actualPrice= $freightPrice = $couponPrice = $couponId = $rankDiscount = $userCouponList = $couponPrice = $shipping_company_id = $order_type = $give_point = $collectiveId = 0;
-            ;
-            $couponId = $this->request->param('couponId');//使用的优惠券ID
-
-            $freight = $goodsInfo = $checkedCoupon = [];
             $cartList = CartModel::getCartAll($this->uid,true);
 
+
+            $couponId = $this->request->param('couponId');//使用的优惠券ID
+            $freight = $goodsInfo = $checkedCoupon = [];
             //优惠券 总数
             if( $couponId != 0 ){
                 //选中的优惠券信息
                 $checkedCoupon = Coupon::getInfoById($this->uid,$couponId);
+                //检测优惠券是否可用
+                if(empty($checkedCoupon)){
+                    $row['errmsg'] = '优惠券信息有误';
+                    $row['errno'] = 10005;
+                    return $row;
+                }
                 $couponPrice = $checkedCoupon['money']*100;
-                Coupon::updateCoupon($couponId);
+//                Coupon::updateCoupon($couponId);
             }
 
             //计算价格
             foreach ($cartList as $item) {
                 //商品总价格
                 $goodsPrice += $item['vip_price']==0?($item['price']*100) * $item['num']:($item['vip_price']*100) * $item['num'];
+
                 $goodsInfo = GoodsModel::getProductDetail($item['goods_id'],'eid,give_integral');
                 //判断是否是VIP订单
                 if( $item['vip_price'] != 0 ){
@@ -150,18 +156,20 @@ class Order extends BaseController
                         'cost'=>$express['cost']*100,
                     );
                 }
-                $give_point += (int)$goodsInfo['give_integral'];
+                $give_point += $item['give_point']*$item['num'];
             }
+
             //计算运费
             foreach ($freight as $item ){
                 $freightPrice += $item['cost']+0;
             }
 
             //计算 积分等级获得优惠价格折扣
-            if( $userInfo['rank_id'] != 0){
-                $rankDiscount = $goodsPrice*100 - ($goodsPrice* ($userInfo['rank_discount'])*10);
-            }
-
+//            if( $userInfo['rank_id'] != 0){
+//                $rankDiscount = $goodsPrice*100 - ($goodsPrice* ($userInfo['rank_discount'])*10);
+//            }
+//            dump($rankDiscount);die;
+            $rankDiscount = 0;
             //最后商品订单价格   商品总价格 + 运费 - 会员折扣
             $actualPrice = $goodsPrice - ($rankDiscount/100) + $freightPrice - $couponPrice;
 
@@ -172,11 +180,11 @@ class Order extends BaseController
             $coupon_id = $couponId;
 
         }else {//直接购买
-            $goodsPrice = 0;
-            $coupon_id = 0;
-            $coupon_money = 0;
-            $field = '';
-            $product = GoodsModel::getProductDetail($goodsId, $field);
+            $goodsPrice         = $coupon_id = $coupon_money    = 0;
+            $product            = GoodsModel::getProductDetail($goodsId, '');
+            $shopInfo           = Shop::getShopInfoById($product['s_id'],'shop_name,id');
+            $shopId             = $shopInfo['id'];
+            $shopName           = $shopInfo['shop_name'];
 
             $product['thumb'] = self::prefixDomain($product['thumb']);
             //运费
@@ -185,6 +193,7 @@ class Order extends BaseController
 
             //判断是否团购或者是积分购买
             if ($type == 'integral') {
+                $payment_type = 0;//积分支付
                 if ($product['is_integral'] == 0) {
                     $row['errmsg'] = '非法请求';
                     $row['errno'] = 10001;
@@ -208,6 +217,7 @@ class Order extends BaseController
                             ->setDec('sp_inventory', $num);
                         GoodsModel::where('id', '=', $goodsId)
                             ->setInc('sp_market', $num);
+
                     }else{
                         $row['errmsg'] = '网络异常';
                         $row['errno'] = 10001;
@@ -247,6 +257,12 @@ class Order extends BaseController
                 if( $couponId != 0 ){
                     //选中的优惠券信息
                     $checkedCoupon = Coupon::getInfoById($this->uid,$couponId);
+                    //检测优惠券是否可用
+                    if(empty($checkedCoupon)){
+                        $row['errmsg'] = '优惠券信息有误';
+                        $row['errno'] = 10005;
+                        return $row;
+                    }
                     $couponPrice = $checkedCoupon['money']*100;
                     Coupon::updateCoupon($couponId);
                 }
@@ -257,6 +273,7 @@ class Order extends BaseController
                 if($userInfo['is_vip'] == 2 && $product['sp_vip_price'] != 0 ){
                     $goodsPrice = ($product['sp_vip_price']) *$num;
                     $is_vip = 1;
+                    $promotion_money = ($product['sp_price']) *$num - ($product['sp_vip_price']) *$num;
                 }else{
                     $goodsPrice = ($product['sp_price']) *$num;
                 }
@@ -275,7 +292,7 @@ class Order extends BaseController
             'order_no'  => date('YmdHis',time()).rand(1000,9999),//订单编号
             'out_trade_no'  => '',//外部交易号
             'order_type'  => $order_type,//订单类型
-            'payment_type'  => 1,//支付类型。取值范围：1.WEIXIN (微信支付) 2.INTEGRAL (积分支付)
+            'payment_type'  => $payment_type,//支付类型。取值范围：1.WEIXIN (微信支付) 2.INTEGRAL (积分支付)
             'buyer_id' => $this->uid,//买家id
             'user_name' => $userInfo['nickname'],//买家会员名称
 //            'buyer_ip' => Request::ip(0,true),//买家ip
@@ -287,20 +304,20 @@ class Order extends BaseController
             'receiver_address' => $addressOld['address'],//收货人详细地址
             'receiver_zip' => '0000',//收货人邮编
             'receiver_name' => isset($userName)?$userName:$address['name'],//收货人姓名
-            'shop_id' => 0,//卖家店铺id
-            'shop_name' =>'官方旗舰店',//卖家店铺名称
+            's_id' => 1,//卖家店铺id
+            'shop_name' =>'官网旗舰店',//卖家店铺名称
             'seller_memo' => '',//卖家对订单的备注
             'goods_money' => $goodsPrice,//商品总价
             'order_money' => $actualPrice,//订单总价
             'point'=>$order_type == 2?$goodsIntegral:0,//订单消耗积分
             'point_money'=>0,//订单消耗积分抵多少钱
-            'coupon_money'=>$coupon_money,//订单代金券支付金额
+            'coupon_money'=>$coupon_money/100,//订单代金券支付金额
             'coupon_id'=>$coupon_id,//订单代金券id
             'user_money'=>0,//订单余额支付金额
             'user_platform_money'=>0,//用户平台余额支付
-            'promotion_money'=>0,//订单优惠活动金额
-            'shipping_money'=>$freightPrice,//订单运费
-            'pay_money'=>$actualPrice,//订单实付金额
+            'promotion_money'=>$promotion_money,//订单优惠活动金额
+            'shipping_money'=>$freightPrice/100,//订单运费
+            'pay_money'=>0,//订单实付金额
             'refund_money'=>0,//订单退款金额
             'give_point'=>$give_point,//订单赠送积分
             'order_status'=>$order_status,//订单状态
@@ -312,8 +329,8 @@ class Order extends BaseController
             'sign_time'=>'',//买家签收时间
             'consign_time'=>'',//卖家发货时间
             'create_time'=>time(),//订单创建时间
-            'finish_time'=>$finish_time,//订单完成时间
-            'operator_type'=>'',//操作人类型  1店铺  2用户
+            'finish_time'=>0,//订单完成时间
+            'operator_type'=>2,//操作人类型  1店铺  2用户
             'operator_id'=>'',//操作人id
             'refund_balance_money'=>'',//订单退款余额
             'fixed_telephone'=>'',//固定电话
@@ -323,7 +340,7 @@ class Order extends BaseController
 
         $orderId = OrderModel::addOrder($param);
 
-        //检测订单是否添加成功
+//        检测订单是否添加成功
         if( $orderId == 0 ){
             $row = ['errmsg'=>'添加订单信息错误','errno'=>1,'data'=>[]];
             return $row;
@@ -331,26 +348,29 @@ class Order extends BaseController
         //添加订单关联商品
         if( $goodsId == 0 ){
             foreach ($cartList as $v){
+                //获取每个商品的运输价格
+                $expressRow = ExpressCompany::get(['id'=>$v['eid']])->toArray();
                 //判断是否是vip价格购买
                 $data = [
-                    'order_id'=>$orderId,//
+                    'order_id'=>$orderId,//订单号
                     'cid'=>$v['cid'],
                     'goods_id'=>$v['goods_id'],
                     'goods_name'=>$v['goods_name'],
                     'price'=>$v['price'],//商品价格
-                    'vip_price'=>$v['vip_price']*$v['num'],//vip价格
+                    'vip_price'=>$v['vip_price'],//vip价格
                     'cost_price'=>$v['cost_price'],//商品成本价
                     'num'=>$v['num'],//购买数量
                     'goods_money'=>$v['price']*$v['num'],//商品总价
                     'goods_picture'=>$v['goods_picture'],//商品图片
-                    'shop_id'=>$v['shop_id'],//商铺ID
+                    's_id'=>$v['shop_id'],//商铺ID
                     'buyer_id'=>$this->uid,//用户ID
                     'point_exchange_type'=>0,//积分兑换类型0.非积分兑换1.积分兑换
                     'goods_type'=>1,//商品类型
                     'order_type'=>$param['order_type'],//订单类型
                     'order_status'=>$param['order_status'],//订单状态
-                    'give_point'=>$param['give_point'],//订单赠送积分
+                    'give_point'=>$v['give_point']*$v['num'],//订单赠送积分
                     'shipping_status'=>$param['shipping_status'],//订单配送状态
+                    'shipping_money'=>$expressRow['cost'],//运费
                 ];
 
                 Db::name('order_product')->insert($data);
@@ -367,7 +387,7 @@ class Order extends BaseController
                 'num'=>$num,//购买数量
                 'goods_money'=>$goodsPrice,//商品总价
                 'goods_picture'=>$product['thumb'],//商品图片
-                'shop_id'=>$product['sid'],//商铺ID
+                's_id'=>$product['s_id'],//商铺ID
                 'buyer_id'=>$this->uid,//用户ID
                 'sp_integral'=>$type == 'integral'?$product['sp_integral']:0,//积分价格
                 'integral_money'=>$type == 'integral'?$product['sp_integral']*$num:0,//积分总价
@@ -377,7 +397,8 @@ class Order extends BaseController
                 'order_status'=>$param['order_status'],//订单状态
                 'give_point'=>$param['give_point'],//订单赠送积分
                 'shipping_status'=>$param['shipping_status'],//订单配送状态
-                'vip_price'=>$userInfo['is_vip'] == 2 && $product['sp_vip_price']!=0 && $type != 'integral' && $type != 'collective'?$product['sp_vip_price']*$num:0//vip价格
+                'vip_price'=>$userInfo['is_vip'] == 2 && $product['sp_vip_price']!=0 && $type != 'integral' && $type != 'collective'?$product['sp_vip_price']:0,//vip价格,
+                'shipping_money' => $freightPrice
             ];
 
             Db::name('order_product')->insert($data);
@@ -396,7 +417,7 @@ class Order extends BaseController
                 'limit_time' => $product['collective']['time'],
                 'add_time' => time(),
                 'status' => 3,
-                'identity' => $collectiveNo!=''?0:1
+                'identity' => $collectiveNo!=''?0:1,
             ];
             Db::name('user_collective')->insert($data);
             $collectiveId = Db::name('user_collective')->getLastInsID();
@@ -405,23 +426,13 @@ class Order extends BaseController
         $row['data'] = [
             'orderInfo' => [
                 'order_sn'=> $param['order_no'],
-//                'user_id'=> $param['buyer_id'],
-//                'consignee'=>$param['receiver_name'],//收件人
-//                'mobile'=> $param['receiver_mobile'],//手机号
-//                'province'=> $param['receiver_province'],
-//                'city'=> $param['receiver_city'],
-//                'address'=> $param['receiver_district'],
-//                'freight_price'=> $param['shipping_money'],
-//                'coupon_id'=> 0,
-//                'coupon_price'=> 0,
-//                'add_time'=> time(),
-//                'goods_price'=> $param['goods_money'],
+                'user_id'=> $param['buyer_id'],
                 'order_price'=> $param['order_money'],
-//                'actual_price'=> $param['order_money'],
-//                'id' => $orderId,
-//                'cId' => isset($collectiveId)?$collectiveId:0 //团购ID号
+                'id' => $orderId,
+                'cId' => isset($collectiveId)?$collectiveId:0 //团购ID号
             ]
         ];
+
         return $row;
     }
 
@@ -450,13 +461,11 @@ class Order extends BaseController
         $orderDetail['full_region'] = $address['province_name'] . $address['city_name'] . $address['district_name'];
 
         $orderDetail->hidden(['prepay_id']);
-        $orderGoods = Db::name('order_product')->where(['order_id'=>$orderDetail['id']])->select()->toArray();
+        $orderGoods = Db::name('order_product')->field('goods_picture,num,goods_name,vip_price,price,cost_price,sp_integral,point_exchange_type')->where(['order_id'=>$orderDetail['id']])->select()->toArray();
 
         //快递信息
         $orderGoodsExpressModel = new OrderGoodsExpress;
-        $orderGoodModel = new OrderGoods;
         $expressRow = $orderGoodsExpressModel->where(['order_no'=>$orderDetail['order_no']])->select()->toArray();
-
         $express = [];
         if( !empty($expressRow) ){
             foreach ( $expressRow as $k=>$vs){
@@ -464,7 +473,8 @@ class Order extends BaseController
                     'express_name' => $vs['express_name'],
                     'express_company' => $vs['express_company'],
                     'express_no' => $vs['express_no'],
-                    'goods_list' => $orderGoodModel->field('goods_name,goods_picture')->where(['goods_id'=>['in',$vs['order_goods_id_array']],'order_id'=>$orderDetail['id']])->select()->toArray()
+                    'express_time' => date('Y-m-d',$vs['shipping_time']),
+                    'goods_list' => Db::name('order_product')->field('goods_name,goods_picture')->where(['goods_id'=>['in',$vs['order_goods_id_array']],'order_id'=>$orderDetail['id']])->select()->toArray()
                 ];
             }
         }

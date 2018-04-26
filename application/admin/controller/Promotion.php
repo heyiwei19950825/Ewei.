@@ -79,7 +79,7 @@ class Promotion extends AdminBase
     public function couponGetList( $id ){
         $field = 'u.nickname,u.portrait,c.coupon_code,c.fetch_time,c.state';
         $stateNote = ['未使用', '已使用','已过期'];
-        $couponList = $this->coupon_model->alias('c')->field($field)->join('user u','c.uid = u.id','LEFT')->where(['coupon_type_id'=>$id])->order('fetch_time desc')->select()->toArray();
+        $couponList = $this->coupon_model->alias('c')->field($field)->join('user u','c.uid = u.id','LEFT')->where(['coupon_type_id'=>$id,'get_status'=>1])->order('fetch_time desc')->select()->toArray();
         if( !empty($couponList)){
             foreach ( $couponList as &$v){
                 $v['state'] = $stateNote[$v['state']];
@@ -234,9 +234,12 @@ class Promotion extends AdminBase
 
             $list = $this->goods_server->getGoodsListByIds($idsStr);
             $goods_ids = '';
-            foreach ($list as $key => $value) {
-                $goods_ids .= $value['id'].',';
+            if($list){
+                foreach ($list as $key => $value) {
+                    $goods_ids .= $value['id'].',';
+                }
             }
+
             $coupon = $this->coupon_type_model->find($data['id']);
             $rank = Db::name('user_rank')->select();
 

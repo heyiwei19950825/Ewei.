@@ -40,7 +40,7 @@ class Goods extends AdminBase
 
 
         //获取分类
-        $category_level_list  = $this->category_model->pageQuery(1,0,[],'s_id desc,sort desc','id,pid,name',true);
+        $category_level_list  = $this->category_model->pageQuery(1,0,[],'s_id asc,sort desc','id,pid,name',true);
 
 
         $category_level_list = array2level($category_level_list['data']);
@@ -117,6 +117,7 @@ class Goods extends AdminBase
             $collectiveData = $data['collective'];
             unset($data['collective']);
             unset($data['editorValue']);
+            $data['photo'] = implode(',',$data['photo']);
 
             if ($validate_result !== true) {
                 $this->error($validate_result);
@@ -158,9 +159,8 @@ class Goods extends AdminBase
      */
     public function edit($id)
     {
-        $this->where = ['id'=>$id];
-        $field = 's.sku_name,s.attr_value_items,s.cost_price,s.price,s.stock,p.pic_cover,p.pic_id,group_id,is_pay';
-        $goods = $this->goods_model->getInfo($this->where);
+        $row = Db::name('goods')->select();
+        $goods = $this->goods_model->getInfo(['id'=>$id]);
 
         //没有查询到商品信息
         if( empty($goods) ){
@@ -186,6 +186,8 @@ class Goods extends AdminBase
 //                $i = 0;
 //            }
 //        }
+        $goods['photo'] = explode(',',$goods['photo']);
+
         //查询是否选择开团
         $collective = Db::name('goods_collective')->where(['goods_id'=>$id])->find();
         return $this->fetch('edit', ['goods' => $goods,'sku'=>$sku, 'collective'=>$collective]);
@@ -200,6 +202,7 @@ class Goods extends AdminBase
     {
         if ($this->request->isPost()) {
             $data            = $this->request->param();
+            unset($data['editorValue']);
             $property = array();
             //检查是否有存在并权限修改
             $checkIssue = $this->goods_model->getInfo(['id'=>$id],'name');
@@ -209,6 +212,8 @@ class Goods extends AdminBase
             $validate_result = $this->validate($data, 'Goods');
             $collectiveData = $data['collective'];
             unset($data['collective']);
+
+            $data['photo'] = implode(',',$data['photo']);
             if ($validate_result !== true) {
                 $this->error($validate_result);
             } else {
@@ -292,6 +297,23 @@ class Goods extends AdminBase
     public function toggle($ids = [], $type = '')
     {
         $status = $type == 'audit' ? 1 : 0;
+        $new = date('Y-m-d H:i:s',time());
+        //检测是否符合上架条件
+        if( $status == 1 && !empty($ids)){
+            $row = $this->goods_model->pageQuery(0,0,[
+                'id'=>['in',$ids],
+                'etime'=>['>',$new],
+                'sp_inventory'=>['>',0]
+            ],'','id',false);
+            if( $row['total_count'] == 0 ){
+                $this->error('没有符合条件的商品信息');
+            }else{
+                $ids = [];
+                foreach ($row['data'] as $v){
+                    $ids[] = $v['id'];
+                }
+            }
+        }
 
         if (!empty($ids)) {
             if ($this->goods_model->pageSave(['status' => $status],['id'=>['in',$ids]])) {

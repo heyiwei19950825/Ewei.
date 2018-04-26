@@ -7,6 +7,7 @@ use app\lib\enum\ScopeEnum;
 use app\lib\exception\TokenException;
 use app\lib\exception\WeChatException;
 use think\Cache;
+use think\Db;
 use think\Exception;
 use think\Request;
 use think\Model;
@@ -26,8 +27,8 @@ class UserToken extends Token
 
     function __construct($code,$userInfo)
     {
-
         $this->code = $code;
+
         $this->wxAppID = config('wx.app_id');
         $this->wxAppSecret = config('wx.app_secret');
         $this->wxLoginUrl = sprintf(

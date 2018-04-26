@@ -43,13 +43,14 @@ class Shop extends AdminBase
 
     public function index( $page = 1,$keyword =''){
         $map = [];
-        $field = 'id,shop_name,pid,shop_recommend,shop_sort,shop_platform_commission_rate,shop_type,shop_status,shop_logo,audit_status';
+        $field = 'id,shop_name,pid,shop_recommend,shop_sort,shop_platform_commission_rate,shop_type,shop_status,shop_logo,audit_status,shop_account';
 
         if (!empty($keyword)) {
             $map['shop_name'] = ['like', "%{$keyword}%"];
         }
 
         $list  = $this->shop_model->field($field)->where($map)->order(['shop_sort' => 'DESC'])->paginate(15, false, ['page' => $page]);
+
         return $this->fetch('index',['list'=>$list,'keyword'=>$keyword]);
     }
 
@@ -85,6 +86,7 @@ class Shop extends AdminBase
                 if( $validate_result !== true ){
                     $this->error($validate_result);
                 }else{
+                    //创建商家
                     $shopData = array(
                         'id'            => $userInfo['id'],
                         'shop_name'     => $data['shop_name'],
@@ -93,6 +95,20 @@ class Shop extends AdminBase
                         'shop_status'   => $data['shop_status']
                     );
                     $this->shop_model->pageSave($shopData);
+                    //创建默认运输模板
+                    Db::name('express_company')->insert([
+                        's_id' => $userInfo['id'],
+                        'company_name' => '商家配送',
+                        'express_no' => '000000',
+                        'is_default' => 1,
+                        'cost' => 0
+                    ]);
+
+                    //创建统计表数据
+                    Db::name('statistics')->insert([
+                        'id'=>$userInfo['id'],
+                        'uid'=>$userInfo['id']
+                    ]);
 
                     $this->success('保存成功');
                 }
@@ -205,31 +221,8 @@ class Shop extends AdminBase
                 'audit_note'   =>$msg,
             ];
 
-            $row = $this->shop_model->pageSave($data,['id'=>$id]);
-            if( $row ){
-                if( $status == 1 ){
-                    $replaceRow = $this->shop_replace_model->getInfo(['id'=>$id]);
-                    $replaceData = [
-                        'shop_name'=> $replaceRow['shop_name'],
-                        'shop_category'=> $replaceRow['shop_category'],
-                        'shop_phone'=> $replaceRow['shop_phone'],
-                        'shop_logo'=> $replaceRow['shop_logo'],
-                        'shop_banner'=> $replaceRow['shop_banner'],
-                        'shop_address'=> $replaceRow['shop_address'],
-                        'brief'=> $replaceRow['brief'],
-                        'shop_zip'=> $replaceRow['shop_zip'],
-                        'latitude_longitude'=> $replaceRow['latitude_longitude'],
-                    ];
-                    $row = $this->shop_model->pageSave($replaceData,['id'=>$id]);
-                    if( !$row ){
-                        $this->error('操作失败');
-                    }
-                }
-
-                $this->success('操作成功');
-            }else{
-                $this->error('操作失败');
-            }
+            $this->shop_model->pageSave($data,['id'=>$id]);
+            $this->success('操作成功');
         }else{
             $this->error('非法请求');
         }

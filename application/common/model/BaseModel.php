@@ -34,9 +34,10 @@ class BaseModel extends Model{
             config('database.prefix').'province' =>[
             ],
             config('database.prefix').'category' =>[
-            ]
+            ],
+            config('database.prefix').'user_collective' =>[
+            ],
         ];
-
         $restrictTable = [
             config('database.prefix').'express_company' =>[
             ],
@@ -120,18 +121,18 @@ class BaseModel extends Model{
      * 获取单条记录的基本信息
      * @param string $condition
      * @param string $field
+     * @param string $filtration   是否验证商家
      * @return array|false|\PDOStatement|string|Model
      */
-    public function getInfo($condition = '', $field = '*')
+    public function getInfo($condition = '', $field = '',$filtration = true)
     {
-        if( !is_string($condition)){
+        if( !is_string($condition) && $filtration == true){
             $condition = empty($condition)?$this->condition:array_merge($this->condition,$condition);
         }
 
         $info = $this->table($this->table)->where($condition)
             ->field($field)
             ->find();
-
         return $info;
     }
 

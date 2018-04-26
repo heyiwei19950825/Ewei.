@@ -21,17 +21,17 @@
                         <input name="user_name" placeholder="用户昵称" autocomplete="off" class="layui-input" type="text"  value="{$user_name}"/>
                     </div>
                 </div>
-                <div class="layui-inline">
-                    <label class="layui-form-label">商家</label>
-                    <div class="layui-input-inline">
-                        <select name="order_shop" lay-verify="">
-                            <option value="0">全部</option>
-                            {foreach name="shop_list" item="vo"}
-                                <option value="{$vo.id}" {if condition="$shop_id==$vo.id"} selected="selected"{/if}>{$vo.shop_name}</option>
-                            {/foreach}
-                        </select>
-                    </div>
-                </div>
+                <!--<div class="layui-inline">-->
+                    <!--<label class="layui-form-label">商家</label>-->
+                    <!--<div class="layui-input-inline">-->
+                        <!--<select name="order_shop" lay-verify="">-->
+                            <!--<option value="0">全部</option>-->
+                            <!--{foreach name="shop_list" item="vo"}-->
+                                <!--<option value="{$vo.id}" {if condition="$shop_id==$vo.id"} selected="selected"{/if}>{$vo.shop_name}</option>-->
+                            <!--{/foreach}-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <div class="layui-inline">
                     <label class="layui-form-label">订单来源</label>
                     <div class="layui-input-inline">
@@ -96,7 +96,7 @@
                         <th>来源</th>
                         <th>商品名称</th>
                         <th>成交金额</th>
-                        <th>商家</th>
+                        <!--<th>商家</th>-->
                         <th>会员昵称</th>
                         <th>收货人</th>
                         <th>收货人手机号码</th>
@@ -114,7 +114,7 @@
                         <td>{$vo.goods_name}</td>
                         <td>{if condition="$vo.type == 2"} <span style="color:#FF5722">{$vo.order_money} 积分</span>{else}<span class="price">{$vo.order_money}</span>{/if}</td>
                         <!--<td><a href="javascript:;" class="a2">{$vo.user_name}</a></td>-->
-                        <td><a href="javascript:;">{$vo.shop.shop_name}</a></td>
+                        <!--<td><a href="javascript:;">{$vo.shop.shop_name}</a></td>-->
                         <td><a href="javascript:;">{$vo.user_name}</a></td>
                         <td>{$vo.receiver_name}</td>
                         <td>{$vo.receiver_mobile}</td>
@@ -138,7 +138,7 @@
                             {if condition="$vo['status'] == 5"}
                             <button class="layui-btn layui-btn-warm layui-btn-small a10">退款</button>
                             {/if}
-                            {if condition="$vo['status'] == 1"}
+                            {if condition="$vo['status'] == 1 || $vo['status'] == 10"}
                             <button class="layui-btn layui-btn-normal layui-btn-small a3" data-id='{$vo.id}'>发货</button>
                             <a href="/admin/order/orderPrint?id={$vo.id}"  style="color: #ffffff;" class="layui-btn layui-btn-warm layui-btn-small" target="_blank">打印详单</a>
                             {/if}

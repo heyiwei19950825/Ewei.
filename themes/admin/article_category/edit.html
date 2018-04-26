@@ -79,12 +79,19 @@
                         </div>
                     </div> -->
                     <div class="layui-form-item">
-                        <label class="layui-form-label">状态</label>
+                        <label class="layui-form-label">是否显示</label>
                         <div class="layui-input-inline">
                             <input type="radio" name="status" value="1" title="显示" {if condition="$category.status==1"} checked="checked"{/if}>
                             <input type="radio" name="status" value="0" title="不显示" {if condition="$category.status==0"} checked="checked"{/if}>
                         </div>
                     </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">首页显示</label>-->
+                        <!--<div class="layui-input-inline">-->
+                            <!--<input type="radio" name="show_index" value="1" title="显示" {if condition="$category.show_index==1"} checked="checked"{/if}>-->
+                            <!--<input type="radio" name="show_index" value="0" title="不显示" {if condition="$category.show_index==0"} checked="checked"{/if}>-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">排序</label>
                         <div class="layui-input-block">

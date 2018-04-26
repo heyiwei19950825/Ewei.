@@ -71,6 +71,7 @@ class Login extends Controller
     {
         Session::delete('admin_id');
         Session::delete('admin_name');
+        Session::delete('admin_group');
         $this->success('退出成功', 'admin/login/index','',1);
     }
 }

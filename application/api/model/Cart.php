@@ -18,6 +18,7 @@ class Cart extends BaseModel
            'uid' => $uid,
            'goods_id' => $params['goodsId']
        ])->find();
+       $shop = Db::name('shop')->field('shop_name')->find(['id'=>$params['shop_id']]);
        //未添加过此商品
        if( empty($row) ){
            $createRow = self::create(
@@ -25,7 +26,7 @@ class Cart extends BaseModel
                    'uid'                =>$uid,
                    'cid'                =>$params['cid'],
                    'shop_id'            =>$params['shop_id'],
-                   'shop_name'          =>'自选平台',
+                   'shop_name'          =>$shop['shop_name'],
                    'goods_id'           =>$params['goodsId'],
                    'goods_name'         =>$params['goods_name'],
                    'price'              =>$params['price'] ,
@@ -33,6 +34,8 @@ class Cart extends BaseModel
                    'cost_price'         =>$params['cost_price'],
                    'vip_price'          =>$params['vip_price'],
                    'goods_picture'      =>$params['goods_picture'],
+                   'give_point'         =>$params['give_integral'],
+                   'eid'                =>$params['eid'],
                ]
            );
            $state = $createRow->id;
@@ -58,28 +61,41 @@ class Cart extends BaseModel
      * @return array
      */
     public static function cartCount( $uid=-1 ){
-        $sql = "SELECT count(id)  AS goodsCount, sum(price * num) AS goodsAmount,sum( vip_price * num ) AS goodsVipAmount FROM ewei_cart WHERE  uid = {$uid}";
-        $checkSql = "SELECT count(id)  AS goodsCount, sum(price * num) AS goodsAmount,sum( vip_price * num ) AS goodsVipAmount FROM ewei_cart WHERE  uid = {$uid} AND checked = 1";
+        $sql = "SELECT  price,vip_price,num  FROM ewei_cart WHERE  uid = {$uid}";
+        $checkSql = "SELECT price,vip_price,num FROM ewei_cart WHERE  uid = {$uid} AND checked = 1";
+
         $row = self::query( $sql );
         $checkRow = self::query( $checkSql );
-        $data = [];
-        if( empty($row[0]['goodsCount']) ||  empty($row[0]['goodsAmount'])  ){
-            $data['goodsCount']         = 0;
-            $data['goodsAmount']        = 0;
-            $data['checkedGoodsAmount'] = 0;
-            $data['checkedGoodsCount']  = 0;
-        }else{
-            $count = $row[0];
-            $data['goodsCount']         = $count['goodsCount'];
-            $data['goodsAmount']        = $count['goodsVipAmount']!=0 ? $count['goodsVipAmount']:$count['goodsAmount'];
+        $goodsCount = $goodsAmount = $checkedGoodsAmount = $checkedGoodsCount=  0;//购物车中商品数量 和价格
 
-            if($checkRow[0]['goodsCount'] == 0 ){
-                $data['checkedGoodsAmount'] = 0;
-            }else{
-                $data['checkedGoodsAmount'] = !empty($checkRow[0]['goodsAmount'])&&$count['goodsVipAmount']!=0 ?$checkRow[0]['goodsVipAmount']:$checkRow[0]['goodsAmount'];
+        //计算全部的
+        if( !empty($row) ){
+            foreach ($row as $k=>$v){
+                $goodsCount++;
+                if( $v['vip_price'] == 0){
+                    $goodsAmount += $v['price']*$v['num'];
+                }else{
+                    $goodsAmount += $v['vip_price']*$v['num'];
+                }
             }
-            $data['checkedGoodsCount']  = !empty($checkRow[0]['goodsCount'])?$checkRow[0]['goodsCount']:0;
         }
+        //计算选中的
+        if( !empty($checkRow) ){
+            foreach ($checkRow as $k=>$v){
+                $checkedGoodsCount++;
+                if( $v['vip_price'] == 0){
+                    $checkedGoodsAmount += $v['price']*$v['num'];
+                }else{
+                    $checkedGoodsAmount += $v['vip_price']*$v['num'];
+                }
+            }
+        }
+
+
+        $data['goodsCount']         = $goodsCount;
+        $data['goodsAmount']        = $goodsAmount;
+        $data['checkedGoodsAmount'] = $checkedGoodsAmount;
+        $data['checkedGoodsCount']  = $checkedGoodsCount;
 
         return $data;
     }
@@ -101,7 +117,8 @@ class Cart extends BaseModel
         }
 
         $data = $row->order('id desc')->select()->toArray();
-
+//        echo self::getLastSql();die;
+//        dump($data);die;
         if( empty($data) ){
             return [];
         }

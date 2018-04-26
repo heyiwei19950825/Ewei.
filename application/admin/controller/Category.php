@@ -22,7 +22,9 @@ class Category extends AdminBase
         parent::_initialize();
         $this->category_model = new CategoryModel();
         $this->goods_model  = new GoodsModel();
-        $category_level_list  = $this->category_model->pageQuery(1,0,[],'s_id desc,sort desc');
+        $map = [];
+        if($this->instance_id != 1) $map['s_id'] = $this->instance_id;
+        $category_level_list  = $this->category_model->pageQuery(1,0,$map,'s_id asc,sort desc');
         $category_level_list = array2level($category_level_list['data']);
 
         $this->assign('category_level_list', $category_level_list);
@@ -55,7 +57,7 @@ class Category extends AdminBase
         if ($this->request->isPost()) {
             $data            = $this->request->param();
             $validate_result = $this->validate($data, 'Category');
-
+            $data['s_id']    = $this->instance_id;
             $checkName = $this->category_model->getInfo(['name'=>$data['name']],'id');
             if($checkName){
                 $this->error('分类名已经存在');
@@ -87,11 +89,16 @@ class Category extends AdminBase
      */
     public function edit($id)
     {
-        $category = $this->category_model->getInfo(['id'=>$id]);
+        $category = $this->category_model->getInfo(['id'=>$id,'s_id'=>$this->instance_id]);
+        if(!$category){
+            return $this->error('您没有权限修改');
+        }
         if( $category['thumb'] != ''){
             $category['thumb'] = explode(',',$category['thumb']);
         }
         $category['thumbCount'] = count($category['thumb']);
+
+
         return $this->fetch('edit', ['category' => $category]);
     }
 

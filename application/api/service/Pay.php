@@ -12,13 +12,16 @@ namespace app\api\service;
 
 
 use app\api\model\Order as OrderModel;
+use app\api\model\Shop;
 use app\lib\exception\OrderException;
 use app\lib\exception\TokenException;
 use app\api\model\OrderRefundAccountRecords as OrderRefund;
 use app\api\model\UserCollective;
+use think\Db;
 use think\Exception;
 use think\Loader;
 use think\Log;
+use think\Session;
 
 Loader::import('WxPay.WxPay', EXTEND_PATH, '.Api.php');
 
@@ -27,14 +30,22 @@ class Pay
 {
     private $orderNo;
     private $orderID;
-
-    function __construct($orderID)
+    private $payBackUrl;
+    function __construct($orderID,$type)
     {
         if (!$orderID)
         {
             throw new Exception('订单号不允许为NULL');
         }
         $this->orderID = $orderID;
+        $site_config = Session::get('wxConfig');
+
+        //判断是小程序支付还是公众号支付 获取不同的配置
+        if( $type =='xWeChat'){
+            $this->payBackUrl = $site_config['x_pay_back_url'];
+        }else{
+            $this->payBackUrl = $site_config['pay_back_url'];
+        }
     }
 
     /**
@@ -54,6 +65,7 @@ class Pay
                 return 'SUCCESS';
             }
         }
+
         return $this->makeWxPreOrder($order['order_money']);
 
     }
@@ -82,11 +94,20 @@ class Pay
         if($refund['result_code'] == 'SUCCESS'){
             $this->refundUpdateOrderStatus( $refund );
         }else{//退款失败
-            $orderRow = OrderModel::get(['order_no'=>$refund['out_trade_no']]);
-            //修改退款信息状态
-            OrderRefund::update([
-                'status'=> 2,
-            ],['order_id'=>$orderRow['id']]);
+            Db::name('order_payment')->insert([
+                'out_trade_no' => $order->refund_trade_no,
+                'shop_id' => $order->s_id,
+                'type' => 1,
+                'type_alis_id' => $order->order_id,
+                'pay_body' => $order->remark,
+                'pay_detail' => $refund->err_code_des,
+                'pay_money' => $order->refund_money,
+                'pay_status' => 1,
+                'pay_type' => 0,
+                'create_time' => time(),
+                'pay_time' => $order->refund_time,
+                'trade_no' => $order->transaction_id,
+            ]);
         }
     }
 
@@ -108,12 +129,12 @@ class Pay
         ],['order_id'=>$orderRow['id']]);
 
         //修改账户余额
-        $shop = Shop::where('id','=',$orderRow['shop_id'])->find();
+        $shop = Shop::where('id','=',$orderRow['s_id'])->find();
         $account = $shop['shop_account'];
         $account = $account*100 - ($refund['refund_fee']+0);
         $account = round($account/100,2);
 
-        Shop::where(['id'=>$orderRow['shop_id']])->update(
+        Shop::where(['id'=>$orderRow['s_id']])->update(
            [ 'shop_account'=>$account]
         );
 
@@ -129,7 +150,6 @@ class Pay
     private function makeWxPreOrder($totalPrice,$body = '蔬菜采购')
     {
         $openid = Token::getCurrentTokenVar('openid');
-
         if (!$openid)
         {
             throw new TokenException();
@@ -140,8 +160,7 @@ class Pay
         $wxOrderData->SetTotal_fee($totalPrice * 100);
         $wxOrderData->SetBody($body);
         $wxOrderData->SetOpenid($openid);
-        $wxOrderData->SetNotify_url(config('setting.pay_back_url'));
-
+        $wxOrderData->SetNotify_url($this->payBackUrl);
         return $this->getPaySignature($wxOrderData);
     }
 

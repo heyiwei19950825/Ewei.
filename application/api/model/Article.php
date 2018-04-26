@@ -21,7 +21,7 @@ class Article extends BaseModel
      * @param bool $paginate
      * @return false|\PDOStatement|string|\think\Collection|\think\Paginator
      */
-    public static function getAllArticle($page=1,$size=10,$paginate = true,$sort='sort',$order='desc')
+    public static function getAllArticle($page=1,$size=10,$paginate = true,$sort='sort',$order='desc',$condition=[])
     {
         $field = 'id,title,introduction,thumb,author,reading';
         $map = [];
@@ -31,9 +31,10 @@ class Article extends BaseModel
             $map['title']    = ['like','%'.$keyword.'%'];
         }
         $query = self::
-        where(
-            $map
-        )
+            where(
+                $map
+            )
+            ->where($condition)
             ->field($field)
             ->order(
                 $sort.' '.$order
@@ -89,16 +90,30 @@ class Article extends BaseModel
     }
 
     /**
-     * 获取置顶的文章列表
+     * 获取置顶的文章列表且所在分类在线
      * @return Row
      */
-    public static function getTopArticle()
+    public static function getTopArticle($articleCateId)
     {
-        $row = self::where(['is_top'=>1,'status'=>1])
-            ->field('id,title,thumb,introduction')
-            ->order('sort asc')
-            ->limit(4)
-            ->select();
+        $row = [];
+        $cids = '';
+        if(!empty($articleCateId) ){
+            foreach ($articleCateId as $v){
+                $cids .=$v['id'].',';
+            }
+
+            $row = self::where(['is_top'=>1,'status'=>1])
+                ->field('id,title,thumb,introduction')
+                ->where([
+                    'cid'=>[
+                        'in',trim($cids,',')
+                    ]
+                ])
+                ->order('sort asc')
+                ->limit(4)
+                ->select()->toArray();
+        }
+
         return $row;
     }
 
@@ -107,6 +122,17 @@ class Article extends BaseModel
         Db::name('article')->query($sql);
     }
 
+
+    public static function gteCategoryList($condition=[],$field='',$order='sort desc',$limit=999){
+        $list = Db::name('article_category')
+            ->where($condition)
+            ->field($field)
+            ->order($order)
+            ->limit($limit)
+            ->select()->toArray();
+
+        return $list;
+    }
 
 
 }

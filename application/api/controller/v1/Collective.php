@@ -11,6 +11,7 @@ namespace app\api\controller\v1;
 
 use app\api\controller\BaseController;
 use app\api\model\GoodsCollective as GoodsCollectiveModel;
+use app\api\model\Shop;
 use app\api\model\User;
 use app\api\model\UserAddress;
 use app\api\model\Goods as GoodsModel;
@@ -42,10 +43,12 @@ class Collective extends BaseController
         $collectiveList = GoodsCollectiveModel::getList($page,$size);
         //商品相册
         foreach ( $collectiveList['data'] as &$item) {
-            $item['photo'] = unserialize($item['photo']);
-            foreach ( $item['photo']as &$pItem) {
-                $pItem =  config('setting.domain').$pItem;
-            }
+//            $item['photo'] = unserialize($item['photo']);
+//            if($item['photo']){
+//                foreach ( $item['photo']as &$pItem) {
+//                    $pItem =  config('setting.domain').$pItem;
+//                }
+//            }
         }
         $collectiveList['data'] = self::prefixDomainToArray('thumb',$collectiveList['data']);
 
@@ -78,6 +81,14 @@ class Collective extends BaseController
         $collective['thumb'] = self::prefixDomain($collective['thumb']);
         //处理轮播图片信息
         preg_match_all ('/\"\/uploads(.*?)\"/', $collective['photo'], $m);
+        if(empty($m[1])){
+            $photo = explode(',',$collective['photo']);
+            if( !empty($photo)){
+                foreach ( $photo as $k=>$v){
+                    $collective['gallery'][] = self::prefixDomain($v);
+                }
+            }
+        }
         foreach ( $m[1] as $k=>$v){
             $collective['gallery'][] = self::prefixDomain('/uploads'.$v);
         }
@@ -125,6 +136,7 @@ class Collective extends BaseController
 
         $field = '';
         $product = GoodsModel::getProductDetail($goodsId,$field);
+
         $product['thumb'] = self::prefixDomain($product['thumb']);
         $product['collective'] = GoodsCollectiveModel::getCollectiveByGid($product['id']);
 
@@ -147,8 +159,8 @@ class Collective extends BaseController
             'goodsPrice' => $goodsPrice,//收货地址
             'freightPrice'   => $express['cost'],//运费
             'actualPrice'    => $actualPrice,//最后的价格
-            'product'        => $product    //商品信息
-
+            'product'        => $product,    //商品信息
+            'shop'           => Shop::getShopInfoById($product['s_id'],'shop_name')    //商品信息
         ];
         return $row;
     }
@@ -159,13 +171,13 @@ class Collective extends BaseController
      */
     public function orderList(){
         $param['order_type'] = 1;
-        $param['type'] = 9999;
+        $param['type'] = $this->request->param('types','9999');
         //查询订单信息
         $data = Order::getSummaryByUser($param,$this->uid);
-
         //查询订单对应的团购信息
         foreach ($data as &$v){
             $v['collective'] = UserCollective::getInfo(['order_id'=>$v['id']]);
+
             $v['collective']['order_status_text'] = config('collective.status')[$v['collective']['status']];
         }
         if( empty($data) ){
@@ -202,7 +214,7 @@ class Collective extends BaseController
         //多少人开团
         $goodsInfo['user_number'] = $collectiveRule['user_number'];
 
-        if( empty($collectiveRule) || $collectiveRule['state'] == 0){
+        if( empty($collectiveRule) || $collectiveRule['status'] == 0){
             $row = [
                 'errno' => 1,
                 'errmsg' => '开团活动已结束',
@@ -260,7 +272,7 @@ class Collective extends BaseController
         $orderList = UserCollective::getNoOnLine();
         foreach ($orderList as $item){
             $openid = User::getInfoById($item['buyer_id'])['openid'];
-            $pay= new Pay($item['id']);
+            $pay= new Pay($item['id'],'xWeChat');
             $pay->refund($openid);
         }
     }

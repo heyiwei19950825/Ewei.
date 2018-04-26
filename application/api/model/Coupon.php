@@ -18,12 +18,14 @@ class Coupon extends BaseModel
      * @return int
      */
     public static function countCoupon( $uid ){
-        $nowTime = date('Y-m-d',time());
-        $sql = "SELECT count(coupon_id) as number FROM ewei_coupon WHERE uid = {$uid} AND state=0 AND start_time < '{$nowTime}' AND end_time > '{$nowTime}'";
+        $nowTime = date('Y-m-d H:i:s',time());
+        $map['start_time'] = ['<=',$nowTime];
+        $map['end_time'] = ['>=',$nowTime];
+        $map['state'] = ['=',0];
+        $map['uid'] = ['=',$uid];
+        $row = Db::name('coupon')->where($map)->count('coupon_id');
 
-        $row = Db::query($sql);
-
-        return $row[0]['number'];
+        return $row;
     }
 
     /**
@@ -164,7 +166,7 @@ class Coupon extends BaseModel
      * 获取在线优惠券列表
      * @return array
      */
-    public static function getCouponList(){
+    public static function getCouponList($limit=4){
 
         $map['start_time']      = ['<=',time()];
         $map['end_time']        = ['>=',time()];
@@ -172,6 +174,7 @@ class Coupon extends BaseModel
         $row = Db::name('coupon_type')
             ->field('coupon_type_id,coupon_name,money,count,max_fetch,at_least,need_user_level,range_type,start_time,end_time')
             ->where($map)
+            ->limit($limit)
             ->select()->toArray();
         foreach ($row as &$item) {
             $item['start_time'] = date('Y-m-d',$item['start_time']);
@@ -203,45 +206,59 @@ class Coupon extends BaseModel
         return $data;
     }
 
+    //用户领取优惠券
     public static function addUserCoupon( $uid = -1,$cid = -1  ){
-        //领取优惠券个数
-        $couponGetNumber = Db::name('coupon')->where(['coupon_type_id'=>$cid])->count();
-
         //查询当前优惠券信息
         $map['start_time']      = ['<=',time()];
         $map['end_time']        = ['>=',time()];
         $map['coupon_type_id']  = ['=',$cid];
-        $coupon = Db::name('coupon_type')->where($map)->find();
-        //判断是否达到领取上线
-        if( $couponGetNumber >= $coupon['count']){
-            return false;
-        }
-        //判断用户领取最大领取个数
-        if( $coupon['max_fetch'] != 0 ){
-            $userGetNumber = Db::name('coupon')->where(['uid'=>$uid])->count();
-            if( $userGetNumber > $coupon['max_fetch']){
-                    return false;
+
+        Db::startTrans();
+
+        try{
+            $coupon = Db::name('coupon_type')->where($map)->find();
+
+            //判断是否达到领取上线
+            if( $coupon['get_number'] >= $coupon['count']){
+                return '优惠券已过期';
             }
-        }
-        //判断用户等级是否符合
-        $user = User::get(['id'=>$uid]);
-        if( $user['rank_id'] != $coupon['need_rank']){
+
+            //判断用户领取最大领取个数
+            if( $coupon['max_fetch'] != 0 ){
+                $userGetNumber = Db::name('coupon')->where(['uid'=>$uid,'coupon_type_id'=>$cid])->count();
+                if( $userGetNumber >= $coupon['max_fetch']){
+                        return '您已领取过啦';
+                }
+            }
+            //判断用户等级是否符合
+            $user = Db::name('user')->where(['id'=>$uid])->field('rank_id')->find();
+
+            if( $user['rank_id'] > $coupon['need_user_level']){
+                return '级别不够';
+            }
+
+            //领取优惠券
+            Db::name('coupon')->where([
+                'get_status'=> 0,
+                'coupon_type_id'=>$cid
+            ])->limit(1)->update([
+                'uid'=>$uid,
+                'get_status'=>1,
+                'start_time'=>date('Y-m-d H:i:s',$coupon['start_time']),
+                'end_time'=>date('Y-m-d H:i:s',$coupon['end_time']),
+                'fetch_time'=>date('Y-m-d H:i:s',time())
+            ]);
+
+            //修改优惠券领取数量
+            Db::name('coupon_type')->where(['coupon_type_id'=>$cid])->setInc('get_number',1);
+
+            Db::commit();
+            return true;
+        }catch (\Exception $e) {
+
+            Db::rollback();
             return false;
         }
-
-        $data = [
-            'coupon_type_id'    => $coupon['coupon_type_id'],
-            'coupon_code'       => time().rand(111,999),
-            'uid'               => $uid,
-            'money'             => $coupon['money'],
-            'get_type'          => 1,
-            'fetch_time'        => date('Y-m-d',time()),
-            'start_time'        => date('Y-m-d',$coupon['start_time']),
-            'end_time'          => date('Y-m-d',$coupon['end_time']),
-        ];
-        $row = Db::name('coupon')->insert( $data );
-
-        return $row;
     }
 
     public static function updateCoupon($id){

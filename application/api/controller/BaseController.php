@@ -12,9 +12,11 @@ namespace app\api\controller;
 
 
 use app\api\service\Token;
+use think\Cache;
 use think\Controller;
 use think\Db;
 use think\Config;
+use think\Session;
 
 
 class BaseController extends Controller
@@ -60,6 +62,11 @@ class BaseController extends Controller
         Config::set('wx.wx_id',$wxConfig['wx_id']);
         Config::set('wx.wx_secret',$wxConfig['wx_secret']);
         Config::set('wx.wx_noncestr',$wxConfig['wx_noncestr']);
+        Config::set('wx.pay_back_url',$wxConfig['pay_back_url']);
+        Config::set('wx.x_pay_back_url',$wxConfig['x_pay_back_url']);
+        Cache::set('wxConfig',$wxConfig);
+        Session::set('wxConfig',$wxConfig);
+        Session::set('system',$system);
     }
     protected function checkExclusiveScope()
     {

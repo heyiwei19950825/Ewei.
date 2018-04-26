@@ -118,6 +118,8 @@ Route::post('api/:version/upload/uploadBase64Img', 'api/:version.Upload/uploadBa
 Route::get('api/:version/Article/list', 'api/:version.Article/articleList');
 Route::get('api/:version/Article/detail', 'api/:version.Article/articleOne');
 Route::get('api/:version/Article/related', 'api/:version.Article/relatedByCid');
+Route::get('api/:version/Article/articleCategoryList', 'api/:version.Article/articleCategoryList');
+
 
 
 //搜索
@@ -178,9 +180,18 @@ Route::get('api/:version/comment/articlecount', 'api/:version.Comment/articleCom
 Route::get('api/:version/comment/articlelist', 'api/:version.Comment/articleCommentList');
 
 
-
+//店铺
 Route::post('api/:version/user/applyvip', 'api/:version.user/applyVip');
 Route::get('api/:version/shop/helper', 'api/:version.Shop/helper');
+Route::get('api/:version/shop/enter', 'api/:version.Shop/Enter');//商铺入驻
+Route::post('api/:version/shop/enter', 'api/:version.Shop/Enter');//商铺入驻
+Route::get('api/:version/shop/shopList', 'api/:version.Shop/getList');
+Route::get('api/:version/shop/shopInfo', 'api/:version.Shop/shopInfo');//获取商家信息
+Route::get('api/:version/shop/getShopCategory', 'api/:version.Shop/getShopCategory');//获取商家分类
+Route::get('api/:version/shop/goodsByCategory', 'api/:version.Shop/getGoodsByCategoryId');//获取商家分类
+Route::get('api/:version/shop/getOneGoods', 'api/:version.Shop/getOneGoods');//获取商家单个商品信息
+Route::get('api/:version/shop/shopGroup', 'api/:version.Shop/shopGroup');///获取商家分组
+//Route::get('api/:version/shop/goodsByCategory', 'api/:version.Shop/getGoodsByCategory');//获取商家所有分类和分类商品
 
 Route::get('api/:version/getApi', 'api/:version.QueryLists/index');
 Route::post('api/:version/tengxunyun', 'api/:version.TengxunyunTest/index');
