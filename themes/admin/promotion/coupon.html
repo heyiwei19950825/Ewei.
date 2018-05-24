@@ -18,12 +18,14 @@
                 </div>
                 <div class="layui-inline">
                     <button class="layui-btn">搜索</button>
+
                 </div>
             </form>
             <hr>
-
             <form action="" method="post" class="ajax-form">
-                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/Promotion/delcoupon')}">删除</button>
+                <button type="button" class="layui-btn layui-btn-mini layui-btn-small ajax-action" data-action="{:url('admin/Promotion/optionCoupon',['type'=>'update','field'=>'is_show','value'=>1])}">首页显示</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/Promotion/optionCoupon',['type'=>'update','field'=>'is_show','value'=>0])}">首页不显示</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:url('admin/Promotion/optionCoupon',['type'=>'del'])}">删除</button>
                 <div class="layui-tab-item layui-show">
                     <table class="layui-table">
                         <thead>
@@ -35,7 +37,8 @@
                             <th>发放数量</th>
                             <th>有效期开始时间</th>
                             <th>有效期结束时间</th>
-                            <th>显示状态</th>
+                            <th>首页显示状态</th>
+                            <th>是否删除</th>
                             <th>操作</th>
                         </tr>
                         </thead>
@@ -44,16 +47,17 @@
                         <tr>
                             <td><input type="checkbox" name="ids[]" value="{$vo.coupon_type_id}"></td>
                             <td>{$vo.coupon_type_id}</td>
-                            <td>{$vo.coupon_name}</td>
+                            <td>{$vo.coupon_name}   </td>
                             <td>{$vo.money}</td>
                             <td>{$vo.count}</td>
                             <td>{$vo.start_time)|date("Y-m-d H:m:s",}</td>
                             <td>{$vo.end_time)|date("Y-m-d H:m:s",}</td>
                             <td>{php}echo $vo['is_show']==1 ? '显示' : '不显示';{/php}</td>
+                            <td>{php}echo $vo['is_delete']==1 ? '已删除' : '否';{/php}</td>
                             <td>
                                 <a href="javascript:" class="layui-btn layui-btn-mini coupon-list" data-id="{$vo.coupon_type_id}">领取记录</a>
                                 <a href="{:url('admin/Promotion/updateCoupon',['id'=>$vo['coupon_type_id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
-                                <a href="{:url('admin/Promotion/delcoupon',['id'=>$vo['coupon_type_id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                                <a href="{:url('admin/Promotion/optionCoupon',['id'=>$vo['coupon_type_id'],'type'=>'del'])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
                             </td>
                         </tr>
                         {/foreach}

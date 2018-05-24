@@ -5,7 +5,7 @@
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">
             <li class="layui-this">图片魔方</li>
-            <li><a href="{:url('admin/picModels/edit')}">添加图片魔方</a></li>
+            <li><a href="{:url('admin/picModels/add')}">添加图片魔方</a></li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
@@ -14,6 +14,7 @@
                     <tr>
                         <th>ID</th>
                         <th>模板名称</th>
+                        <th>显示位置</th>
                         <th width="300px;">操作</th>
                     </tr>
                     </thead>
@@ -22,6 +23,7 @@
                         <tr>
                             <td>{$vo.id}</td>
                             <td>{$vo.name}</td>
+                            <td>{$vo.show_location}</td>
                             <td>
                                 <a href="{:url('admin/picModels/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
                                 <a href="{:url('admin/picModels/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>

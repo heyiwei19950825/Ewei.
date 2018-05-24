@@ -53,10 +53,10 @@ class Goods extends BaseModel
             $map['sp_vip_price'] = ['<>',0];
         }
 
-        $map['btime']   = ['<=',$now];
-        $map['etime']   = ['>=',$now];
-        $map['status']  = ['=',1];
-        $map['s_id']    = ['=',1];
+        $map['btime']           = ['<=',$now];
+        $map['etime']           = ['>=',$now];
+        $map['status']          = ['=',1];
+        $map['sp_inventory']    = ['>',1];
         if( $categoryId == 9999 ){
             unset($map['cid']);
         }
@@ -103,7 +103,6 @@ class Goods extends BaseModel
         $map['sp_inventory']     = ['>',0];
 
         $product = self::where($map)->field($field)->find($id);
-
         if($product != NULL ){
             $product = $product->toArray();
         }

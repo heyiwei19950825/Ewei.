@@ -29,7 +29,7 @@ class Collective extends BaseController
     public function _initialize()
     {
         parent::_initialize();
-        if( $_SERVER['PATH_INFO'] != '/api/v1/collective/check'){
+        if( $_SERVER['PATH_INFO'] != '/api/v1/collective/check' && $_SERVER['PATH_INFO'] != '/api/v1/collective/detail'){
             $this->uid = Token::getCurrentUid();
         }
     }
@@ -60,6 +60,7 @@ class Collective extends BaseController
             'pagesize'  => $size,//每页长度
             'totalPages' => 1, //总页数
             'data' => $collectiveList['data'],
+            'banner' => 'http://wq.mskfkj.com/public/1520405232.jpg'
         ];
 
         $row = [

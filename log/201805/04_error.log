@@ -1,0 +1,9 @@
+---------------------------------------------------------------
+[2018-05-04T22:21:08+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: name[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:284]
+---------------------------------------------------------------
+[2018-05-04T22:22:26+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-05-04T22:23:17+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义变量: address[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:276]

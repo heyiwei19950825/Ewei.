@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文化执法编年史</title>
+    <meta charset="UTF-8">
+</head>
+<style type="text/css">
+    body{
+                /*background: #333;*/
+            }
+            h1{
+                text-align: center;
+                color:#fff;
+            }
+            .timezone{
+                width:6px;
+                height: 1200px;
+                background: lightblue;
+                margin: 0 auto;
+                margin-top:50px;
+                border-radius: 3px;
+                position: relative;
+                -webkit-animation: heightSlide 2s linear;
+            }
+            @-webkit-keyframes heightSlide{
+                0%{
+                    height: 0;
+                }
+                100%{
+                    height: 350px;
+                }
+            }
+            .timezone:after{
+                content: '至今...';
+                width: 200px;
+                color:#f25f5c;
+                position: absolute;
+                margin-left: -35px;
+                bottom: -30px;
+                cursor:pointer;
+                -webkit-animation: showIn 4s ease;
+            }
+            .timezone .time,.timezone .timeLeft{
+                position: absolute;
+                margin-left: -10px;
+                margin-top:-10px;
+                width:20px;
+                height:20px;
+                border-radius: 50%;
+                border:4px solid rgba(255,255,255,0.5);
+                background: lightblue;
+                -webkit-transition: all 0.5s;
+                -webkit-animation: showIn ease;
+            }
+            .timezone .time:nth-child(1){
+                -webkit-animation-duration:1s;
+            }
+            .timezone .timeLeft:nth-child(2){
+                -webkit-animation-duration:1.5s;
+            }
+            .timezone .time:nth-child(3){
+                -webkit-animation-duration:2s;
+            }
+            .timezone .timeLeft:nth-child(4){
+                -webkit-animation-duration:2.5s;
+            }
+            @-webkit-keyframes showIn{
+                0%,70%{
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+            timezone .time h2{
+                width: 200px;
+            }
+            .timezone .time h2,.timezone .timeLeft h2{
+                position: absolute;
+                margin-left: -120px;
+                margin-top: 3px;
+                color:#f25f5c;
+                font-size: 25px;
+                cursor:pointer;
+                -webkit-animation: showIn 3s ease;
+            }
+            .timezone .timeLeft h2{
+                margin-left: 60px;
+                width: 200px;
+            }
+            .timezone .time:hover,.timezone .timeLeft:hover{
+                border:4px solid lightblue;
+                background: lemonchiffon;
+                box-shadow: 0 0 2px 2px rgba(255,255,255,0.4);
+            }
+            .timezone .time div,.timezone .timeLeft div{
+                position: absolute;
+                top:50%;
+                margin-top: -5px;
+                left:50px;
+                width: 420px;
+                height: 200px;
+                background: lightblue;
+                border:3px solid #eee;
+                border-radius: 10px;
+                z-index: 2;
+                overflow: hidden;
+                cursor:pointer;
+                -webkit-animation: showIn 3s ease;
+                -webkit-transition: all 0.5s;
+                font-size: 22px;
+                padding: 5px;
+            }
+            .timezone .timeLeft div{
+                left:-465px;
+            }
+            .timezone .time div:hover,.timezone .timeLeft div:hover{
+                height: 170px;
+            }
+            .timezone .time div p,.timezone .timeLeft div p{
+                color: #50514f;
+                font-weight: bold;
+                text-align: center;
+            }
+            .timezone .time:before,.timezone .timeLeft:before{
+                content: '';
+                position: absolute;
+                top:3px;
+                left: 32px;
+                width: 0px;
+                height: 0px;
+                border:10px solid transparent;
+                border-right:10px solid #eee;
+                z-index:-1;
+                -webkit-animation: showIn 3s ease;
+            }
+            .timezone .timeLeft:before{
+                left:-33px;
+                border:10px solid transparent;
+                border-left:10px solid #eee;
+            }
+            .timezone .time div ul,.timezone .timeLeft div ul{
+                list-style: none;
+                width:406px;
+                padding:5px 0 0;
+                border-top:2px solid #eee;
+                color: #50514f;
+                text-align: center;
+            }
+            .timezone .time div li,.timezone .timeLeft div li{
+                display: inline-block;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+            }
+    .logo{
+        text-align:center;
+    }
+            
+</style>
+<body>
+<div class="logo">
+    <img src="http://ewei.mskfkj.com/static/images/微信图片_20180502114250.jpg" alt="">
+</div>
+<div class="timezone">
+        <div class="time">
+            <h2>1997年</h2>
+            <div>
+                <p>
+                    成立地区文化稽查大队
+                </p>
+                <ul>
+                    The establishment of a regional cultural Inspection Brigade
+                </ul>
+            </div>
+        </div>
+        <div class="timeLeft" style="top: 230px;">
+            <h2>2001年</h2>
+            <div>
+                <p>地区文化稽查大队更名为眉山市文化稽查大队</p>
+                <ul>
+                    The local cultural inspection team was renamed the Meishan cultural inspection team
+                </ul>
+            </div>
+        </div>
+    <div class="time" style="top: 460px;">
+        <h2>2006年</h2>
+        <div>
+            <p>
+                市文化稽查大队更名为眉山市文化市场稽查大队
+            </p>
+            <ul>
+                The City Cultural Inspection Brigade was renamed the inspection team of Meishan cultural market
+            </ul>
+        </div>
+    </div>
+    <div class="timeLeft" style="top: 690px;">
+        <h2>2009年</h2>
+        <div>
+            <p>市文化市场稽查支队参照公务员法管理</p>
+            <ul>
+                Municipal Cultural market inspection team refer to civil service law management
+            </ul>
+        </div>
+    </div>
+    <div class="time" style="top: 930px;">
+        <h2>2011年</h2>
+        <div>
+            <p>
+                文化、新闻出版、广电执法职能统一整合，眉山市文化市场稽查支队变更为眉山市文化市场综合执法支队
+            </p>
+            <ul>
+                Cultural, press and publication, radio and television law enforcement functions are integrated, and meishan city cultural market inspection team is changed into the comprehensive law enforcement detachment of meishan city cultural market
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

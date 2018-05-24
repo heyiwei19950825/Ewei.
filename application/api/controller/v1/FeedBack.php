@@ -39,7 +39,7 @@ class FeedBack extends BaseController
         //查询用户提交信息数量
         $countNum = Db::name('feed_back')->where(['user_id'=>$this->uid,'msg_status'=>0])->count('id');
         if( $countNum >= 5 ){
-            $row['error_code'] = 60003 ;
+            $row['errno'] = 60003 ;
             $row['msg'] = '请勿多次提交';
             return $row;
         }
@@ -53,10 +53,10 @@ class FeedBack extends BaseController
         ];
         $fbRow = Db::name('feed_back')->insert($data);
         if( $fbRow == 1 ){
-            $row['error_code'] = 0 ;
+            $row['errno'] = 0 ;
             $row['msg'] = '提交成功';
         }else{
-            $row['error_code'] = 400004 ;
+            $row['errno'] = 400004 ;
             $row['msg'] = '网络错误请重试';
         }
 

@@ -18,7 +18,7 @@
                             <option>暂无分类请先创建</option>
                             {else}
                                {foreach name="category_level_list" item="vo"}
-                                    <option value="{$vo.id}" {eq name="vo.level" value="1"}disabled=""{/eq}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+                                    <option value="{$vo.id}" >{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
                                 {/foreach}
                             {/if}
                               
@@ -185,8 +185,8 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">状态</label>
                                 <div class="layui-input-block">
-                                    <input type="radio" name="status" value="1" title="已审核">
-                                    <input type="radio" name="status" value="0" title="未审核" checked="checked">
+                                    <input type="radio" name="status" value="1" title="上架">
+                                    <input type="radio" name="status" value="0" title="下架" checked="checked">
                                 </div>
                             </div>
                             <div class="layui-form-item">

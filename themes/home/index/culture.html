@@ -76,12 +76,13 @@
 		</div>
 		<footer>
 			<div class="weimob-copyright">
-				<a href="#">技术支持 眉山坤飞网络科技有限公司</a>
+				<a href="#" id="openLocation">技术支持 眉山坤飞网络科技有限公司</a>
 			</div> <span class="weimob-support" style="display:none;">技术支持 眉山坤飞网络科技有限公司</span>
 		</footer>
 		<div mark="stat_code" style="width:0px; height:0px; display:none;"></div>
 	</body>
 </html>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script type="text/javascript">
 	$(function(){
 
@@ -91,8 +92,12 @@
 			window.location.href = window.location.pathname;
 		}else{
 			token = $.session.get('token');
+			if(token == undefined){
+				window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxcca76d47de19c63d&redirect_uri=http%3a%2f%2fapi.hestia.me%2fm%2fvalidate%2fL6FFIC9001V%2fapi%2fv2%2fwechat%2fresponse&response_type=code&scope=snsapi_base&state=http%3a%2f%2fewei.mskfkj.com%2fhome%2findex%2fculture';
+			}
 		}
-
+		var url = window.location.href;
+		//获取菜单栏
 		$.ajax({
 			url: '/api/v1/nav/list',
 			type: "post",
@@ -111,18 +116,64 @@
 						var html = '';
 						for( var i in data ){
 							var info = data[i];
-							html += '<li> ' +
-									'<a href="'+info.link+'" style="background-color:'+info.background_color+';"> ' +
-									'<img src="'+info.icon+'" style="width: 50px; height: 50px; margin-top: 3px; margin-left: 0px;"> ' +
-									'<label>'+info.name+'</label> ' +
-									'</a> ' +
-									'</li>';
+							if(info.link == '#openLocation'){
+								html += '<li id="openLocation"> ' +
+										'<a href="javascript:" style="background-color:'+info.background_color+';"> ' +
+										'<img src="'+info.icon+'" style="width: 50px; height: 50px; margin-top: 3px; margin-left: 0px;"> ' +
+										'<label>'+info.name+'</label> ' +
+										'</a> ' +
+										'</li>';
+							}else{
+								html += '<li> ' +
+										'<a href="'+info.link+'" style="background-color:'+info.background_color+';"> ' +
+										'<img src="'+info.icon+'" style="width: 50px; height: 50px; margin-top: 3px; margin-left: 0px;"> ' +
+										'<label>'+info.name+'</label> ' +
+										'</a> ' +
+										'</li>';
+							}
+
 						}
 						$('.card_lol').html(html);
 					}
 				}
 			}
 		});
+		//获取微信配置
+		$.post('/api/v2/wechat/config',{
+			url:url
+		},function(e){
+			if(e.code == 1){
+				var data = e.data;
+				wx.config({
+//					debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+					appId: data.appid, // 必填，公众号的唯一标识
+					timestamp: data.timestamp, // 必填，生成签名的时间戳
+					nonceStr: data.noncestr, // 必填，生成签名的随机串s
+					signature: data.sign,// 必填，签名
+					jsApiList: [
+						'openLocation',
+						'getLocation'
+					] // 必填，需要使用的JS接口列表
+				});
+			}
+		})
+		//调用微信内置顶土
+		wx.ready(function () {
+			// 在这里调用 API
+			// 7 地理位置接口
+			// 7.1 查看地理位置
+			$('#openLocation').on('click',function(){
+				wx.openLocation({
+					latitude: 30.074933,
+					longitude: 103.861788,
+					name: '眉山市广电局',
+					address: '四川省眉山市东坡区眉州大道东二段7号',
+					scale: 14,
+					infoUrl: 'http://weixin.qq.com'
+				});
+			});
+		});
+
 
 		function GetQueryString(name)
 		{

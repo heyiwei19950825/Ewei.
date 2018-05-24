@@ -1,0 +1,3735 @@
+---------------------------------------------------------------
+[2018-05-22T14:13:49+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1520022770.png
+[ info ] admin.ewei.com/uploads/common/1520022770.png [运行时间：0.155994s][吞吐率：6.41req/s] [内存消耗：1,476.49kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001192s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1520022770.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:49+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946128.png
+[ info ] admin.ewei.com/uploads/common/1523946128.png [运行时间：0.162461s][吞吐率：6.16req/s] [内存消耗：1,476.50kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001756s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946128.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:49+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267060.jpg
+[ info ] admin.ewei.com/uploads/common/1526267060.jpg [运行时间：0.166021s][吞吐率：6.02req/s] [内存消耗：1,476.50kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001232s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267060.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:49+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1524215915.jpg
+[ info ] admin.ewei.com/uploads/goods_brand/1524215915.jpg [运行时间：0.237793s][吞吐率：4.21req/s] [内存消耗：1,476.53kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001253s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1524215915.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:49+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524131442.jpg
+[ info ] admin.ewei.com/uploads/common/1524131442.jpg [运行时间：0.073356s][吞吐率：13.63req/s] [内存消耗：1,476.50kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001761s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524131442.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:49+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946204.png
+[ info ] admin.ewei.com/uploads/common/1523946204.png [运行时间：0.064064s][吞吐率：15.61req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000750s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946204.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:50+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946378.png
+[ info ] admin.ewei.com/uploads/common/1523946378.png [运行时间：0.077827s][吞吐率：12.85req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000752s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946378.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:50+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946165.png
+[ info ] admin.ewei.com/uploads/common/1523946165.png [运行时间：0.055634s][吞吐率：17.97req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000759s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946165.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:50+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946404.png
+[ info ] admin.ewei.com/uploads/common/1523946404.png [运行时间：0.049177s][吞吐率：20.33req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000480s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946404.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:50+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946305.png
+[ info ] admin.ewei.com/uploads/common/1523946305.png [运行时间：0.051725s][吞吐率：19.33req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000697s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946305.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:50+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946275.png
+[ info ] admin.ewei.com/uploads/common/1523946275.png [运行时间：0.059943s][吞吐率：16.68req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001053s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946275.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:50+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1524293844.jpg
+[ info ] admin.ewei.com/uploads/cms/1524293844.jpg [运行时间：0.057528s][吞吐率：17.38req/s] [内存消耗：1,476.40kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000797s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1524293844.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:50+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1519909969.png
+[ info ] admin.ewei.com/uploads/common/1519909969.png [运行时间：0.056658s][吞吐率：17.65req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000766s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1519909969.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1524215915.jpg
+[ info ] admin.ewei.com/uploads/goods_brand/1524215915.jpg [运行时间：0.052935s][吞吐率：18.89req/s] [内存消耗：1,476.55kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000510s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1524215915.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267085.jpg
+[ info ] admin.ewei.com/uploads/common/1526267085.jpg [运行时间：0.055406s][吞吐率：18.05req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000726s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267085.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946404.png
+[ info ] admin.ewei.com/uploads/common/1523946404.png [运行时间：0.058170s][吞吐率：17.19req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000690s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946404.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946378.png
+[ info ] admin.ewei.com/uploads/common/1523946378.png [运行时间：0.062158s][吞吐率：16.09req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000735s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946378.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946106.png
+[ info ] admin.ewei.com/uploads/common/1523946106.png [运行时间：0.076714s][吞吐率：13.04req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000721s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946106.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946305.png
+[ info ] admin.ewei.com/uploads/common/1523946305.png [运行时间：0.060784s][吞吐率：16.45req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000715s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946305.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1520022770.png
+[ info ] admin.ewei.com/uploads/common/1520022770.png [运行时间：0.067392s][吞吐率：14.84req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000730s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1520022770.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946165.png
+[ info ] admin.ewei.com/uploads/common/1523946165.png [运行时间：0.067604s][吞吐率：14.79req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000724s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946165.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524131442.jpg
+[ info ] admin.ewei.com/uploads/common/1524131442.jpg [运行时间：0.078736s][吞吐率：12.70req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000719s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524131442.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1524293844.jpg
+[ info ] admin.ewei.com/uploads/cms/1524293844.jpg [运行时间：0.064413s][吞吐率：15.52req/s] [内存消耗：1,476.40kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000973s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1524293844.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946128.png
+[ info ] admin.ewei.com/uploads/common/1523946128.png [运行时间：0.065612s][吞吐率：15.24req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000864s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946128.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946275.png
+[ info ] admin.ewei.com/uploads/common/1523946275.png [运行时间：0.076511s][吞吐率：13.07req/s] [内存消耗：1,476.50kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001746s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946275.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1519909969.png
+[ info ] admin.ewei.com/uploads/common/1519909969.png [运行时间：0.082008s][吞吐率：12.19req/s] [内存消耗：1,476.50kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001975s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1519909969.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:13:54+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946204.png
+[ info ] admin.ewei.com/uploads/common/1523946204.png [运行时间：0.098344s][吞吐率：10.17req/s] [内存消耗：1,476.50kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001763s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946204.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/4 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:23+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/index
+[ info ] admin.ewei.com/api/v1/cart/index [运行时间：0.296927s][吞吐率：3.37req/s] [内存消耗：2,718.32kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000473s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'ewei-token' => '21aa6df23d4153a8befcca97a3baea1e',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/token/user
+[ info ] admin.ewei.com/api/v1/token/user [运行时间：0.567015s][吞吐率：1.76req/s] [内存消耗：2,743.48kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000709s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Token',
+    2 => 'getToken',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '1229',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => '21aa6df23d4153a8befcca97a3baea1e',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'code' => '061UvHWe2g0qUB0YsTXe2ZG3Xe2UvHWq',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"Ewei","gender":1,"language":"zh_CN","city":"","province":"Ho Chi Minh City","country":"Vietnam","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'Ewei',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Ho Chi Minh City',
+      'country' => 'Vietnam',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132',
+    ),
+    'signature' => '7c24b9d6d0f10066c1f48423ad84143b300d09a1',
+    'encryptedData' => '5FOT0oRyR0959OgXJzKY0BhAp4UKkWoL+45tHDTM2TNCIRaFYHa8q6LBWk9lQmWzlXUfv98lcNdfyKHr/7VAAsBxcfhHr9gB7qjZ32JMrLAnmNdnQC22OKyUur/kxlY5s+rm6BpefnoOm0scH1naUHq5PKs4qnG1M+nsuxmIAt5Ln4KQCO7zvbvV/ik1qHhQ0Dw1wz5t2SUvmw11990J4Yhb0oo10lxXaYEpf9SWtf6FeXjx/iPW5GtJgwqn2V2kmvnKKwFGiZPF+9r9pZIqZybx6llbFNaGIqTdaMv6SIw1DBX2ZKcOJ66efB3X6TryXzs/DYHRK/EoF84kRuoTtq2si1W2vO+cngj1ZxekYAHbQaA7UnTCS9uS3H6dlT2tjDWU+dgEaxX/TMTqK7Q5zT4Q8x3gJbp3veNC5F775THGJRYSQ1HkILcEewxahlJwgx9KtKXfkz6U6wSs+LBKWxncrneNr+IXIeXzdC3m514=',
+    'iv' => 'Ov9hfgskwqqNcA4uRtToiQ==',
+  ),
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Token->getToken[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Token.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/token/user
+[ info ] admin.ewei.com/api/v1/token/user [运行时间：0.337475s][吞吐率：2.96req/s] [内存消耗：2,743.48kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000485s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Token',
+    2 => 'getToken',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '1229',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => '21aa6df23d4153a8befcca97a3baea1e',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'code' => '011uZHz91OYbAP15dPx91BKHz91uZHzp',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"Ewei","gender":1,"language":"zh_CN","city":"","province":"Ho Chi Minh City","country":"Vietnam","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'Ewei',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Ho Chi Minh City',
+      'country' => 'Vietnam',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132',
+    ),
+    'signature' => '7c24b9d6d0f10066c1f48423ad84143b300d09a1',
+    'encryptedData' => '5iRD6QYHVqpI8ak38uDzQuQ9bNZLyZd7RxqKWwSdt3EzPdj8slAr2Ny4Zo+HifCOebie0xpS3HBg6QcGPOQRvFvIXxgXPf8IUJfgR/1aafdqBmPzIM/tovqr6e31FsJ69JZ8rc0Hz/iTQ5s8XCxTXW1Z8dBz257d38lf/s9zNervNp+lTQN4eyoIBpIZo90cwZ7vgLgIzEK2rRJTMZaWLyZVgiu/NBejZ23LQ8gjasn+ZfnkXAUKOq0uL0HwzbCk1/9rlcguAbg2lSeokVp4phxy44vdhNg/LCXehZ80BQCPx5Y0PHOpiqz0mMbv8yNs57s0NXt3EVXOpWCgYnxQZqdCUMi1O2y3BqKT12Jg/wxOnoJvMEzmI+1JQjsK5UBEOuKVGTu/+D11Pw5Y/pXf8qp1gYL8f/PewFPxcQ2JNvJO9boI9FMe1wecODW29XjQw4dST+6rX7FcIvIfBEqeyAu/e/RgWqTr2G8UsEhvx0o=',
+    'iv' => '8omFws1+axnAVoRiHfzppw==',
+  ),
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Token->getToken[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Token.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:36+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1524215915.jpg
+[ info ] admin.ewei.com/uploads/goods_brand/1524215915.jpg [运行时间：0.040052s][吞吐率：24.97req/s] [内存消耗：1,476.55kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000481s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1524215915.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:36+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1520022770.png
+[ info ] admin.ewei.com/uploads/common/1520022770.png [运行时间：0.056313s][吞吐率：17.76req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000700s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1520022770.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:36+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524131442.jpg
+[ info ] admin.ewei.com/uploads/common/1524131442.jpg [运行时间：0.056144s][吞吐率：17.81req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000721s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524131442.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:37+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267060.jpg
+[ info ] admin.ewei.com/uploads/common/1526267060.jpg [运行时间：0.058128s][吞吐率：17.20req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000807s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267060.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:36+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946106.png
+[ info ] admin.ewei.com/uploads/common/1523946106.png [运行时间：0.070259s][吞吐率：14.23req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000666s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946106.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:37+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267085.jpg
+[ info ] admin.ewei.com/uploads/common/1526267085.jpg [运行时间：0.070646s][吞吐率：14.16req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000751s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267085.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:37+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267133.jpg
+[ info ] admin.ewei.com/uploads/common/1526267133.jpg [运行时间：0.061474s][吞吐率：16.27req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000668s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267133.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:37+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946404.png
+[ info ] admin.ewei.com/uploads/common/1523946404.png [运行时间：0.054883s][吞吐率：18.22req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000674s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946404.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:37+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946305.png
+[ info ] admin.ewei.com/uploads/common/1523946305.png [运行时间：0.059102s][吞吐率：16.92req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000744s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946305.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:37+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946275.png
+[ info ] admin.ewei.com/uploads/common/1523946275.png [运行时间：0.068820s][吞吐率：14.53req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000691s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946275.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:37+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946378.png
+[ info ] admin.ewei.com/uploads/common/1523946378.png [运行时间：0.062778s][吞吐率：15.93req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000718s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946378.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:37+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1524293844.jpg
+[ info ] admin.ewei.com/uploads/cms/1524293844.jpg [运行时间：0.048569s][吞吐率：20.59req/s] [内存消耗：1,476.40kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000540s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1524293844.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:37+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1519909969.png
+[ info ] admin.ewei.com/uploads/common/1519909969.png [运行时间：0.043660s][吞吐率：22.90req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000524s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1519909969.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/7 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:40+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/index
+[ info ] admin.ewei.com/api/v1/cart/index [运行时间：0.157737s][吞吐率：6.34req/s] [内存消耗：2,718.16kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000501s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'ewei-token' => '',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:42+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1526110872.jpg
+[ info ] admin.ewei.com/uploads/cms/1526110872.jpg [运行时间：0.048809s][吞吐率：20.49req/s] [内存消耗：1,476.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000786s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1526110872.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/9 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:47+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/token/user
+[ info ] admin.ewei.com/api/v1/token/user [运行时间：0.437285s][吞吐率：2.29req/s] [内存消耗：2,743.43kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000563s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Token',
+    2 => 'getToken',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '1229',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => '',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'code' => '021ctNZK1XM6F50XBVWK1gnMZK1ctNZG',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"Ewei","gender":1,"language":"zh_CN","city":"","province":"Ho Chi Minh City","country":"Vietnam","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'Ewei',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Ho Chi Minh City',
+      'country' => 'Vietnam',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132',
+    ),
+    'signature' => '9f6e76f67357b317c79de1a5dd9e4b68b1f79419',
+    'encryptedData' => 'lDEGFvQNG0YC38jm5gyjVABtHO/bUzDJTtVqC4MG935gJeGiZFuueYNNFw4pBtQOQmYKkPlt/Sd0jTO0D2Zy1OVsHdIf/Axauo+3LE0cXooq51nik0eMN3IcFr2AvWotwY14rrHlPzRwvjPJTiL8uddR72Q1ucVW/THXYeiCLyEJhmfpERxtLa178tzmaHlFDPYKLIeI48p9Oq1oAlQ19mKcmFUp0xYZnD0F4KJ7deAF9V8LMITQ25i/GGrJAAD/pirRjqFGJpT6s4b8LBT9a3/xCNAU2jwXJQ6/wlSOANOJY9UzHhm2Yhp11Fuy5DKEU8FTh4DLkXm8baiBWvuSKy2b+fp9IjkS6GEzZcZ7RUxSHxArrw5yGEnC2B4vdCzoqUH1C6zIcR2/10H0N19nfezfFZhTW4GyMBWnQsaZB2coZlVit94hw121zQxJU7ehoQSsLCL2wCJmUDcnoUkN7nNYrOyQD/Oar4JuyIF9TcU=',
+    'iv' => 'XYTfqj0SdGQ/y+2DeDTxOw==',
+  ),
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Token->getToken[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Token.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:47+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/index
+[ info ] admin.ewei.com/api/v1/cart/index [运行时间：0.135542s][吞吐率：7.38req/s] [内存消耗：2,718.16kb] [文件加载：59]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000563s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Cart',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'ewei-token' => '',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/token/user
+[ info ] admin.ewei.com/api/v1/token/user [运行时间：0.408424s][吞吐率：2.45req/s] [内存消耗：2,743.43kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000514s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Token',
+    2 => 'getToken',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '1229',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => '',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'code' => '081KMNka2qVPsP01Pkoa2FXFka2KMNkm',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"Ewei","gender":1,"language":"zh_CN","city":"","province":"Ho Chi Minh City","country":"Vietnam","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'Ewei',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Ho Chi Minh City',
+      'country' => 'Vietnam',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132',
+    ),
+    'signature' => '9f6e76f67357b317c79de1a5dd9e4b68b1f79419',
+    'encryptedData' => 'c6nzUUiLDmW+uHDWyRjs61Dug/BG9yy3/z30nD4v6Kft2ifmmP89DjDOdaZA1PyXZUVa1z+bOpNUOu0Oe6tHabCitIwdUKBIJLRUfZGLVSSTJdQQMNGQ4tCewQueSBtbfy+xTNDG4/aq3FULbWSxaPtk03riH1XE+cON3NxHiu39B9ExQs73ZsujArao5FZOLejS57i4TD3NmkGswMVhENuc4ZBsWrEj22ajWWsqygQXVpePCKH2ns0/fvnYavLsUQpB92ODCbBOdXxl9SwVxke+LFlnnyOicyJWabo0HKEn3ydylRJAOmHgrQgbqOYSONcqePbQeNHraVaxEKnBTF3KfSlrEKkJFT4WK9k7Di+BoMhFb2RScDnkU/DWul5lMfgr+zcX0E6JsDfWpgbE0xrOtHxDg2YNYaUryqOK48rH5vz4EtGZuFa6JPaFBaaIHVjnunCSGmuepiCLBskRyPYNXoJOCiqRki7HuXOueXM=',
+    'iv' => 'Jjr2vWgvLPbxw3o1NAptWA==',
+  ),
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Token->getToken[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Token.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:14:48+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/token/user
+[ info ] admin.ewei.com/api/v1/token/user [运行时间：0.341593s][吞吐率：2.93req/s] [内存消耗：2,743.43kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000498s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Token',
+    2 => 'getToken',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '1229',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => '',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'code' => '001POuBG1qjh680RJyBG1b8BBG1POuBv',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"Ewei","gender":1,"language":"zh_CN","city":"","province":"Ho Chi Minh City","country":"Vietnam","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'Ewei',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Ho Chi Minh City',
+      'country' => 'Vietnam',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132',
+    ),
+    'signature' => '9f6e76f67357b317c79de1a5dd9e4b68b1f79419',
+    'encryptedData' => 'Itn/QPE8AaVCiQpjICJdE/90uSrNUZX8Q537mKcBY73x3j2NM6eb/fHVk4mMoDTMvDDdcGHJokZho8up9/tzky9MkyF85qL1fUHIXy1bdDsktm6BNjIzAlB1M08VQhkz1e1kgbeH4bHyVcf3ZHc7rUhh+IA282R9U5IsLHJWsB5zNHlZloEGngKBfqQm/i2KBH+lxetxErqFUuPXH7fo/4U3IuO2W82PqXEfwmTM4ywJJWqcN11BQBn+GE1ntQzTMYp+hSzYsx0NN7HQPCI3LQ+WAuzoCytkEyGuua22kUr/B1I+SSOY32e1AcB4ZogbvGlR/Js3QCO7pfyJZehUlNxjT40GWmgF17z8m835+jKbwdXmmWC2gc5GfPsQtSVa9EneoW0Bh4pRrsDMa4k/7tLg8y1hoBQ9soSONCZaBh9csRQu6yZ2pKtPvwaI98ZkBPme00EsBR17WaLz1vYi5gBPjQzwaWDbKbvRPk87juc=',
+    'iv' => '0lyA54a/49i0feK2yTqQ5Q==',
+  ),
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Token->getToken[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Token.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:15:09+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524153538.jpg
+[ info ] admin.ewei.com/uploads/common/1524153538.jpg [运行时间：0.049270s][吞吐率：20.30req/s] [内存消耗：1,477.30kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000622s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524153538.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; pgv_pvi=3481007104; Hm_lvt_21b27145da0487d1e9f52a8e5576e564=1523347871,1523952969,1524153867; Hm_lvt_5cc5f097ee4458cfff8ebe791a436dab=1526457066; PHPSESSID=hql6albmtcula4fbq935detjo0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:15:10+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524153538.jpg
+[ info ] admin.ewei.com/uploads/common/1524153538.jpg [运行时间：0.046579s][吞吐率：21.47req/s] [内存消耗：1,477.30kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000694s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524153538.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4549.400 QQBrowser/9.7.12900.400',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://admin.ewei.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'OUTFOX_SEARCH_USER_ID_NCOO=433128006.86589545; pgv_pvi=3481007104; Hm_lvt_21b27145da0487d1e9f52a8e5576e564=1523347871,1523952969,1524153867; Hm_lvt_5cc5f097ee4458cfff8ebe791a436dab=1526457066; PHPSESSID=hql6albmtcula4fbq935detjo0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:15:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/token/user
+[ info ] admin.ewei.com/api/v1/token/user [运行时间：0.358703s][吞吐率：2.79req/s] [内存消耗：2,743.43kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000701s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Token',
+    2 => 'getToken',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '1229',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => '',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'code' => '081HKzDW1TnWVT0wk0GW17pEDW1HKzDo',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"Ewei","gender":1,"language":"zh_CN","city":"","province":"Ho Chi Minh City","country":"Vietnam","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'Ewei',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Ho Chi Minh City',
+      'country' => 'Vietnam',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132',
+    ),
+    'signature' => '9f6e76f67357b317c79de1a5dd9e4b68b1f79419',
+    'encryptedData' => 'CtL4+KdEnCu+TLyiBqGdcud5R/z9axSJEVQcWi7MW+5fUe9RiDfMOWJ6DlTwAaC1z26M/mhQ905fD/kLv96hKUzW42aiVJift6ooHVs8Hlp40XNUa8AcR7XW4TKYb+qpjZAay/3Rj+G+hVGzpHEuJIuH3nXZYcKc6owTaCzGxZL0C+BxH3yzen3ORRacnStK5s5bOkI37/OvnjwfMhbXkCmatUEZRWzsU1R8qH572dJNzSD4FRB6b0L+6RfKUTWq7uTmK5xn2RHTL91FUuz75bLm4SWo6CitWbsyCFsOMD2pA5sjb5Zx7pCZ7inDMfIZVdJHsggshHZWkMh9DOdSgfOZuGae2NT33/IeZ0SwMkrHMvS79hmCdehQZKJxJSPkU6S6BdHH9F1cxvQ4MxLVFhbvdkgHXIrMenuZJ8xbH/0NXjaddHk2QZpaq7qF97HeANE5uYA1AY0axk34snvGdxweeYk9XdUN1mR0miwdLc8=',
+    'iv' => 'dgTFzoq4nirGKOP7J7jJEQ==',
+  ),
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Token->getToken[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Token.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1524215915.jpg
+[ info ] admin.ewei.com/uploads/goods_brand/1524215915.jpg [运行时间：0.064645s][吞吐率：15.47req/s] [内存消耗：1,476.76kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000767s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1524215915.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526263566.png
+[ info ] admin.ewei.com/uploads/common/1526263566.png [运行时间：0.072564s][吞吐率：13.78req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001516s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526263566.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267133.jpg
+[ info ] admin.ewei.com/uploads/common/1526267133.jpg [运行时间：0.070204s][吞吐率：14.24req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001673s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267133.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946106.png
+[ info ] admin.ewei.com/uploads/common/1523946106.png [运行时间：0.058915s][吞吐率：16.97req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000830s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946106.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946165.png
+[ info ] admin.ewei.com/uploads/common/1523946165.png [运行时间：0.061620s][吞吐率：16.23req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000732s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946165.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946305.png
+[ info ] admin.ewei.com/uploads/common/1523946305.png [运行时间：0.064343s][吞吐率：15.54req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000575s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946305.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1520022770.png
+[ info ] admin.ewei.com/uploads/common/1520022770.png [运行时间：0.058763s][吞吐率：17.02req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000679s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1520022770.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524131442.jpg
+[ info ] admin.ewei.com/uploads/common/1524131442.jpg [运行时间：0.059227s][吞吐率：16.88req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000748s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524131442.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946378.png
+[ info ] admin.ewei.com/uploads/common/1523946378.png [运行时间：0.059492s][吞吐率：16.81req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000735s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946378.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946204.png
+[ info ] admin.ewei.com/uploads/common/1523946204.png [运行时间：0.061743s][吞吐率：16.20req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000840s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946204.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946128.png
+[ info ] admin.ewei.com/uploads/common/1523946128.png [运行时间：0.067977s][吞吐率：14.71req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000726s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946128.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1524293844.jpg
+[ info ] admin.ewei.com/uploads/cms/1524293844.jpg [运行时间：0.055483s][吞吐率：18.02req/s] [内存消耗：1,476.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000728s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1524293844.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1519909969.png
+[ info ] admin.ewei.com/uploads/common/1519909969.png [运行时间：0.053360s][吞吐率：18.74req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000778s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1519909969.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/12 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:17:30+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/token/user
+[ info ] admin.ewei.com/api/v1/token/user [运行时间：0.387396s][吞吐率：2.58req/s] [内存消耗：2,743.39kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000521s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Token',
+    2 => 'getToken',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '1229',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => '',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'code' => '071Jjwjq0V5Suo14cPgq0o5hjq0Jjwji',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"Ewei","gender":1,"language":"zh_CN","city":"","province":"Ho Chi Minh City","country":"Vietnam","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'Ewei',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Ho Chi Minh City',
+      'country' => 'Vietnam',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132',
+    ),
+    'signature' => 'dbd8ea5767cdd90129e4b5129734a6158b3b1362',
+    'encryptedData' => 'VkPE+Ro5ixgHzSR1P2iXEsgW1fuMbL55CyDjjn1aZrzrKoRPWsMwgpVYyGY2X1LdRC/4PAXOTgWinTuRiUX/N5LtSFZbxJnv/l93WwyvrMQNA8YuaANep6Uix3biM1qbi3yA7XSMwzuvyFl51tCCxzXRXyrd4jaJ/cH6RCs4pxJ8IUDCw7T+E1I4+aE+qbENkWlvsg+IqsSL2rDnevUdPv1G3IScoVgq9PIc61TsDLz/sskI1fAC40FeYAklLekHo+BsRKVoh9yFBSUxjn/tUu7/XsSr1HluBiWwF0tAMsDDkI6wW4UQHoSfcibrEDG8/Yghj37dyFgG0ZnNw4HyZk7l/YWdzFGYUbi3k4LUpHfpZNwLETv5K6lRiJXBaDTUTEr6yku18mMtY8PGMYFmAmGU4ynSFAxXH2IMKwvaZdBJHrXCLYxfiXLKWoaiLUyqrI3of0rHuwb2iUamTJufNJ2mVHW2t3SGpaYG/2gxNu0=',
+    'iv' => '7XA8ZmRK/rVTPhtjO1um/Q==',
+  ),
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Token->getToken[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Token.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:12+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1524215915.jpg
+[ info ] admin.ewei.com/uploads/goods_brand/1524215915.jpg [运行时间：0.059648s][吞吐率：16.77req/s] [内存消耗：1,476.76kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000831s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1524215915.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:12+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267085.jpg
+[ info ] admin.ewei.com/uploads/common/1526267085.jpg [运行时间：0.066285s][吞吐率：15.09req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000906s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267085.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:12+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946404.png
+[ info ] admin.ewei.com/uploads/common/1523946404.png [运行时间：0.070413s][吞吐率：14.20req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001886s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946404.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:12+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267133.jpg
+[ info ] admin.ewei.com/uploads/common/1526267133.jpg [运行时间：0.057151s][吞吐率：17.50req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001342s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267133.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:12+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526263566.png
+[ info ] admin.ewei.com/uploads/common/1526263566.png [运行时间：0.061515s][吞吐率：16.26req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000718s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526263566.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:13+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946106.png
+[ info ] admin.ewei.com/uploads/common/1523946106.png [运行时间：0.071927s][吞吐率：13.90req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000752s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946106.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:13+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1520022770.png
+[ info ] admin.ewei.com/uploads/common/1520022770.png [运行时间：0.060864s][吞吐率：16.43req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000719s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1520022770.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:13+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946165.png
+[ info ] admin.ewei.com/uploads/common/1523946165.png [运行时间：0.080468s][吞吐率：12.43req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000830s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946165.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:13+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946128.png
+[ info ] admin.ewei.com/uploads/common/1523946128.png [运行时间：0.070672s][吞吐率：14.15req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000729s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946128.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:13+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524131442.jpg
+[ info ] admin.ewei.com/uploads/common/1524131442.jpg [运行时间：0.057329s][吞吐率：17.44req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000639s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524131442.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:13+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946275.png
+[ info ] admin.ewei.com/uploads/common/1523946275.png [运行时间：0.061187s][吞吐率：16.34req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000554s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946275.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:13+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1524293844.jpg
+[ info ] admin.ewei.com/uploads/cms/1524293844.jpg [运行时间：0.055545s][吞吐率：18.00req/s] [内存消耗：1,476.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000793s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1524293844.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:13+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1519909969.png
+[ info ] admin.ewei.com/uploads/common/1519909969.png [运行时间：0.056249s][吞吐率：17.78req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000743s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1519909969.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/15 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:18:16+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/token/user
+[ info ] admin.ewei.com/api/v1/token/user [运行时间：0.398103s][吞吐率：2.51req/s] [内存消耗：2,743.43kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000485s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Token',
+    2 => 'getToken',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '1229',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => '',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'code' => '0115UUHd1GaP9t0TuHHd1FgCHd15UUHZ',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"Ewei","gender":1,"language":"zh_CN","city":"","province":"Ho Chi Minh City","country":"Vietnam","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'Ewei',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Ho Chi Minh City',
+      'country' => 'Vietnam',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132',
+    ),
+    'signature' => 'dbd8ea5767cdd90129e4b5129734a6158b3b1362',
+    'encryptedData' => '1TO4OnzXYL7KUI2eQ+RosNrEssFLWE5kem5vEYkFdPOBmNu+IqRNU1DhzwSJ9npzJbx02M3pIaC+hElgUZ8fXpnVn1Rny3/8PN1B/6B0CnxiYmy1U4kTychDmAQpkYYSk756a8BYYnmPTetThayr7IbYEIHBFuIrGYy4CXiyLDrilHV5aPc5AMOaLSf5rXGHSB4vhWSh4f5reE3SRagRNHapiLXFsHxmj1dPm6KDc3Tv0Yq4IySI95UcS8sob/KDdp+D/7r7VYtuUeKTUYqd9gJ8ZUabK6CqnhCc8nAh50kOLsHA/o+mLR9V6EQvCbxlJPIduVYC7hlZwtVnigcWmDN+1eP9mcZVCjqeYI10x0Zrbn0fkXLGFr4Nfgnma1iR8xpmUpZ59v2qEhtvzLaBluWLpjOYrXGhcZ68KzxldbIbP5Mcs5GICAnK0Ff2GiGWTfrHDs6MYr8ArfskEpsCQgIJnRhZqmFz3kXOn7/uSF0=',
+    'iv' => 'Qip37C32NnrwwMZmGwrC+Q==',
+  ),
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Token->getToken[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Token.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:00+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1524215915.jpg
+[ info ] admin.ewei.com/uploads/goods_brand/1524215915.jpg [运行时间：0.078786s][吞吐率：12.69req/s] [内存消耗：1,476.76kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001715s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1524215915.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:00+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267060.jpg
+[ info ] admin.ewei.com/uploads/common/1526267060.jpg [运行时间：0.083785s][吞吐率：11.94req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001945s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267060.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:00+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946404.png
+[ info ] admin.ewei.com/uploads/common/1523946404.png [运行时间：0.084806s][吞吐率：11.79req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001977s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946404.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:00+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267133.jpg
+[ info ] admin.ewei.com/uploads/common/1526267133.jpg [运行时间：0.073177s][吞吐率：13.67req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001674s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267133.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:00+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946106.png
+[ info ] admin.ewei.com/uploads/common/1523946106.png [运行时间：0.072260s][吞吐率：13.84req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000955s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946106.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:00+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1520022770.png
+[ info ] admin.ewei.com/uploads/common/1520022770.png [运行时间：0.078348s][吞吐率：12.76req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000743s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1520022770.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:00+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946165.png
+[ info ] admin.ewei.com/uploads/common/1523946165.png [运行时间：0.111315s][吞吐率：8.98req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001105s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946165.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[2018-05-22T14:29:01+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946128.png
+[ info ] admin.ewei.com/uploads/common/1523946128.png [运行时间：0.050450s][吞吐率：19.82req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000790s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946128.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:01+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946204.png
+[ info ] admin.ewei.com/uploads/common/1523946204.png [运行时间：0.056037s][吞吐率：17.85req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000714s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946204.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:01+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1519909969.png
+[ info ] admin.ewei.com/uploads/common/1519909969.png [运行时间：0.059095s][吞吐率：16.92req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000657s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1519909969.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:01+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1524293844.jpg
+[ info ] admin.ewei.com/uploads/cms/1524293844.jpg [运行时间：0.062038s][吞吐率：16.12req/s] [内存消耗：1,476.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000757s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1524293844.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/18 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/token/user
+[ info ] admin.ewei.com/api/v1/token/user [运行时间：0.444536s][吞吐率：2.25req/s] [内存消耗：2,743.43kb] [文件加载：62]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000474s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Token',
+    2 => 'getToken',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '1229',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => '',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'code' => '07131hyW0XGnJU1hDjyW0vP5yW031hy1',
+  'userInfo' => 
+  array (
+    'errMsg' => 'getUserInfo:ok',
+    'rawData' => '{"nickName":"Ewei","gender":1,"language":"zh_CN","city":"","province":"Ho Chi Minh City","country":"Vietnam","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132"}',
+    'userInfo' => 
+    array (
+      'nickName' => 'Ewei',
+      'gender' => 1,
+      'language' => 'zh_CN',
+      'city' => '',
+      'province' => 'Ho Chi Minh City',
+      'country' => 'Vietnam',
+      'avatarUrl' => 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLO9WbicDtk4yJ0b1X5dqIUJBvmf7PHaaa0lbU65ou04fOYxA9zJXCMNFyBe4JZBH9c5qWJBcV0aiag/132',
+    ),
+    'signature' => '0b29483e92a96636901ef8aab62bfa5243596a20',
+    'encryptedData' => 'k28VIe50jPFOMaoLdO8RYbg38NErW3Xi7dMGjGnrUIuMHXv2T5x90D69EiSDXcEyD+8gwLEnAT0tnf1/f3I0/FitpAITXxVWXImXxkJ0GrGg+MK7q7B+vdEyOmZv6318E+O7y2JcCvNKM4KFq/6gPPgV4+4rKiElDNQZ1SJnFUltXtYXOfVugczVe/8g6lmuV1RRxWaaiLpxxYcz/6noKHr9mMoXIQG/Q4KeeWmt2o9SSFsQnF6cA8Qu9nkgU+l12Sv9lFWWBERbxspSrSd6vO3PBAawInZIC2fBCYMPzbnV9eWKU7wio9BzvXkNEX7Uv/rdEoRukRGzjXydPo7CkuF0iDpVSeBU6CgLwpI5vn8zqGE2MekzCgTlC4aAs/uCMbqwEa8bRDAbM0WmRB/6N1xTKt1LU5PRVFw+ItBOSCiwMmeRbr8Vskg0mtLr6ZuMLvQll+tibHsb5bQ6jFUE14k0hKDy8ZF5ZJpLMAH8eg8=',
+    'iv' => 'TJf5EQt94u3In6dZJeF4/A==',
+  ),
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Token->getToken[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Token.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1524215915.jpg
+[ info ] admin.ewei.com/uploads/goods_brand/1524215915.jpg [运行时间：0.061060s][吞吐率：16.38req/s] [内存消耗：1,476.55kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000502s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1524215915.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526263566.png
+[ info ] admin.ewei.com/uploads/common/1526263566.png [运行时间：0.050934s][吞吐率：19.63req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000696s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526263566.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946404.png
+[ info ] admin.ewei.com/uploads/common/1523946404.png [运行时间：0.050671s][吞吐率：19.74req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000486s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946404.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946106.png
+[ info ] admin.ewei.com/uploads/common/1523946106.png [运行时间：0.056134s][吞吐率：17.81req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000859s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946106.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1520022770.png
+[ info ] admin.ewei.com/uploads/common/1520022770.png [运行时间：0.055914s][吞吐率：17.88req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000747s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1520022770.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946305.png
+[ info ] admin.ewei.com/uploads/common/1523946305.png [运行时间：0.056910s][吞吐率：17.57req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000783s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946305.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524131442.jpg
+[ info ] admin.ewei.com/uploads/common/1524131442.jpg [运行时间：0.065730s][吞吐率：15.21req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000749s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524131442.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946204.png
+[ info ] admin.ewei.com/uploads/common/1523946204.png [运行时间：0.057430s][吞吐率：17.41req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000739s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946204.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1524293844.jpg
+[ info ] admin.ewei.com/uploads/cms/1524293844.jpg [运行时间：0.051374s][吞吐率：19.47req/s] [内存消耗：1,476.40kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000513s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1524293844.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:29:30+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1519909969.png
+[ info ] admin.ewei.com/uploads/common/1519909969.png [运行时间：0.054062s][吞吐率：18.50req/s] [内存消耗：1,476.48kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000712s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1519909969.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/21 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526263566.png
+[ info ] admin.ewei.com/uploads/common/1526263566.png [运行时间：0.069862s][吞吐率：14.31req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000762s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526263566.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946404.png
+[ info ] admin.ewei.com/uploads/common/1523946404.png [运行时间：0.094615s][吞吐率：10.57req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001222s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946404.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267060.jpg
+[ info ] admin.ewei.com/uploads/common/1526267060.jpg [运行时间：0.079535s][吞吐率：12.57req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001273s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267060.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+ ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526267133.jpg
+[ info ] admin.ewei.com/uploads/common/1526267133.jpg [运行时间：0.071070s][吞吐率：14.07req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000944s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526267133.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:27+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946106.png
+[ info ] admin.ewei.com/uploads/common/1523946106.png [运行时间：0.072978s][吞吐率：13.70req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000857s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946106.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:28+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946165.png
+[ info ] admin.ewei.com/uploads/common/1523946165.png [运行时间：0.081133s][吞吐率：12.33req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.002756s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946165.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:28+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946378.png
+[ info ] admin.ewei.com/uploads/common/1523946378.png [运行时间：0.068491s][吞吐率：14.60req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000702s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946378.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:28+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946305.png
+[ info ] admin.ewei.com/uploads/common/1523946305.png [运行时间：0.088060s][吞吐率：11.36req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000717s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946305.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:28+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946204.png
+[ info ] admin.ewei.com/uploads/common/1523946204.png [运行时间：0.055976s][吞吐率：17.86req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000761s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946204.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:28+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946275.png
+[ info ] admin.ewei.com/uploads/common/1523946275.png [运行时间：0.066816s][吞吐率：14.97req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000719s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946275.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:28+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524131442.jpg
+[ info ] admin.ewei.com/uploads/common/1524131442.jpg [运行时间：0.061261s][吞吐率：16.32req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000730s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524131442.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:28+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1524293844.jpg
+[ info ] admin.ewei.com/uploads/cms/1524293844.jpg [运行时间：0.057972s][吞吐率：17.25req/s] [内存消耗：1,476.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000597s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1524293844.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:30:28+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1519909969.png
+[ info ] admin.ewei.com/uploads/common/1519909969.png [运行时间：0.059676s][吞吐率：16.76req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000721s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1519909969.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/22 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:31:25+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1526110872.jpg
+[ info ] admin.ewei.com/uploads/cms/1526110872.jpg [运行时间：0.061262s][吞吐率：16.32req/s] [内存消耗：1,476.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001263s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1526110872.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/24 port/53339',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T14:32:52+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ info ] admin.ewei.com/api/v1/order/place [运行时间：0.562298s][吞吐率：1.78req/s] [内存消耗：3,282.29kb] [文件加载：69]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000495s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'v1.Order',
+    2 => 'placeOrder',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'content-length' => '67',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'origin' => 'http://127.0.0.1:35328',
+  'ewei-token' => 'ce9d216f7ed77ee3fdbab238698b41c3',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/',
+  'content-type' => 'application/json',
+  'accept' => '*/*',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'goodsId' => 0,
+  'num' => 0,
+  'addressId' => 3,
+  'couponId' => 0,
+  'buyer_message' => '',
+  'version' => 'v1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\api\controller\v1\Order->placeOrder[ D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:47+08:00] 127.0.0.1 127.0.0.1 GET /uploads/goods_brand/1524215915.jpg
+[ info ] admin.ewei.com/uploads/goods_brand/1524215915.jpg [运行时间：0.079239s][吞吐率：12.62req/s] [内存消耗：1,476.76kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001957s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'goods_brand',
+    2 => '1524215915.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:47+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1526263566.png
+[ info ] admin.ewei.com/uploads/common/1526263566.png [运行时间：0.073025s][吞吐率：13.69req/s] [内存消耗：1,476.73kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.001859s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1526263566.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:47+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946378.png
+[ info ] admin.ewei.com/uploads/common/1523946378.png [运行时间：0.085000s][吞吐率：11.76req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000863s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946378.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946165.png
+[ info ] admin.ewei.com/uploads/common/1523946165.png [运行时间：0.085215s][吞吐率：11.74req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000791s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946165.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946128.png
+[ info ] admin.ewei.com/uploads/common/1523946128.png [运行时间：0.070466s][吞吐率：14.19req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000691s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946128.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1520022770.png
+[ info ] admin.ewei.com/uploads/common/1520022770.png [运行时间：0.065184s][吞吐率：15.34req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000704s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1520022770.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946106.png
+[ info ] admin.ewei.com/uploads/common/1523946106.png [运行时间：0.073568s][吞吐率：13.59req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000726s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946106.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1524131442.jpg
+[ info ] admin.ewei.com/uploads/common/1524131442.jpg [运行时间：0.061994s][吞吐率：16.13req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000771s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1524131442.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946275.png
+[ info ] admin.ewei.com/uploads/common/1523946275.png [运行时间：0.058019s][吞吐率：17.24req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000837s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946275.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946305.png
+[ info ] admin.ewei.com/uploads/common/1523946305.png [运行时间：0.062694s][吞吐率：15.95req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000798s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946305.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1523946204.png
+[ info ] admin.ewei.com/uploads/common/1523946204.png [运行时间：0.059791s][吞吐率：16.72req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000733s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1523946204.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/cms/1524293844.jpg
+[ info ] admin.ewei.com/uploads/cms/1524293844.jpg [运行时间：0.060515s][吞吐率：16.52req/s] [内存消耗：1,476.70kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000816s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'cms',
+    2 => '1524293844.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[2018-05-22T15:17:48+08:00] 127.0.0.1 127.0.0.1 GET /uploads/common/1519909969.png
+[ info ] admin.ewei.com/uploads/common/1519909969.png [运行时间：0.065715s][吞吐率：15.22req/s] [内存消耗：1,476.75kb] [文件加载：37]
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CORS @app_init [ RunTime:0.000841s ]
+[ info ] [ LANG ] D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'common',
+    2 => '1519909969.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.ewei.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1805181 MicroMessenger/6.5.7 Language/zh_CN webview/0 port/59995',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'https://servicewechat.com/wx7766126fba22a12d/devtools/page-frame.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

@@ -19,6 +19,8 @@ use app\lib\exception\TokenException;
 use think\Db;
 use app\lib\enum\ScopeEnum;
 use app\api\service\WxNotify;
+use app\api\service\AccessToken;
+
 
 class WeChat extends BaseController
 {
@@ -38,9 +40,9 @@ class WeChat extends BaseController
      */
     public function response(){
         (new TokenGet())->goCheck();
-
+        $state = str_replace('@','.',$_REQUEST['state']);
         $code = $_REQUEST['code'];//微信返回Code码
-        $state =  urldecode($_REQUEST['state']);//参数
+        $state =  urldecode($state);//参数
         //获取OPENID
         $getTokenUrl = sprintf(
             config('wx.user_token'), $this->wx_id, $this->wx_secret, $code);
@@ -49,31 +51,22 @@ class WeChat extends BaseController
         if(  array_key_exists('errcode',$result) ){
             throw new Exception('未获取到用户数据，微信内部错误');
         }
+        $access_token = (new AccessToken())->get();
 
-        //检测access_token是否存在
-        if( Cache::get('access_token') == false || Cache::get('access_token') == ''){//不存在则刷新access_token
-            $accessTokenUrl = sprintf(config('wx.access_token_url'),$this->wx_id,$this->wx_secret);
-            $accessToken = curl_get($accessTokenUrl);
-            $accessToken = json_decode($accessToken,true);
-            Cache::set('access_token',$accessToken['access_token']);
-            if(  array_key_exists('errcode',$accessToken) ){
-                throw new Exception('未获取到用户数据，微信内部错误');
-            }
-        }
-
-        $access_token = Cache::get('access_token');
         $getUserUrl = sprintf(
             config('wx.get_info_url'), $access_token, $result['openid']);
 
+
         $userInfo = curl_get($getUserUrl);
         $userInfo = json_decode($userInfo,true);
-
         if(  array_key_exists('errcode',$userInfo) ){
+            if($userInfo['errcode'] == 40001){
+                header('Location: '.$state);
+            }
             throw new Exception('未获取到用户数据，微信内部错误');
         }else{
             $row = $this->grantToken($userInfo);
             $url = $state.'?token='.$row['token'];
-            // $url = 'https://small.redkylin.com/api/v2/wechat/user'.'?token='.$row['token'];
             header('Location: '.$url);
         }
     }
@@ -122,7 +115,6 @@ class WeChat extends BaseController
         $TokenServer = new Token();
         $key = $TokenServer::generateToken();
         $value = json_encode($wxResult);
-//        $expire_in = config('setting.token_expire_in');
         $result = Cache::set($key, $value);
         if (!$result){
             throw new TokenException([
@@ -184,14 +176,9 @@ class WeChat extends BaseController
         $access_token = Cache::get('access_token');
         $noncestr = config('wx.wx_noncestr');
         $timestamp = time();
-        //token过过期重新缓存
-        if( Cache::get('access_token') == false || Cache::get('access_token') == '' ){
-            $accessTokenUrl = sprintf(config('wx.access_token_url'),$this->wx_id,$this->wx_secret);
-            $accessToken = curl_get($accessTokenUrl);
-            $accessToken = json_decode($accessToken,true);
-            Cache::set('access_token',$accessToken['access_token']);
-        }
-        if( Cache::get('js_ticket') == false || Cache::get('js_ticket') == '' ){
+
+        $ticket =cache('js_ticket');
+        if( !$ticket ){
             $getJsTicket = sprintf(
                 config('wx.js_ticket'), $access_token);
             $result = curl_get($getJsTicket);
@@ -199,11 +186,10 @@ class WeChat extends BaseController
             if($result['errcode'] != 0 ){
                 throw new Exception('未获取到用户数据，微信内部错误');
             }
-            Cache::set('js_ticket',$result['ticket']);
+            cache('js_ticket', $result['ticket'], 7000);
             $ticket= $result['ticket'];
-        }else{
-            $ticket = Cache::get('js_ticket');
         }
+
         $para_filter['noncestr'] = $noncestr;
         $para_filter['jsapi_ticket'] = $ticket;
         $para_filter['timestamp'] = $timestamp;

@@ -44,7 +44,7 @@ Route::post('api/:version/sample/test3', 'api/:version.Sample/test3');
 //Route::miss('api/v1.Miss/miss');
 
 //Banner
-Route::get('api/:version/banner/:id', 'api/:version.Banner/getBanner');
+//Route::get('api/:version/banner/:id', 'api/:version.Banner/getBanner');
 
 Route::group('api/:version/theme',function(){
     Route::get('', 'api/:version.Theme/getSimpleList');
@@ -226,6 +226,15 @@ Route::get('api/:version/collective/check', 'api/:version.Collective/checkCollec
 Route::get('api/:version/order/check', 'api/:version.Order/checkOrderStatus');//删除超时订单
 Route::get('api/:version/goods/check', 'api/:version.Goods/checkGoodsStatus');//检测商品状态
 
+
+
+
+//其他单独接口
+
+Route::get('api/:version/banner/getList', 'api/:version.Banner/getList');////获取轮播图信息
+Route::get('api/:version/notice/getList', 'api/:version.Inform/getList');////公告列表
+Route::get('api/:version/article/getList', 'api/:version.Article/getList');////文章列表
+Route::get('api/:version/article/getInfo', 'api/:version.Article/getInfo');////文章列表
 
 
 

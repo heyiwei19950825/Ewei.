@@ -46,7 +46,7 @@ class Promotion extends AdminBase
     public function coupon( $keyword = '', $page = 1 )
     {
         $map   = [];
-        $field = 'coupon_type_id,coupon_name,money,count,max_fetch,at_least,need_user_level,is_show,start_time,end_time';
+        $field = 'coupon_type_id,coupon_name,money,count,max_fetch,at_least,need_user_level,is_show,start_time,end_time,is_delete';
         if (!empty($keyword)) {
             $map['coupon_name'] = ['like', "%{$keyword}%"];
         }
@@ -57,19 +57,38 @@ class Promotion extends AdminBase
     }
 
     /**
-     * 删除优惠券类型
+     * 操作优惠券数据
+     * @param int $id
+     * @param array $ids
+     * @param string $type
+     * @param string $field
+     * @param string $value
      */
-    public function delcoupon( $id = 0, $ids = [] )
+    public function optionCoupon( $id = 0, $ids = [],$type= '',$field='',$value = '' )
     {
         $id = $ids ? $ids : $id;
         if ( $id ) {
-            if ($this->coupon_type_model->destroy( $id )) {
-                $this->success('删除成功');
+            //操作条件
+            $map['coupon_type_id'] =[
+                'in',$id
+            ];
+            switch ($type){
+                case 'del':
+                    $data = ['is_delete' => 1,'delete_time'=>time()];
+                    break;
+                case 'update':
+                    $data = [$field=>$value];
+                    break;
+            }
+
+            //删除
+            if ($this->coupon_type_model->where($map)->update($data)) {
+                $this->success('操作成功');
             } else {
-                $this->error('删除失败');
+                $this->error('操作失败');
             }
         } else {
-            $this->error('请选择需要删除的优惠券');
+            $this->error('请选择需要操作的优惠券');
         }
     }
 

@@ -14,7 +14,7 @@
                 <form class="layui-form form-container" action="{:url('admin/article/update')}" method="post">
                     <div class="layui-form-item">
                         <label class="layui-form-label">所属栏目</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <select name="cid" lay-verify="required">
                                 {foreach name="category_level_list" item="vo"}
                                 <option value="{$vo.id}" {if condition="$article.cid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">作者</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <input type="text" name="author" value="{$article.author}" placeholder="（选填）请输入作者" class="layui-input">
                         </div>
                     </div>
@@ -41,10 +41,24 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
+                        <label class="layui-form-label">第三方链接</label>
+                        <div class="layui-input-block" style="width: 500px;">
+                            <input name="other_link" placeholder="第三方文章地址" class="layui-input" value="{$article.other_link}">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">添加第三方文章地址则后会直接跳转到对应页面不会再显示详情页面</div>
+                    </div>
+                    <div class="layui-form-item">
                         <label class="layui-form-label">内容</label>
                         <div class="layui-input-block">
-                            <textarea name="content" lay-verify="content" placeholder="" class="layui-textarea" id="content">{$article.content}</textarea>
+                            <textarea name="content" lay-verify="content" placeholder="" class="layui-textarea" id="content" >{$article.content}</textarea>
                         </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">按钮链接</label>
+                        <div class="layui-input-block" style="width: 500px;">
+                            <input name="link_btn" placeholder="底部按钮链接" class="layui-input" value="{$article.link_btn}">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">填写则在文章最底部显示跳转按钮并跳转到对应的页面</div>
                     </div>
                <!--      <div class="layui-form-item">
                         <label class="layui-form-label">缩略图</label>
@@ -75,7 +89,7 @@
                         <div class="layui-input-inline layui-upload">
                             <input type="hidden" name="thumb" value="{$article.thumb}" class="layui-input layui-input-inline" id="thumb" >
                             <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150'>上传图片</button>
-                            <div class="layui-input-block" style='margin-top:10px;'>
+                            <div class="layui-input-inline" style='margin-top:10px;'>
                                 <img class="layui-upload-img" id="demo1" src="{$article.thumb}" style='width:150px;'>
                                 <p id="demoText"></p>
                             </div>
@@ -88,7 +102,7 @@
                         <div class="layui-input-inline layui-upload">
                             <input type="hidden" name="thumb" value="{$article.thumb}" class="layui-input layui-input-inline" id="thumb">
                             <button type="button" class="layui-btn" id="upload" data-path='uploads/cms/'>上传图片</button>
-                            <div class="layui-input-block" style='margin-top:10px;'>
+                            <div class="layui-input-inline" style='margin-top:10px;'>
                                 <img class="layui-upload-img" style='width:300px;' id="demo1" src="{$article.thumb}">
                                 <p id="demoText"></p>
                             </div>
@@ -98,7 +112,7 @@
 
                    <!--  <div class="layui-form-item">
                         <label class="layui-form-label">图集</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <button type="button" id="upload-photo-btn" class="layui-btn">上传图集</button>
                             <div id="photo-container">
                                 {if condition="!empty($article['photo'])"}
@@ -160,7 +174,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <input type="hidden" name="id" value="{$article.id}">
                             <button class="layui-btn" lay-submit lay-filter="*">更新</button>
                             <button type="reset" class="layui-btn layui-btn-primary">重置</button>

@@ -2,19 +2,26 @@
 /**
  * Created by PhpStorm.
  * User: heyiw
- * Date: 2018/4/25
- * Time: 13:23
+ * Date: 2018/5/19
+ * Time: 12:13
  */
 
 namespace app\api\model;
 
 
-class OrderPayment extends BaseModel
-{
-    /**
-     * 添加交易记录
-     */
-    public static function addPayment(){
+use think\Db;
 
+class OrderPayment
+{
+    public static function createOrderPayment($data){
+
+        $id = Db::name('order_payment')->insertGetId($data);
+        return $id;
+    }
+
+    public static function get($id)
+    {
+        $row = Db::name('order_payment')->find(['id'=>$id]);
+        return $row;
     }
 }

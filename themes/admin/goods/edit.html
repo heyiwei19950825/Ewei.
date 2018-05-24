@@ -24,7 +24,7 @@
                         <div class="layui-input-block">
                             <select name="cid" lay-verify="required">
                                 {foreach name="category_level_list" item="vo"}
-                                <option value="{$vo.id}" {eq name="vo.level" value="1"}disabled=""{/eq} {if condition="$goods.cid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
+                                <option value="{$vo.id}"{if condition="$goods.cid==$vo.id"} selected="selected"{/if}>{neq name="vo.level" value="1"}|{php}for($i=1;$i<$vo['level'];$i++){echo ' ----';}{/php}{/neq} {$vo.name}</option>
                                 {/foreach}
                             </select>
                         </div>
@@ -201,8 +201,8 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">状态</label>
                                 <div class="layui-input-inline">
-                                    <input type="radio" name="status" value="1" title="已审核" {if condition="$goods.status==1"} checked="checked"{/if}>
-                                    <input type="radio" name="status" value="0" title="未审核" {if condition="$goods.status==0"} checked="checked"{/if}>
+                                    <input type="radio" name="status" value="1" title="上架" {if condition="$goods.status==1"} checked="checked"{/if}>
+                                    <input type="radio" name="status" value="0" title="下架" {if condition="$goods.status==0"} checked="checked"{/if}>
                                 </div>
                             </div>
                             <div class="layui-form-item">

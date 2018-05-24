@@ -156,7 +156,9 @@
                         $('.goods-list').html(lis);
 
                         //点击删除关联商品
-                        goodsDelete();
+                        $('.goods-delete').on('click',function(){
+                            goodsDelete($(this));
+                        })
 
                     })
                     layer.closeAll();
@@ -185,14 +187,17 @@
             })
 
             function goodsDelete( v ){
-            	//删除元素
-                v.parents('li').remove();
-
-                //删除表单中的相关数据
-                var ids = $('input[name=goods_ids]').val();
-                var id = v.attr('data-id');
-                ids = ids.replace(id+',','');
-                $('input[name=goods_ids]').val(ids);
+                if( v != undefined ){
+                    //删除元素
+                    v.parents('li').remove();
+                    //删除表单中的相关数据
+                    var ids = $('input[name=goods_ids]').val();
+                    var id = v.attr('data-id');
+                    ids = ids.replace(id+',','');
+                    $('input[name=goods_ids]').val(ids);
+                }else{
+                    $('input[name=goods_ids]').val('');
+                }
             }
 
         });

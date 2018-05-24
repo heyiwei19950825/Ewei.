@@ -1,0 +1,45 @@
+---------------------------------------------------------------
+[2018-05-15T11:45:04+08:00] 127.0.0.1 127.0.0.1 GET /api/v3/article/getList?&page=1&size=20
+[ error ] [8]A non well formed numeric value encountered[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:450]
+---------------------------------------------------------------
+[2018-05-15T11:45:31+08:00] 127.0.0.1 127.0.0.1 GET /api/v3/article/getList?&page=1&size=20
+[ error ] [8]A non well formed numeric value encountered[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:450]
+---------------------------------------------------------------
+[2018-05-15T11:45:51+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/comment/articlelist?valueId=17&typeId=1&size=5
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-15T11:47:43+08:00] 127.0.0.1 127.0.0.1 GET /api/v3/article/getList?&page=1&size=20
+[ error ] [8]A non well formed numeric value encountered[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:450]
+---------------------------------------------------------------
+[2018-05-15T11:48:09+08:00] 127.0.0.1 127.0.0.1 GET /api/v3/article/getList?&page=1&size=20
+[ error ] [8]A non well formed numeric value encountered[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:450]
+---------------------------------------------------------------
+[2018-05-15T11:49:21+08:00] 127.0.0.1 127.0.0.1 GET /api/v3/article/getList?&page=1&size=20
+[ error ] [8]A non well formed numeric value encountered[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:450]
+---------------------------------------------------------------
+[2018-05-15T11:50:19+08:00] 127.0.0.1 127.0.0.1 GET /api/v3/article/getList?&page=1&size=20
+[ error ] [8]A non well formed numeric value encountered[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:450]
+---------------------------------------------------------------
+[2018-05-15T12:12:36+08:00] 127.0.0.1 127.0.0.1 GET /admin/article/index.html
+[ error ] [1]Maximum execution time of 30 seconds exceeded[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Loader.php:522]
+---------------------------------------------------------------
+[2018-05-15T12:12:47+08:00] 127.0.0.1 127.0.0.1 GET /admin/article_category/index.html
+[ error ] [1]Maximum execution time of 30 seconds exceeded[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Loader.php:522]
+---------------------------------------------------------------
+[2018-05-15T13:58:25+08:00] 127.0.0.1 127.0.0.1 GET /admin/article/index.html
+[ error ] [1]Maximum execution time of 30 seconds exceeded[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Loader.php:522]
+---------------------------------------------------------------
+[2018-05-15T13:59:01+08:00] 127.0.0.1 127.0.0.1 GET /admin/article/index.html
+[ error ] [1]Maximum execution time of 30 seconds exceeded[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common.php:97]
+---------------------------------------------------------------
+[2018-05-15T13:59:07+08:00] 127.0.0.1 127.0.0.1 GET /admin/article/index.html
+[ error ] [1]Maximum execution time of 30 seconds exceeded[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Loader.php:522]
+---------------------------------------------------------------
+[2018-05-15T14:03:47+08:00] 127.0.0.1 127.0.0.1 GET /admin/article_category/index.html
+[ error ] [1]Maximum execution time of 30 seconds exceeded[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Loader.php:522]
+---------------------------------------------------------------
+[2018-05-15T15:28:31+08:00] 127.0.0.1 127.0.0.1 GET /admin/article/edit/id/59.html
+[ error ] [0]类的属性不存在:app\common\model\Article->other_link[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:560]
+---------------------------------------------------------------
+[2018-05-15T18:55:17+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/goodscount
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]

@@ -29,12 +29,7 @@ class Goods extends BaseController
     public function _initialize()
     {
         parent::_initialize();
-        $this->uid = Token::getCurrentUid(1);
-        //判断是否是VIP用户
-        $user = User::get(['id'=>$this->uid]);
-        if( $user->is_vip == 2 ){
-            $this->is_vip = true;
-        }
+
     }
 
     protected $beforeActionList = [
@@ -100,6 +95,10 @@ class Goods extends BaseController
             'pagesize'  => $size,//每页长度
             'totalPages' => 1, //总页数
             'filterCategory' => $filterCategory,
+            'banner' => [
+                'img_url'=>'http://wq.mskfkj.com/public/1520405232.jpg',
+                'name'=>'积分商城'
+            ]
         ];
 
         $row = [
@@ -184,9 +183,7 @@ class Goods extends BaseController
     public function getOne($id)
     {
         (new IDMustBePositiveInt())->goCheck();
-        $field = 'id,name,prefix_title,sp_o_price,sp_price,give_integral,sp_inventory,content,thumb,photo,sp_integral';
-        if( $this->is_vip) $field .= ',sp_vip_price';
-
+        $field = 'id,name,prefix_title,sp_o_price,sp_price,give_integral,sp_inventory,content,thumb,photo,sp_integral,sp_vip_price';
         $product = GoodsModel::getProductDetail($id,$field);
 
         if (!$product )
@@ -286,8 +283,14 @@ class Goods extends BaseController
      */
     public function vipGoods(){
         $row = ['errmsg'=>'','errno'=>0,'data'=>[]];
-
-        if( $this->is_vip ){
+        $uid = Token::getCurrentUid(1);
+        $is_vip = false;
+        //判断是否是VIP用户
+        $user = User::get(['id'=>$uid]);
+        if( $user->is_vip == 2 ){
+            $is_vip = true;
+        }
+        if( $is_vip ){
             $vipGoodsList = GoodsModel::vipGoods();
             $vipGoodsList = self::prefixDomainToArray('thumb',$vipGoodsList);
             $row['data'] = $vipGoodsList;

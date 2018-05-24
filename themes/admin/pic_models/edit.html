@@ -1,35 +1,59 @@
 {extend name="base" /}
+{block name='css'}
+<style>
+    .layui-upload-button {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        min-width: 60px;
+        height: 38px;
+        line-height: 38px;
+        border: 1px solid #DFDFDF;
+        border-radius: 2px;
+        overflow: hidden;
+        background-color: #fff;
+        color: #666;
+    }
+</style>
+{/block}
 {block name="body"}
 <div class="layui-body">
     <!--tab标签-->
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">
             <li><a href="{:url('admin/picModels/index')}">图片魔方</a></li>
-            <li class="layui-this">添加图片魔方</li>
+            <li><a href="{:url('admin/picModels/add')}">添加图片魔方</a></li>
+            <li class="layui-this">编辑图片魔方</li>
+
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <form class="layui-form form-container" action="{:url('admin/nav/update')}" method="post">
+                <form class="layui-form form-container" action="{:url('admin/picModels/updatePicModel',['id'=>$info['id']])}" method="post">
                     <div class="layui-tab-item layui-show">
                         <div class="layui-form-item">
-                            <label class="layui-input-inline">图片示例：</label>
+                            <label class="layui-form-label">图片示例：</label>
                             <div class="layui-input-block">
                                 <img src="__STATIC__/images/img-block-demo.png" alt="">
                             </div>
-                        </div>
-                        <div class="layui-form-item">
                             <label class="layui-form-label"></label>
-                            <div class="layui-input-inline">
+                            <div class="layui-input-block" style="margin-top: 20px;">
                                 <div class="layui-form-mid" style="color: darkred;">单图的图片高度不限定，高度根据原图比例自动调整</div>
                             </div>
                         </div>
-
                         <div class="layui-form-item">
                             <label class="layui-form-label">
                                 模板名称：
                             </label>
-                            <div class="layui-input-block">
-                                <input type="text" name="name[]" class="layui-input" maxlength="5">
+                            <div class="layui-input-block" style="width: 500px;">
+                                <input type="text" name="name" class="layui-input" maxlength="5" value="{$info.name}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">
+                                显示位置：
+                            </label>
+                            <div class="layui-input-block" style="width: 500px;">
+                                <input type="text" name="showLocation" class="layui-input" maxlength="5" value="HOME" disabled>
                             </div>
                         </div>
                         <div class="layui-form-item">
@@ -37,32 +61,43 @@
                                 <button type="button" class="layui-btn pic-model-add" >添加</button>
                             </div>
                         </div>
-                        <div class="pic-model-list">
+                        {for start="0" end="4"}
+                            <div class="pic-model-list" {if condition="$info['data']['pic_list'][$i]['pic_url'] == ''"}style="display:none"{/if}>
                             <div class="pic-model">
                                 <div class="layui-form-item">
                                     <div class="layui-inline">
                                         <label class="layui-form-label">链接</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="url[]" value="" placeholder="选填导航链接" class="layui-input link-input" style="width: 500px;">
+                                            <input type="text" name="url[]" value="{$info['data']['pic_list'][$i]['url']}" placeholder="选填导航链接" class="layui-input link-input img_href" style="width: 500px;">
                                         </div>
                                     </div>
                                     <div class="layui-inline">
                                         <label class="layui-form-label">图标</label>
-                                        <div class="layui-input-inline layui-upload">
-                                            <input type="hidden" name="pic_url[]" value="" class="layui-input layui-input-inline" id="thumb">
-                                            <button type="button" class="layui-btn upload" id="upload" data-path='uploads/common/'>上传图片</button>
+                                        <div class="layui-input-inline" style="width:50px">
+                                            <div class="layui-btn demoMore" lay-data="{ url: 'http://admin.ewei.com/api/v1/upload/upload'}" data-path='uploads/common/'>上传A</div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="layui-form-item">
-                                    <div class=" layui-upload">
-                                        <div class="layui-input-block" style='margin-top:10px;'>
-                                            <img class="layui-upload-img" style='width:150px;' id="demo1" src="">
-                                            <p id="demoText"></p>
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline" style="margin-left: 20px;">
+                                            <input type="hidden" class="img_url" value="{$info['data']['pic_list'][$i]['pic_url']}" name="img[]">
+                                            <img class="layui-upload-img demo1" width="100px" src="{$info['data']['pic_list'][$i]['pic_url']}">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline" style="width:50px">
+                                            <div class="layui-btn layui-btn-danger delete_model">删除</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        {/for}
+
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                         </div>
                     </div>
                 </form>
@@ -70,7 +105,7 @@
         </div>
     </div>
 </div>
-<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true" style="top:50px;width:100%">
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true" style="top:100px;width:100%">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -104,6 +139,28 @@
 <script src="__STATIC__/js/hplus/bootstrap.min.js?v=3.4.0"></script>
 <script>
     $(function () {
+       var uploadImg =  function(){
+           upload.render({
+               elem: '.demoMore',
+               data: {
+                   'file_path': 'uploads/common/'
+               }
+               ,before: function(obj){
+                   var img = $(this.item).parents('.pic-model-list').find('.demo1');
+                   //预读本地文件示例，不支持ie8
+                   obj.preview(function(index, file, result){
+                       img.attr('src', result);
+                   });
+               }
+               ,done: function(res){
+                   var imgUrl = $(this.item).parents('.pic-model-list').find('.img_url');
+                   imgUrl.val(res.data);
+               }
+           })
+        }
+        uploadImg();
+
+        //选择跳转地址
         $(".link-input").on('focus',function(){
             var index = $(".link-input").index(this);
             //显示弹窗
@@ -111,6 +168,7 @@
             $('.save-rule').attr('data-eq',index);
         });
 
+        //监听地址选择
         $(document).on("change", ".link-list-select", function () {
             var params =  $("select option:selected").attr("data-params");
 
@@ -128,7 +186,7 @@
             }
         });
 
-
+        //保存跳转地址
         $(document).on('click','.save-rule',function(){
             var index = $(this).attr('data-eq');
             var params =  $('.link-data').find('input');
@@ -145,9 +203,24 @@
             $('.link-input').eq(index).val(url);
             $('#myModal5').modal('hide')
         })
+
+        //添加规则
         $(document).on('click','.pic-model-add',function () {
-            var html = $('.pic-model').html();
-            $('.pic-model-list').append('<div class="pic-model">'+html+"</div>");
+            $('.pic-model-list').each(function(i,v){
+               if($(v).css('display') == 'none'){
+                   $(v).css('display','block');
+                   return false;
+               }
+            })
+        })
+
+        //删除规则
+        $(document).on('click','.delete_model',function(){
+            var picModelList = $(this).parents('.pic-model-list');
+            picModelList.css('display','none');
+            picModelList.find('.demo1').removeAttr('src');
+            picModelList.find('.img_url').val('');
+            picModelList.find('.img_href').val('');
         })
     })
 </script>

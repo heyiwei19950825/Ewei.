@@ -1,0 +1,84 @@
+---------------------------------------------------------------
+[2018-05-19T10:21:09+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/index
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-19T11:23:30+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-19T11:36:04+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义变量: couponInfo[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:101]
+---------------------------------------------------------------
+[2018-05-19T11:36:35+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义变量: couponInfo[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:101]
+---------------------------------------------------------------
+[2018-05-19T13:35:11+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-19T13:35:23+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/category/list?id=12
+[ error ] [404][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Category.php:103]
+---------------------------------------------------------------
+[2018-05-19T13:41:54+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [2048]Non-static method app\api\model\Coupon::briefnessDispose() should not be called statically, assuming $this from incompatible context[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:111]
+---------------------------------------------------------------
+[2018-05-19T13:43:40+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组下标: 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\model\Coupon.php:285]
+---------------------------------------------------------------
+[2018-05-19T13:49:02+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'coupon_id' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-05-19T13:49:27+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'coupon_id' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-05-19T13:49:56+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: coupon_money[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:142]
+---------------------------------------------------------------
+[2018-05-19T14:08:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义变量: order_type[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:142]
+---------------------------------------------------------------
+[2018-05-19T14:10:05+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义变量: order_type[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:142]
+---------------------------------------------------------------
+[2018-05-19T14:11:36+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: good_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:114]
+---------------------------------------------------------------
+[2018-05-19T14:18:06+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: goods_list[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:149]
+---------------------------------------------------------------
+[2018-05-19T14:24:40+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [4]语法错误: unexpected ''@@@@@'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:149]
+---------------------------------------------------------------
+[2018-05-19T15:11:32+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: coupon[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:149]
+---------------------------------------------------------------
+[2018-05-19T15:25:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [1]Call to undefined function app\api\service\dumpp()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:155]
+---------------------------------------------------------------
+[2018-05-19T15:36:37+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-19T15:37:00+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: money[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:108]
+---------------------------------------------------------------
+[2018-05-19T15:37:01+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: money[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:108]
+---------------------------------------------------------------
+[2018-05-19T16:49:13+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: money[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:108]
+---------------------------------------------------------------
+[2018-05-19T16:54:45+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [4]语法错误: unexpected '$v' (T_VARIABLE), expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Cart.php:133]
+---------------------------------------------------------------
+[2018-05-19T16:55:02+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: province_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:151]
+---------------------------------------------------------------
+[2018-05-19T16:57:34+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: province_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:151]
+---------------------------------------------------------------
+[2018-05-19T16:58:04+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: province_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:151]
+---------------------------------------------------------------
+[2018-05-19T17:13:19+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/checkout?goodsId=0&num=0&addressId=0&couponId=0
+[ error ] [8]未定义数组索引: eid[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php:362]
+---------------------------------------------------------------
+[2018-05-19T17:16:49+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/checkout?goodsId=0&num=0&addressId=0&couponId=0
+[ error ] [8]未定义数组索引: shop_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Cart.php:384]

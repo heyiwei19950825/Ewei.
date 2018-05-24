@@ -19,12 +19,12 @@ class Coupon extends BaseModel
      */
     public static function countCoupon( $uid ){
         $nowTime = date('Y-m-d H:i:s',time());
-        $map['start_time'] = ['<=',$nowTime];
-        $map['end_time'] = ['>=',$nowTime];
-        $map['state'] = ['=',0];
-        $map['uid'] = ['=',$uid];
-        $row = Db::name('coupon')->where($map)->count('coupon_id');
-
+        $map['c.start_time'] = ['<=',$nowTime];
+        $map['c.end_time'] = ['>=',$nowTime];
+        $map['c.state'] = ['=',0];
+        $map['c.uid'] = ['=',$uid];
+        $map['t.is_delete'] = ['=',0];
+        $row = Db::name('coupon')->alias('c')->join('coupon_type t','t.coupon_type_id = c.coupon_type_id')->where($map)->count('coupon_id');
         return $row;
     }
 
@@ -55,10 +55,6 @@ class Coupon extends BaseModel
                 ])
                 ->field('g.name,g.btime,g.etime,g.status')
                 ->select()->toArray();
-
-            $map['g.btime']   = ['<=',$now];
-            $map['g.etime']   = ['>=',$now];
-            $map['g.status']  = ['=',1];
             if( empty($goodsRow) ){
                 $item['goods_list'] = 'all';
             }else{
@@ -81,11 +77,11 @@ class Coupon extends BaseModel
     /**
      * 获取用户对应商品可使用的优惠券
      * @param int $uid
-     * @param array $cartInfo
+     * @param array $cartListId
+     * @param int $totalPrice
      * @return array
      */
     public static function useCoupon( $uid = -1 ,$cartListId = [],$totalPrice = 0){
-        $user = User::getInfoById( $uid);
         $names =  '';
         $datas =[];
         $now =date('Y-m-d H:i:s',time());
@@ -95,9 +91,10 @@ class Coupon extends BaseModel
             ->join('coupon_type t','t.coupon_type_id = c.coupon_type_id','LEFT')
             ->where([
                 'uid'=>$uid,
-                'state' => 0
+                'state' => 0,
+                't.is_delete' => 0
             ])->field(
-                'c.start_time,c.end_time,coupon_name,c.coupon_id,t.coupon_type_id,c.money,t.need_user_level'
+                'c.start_time,c.end_time,coupon_name,c.coupon_id,t.coupon_type_id,c.money,t.need_user_level,t.at_least'
             )->select()->toArray();
 
         //获取优惠券对应的商品
@@ -110,18 +107,19 @@ class Coupon extends BaseModel
                 ->select()->toArray();
             //检测变量
             $isOk = false;
-
 //            if($item['need_user_level']<= $user['rank_id']){
                 if( $goodsRow != []){
                     //优惠券是否在购物车商品列表中
                     foreach ($goodsRow as $gItem) {
-                        if( in_array($gItem['goods_id'],$cartListId) && $item['money'] <= $totalPrice ){
+                        if( in_array($gItem['goods_id'],$cartListId) && $item['at_least'] <= $totalPrice ){
                             $isOk = true;
                         }
                     }
                     $item['is_ok'] = $isOk;
                 }else{
-                    $item['is_ok'] = true;
+                    if( ($item['at_least']+0) <= $totalPrice){
+                        $item['is_ok'] = true;
+                    }
                 }
 //            }
 
@@ -171,6 +169,7 @@ class Coupon extends BaseModel
         $map['start_time']      = ['<=',time()];
         $map['end_time']        = ['>=',time()];
         $map['is_show']         = ['=',1];
+        $map['is_delete']       = ['=',0];
         $row = Db::name('coupon_type')
             ->field('coupon_type_id,coupon_name,money,count,max_fetch,at_least,need_user_level,range_type,start_time,end_time')
             ->where($map)
@@ -191,17 +190,27 @@ class Coupon extends BaseModel
      * @return array
      */
     public static function getInfoById( $uid,$id = -1 ){
+        //初始化查询条件
         $now =date('Y-m-d H:i:s',time());
+        $map['start_time']      = ['<=',$now];//开始时间
+        $map['end_time']        = ['>=',$now];//结束时间
+        $map['state']           = ['=',0];//优惠券状态
+        $map['coupon_id']       = ['=',$id];//优惠券ID
+        $map['uid']             = ['=',$uid];//用户ID
 
-        $map['start_time']      = ['<=',$now];
-        $map['end_time']        = ['>=',$now];
-        $map['state']           = ['=',0];
-        $map['coupon_id']       = ['=',$id];
-        $map['uid']             = ['=',$uid];
-        $row = Db::name('coupon')->field('coupon_id,coupon_type_id')->where($map)->find();
+        //查询用户优惠券数据
+        $row                    = Db::name('coupon')->field('coupon_id,coupon_type_id')->where($map)->find();
+        $data['id']             = $row['coupon_id'];
+        //查询优惠券数据
+        $data                   = Db::name('coupon_type')->field('coupon_name,money,coupon_type_id')->where(['coupon_type_id'=>$row['coupon_type_id']] )->find();
 
-        $data = Db::name('coupon_type')->field('coupon_name,money')->where(['coupon_type_id'=>$row['coupon_type_id']] )->find();
-        $data['id'] = $row['coupon_id'];
+        //查询优惠券对应的商品数据
+        $goods                  = Db::name('coupon_goods')->where(['coupon_type_id'=>$data['coupon_type_id']])->field('goods_id')->select()->toArray();
+        if(!empty($goods)){
+            foreach ($goods as $v){
+                $data['goods'][]  = $v['goods_id'];
+            }
+        }
 
         return $data;
     }
@@ -266,6 +275,11 @@ class Coupon extends BaseModel
             'use_time'=>time(),
             'state' => 1
         ]);
+    }
+
+
+    public static function briefnessDispose(){
+
     }
 
 }

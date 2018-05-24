@@ -353,24 +353,54 @@ class Cart extends BaseController
 
 
         //计算价格
-        foreach ($cartList as $item) {
+        foreach ($cartList as &$item) {
             //商品总价格
             $goodsTotalPrice += $item['vip_price']!=0?($item['vip_price']*100) * $item['num']:($item['price']*100) * $item['num'];
-            $goodsInfo = Goods::getProductDetail($item['goods_id'],'eid');
-            if( !array_key_exists($goodsInfo['eid'],$freight)){
+            if( !array_key_exists($item['eid'],$freight)){
                 //运费
-                $express = Express::getDetail($goodsInfo['eid'],'cost,company_name');
-                $freight[$goodsInfo['eid']] = array(
+                $express = Express::getDetail($item['eid'],'cost,company_name');
+                $freight[$item['eid']] = array(
                     'name' => $express['company_name'],
                     'cost'=>$express['cost']*100,
                 );
+                $item['ecost'] = $express['cost'];
             }
         }
 
-        //计算运费
-        foreach ($freight as $item ){
-            $freightPrice += $item['cost']+0;
+
+
+        //按店铺分组
+        $shopCartList = [];
+        $freightPrice = 0;
+        foreach($cartList as $v){
+            $shopRow = Db::name('shop')->where(['id'=>$v['shop_id']])->find();
+            $shopCartList[$shopRow['shop_name']]['goods'][] = $v;
         }
+
+
+        foreach ($shopCartList as &$vs){
+            $goodsPrice = $freight = 0;
+            foreach ($vs['goods'] as $vsc){
+                if($userInfo['is_vip'] == 2 ){
+                    $goodsPrice += $vsc['vip_price'] == 0 ?($vsc['price'] * 100) * $vsc['num']:($vsc['vip_price'] * 100) * $vsc['num'];
+                }else{
+                    $goodsPrice += ($vsc['price'] * 100) * $vsc['num'];
+                }
+                if($freight ==0 ){
+                    $freight = $vsc['ecost'];
+                }elseif($vsc['ecost'] > $freight){
+                    $freight = $vsc['ecost'];
+                }
+            }
+            $vs['price']['goods']  = $goodsPrice/100;
+            $vs['price']['freight'] = $freight;
+            $freightPrice += $freight*100;
+        }
+
+
+        $cartList= $shopCartList;
+
+
 
         //计算 会员等级获得优惠价格折扣
         if( $userInfo['is_vip'] == 2 ){
@@ -379,15 +409,6 @@ class Cart extends BaseController
         //最后商品订单价格   商品总价格 + 运费 - 会员折扣
         $actualPrice = $goodsTotalPrice - ($rankDiscount/100) + $freightPrice - $couponPrice;
 
-        //按店铺分组
-        $shopCartList = [];
-        foreach($cartList as $v){
-//            dump($v);
-            $shopRow = Db::name('shop')->where(['id'=>$v['shop_id']])->find();
-            $shopCartList[$shopRow['shop_name']][] = $v;
-        }
-//        dump($cartList);die;
-        $cartList = $shopCartList;
 
 
         $row['data'] = [

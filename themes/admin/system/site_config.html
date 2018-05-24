@@ -39,11 +39,35 @@
                                             </div>
                                             <div class="layui-form-mid layui-word-aux">推荐图片大小为640*1136</div>
                                         </div>
-                                        <div class="layui-form-item">
+                                        <div class="layui-form-item inform-list">
                                             <label class="layui-form-label">公告</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" name="x_inform" value="{$site_config.x_inform|default=''}" placeholder="请输入公告" autocomplete="off" class="layui-input">
-                                            </div>
+                                            {if condition="$site_config['x_inform'] != []"}
+                                                {foreach name="site_config['x_inform']" item="vo" key="i"}
+                                                <div class="layui-input-block {if condition='$i!=0'}inform-info{/if}" style="width:600px;margin-top: 5px;">
+                                                    <div class="layui-input-inline" style="width: 500px;">
+                                                        <input type="text" name="x_inform[]" value="{$vo}" placeholder="请输入公告" autocomplete="off" class="layui-input">
+                                                    </div>
+                                                    {if condition='$i==0'}
+                                                    <div class="layui-input-inline" style="width: 80px;">
+                                                        <div class="layui-btn add-inform">添加</div>
+                                                    </div>
+                                                    {else}
+                                                    <div class="layui-input-inline" style="width: 80px;">
+                                                        <div class="layui-btn layui-btn-danger del-inform">删除</div>
+                                                    </div>
+                                                    {/if}
+                                                </div>
+                                                {/foreach}
+                                            {else}
+                                                <div class="layui-input-block" style="width:600px;margin-top: 5px;">
+                                                    <div class="layui-input-inline" style="width: 500px;">
+                                                        <input type="text" name="x_inform[]" value="" placeholder="请输入公告" autocomplete="off" class="layui-input">
+                                                    </div>
+                                                    <div class="layui-input-inline" style="width: 80px;">
+                                                        <div class="layui-btn add-inform">添加</div>
+                                                    </div>
+                                                </div>
+                                            {/if}
                                         </div>
                                         <div class="layui-form-item">
                                             <label class="layui-form-label">网站域名</label>
@@ -179,5 +203,15 @@
         var switch_val = this.checked ? 1 : 0;
         $('.site_switch').val(switch_val);
     });
+
+    $('.add-inform').on('click',function(){
+        var html = ' <div class="layui-input-block inform-info" style="margin-top: 10px;width:500px"> ' +
+                '<input type="text" name="x_inform[]" value="" placeholder="请输入公告" autocomplete="off" class="layui-input">'+
+                '</div>';
+        $('.inform-list').append(html);
+    })
+    $('.del-inform').on('click',function(){
+        $(this).parents('.inform-info').remove();
+    })
 </script>
 {/block}

@@ -9,26 +9,6 @@ use think\Db;
 class Order extends BaseModel
 {
     /**
-     * 添加订单信息
-     */
-    public static function addOrder( $param = [] ){
-        if( !is_array($param) || $param == [] ){
-            return [];
-        }
-        Db::name('order')->insert($param);
-
-        $id = Db::name('order')->getLastInsID();
-
-        if( empty($id) || !$id  || $id == 0){
-            return 0;
-        }
-
-        //创建订单商品表数据
-
-        return $id;
-    }
-
-    /**
      * 修改订单状态
      * @param array $param
      */
@@ -134,6 +114,71 @@ class Order extends BaseModel
                         'order_id'=>$item['id']
                     ])->delete();
                 }
+            }
+        }
+    }
+
+    public static function createOrder( $userInfo,$addressOld,$cartInfo,$couponInfo,$params ){
+        foreach($cartInfo as $k=>$v){
+            //订单总价
+            $goodsPrice = $userInfo['is_vip'] == 2 ?$v['price']['vip_price']:$v['price']['goods_price'];
+            $couponPrice = isset($v['price']['coupon_price'])?$v['price']['coupon_price']:0;
+            $actualPrice = $goodsPrice + $v['price']['freight'] - $couponPrice ;
+            $param = [
+                'order_from' => $userInfo['from'],//订单来源
+                'order_no' => date('YmdHis', time()) . rand(1000, 9999),//订单编号
+                'out_trade_no' => '',//外部交易号
+                'order_type' => $params['type'],//订单类型
+                'payment_type' => $params['paymentType'],//支付类型。取值范围：1.WEIXIN (微信支付) 2.INTEGRAL (积分支付)
+                'buyer_id' => $userInfo['id'],//买家id
+                'user_name' => $userInfo['nickname'],//买家会员名称
+                'buyer_message' => $params['buyerMessage'],//买家附言
+                'receiver_mobile' => $addressOld['info']['mobile'],//收货人的手机号码
+                'receiver_province' => $addressOld['info']['province_id'],//收货人所在省
+                'receiver_city' => $addressOld['info']['city_id'],//收货人所在城市
+                'receiver_district' => $addressOld['info']['district_id'],//收货人所在街道
+                'receiver_address' => $addressOld['info']['address'],//收货人详细地址
+                'receiver_name' => $addressOld['name'],//收货人姓名
+                's_id' => $k,//卖家店铺id
+                'shop_name' => $v['goods_list'][0]['shop_name'],//卖家店铺名称
+                'seller_memo' => '',//卖家对订单的备注
+                'goods_money' => $goodsPrice/100,//商品总价
+                'order_money' => $actualPrice/100,//订单总价
+                'point_money' => 0,//订单消耗积分抵多少钱
+                'coupon_money' => isset($v['price']['coupon_price'])? $v['price']['coupon_price']/ 100:0,//订单代金券支付金额
+                'coupon_id' =>  isset($v['price']['coupon_price'])?$params['couponId']:0,//订单代金券id
+                'shipping_money' => $v['price']['freight'] / 100,//订单运费
+                'give_point' => $v['price']['give_point'],//订单赠送积分
+                'shipping_company_id' => 0,//配送物流公司ID
+                'create_time' => time(),//订单创建时间
+                'finish_time' => 0,//订单完成时间
+                'operator_type' => 2,//操作人类型  1店铺  2用户
+                'is_vip' => $userInfo['is_vip'] == 2 ? 1: 0,//Vip订单
+                'is_virtual' => $params['virtual'], //是否是虚拟订单,
+                'prepay_id' => $params['paymentId']
+            ];
+            $orderId  = Db::name('order')->insertGetId($param);
+
+            //添加订单对应的商品数据
+            foreach ( $v['goods_list'] as $vs){
+                $goodsParam = [
+                    'order_id' => $orderId,//订单号
+                    'cid' => $vs['cid'],
+                    'goods_id' => $vs['goods_id'],
+                    'goods_name' => $vs['goods_name'],
+                    'price' => $vs['price'],//商品价格
+                    'vip_price' => $vs['vip_price'],//vip价格
+                    'cost_price' => $vs['cost_price'],//商品成本价
+                    'num' => $vs['num'],//购买数量
+                    'goods_money' => $vs['price'] * $vs['num'],//商品总价
+                    'goods_picture' => $vs['goods_picture'],//商品图片
+                    's_id' => $vs['shop_id'],//商铺ID
+                    'buyer_id' => $userInfo['id'],//用户ID
+                    'goods_type' => 1,//商品类型
+                    'order_type' => $param['order_type'],//订单类型
+                ];
+
+                Db::name('order_product')->insert($goodsParam);
             }
         }
     }

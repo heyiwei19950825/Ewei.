@@ -28,7 +28,7 @@ class BannerItem extends AdminBase
         $banner_model           = new BannerCategoryModel();
         $banner_item_model      = new BannerItemModel();
         $banner_list            = $banner_model->column('name', 'id');
-        $banner_item            = $banner_item_model->where(['s_id'=>$this->instance_id])->select();
+        $banner_item            = $banner_item_model->select();
 
         return $this->fetch('index', ['banner_item' => $banner_item, 'banner_list' => $banner_list]);
     }

@@ -296,4 +296,11 @@ class Order
         return $orderSn;
     }
 
+    /**
+     * 计算订单价格
+     */
+    public static function calculatePrice(){
+
+    }
+
 }

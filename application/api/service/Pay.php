@@ -12,6 +12,7 @@ namespace app\api\service;
 
 
 use app\api\model\Order as OrderModel;
+use app\api\model\OrderPayment;
 use app\api\model\Shop;
 use app\lib\exception\OrderException;
 use app\lib\exception\TokenException;
@@ -29,15 +30,15 @@ Loader::import('WxPay.WxPay', EXTEND_PATH, '.Api.php');
 class Pay
 {
     private $orderNo;
-    private $orderID;
+    private $payId;
     private $payBackUrl;
-    function __construct($orderID,$type)
+    function __construct($payId,$type)
     {
-        if (!$orderID)
+        if (!$payId)
         {
             throw new Exception('订单号不允许为NULL');
         }
-        $this->orderID = $orderID;
+        $this->payId = $payId;
         $site_config = Session::get('wxConfig');
 
         //判断是小程序支付还是公众号支付 获取不同的配置
@@ -56,15 +57,16 @@ class Pay
     {
         $this->checkOrderValid();
 
-        $order = OrderModel::get($this->orderID);
-        //积分购买计算运费
-        if( $order['order_type'] == 2 ){
-            if( $order['shipping_money'] != 0 ){
-                $order['order_money'] =  $order['shipping_money'];
-            }else{
-                return 'SUCCESS';
-            }
-        }
+        $order = OrderPayment::get($this->payId);
+        dump($order);die;
+//        //积分购买计算运费
+//        if( $order['order_type'] == 2 ){
+//            if( $order['shipping_money'] != 0 ){
+//                $order['order_money'] =  $order['shipping_money'];
+//            }else{
+//                return 'SUCCESS';
+//            }
+//        }
 
         return $this->makeWxPreOrder($order['order_money']);
 
@@ -73,7 +75,7 @@ class Pay
     /**
      * 退款
      */
-    public function refund( $openid ){
+    public function refund(){
         $order = OrderRefund::get(['order_id'=>$this->orderID]);
         return $this->makeWxRefundOrder($order);
     }
@@ -147,7 +149,7 @@ class Pay
     }
 
     // 构建微信支付订单信息
-    private function makeWxPreOrder($totalPrice,$body = '蔬菜采购')
+    private function makeWxPreOrder($totalPrice,$body = '眉山智慧餐饮')
     {
         $openid = Token::getCurrentTokenVar('openid');
         if (!$openid)
@@ -208,7 +210,7 @@ class Pay
      */
     private function checkOrderValid()
     {
-        $order = OrderModel::where('id', '=', $this->orderID)
+        $order = OrderPayment::where('id', '=', $this->payId)
             ->find();
         if (!$order)
         {

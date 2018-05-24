@@ -39,11 +39,26 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
+                        <label class="layui-form-label">第三方链接</label>
+                        <div class="layui-input-block" style="width: 500px;">
+                            <input name="other_link" placeholder="第三方文章地址" class="layui-textarea">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">添加第三方文章地址则后会直接跳转到对应页面不会再显示详情页面</div>
+                    </div>
+                    <div class="layui-form-item">
                         <label class="layui-form-label">内容</label>
                         <div class="layui-input-block">
                             <textarea name="content" placeholder="" class="layui-textarea" id="content"></textarea>
                         </div>
                     </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">按钮链接</label>
+                        <div class="layui-input-block" style="width: 500px;">
+                            <input name="link_btn" placeholder="底部按钮链接" class="layui-textarea">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">填写则在文章最底部显示跳转按钮并跳转到对应的页面</div>
+                    </div>
+
                    <!--  <div class="layui-form-item">
                         <label class="layui-form-label">缩略图</label>
                         <div class="layui-input-inline layui-upload">
@@ -108,6 +123,7 @@
                             <input type="radio" name="is_recommend" value="0" title="未推荐" checked="checked">
                         </div>
                     </div>
+
                     <div class="layui-form-item">
                         <label class="layui-form-label">发布时间</label>
                         <div class="layui-input-block">

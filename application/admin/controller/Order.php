@@ -62,7 +62,7 @@ class Order extends AdminBase
             extract($params);
 
 //            if($this->instance_id != 1 ){
-                $condition['p.s_id'] = [
+                $condition['o.s_id'] = [
                     '=',$this->instance_id
                 ];
 //            }
@@ -148,7 +148,6 @@ class Order extends AdminBase
                     )
                 );
                 $field = 'o.id,o.order_no,o.s_id,o.order_type,o.order_money,o.point,o.user_name,o.receiver_name,o.receiver_mobile,o.receiver_province,o.receiver_city,o.receiver_district,o.receiver_address,o.order_status,o.pay_time,o.buyer_message,o.cancel_note';
-//                $list = $this->orderModel->getOrderList(0,999, $condition, 's_id asc,create_time desc',false,$field)->toArray();
                 $list = $this->orderModel->getOrderList(0,999, $condition, 's_id asc,create_time desc',false,$field)->toArray();
                 if($list){
                     foreach ($list as &$v){

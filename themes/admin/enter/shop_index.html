@@ -73,7 +73,7 @@
             var description = val;
             $.post("{:url('admin/enter/optionStatus')}",{id:id,description:description,status:status},function(e){
                 layer.msg(e.msg);
-//                window.location.reload();
+                window.location.reload();
             })
             layer.close(index);
         });

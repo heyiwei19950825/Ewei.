@@ -27,10 +27,10 @@ class WxPayConfig
     const KEY = '513821199311216917mskfkj20181234';
     const APPSECRET = '87d6607ae9e2ccc5f2ec9627c0452e1c';
 
-//    const APPID = $_SESSION["think"]['wxConfig']['app_id'];//小程序的
-//    const MCHID = $_SESSION["think"]['wxConfig']['shop_id'];
-//    const KEY = $_SESSION["think"]['wxConfig']['shop_key'];
-//    const APPSECRET = $_SESSION["think"]['wxConfig']['app_secret'];
+//    const APPID = 'wxf390c9e08ca6387f';//九宴食材
+//    const MCHID = '1492410722';
+//    const KEY = '4SNeMexpKkqsaOCqiaipN70gtKHyQuHh';
+//    const APPSECRET = '0ea37635889c1e7e54ace066b50b8596';
 
     //=======【证书路径设置】=====================================
     /**
@@ -39,9 +39,10 @@ class WxPayConfig
      * API证书下载地址：https://pay.weixin.qq.com/index.php/account/api_cert，下载之前需要安装商户操作证书）
      * @var path
      */
-    const SSLCERT_PATH = EXTEND_PATH.'/cert/apiclient_cert.pem';
-    const SSLKEY_PATH = EXTEND_PATH.'/cert/apiclient_key.pem';
-
+//    const SSLCERT_PATH = EXTEND_PATH.'/cert/apiclient_cert.pem';
+//    const SSLKEY_PATH = EXTEND_PATH.'/cert/apiclient_key.pem';
+//    const SSLCERT_PATH = EXTEND_PATH.'/cert/apiclient_cert_jy.pem';
+//    const SSLKEY_PATH = EXTEND_PATH.'/cert/apiclient_key_jy.pem';
     //=======【curl代理设置】===================================
     /**
      * TODO：这里设置代理机器，只有需要代理的时候才设置，不需要代理，请设置为0.0.0.0和0

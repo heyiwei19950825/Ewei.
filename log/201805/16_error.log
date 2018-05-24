@@ -1,0 +1,69 @@
+---------------------------------------------------------------
+[2018-05-16T11:01:29+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/index
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-16T11:03:32+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/index
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-16T11:15:02+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/category/list?id=5
+[ error ] [404][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Category.php:103]
+---------------------------------------------------------------
+[2018-05-16T12:01:29+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/coupon/useCouponList
+[ error ] [8]未定义数组索引: at_least[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\model\Coupon.php:120]
+---------------------------------------------------------------
+[2018-05-16T13:13:15+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/shop/enter
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\validate\BaseValidate.php:40]
+---------------------------------------------------------------
+[2018-05-16T13:13:24+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/shop/enter
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\validate\BaseValidate.php:40]
+---------------------------------------------------------------
+[2018-05-16T13:13:59+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/shop/enter
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\validate\BaseValidate.php:40]
+---------------------------------------------------------------
+[2018-05-16T13:15:15+08:00] 127.0.0.1 127.0.0.1 POST /admin/enter/optionstatus.html
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '17610226808' for key 'username'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[2018-05-16T16:06:41+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [8]未定义数组索引: province_id[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Order.php:289]
+---------------------------------------------------------------
+[2018-05-16T16:11:16+08:00] 127.0.0.1 127.0.0.1 POST /admin/category/save.html
+[ error ] [0]数据表字段不存在:[editorValue][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Builder.php:109]
+---------------------------------------------------------------
+[2018-05-16T16:11:26+08:00] 127.0.0.1 127.0.0.1 POST /admin/category/save.html
+[ error ] [0]数据表字段不存在:[editorValue][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Builder.php:109]
+---------------------------------------------------------------
+[2018-05-16T16:13:07+08:00] 127.0.0.1 127.0.0.1 POST /admin/category/save.html
+[ error ] [0]数据表字段不存在:[editorValue][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Builder.php:109]
+---------------------------------------------------------------
+[2018-05-16T16:39:07+08:00] 127.0.0.1 127.0.0.1 POST /admin/category/save.html
+[ error ] [0]method not exist:think\db\Query->allowField[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:94]
+---------------------------------------------------------------
+[2018-05-16T16:43:45+08:00] 127.0.0.1 127.0.0.1 POST /admin/category/save.html
+[ error ] [0]method not exist:think\db\Query->allowField[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:94]
+---------------------------------------------------------------
+[2018-05-16T16:44:40+08:00] 127.0.0.1 127.0.0.1 POST /admin/category/save.html
+[ error ] [0]method not exist:think\db\Query->allowField[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:94]
+---------------------------------------------------------------
+[2018-05-16T16:47:06+08:00] 127.0.0.1 127.0.0.1 POST /admin/category/save.html
+[ error ] [0]method not exist:think\db\Query->allowField[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Query.php:94]
+---------------------------------------------------------------
+[2018-05-16T16:54:52+08:00] 127.0.0.1 127.0.0.1 POST /admin/category/save.html
+[ error ] [0]数据表字段不存在:[editorValue][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Builder.php:109]
+---------------------------------------------------------------
+[2018-05-16T16:55:39+08:00] 127.0.0.1 127.0.0.1 GET /admin/category/add.html
+[ error ] [8]未定义数组索引: pid[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common.php:97]
+---------------------------------------------------------------
+[2018-05-16T16:55:50+08:00] 127.0.0.1 127.0.0.1 GET /admin/category/index.html
+[ error ] [8]未定义数组索引: pid[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common.php:97]
+---------------------------------------------------------------
+[2018-05-16T16:55:52+08:00] 127.0.0.1 127.0.0.1 GET /admin/goods/index.html
+[ error ] [8]未定义数组索引: pid[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common.php:97]
+---------------------------------------------------------------
+[2018-05-16T16:56:04+08:00] 127.0.0.1 127.0.0.1 GET /
+[ error ] [0]类的属性不存在:app\common\model\Shop->shop_logo[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:560]
+---------------------------------------------------------------
+[2018-05-16T16:56:20+08:00] 127.0.0.1 127.0.0.1 GET /
+[ error ] [0]类的属性不存在:app\common\model\Shop->shop_logo[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\Model.php:560]
+---------------------------------------------------------------
+[2018-05-16T18:52:11+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/shop/shopList?longitude=113.14952&latitude=40.00543
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]

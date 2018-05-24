@@ -19,19 +19,19 @@
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">店铺名称</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <input type="text" name="shop_name" value="{$info.shop_name}" required lay-verify="required" placeholder="输入店铺名称" class="layui-input">
                         </div>
                     </div>
                      <div class="layui-form-item">
                         <label class="layui-form-label">联系电话</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <input type="number" name="shop_phone" value="{$info.shop_phone}" required lay-verify="phone" placeholder="输入联系电话" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">店铺分类</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <select name="shop_category" lay-verify="required">
                                 {foreach name="shop_group_list" item="vo"}
                                 <option value="{$vo.id}">{$vo.group_name}</option>
@@ -44,7 +44,7 @@
                         <div class="layui-input-inline layui-upload">
                             <input type="hidden" name="shop_logo" value="{$info.shop_logo}" class="layui-input layui-input-inline" id="thumb">
                             <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150' data-path='uploads/common/'>上传图片</button>
-                            <div class="layui-input-block" style='margin-top:10px;'>
+                            <div class="layui-input-inline" style='margin-top:10px;'>
                                 <img class="layui-upload-img" style='width:150px;' id="demo1" src='{$info.shop_logo}'>
                                 <p id="demoText"></p>
                             </div>
@@ -55,7 +55,7 @@
                         <div class="layui-input-inline layui-upload">
                             <input type="hidden" name="shop_banner" value="{$info.shop_banner}" class="layui-input layui-input-inline" id="banner-thumb">
                             <button type="button" class="layui-btn" id="banner-upload"  data-path='uploads/common/'>上传图片</button>
-                            <div class="layui-input-block" style='margin-top:10px;'>
+                            <div class="layui-input-inline" style='margin-top:10px;'>
                                 <img class="layui-upload-img" id="demo2" src='{$info.shop_banner}' width="300px;">
                                 <p id="demoText1"></p>
                             </div>
@@ -91,13 +91,13 @@
 					</div>
 					 <div class="layui-form-item">
                         <label class="layui-form-label">详细地址</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <input type="text" name="shop_address" value="{$info.shop_address}" required lay-verify="required" placeholder="输入店铺名称" class="layui-input">
                         </div>
                     </div>
                      <div class="layui-form-item">
                         <label class="layui-form-label">邮编</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <input type="number" name="shop_zip" value="{$info.shop_zip}" required lay-verify="" placeholder="输入邮编" class="layui-input">
                         </div>
                     </div>

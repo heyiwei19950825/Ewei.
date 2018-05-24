@@ -13,7 +13,7 @@
                 <form class="layui-form form-container" action="{:url('admin/nav/update')}" method="post">
                     <div class="layui-form-item">
                         <label class="layui-form-label">上级导航</label>
-                        <div class="layui-input-block">
+                        <div class="layui-input-inline">
                             <select name="pid" required lay-verify="required">
                                 <option value="0">一级导航</option>
                                 {foreach name="nav_level_list" item="vo"}
@@ -38,16 +38,22 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label">链接</label>
                             <div class="layui-input-inline">
-                                <select name="link" lay-filter="link">
+                                <select name="link"  lay-skin="select" lay-filter="selectTest"  required lay-verify="required">
                                     <option value=""></option>
                                     {foreach name="page_list" item="vo"}
-                                    <option value="{$vo.route}" {if condition="$nav.link==$vo.route"} selected="selected"{/if}>{$vo.name}</option>
+                                    <option value="{$vo.route}"  data-params="{$vo.params}" {if condition="$nav.link==$vo.route"} selected="selected"{/if}>{$vo.name}</option>
                                     {/foreach}
                                 </select>
                             </div>
-                            <div class="layui-input-inline">
-                                <input type="text" name="link-value" value="{$nav.params}" required  lay-verify="required" placeholder="输入链接参数" class="layui-input">
-                                <div class="layui-form-mid layui-word-aux">跳转地址参数</div>
+                            <div class="link-params">
+                                {foreach name="$nav.params" key="k" item="vo"}
+                                    <div class="layui-inline" >
+                                        <label class="layui-form-label" style="width: 80px;">{$k}=</label>
+                                        <div class="layui-input-inline" style="width: 150px;">
+                                            <input type="text" name="link-value['+paramsArray[i]+']" value="{$vo}" required  lay-verify="required" placeholder="输入链接参数" class="layui-input">
+                                            </div>
+                                        </div>
+                                {/foreach}
                             </div>
                         </div>
                      <div class="layui-form-item">
@@ -55,7 +61,7 @@
                         <div class="layui-input-inline layui-upload">
                             <input type="hidden" name="icon" value="{$nav.icon}" class="layui-input layui-input-inline" id="thumb">
                             <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150' data-path='uploads/common/'>上传图片</button>
-                            <div class="layui-input-block" style='margin-top:10px;'>
+                            <div class="layui-input-inline" style='margin-top:10px;'>
                                 <img class="layui-upload-img" style='width:150px;' id="demo1" src="{$nav.icon}">
                                 <p id="demoText"></p>
                             </div>
@@ -82,12 +88,12 @@
                             <!--<input type="radio" name="target" value="_blank" title="新窗口" {if condition="$nav.target=='_blank'"} checked="checked"{/if}>-->
                         <!--</div>-->
                     <!--</div>-->
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">背景颜色</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="background_color" value="{$nav.background_color}" placeholder="（选填）RGB颜色码" class="layui-input">
-                        </div>
-                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">背景颜色</label>-->
+                        <!--<div class="layui-input-inline">-->
+                            <!--<input type="text" name="background_color" value="{$nav.background_color}" placeholder="（选填）RGB颜色码" class="layui-input">-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">排序</label>
                         <div class="layui-input-inline">
@@ -108,4 +114,28 @@
 </div>
 {/block}
 {block name='js'}
+<script>
+    $(function(){
+        form.on('select(selectTest)', function(data){
+            $('.link-params').html('');
+            var OptionIndex = data.elem.selectedIndex; //得到选中的下标
+            var params = $(data.elem.options[OptionIndex]).attr('data-params'); //得到选中下标的文本信息
+            var html = '';
+            if( params != ''){
+                var paramsArray = params.split(",");
+                for( var i=0; i < paramsArray.length; i++){
+                    console.log(paramsArray[i]);
+                    html += ' <div class="layui-inline" >' +
+                            '<label class="layui-form-label" style="width: 80px;">'+paramsArray[i]+' =</label> ' +
+                            '<div class="layui-input-inline" style="width: 150px;"> ' +
+                            '<input type="text" name="link-value['+paramsArray[i]+']" value="" required  lay-verify="required" placeholder="输入链接参数" class="layui-input">' +
+                            '</div> ' +
+                            '</div>'
+                }
+
+                $('.link-params').html(html);
+            }
+        });
+    })
+</script>
 {/block}

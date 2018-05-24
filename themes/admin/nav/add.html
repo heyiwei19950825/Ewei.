@@ -11,8 +11,8 @@
             <div class="layui-tab-item layui-show">
                 <form class="layui-form form-container" action="{:url('admin/nav/save')}" method="post">
                     <div class="layui-form-item">
-                        <label class="layui-form-label">上级导航</label>
-                        <div class="layui-input-block">
+                        <label class="layui-form-label"><span>*</span>上级导航</label>
+                        <div class="layui-input-inline">
                             <select name="pid" required lay-verify="required">
                                 <option value="0">一级导航</option>
                                 {foreach name="nav_level_list" item="vo"}
@@ -22,8 +22,8 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">导航名称</label>
-                        <div class="layui-input-block">
+                        <label class="layui-form-label"><span>*</span>导航名称</label>
+                        <div class="layui-input-inline">
                             <input type="text" name="name" value="" required  lay-verify="required" placeholder="请输入导航名称" class="layui-input"  maxlength="5">
                             <div class="layui-form-mid layui-word-aux">字符长度为5</div>
                         </div>
@@ -34,19 +34,18 @@
                             <!--<input type="text" name="alias" value="" placeholder="（选填）请输入导航别名" class="layui-input">-->
                         <!--</div>-->
                     <!--</div>-->
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">链接</label>
+                    <div class="layui-form-item link-demo" >
+                            <label class="layui-form-label"><span>*</span>链接</label>
                             <div class="layui-input-inline">
-                                <select name="link" lay-filter="link">
+                                <select name="link"  lay-skin="select" lay-filter="selectTest"  required lay-verify="required">
                                     <option value=""></option>
                                     {foreach name="page_list" item="vo"}
                                     <option value="{$vo.route}" data-params="{$vo.params}">{$vo.name}</option>
                                     {/foreach}
                                 </select>
                             </div>
-                            <div class="layui-input-inline">
-                                <input type="text" name="link-value" value="" required  lay-verify="required" placeholder="输入链接参数" class="layui-input">
-                                <div class="layui-form-mid layui-word-aux">跳转地址参数</div>
+                            <div class="link-params">
+
                             </div>
                     </div>
                   <!--   <div class="layui-form-item">
@@ -56,11 +55,11 @@
                         </div>
                     </div> -->
                     <div class="layui-form-item">
-                        <label class="layui-form-label">图标</label>
+                        <label class="layui-form-label"><span>*</span>图标</label>
                         <div class="layui-input-inline layui-upload">
-                            <input type="hidden" name="icon" value="" class="layui-input layui-input-inline" id="thumb">
+                            <input type="hidden" name="icon" value="" class="layui-input layui-input-inline" id="thumb"  required lay-verify="required">
                             <button type="button" class="layui-btn" id="upload" data-width='150' data-height='150' data-path='uploads/common/'>上传图片</button>
-                            <div class="layui-input-block" style='margin-top:10px;'>
+                            <div class="layui-input-inline" style='margin-top:10px;'>
                                 <img class="layui-upload-img" style='width:150px;' id="demo1">
                                 <p id="demoText"></p>
                             </div>
@@ -87,12 +86,12 @@
                             <!--<input type="radio" name="target" value="_blank" title="新窗口">-->
                         <!--</div>-->
                     <!--</div>-->
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">背景颜色</label>
-                        <div class="layui-input-inline">
-                        <input type="text" name="background_color" value="" placeholder="（选填）RGB颜色码" class="layui-input">
-                        </div>
-                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">背景颜色</label>-->
+                        <!--<div class="layui-input-inline">-->
+                        <!--<input type="text" name="background_color" value="" placeholder="（选填）RGB颜色码" class="layui-input">-->
+                        <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">排序</label>
                         <div class="layui-input-inline">
@@ -113,8 +112,25 @@
 <script>
 
     $(function(){
-        form.on('select(link)', function(data){
+        form.on('select(selectTest)', function(data){
+            $('.link-params').html('');
+            var OptionIndex = data.elem.selectedIndex; //得到选中的下标
+            var params = $(data.elem.options[OptionIndex]).attr('data-params'); //得到选中下标的文本信息
+            var html = '';
+            if( params != ''){
+                var paramsArray = params.split(",");
+                for( var i=0; i < paramsArray.length; i++){
+                    console.log(paramsArray[i]);
+                    html += ' <div class="layui-inline" >' +
+                            '<label class="layui-form-label" style="width: 80px;">'+paramsArray[i]+' =</label> ' +
+                            '<div class="layui-input-inline" style="width: 150px;"> ' +
+                            '<input type="text" name="link-value['+paramsArray[i]+']" value="" required  lay-verify="required" placeholder="输入链接参数" class="layui-input">' +
+                            '</div> ' +
+                            '</div>'
+                }
 
+                $('.link-params').html(html);
+            }
         });
     })
 </script>

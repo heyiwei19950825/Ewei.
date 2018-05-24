@@ -74,6 +74,11 @@ class Enter extends AdminBase
                     Db::name('shop_enter')->where(['id'=>$id])->update([
                         'password' => $password,
                     ]);
+                    //添加权限组
+                    Db::name('auth_group_access')->insert([
+                        'uid'=>$admninRow,
+                        'group_id' => 2
+                    ]);
                     //创建商铺
                     $shopData = [
                         'id'        => $admninRow,

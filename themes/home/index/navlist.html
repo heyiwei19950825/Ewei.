@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>地图导航</title>
+</head>
+<style>
+    @charset "utf-8";
+    /*CSS 初始化*/
+    body,v,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+    body{font-size:12px;font-family:"Microsoft Yahei",Heiti,arial,helvetica,sans-serif!important;line-height:19px;color:#333;min-width:320px;position:relative;background:#F3F3F3;}
+    fieldset,img{border:0;}
+    img{display:block;}
+    ol,ul{list-style:none;}
+    h1,h2,h3,h4,h5,h6{font-size:100%;}
+    em{font-style:normal;}
+    input,button,select,textarea{outline:none;}
+    /*textarea { resize:none; }*/
+    a{color:#000;text-decoration:none;}
+    a:hover{text-decoration:none;}
+    a:focus{outline:none;-moz-outline:none;}/*解决去除 a 链接点击后有一个虚线的边框出现*/
+
+    /*公用样式*/
+    .f-l{float:left;}
+    .f-r{float:right;}
+
+
+
+    .gwc-ul1{padding-bottom:80px;}
+    .gwc-ul1 li{ padding:8px 5px; border-bottom:1px solid #eee; background:#fff; }
+    .gwc-ul1 li .hwc-tu{ width:68px; height:68px; border:1px solid #EFEFEF; text-align:center; margin-right:5px;}
+    .hwc-tu img{ display:inline-block; height:85%;    width: 100%;}
+    .gwc-ul1 li .gwc-md{ width:70%;}
+    .gwc-md h3{ font-weight:normal;white-space:nowrap; text-overflow:ellipsis; overflow:hidden; line-height:18px;}
+    .gwc-md h3 a{ font-size:12px; color:#4A4A4A;}
+    .gwc-md .gwc-p1{font-size:12px; color:#4A4A4A; line-height:18px;    margin-top: 10px;}
+    .gwc-p1 span{ color:#D12424;}
+    .gwc-md .gwc-p2{ font-size:12px; color:#6F6F6F;white-space:nowrap; text-overflow:ellipsis; overflow:hidden; line-height:18px;    margin-top: 10px;}
+    .gwc-ul1 li .gwc-del{ position: relative;
+        top: 30px;
+        right: 20px;}
+    .gwc-del img{ width:25px;}
+    .sjsc-title2 .sjsc-t2l{line-height:35px; font-size:16px; color:#333; font-weight:normal;text-align: center}
+    .gwc-ft{ width:100%; padding:8px 0; background:#E4E4E4; position:fixed; left:0; bottom:0;}
+    .gwc-ft p{ float:left; line-height:30px; font-size:12px; color:#4A4A4A; margin-left:10px;}
+    .gwc-ft p span{ color:#D12424;}
+    .gwc-ft button{ display:block; width:55px; height:30px; background:#D12323; border:0; font-size:12px; color:#fff; float:right; border-radius:5px; margin-right:10px;}
+</style>
+<body>
+
+<div class="sjsc-title2">
+    <h3 class="sjsc-t2l">文化执法地图导航</h3>
+</div>
+
+<ul class="gwc-ul1">
+    <li  data-key="ms">
+        <div class="hwc-tu f-l"><a href="/"><img src="http://ewei.mskfkj.com/static/images/微信图片_20180502114250.jpg"></a></div>
+        <div class="gwc-md f-l">
+            <h3><a href="#">眉山市文化市场综合行政执法支队</a></h3>
+            <p class="gwc-p1"><span>眉山市广电局</span></p>
+            <p class="gwc-p2">地址：四川省眉山市洪雅县洪洲大酒店旁</p>
+        </div>
+        <a href="#" class="gwc-del f-r"><img src="__STATIC__/images/culture/icon-shop-nav.png"></a>
+        <div style="clear:both;"></div>
+    </li>
+    <li  data-key="hy">
+        <div class="hwc-tu f-l"><a href="#"><img src="http://ewei.mskfkj.com/static/images/微信图片_20180502114250.jpg"></a></div>
+        <div class="gwc-md f-l">
+            <h3><a href="#">洪雅县广电局</a></h3>
+            <p class="gwc-p1"><span>洪雅县综合行政文化执法支队</span></p>
+            <p class="gwc-p2">地址：四川省眉山市洪雅县洪洲大酒店旁</p>
+        </div>
+        <a href="#" class="gwc-del f-r"><img src="__STATIC__/images/culture/icon-shop-nav.png"></a>
+        <div style="clear:both;"></div>
+    </li>
+    <li data-key="dl">
+        <div class="hwc-tu f-l" ><a href="#"><img src="http://ewei.mskfkj.com/static/images/微信图片_20180502114250.jpg"></a></div>
+        <div class="gwc-md f-l">
+            <h3><a href="#">丹棱县广电局</a></h3>
+            <p class="gwc-p1"><span>丹棱县文化市场综合行政执法支队</span></p>
+            <p class="gwc-p2">地址：四川省眉山市丹棱县东升路67号</p>
+        </div>
+        <a href="#" class="gwc-del f-r"><img src="__STATIC__/images/culture/icon-shop-nav.png"></a>
+        <div style="clear:both;"></div>
+    </li>
+    <li data-key="rs">
+        <div class="hwc-tu f-l" ><a href="#"><img src="http://ewei.mskfkj.com/static/images/微信图片_20180502114250.jpg"></a></div>
+        <div class="gwc-md f-l">
+            <h3><a href="#">仁寿县广电局</a></h3>
+            <p class="gwc-p1"><span>仁寿县文化市场综合行政执法支队</span></p>
+            <p class="gwc-p2">地址：四川省眉山市仁寿县陵州路二段158</p>
+        </div>
+        <a href="#" class="gwc-del f-r"><img src="__STATIC__/images/culture/icon-shop-nav.png"></a>
+        <div style="clear:both;"></div>
+    </li>
+</ul>
+</body>
+<script type="text/javascript" src="__JS__/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script>
+    $(function(){
+        var url = window.location.href;
+        //获取微信配置
+        $.post('/api/v2/wechat/config',{
+            url:url
+        },function(e){
+            if(e.code == 1){
+                var data = e.data;
+                wx.config({
+                    appId: data.appid, // 必填，公众号的唯一标识
+                    timestamp: data.timestamp, // 必填，生成签名的时间戳
+                    nonceStr: data.noncestr, // 必填，生成签名的随机串s
+                    signature: data.sign,// 必填，签名
+                    jsApiList: [
+                        'openLocation',
+                        'getLocation'
+                    ] // 必填，需要使用的JS接口列表
+                });
+            }
+        })
+        $('li').on('click',function(){
+            var key = $(this).attr('data-key');
+            $.post('/home/index/navList',{
+                key:key
+            },function(e){
+            wx.ready(function () {
+                wx.openLocation(e);
+            });
+            })
+        });
+    })
+</script>
+</html>

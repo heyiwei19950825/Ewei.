@@ -10,6 +10,7 @@ namespace app\api\service;
 
 use app\api\model\Goods;
 use app\api\model\Cart as CartModel;
+use app\api\model\Express;
 
 class Cart
 {
@@ -93,6 +94,83 @@ class Cart
             'errmsg' => '',
             'data'   => $goodsInfo
         ];
+    }
+
+    /**
+     * 下单前数据简单处理
+     * @param array $cartList
+     * @param array $couponInfo
+     * @return array
+     */
+    public function  briefnessDispose($cartList = [],$couponInfo = []){
+        //初始化数据
+        $row = [];
+        if($couponInfo != []){
+            $couponInfo['money'] = $couponInfo['money'] * 100;
+        }
+
+        $useCoupon = false;//检测是否已经添加过优惠券记录
+        foreach($cartList as $k=>$v){
+            if(!array_key_exists($v['shop_id'],$row)){
+                $row[$v['shop_id']] = [];
+            }
+
+            //优惠券
+            if($couponInfo != []){
+                if( !empty($couponInfo['goods']) ){
+                    if( in_array($v['goods_id'],$couponInfo['goods']) && !$useCoupon ){
+                        $v['coupon'] = $couponInfo;
+                        $useCoupon = true;
+                    }
+                }
+            }
+
+
+            //运费计算[商品的运费只会统计一次且使用最大值]
+            $row[$v['shop_id']]['goods_list'][] = $v;
+
+            $goods_price     = !isset($row[$v['shop_id']]['price']['goods_price'])?0:$row[$v['shop_id']]['price']['goods_price'];
+            $vip_price       = !isset($row[$v['shop_id']]['price']['vip_price'])?0:$row[$v['shop_id']]['price']['vip_price'];
+            $cost_price      = !isset($row[$v['shop_id']]['price']['cost_price'])?0:$row[$v['shop_id']]['price']['cost_price'];
+            $freight         = !isset($row[$v['shop_id']]['price']['freight'])?0:$row[$v['shop_id']]['price']['freight'];
+            $givePoint       = !isset($row[$v['shop_id']]['price']['give_point'])?0:$row[$v['shop_id']]['price']['give_point'];
+
+            $row[$v['shop_id']]['price']['goods_price'] = $goods_price + ($v['price'] * 100 ) * $v['num'];
+            $row[$v['shop_id']]['price']['vip_price']   = $vip_price + ( ($v['vip_price'] * 100 ) * $v['num'] ==0?($v['price'] * 100 ) * $v['num']:($v['vip_price'] * 100 ) * $v['num'] );//会员价
+            $row[$v['shop_id']]['price']['cost_price']  = $cost_price + ($v['cost_price'] * 100 ) * $v['num'];//原价
+            $row[$v['shop_id']]['price']['freight']     = $freight;//原价
+            $row[$v['shop_id']]['price']['give_point']  = $givePoint + ($v['give_point'] * $v['num']);//赠送积分
+
+            //满减减
+
+            //满免运费
+
+            //选取最高价格的运费
+            $nowFreight = Express::getDetail($v['eid'],'cost')['cost'] * 100;
+            if( $freight < $nowFreight ){
+                $row[$v['shop_id']]['price']['freight'] = $nowFreight;
+            }
+
+            //检测当前商家数据中是否有优惠券减免数据
+            if($couponInfo != []) {
+                if (isset($v['coupon'])) {
+                    $row[$v['shop_id']]['price']['coupon_price'] = $couponInfo['money'];
+                }
+            }
+        }
+
+        //优惠券
+        if($couponInfo != []) {
+            if (empty($couponInfo['goods'])) { //如果是全商品使用
+                //优先优惠自营商品
+                if (array_key_exists(1, $row)) {
+                    $row[1]['goods_list'][0]['coupon'] = $couponInfo;
+                }
+                $row[1]['price']['coupon'] = $couponInfo['money'];
+            }
+        }
+
+       return $row;
     }
 
 }

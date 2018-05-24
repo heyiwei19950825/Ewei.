@@ -159,12 +159,12 @@ class Upload extends Controller
 
         // 重新设置文件路径
         $this->resetFilePath();
-
         // 检测文件夹是否存在，不存在则创建文件夹
         if (! file_exists($this->reset_file_path)) {
             $mode = intval('0777', 8);
             mkdir($this->reset_file_path, $mode, true);
         }
+
         $this->file_name = $_FILES["file"]["name"]; // 文件原名
         $this->file_size = $_FILES["file"]["size"]; // 文件大小
         $this->file_type = $_FILES["file"]["type"]; // 文件类型
@@ -184,6 +184,13 @@ class Upload extends Controller
         $ext = "." . $file_name_explode[$suffix]; // 获取后缀名
         $newfile = $guid . $ext; // 重新命名文件
         // 特殊 判断如果是商品图
+        $fileInfo = getimagesize($_FILES["file"]["tmp_name"]);
+        if( !isset($_POST['width'])){
+            $_POST['width'] = trim(explode('=',explode(' ',$fileInfo[3])[0])[1],'"');
+        }
+        if( !isset($_POST['height'])){
+            $_POST['height'] = trim(explode('=',explode(' ',$fileInfo[3])[1])[1],'"');
+        }
 
         $ok = $this->moveUploadFile($_FILES["file"]["tmp_name"], $this->reset_file_path . $newfile,$_POST['width'],$_POST['height']);
 

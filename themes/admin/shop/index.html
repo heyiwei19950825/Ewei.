@@ -37,8 +37,8 @@
                             <th style="width: 30px;">ID</th>
                             <th>店铺名称</th>
                             <th>Logo</th>
-                            <th>首页推荐</th>
-                            <th>排序</th>
+                            <!--<th>首页推荐</th>-->
+                            <th width="100px">排序</th>
                             <th>余额</th>
                             <th>状态</th>
                             <th>审核状态</th>
@@ -52,9 +52,9 @@
                             <td>{$vo.id}</td>
                             <td>{$vo.shop_name}</td>
                             <td><img src="{$vo.shop_logo}" alt="" widht='50px' height='50px'></td>
-                            <td>
-                                <input type="checkbox" data-key="shop_recommend" class='update-value' name='shop_recommend' data-id="{$vo.id}" {if condition='$vo.shop_recommend==1'}checked{else}{/if}>
-                            </td>
+                            <!--<td>-->
+                                <!--<input type="checkbox" data-key="shop_recommend" class='update-value' name='shop_recommend' data-id="{$vo.id}" {if condition='$vo.shop_recommend==1'}checked{else}{/if}>-->
+                            <!--</td>-->
                             <td>
                                 <div class="layui-input-inline">
                                     <span><input type="number" class="layui-input shop-sort" value="{$vo.shop_sort}" data-id="{$vo.id}" data-key="shop_sort"></span>

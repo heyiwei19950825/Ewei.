@@ -88,7 +88,6 @@ class BaseModel extends Model{
                 $list = $this->table($this->table)->field($field)
                     ->where($condition)
                     ->order($order)
-                    ->group($group)
                     ->paginate($page_size, false, ['page' => $page_index]);
                     return $list;
             }else{
@@ -169,7 +168,7 @@ class BaseModel extends Model{
         $selectCheck = $condition == []?false:true;
         $condition = empty($condition)?$this->condition:array_merge($this->condition,$condition);
 
-        $row = $this->table($this->table)
+        $row = $this->table($this->table)->strict(false)
             ->where($condition);
         if($selectCheck){
             $row =$row->update($data);

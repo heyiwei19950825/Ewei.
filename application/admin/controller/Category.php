@@ -73,7 +73,7 @@ class Category extends AdminBase
                 }else{
                     $data['path'] = 0 . ',';
                 }
-                if ($this->category_model->allowField(true)->pageSave($data)) {
+                if ($this->category_model->pageSave($data)) {
                     $this->success('保存成功');
                 } else {
                     $this->error('保存失败');

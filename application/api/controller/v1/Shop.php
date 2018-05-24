@@ -107,7 +107,6 @@ class Shop extends BaseController
             ->order('shop_sort desc')
             ->limit($start_row . "," . $page_size)
             ->select()->toArray();
-
         $list = $this->prefixDomainToArray('shop_logo',$list);
         if( !empty($list) ){
             foreach ($list as $index => &$v){
@@ -143,7 +142,6 @@ class Shop extends BaseController
             $data['page_count'] = (int) ($count / $page_size) + 1;
             $data['row_count'] = $count;
         }
-
         return [
             'code' => 0,
             'msg' => '',
@@ -226,10 +224,10 @@ class Shop extends BaseController
             $map['btime']           = ['<=',$now];
             $map['etime']           = ['>=',$now];
             $map['status']          = ['=',1];
+            $map['sp_inventory']    = ['>',1];
             $field = 'id,name,sp_price,sp_market,is_recommend,is_hot,is_collective,is_integral,is_collective,thumb,prefix_title';
             $goodsList = Goods::getAll($map,$field,'sort desc',false);
         }
-
 
         $goodsList['data'] = $this->prefixDomainToArray('thumb',$goodsList['data']);
 

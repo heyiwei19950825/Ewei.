@@ -1,0 +1,24 @@
+---------------------------------------------------------------
+[2018-05-18T15:59:09+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-18T15:59:29+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-18T16:00:02+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-18T16:00:03+08:00] 127.0.0.1 127.0.0.1 POST /api/v1/order/place
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-18T16:00:14+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/index
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-18T19:55:03+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/shop/goodsByCategory?id=84&cid=84
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-18T19:55:23+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/shop/shopList?longitude=113.14952&latitude=40.00543
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-18T19:57:23+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/shop/goodsByCategory?id=84&cid=85
+[ error ] [1]Call to undefined method think\model\Collection::getLastSql()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\model\Goods.php:78]

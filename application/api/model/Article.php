@@ -21,9 +21,8 @@ class Article extends BaseModel
      * @param bool $paginate
      * @return false|\PDOStatement|string|\think\Collection|\think\Paginator
      */
-    public static function getAllArticle($page=1,$size=10,$paginate = true,$sort='sort',$order='desc',$condition=[])
+    public static function getAllArticle($page=1,$size=10,$paginate = true,$sort='sort',$order='desc',$condition=[],$field = 'id,title,introduction,thumb,author,reading')
     {
-        $field = 'id,title,introduction,thumb,author,reading';
         $map = [];
         $map['publish_time'] = ['<','now()'];
         $map['status'] = ['=','1'];

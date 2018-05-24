@@ -1,0 +1,69 @@
+---------------------------------------------------------------
+[2018-05-14T10:08:18+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [8]未定义数组索引: pic_list[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Index.php:155]
+---------------------------------------------------------------
+[2018-05-14T10:11:49+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [8]未定义数组索引: pic_list[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Index.php:154]
+---------------------------------------------------------------
+[2018-05-14T10:12:17+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [8]未定义数组索引: data[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Index.php:153]
+---------------------------------------------------------------
+[2018-05-14T10:26:38+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0 0' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-05-14T10:27:59+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0 0' at line 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-05-14T10:31:49+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [2]Cannot use a scalar value as an array[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\model\PicModel.php:32]
+---------------------------------------------------------------
+[2018-05-14T10:56:40+08:00] 127.0.0.1 127.0.0.1 GET /admin/pic_models/edit/id/1.html
+[ error ] [8]未定义数组下标: 0[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\b93728de4154199ec6340905179c3b8b.php:158]
+---------------------------------------------------------------
+[2018-05-14T10:57:35+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [8]未定义数组下标: 0[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Index.php:193]
+---------------------------------------------------------------
+[2018-05-14T10:58:07+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [8]未定义数组下标: 0[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Index.php:193]
+---------------------------------------------------------------
+[2018-05-14T11:00:11+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\model\PicModel.php:31]
+---------------------------------------------------------------
+[2018-05-14T11:00:39+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\model\PicModel.php:29]
+---------------------------------------------------------------
+[2018-05-14T11:00:51+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [2]Invalid argument supplied for foreach()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\model\PicModel.php:29]
+---------------------------------------------------------------
+[2018-05-14T11:01:37+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [8]未定义数组索引: pic_list[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\common\model\PicModel.php:37]
+---------------------------------------------------------------
+[2018-05-14T11:25:22+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/coupon/userCouponList?types=0
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-14T11:25:24+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/coupon/userCouponList?types=1
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-14T13:41:15+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/shop/helper
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'value' in 'field list'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\thinkphp\library\think\db\Connection.php:388]
+---------------------------------------------------------------
+[2018-05-14T16:46:50+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/cart/goodscount
+[ error ] [200][D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\service\Token.php:93]
+---------------------------------------------------------------
+[2018-05-14T23:11:55+08:00] 127.0.0.1 127.0.0.1 POST /admin/system/updatesiteconfig.html
+[ error ] [2]Illegal string offset 'x_inform'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\System.php:40]
+---------------------------------------------------------------
+[2018-05-14T23:27:33+08:00] 127.0.0.1 127.0.0.1 GET /admin/system/siteconfig.html
+[ error ] [8]Use of undefined constant i - assumed 'i'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\5e63d684cb6f20bb9ba354d8993166db.php:143]
+---------------------------------------------------------------
+[2018-05-14T23:29:01+08:00] 127.0.0.1 127.0.0.1 GET /admin/system/siteconfig.html
+[ error ] [4]语法错误: unexpected ')', expecting ']'[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\5e63d684cb6f20bb9ba354d8993166db.php:138]
+---------------------------------------------------------------
+[2018-05-14T23:57:45+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [2]implode(): Invalid arguments passed[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Index.php:162]
+---------------------------------------------------------------
+[2018-05-14T23:58:05+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [2]implode(): Invalid arguments passed[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Index.php:162]
+---------------------------------------------------------------
+[2018-05-14T23:58:26+08:00] 127.0.0.1 127.0.0.1 GET /api/v1/index/index
+[ error ] [2]implode(): Invalid arguments passed[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\api\controller\v1\Index.php:162]

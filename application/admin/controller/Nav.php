@@ -59,13 +59,21 @@ class Nav extends AdminBase
             $data            = $this->request->post();
             $data['s_id'] =$this->instance_id;
             $validate_result = $this->validate($data, 'Nav');
-            $data['link'] =  $data['link'].'?'.$data['link-value'];
-            unset($data['link-value']);
+            $linkValue = '';
 
             //检测导航名称是否存在
             $checkName = $this->nav_model->getInfo(['name'=>$data['name']],'id');
             if($checkName){
                 $this->error('导航名称已经存在');
+            }
+
+            //重新拼接url
+            if(isset($data['link-value'])){
+                foreach($data['link-value'] as $k=> $v){
+                    $linkValue = '&'.$k.'='.$v;
+                }
+                $data['link'] =  $data['link'].'?'.trim($linkValue,'&');
+                unset($data['link-value']);
             }
 
             if ($validate_result !== true) {
@@ -93,7 +101,15 @@ class Nav extends AdminBase
         }
         $link = explode('?',$nav['link']);
         $nav['link'] = $link[0];
-        $nav['params'] = $link[1];
+        $nav['params'] = $paramsArray = [];
+        if(!empty($link[1])){
+            $params = explode('&',$link[1]);
+            foreach ($params as $v){
+                $s = explode('=',$v);
+                $paramsArray[$s[0]] = $s[1];
+            }
+        }
+        $nav['params'] = $paramsArray;
 
         return $this->fetch('edit', ['nav' => $nav]);
     }
@@ -114,13 +130,18 @@ class Nav extends AdminBase
                 $this->error('导航名称已经存在');
             }
 
-            $data['link'] =  $data['link'].'?'.$data['link-value'];
-            unset($data['link-value']);
+            //重新拼接url
+            if(isset($data['link-value'])){
+                foreach($data['link-value'] as $k=> $v){
+                    $linkValue = '&'.$k.'='.$v;
+                }
+                $data['link'] =  $data['link'].'?'.trim($linkValue,'&');
+                unset($data['link-value']);
+            }
 
              if ($validate_result !== true) {
                  $this->error($validate_result);
              } else {
-
                 if ($this->nav_model->pageSave($data,['id'=>$id]) !== false) {
                     $this->success('更新成功');
                 } else {
@@ -129,7 +150,6 @@ class Nav extends AdminBase
              }
         }
     }
-
     /**
      * 删除导航
      * @param $id

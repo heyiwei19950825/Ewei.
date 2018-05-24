@@ -84,7 +84,7 @@ class Coupon extends  BaseController
         $type = $this->request->param('types',0);
         //购物车商品ID
         $cartListId = [];
-        //购物车商品漂总价
+        //购物车商品总价
         $totalPrice = 0;
         //购物车商品列表
         $cartList = CartModel::getCartAll($this->uid,true);
@@ -92,10 +92,9 @@ class Coupon extends  BaseController
             $totalPrice += ($item['price']*100)*$item['num'];
             $cartListId[] = $item['goods_id'];
         }
-
         $row['data']['data'] = CouponModel::useCoupon( $this->uid,$cartListId ,$totalPrice/100);
-        $row['data']['types'] = $type;
 
+        $row['data']['types'] = $type;
         return $row;
     }
 }

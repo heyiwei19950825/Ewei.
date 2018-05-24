@@ -1,0 +1,36 @@
+---------------------------------------------------------------
+[2018-04-28T16:56:34+08:00] 127.0.0.1 127.0.0.1 POST /admin/nav/save.html
+[ error ] [8]未定义数组索引: link-value[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:62]
+---------------------------------------------------------------
+[2018-04-28T16:56:36+08:00] 127.0.0.1 127.0.0.1 POST /admin/nav/save.html
+[ error ] [8]未定义数组索引: link-value[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:62]
+---------------------------------------------------------------
+[2018-04-28T16:56:42+08:00] 127.0.0.1 127.0.0.1 POST /admin/nav/save.html
+[ error ] [8]未定义数组索引: link-value[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:62]
+---------------------------------------------------------------
+[2018-04-28T16:56:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/nav/save.html
+[ error ] [8]未定义数组索引: link-value[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:62]
+---------------------------------------------------------------
+[2018-04-28T16:57:49+08:00] 127.0.0.1 127.0.0.1 POST /admin/nav/save.html
+[ error ] [8]未定义数组索引: link-value[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:62]
+---------------------------------------------------------------
+[2018-04-28T16:58:50+08:00] 127.0.0.1 127.0.0.1 POST /admin/nav/save.html
+[ error ] [8]Array to string conversion[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:62]
+---------------------------------------------------------------
+[2018-04-28T16:59:16+08:00] 127.0.0.1 127.0.0.1 POST /admin/nav/save.html
+[ error ] [8]Array to string conversion[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:62]
+---------------------------------------------------------------
+[2018-04-28T17:01:49+08:00] 127.0.0.1 127.0.0.1 POST /admin/nav/save.html
+[ error ] [1]Call to undefined function app\admin\controller\iseet()[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:64]
+---------------------------------------------------------------
+[2018-04-28T17:20:48+08:00] 127.0.0.1 127.0.0.1 GET /admin/nav/edit/id/9.html
+[ error ] [8]未定义变量: params[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\c39b8afd3513bf4099659ca13acb0698.php:142]
+---------------------------------------------------------------
+[2018-04-28T17:24:12+08:00] 127.0.0.1 127.0.0.1 GET /admin/nav/edit/id/9.html
+[ error ] [8]未定义变量: params[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\runtime\temp\c39b8afd3513bf4099659ca13acb0698.php:142]
+---------------------------------------------------------------
+[2018-04-28T17:27:01+08:00] 127.0.0.1 127.0.0.1 GET /admin/nav/edit/id/20.html
+[ error ] [8]未定义数组下标: 1[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:109]
+---------------------------------------------------------------
+[2018-04-28T17:27:26+08:00] 127.0.0.1 127.0.0.1 POST /admin/nav/update.html
+[ error ] [8]Array to string conversion[D:\work\phpstudy\WWW\myjob\ewei_admin\admin_pro\application\admin\controller\Nav.php:133]
